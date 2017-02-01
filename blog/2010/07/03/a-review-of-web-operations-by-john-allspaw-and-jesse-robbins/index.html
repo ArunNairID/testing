@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      A review of Web Operations by John Allspaw and Jesse Robbins &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="A review of Web Operations by John Allspaw and Jesse Robbins" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A review of Web Operations by John Allspaw and Jesse Robbins</h1>
+  <span class="post-date">Sat, Jul 3, 2010 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/operations" class="btn btn-primary">Operations</a>
+		
+		<a href="/categories/reviews" class="btn btn-primary">Reviews</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f07%2f03%2fa-review-of-web-operations-by-john-allspaw-and-jesse-robbins%2f&text=A%20review%20of%20Web%20Operations%20by%20John%20Allspaw%20and%20Jesse%20Robbins:https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f07%2f03%2fa-review-of-web-operations-by-john-allspaw-and-jesse-robbins%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f07%2f03%2fa-review-of-web-operations-by-john-allspaw-and-jesse-robbins%2f&title=A%20review%20of%20Web%20Operations%20by%20John%20Allspaw%20and%20Jesse%20Robbins&summary=A%20review%20of%20Web%20Operations%20by%20John%20Allspaw%20and%20Jesse%20Robbins&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f07%2f03%2fa-review-of-web-operations-by-john-allspaw-and-jesse-robbins%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f07%2f03%2fa-review-of-web-operations-by-john-allspaw-and-jesse-robbins%2f&t=A%20review%20of%20Web%20Operations%20by%20John%20Allspaw%20and%20Jesse%20Robbins" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f07%2f03%2fa-review-of-web-operations-by-john-allspaw-and-jesse-robbins%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <div id="attachment_1864" class="wp-caption alignleft" style="width: 190px">
+  <a href="http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20"><img src="/media/2010/05/web_operations.gif" alt="Web Operations" title="Web Operations" width="180" height="236" class="size-full wp-image-1864" /></a><p class="wp-caption-text">
+    Web Operations
+  </p>
+</div>
+
+<p><a href="http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20">Web Operations</a>. By John Allspaw and Jesse Robbins, O&rsquo;Reilly 2010, with a chapter by myself. (Here&rsquo;s <a href="http://oreilly.com/catalog/0636920000136">a link to the publisher&rsquo;s site</a>).</p>
+
+<p>I wrote a chapter for this book, and it&rsquo;s now on shelves in bookstores near you. I got my dead-tree copy today and read everyone else&rsquo;s contributions to it. It&rsquo;s a good book. A group effort such as this one is necessarily going to have some differences in style and even overlapping content, but overall it works very well. It includes chapters from some really smart people, some of whom I was not previously familiar with. John and Jesse obviously have good connections. A lot of the folks are from Flickr.</p>
+
+<p>Here are the highlights in my opinion.</p>
+
+<ul>
+<li>Theo Schlossnagle, who has a place on my list of <a href="/blog/essential-books/">essential books</a>, opens things with an overview of what web operations really is, and why it&rsquo;s hard. Don&rsquo;t skip this. Theo&rsquo;s introduction is concise and thoughtful.</li>
+<li>Eric Ries discusses the benefits of continuous deployment. He is right on the money. Right out of college I spent 3 years as a developer at a company with very little engineering discipline, and then left for another company built by a small ace team practicing extreme programming. Eric nails the benefits of continuous deployment &ndash; he really gets it. I hadn&rsquo;t heard of Eric before, but now I&rsquo;ve subscribed to <a href="http://www.startuplessonslearned.com/">his blog</a>.</li>
+<li>John Allspaw (whose book on capacity planning is also on my list of essentials) and Richard Cook discuss how complex systems fail. This chapter appeared in part as a <a href="http://www.kitchensoap.com/2009/11/12/how-complex-systems-fail-a-webops-perspective/">whitepaper and blog post on John&rsquo;s blog</a>, and is expanded in this book. I have spent a lot of time examining failures for clients, and as VP of Consulting, also a lot of time examining Percona&rsquo;s own mistakes. I fully agree with the conclusions in this chapter. A few key points: there is never a single root cause; our desire to find one blinds us and keeps us from learning; <em>true</em> failures are inherently unpredictable and happen only when a series of things fails; avoiding failure requires experience with failure. This echoes another book I&rsquo;ve read recently, <a href="http://www.amazon.com/Black-Swan-Impact-Highly-Improbable/dp/1400063515?tag=xaprb-20">The Black Swan</a>.</li>
+<li><a href="http://brian.moonspot.net/">Brian Moon&rsquo;s</a> chapter on unexpected traffic spikes. If you get a chance to hear Brian speak, take it. He&rsquo;s an engaging guy with interesting and relevant stories to tell. Stories are always a better experience than bullet points.</li>
+<li>Jake Loomis&rsquo;s chapter on postmortems. My own research into prevention of emergencies agrees almost perfectly with his list of things to do on page 225. Read this chapter carefully! Now, knowing how to put this into action is hard &ndash; very hard &ndash; but at least you&rsquo;ll have a place to start. The worst compliment I ever got after fixing a system that&rsquo;d run out of hard drive space (due to utter lack of basic monitoring) was that I&rsquo;d &ldquo;saved the day.&rdquo; Baloney. Postmortems can be a great way to learn your infrastructure&rsquo;s weaknesses and prevent emergencies in the future. I&rsquo;m fully confident that this particular client will again deploy new servers without adding them into Nagios, and the results will be predictable.</li>
+<li>Naturally, my chapter about choosing a relational database architecture for web applications (skewed towards MySQL). There is a chapter on NoSQL databases by Eric Florenzano as well, but it is more introductionary-level.</li>
+</ul>
+
+<p>What wasn&rsquo;t so good? I didn&rsquo;t get a lot of value out of John&rsquo;s interview with Heather Champ, on community management and web operations. I did not think the interview format worked well in a book full of essays. But that might just be me. Also, a couple of places in two or three chapters felt a bit rant-ish without a lot of clear actionable advice; I think readers won&rsquo;t get so much out of this.</p>
+
+<p>Overall, though, this is a great book, badly needed, on a topic that is simply not yet recognized for its true importance. As Theo writes, we&rsquo;re seeing the emergence of web operations as a very large profession; it&rsquo;s one whose definition is not yet formalized or agreed-upon, but that&rsquo;ll change. It&rsquo;s too important not to. Jesse&rsquo;s introduction repeats this sentiment: the world now relies on the web, and so the world relies also on the engineers who make it run. Web operations is work that matters.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2010/07/04/a-review-of-cloud-application-architectures-by-george-reese/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2010/07/03/how-i-keep-track-of-notes/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2010\/07\/03\/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

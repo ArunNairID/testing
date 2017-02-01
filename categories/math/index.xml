@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> </title>
+    <link>https://www.xaprb.com/categories/math/index.xml</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>Copyright (c) 2016</rights>
+    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
+
+    
+        <item>
+          <title>The Response Time Stretch Factor</title>
+          <link>https://www.xaprb.com/blog/response-time-stretch-factor/</link>
+          <pubDate>Sun, 30 Oct 2016 10:00:39 -0400</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/response-time-stretch-factor/</guid>
+          <description>&lt;p&gt;Computer systems, and for that matter all types of systems that receive requests
+and process them, have a response time that includes some time waiting in queue
+if the server is busy when a request arrives. The wait time increases sharply as
+the server gets busier. For simple M/M/m systems there is a simple equation that
+describes this exactly, but for more complicated systems this equation is only
+approximate. This has rattled around in my brain for a long time, and rather
+than keeping my notes private I&amp;rsquo;m sharing them here (although since I&amp;rsquo;m still
+trying to learn this stuff I may just be putting my ignorance on full display).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/10/hockey-stick.png&#34; alt=&#34;Hockey-Stick Curve&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll skip all the derivations and go through only the basics to get to the results.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-stretch-factor-heuristic-and-exact-formula&#34;&gt;The Stretch Factor Heuristic and Exact Formula&lt;/h3&gt;
+
+&lt;p&gt;The equation describing the curve above is derived as follows. When a request
+arrives at the server, it will have to wait time \(S\), the service time, to be
+completed. But if the server is busy, which happens with some probability, then
+it will be delayed some additional wait time \(W\) for the request in process,
+and potentially for other requests are already waiting, before it enters
+service. The total time is the residence time, \(R = W + S\).&lt;/p&gt;
+
+&lt;p&gt;The wait time \(W\) is some fraction of the total residence time, which can be
+at most 100%, and if this is denoted by \(\rho\) then \(W = \rho R\).
+Thus,&lt;/p&gt;
+
+&lt;p&gt;$$
+R = W + S = \rho R + S
+$$&lt;/p&gt;
+
+&lt;p&gt;Which, when rearranged and divided by service time to make it a relative
+&amp;ldquo;stretch factor,&amp;rdquo; becomes&lt;/p&gt;
+
+&lt;p&gt;$$
+R = \frac{1}{1- \rho}
+$$&lt;/p&gt;
+
+&lt;p&gt;None of this is original; I&amp;rsquo;ve basically cribbed this from Neil Gunther&amp;rsquo;s book
+&lt;em&gt;Analyzing Computer Systems Performance with Perl::PDQ&lt;/em&gt;. Later in that same
+book, Gunther shows the derivation of a related formula for the stretch factor
+in a multiserver queue with \(m\) servers,&lt;/p&gt;
+
+&lt;p&gt;$$
+R \approx \frac{1}{1-\rho^m}
+$$&lt;/p&gt;
+
+&lt;p&gt;Where \(\rho\) denotes server utilization. This heuristic approximation does
+arise analytically, but is not exact when there are more than 2 servers. It
+underestimates wait time when utilization is high, especially with large numbers
+of servers (say, 64). The exact solution is given by&lt;/p&gt;
+
+&lt;p&gt;$$
+R = \frac{C(m, \rho) S}{m(1-\rho)} + S
+$$&lt;/p&gt;
+
+&lt;p&gt;Where the first term is just \(W\), and the function \(C(m,\rho)\) is the
+Erlang C function. If we put it all together and rearrange into &amp;ldquo;stretch factor&amp;rdquo; form, the Erlang equation for stretch factor is&lt;/p&gt;
+
+&lt;p&gt;$$
+R(m, \rho) = 1 + \frac{ \frac{(m \rho)^m}{m!} }{ (1-\rho) \sum_{n=0}^{m-1} \frac{(m \rho)^n}{n!} + \frac{(m \rho)^m}{m!} } \frac{1}{m(1-\rho)}
+$$&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;d like to see how this looks, check out &lt;a href=&#34;https://www.desmos.com/calculator/9dr7azq0ot&#34;&gt;this Desmos calculator&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now here&amp;rsquo;s the part my brain has been trying to connect, almost idly in
+shower-thought time, for a while. If intuition led from one direction to the
+heuristic approximation \(R=\frac{1}{1-\rho^m}\), and an exact derivation leads to
+a formula that in the single- and dual-server case is the same as the
+heuristic, then what is the heuristic missing to extend to an exact multiserver
+queueing system? Can it be extended, or is it just a coincidence that it&amp;rsquo;s an
+exact solution for \(m=1, m=2\)?&lt;/p&gt;
+
+&lt;p&gt;A few trains of thought have sprung into my mind.&lt;/p&gt;
+
+&lt;p&gt;First, I observed that the Erlang C formula includes \(m!\), and it happens to be the
+case that 1! = 1, and 2! = 2. A clue, or a distraction? What if I add a term
+to the heuristic, multiplied by \(m/m!\) or similar, which would just reduce
+to the same thing for the single- and dual-server cases? What form would that
+term take?&lt;/p&gt;
+
+&lt;p&gt;Secondly, what if I work backwards from the Erlang formula and see if it reduces
+to a different form of the heuristic?&lt;/p&gt;
+
+&lt;p&gt;Thirdly, what if the heuristic&amp;rsquo;s exactness for the base cases is just a
+coincidence after all? In that case, perhaps a new, simpler approximation to the
+Erlang formula is waiting to be invented. Approximations are highly useful to me
+in tools such as spreadsheets and the like, or even in using intuition, which is
+workable with the heuristic form. Approximations are easy to think about and a
+lot easier to type and troubleshoot. They&amp;rsquo;re also faster to compute, should
+performance matter.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll take each of these cases in turn.&lt;/p&gt;
+
+&lt;h3 id=&#34;a-missing-term&#34;&gt;A Missing Term&lt;/h3&gt;
+
+&lt;p&gt;If the heuristic is exact for 1- and 2-server cases because of the coincidence
+that the factorial function for these values is the value itself, then what is
+the missing term? What shape might it have?&lt;/p&gt;
+
+&lt;p&gt;To gain some intuition about this, I wrote a simple &lt;a href=&#34;https://www.desmos.com/calculator/qo1n4shf1f&#34;&gt;Desmos
+calculator&lt;/a&gt; to show
+the &lt;em&gt;value&lt;/em&gt; of the hypothetical &amp;ldquo;missing term&amp;rdquo; in the context of the heuristic&amp;rsquo;s
+value. In other words, the heuristic&amp;rsquo;s &lt;em&gt;error function&lt;/em&gt;.  Here&amp;rsquo;s a picture of
+that for several values of \(m\). Red is 1 server, green is 8, purple is 16, orange
+is 64.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/10/error-in-heuristic.png&#34; alt=&#34;Error in Heuristic&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that I showed utilization extending out beyond the value 1 because the
+shape of the function is interesting, but that value is impossible&amp;mdash;a server can
+never be more than 100% utilized. What&amp;rsquo;s interesting, to me anyway, is that the
+error function looks kind of like the PDF of a Gamma distribution. I&amp;rsquo;ll leave that thought
+there.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m not sure what form a term including, say, \(m/m!\) would take. This is
+something I haven&amp;rsquo;t explored a lot yet. &lt;em&gt;TODO&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;reducing-erlang&#34;&gt;Reducing Erlang&lt;/h3&gt;
+
+&lt;!-- Wolfram Alpha input
+
+1 + ((m p)^m/m!)/((1-p) Sum[(m p)^n/n!, {n, 0, m-1}] + (m p)^m/m!) * 1/(m(1-p)), m=1
+
+--&gt;
+
+&lt;p&gt;What does the Erlang formula reduce to in the \(m=1\) case? The Erlang C
+formula itself reduces to \(\rho\), and when
+decorated with the additional stuff to get it into stretch-factor form, it
+reduces to&lt;/p&gt;
+
+&lt;p&gt;$$
+R(1, \rho) = 1 + \frac{\rho}{1-\rho}
+$$&lt;/p&gt;
+
+&lt;p&gt;Which is just a rearrangement of the heuristic function.
+(Interestingly, Wolfram Alpha will simplify it to
+include the Gamma function and list the heuristic as an approximation. Gamma
+again, though Gamma function and Gamma distribution are different. The Gamma
+function is closely related to the factorial function.)&lt;/p&gt;
+
+&lt;p&gt;In the \(m=2\) case, if I&amp;rsquo;m doing my algebra right, the Erlang C function
+simplifies to&lt;/p&gt;
+
+&lt;p&gt;$$
+C(2, \rho) = \frac{2\rho^2}{ (1-\rho) + (1-\rho)2\rho + 2\rho^2}
+$$&lt;/p&gt;
+
+&lt;p&gt;Which further simplifies to \(\frac{2\rho^2}{\rho+1}\), which when
+rewritten into stretch-factor form, becomes&lt;/p&gt;
+
+&lt;p&gt;$$
+R(2, \rho)=1+\frac{2\rho^2}{\rho+1} \frac{1}{2(1-\rho)}
+$$&lt;/p&gt;
+
+&lt;p&gt;Which is exactly \(\frac{1}{1-\rho^2}\), the heuristic form.&lt;/p&gt;
+
+&lt;p&gt;At \(m=3\) and above, the heuristic is only approximate. What does the Erlang
+form reduce to for the first of those cases? Does it result in the missing term
+that will extend to 4 and beyond too? (&lt;em&gt;Note: I wrote about this in a &lt;a href=&#34;https://www.xaprb.com/blog/erlang-stretch-factor-three-four/&#34;&gt;followup
+post&lt;/a&gt;&lt;/em&gt;).&lt;/p&gt;
+
+&lt;h3 id=&#34;approximations-to-erlang-based-on-the-heuristic&#34;&gt;Approximations to Erlang, Based on the Heuristic&lt;/h3&gt;
+
+&lt;p&gt;Approximations to complicated equations are often really useful. You use them
+all the time, although you may not know it. For example, a computer uses
+approximations to calculate functions such as sine, square root, and logarithm.
+The field of numeric methods is dedicated to studying such algorithms and their
+errors.&lt;/p&gt;
+
+&lt;p&gt;In 1977, Sakasegawa discovered an approximation to the length of a queue, which
+is more accurate than the heuristic function, but wasn&amp;rsquo;t derived analytically.
+You can find the paper
+&lt;a href=&#34;https://github.com/VividCortex/approx-queueing-theory&#34;&gt;here&lt;/a&gt;. In a nutshell,
+his method was to begin with a well-known queueing theory formula derived by
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Pollaczek%E2%80%93Khinchine_formula&#34;&gt;Pollaczek and
+Khinchine&lt;/a&gt;,
+which is valid (exact) for M/G/1 systems, that is, single-server queueing
+systems in some specific cases. Sakasegawa observed the error curve at various
+parameters and essentially did a least-squares sum of errors regression to
+arrive at an approximation for the queue length, which in the simplest types of
+queueing systems reduces to:&lt;/p&gt;
+
+&lt;p&gt;$$
+L_q \approx \frac{ \rho^{\sqrt{2(m+1)}} }{ 1-\rho}
+$$&lt;/p&gt;
+
+&lt;p&gt;In &amp;ldquo;stretch factor&amp;rdquo; form, this becomes&lt;/p&gt;
+
+&lt;p&gt;$$
+R(m, \rho) \approx 1+\frac{\rho^{\sqrt{2(m+1)}}}{\rho m(1-\rho)}
+$$&lt;/p&gt;
+
+&lt;p&gt;This is such an accurate approximation that it&amp;rsquo;s more than good enough for
+real-life applications, and I use it all the time. (It&amp;rsquo;s hard to put Erlang&amp;rsquo;s
+formula into a spreadsheet, because it has iterative computations.)&lt;/p&gt;
+
+&lt;p&gt;Given the usefulness and simplicity of approximations, perhaps an approximation
+to the stretch factor can be derived from the heuristic form
+\(1/(1-\rho^m)\). This idea appeals to me because it might lead to insights
+about what&amp;rsquo;s disappeared or simplified out of the exact Erlang formula in the
+base case.&lt;/p&gt;
+
+&lt;p&gt;One possible way to do this is to approximate the error function of the
+heuristic.  I already mentioned that it might be possible to do this with the
+Gamma distribution&amp;rsquo;s PDF. Finding an approximation to that, and then adding or
+multiplying by it, might result in a usable approximation.&lt;/p&gt;
+
+&lt;p&gt;Another idea is a sigmoid such as the classic logistic function. In fact, if I
+wanted to approximate the error in the range (0,1) this isn&amp;rsquo;t too bad an
+approximation for \(m=16\), for example:&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{.5}{1+e^{-10(x-1)}}
+$$&lt;/p&gt;
+
+&lt;p&gt;Finally, instead of adding a term or multiplying the heuristic by a term,
+perhaps it&amp;rsquo;s the \(\rho^m\) portion in the denominator that needs to be
+tweaked. A little analysis led me to the following conclusions.&lt;/p&gt;
+
+&lt;p&gt;The error at \(m&amp;gt;3\) could be explained by the exponent \(m\) being too large. If so,
+then the correct value for the exponent could be a function of \(\rho\), and
+an adjustment to it would need to be of the form&lt;/p&gt;
+
+&lt;p&gt;$$
+A_{exp} = \frac{log\left( \frac{E(\rho)-1}{E(\rho)} \right)}{log(\rho)}
+$$&lt;/p&gt;
+
+&lt;p&gt;Where \(E(\rho)\) is the Erlang formula for the stretch factor. I arrived at
+this by solving the error function for \(\rho\). For convenience, this can be
+divided by \(m\) to normalize it relative to the number of servers. I&amp;rsquo;ve made
+a &lt;a href=&#34;https://www.desmos.com/calculator/7ygut81via&#34;&gt;Desmos calculator&lt;/a&gt; illustrating
+the shape of this adjustment term for 1, 4, 8, and 16 servers:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/10/heuristic-error-func-util.png&#34; alt=&#34;Error in Heuristic as Func of Util&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One of the challenges with this is that due to the limitations of floating-point
+math in computers, the heuristic function appears to have no error at low
+utilization. I think it does, but it&amp;rsquo;s just a small value. That&amp;rsquo;s why the shape
+of that curve has a discontinuity at low utilization.&lt;/p&gt;
+
+&lt;p&gt;An interesting observation: If you zoom out and remove the limits on the range
+of values plotted, you get something that looks like a part of the Gamma
+function. Is this a coincidence? Could the Gamma function be used as an
+approximation to this error? Or is the missing term a Gamma function, which
+would result in an exact solution? &lt;em&gt;TODO&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another way to nudge the heuristic to approximate the Erlang residence time
+stretch factor would be to examine whether the base, \(\rho\), is too large
+or too small. Following a similar train of thought as before and solving the
+error function for the number of servers, I found that the error would need to be of the
+form&lt;/p&gt;
+
+&lt;p&gt;$$
+A_{base} = \left( \frac{E(\rho)-1}{E(\rho)}\right)^{1/m}
+$$&lt;/p&gt;
+
+&lt;p&gt;Normalizing this relative to \(\rho\) by dividing, I got a function that has
+similar discontinuities as before, and is of the following shape. It looks
+like it might be possible to approximate with something like a quadratic from 0
+to 1, but if you zoom out further, it looks more like&amp;hellip; wait for it&amp;hellip; part of
+the Gamma function. You can see this on
+&lt;a href=&#34;https://www.desmos.com/calculator/hsidkl4og8&#34;&gt;Desmos&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/10/heuristic-error-func-servers.png&#34; alt=&#34;Heuristic Error as Func of Servers&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I experimented with this in a different way, by trying to approximate
+\(A_{base}\) directly. I just guessed at its shape and came up with the
+following, which isn&amp;rsquo;t too far off for \(2&amp;lt;m&amp;lt;5\):&lt;/p&gt;
+
+&lt;p&gt;$$
+A_{base} \approx \rho - \frac{2}{15} \sqrt{m} (\rho-1)\rho
+$$&lt;/p&gt;
+
+&lt;p&gt;You can see this shape, compared with the actual \(A_{base}\), at this
+&lt;a href=&#34;https://www.desmos.com/calculator/sgwrqdcnzk&#34;&gt;Desmos&lt;/a&gt;. And &lt;a href=&#34;https://www.desmos.com/calculator/opa1sfpxfw&#34;&gt;this
+one&lt;/a&gt; shows what this looks like
+when included as a term in the heuristic stretch factor.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/10/heuristic-skew-util.png&#34; alt=&#34;Heuristic Skewed By Utilization&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Red is Erlang, blue is my heuristic, and black dashed is Gunther&amp;rsquo;s.
+Don&amp;rsquo;t be fooled; mine may look better, but if you examine high utilizations
+you&amp;rsquo;ll see it&amp;rsquo;s much worse. Small errors in the approximation to the error
+function make big differences in the result. (This is true if the error is
+defined as a function of number of servers, too.)&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h3&gt;
+
+&lt;p&gt;There&amp;rsquo;s a lot of outright superstition in this blog post, but hopefully some of
+the intuition I&amp;rsquo;m trying to develop comes through as well. Guessing at
+approximations (and seeing Gamma-things everywhere, like shapes in the clouds)
+is probably more time-wasting than productive, but I find that by playing with
+things I learn a lot. There&amp;rsquo;s something still unfinished in my mind, something
+unsatisfactory about coming towards an exact solution from two directions,
+finding two different forms, and finding that one of them runs aground at a
+certain point, even though it&amp;rsquo;s just a simplification of the other under some
+circumstances. You might replace &amp;ldquo;even though&amp;rdquo; with &amp;ldquo;because&amp;rdquo; in the previous
+sentence, and be satisfied, but as for me I feel there&amp;rsquo;s still something to be
+learned here. And potentially a useful result might come out of it, even if
+it&amp;rsquo;s only a fast approximation like Sakasegawa&amp;rsquo;s.&lt;/p&gt;
+
+&lt;p&gt;Besides, I just enjoy exploring math and its shapes; this is a great form of
+relaxation or stress relief for me when I want to concentrate on something so as
+to put other things out of my mind. Hopefully there&amp;rsquo;s a kindred soul out there
+who finds this interesting too. If so, hello, and enjoy!&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>How to Extract Data Points From a Chart</title>
+          <link>https://www.xaprb.com/blog/2015/12/06/get-data-points-from-chart/</link>
+          <pubDate>Sun, 06 Dec 2015 19:38:48 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/12/06/get-data-points-from-chart/</guid>
+          <description>&lt;p&gt;I often see benchmark reports that show charts but don&amp;rsquo;t provide tables of
+numeric results. Some people will make the actual measurements available if
+asked, but I&amp;rsquo;ve been interested in
+&lt;a href=&#34;https://www.vividcortex.com/resources/universal-scalability-law/&#34;&gt;analyzing&lt;/a&gt;
+many systems for which I can&amp;rsquo;t get numbers.  Fortunately, it&amp;rsquo;s usually possible
+to get approximate results without too much trouble. In this blog post I&amp;rsquo;ll show
+several ways to extract estimates of values from a chart image.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/12/espresso.jpg&#34; alt=&#34;Extracting&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll motivate the idea with a simple chart of a slide I saw at the recent
+PGConfSV conference on a keynote presentation. I was interested in the benchmark
+data (for &lt;a href=&#34;https://www.citusdata.com/&#34;&gt;CitusDB&lt;/a&gt;, in this case) but I am sure
+they are busy and I haven&amp;rsquo;t gotten in touch with them yet about it. So I watched
+the YouTube video of the keynote address, paused it when the slide was showing,
+and took a screenshot.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/12/citusdb-benchmark.jpg&#34; alt=&#34;CitusDB Benchmark Result&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d like to use the Universal Scalability Law to analyze the chart on the left
+and estimate how much of CitusDB&amp;rsquo;s massively parallel processing is serialized.
+I am not an expert on it, but I believe it uses a PostgreSQL node with a plugin
+as a query planner and router, sends queries to shards containing data, and
+combines the results to return them to the client. This is fairly standard
+scatter-gather processing. One of the big limiting factors for such a system is
+typically the query planning and the merging of the results. How much of the
+overall execution time does that take? The Universal Scalability Law can help
+understand that. But to analyze the system, first I need its data.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see how to get it.&lt;/p&gt;
+
+&lt;h3 id=&#34;doing-it-the-hard-way&#34;&gt;Doing It The Hard Way&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;m going to show you two hard ways to do this and suggest a couple of easier
+ways.&lt;/p&gt;
+
+&lt;p&gt;One is to use any photo editing software and a ruler or crop function to
+estimate the pixel center of the points on the chart. For example, here&amp;rsquo;s a
+screen capture of dragging from the bottom left of the image to the bottom left
+of the chart to get an X-Y point for the intersection of the chart&amp;rsquo;s X and Y
+axes. I&amp;rsquo;m using the default Mac image editing program here, Preview:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/12/using-preview.jpg&#34; alt=&#34;Using Preview To Estimate Points&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The result is X=326,Y=183. Do this repeatedly for all the points on the chart
+and then put the results into a spreadsheet, subtract the origin X and Y from
+all the points, and normalize them relative to known points on the chart axes
+(which you should also measure) and you&amp;rsquo;ve got your results. Here&amp;rsquo;s a screenshot
+of the spreadsheet I made to do this. The points I measured are in green and the
+results are in purple:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/12/points-spreadsheet.png&#34; alt=&#34;Spreadsheet to calculate results&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You may &lt;a href=&#34;https://www.xaprb.com/media/2015/12/spreadsheet.xlsx&#34;&gt;download the spreadsheet&lt;/a&gt; if you&amp;rsquo;d
+like to look at it.
+It&amp;rsquo;s quite clear from the chart&amp;rsquo;s context that the X-values should actually be
+1, 5, 10 and 20 so those are easy corrections to make.
+Using this technique I estimate the points as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 1   36250
+ 5  110000
+10  195000
+20  313750
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A similar technique is to use &lt;a href=&#34;https://www.desmos.com&#34;&gt;Desmos&lt;/a&gt;. You can insert
+an image, set its dimensions equal to its pixel count, then create a table and
+use the gear menu to enable dragging on the table&amp;rsquo;s points, turning on the 4-way
+drag handles. Then align points over the chart&amp;rsquo;s points, and you can read off
+the values from the table just as with the Preview app:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/12/using-desmos.jpg&#34; alt=&#34;Using Desmos&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One nice thing about this method is that you can then combine the image with any
+graphs you&amp;rsquo;re making. For example, I used this method to facetiously analyze the
+&lt;a href=&#34;http://www.vividcortex.com/blog/2015/11/28/a-trendline-is-a-model/&#34;&gt;path of the eclipsing
+moon&lt;/a&gt; on a
+recent blog post.&lt;/p&gt;
+
+&lt;h3 id=&#34;easier-ways&#34;&gt;Easier Ways&lt;/h3&gt;
+
+&lt;p&gt;Why use hard methods like that? I believe the hard ways are still valuable to
+know about. First of all, when you do it you get a firm grasp on the math and
+you&amp;rsquo;re tuned in to what you&amp;rsquo;re working on (or I am, at least). Second, sometimes
+when charts are skewed by, say, the camera&amp;rsquo;s perspective, you have to estimate
+where the points would fall if the skew were corrected.&lt;/p&gt;
+
+&lt;p&gt;That said, there are a few tools that are easier to use and produce good
+results. While searching online I found
+&lt;a href=&#34;http://digitizer.sourceforge.net/&#34;&gt;engauge&lt;/a&gt;, &lt;a href=&#34;http://www.datathief.org/&#34;&gt;Data
+Thief&lt;/a&gt;, and &lt;a href=&#34;di8itapp&#34;&gt;http://di8itapp.com/&lt;/a&gt;. But the
+best one I&amp;rsquo;ve found so far is the free online &lt;a href=&#34;http://arohatgi.info/WebPlotDigitizer/app/&#34;&gt;web plot
+digitizer&lt;/a&gt;, which runs in the
+browser and produced quite good results for me. It allows very fine control over
+the placement of the points. The extracted points are:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 0.995104673   32858.00211
+ 5.070422535  108307.8542
+10.07535128   196097.94
+20.17810302   312738.7098
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Of course, the X-points should be set to 1, 5, 10, and 20 as before.&lt;/p&gt;
+
+&lt;p&gt;As a bonus, this app integrates with &lt;a href=&#34;https://plot.ly&#34;&gt;Plotly&lt;/a&gt;, and can
+automatically send the resulting data points there for analysis. Plotly is a
+tool I wasn&amp;rsquo;t aware of previously. I found it quite nice for this type of
+analysis and was able to quickly run a regression against the USL and estimate
+the coefficient of serialization at 4% and the coefficient of crosstalk at 0,
+which is very realistic for this type of system in my experience:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/12/plotly.jpg&#34; alt=&#34;Plotly&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That was easy! Easier than using RStudio, perhaps.&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h3&gt;
+
+&lt;p&gt;Using the techniques I showed in this article you can extract graph points from
+a variety of different images when you lack the source data. Some of these
+techniques are easier to use on large datasets than others, and some are just
+more fun if you feel like doing things manually, but all can produce results
+good enough for many purposes.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re curious about the analysis of CitusDB, and what it means for it to
+have a coefficient of serialization (sigma) of about 4%, please read my
+&lt;a href=&#34;https://www.vividcortex.com/resources/universal-scalability-law/&#34;&gt;introduction to the Universal Scalability
+Law&lt;/a&gt;. If
+you&amp;rsquo;re like me, you&amp;rsquo;ll find it fascinating that such a model exists. (Exercise
+for the reader: what&amp;rsquo;s the maximum speedup CitusDB should be able to achieve as
+you add more nodes to it?)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/schill/14418736104/&#34;&gt;Photo by Scott Schiller on Flickr&lt;/a&gt;.&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>Setting Thresholds With Quantiles</title>
+          <link>https://www.xaprb.com/blog/2015/11/07/setting-thresholds-with-quantiles/</link>
+          <pubDate>Sat, 07 Nov 2015 19:39:36 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/11/07/setting-thresholds-with-quantiles/</guid>
+          <description>&lt;p&gt;I was talking with someone the other day about a visualization I remembered
+seeing some years ago, that could help set a reasonable value for a threshold on
+a metric. As I&amp;rsquo;ve
+&lt;a href=&#34;https://www.vividcortex.com/blog/2013/04/10/2-reasons-why-threshold-based-monitoring-is-hopelessly-broken/&#34;&gt;written&lt;/a&gt;,
+thresholds are basically a broken way to monitor systems, but if you&amp;rsquo;re going to
+use them, I think there are simple things you can do to avoid making threshold
+values &lt;em&gt;completely&lt;/em&gt; arbitrary.&lt;/p&gt;
+
+&lt;p&gt;I couldn&amp;rsquo;t find the place I&amp;rsquo;d seen the visualization (if you know prior art for
+the below, please comment!) so I decided to just blog about it. Suppose you
+start off with a time series:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/time-series.png&#34; alt=&#34;time series&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The idea is that you might want to alert on this metric breaking some threshold,
+but what&amp;rsquo;s the right value? There are lots of ways you could do it: a multiple
+of the average, some quantile, some number of standard deviations from the mean,
+etc, etc. For example, you could say &amp;ldquo;I want to alert if the metric exceeds its
+usual 99.9th percentile.&amp;rdquo; But isn&amp;rsquo;t 99.9 an arbitrary number, too? What makes it
+so special? Is there &lt;em&gt;any&lt;/em&gt; way to pick a number that isn&amp;rsquo;t just pulled out of a
+hat?&lt;/p&gt;
+
+&lt;p&gt;I need to preface all of this with a disclaimer. Everyone&amp;rsquo;s systems are
+different, static thresholds are silly, quantiles are known to the state of
+California to cause cancer, and so on. What I&amp;rsquo;m about to show you is only
+&lt;em&gt;slightly&lt;/em&gt; less arbitrary. Don&amp;rsquo;t confuse it for a rule that actually has a
+strong reason why it&amp;rsquo;s better than the alternatives.&lt;/p&gt;
+
+&lt;p&gt;The idea is to look at the &lt;em&gt;shape&lt;/em&gt; of your data and use that to decide where you
+feel is the right threshold. The &amp;ldquo;shape&amp;rdquo; is the distribution of the data&amp;ndash;how
+its values are typically spread.&lt;/p&gt;
+
+&lt;p&gt;One of the best ways to do that is to plot the quantiles. In the following plot,
+the quantiles go from left to right. At the far left is the 0th percentile, and
+at the far right is the 100th percentile. Another way to say that is the left is
+the minimum value and the right is the maximum value.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/quantiles.png&#34; alt=&#34;quantiles&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve made no effort to polish this chart; you&amp;rsquo;ll notice that I generated the
+quantiles by taking a vector of 1000 numbers and dividing it by 1000, for
+example.&lt;/p&gt;
+
+&lt;p&gt;Now, as you look at this chart, you can see that near the far right, it suddenly
+jumps&amp;ndash;it has an elbow. Let&amp;rsquo;s zoom in on the last 10% of the chart, i.e. the 90th
+percentile and above:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/95-percent.png&#34; alt=&#34;95th percentile&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s nothing magical about this elbow. There&amp;rsquo;s nothing magical about the last
+10 percent of values. It just so happens that those last few are
+disproportionately larger than the rest. In simple terms, it means that the
+system&amp;rsquo;s model, or perhaps the parameters for its model, apparently changed.
+And if you&amp;rsquo;re going to pick a place to alert on a threshold, maybe a point where
+the behavior diverges rapidly is as good as any and better than some.&lt;/p&gt;
+
+&lt;p&gt;In other words, you could put your threshold just at the point where the
+quantile plot gets steeper, which is about the value 1600 in this dataset.&lt;/p&gt;
+
+&lt;p&gt;Not all data behaves this way. Some metrics will have a nice line all the way up
+and to the right, with no elbow. Some will jump sooner. Some will have a big
+ledge, even several ledges. You&amp;rsquo;ll get all kinds of different shapes and sizes
+of data. The point is to at least &lt;em&gt;know&lt;/em&gt; what shapes and sizes your own data
+has.&lt;/p&gt;
+
+&lt;p&gt;Visualizations like this have a lot of explanatory power and can show you
+potentially surprising things very easily. That&amp;rsquo;s why this kind of
+visualization, rather than just the standard boring time series plot, is not a
+bad thing to know how to do. It&amp;rsquo;s not revolutionary, things like this are used
+in all sorts of ways and by lots of people. &lt;a href=&#34;https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot&#34;&gt;QQ
+plots&lt;/a&gt;, for example, are a
+related technique.&lt;/p&gt;
+
+&lt;p&gt;So I&amp;rsquo;m probably repeating myself too much, but again this is nothing special,
+but it&amp;rsquo;s something anyway. With this approach, there still may not be a strong
+justification for choosing a number as a threshold, but at least there&amp;rsquo;s a
+reason and method, and it&amp;rsquo;s better than cargo cult, a random number generator,
+or copy-and-paste.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the R code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;perf &amp;lt;- read.csv(&amp;quot;/path/to/perf.csv&amp;quot;, sep=&amp;quot;&amp;quot;)
+plot(perf$tput)
+plot(c(1:1000), quantile(perf$tput, probs=c(1:1000)/1000))
+plot(c(900:1000), quantile(perf$tput, probs=c(900:1000)/1000))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Related: someone on Twitter pointed me to &lt;a href=&#34;http://apmblog.dynatrace.com/2012/11/14/why-averages-suck-and-percentiles-are-great/&#34;&gt;this blog post from Dynatrace&lt;/a&gt;.&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>New O&#39;Reilly Book, Anomaly Detection For Monitoring</title>
+          <link>https://www.xaprb.com/blog/2015/08/03/anomaly-detection-book/</link>
+          <pubDate>Mon, 03 Aug 2015 20:21:39 -0400</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/08/03/anomaly-detection-book/</guid>
+          <description>&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; the book is now available from
+&lt;a href=&#34;https://ruxit.com/anomaly-detection/&#34;&gt;https://ruxit.com/anomaly-detection/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Together with &lt;a href=&#34;http://preet.am/&#34;&gt;Preetam Jinka&lt;/a&gt;, I&amp;rsquo;m writing a book for O&amp;rsquo;Reilly
+called &lt;em&gt;Anomaly Detection for Monitoring&lt;/em&gt; (working title).&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d like your help with this. Would you please comment,
+&lt;a href=&#34;https://twitter.com/xaprb&#34;&gt;tweet&lt;/a&gt;, or &lt;a href=&#34;mailto:baron@xaprb.com&#34;&gt;email&lt;/a&gt; me
+examples of anomaly detection used for monitoring; and monitoring problems that
+frustrate you, which you think anomaly detection might help solve?&lt;/p&gt;
+
+&lt;p&gt;Thanks in advance.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/08/outlier.jpg&#34; alt=&#34;Outlier&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/mjfonseca/8392780221/&#34;&gt;Pic Credit&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>Can Anomaly Detection Solve Alert Spam?</title>
+          <link>https://www.xaprb.com/blog/2014/06/02/can-anomaly-detection-solve-alert-spam/</link>
+          <pubDate>Mon, 02 Jun 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/06/02/can-anomaly-detection-solve-alert-spam/</guid>
+          <description>&lt;p&gt;Anomaly detection is all the buzz these days in the &amp;ldquo;#monitoringlove&amp;rdquo; community.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/06/anomaly.jpg&#34; alt=&#34;anomaly&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The conversation usually goes something like the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Alerts are spammy and often generate false positives.&lt;/li&gt;
+&lt;li&gt;What you really want to know is when something anomalous is happening.&lt;/li&gt;
+&lt;li&gt;Anomaly detection can replace static thresholds and heuristics.&lt;/li&gt;
+&lt;li&gt;The result will be better accuracy and lower noise.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;m going to give a &lt;a href=&#34;https://vividcortex.com/anomaly-detection-webinar/&#34;&gt;webinar about the science of statistical anomaly detection on June 17th&lt;/a&gt;. Sorry, no spoilers will be given here. You&amp;rsquo;ll have to attend the webinar to find out what I think on the above topics.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/matthileo/3888057995/&#34;&gt;Pic Credit&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Thinking clearly about fitting a model to data</title>
+          <link>https://www.xaprb.com/blog/2013/01/31/thinking-clearly-about-fitting-a-model-to-data/</link>
+          <pubDate>Thu, 31 Jan 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/01/31/thinking-clearly-about-fitting-a-model-to-data/</guid>
+          <description>&lt;p&gt;I have often seen people fitting curves to sets of data without first understanding whether that is appropriate. I once even &lt;a href=&#34;https://www.xaprb.com/blog/2011/01/15/sleep-while-you-can-because-it-wont-last-long/&#34; title=&#34;Sleep while you can, because it won’t last long&#34;&gt;used this blog&lt;/a&gt; to criticize someone for doing that.&lt;/p&gt;
+
+&lt;p&gt;I was trying to explain that it&amp;rsquo;s wrong to fit a model to a set of measurements, unless the model actually describes the process that produced the measurements.&lt;/p&gt;
+
+&lt;p&gt;All of my explanations (and rants) have fallen far short of the clarity and simplicity of this &lt;a href=&#34;http://graphpad.com/guides/prism/6/curve-fitting/&#34;&gt;curve-fitting guide&lt;/a&gt;. It&amp;rsquo;s a user&amp;rsquo;s manual for the GraphPad software, but it&amp;rsquo;s really about curve-fitting in general. It is &lt;em&gt;excellent&lt;/em&gt; reading. Here are a few selected gems:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Choosing a model is a scientific decision. You should base your choice on your understanding of chemistry or physiology (or genetics, etc.). The choice should not be based solely on the shape of the graph&amp;hellip; Don&amp;rsquo;t use a computer program as a way to avoid understanding your experimental system, or to avoid making scientific decisions.&lt;/p&gt;
+
+&lt;p&gt;Your goal in using a model is not necessarily to describe your system perfectly. A perfect model may have too many parameters to be useful. Rather, your goal is to find as simple a model as possible that comes close to describing your system. You want a model to be simple enough so you can fit the model to data, but complicated enough to fit your data well and give you parameters that help you understand the system, reach valid scientific conclusions, and design new experiments.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This software user&amp;rsquo;s manual is better than any textbook I&amp;rsquo;ve read. There&amp;rsquo;s no fluff, just common sense, uncommonly well-written.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll leave you with another example of curve-fitting that took place recently: &lt;a href=&#34;http://redmonk.com/dberkholz/2013/01/21/github-will-hit-5-million-users-within-a-year/&#34;&gt;predicting Github&amp;rsquo;s user growth&lt;/a&gt;. Does the author use a model that&amp;rsquo;s known to actually describe the processes at work in the growth of a population? A commenter makes a &lt;em&gt;great&lt;/em&gt; point: &amp;ldquo;I&amp;rsquo;d love to see what happens if you just fit to the first 3 years and chart out the modelled prediction vs reality for years 4 and 5.&amp;rdquo; That&amp;rsquo;s one of the fastest ways to tell whether you&amp;rsquo;re seeing things. All meaning has pattern, but not all pattern has meaning. That&amp;rsquo;s a Neil Gunther quote.&lt;/p&gt;
+
+&lt;p&gt;Speaking of that, Neil Gunther counters with a &lt;a href=&#34;https://groups.google.com/d/topic/guerrilla-capacity-planning/Hd9SQy654c4/discussion&#34;&gt;power law model&lt;/a&gt;. He thinks Redmonk is wrong and it&amp;rsquo;ll take quite a bit longer for Github to hit 5 million users. My money&amp;rsquo;s on Neil Gunther.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Determining the Universal Scalability Law&#39;s coefficient of performance</title>
+          <link>https://www.xaprb.com/blog/2013/01/02/determining-the-universal-scalability-laws-coefficient-of-performance/</link>
+          <pubDate>Wed, 02 Jan 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/01/02/determining-the-universal-scalability-laws-coefficient-of-performance/</guid>
+          <description>&lt;p&gt;If you&amp;rsquo;re familiar with Neil Gunther&amp;rsquo;s Universal Scalability Law, you may have heard it said that there are two coefficients, variously called alpha and beta or sigma and kappa. There are actually three coefficients, though. See?&lt;/p&gt;
+
+&lt;p&gt;\[
+C(N) = \frac{N}{1 + \sigma(N-1) + \kappa N (N-1)}
+\]&lt;/p&gt;
+
+&lt;p&gt;No, you don&amp;rsquo;t see it &amp;ndash; but it&amp;rsquo;s actually there, as a hidden 1 multiplied by N in the numerator on the right-hand side. When you&amp;rsquo;re using the USL to model a system&amp;rsquo;s scalability, you need to use the C(1), the &amp;ldquo;capacity at one,&amp;rdquo; as a multiplier. I call this the coefficient of performance. It&amp;rsquo;s rarely 1; it&amp;rsquo;s usually thousands.&lt;/p&gt;
+
+&lt;p&gt;To illustrate why this matters, consider two systems&amp;rsquo; throughput as load increases:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/01/coeff-of-performance.png&#34; alt=&#34;coefficient of performance&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The green line and the blue line are both linearly scalable systems. Add twice the concurrency, get twice the throughput. But the slope of the lines is different. The blue system can do twice as much work as the green system, even though it&amp;rsquo;s no more scalable.&lt;/p&gt;
+
+&lt;p&gt;To model the USL, you need to determine C(1) by measuring the system under test. In my experience with real systems running in production, mostly MySQL servers, this is not simple. You can&amp;rsquo;t just say &amp;ldquo;let&amp;rsquo;s quiet the web app down, I want to load it with exactly one user for a few minutes and measure how fast it runs.&amp;rdquo; Instead, you get a bunch of samples from production traffic, and you &lt;a href=&#34;https://www.xaprb.com/blog/2013/01/03/determining-the-usls-coefficient-of-performance-part-2/&#34;&gt;derive&lt;/a&gt; the throughput at concurrency=1 from that.&lt;/p&gt;
+
+&lt;p&gt;The result goes into the numerator as a multiplier of N, although it&amp;rsquo;s usually omitted when the USL formula is shown.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re interested in learning more, I wrote an &lt;a href=&#34;https://www.vividcortex.com/resources/universal-scalability-law/&#34;&gt;ebook about the Universal
+Scalability Law&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Trending data with a moving average</title>
+          <link>https://www.xaprb.com/blog/2012/10/29/trending-data-with-a-moving-average/</link>
+          <pubDate>Mon, 29 Oct 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/10/29/trending-data-with-a-moving-average/</guid>
+          <description>&lt;p&gt;In my recent talk at Surge and Percona Live about adaptive fault detection (&lt;a href=&#34;https://www.xaprb.com/blog/2012/10/02/adaptive-fault-detection-in-mysql-servers/&#34;&gt;slides&lt;/a&gt;), I claimed that hardcoded thresholds for alerting about error conditions are usually best to avoid in favor of dynamic or adaptive thresholds. (I actually went much further than that and said that it&amp;rsquo;s possible to detect faults with great confidence in many systems like MySQL, without setting any thresholds at all.)&lt;/p&gt;
+
+&lt;p&gt;In this post I want to explain a little more about the moving averages I used for determining &amp;ldquo;normal&amp;rdquo; behavior in the examples I gave. There are two obvious candidates for moving averages: straightforward moving averages and exponentially weighted moving averages.&lt;/p&gt;
+
+&lt;p&gt;A straightforward moving average just computes the average (mean) over the last N samples of data. In my case, I used 60 samples. This requires keeping an array of the previous N samples and updating the average for every sample.&lt;/p&gt;
+
+&lt;p&gt;An exponential moving average doesn&amp;rsquo;t require keeping samples. The average is a single number and you have a so-called &amp;ldquo;smoothing factor&amp;rdquo; &amp;alpha;. For every new sample, you multiply the old average by 1-&amp;alpha; and then add it to the new sample times &amp;alpha;: \( \mathit{avg} = (1-\alpha) \mathit{avg} + \alpha \mathit{sample} \)&lt;/p&gt;
+
+&lt;p&gt;You can read more about that &lt;a href=&#34;https://www.vividcortex.com/blog/2014/11/25/how-exponentially-weighted-moving-averages-work/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Both techniques have their drawbacks. Both require a warm-up period, for example. Obviously, in the case of a 60-sample moving window, you require 60 samples before you can begin. The exponential moving average can be primed from the mean of the first 10 samples, in my experience. Both techniques also lag the trend in the samples to some extent. When there&amp;rsquo;s a dramatic change in the pattern, they take a while to &amp;ldquo;catch up.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a plot of some real data and the two techniques. Click through to see a larger image. The blue line is the sampled data, the red line is an exponential moving average with an average 60-second &amp;ldquo;memory,&amp;rdquo; and the yellow line is a 60-second moving average.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.xaprb.com/media/2012/10/moving-averages.png&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2012/10/moving-averages.png&#34; title=&#34;moving-averages&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Notice how the red line tends to course-correct more quickly and stay more true to the current behavior of the blue line. This is one advantage of the exponential moving average &amp;ndash; if that is what you desire.&lt;/p&gt;
+
+&lt;p&gt;It isn&amp;rsquo;t obvious in this data, but the simple moving average has another disadvantage. Suppose there is a spike of very high values in the sampled data for a few seconds. For the next 60 seconds, this spike is going to be within the window, inflating the moving average. When it is discarded from the window, it causes the moving average to drop suddenly. I have found this to be problematic in several cases. It&amp;rsquo;s especially obvious when you&amp;rsquo;re calculating the standard deviation of the samples (or other sensitive statistics) over the moving window.&lt;/p&gt;
+
+&lt;p&gt;The exponential moving average doesn&amp;rsquo;t have that problem because that spike never moves &amp;ldquo;out of the window.&amp;rdquo; Its influence is there forever &amp;ndash; but as time passes, it gradually becomes smaller, in a smooth fashion. So you don&amp;rsquo;t get abrupt spikes in the current average based on what happened 60 seconds ago.&lt;/p&gt;
+
+&lt;p&gt;This is just scratching the surface of the techniques I&amp;rsquo;ve explored on a large set of days to weeks of data from tens of thousands of real servers. As I get time, I&amp;rsquo;ll try to write more about it in the future.&lt;/p&gt;
+</description>
+        </item>
+    
+
+  </channel>
+</rss>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+	<meta name="generator" content="Hugo 0.17" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Baron Schwartz&#39;s Blog &middot; Stay Curious!
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/17/maximizing-filesystem-portability/">How to make file names cross-platform</a></h1>
+        <span class="post-date">Thu, Nov 17, 2005</span>
+        Using a filesystem, such as an external hard drive, across mutiple platforms can sometimes cause annoying behaviors. For example, filenames may be changed to all uppercase or all lowercase, which may cause problems on a system with case-sensitive filenames or vice versa. Here are my suggestions for minimizing conflicts.
+Use only letters and numbers, underscores, and dashes Avoid using characters that any system treats as special characters, not just your own.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/17/maximizing-filesystem-portability/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/15/a-bug-in-microsoft-sql-servers-replace-function/">A bug in Microsoft SQL Server&#39;s replace() function</a></h1>
+        <span class="post-date">Tue, Nov 15, 2005</span>
+        I have found a bug in Microsoft SQL Server&rsquo;s replace() function. The function treats char and varchar differently, and replacements will fail in some cases. Here is a demonstration of the bug:
+declare @string varchar(40), @find char(2), @replace char(1) set @string = 'two spaces' set @find = ' ' set @replace = ' ' if replace(@string, @find, @replace) = 'two spaces' print 'Replacement worked' else print 'Replacement failed' Result: &ldquo;Replacement failed.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/15/a-bug-in-microsoft-sql-servers-replace-function/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/15/use-microsoft-sql-servers-openxml-sparingly/">Efficient alternatives to Microsoft SQL Server&#39;s openxml</a></h1>
+        <span class="post-date">Tue, Nov 15, 2005</span>
+        Microsoft SQL Server&rsquo;s openxml function is highly CPU-intensive. This article demonstrates more efficient alternatives to openxml.
+Why people use openxml A common usage for openxml is to use XML to pass a &ldquo;list&rdquo; or &ldquo;table&rdquo; of values into a stored procedure. Here is a scenario I&rsquo;ve seen a lot at my current job:
+ An ASP accepts a string as input, such as &ldquo;ipod car adapter&rdquo; The ASP parses the input into space-separated values, then concatenates them together into XML The ASP passes the XML to a stored procedure The sproc uses openxml to populate a temporary table from the XML The sproc does some work (such as searching a product catalog)  This is fine, except openxml can cause a huge CPU spike, which is bad news in a Web-facing search server during holiday shopping season.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/15/use-microsoft-sql-servers-openxml-sparingly/"> &raquo; Continue Reading (about 1000 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/07/html-elements-for-form-accessibility/">Seldom-used HTML form elements</a></h1>
+        <span class="post-date">Mon, Nov 7, 2005</span>
+        Some of the neatest parts of standard HTML are the least-used. Forms in particular can become much more usable and accessible when marked up correctly with a few standard HTML elements. These are LABEL (and the related CSS outline property), OPTGROUP, LEGEND, and FIELDSET.
+Before I launch into this article, I challenge you to read the list of HTML 4 elements and ask yourself how many of these you use regularly.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/07/html-elements-for-form-accessibility/"> &raquo; Continue Reading (about 800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/06/protect-your-privacy-online/">How to guard your privacy with blacklists and whitelists</a></h1>
+        <span class="post-date">Sun, Nov 6, 2005</span>
+        This article explains how to protect your privacy online, without impairing your ability to surf, by creating a content blacklist and a cookie whitelist. In my opinion, this is the most effective combination of privacy controls that doesn&rsquo;t inhibit normal browsing.
+Motivation: don&rsquo;t tell &ldquo;them&rdquo; any more about myself than I have to I work in Internet commerce, and I&rsquo;m excruciatingly aware of the dozens of companies whose sole purpose is to gather statistics about surfers.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/06/protect-your-privacy-online/"> &raquo; Continue Reading (about 1400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/04/vbscript-regular-expression-gotchas/">How to avoid VBScript regular expression gotchas</a></h1>
+        <span class="post-date">Fri, Nov 4, 2005</span>
+        VBScript regular expressions are slightly troublesome, though they certainly help turn VBScript into less of a joke when it comes to text processing. The syntax lacks some of the niceties of Perl or .NET regexes, but is complete enough to be very useful. This article shows you how to avoid potentially serious problems, and explains an undocumented feature.
+Undocumented and incorrect behavior  The documentation is incomplete. The RegExp object has an undocumented property, Multiline, which affects pattern matching using the .
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/04/vbscript-regular-expression-gotchas/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/03/insecure-default-order-of-access-to-resources/">How to exploit an insecure order of access to resources</a></h1>
+        <span class="post-date">Thu, Nov 3, 2005</span>
+        When gaining access to resources, such as loading a DLL or invoking a program, beware of default order of access. Insecure defaults can result in using the wrong resource. I find this particularly a problem on the Microsoft platform. Here are two cases where the Microsoft approach, designed to &ldquo;make it easy,&rdquo; ends up making it insecure instead.
+Invoking an executable program If you do not specify the absolute location of the executable, where does the OS look for it?
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/03/insecure-default-order-of-access-to-resources/"> &raquo; Continue Reading (about 800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/03/captchas-are-a-terrible-thing/">Why CAPTCHAs don&#39;t work well</a></h1>
+        <span class="post-date">Thu, Nov 3, 2005</span>
+        CAPTCHAs are tests (usually using images) designed to ensure a human is using a service, denying access to screen-scrapers and abusive script kiddies. Unfortunately they create usability and accessibility problems and can be circumvented. They are a flawed concept overall. Here are some links to sites discussing their use and problems:
+ CAPTCHAs on Wikipedia CAPTCHAs are fallible CAPTCHAs are inaccessible more CAPTCHA inacessibility discussion we can do better than CAPTCHAs  Yahoo!
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/03/captchas-are-a-terrible-thing/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/02/microsofts-sp_grep-system-stored-procedure-improved/">Microsoft&#39;s sp_grep system stored procedure improved</a></h1>
+        <span class="post-date">Wed, Nov 2, 2005</span>
+        Here is a quick patch to Microsoft&rsquo;s sp_grep system stored procedure, for SQL Server 2000. The changes will enable searching job steps, and return the correct object type for functions. The MS-supplied stored procedure isn&rsquo;t that well-written (doesn&rsquo;t even use ANSI joins), but this patch doesn&rsquo;t correct any style or other issues.
+34a32,36 &gt; insert into #tset &gt; select distinct '', j.name, 'JB' from msdb..sysjobs as j(nolock) &gt; inner join msdb.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/02/microsofts-sp_grep-system-stored-procedure-improved/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/26/adblock-patterns/">How to block ads effectively with AdBlock regular expressions</a></h1>
+        <span class="post-date">Wed, Oct 26, 2005</span>
+        One of the greatest things about Firefox is the ability to customize the browser with extensions. By far my favorite extension is Adblock. It allows you to specify arbitrary regular expression patterns to block your browser from fetching and displaying content. The regular expression syntax is standard JavaScript syntax, based on Perl 5.
+Blocking content is a delicate dance. It&rsquo;s very easy to block too much, so the patterns need to be fairly specific.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/26/adblock-patterns/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/21/quotes-around-xml-attribute-values/">How to quote and encode XML attribute values</a></h1>
+        <span class="post-date">Fri, Oct 21, 2005</span>
+        Attribute values in XML are usually double-quoted, but single-quotes can be used as well, according to the relevant part of the XML Spec. Here is the production:
+[10] AttValue ::= '"' ([^&lt;&"] | Reference)* '"' | "'" ([^&lt;&'] | Reference)* "'" In plain English: an attribute consists of
+ a double or single quote any number of the following:  any character but &lt;, &amp; or &ldquo; OR an entity reference  the same character that was used to begin the attribute (double or single quote)  What&rsquo;s most interesting about this to me is that a &lt; is forbidden inside attribute values, but a &gt; is not.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/21/quotes-around-xml-attribute-values/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/21/read-the-clipboard-from-javascript/">How to read the clipboard from JavaScript</a></h1>
+        <span class="post-date">Fri, Oct 21, 2005</span>
+        Microsoft Internet Explorer exposes the contents of the clipboard to JavaScript on websites. This is a bad thing.
+Just another in the long string of examples how Microsoft, in an attempt to get developers on board and build the largest software empire in the world, has made everything easy for the developers, and totally disregarded security.
+My personal opinion, as always, is Internet Explorer should never be used.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/21/read-the-clipboard-from-javascript/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/14/how-to-create-a-vb6-console-program/">How to  create a VB6 console program</a></h1>
+        <span class="post-date">Fri, Oct 14, 2005</span>
+        Visual Basic 6 programs can be run as console programs, if configured correctly. There are four basic requirements to create a useful console program in VB6:
+ Remove all forms and dialogs Provide access to standard input, output, and error streams Provide access to the command-line arguments Re-link the program for the Windows Console subsystem  Remove forms and dialogs By default, a VB6 project has &ldquo;forms&rdquo; or &ldquo;windows,&rdquo; which can contain application code.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/14/how-to-create-a-vb6-console-program/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/12/visual-sourcesafe-automation-interface/">How to use the Visual SourceSafe automation interface</a></h1>
+        <span class="post-date">Wed, Oct 12, 2005</span>
+        Microsoft Visual SourceSafe provides an automation interface that can be used from within VBScript, VB6 and other languages. This article lists the options for automating SourceSafe, provides links to documentation, and discusses some bugs that are impossible to work around.
+Documentation I am in the unenviable position of needing to write a VBScript program to interact with SourceSafe. Unfortunately the documentation is hard to find and not at all clear or user-friendly.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/12/visual-sourcesafe-automation-interface/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/11/list-styling-in-ie-and-mozilla/">How to style HTML lists consistently in all browsers</a></h1>
+        <span class="post-date">Tue, Oct 11, 2005</span>
+        IE&rsquo;s and Mozilla&rsquo;s ordered and unordered lists are rendered similarly by default, but the way the list is indented is opposite in the two browsers. Understanding how to style lists correctly is key to avoiding unexpected ugliness. In this article, I explain how UL and OL are styled by default, how to re-style them so they behave consistently, and uncover an incompatibility that cannot be fixed.
+The example list is the same as the example list used in the CSS list-style-position property definition.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/11/list-styling-in-ie-and-mozilla/"> &raquo; Continue Reading (about 900 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/05/review-of-the-iriver-hd340/">Review of the iRiver HD340</a></h1>
+        <span class="post-date">Wed, Oct 5, 2005</span>
+        The iRiver HD340 is a 40GB hard-drive-based multi-codec music player, radio, text reader, and image viewer. I have had mine for about 6 months now. I have found some strengths and weaknesses that do not seem to be common knowledge. As usual, I will try to avoid giving information available elsewhere on the Internet.
+I use my unit solely to listen to my CD collection and have not used its other functions much.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/05/review-of-the-iriver-hd340/"> &raquo; Continue Reading (about 1100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/03/prelinking-mozilla-firefox-bin/">How to prelink mozilla-firefox-bin</a></h1>
+        <span class="post-date">Mon, Oct 3, 2005</span>
+        Gentoo GNU/Linux users can enjoy additional performance enhancements by prelinking binaries. The documentation is unclear on whether binary packages can be prelinked. I tried it and it seems to work fine.
+It is clear that any software I&rsquo;ve compiled on my own machine can be safely prelinked, but since I have a very slow, old laptop, I also use some software precompiled as binary packages. Mozilla Firefox is one (emerge mozilla-firefox-bin).
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/03/prelinking-mozilla-firefox-bin/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/03/understanding-sql-joins/">How to understand SQL joins</a></h1>
+        <span class="post-date">Mon, Oct 3, 2005</span>
+        I have noticed many people do not understand SQL joins, even after somewhat successfully using them for a time. Joins are key to understanding SQL. This article explains what joins really are and what they really do.
+Many programmers learn SQL by writing it. I learned it by studying relational algebra under the tutelage of a theoretically-minded specialist in real-time databases. I never spoke of tables and columns; I thought in sigmas and other funny letters, and I spoke of tuples and relations.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/03/understanding-sql-joins/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/09/29/javascript-combo-box/">JavaScript combo box</a></h1>
+        <span class="post-date">Thu, Sep 29, 2005</span>
+        If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: Flexible JS Formatting Libraries Like the JavaScript date chooser, I created this after searching the Internet for something to accomplish what I needed. Most of what I found was very complex; it dynamically overlaid select menus with text intputs and so forth. And most of it wasn&rsquo;t free, which is absurd.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/09/29/javascript-combo-box/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/09/29/javascript-date-chooser/">JavaScript date chooser</a></h1>
+        <span class="post-date">Thu, Sep 29, 2005</span>
+        If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: Flexible JS Formatting Libraries I wrote this date chooser because the ones I could find on the Internet were crummy, too complicated, or not free. The point is to make form entry more usable and help the user enter valid data (of course, you still need to validate your input when processing).
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/09/29/javascript-date-chooser/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/page/53/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/page/55/">Older</a>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

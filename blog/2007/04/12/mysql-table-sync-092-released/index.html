@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      MySQL Table Sync 0.9.2 released &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="MySQL Table Sync 0.9.2 released" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2007/04/12/mysql-table-sync-092-released/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2007/04/12/mysql-table-sync-092-released/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL Table Sync 0.9.2 released</h1>
+  <span class="post-date">Thu, Apr 12, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f12%2fmysql-table-sync-092-released%2f&text=MySQL%20Table%20Sync%200.9.2%20released:https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f12%2fmysql-table-sync-092-released%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f12%2fmysql-table-sync-092-released%2f&title=MySQL%20Table%20Sync%200.9.2%20released&summary=MySQL%20Table%20Sync%200.9.2%20released&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f12%2fmysql-table-sync-092-released%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f12%2fmysql-table-sync-092-released%2f&t=MySQL%20Table%20Sync%200.9.2%20released" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f12%2fmysql-table-sync-092-released%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>MySQL Table Sync 0.9.2 is a bug-fix release. Since the last release users have reported several bugs. I am still postponing new features until after the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo</a>, because I am focusing on <a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213">the innotop session</a> I&rsquo;ll be presenting at the conference.</p>
+
+<p>I have also created a new mailing list on <a href="http://code.google.com/p/maatkit">sourceforge</a> for discussing all things MySQL Toolkit. Thanks to a user for suggesting the mailing list &ndash; I needed a nudge.</p>
+
+<p>What&rsquo;s new in version 0.9.2?</p>
+
+<ul>
+<li>Documentation (added OPTIONS section to perldoc).</li>
+<li>Bug fix: get a row at a time from the server by default. I didn&rsquo;t notice that the default behavior for the DBD driver is to fetch the entire result set into memory! This is a terrible idea on really large tables. This fix causes MySQL Table Sync to fetch a single row at a time from the server, so it never uses much memory and runs faster now.</li>
+<li>Bug fix: when the user specifies &#8211;columns, ignore other columns. You can sync common columns in otherwise different tables now, and you can compare and sync only specified columns.</li>
+<li>Bug fix: make sure fetch handle is active before trying to fetch a row. This isn&rsquo;t an issue in my development environment, but apparently some versions of Perl (?) or DBI (?) or DBD (?) have different behavior when the end of the resultset is hit. This fix makes more versions of whatever-is-the-problem happy.</li>
+</ul>
+
+<p>More goodies will be forthcoming after the conference and whatever I end up doing to innotop in the next few weeks. There are many un-implemented or partially implemented features, and I intend to fix that.</p>
+
+<h3 id="about-mysql-toolkit">About MySQL Toolkit</h3>
+
+<p><a href="http://code.google.com/p/maatkit">MySQL Toolkit</a> is a set of essential tools for MySQL users, developers and administrators. The project&rsquo;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as <code>awk</code> and <code>sed</code>.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2007/04/23/mysql-conference-and-expo-2007-day-1/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2007/04/10/the-innotop-session-at-mysqlconf-2007/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2007\/04\/12\/mysql-table-sync-092-released\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      An exciting week for InnoDB and MySQL &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="An exciting week for InnoDB and MySQL" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2011/07/26/an-exciting-week-for-innodb-and-mysql/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2011/07/26/an-exciting-week-for-innodb-and-mysql/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">An exciting week for InnoDB and MySQL</h1>
+  <span class="post-date">Tue, Jul 26, 2011 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f07%2f26%2fan-exciting-week-for-innodb-and-mysql%2f&text=An%20exciting%20week%20for%20InnoDB%20and%20MySQL:https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f07%2f26%2fan-exciting-week-for-innodb-and-mysql%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f07%2f26%2fan-exciting-week-for-innodb-and-mysql%2f&title=An%20exciting%20week%20for%20InnoDB%20and%20MySQL&summary=An%20exciting%20week%20for%20InnoDB%20and%20MySQL&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f07%2f26%2fan-exciting-week-for-innodb-and-mysql%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f07%2f26%2fan-exciting-week-for-innodb-and-mysql%2f&t=An%20exciting%20week%20for%20InnoDB%20and%20MySQL" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f07%2f26%2fan-exciting-week-for-innodb-and-mysql%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>Congratulations and thanks to Monty Program on the release of <a href="http://kb.askmonty.org/en/what-is-mariadb-53">MariaDB 5.3</a>! This looks like a great release. (I haven&rsquo;t had a chance to try it yet.) I really welcome the query optimizer improvements; the list of changes is huge. There are a lot of fixes for problems I&rsquo;ve seen for years. And there&rsquo;s group commit, and high-resolution date/time types, and lots more.</p>
+
+<p>And congratulations and thanks to Oracle on the next series of <a href="http://www.oracle.com/us/corporate/press/439460">previews of what MySQL 5.6 will look like</a>, including full-text search inside InnoDB, performance and scalability improvements, and usability and operational improvements. I love the batch of <a href="http://blogs.innodb.com/wp/2011/07/">informational blog posts from the InnoDB team</a> and others that usually comes out around such announcements. I learn a lot from reading them &ndash; I can claim to know a bit about using InnoDB, and even its source code to some extent, but the real experts are the ones who create it. There is a lot to know about such a complex system, and it&rsquo;s great to have more than just the manual to learn from.</p>
+
+<p>It is also really nice &ndash; and this is <em>not</em> a gratuitous self-serving plug, but a sincere opinion I would have whether I worked for Percona or not &ndash; to see that a lot of improvements from Percona and others are ending up in both Oracle&rsquo;s and Monty Program&rsquo;s versions of MySQL. When you combine the work that Oracle, Monty Program, Percona, Facebook, eBay, Google, DeNA, and many others are doing with InnoDB and MySQL, I think you can make the case that MySQL development is accelerating rapidly and MySQL has a very bright future. I am very happy that a lot of these features and improvements are getting field-tested to prove both their value and the correctness and quality of the engineering before becoming part of the &ldquo;official&rdquo; MySQL releases. Oracle&rsquo;s version of MySQL is really shaping up to be <a href="/blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/" title="What would make me buy MySQL Enterprise?">the MySQL Enterprise I used to wish for</a>.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2011/07/28/easy-on-the-eyes-the-solarized-color-theme/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2011/07/19/ill-be-presenting-at-postgres-open-2011/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2011\/07\/26\/an-exciting-week-for-innodb-and-mysql\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

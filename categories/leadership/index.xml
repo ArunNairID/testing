@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> </title>
+    <link>https://www.xaprb.com/categories/leadership/index.xml</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>Copyright (c) 2016</rights>
+    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
+
+    
+        <item>
+          <title>Product Market Fit</title>
+          <link>https://www.xaprb.com/blog/product-market-fit/</link>
+          <pubDate>Sat, 31 Dec 2016 10:26:11 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/product-market-fit/</guid>
+          <description>&lt;p&gt;The way I think about product/market fit has changed a lot over the years. I
+view it differently than I used to.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/12/whiskey-stones.jpg&#34; alt=&#34;Whiskey Stones&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I used to think of product/market fit along the lines of: users are enthusiastic, word of mouth is positive, people are delighted, the app is a joy to use, it makes hard things easy, it nails the use case&amp;mdash;the app solves a problem or meets a need in such a way that it makes users happy. I&amp;rsquo;ve built the right thing to do the right thing in the right way. Obviously product/market fit, right?&lt;/p&gt;
+
+&lt;p&gt;Nope. That&amp;rsquo;s service/user fit, not product/market fit. It&amp;rsquo;s not a bad thing, but it&amp;rsquo;s &lt;em&gt;totally&lt;/em&gt; different. It took me a while to see that.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s dig into what those three words (product, market, fit) mean. The following discussion is especially informed by my experience in business-to-business, but the general concepts are just as true in B2C or other types of businesses.&lt;/p&gt;
+
+&lt;h3 id=&#34;product&#34;&gt;Product&lt;/h3&gt;
+
+&lt;p&gt;What is a product? A lot of people, especially engineers, especially past-me, think the product is the thing they build. I used to think of the product as the app, the service, the UI, the UX, the functionality. This couldn&amp;rsquo;t be further from the truth. The product isn&amp;rsquo;t what you &lt;em&gt;build&lt;/em&gt;. The product is what you &lt;em&gt;sell&lt;/em&gt;. It&amp;rsquo;s easy to confuse one for the other, but important to understand the difference.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s take whiskey stones as an example. Look at listings on Amazon and you&amp;rsquo;ll see sellers promoting the benefits of whiskey stones: chills your bourbon without diluting it with meltwater, no mess, reusable, convenient, etc. Sounds legit, right?&lt;/p&gt;
+
+&lt;p&gt;But what&amp;rsquo;s the product, really? Is it the stones? No. To quote the famous line, people don&amp;rsquo;t buy quarter-inch drill bits, they buy quarter-inch holes. The product is the &lt;em&gt;result or outcome&lt;/em&gt;. Ostensibly chilled-but-not-ruined whiskey, but we&amp;rsquo;ll revisit that later.&lt;/p&gt;
+
+&lt;p&gt;If I use a dating app as an example, the product isn&amp;rsquo;t the app, it&amp;rsquo;s companionship. If I use VividCortex, the product isn&amp;rsquo;t &lt;a href=&#34;https://www.vividcortex.com/&#34;&gt;database monitoring&lt;/a&gt;, it&amp;rsquo;s improved revenue through a more responsive and efficient app or service. If the example is group chat, the product isn&amp;rsquo;t chat rooms, it&amp;rsquo;s a more connected and efficient workforce with less need for meetings. (Arguably.)&lt;/p&gt;
+
+&lt;h3 id=&#34;market&#34;&gt;Market&lt;/h3&gt;
+
+&lt;p&gt;Similarly, I used to think of market very differently. I used to think the market was the user, but now I recognize that users don&amp;rsquo;t have to be the buyers. In Geoffrey Moore&amp;rsquo;s classic &lt;em&gt;Crossing the Chasm&lt;/em&gt;, he defines a market as &amp;ldquo;a set of actual or potential &lt;em&gt;customers&lt;/em&gt;, for a given set of products or services, who have a common set of needs or wants, and who reference each other when making a buying decision.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;There are no fluff words in that definition. Importantly, the market is who you sell to. The market is the &lt;em&gt;buyer&lt;/em&gt;, not the user.&lt;/p&gt;
+
+&lt;p&gt;Who is Facebook&amp;rsquo;s market? It isn&amp;rsquo;t the billions of users on their service. It&amp;rsquo;s the advertisers! If you&amp;rsquo;re selling a dating app, your users and buyers are the same. If you&amp;rsquo;re creating a free dating app that&amp;rsquo;s ad-supported, your users and market are not the same. When they&amp;rsquo;re the same, it&amp;rsquo;s just a coincidence. Many or perhaps even most products are sold to someone other than the users.&lt;/p&gt;
+
+&lt;p&gt;At VividCortex, for example, our users are developers, DBAs, technical operations teams, SREs, and the like. And, sure, these are our champions for promoting a sale internally, too. But we don&amp;rsquo;t &lt;em&gt;sell&lt;/em&gt; to them, we sell to VPs and the C-suite and so on. In fact, we sell to &lt;em&gt;organizations&lt;/em&gt;, not individuals.&lt;/p&gt;
+
+&lt;p&gt;A clear understanding of the market helps inform a clear understanding of the product. When you think about who &lt;em&gt;buys&lt;/em&gt; whiskey stones, the difference becomes obvious. If you talk to a whiskey drinker, or just read the reviews on Amazon, you hear something different than the product listing would like you to believe. &amp;ldquo;One star. My brother-in-law gave this to me. I know he meant well, but don&amp;rsquo;t give these as a gift. They&amp;rsquo;re just a hazard. They&amp;rsquo;ll smash your lips, break your teeth, and you&amp;rsquo;ll end up paying thousands of dollars for dental repairs. And they don&amp;rsquo;t chill well.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Who buys whiskey stones? Not whiskey drinkers. The actual market is their brothers-in-law. And that helps clarify what the product really is. The real product here, what the whiskey stone makers are selling, is a warm fuzzy feeling for people who think their brother-in-law is hard to buy for. The product listing, with its supposed benefits, is not designed to appeal to the drinkers, but to their relatives. And it literally plays to their ignorance about whiskey drinking.&lt;/p&gt;
+
+&lt;h3 id=&#34;fit&#34;&gt;Fit&lt;/h3&gt;
+
+&lt;p&gt;You have product/market fit when you have clearly identified the &lt;em&gt;product&lt;/em&gt;, as just explained, and it &lt;em&gt;fits&lt;/em&gt; your &lt;em&gt;market&amp;rsquo;s&lt;/em&gt; needs. Whiskey stone sellers have done a great job of selling warm fuzzies to in-laws; they have very good product/market fit. (What happens after the sale is a different matter.)&lt;/p&gt;
+
+&lt;p&gt;A really important part of fit &lt;em&gt;includes how your market buys&lt;/em&gt;. If you haven&amp;rsquo;t aligned your delivery mechanism with your market&amp;rsquo;s purchasing mechanisms, you don&amp;rsquo;t have product/market fit. For example, if you sell to the government, you probably have to go through approved channels and meet various types of regulatory approval. Otherwise nobody in the government can actually buy what you&amp;rsquo;re selling.&lt;/p&gt;
+
+&lt;p&gt;To put this in terms of VividCortex again: we initially built a database monitoring service that made DBAs happy. Great! Nice service/user fit. Then we had to figure out how to sell it. Creating actual product/market fit required creating a sales team, enunciating our security stance, aligning our processes with the finance departments of our customers, and so on. This was &lt;em&gt;way&lt;/em&gt; more than just the app or service; that&amp;rsquo;s a small fraction of the whole product&amp;mdash;the tip of the proverbial iceberg. This is why I said &lt;a href=&#34;https://www.xaprb.com/blog/four-core-ip/&#34;&gt;sales is a key part of a company&amp;rsquo;s core IP&lt;/a&gt;. In the end, we&amp;rsquo;re selling the whole package&amp;mdash;our entire company&amp;mdash;to each buyer.&lt;/p&gt;
+
+&lt;p&gt;I remember the first time we &amp;ldquo;closed&amp;rdquo; a deal with a big company. We had all the approvals, legal signoff, even a signature on the order form! The money was as good as in-the-bank. The next step was to talk to someone in the procurement department. No big deal, it sounded like we were just talking to finance in the usual way, figuring out who could issue the purchase order and giving them the bank wiring details. NO. This time it was different. They renegotiated the entire deal from scratch, put the hammer down on pricing, and killed the deal, refusing to let the company buy what dozens of people had worked hard to bring into their team for months. What the actual!?!?!&lt;/p&gt;
+
+&lt;p&gt;This was our first customer with a procurement department. As I was about to learn, big companies use these because there&amp;rsquo;s no chance all of their thousands of employees are going to negotiate good deals when they&amp;rsquo;re across the table from a salesperson with decades of experience. So companies put in gatekeepers &lt;em&gt;and give them commissions based on how much they&amp;rsquo;re able to browbeat vendors&lt;/em&gt;. These people can be absolute bulldogs (but usually in a very nice, apparently helpful but my-hands-are-tied way). The definition of their job is to get the vendor on their knees begging.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;It&amp;rsquo;s the end of the quarter and you&amp;rsquo;ve been using our service on hundreds of servers for 6 months already! Pleeeeease!!!&amp;rdquo;  &lt;br&gt;
+&lt;em&gt;I&amp;rsquo;m going on vacation, be back in a couple of weeks.&lt;/em&gt;  &lt;br&gt;
+&amp;ldquo;Who&amp;rsquo;ll handle our case in your absence?&amp;rdquo;  &lt;br&gt;
+&lt;em&gt;OUT OF OFFICE: RE: VividCortex Contract&lt;/em&gt; &lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Your worst nightmare. But you know what? &lt;em&gt;This is part of product/market fit.&lt;/em&gt; If you haven&amp;rsquo;t built your company to sell through your customers&amp;rsquo; purchasing processes, you don&amp;rsquo;t have product/market fit. Your market is your buyers, and procurement is ultimately the buyer in this example.&lt;/p&gt;
+
+&lt;p&gt;Revisiting Moore&amp;rsquo;s definition, it&amp;rsquo;s also helpful to remember that your market isn&amp;rsquo;t individual buyers. It&amp;rsquo;s actually a &lt;em&gt;group&lt;/em&gt; of buyers, plural, with commonalities. This points out that one-off deals don&amp;rsquo;t constitute &amp;ldquo;fit.&amp;rdquo; Fit is achieved when your product, taken as a whole (i.e. not only what you sell, but how you deliver it to your market) fits your market as a whole. You&amp;rsquo;re not trying to create one-by-one fit, you&amp;rsquo;re trying to create something scalable and repeatable.&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h3&gt;
+
+&lt;p&gt;Product/market fit is very different from what I thought when I founded VividCortex. I was really thinking about service/user fit without knowing it. Product/market fit isn&amp;rsquo;t when your users are getting value from your app. It&amp;rsquo;s when you sell the value you create, and your market&amp;mdash;a set of customers with common needs and who have herd buying behavior&amp;mdash;purchases and acquires it effectively.&lt;/p&gt;
+
+&lt;p&gt;All three words (product, market, fit) require clear understanding to succeed.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/srslyguys/5817645686&#34;&gt;Pic Credit&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>Why I&#39;m Not Waiting To Prioritize Diversity</title>
+          <link>https://www.xaprb.com/blog/2016/04/18/why-prioritize-diversity-now/</link>
+          <pubDate>Mon, 18 Apr 2016 10:09:11 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2016/04/18/why-prioritize-diversity-now/</guid>
+          <description>&lt;p&gt;I have a vacant board seat at VividCortex, and I&amp;rsquo;m making diversity one of my priorities as I begin to search. I&amp;rsquo;ve discussed this with a range of people over the last several months. Nearly everyone has asked me to clarify what I&amp;rsquo;m trying to achieve, and why. Some have challenged me to defend why I believe diversity is a must-have at this stage of VividCortex&amp;rsquo;s growth. In the end, it&amp;rsquo;s my job to make the call. I&amp;rsquo;ve decided that diversity is a priority (not the sole priority, but a priority) now, not later. Here&amp;rsquo;s why&amp;mdash;and here&amp;rsquo;s how I&amp;rsquo;m following through on that decision.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/04/board.jpg&#34; alt=&#34;Board&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;purpose-and-audience&#34;&gt;Purpose and Audience&lt;/h3&gt;
+
+&lt;p&gt;I wrote this blog post with a variety of people in mind: my current and future board members and investors, my current and future employees, customers, peers in similar positions, and the unanticipatable readers who might be influenced by reading what I write. I&amp;rsquo;m also thinking about the people who might be motivated and able to help me after reading this.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d like to think that I&amp;rsquo;m not just another white man who feels enlightened and wants people to know that he cares about diversity. This isn&amp;rsquo;t written from a place of guilt or difficult-to-verbalize strong feelings. I&amp;rsquo;ve thought a lot about this, gone through several drafts over a period of months, and sought reviews and feedback from many people.&lt;/p&gt;
+
+&lt;p&gt;Writing this is a way for me to clarify, for myself and others, the position I&amp;rsquo;ve adopted and how I&amp;rsquo;ve arrived at it. My goal is not to express a sense of completion and finality, but to continue the process of learning, listening, and seeking and considering advice. To the extent that sharing this publicly is valuable to others, that&amp;rsquo;s good too.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-benefits-of-diversity&#34;&gt;The Benefits of Diversity&lt;/h3&gt;
+
+&lt;p&gt;A huge number of studies across many years show that diverse groups of people outperform in a variety of ways. In a nutshell, diverse groups of people make better decisions, solve complex problems better, consider more solutions to challenges, have access to more resources, execute more quickly, are more ethical, have fewer problems and make fewer mistakes, are more cost efficient, grow more quickly, and generate higher revenues.&lt;/p&gt;
+
+&lt;p&gt;This is true across a variety of industries, and it&amp;rsquo;s especially true when there&amp;rsquo;s diversity in leadership positions.&lt;/p&gt;
+
+&lt;p&gt;An aside: in technology, diversity is often a synonym for &lt;em&gt;gender&lt;/em&gt; diversity, specifically, &lt;em&gt;women in tech&lt;/em&gt;. It shouldn&amp;rsquo;t be; we should consider age, race, geography of origin, socioeconomic class, sexual identity, native language, and much more. But in 2016, women-in-tech is often the primary type of diversity that people think about in tech. It also seems to have been the subject of more formal studies.&lt;/p&gt;
+
+&lt;p&gt;What do those studies find? Here are a few examples, focused mostly on women in tech:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Companies with at least one female board member had a return on equity of 14.1 percent over the past nine years, greater than the 11.2 percent for those without any women. The stock valuations are also higher for gender diverse boards versus all-male ones.&amp;rdquo; Source: &lt;a href=&#34;http://thinkprogress.org/economy/2014/09/25/3572355/women-on-boards-performance/&#34;&gt;Credit Suisse&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;The findings were startlingly consistent: for companies ranking in the top quartile of executive-board diversity, ROEs were 53 percent higher, on average, than they were for those in the bottom quartile. At the same time, EBIT margins at the most diverse companies were 14 percent higher, on average, than those of the least diverse companies. The results were similar across all but one of the countries we studied; an exception was ROE performance in France; but even there, EBIT was 50 percent higher for diverse companies.&amp;rdquo; Source: &lt;a href=&#34;http://www.mckinsey.com/business-functions/organization/our-insights/is-there-a-payoff-from-top-team-diversity&#34;&gt;McKinsey&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Organizations that are the most inclusive of women in top management achieve 35% higher ROE and 34% better total return to shareholders versus their peers&amp;mdash;and research shows gender diversity to be particularly valuable where innovation is key.&amp;rdquo; Source: &lt;a href=&#34;http://www.illuminate.com/whitepaper/&#34;&gt;Illuminate Ventures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;These are not isolated examples. Here are a few other links; you can find thousands with a quick Google search:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.dianaproject.org/publications/publicationsfordow/&#34;&gt;http://www.dianaproject.org/publications/publicationsfordow/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://finance.yahoo.com/news/average-stock-price-gender-diverse-083000305.html&#34;&gt;http://finance.yahoo.com/news/average-stock-price-gender-diverse-083000305.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://thinkprogress.org/economy/2012/07/31/612571/study-companies-women-perform-better/&#34;&gt;http://thinkprogress.org/economy/2012/07/31/612571/study-companies-women-perform-better/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.huffingtonpost.ca/2013/03/25/female-board-directors-decision-making-study_n_2951084.html&#34;&gt;http://www.huffingtonpost.ca/2013/03/25/female-board-directors-decision-making-study_n_2951084.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.theglobeandmail.com/report-on-business/careers/careers-leadership/female-board-members-better-than-men-on-complex-issues-study/article10289451/&#34;&gt;http://www.theglobeandmail.com/report-on-business/careers/careers-leadership/female-board-members-better-than-men-on-complex-issues-study/article10289451/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://business.financialpost.com/executive/executive-women/women-on-corporate-boards-better-decision-makers-than-male-directors-study&#34;&gt;http://business.financialpost.com/executive/executive-women/women-on-corporate-boards-better-decision-makers-than-male-directors-study&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://thinkprogress.org/economy/2013/11/25/2992901/women-boards-better-performance/&#34;&gt;http://thinkprogress.org/economy/2013/11/25/2992901/women-boards-better-performance/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.catalyst.org/media/companies-more-women-board-directors-experience-higher-financial-performance-according-latest&#34;&gt;http://www.catalyst.org/media/companies-more-women-board-directors-experience-higher-financial-performance-according-latest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.kit.edu/kit/english/pi_2011_8294.php&#34;&gt;http://www.kit.edu/kit/english/pi_2011_8294.php&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0079147&#34;&gt;http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0079147&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The implications could not be more clear. Diversity is a huge lever for success. And we&amp;rsquo;ve known this for a long time.&lt;/p&gt;
+
+&lt;p&gt;Anecdotally, I&amp;rsquo;ve seen the results in real life. I recently signed a contract with &lt;a href=&#34;https://lever.co&#34;&gt;Lever&lt;/a&gt;, a recruiting software company. As I did a competitive bake-off with alternatives, I paid a lot of attention to who interacted with me. My sales rep from Lever was a woman. My onboarding was with a woman. My customer success manager is a woman. All of them have been professional and competent. The product and service is phenomenal. The design, the documentation, how well trained everyone is, the promptness of help and bug fixes, the thoughtfulness of so many little things&amp;mdash;they are nailing it. In comparison, another company assigned me a white male sales rep who, despite past jobs as a recruiter, lacked training or experience, couldn&amp;rsquo;t help me, and was often wrong and never in doubt. These companies have big differences in diversity in their staff: Lever has a woman CEO/founder and quite a few women in leadership positions; the other company has visibly less diversity at the leadership level and apparently advances the careers of underperforming white men, judging by my experience. Draw your own conclusions, but I&amp;rsquo;ve seen enough examples that I don&amp;rsquo;t think it&amp;rsquo;s coincidence.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-importance-of-board-diversity&#34;&gt;The Importance of Board Diversity&lt;/h3&gt;
+
+&lt;p&gt;Adding someone to your board is a major decision. If you haven&amp;rsquo;t been a CEO, here&amp;rsquo;s a quick summary. The board of directors is one of the most important teams in the company, because they provide accountability and leadership for the CEO and other company executives. The board members need to be chosen carefully for what they can contribute to the company&amp;rsquo;s success. As seen in the studies I cited above, they can contribute a lot; board members have huge influence.&lt;/p&gt;
+
+&lt;p&gt;And a board member isn&amp;rsquo;t like most employees who can be terminated at will. When you appoint a board member, you should regard it as semi-permanent. It can be difficult or impossible to change a board member.&lt;/p&gt;
+
+&lt;p&gt;Clearly it&amp;rsquo;s important to find the best possible board members for your company, but why is it important to build board diversity? Many of the studies I mentioned or linked above deal with diversity on the board. How exactly do diverse &lt;em&gt;boards&lt;/em&gt;, as opposed to overall diversity in the team, produce better results?&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s a lot of debate about this. I believe one of the most important things diverse boards do is set the precedent for diversity in the whole company. It&amp;rsquo;s obvious to me that boards are enormously influential in hiring, especially in the top leadership positions. Diverse boards build diverse leadership teams. And that creates diversity in middle management and individual contributor positions. Diversity, in other words, flows from the top.&lt;/p&gt;
+
+&lt;p&gt;Or, as an expert on the topic wrote me, &amp;ldquo;Structure is more powerful than the individual&amp;mdash;and also easier for leaders to control.  For this reason, &lt;a href=&#34;http://journal.frontiersin.org/article/10.3389/fpsyg.2015.01400/full&#34;&gt;studies of sexism in the workplace typically recommend&lt;/a&gt; addressing &amp;lsquo;organizational structures, processes, and practices rather than focusing solely on reducing sexism in individual employees.&amp;rsquo;&amp;rdquo; Corporate boards wield tremendous power over those factors, helping to reduce sexism, one of the major factors that influences women to leave careers in technology in particular.&lt;/p&gt;
+
+&lt;p&gt;Recruiting great people is a huge competitive advantage for companies, which is one of the most important effects of diversity at the executive and board level. Companies with diverse leadership have access to a larger pool of candidates, it&amp;rsquo;s easier (and thus cheaper) to attract them, and retention is better. Recruiting and turnover are huge costs, so all of these factors go directly to the bottom line.&lt;/p&gt;
+
+&lt;p&gt;Why do companies with diverse boards and executive teams enjoy these benefits? The easiest way to understand is to look at what happens when the company&amp;rsquo;s About Us or Team page is several rows of mostly white males. People of diverse backgrounds are much less likely to join those companies. I intentionally follow conversations about this online, and since I began doing so, I&amp;rsquo;ve been impressed over and over again by the strength of people&amp;rsquo;s convictions. I&amp;rsquo;ve witnessed lots of cases where people I admire have declined to join teams that lack diversity. They don&amp;rsquo;t see themselves or their values reflected in the team portraits, and they feel strongly enough about it that they take a stand publicly to make a point of it. (It&amp;rsquo;s working: I noticed.)&lt;/p&gt;
+
+&lt;p&gt;The outcome is that companies with non-diverse boards have much less access to qualified candidates. They&amp;rsquo;re recruiting from a much smaller pool, which itself is more likely to be non-diverse, with all of the consequences that entails for performance.&lt;/p&gt;
+
+&lt;p&gt;A diverse board can also make a difference in forming relationships with other companies, too. My own story about selecting a recruiting software vendor is only one of several examples I could cite. And many of the people I know bring their values into vendor decisions too:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;i&amp;rsquo;m so interested in containers, but is there literally any container co out
+there that doesn&amp;rsquo;t support harassing and/or assaulting women?
+- &lt;a href=&#34;https://twitter.com/mipsytipsy/status/723564461265580034&#34;&gt;@mipsytipsy&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I would be remiss if I didn&amp;rsquo;t take this opportunity to point out that lack of diversity is a negative spiral that limits access to opportunities for many people, and that&amp;rsquo;s unjust. As with company performance, the outcomes are unambiguous: lack of diversity gives rise to many types of discrimination. One that&amp;rsquo;s relevant in the context of an article about a board search is women&amp;rsquo;s greatly limited ability to raise venture capital funding as compared to men. Women who aren&amp;rsquo;t recruited into leadership positions don&amp;rsquo;t easily become part of the clique that leads to upward mobility into funding, founding, board positions, and so on. These are not accidental, blameless, or victimless outcomes. Diversity is not just a smart business decision, it is a matter of ethics and morals.&lt;/p&gt;
+
+&lt;p&gt;I believe that all of the things I&amp;rsquo;ve mentioned in this section&amp;mdash;diverse staff, better performance, increased willingness to buy/partner, more inclusiveness leading to better rising-tide-all-boats opportunities&amp;mdash;are at least partially outcomes of board diversity.&lt;/p&gt;
+
+&lt;h3 id=&#34;why-diversity-matters-earlier-than-i-thought&#34;&gt;Why Diversity Matters Earlier Than I Thought&lt;/h3&gt;
+
+&lt;p&gt;VividCortex is growing strongly and is in great shape financially, but it would be a mistake to think we can afford to relax even slightly. We are a startup, and we can still falter or fail. We must focus all of our efforts on getting things done. That&amp;rsquo;s why I wasn&amp;rsquo;t surprised when some of my advisors asked me if this is really the right time to prioritize diversity in the board. We have a lot of important things to do!&lt;/p&gt;
+
+&lt;p&gt;Some things must be done early, though. One example is establishing the company&amp;rsquo;s mission, vision, and values. Without such tools to provide clear direction, a company struggles to execute effectively. As founder, I focused on these things from day one, building on the basis of my personal mission, vision, and values. The first three values I identified for VividCortex are &amp;ldquo;The Golden Rule,&amp;rdquo; &amp;ldquo;Mutual Improvement,&amp;rdquo; and &amp;ldquo;Work Lean.&amp;rdquo; These values are beliefs about right and wrong that serve as guidelines for making decisions, and they&amp;rsquo;re called &lt;em&gt;core&lt;/em&gt; because they are non-negotiable, mandatory values the organization must exemplify to succeed.&lt;/p&gt;
+
+&lt;p&gt;These core values are followed by &lt;em&gt;aspirational values&lt;/em&gt;: &amp;ldquo;diversity, humor, humility, honesty, frugality, focus, fitness, sharing, and listening.&amp;rdquo; This list is values that are important but non-mandatory, or perhaps as the name implies, aspirational: not true today, but something to work towards. I struggled with whether diversity should be a core value, but ultimately decided that although we wouldn&amp;rsquo;t do as well with a non-diverse group, it wouldn&amp;rsquo;t flat-out kill us. I listed diversity in first place as a compromise.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve changed my mind, though. I&amp;rsquo;ve come to believe that diversity truly is core to achieving excellence. Not only that, I think the definition of excellence itself needs to include diversity. I don&amp;rsquo;t think I can say, with a clear conscience, that we&amp;rsquo;ll have achieved excellence if our About Us page grows to look like some of those I&amp;rsquo;ve visited recently.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;re not as diverse as I want us to be now. We&amp;rsquo;re a small team, so we&amp;rsquo;re not far down the road and we haven&amp;rsquo;t made an unrecoverable misstep. But at some point it gets much harder. To see where this road leads, consider this post-departure quote from one of Twitter&amp;rsquo;s few black employees:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;With my departure, Twitter no longer has any managers, directors, or VP&amp;rsquo;s of color in engineering or product management. From this position, Twitter may find it difficult to make the changes to culture and product.&amp;rdquo; &lt;a href=&#34;https://medium.com/tech-diversity-files/thought-on-diversity-part-2-why-diversity-is-difficult-3dfd552fa1f7&#34;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Mostly-white, mostly-male, or mostly-both is a dead end. There are so many men in tech, and the individual and structural biases are so pervasive, that this is the likely outcome for every company that doesn&amp;rsquo;t make diversity a priority, especially at the leadership level.&lt;/p&gt;
+
+&lt;p&gt;It reminds me of my days at Boy Scout Camp, learning how to sail. The wind was never blowing the way I wanted to go, but &amp;ldquo;the wind blew me there&amp;rdquo; is not an acceptable reason for ending up in the reeds instead of at the dock. As a sailor, you acknowledge and work with the wind, but you focus on the destination, and you do what it takes to reach it regardless. As a CEO it&amp;rsquo;s the same way; you can&amp;rsquo;t just be passive and hire whoever falls into your lap, you have to be intentional and work to create the outcomes you need.&lt;/p&gt;
+
+&lt;p&gt;Companies whose teams are too homogeneous have a serious chicken-and-egg problem to solve. They&amp;rsquo;re painted into a corner. I don&amp;rsquo;t think you can start thinking about this too soon. If I&amp;rsquo;d understood this earlier, I&amp;rsquo;d have focused on it earlier myself.&lt;/p&gt;
+
+&lt;p&gt;And that brings me back to the board search. As I fill this next board seat, it&amp;rsquo;s clear to me that it&amp;rsquo;s a watershed moment. There are three of us on the board now, all males, two of us white. The fourth member will vote with us to elect a fifth someday. If the fourth member is a white male, our chances of finding and recruiting a diverse fifth member are poor. If you were, say, a woman, would you want to be the only woman on a five-member board? If our board becomes five people who are homogenous along a major axis, we probably missed our best chance to create a diverse company. The fourth board member really matters.&lt;/p&gt;
+
+&lt;h3 id=&#34;how-i-m-searching&#34;&gt;How I&amp;rsquo;m Searching&lt;/h3&gt;
+
+&lt;p&gt;As I said, the winds don&amp;rsquo;t blow towards diversity, so if I&amp;rsquo;m passive in this search I won&amp;rsquo;t get the outcome I need. That means my search for a diverse board member must be deliberately inclusive.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m the first to admit that I&amp;rsquo;m not completely sure how to do this. Part of the reason I wrote this post was to ask for your help, because it seems to me that as a community we&amp;rsquo;re not as good at this as we could be. If I want to build an API or a mobile app, there&amp;rsquo;s a lot of expertise readily available, but recruiting a diverse board member? Few people I know have actually done that.&lt;/p&gt;
+
+&lt;p&gt;My first step, of course, was to research. I Googled &amp;ldquo;how to conduct an inclusive job search.&amp;rdquo; The results were beyond disappointing; mostly a scattered collection of rather unrelated websites from academic departments, with a few results from the U.S. Department of Labor and various recruiters thrown in. Related searches such as &amp;ldquo;how to recruit inclusively&amp;rdquo; fared no better. This reinforced my impression that not enough people in the technology industry are thinking about and practicing inclusive hiring, let alone discussing it with (or promoting it to) others. If I&amp;rsquo;d seen results from a major tech company titled &lt;em&gt;How We Recruited A Diverse Team&lt;/em&gt; I&amp;rsquo;d feel a lot better about our industry.&lt;/p&gt;
+
+&lt;p&gt;Since there doesn&amp;rsquo;t seem to be much to learn from tech companies, I looked to other industries. For example, one person mentioned the Rooney Rule to me. It&amp;rsquo;s an NFL (pro football) policy stating that teams have to at least &lt;em&gt;interview&lt;/em&gt; minority candidates for senior roles. Obviously this doesn&amp;rsquo;t ensure the desired outcome, but it&amp;rsquo;s a step in the right direction; if you don&amp;rsquo;t interview any minority candidates you clearly are doing something wrong. The Rooney Rule is used broadly now, not just in the NFL. (Had you ever heard of it? I hadn&amp;rsquo;t.)&lt;/p&gt;
+
+&lt;p&gt;Another suggestion was to hire a diversity-focused recruiter. Alternatively, emphasize the importance of minority candidates to a recruiter, whether diversity-focused or not. I haven&amp;rsquo;t decided whether I&amp;rsquo;m going to use a recruiter for this search. I don&amp;rsquo;t know whether I should; your advice is welcome.&lt;/p&gt;
+
+&lt;p&gt;In general, the stages of any recruitment effort, whether traditional or for a specialized role such as a board, are a) defining the role b) publicizing the vacancy c) outreach d) interviewing and e) selection. It&amp;rsquo;s clear to me that diversity and inclusiveness need to be considered at each step. Some of these steps are very important, such as outreach. Relying on networks is proven to result in similar hires, not diversity. It would be easier to just ask for in-network references, but that&amp;rsquo;s sailing where the wind blows. So clearly someone&amp;mdash;me or someone I hire&amp;mdash;is going to have to actively search and reach out to candidates.&lt;/p&gt;
+
+&lt;p&gt;But a board search seems to be handled very differently from an executive hire, from what I can see. Maybe there are good reasons for it, but no one seems to post job listings or the like. In the absence of experience with this, I&amp;rsquo;m a bit uncertain: in what ways am I ignorant? What don&amp;rsquo;t I know that I don&amp;rsquo;t know? What could be the consequences? I decided to write this blog post and see what happens, as a first step. (Even this step seems pretty gutsy.)&lt;/p&gt;
+
+&lt;p&gt;As for the definition of the role and ideal candidate, I don&amp;rsquo;t want to go into too much detail here, but ideally as many of the following as possible:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Non-white, non-male, or both.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Experience in companies similar to VividCortex, which is a venture-capital-funded startup that sells infrastructure software to enterprises.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Leadership experience, preferably as a founder, CEO (or similar), raising venture capital funding, or serving on a board.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;A highly technical role, such as chief architect, CTO or similar, ideally in a cloud-hosted SaaS platform that stores and analyzes sensitive customer data.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Experience as a sales or marketing leader, ideally VP- or C-level. Again, if it was for a company that sells to similar buyers as ours, that&amp;rsquo;s great.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Able to travel to Charlottesville, Virginia (CHO) conveniently.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h3&gt;
+
+&lt;p&gt;In this post I&amp;rsquo;ve explained why diversity matters to VividCortex, especially at the board level, and why I believe now is the best time to diversify the board. I&amp;rsquo;ve written from my personal convictions as well as my judgment as a leader.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m looking for a board member who is different from our current board members. I&amp;rsquo;ve accepted that this will be a more difficult search than simply asking a buddy to join my board. I&amp;rsquo;m fine with that; I&amp;rsquo;m convinced the results will more than justify the effort. I&amp;rsquo;m also fine with this taking the time it takes. Rushing and adding the wrong person to the board would be much worse than having a vacancy for a while. As a startup, statistically speaking we could go belly-up for many reasons, but having a three-member board is not the most likely one in my opinion.&lt;/p&gt;
+
+&lt;p&gt;There are many challenges to building a diverse team, especially at the board level. In the face of these challenges and the consequences of making the wrong call, the arguments for recruiting someone just like myself, whom I already know well, can seem pretty compelling and rational. But the truth is that after you build a club, changing who&amp;rsquo;s in it comes slowly if at all.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d like to say thanks to all the exhausted feminists in my life. Anything I&amp;rsquo;ve done well in this post is pretty much the result of their hard work, and the rest is my fault.&lt;/p&gt;
+
+&lt;p&gt;Photo credit: &lt;a href=&#34;https://www.flickr.com/photos/aureobcn/8573429757/&#34;&gt;circuit
+board&lt;/a&gt; (yeah, bad pun I
+know).&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>The Hartman Values Profile Assessment</title>
+          <link>https://www.xaprb.com/blog/2016/03/27/personality-assessment-values-profile/</link>
+          <pubDate>Sun, 27 Mar 2016 15:04:02 -0400</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2016/03/27/personality-assessment-values-profile/</guid>
+          <description>
+
+&lt;p&gt;A few months ago I &lt;a href=&#34;https://www.xaprb.com/blog/2015/10/11/personality-assessments/&#34;&gt;wrote&lt;/a&gt; about the DISC and Driving Forces personality assessments I&amp;rsquo;ve been using for the last couple of years, to help me be more intentional about my team interactions and &lt;a href=&#34;https://www.linkedin.com/pulse/article/dance-dances-itself-using-personality-assessments-hiring-schwartz&#34;&gt;hiring&lt;/a&gt;. This post is about another model I use too.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/03/justice.jpg&#34; alt=&#34;Justice&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As Michael Gorsuch &lt;a href=&#34;https://twitter.com/michaelgorsuch/status/703998409674326016&#34;&gt;tweeted&lt;/a&gt;, &amp;ldquo;healthy and effective teams are composed of individuals actively seeking to understand each other&amp;rsquo;s needs.&amp;rdquo; I couldn&amp;rsquo;t have said it better. I find personality assessments helpful in several ways, including assessing candidates and coaching team members. They give people a concrete and consistent language for expressing and understanding themselves and each other.&lt;/p&gt;
+
+&lt;h3 id=&#34;assessments-are-models&#34;&gt;Assessments are Models&lt;/h3&gt;
+
+&lt;p&gt;All personality assessments express a model of how humans work. Actually, many of them are not about personalities &lt;em&gt;per se&lt;/em&gt;, but it&amp;rsquo;s convenient to call them all personality assessments. The &lt;a href=&#34;https://en.wikipedia.org/wiki/DISC_assessment&#34;&gt;DISC&lt;/a&gt; model, for example, is about behaviors, which are pretty easy to observe and validate externally. It&amp;rsquo;s based on William Moulton Marston&amp;rsquo;s psychological theory. There are many other behavioral models, including Myers-Briggs.&lt;/p&gt;
+
+&lt;p&gt;Some models measure motivations instead of behaviors; the one I use and am familiar with is based on &lt;a href=&#34;https://en.wikipedia.org/wiki/Eduard_Spranger&#34;&gt;Eduard Spranger’s model of human motivation&lt;/a&gt;. I&amp;rsquo;ve seen others that include more recent work by Gordon Allport and others.&lt;/p&gt;
+
+&lt;p&gt;Motivations aren&amp;rsquo;t externally visible, so in a sense it&amp;rsquo;s actually a deeper model. If you believe in the model, the assessment, and the results, then understanding someone&amp;rsquo;s motivations can help you be more thoughtful about how you hire, train, coach, and manage them. It can help you be more confident in your expectations of how someone will behave or respond.&lt;/p&gt;
+
+&lt;p&gt;An example I&amp;rsquo;ve referred to several times is that understanding whether someone tends to be money-motivated is pretty valuable information for hiring salespeople. And if you confirm the assessment&amp;rsquo;s results with the candidate or employee, as I do, then you can collaborate together with them more easily to find the right role where they can shine with less effort.&lt;/p&gt;
+
+&lt;h3 id=&#34;peeling-back-one-more-layer&#34;&gt;Peeling Back One More Layer&lt;/h3&gt;
+
+&lt;p&gt;If behaviors are superficial, and motivations are their cause, is there an underlying cause for motivations too? It turns out that some scientists believe there is. I&amp;rsquo;m paraphrasing very loosely, but the theory is that motivations are outcomes of values: we care about that to which we assign a high value.&lt;/p&gt;
+
+&lt;p&gt;Can we then model and measure how people value things? Some people believe so. The topic isn&amp;rsquo;t very mainstream in psychology, but there&amp;rsquo;s a lively debate among a handful of &lt;a href=&#34;https://www.psychologytoday.com/blog/beyond-good-and-evil/201402/psychological-testing-without-psychological-tests&#34;&gt;passionately interested people&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been using a values assessment for a while. It&amp;rsquo;s based on a mathematical theory called &lt;a href=&#34;https://en.wikipedia.org/wiki/Axiology&#34;&gt;Axiology&lt;/a&gt;, and particularly upon Robert S. Hartman&amp;rsquo;s work in developing a &lt;a href=&#34;https://books.google.com/books?id=EK7LBQAAQBAJ&#34;&gt;mathematical science of human values&lt;/a&gt;. Although it is commercialized in various forms, the basis of them all is the &lt;a href=&#34;https://www.hartmaninstitute.org/about/hartman-value-profile/&#34;&gt;Hartman Value Profile&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Hartman Value Profile and its underlying science attempt to measure and model primarily two things:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;How good things are. There&amp;rsquo;s a specific definition related to the description and attributes of those things, combined with how well the attributes and descriptions correspond to the thing.&lt;/li&gt;
+&lt;li&gt;How highly people value those things. To the extent that we value good things highly and we devalue bad things, we have clarity about the value of those things.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The HVP assessment is subdivided into two parts: external and internal. Each of these is further divided into three dimensions: systemic, extrinsic, and intrinsic. This is difficult to explain clearly; &lt;a href=&#34;http://www.valueinsights.com/axiology3.html&#34;&gt;this page&lt;/a&gt; seems to do a pretty good job.&lt;/p&gt;
+
+&lt;p&gt;The assessment itself is two sets of 18 carefully constructed phrases. You rank the first set according to how good they are, in the purest sense. They&amp;rsquo;re pretty bizarre at first glance, and some of them are pretty hard to rank for many people. It feels like comparing apples to oranges. The second set of phrases are statements you are to rank according to how true or false they are in your specific case. These are equally hard. When you study the science they make more sense, but your first impression is likely to be that they&amp;rsquo;re random and unrelated to each other.&lt;/p&gt;
+
+&lt;p&gt;Interpreting the results takes some training. In my opinion, each dimension of each part of the assessment requires quite a bit of thought. For example, one&amp;rsquo;s valuation of other people is called the Empathetic (External Intrinsic). If this is high, you understand other people well. If it is low, you don&amp;rsquo;t understand other people very well.&lt;/p&gt;
+
+&lt;p&gt;In combination with this, there is a &lt;em&gt;bias&lt;/em&gt; which indicates how much you over- or under-value other people. For example, you could have high clarity about other people, but a negative bias, meaning that you understand people well but are skeptical or hesitant about them (undervalue them).&lt;/p&gt;
+
+&lt;p&gt;The assessment and its results are interesting from several angles, but one of the most compelling to me is the idea that the assessment resists manipulation. Based on the idea that people don&amp;rsquo;t knowingly behave irrationally, the theory goes that someone who has poor clarity into the value of things will be puzzled at how they could be incorrect in their rankings. To give a simple example, a psychopath, who places low value upon another person&amp;rsquo;s life or pain as compared to their whims, would probably defend this choice in all sincerity.&lt;/p&gt;
+
+&lt;h3 id=&#34;applying-the-hartman-value-profile&#34;&gt;Applying the Hartman Value Profile&lt;/h3&gt;
+
+&lt;p&gt;With two parts, three dimensions, and the bias (positive, neutral, negative), there are a lot of combinations of things to consider in this assessment! That&amp;rsquo;s why it takes a while to learn to interpret and is so subtle to apply.&lt;/p&gt;
+
+&lt;p&gt;Is it worth it, then?&lt;/p&gt;
+
+&lt;p&gt;If I were a jury, I&amp;rsquo;d still be deliberating this. (Irony alert.) However, I have seen it put to very good use in several cases, most notably as a coaching tool. My coach has helped me and others use it to clarify and understand decision-making processes and therefore get to a deeper level of &amp;ldquo;why&amp;rdquo; about behaviors and what&amp;rsquo;s likely to happen in the future.&lt;/p&gt;
+
+&lt;p&gt;Ultimately, the goal is to help people be &lt;a href=&#34;https://www.xaprb.com/blog/2016/03/19/meditation/&#34;&gt;self-aware&lt;/a&gt; and thus able to recognize and mitigate their natural tendencies, instead of being controlled by them.&lt;/p&gt;
+
+&lt;p&gt;For example, one manual for interpretation suggests the following about one of the score combinations, for a person who doesn&amp;rsquo;t understand how systems and processes work and doesn&amp;rsquo;t think they&amp;rsquo;re worthwhile:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Systems Judgment: Low Clarity, Negative Bias&lt;/p&gt;
+
+&lt;p&gt;This person is likely confrontational and believes he or she knows better than the boss, especially if a positive self direction is coupled with a high score sense of self. This rebellious attitude may not be a well-informed one. People with this score combination may be a legend in their own minds. This is usually combined with a low awareness of others, which is seen in the empathetic outlook.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pretty detailed indeed! And that&amp;rsquo;s just the analysis of a single one of the dimension/bias combinations.&lt;/p&gt;
+
+&lt;p&gt;Is it valid? I&amp;rsquo;m not sure yet. I have found &lt;a href=&#34;https://www.hartmaninstitute.org/resources/validation-studies/&#34;&gt;claims&lt;/a&gt; that there&amp;rsquo;s a lot of research showing that the HVP does a very good job and is highly accurate compared to other assessments.&lt;/p&gt;
+
+&lt;p&gt;For example, I&amp;rsquo;ve found several cases where different institutions tried to measure which types of assessments could detect most accurately the factors that predicted successful team members. I&amp;rsquo;m aware of several medical schools and the like that have looked at using the HVP in admissions. One is available at &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/22208827&#34;&gt;this link&lt;/a&gt; and states &amp;ldquo;The ability to identify unique behavioral, motivational and personal talents that applicants bring to the program that were not identifiable from the traditional application and interview process has allowed us to determine applicants who were a good match for the structure and culture of our program.&amp;rdquo; The people who wrote this research paper were not just bloggers.&lt;/p&gt;
+
+&lt;p&gt;The HVP assessment could potentially be useful to help identify traits and judgment that people try hard to identify in interviews. For example, Mark Roberge, CMO of Hubspot, used regression analysis to find that the top predictor of success as a sales rep was coachability. He &lt;a href=&#34;http://blog.hubspot.com/sales/how-to-interview-a-sales-rep-job-candidate-for-coachability&#34;&gt;wrote a blog post&lt;/a&gt; about how to interview for coachability. When I read that blog post through eyes that are familiar with the HVP assessment, it seems quite clear that the characteristics he&amp;rsquo;s looking for appear in the assessment.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This American Life&lt;/em&gt; featured the HVP in an &lt;a href=&#34;http://www.thisamericanlife.org/radio-archives/episode/231/time-to-save-the-world?act=4&#34;&gt;interesting 15-minute segment&lt;/a&gt;. It focuses more on its use as a tool for discerning good/evil than on applications to the workplace.&lt;/p&gt;
+
+&lt;h3 id=&#34;sharing-results&#34;&gt;Sharing Results&lt;/h3&gt;
+
+&lt;p&gt;I always share and collaboratively interpret the DISC and Driving Forces assessment results, even with candidates I don&amp;rsquo;t hire. People always tell me that they enjoy the discussion and found the assessment helpful in learning more about themselves. There are other reasons to share the results, too. It builds trust and comfort in the interview process. Many candidates tell me they&amp;rsquo;ve taken assessments but weren&amp;rsquo;t allowed to see the results, and they felt judged without the chance to know or contest the basis if it were wrong. Imagine being on trial without hearing the charges or evidence against you! Not a good thing to do to a candidate. And finally, my hiring style is thorough and careful, and candidates appreciate that (or, at least, the ones I want to hire do). It&amp;rsquo;s a good way to get the relationship off on the right foot.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t always ask candidates to take the HVP assessment, but when I do, I &lt;em&gt;don&amp;rsquo;t&lt;/em&gt; share the results. I think the model is too difficult to understand. It would be frustrating and fruitless.&lt;/p&gt;
+
+&lt;p&gt;If I want to pursue a point that the assessment raises, I bring it up with the candidate, but I don&amp;rsquo;t talk about the source. It is easy to point to the Driving Forces or DISC; if it really represents a person&amp;rsquo;s value system and decision-making process, it&amp;rsquo;ll appear there too.&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;m just a beginner with this assessment and am in no way as experienced in it or the underlying science as many others. However, at this point I&amp;rsquo;m impressed enough to keep studying it and learning to interpret it.&lt;/p&gt;
+
+&lt;p&gt;One sad note: Hartman himself, who fled to the US from persecution in Nazi Germany after trying to resist the Nazis, was motivated to develop the calculus of values judgment in order to establish objective criteria for identifying good and evil. It&amp;rsquo;s unfortunate that the most popular application of his theory seems to be in helping businesses make money more efficiently, and not in improving individuals or the human condition; as he &lt;a href=&#34;https://www.hartmaninstitute.org/applicationsofaxiology/&#34;&gt;wrote&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This, then, is our extraordinary opportunity. We may go on spending our money to develop the hydrogen and cobalt bombs and make the scene at Melbourne come true and give the men from Outer Space their opportunity to write the six-volume report, or we may use a fraction of this money – hardly more than the cost of some tiny gadget in an intercontinental missile – to concentrate the energies of a dozen or so people on human survival. The choice is ours, and it may be final.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Food for thought.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/jmtimages/3763196437/&#34;&gt;Photo Credit&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>What it&#39;s Like</title>
+          <link>https://www.xaprb.com/blog/2015/11/10/what-its-like/</link>
+          <pubDate>Tue, 10 Nov 2015 19:04:18 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/11/10/what-its-like/</guid>
+          <description>&lt;p&gt;At Velocity/OSCON 2015 in Amsterdam a couple of weeks ago, the conference
+committee approached me to ask if I&amp;rsquo;d be up for doing an Ignite talk. It was
+rather last-minute and I had only hours to prepare. I said yes and then tried to
+think of a topic. I turned to Twitter and asked, if you could have me talk for 5
+minutes on any topic, what would it be? A couple of people responded that they
+wanted to know what founding a company was like, so I sat down in the speaker
+lounge at the RAI and started trying to figure out what it&amp;rsquo;s like to be a
+founder/CEO.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;d think I&amp;rsquo;d know after three years, but truthfully, it&amp;rsquo;s still hard to
+really know what I feel.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite.jpg&#34; alt=&#34;Ignite&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Anyway, I did it. I sent O&amp;rsquo;Reilly twenty slides of uncaptioned
+&lt;a href=&#34;http://unsplash.com/&#34;&gt;images&lt;/a&gt; that moved through an arc, and tried to write a
+story I could tell on stage. If you&amp;rsquo;re not familiar with Ignite, it&amp;rsquo;s a format
+in which exactly twenty slides advance automatically after fifteen seconds each,
+for a total of five minutes.&lt;/p&gt;
+
+&lt;p&gt;I had to wing it to some extent, and while speaking I thought one of the
+slides might even have gotten lost in the void of the internet and I had to skip
+some stuff I&amp;rsquo;d planned (it was really confusing to see what slide was on
+screen), but I got through it. Below I&amp;rsquo;m sharing my notes&amp;mdash;which I did not
+exactly follow, because I changed things until the moment I spoke&amp;mdash;and at the
+end is a video of the talk.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re a founder/CEO or similar, and you&amp;rsquo;d like to talk about your struggles,
+I&amp;rsquo;d encourage you to reach out to me or to peers. (I can&amp;rsquo;t be available for
+everyone, but if you&amp;rsquo;re desperate you need to talk to someone.)&lt;/p&gt;
+
+&lt;p&gt;The working title of the talk was either &amp;ldquo;What it&amp;rsquo;s like&amp;rdquo; or &amp;ldquo;Why I do this&amp;rdquo; or
+something similar.&lt;/p&gt;
+
+&lt;p&gt;OK, enough preamble, let&amp;rsquo;s do this.&lt;/p&gt;
+
+&lt;h3 id=&#34;why-i-choose-technology&#34;&gt;Why I Choose Technology&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00001.jpg&#34; alt=&#34;ignite-00001.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Years ago my friend Eliane asked why I love databases, and it took me years to
+answer. I always loved knowing how things work. I used to disassemble clocks and
+put them back together. Eventually I realized that technology is how I express
+my creativity.&lt;/p&gt;
+
+&lt;h3 id=&#34;creative-expression&#34;&gt;Creative Expression&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00002.jpg&#34; alt=&#34;ignite-00002.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Creativity is a vital part of being human. All forms of expression are equally
+valid: dance, music, art, writing, athletics, coding. Whatever you love,
+whatever brings you alive, is valid. That includes being a nerd.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-importance-of-creativity&#34;&gt;The Importance of Creativity&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00003.jpg&#34; alt=&#34;ignite-00003.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Creativity is self actualization. It&amp;rsquo;s how we express agency in the world. It&amp;rsquo;s
+how we say &amp;ldquo;I am alive and I choose to live, not just exist.&amp;rdquo; I want this for
+you, and for me, all of us.&lt;/p&gt;
+
+&lt;h3 id=&#34;so-i-founded-a-company&#34;&gt;So I Founded A Company&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00004.jpg&#34; alt=&#34;ignite-00004.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Three years ago I founded company to amplify my personal mission, to give to
+others what I wanted for myself: a life of purpose and validation that being a
+nerd is just as honorable as being a sculptor. I speak today because I want to
+share this experience with others.&lt;/p&gt;
+
+&lt;h3 id=&#34;what-s-it-like-being-a-founder&#34;&gt;What&amp;rsquo;s It Like Being A Founder?&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00005.jpg&#34; alt=&#34;ignite-00005.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In a word, stressful. Words to describe it don&amp;rsquo;t really exist. It&amp;rsquo;s a roller
+coaster from fear to joy and back, sometimes every 20 minutes. I can describe
+specific dimensions of the experience, but it&amp;rsquo;s like becoming a parent. You have
+to live it to know it.&lt;/p&gt;
+
+&lt;h3 id=&#34;demands-from-everywhere&#34;&gt;Demands From Everywhere&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00006.jpg&#34; alt=&#34;ignite-00006.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Everyone wants something from me. Customers, employees, investors, community,
+family, vendors, governments. The amount of time and energy left over for myself
+is very small. Personal and company demands are often in conflict.&lt;/p&gt;
+
+&lt;h3 id=&#34;no-comfort-zone&#34;&gt;No Comfort Zone&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00007.jpg&#34; alt=&#34;ignite-00007.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My comfort zone is mostly off-limits now. I am a reserved person, but I must be
+outgoing. I prefer to support people, now I must sometimes challenge them. I&amp;rsquo;m a
+single-tasking focuser, now I have to multitask. I deny myself the pleasure of a
+job well done.&lt;/p&gt;
+
+&lt;h3 id=&#34;compounding-effects&#34;&gt;Compounding Effects&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00008.jpg&#34; alt=&#34;ignite-00008.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s hard to find time or motivation for exercise. I constantly forget things
+and people. This becomes a self-reinforcing negative spiral quickly.&lt;/p&gt;
+
+&lt;h3 id=&#34;sleep-is-elusive&#34;&gt;Sleep Is Elusive&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00009.jpg&#34; alt=&#34;ignite-00009.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sometimes I wake and cannot deal with intrusive thoughts and a racing pulse. At
+2 in the morning, jacked on adrenaline and fear, I&amp;rsquo;m not solving anything. When
+I do sleep I have repetitive dreams of being late and unprepared.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;I sleep like a baby: I wake up every three hours crying.&amp;rdquo; - Ben Horowitz&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;the-struggle&#34;&gt;The Struggle&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00010.jpg&#34; alt=&#34;ignite-00010.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ben Horowitz&amp;rsquo;s book The Hard Thing About Hard Things is the best description
+of the experience I&amp;rsquo;ve read yet. to get a taste, read &lt;a href=&#34;http://www.bhorowitz.com/the_struggle&#34;&gt;The
+Struggle&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;self-reconstruction&#34;&gt;Self-Reconstruction&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00011.jpg&#34; alt=&#34;ignite-00011.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Being a founder and CEO forces me to constantly destroy the old person I used
+to be. He is no longer what I need. He got me to this point, but now the task
+is to systematically amputate the parts I do not want and grow new ones.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I have bitten off the pieces that I did not want&lt;br&gt;
+I have bitten off the pieces that I did not want&lt;br&gt;
+- Jann Arden, &lt;em&gt;Saved&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;overwhelm&#34;&gt;Overwhelm&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00012.jpg&#34; alt=&#34;ignite-00012.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is way beyond &amp;ldquo;productivity tips&amp;rdquo; and &amp;ldquo;life hacking.&amp;rdquo; It&amp;rsquo;s self
+transformation. This is what it means to be committed. The only way through it
+is through it. It&amp;rsquo;s often a brutal process.&lt;/p&gt;
+
+&lt;h3 id=&#34;so-much-to-lose&#34;&gt;So Much To Lose&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00013.jpg&#34; alt=&#34;ignite-00013.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s hard to ask for help because there&amp;rsquo;s so much to lose. Everyone is looking
+for the slightest sign of weakness or fault. Honestly admitting a shortcoming
+could mean not winning a customer or investor, losing an employee.&lt;/p&gt;
+
+&lt;h3 id=&#34;loneliness&#34;&gt;Loneliness&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00014.jpg&#34; alt=&#34;ignite-00014.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m not alone in the struggle, but I&amp;rsquo;m lonely. Most founders suffer in silence
+and isolation. Depression, sickness, addiction, breakdowns and even suicide
+are the result. It&amp;rsquo;s rare for founders to break the silence. I&amp;rsquo;m doing it
+today because we deserve it.&lt;/p&gt;
+
+&lt;h3 id=&#34;not-impostor-syndrome&#34;&gt;Not Impostor Syndrome&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00015.jpg&#34; alt=&#34;ignite-00015.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s popular right now to talk about impostor syndrome, but this isn&amp;rsquo;t impostor
+syndrome. This is real and honest. This is a valid experience. I take comfort
+knowing that my discomfort with this unnatural experience is an appropriate
+response to the position I&amp;rsquo;m in. If you are feeling the same thing, know that
+you&amp;rsquo;re not damaged goods.&lt;/p&gt;
+
+&lt;h3 id=&#34;daily-rededication&#34;&gt;Daily Rededication&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00016.jpg&#34; alt=&#34;ignite-00016.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To cope and adapt, I have to make an effort to help myself and ask others to
+help me. I begin each day by dedicating myself to the service of something
+greater than myself. I resolve to be fully alive, present in the moment, and
+to suppress my self-will. I read sacred literature. I journal. Then I go do my
+best. I end the day by forgiving myself.&lt;/p&gt;
+
+&lt;h3 id=&#34;meditation&#34;&gt;Meditation&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00017.jpg&#34; alt=&#34;ignite-00017.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Meditation is a huge part of what keeps me sane. Meditation does not still my
+mind or stop the intrusive thoughts. It helps me notice and accept what is
+happening to me, within me, and around me. I worked with an architect, an old
+man with a lifelong transcendental meditation practice, for years. But I lost
+it. I had to find a system that actually worked for me. The Headspace book and
+app helps.&lt;/p&gt;
+
+&lt;h3 id=&#34;asking-for-help&#34;&gt;Asking For Help&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00018.jpg&#34; alt=&#34;ignite-00018.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I also ask for help. I&amp;rsquo;ve reached out to a lot of other founders and talked.
+They may not know it but they&amp;rsquo;ve made a huge difference for me. I hope you
+reach out to me if you need help, too.&lt;/p&gt;
+
+&lt;h3 id=&#34;working-as-a-team&#34;&gt;Working as a Team&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00019.jpg&#34; alt=&#34;ignite-00019.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve also had to learn to stop trying to do everything myself. I have a team
+of people who are better at their jobs than I am. I don&amp;rsquo;t ask them to be my
+confidantes, but they support me whether they know it or not. And I have
+advisors, mentors, and a professional coach who make it easier day by day.&lt;/p&gt;
+
+&lt;h3 id=&#34;alternate-conclusion-1-you-make-a-difference&#34;&gt;Alternate Conclusion 1: You Make A Difference&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00020.jpg&#34; alt=&#34;ignite-00020.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It sounds hard. Why do I do it? I do it because of you. You are here for a
+purpose. You have impact. The world needs you and cannot replace you. You make
+a difference. But really, I do it for you because doing it for you is doing it
+for myself. I must be to the world what I want the world to be for me. I get
+back more than I give. My lows are lower, but my highs are higher too. Thank
+you. &lt;em&gt;[I wanted to end with a note of inspiration and encouragement, gesturing
+towards each person&amp;rsquo;s irreplaceable role in life, but I changed this ending at
+the last moment.]&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;alternate-conclusion-2-why-do-i-do-it&#34;&gt;Alternate Conclusion 2: Why Do I Do It?&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/11/ignite-00020.jpg&#34; alt=&#34;ignite-00020.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I believe that the product, company, and the team serve a greater good. It&amp;rsquo;s
+true that it&amp;rsquo;s hard, but I believe I must be what I want to see in the world.
+My low times are worse, but my highs are higher. &lt;em&gt;[I chose this ending because I
+thought the note of encouragement, although important and true, was not
+consistent with the rest of the talk. The sentiment of the first alternative
+ending still holds, though.]&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;video-of-the-talk&#34;&gt;Video Of The Talk&lt;/h3&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/jF3F0eBCSJs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+ &lt;/div&gt;</description>
+        </item>
+    
+        <item>
+          <title>On Focus</title>
+          <link>https://www.xaprb.com/blog/2014/07/05/on-focus/</link>
+          <pubDate>Sat, 05 Jul 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/07/05/on-focus/</guid>
+          <description>&lt;p&gt;Focus is perhaps the most important attribute in an organization. In fact, my dictionary defines an organization as &amp;ldquo;an organized body of people with a particular purpose&amp;hellip;&amp;rdquo; A focused organization recognizes and cleaves to its purpose.&lt;/p&gt;
+
+&lt;p&gt;Likewise, the ability to create and sustain focus is perhaps the most valuable skill of the organization&amp;rsquo;s members, including both individual contributors and leaders.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/rainbokeh.jpg&#34; alt=&#34;Rainbokeh&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;what-is-focus-and-why-is-it-hard&#34;&gt;What Is Focus, And Why Is It Hard?&lt;/h3&gt;
+
+&lt;p&gt;My dictionary says focus is &amp;ldquo;an act of concentrating.&amp;rdquo; Consider the root words: &lt;em&gt;concentrate&lt;/em&gt; literally means to bring to a common center, to be centered together.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;More broadly, I think of focus as a &lt;em&gt;resource&lt;/em&gt; similar to time, money, goodwill, and other more-or-less-fungible things. I claim that focus is usually an organization&amp;rsquo;s most valuable, most threatened, and scarcest resource.&lt;/p&gt;
+
+&lt;p&gt;I base this claim on my life experience. I have never worked at an organization that was too focused. I have never heard anyone describe an organization objectively as doing too few things too thoroughly, prioritizing excellence in execution too highly. Focus always seems to be under pressure; there always seems to be a gravitational pull away from focus, towards distraction.&lt;/p&gt;
+
+&lt;p&gt;Why is this? I believe it&amp;rsquo;s because ideas can be conceived in a flash, but execution takes time. In a moment of inspiration, I can envision a completed product or project. I can allow myself the thrill of dreaming about the benefits. How much better life would be with this-or-that! How much I would enjoy that! How much I&amp;rsquo;d like the satisfaction of having achieved this utopian ideal, this perfection!&lt;/p&gt;
+
+&lt;p&gt;The sobering reality is that achieving such a vision takes a long time and goes through many unexpected detours. Focus is hard precisely because inspiration is fleeting. We&amp;rsquo;re drawn into the tedious, neverending details of execution, yet the goal appears to remain as far away as ever. We long for the satisfaction of accomplishment, and it&amp;rsquo;s human to desire it &lt;em&gt;now&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the middle of this struggle, this discipline of delaying gratification, it&amp;rsquo;s so tempting to daydream of new ideas again. It&amp;rsquo;s rewarding because the indulgence of &amp;ldquo;wouldn&amp;rsquo;t it be wonderful&amp;rdquo; thoughts actually creates surges of pleasure responses such as endorphins. Distraction is an enticing, seductive drug.&lt;/p&gt;
+
+&lt;h3 id=&#34;fear-is-anti-focus&#34;&gt;Fear Is Anti-Focus&lt;/h3&gt;
+
+&lt;p&gt;It can be demotivating to acknowledge the reality that achieving the dream is a marathon, not a sprint. This is actually a fear response. The thought &lt;em&gt;I&amp;rsquo;ll never finish&lt;/em&gt; is a lie; the truth is &lt;em&gt;I fear I&amp;rsquo;ll never finish&lt;/em&gt;. In fact, many of the reasons it can be hard to focus are just fear in different guises. New ideas are alluring in part due to the fear of what might happen if you don&amp;rsquo;t pursue them.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;If I don&amp;rsquo;t do this new thing I&amp;rsquo;ve just thought about, someone else will do it first.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;I might forget my new idea, or the reasons that I think it&amp;rsquo;s good.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;I might lose the opportunity to do it.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fear is the voice of a pathological liar in your head. Fear says &lt;em&gt;this is real&lt;/em&gt; when the truth is &lt;em&gt;this isn&amp;rsquo;t real yet, but it could become real, and I wouldn&amp;rsquo;t like it if it did.&lt;/em&gt; You can see this by noting that fears are always about a potential future; if it&amp;rsquo;s reality already, you might suffer, but you won&amp;rsquo;t fear. And fears are not about the circumstance, but about your projected response to it. I wrote &lt;em&gt;wouldn&amp;rsquo;t like&lt;/em&gt; above, but the truth is &lt;em&gt;might not like&lt;/em&gt;. For example, the correct translation of &lt;em&gt;I fear getting old&lt;/em&gt; is &lt;em&gt;I fear that I might get old, and if I do, I might not like it&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Likewise, the appeal of a new idea is often partially infused with urgency, based on fear of what might happen if you don&amp;rsquo;t pursue the idea, and how you imagine you might feel about that outcome if it comes to pass.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/perfection.jpg&#34; alt=&#34;Perfection&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;focus-is-worth-striving-for&#34;&gt;Focus Is Worth Striving For&lt;/h3&gt;
+
+&lt;p&gt;The benefit of focusing is simple: efficiency. The more concentrated your efforts, the more effective they&amp;rsquo;ll be. Your results will appear sooner, your work will flow more joyfully and easily, and your outcome will be better quality.&lt;/p&gt;
+
+&lt;p&gt;If you examine some of the effects of distraction, the benefits of focus should become clear. I won&amp;rsquo;t belabor this point, but I&amp;rsquo;ll note that every new activity or idea has a compound effect. We tend to be biased to see the potential benefits much more than the likely drawbacks, which is part of why new ideas are so alluring. We see, for example, that a new product feature will enrich and enable and empower. But do we see that to do it right, we&amp;rsquo;re obligated to integrate it smoothly with all existing and future product features, to maintain it, to test it, to train, to document, to support? &lt;a href=&#34;http://firstround.com/article/the-one-cost-engineers-and-product-managers-dont-consider&#34;&gt;Usually not&lt;/a&gt;. We usually see compound benefits, but neglect to see compounded costs and risks, especially those that come from failure to execute fully and excellently.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Focus is putting what’s most important first and protecting its right to be there.
+(typically by saying &amp;ldquo;No&amp;rdquo; to everything else) &amp;mdash; &lt;a href=&#34;http://vanessahurst.com/post/83405785577/focus-is-putting-whats-most-important-first-and&#34;&gt;Vanessa Hurst&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Many people I admire achieve amazing things precisely because they complete one thing and then build something new on top of it, rather than always having everything in a glorious state of perfect incompletion. The &amp;ldquo;secret&amp;rdquo; to their success is the willpower to patiently bring things to completion.&lt;/p&gt;
+
+&lt;p&gt;In fact, I often think about focus in terms of WIP (work-in-progress), a term you&amp;rsquo;ll hear in Lean, Agile, Kanban, and other circles. Focus and WIP are inversely related. Focus is the ability to say &amp;ldquo;not yet,&amp;rdquo; to finish work in progress before starting new things.&lt;/p&gt;
+
+&lt;p&gt;The danger of not doing this &amp;mdash; the danger of saying yes to opportunity &amp;mdash; is that you&amp;rsquo;ll load so much gold into the boat that you sink the whole thing. I find it helpful to consider each new opportunity or idea from this perspective.&lt;/p&gt;
+
+&lt;p&gt;Can you have too much focus? Certainly, but it&amp;rsquo;s not focus. It&amp;rsquo;s perfectionism, which is another type of fear. In my experience, individuals can be perfectionists, but organizations &amp;mdash; I&amp;rsquo;ve never seen that. And even perfectionist individuals suffer from a perverse lack of focus, because they focus on the perfection of the thing they want to achieve, rather than the benefits they want to achieve. Focusing on the benefits you want is an antidote to perfectionism. I write from deep personal experience on this topic.&lt;/p&gt;
+
+&lt;p&gt;I also want to point out that the type of execution-to-completion I&amp;rsquo;m discussing is emphatically not anti-Agile. Shipping early and often is part of getting something to completion as soon as possible, achieving the best final product, and lowering waste. Completion and excellence in execution are often conflated with perfectionism and reluctance to release partial work. They&amp;rsquo;re not the same, and treating them as synonymous is a huge mistake.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-politics-of-focus&#34;&gt;The Politics Of Focus&lt;/h3&gt;
+
+&lt;p&gt;If you&amp;rsquo;re a manager, it can be difficult to help your team stay focused, because you need to coach them through their natural impatience and discouragement without demotivating them. This is no easy thing, but nobody said management is easy.&lt;/p&gt;
+
+&lt;p&gt;Although it&amp;rsquo;s true that &lt;a href=&#34;http://www.paperplanes.de/2014/6/2/focus-starts-by-saying-no.html&#34;&gt;focus starts with saying no&lt;/a&gt;, say it carefully. Someone who has a good idea that is struck down can easily take it personally, especially if the idea was rejected ingraciously. It helps to put the emphasis on the idea and not the person. It also helps to take the emphasis &lt;em&gt;away&lt;/em&gt; from the idea and draw it back towards the work in progress, and the outcome you&amp;rsquo;re working for &amp;mdash; to redirect the conversation into a &amp;ldquo;yes&amp;rdquo; for something else, instead of saying &amp;ldquo;no&amp;rdquo; to the idea itself.&lt;/p&gt;
+
+&lt;p&gt;Another suggestion is to avoid saying &amp;ldquo;no&amp;rdquo; and to say &amp;ldquo;yes, later&amp;rdquo; instead. This is itself a way of focusing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/fossil.jpg&#34; alt=&#34;Shell&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Reminding people of the progress they&amp;rsquo;re making can also be helpful. While you&amp;rsquo;re in the weeds executing on a vision, progress becomes difficult to see. If you can help people remember what things were like a month ago, they might be reminded of how much progress they&amp;rsquo;re making.&lt;/p&gt;
+
+&lt;p&gt;Another helpful reminder is that the distracting idea or opportunity isn&amp;rsquo;t a good thing &lt;em&gt;yet&lt;/em&gt;. It&amp;rsquo;s only the vision of the possibility of a good thing. This can segue nicely into rekindling passion for what&amp;rsquo;s currently underway:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Remember all the superior effort you&amp;rsquo;ve put into what you&amp;rsquo;ve done thus far, but which isn&amp;rsquo;t yet producing any benefit? Wouldn&amp;rsquo;t it be nice to see that through? Can you remember the original vision for that project, and how excited we were about making that a reality?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Be patient with people who have ideas you don&amp;rsquo;t want to pursue right away. Let them work through the ideas with you, help them come to terms with any fears (conscious or not), and use their passion and enthusiasm as a springboard for redirecting energy into the current project. Nothing kills the &lt;em&gt;esprit de corps&lt;/em&gt; quite as fast as a naysayer who just shuts things down.&lt;/p&gt;
+
+&lt;h3 id=&#34;evaluating-opportunities&#34;&gt;Evaluating Opportunities&lt;/h3&gt;
+
+&lt;p&gt;Many ideas and opportunities &lt;em&gt;are&lt;/em&gt; worth considering seriously, and some are worth pursuing. Through experience I&amp;rsquo;ve stumbled onto a model that has worked for me thus far. It&amp;rsquo;s based on two questions that require considerable thought and care:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Are the current efforts and work-in-progress producing good outcomes?&lt;/li&gt;
+&lt;li&gt;If we do more of the same (i.e. execute to the vision), will we magnify our existing success?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If the answers are yes, then it might not be best to engage in new ideas or opportunities, no matter how good they are. Beware of loading your plate with more than you need to eat. Ask yourself two additional questions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Are boredom and missed opportunities the only risks of staying the course we&amp;rsquo;ve set?&lt;/li&gt;
+&lt;li&gt;Are novelty and expanded opportunity the main benefits of beginning something new?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;worldview&#34;&gt;Worldview&lt;/h3&gt;
+
+&lt;p&gt;Focused organizations are made of focused people. It&amp;rsquo;s that simple. If your people can&amp;rsquo;t focus, then the organization will be less focused. If they can, then the organization can be single-minded.&lt;/p&gt;
+
+&lt;p&gt;Speaking personally, my patience and ability to continue working on things that are in progress, and my reluctance to admit distraction, is not something I was born with. Remaining serene and keeping an eye on the goal is a skill that I believe anyone can nurture and grow.&lt;/p&gt;
+
+&lt;p&gt;For me, it&amp;rsquo;s now part of my underlying worldview. I believe, and my experience has been, that whatever I focus on, whatever I give my attention to, will gradually become my reality. I believe that mindfulness &amp;mdash; the ability to observe choose my thoughts, and by proxy to direct my thoughts intentionally &amp;mdash; is the source of my ability to direct my life.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/cityscape.jpg&#34; alt=&#34;Cityscape&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When I was a child, I attended a workshop with Pat Parelli, a master horseman and trainer of people. His phrase has stayed with me through many years:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Causing is somewhere between making and letting.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;When I notice and release distracting thoughts, what is it but focus? When I choose my thoughts with care and intention, what is this other than focus?  And every time I do this, I &lt;em&gt;cause&lt;/em&gt; myself to contribute to my desired goals, by training myself to become better at giving attention to things I want, and withdrawing attention from things I don&amp;rsquo;t want.&lt;/p&gt;
+
+&lt;h3 id=&#34;my-advice&#34;&gt;My Advice&lt;/h3&gt;
+
+&lt;p&gt;My advice, should you wish to hear it, is to consider that mental effort defeats itself. You can&amp;rsquo;t force yourself to focus. The harder you try, the more you&amp;rsquo;ll spin your wheels. It must be effortless and relaxed.&lt;/p&gt;
+
+&lt;p&gt;One way to avoid effort is to become interested in what you want. The ability to create genuine interest within yourself is a skill. You can do it if you can direct your thoughts to the things you want. And training yourself to be able to direct your thoughts is not only possible, it&amp;rsquo;s the single most valuable skill you could ever acquire, because it will multiply your efforts in every other area.&lt;/p&gt;
+
+&lt;p&gt;Rather than fighting or working for focus, I suggest that you become a focused person through a daily practice of your choosing.&lt;/p&gt;
+
+&lt;p&gt;Everyone&amp;rsquo;s practice will be different. The key is to find something that works for you, and is so rewarding that you find it indispensable &amp;mdash; something you &amp;ldquo;couldn&amp;rsquo;t live without.&amp;rdquo; If you don&amp;rsquo;t know where to start, ask advice from people you admire. If you want what they have gotten, consider doing what they have done. Look at anyone else in your life and assess them the same way.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll give a couple of examples. One is mindfulness and meditation. For an example, see &lt;a href=&#34;http://www.feld.com/wp/archives/2014/04/meditation-narrative.html&#34;&gt;Brad Feld&amp;rsquo;s blog&lt;/a&gt;. He has written a great deal about the benefits he&amp;rsquo;s seen since beginning to practice meditation. His personal practice is based on the &lt;a href=&#34;http://www.getsomeheadspace.com/&#34;&gt;Headspace Project&lt;/a&gt;, which I can also say has worked well for me.&lt;/p&gt;
+
+&lt;p&gt;The second example is Martin Luther (not Martin Luther King Jr), who is quoted as saying &amp;ldquo;I have so much to do that I shall spend the first three hours in prayer.&amp;rdquo; Beginning each day with intentionality gets things off on the right foot. I&amp;rsquo;m not sure that three hours is necessary for everyone. Three minutes works wonders for me.&lt;/p&gt;
+
+&lt;p&gt;Third is physical activity. Many people find specific things conducive to focus: running, knitting, swimming, showering. If you can get some focus and quietude of mind doing something like that, then try to integrate it into the rest of your time as well. For me, it used to be rock climbing. That was the only time I felt focused.&lt;/p&gt;
+
+&lt;p&gt;Now I use both prayer and meditation to achieve mindfulness every day and carry it through all my activities. Years ago I met an elderly man, an architect, who spoke of his lifelong practice of transcendental meditation and how beneficial it had been. I asked him to be my teacher, and he spent a lot of time coaching me in meditation.&lt;/p&gt;
+
+&lt;p&gt;Ultimately I found I could not sustain the practice he passed on to me. Perhaps it was that I didn&amp;rsquo;t learn it well enough, or perhaps it just wasn&amp;rsquo;t quite right for me. Whatever the reason, it was something I &lt;em&gt;could&lt;/em&gt; live without, and because it was non-essential I gradually drifted out of the habit of doing it every day. After some time I found two small tweaks that made it much easier for me, and that made all the difference. (The tweaks were meditating for a slightly shorter time, and focusing on my breath instead of a mantra. Your mileage will vary.)&lt;/p&gt;
+
+&lt;p&gt;I find the following pieces of scripture immensely inspiring:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;For where your treasure is, there will your heart be also. The light of the body is the eye: if therefore thine eye be single, thy whole body shall be full of light. &amp;mdash; Matthew 6:21-22&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;What does it mean for one&amp;rsquo;s &lt;em&gt;eye to be single&lt;/em&gt;? My interpretation is that it means to cast your attention on only one thing. The overall meaning I find in these verses is that choosing a goal, choosing to regard your goal as a treasure you desire, and concentrating on it, will motivate you towards creating that outcome.&lt;/p&gt;
+
+&lt;p&gt;Finally, this is the essence of focus for me:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Be still, and know that I am God.
+&amp;mdash; Psalm 46:10&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I wish you success in all your endeavours, and hope you&amp;rsquo;ve found this article helpful.&lt;/p&gt;
+
+&lt;p&gt;Photo credits:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.flickr.com/photos/jdhancock/5177358991/&#34;&gt;https://www.flickr.com/photos/jdhancock/5177358991/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.flickr.com/photos/jjjohn/2387534678&#34;&gt;https://www.flickr.com/photos/jjjohn/2387534678&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.flickr.com/photos/80901381@N04/7649502498&#34;&gt;https://www.flickr.com/photos/80901381@N04/7649502498&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.flickr.com/photos/velvettears/5982590252/&#34;&gt;https://www.flickr.com/photos/velvettears/5982590252/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+        </item>
+    
+        <item>
+          <title>The Goal</title>
+          <link>https://www.xaprb.com/blog/2014/05/24/the-goal/</link>
+          <pubDate>Sat, 24 May 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/05/24/the-goal/</guid>
+          <description>&lt;p&gt;Once upon a time I managed several teams of consultants. At a certain stage of the organization&amp;rsquo;s growth, we wanted to achieve a higher billable-time utilization more easily, and we wanted more structure and process.&lt;/p&gt;
+
+&lt;p&gt;Cary Millsap, about whom I have written quite a bit elsewhere on this blog, suggested that I might profit from reading &lt;a href=&#34;http://www.amazon.com/Goal-Process-Ongoing-Improvement/dp/0884271951/?tag=xaprb-20&#34;&gt;&lt;em&gt;The Goal&lt;/em&gt;&lt;/a&gt; by Eliyahu Goldratt. I will let history be the judge of the outcome, but from my perspective, this was revolutionary for me. It is a clear watershed moment in my memory: I lived life one way and saw things through one lens before, and afterwards everything was different.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/horse-race.jpg&#34; alt=&#34;Horse Race&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The Goal&lt;/em&gt; helped me relate what I had learned about performance in the computer context &amp;mdash; queueing theory, system optimization, computer architecture, and so on &amp;mdash; to organizations. It taught me that, at least in some senses, humans and their interactions form systems that obey fundamentally the same laws as computer components. This is not to dehumanize people and treat them as components. Far from it: &lt;em&gt;The Goal&lt;/em&gt; helped me to organize my thoughts and knowledge about computers by giving me human analogies. It helped me deepen and strengthen my intuition about how things work.&lt;/p&gt;
+
+&lt;p&gt;I will summarize some of the main points of &lt;em&gt;The Goal&lt;/em&gt; in this article, but I encourage you to read the book. It is a parable in the form of a novel, similar in some ways to Daniel Quinn&amp;rsquo;s &lt;a href=&#34;http://www.amazon.com/Ishmael-Adventure-Spirit-Daniel-Quinn/dp/0553375407/?tag=xaprb-20&#34;&gt;&lt;em&gt;Ishmael&lt;/em&gt;&lt;/a&gt; or Dan Millman&amp;rsquo;s &lt;a href=&#34;http://www.amazon.com/Way-Peaceful-Warrior-Changes-Lives/dp/1932073205/?tag=xaprb-20&#34;&gt;&lt;em&gt;Way Of The Peaceful Warrior&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;background&#34;&gt;Background&lt;/h3&gt;
+
+&lt;p&gt;At the time I read &lt;em&gt;The Goal&lt;/em&gt;, the consulting group was experiencing tremendous demand, overcommitment to an explosion of inititatives that were too many and varied to execute well, and cash flow challenges. As for myself, I was not only leading the consulting team, but also serving as the main salesperson and an executive at large.&lt;/p&gt;
+
+&lt;p&gt;The first response to the pressures on the organization was to grow it by hiring quickly.
+As a seasoned manager might guess, this amplified many of the problems. In a nutshell, &lt;em&gt;the organization was not scalable&lt;/em&gt; and there was chaos at every turn.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/chaos.jpg&#34; alt=&#34;Chaos&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Reading &lt;em&gt;The Goal&lt;/em&gt; gave me the first surge of hope I&amp;rsquo;d had in a while. Acting on it solved many problems: some immediately, some long-term. Some things I saw clearly could be improved but was unable to effect the changes I wanted. But the first benefit was hope where I had been hopeless.&lt;/p&gt;
+
+&lt;h3 id=&#34;summary-of-the-goal&#34;&gt;Summary of The Goal&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;The Goal&lt;/em&gt; introduces the Theory of Constraints, a process of business
+improvement. It&amp;rsquo;s a novel about business process optimization, centered around a
+factory that&amp;rsquo;s always losing money and missing deadlines.
+The manager solves these problems by understanding the true goal of the
+factory.&lt;/p&gt;
+
+&lt;p&gt;What did he learn?&lt;/p&gt;
+
+&lt;p&gt;The goal of a business is to&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;make money by increasing net profit,&lt;/li&gt;
+&lt;li&gt;while simultaneously increasing return on investment,&lt;/li&gt;
+&lt;li&gt;and simultaneously increasing cash flow.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All three are necessary.  To accomplish these, the
+business needs to&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;increase throughput,&lt;/li&gt;
+&lt;li&gt;while simultaneously reducing inventory,&lt;/li&gt;
+&lt;li&gt;and simultaneously reducing operating expense.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These terms have specific meanings.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Throughput: the rate at which the system generates &lt;em&gt;money&lt;/em&gt;
+ through sales.&lt;/li&gt;
+&lt;li&gt;Inventory: the &lt;em&gt;money&lt;/em&gt; the system has invested in
+ purchasing things to sell.&lt;/li&gt;
+&lt;li&gt;Operating expense: &lt;em&gt;money&lt;/em&gt; spent to turn inventory into
+ throughput.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that all of these are in a common unit, money. Inventory, for example, is not a physical concept, it&amp;rsquo;s monetary. These definitions describe a model of a business as a system of monetary throughput:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;money entering the system&lt;/li&gt;
+&lt;li&gt;money contained inside the system&lt;/li&gt;
+&lt;li&gt;money leaving the system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Achieving the business&amp;rsquo;s goal requires maximizing the money coming in, minimizing money leaving, and minimizing money that&amp;rsquo;s absorbed into the system. It&amp;rsquo;s that simple.&lt;/p&gt;
+
+&lt;p&gt;It surprises the manager to learn that his factory&amp;rsquo;s goal is the same as the
+business&amp;rsquo;s goal (his factory is a smaller part of a larger business). This is a
+general principle: each component&amp;rsquo;s goal is the same as the system&amp;rsquo;s goal.&lt;/p&gt;
+
+&lt;p&gt;Now that we have a cogent model of a business and its goals in the starkest possible terms, it is necessary to understand what constrains or limits it in each of these dimensions.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/chain.jpg&#34; alt=&#34;Chain&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are two primary and strongly related factors, both of which affect business processes: dependencies and variations.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dependencies, or dependent events, are things that have to happen before other things can happen.&lt;/li&gt;
+&lt;li&gt;Statistical variations are variations in start times, stop times, or durations of events.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Variations cause unpredictability, and dependencies cause unpredictability to accumulate and cascade through the system. The only way to keep throughput stable at the process&amp;rsquo;s output is to have excess capacity and buffers in the system. The traditional wisdom of trimming capacity to fit demand (in an attempt to cut waste) will increase the system&amp;rsquo;s unpredictability, drop throughput, and increase inventory. These work against the business&amp;rsquo;s goal.&lt;/p&gt;
+
+&lt;p&gt;This is nothing more than queueing theory, but much more simply explained than usual.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The Goal&lt;/em&gt; introduces a process of continuous improvement towards
+the business&amp;rsquo;s goal.  Simplified, it is basically identifying bottlenecks, finding ways to exploit them, prioritizing that, and then looking for the next bottleneck. This is the Theory of Constraints.&lt;/p&gt;
+
+&lt;h3 id=&#34;optimizing-the-consulting-teams&#34;&gt;Optimizing The Consulting Teams&lt;/h3&gt;
+
+&lt;p&gt;The process of improvement above sounds incredibly obvious, and it is once you see it. After all, I&amp;rsquo;d been doing the same thing in systems performance optimization for years. The magic is in understanding the meaning of constraints, variations, dependencies, throughput, inventory, and so on as it relates to the organization and its processes.&lt;/p&gt;
+
+&lt;p&gt;While studying &lt;em&gt;The Goal&lt;/em&gt; I frequently put the book down and excitedly noted things that had just occurred to me. For example, I created a massive list of constraints. These were always things that had frustrated me, but I&amp;rsquo;d never seen clearly how badly they impacted the organization until I considered them as constraints. To list a few:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Timezone differences&lt;/li&gt;
+&lt;li&gt;Unsatisfied prerequisites such as access to the systems where work was to be performed, or availability of a consultant with the required skills&lt;/li&gt;
+&lt;li&gt;Communication delays&lt;/li&gt;
+&lt;li&gt;Interruptions&lt;/li&gt;
+&lt;li&gt;Transitions between available/unavailable, such as travel or vacation time&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There were many more, perhaps several dozen. I was on an airplane while doing much of this work, and I remember bursting with excitement. I just couldn&amp;rsquo;t wait to start fixing some of the problems that were suddenly so obvious.&lt;/p&gt;
+
+&lt;p&gt;One of the clearest problems was that I was a huge constraint myself. I was dependent on many things in the business, and I made a lot of the business dependent on me in turn. For example, I would dedicate myself full-time to consulting when there was too much demand, and when demand slacked, I would stop working with customers and make sales calls. The result is ridiculously obvious in hindsight, but while I was in the midst of it, I couldn&amp;rsquo;t see how I was causing the entire organization&amp;rsquo;s workload to overcorrect in giant swings of the pendulum, from too much demand to everyone being practically idle. Hiring a salesperson was the key to solving this problem, so that variations in the sales process were eliminated. The operative word there is &amp;ldquo;variations.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/chain-link.jpg&#34; alt=&#34;Dependencies&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Another major theme that jumped out at me was the ways in which the lack of process was causing problems with inbound work, inventory, and throughput. Lack of process caused a lot of variation in work, and lack of knowledge-sharing caused dependencies amongst people, projects, and teams. Lack of process was either at the root of problems, or intimately involved in them. As I recall, I did not identify a single constraint that could not be improved by better and more consistent processes. For readers who are interested in this line of thought, I can suggest the book &lt;a href=&#34;http://www.amazon.com/E-Myth-Revisited-Small-Businesses-About/dp/0887307280/?tag=xaprb-20&#34;&gt;&lt;em&gt;The E-Myth Revisited&lt;/em&gt;&lt;/a&gt; by Michael Gerber.&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;The Goal&lt;/em&gt; helped me reduce the complexity of a large consulting group and its attendant business processes and pains to simplest possible terms &amp;mdash; things I could understand and relate clearly to myself and to others. The principles and concepts that weave through &lt;em&gt;The Goal&lt;/em&gt; are easy to grasp and easy to work with, but at the same time there&amp;rsquo;s little danger of over-simplification.&lt;/p&gt;
+
+&lt;p&gt;As an aside, &lt;em&gt;The Goal&lt;/em&gt; contributed directly to the thought processes that led to my founding VividCortex, and to crucial breakthroughs such as defining a &lt;a href=&#34;https://vividcortex.com/blog/2014/04/24/fault-anomaly-detection/&#34;&gt;system fault&lt;/a&gt; in terms of throughput, inventory, and operating expense. You can read more about this in a &lt;a href=&#34;https://vividcortex.com/blog/2014/04/21/monitoring-is-dead-long-live-performance-management/&#34;&gt;blog post&lt;/a&gt; explaining how and why VividCortex is different from a monitoring system.&lt;/p&gt;
+
+&lt;p&gt;Photo credits: &lt;a href=&#34;https://www.flickr.com/photos/kingstongal/6011726882/&#34;&gt;horse race&lt;/a&gt;,
+&lt;a href=&#34;https://www.flickr.com/photos/almostinfamous/4603824077/&#34;&gt;smoke&lt;/a&gt;,
+&lt;a href=&#34;https://www.flickr.com/photos/intherough/3470183543&#34;&gt;chain&lt;/a&gt;,
+&lt;a href=&#34;https://www.flickr.com/photos/willmontague/3813295674/&#34;&gt;chain-link fence&lt;/a&gt;.&lt;/p&gt;</description>
+        </item>
+    
+
+  </channel>
+</rss>

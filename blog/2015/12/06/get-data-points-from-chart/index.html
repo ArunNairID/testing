@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How to Extract Data Points From a Chart &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How to Extract Data Points From a Chart" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/media/2015/12/espresso.jpg" />
+  <meta name="og:description" content="This post shows several ways to estimate data points from an image of a chart. As an example, I analyze CitusDB&#39;s scalability from a YouTube screen capture." />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2015/12/06/get-data-points-from-chart/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2015/12/06/get-data-points-from-chart/">
+  
+  <meta name="description" value="This post shows several ways to estimate data points from an image of a chart. As an example, I analyze CitusDB&#39;s scalability from a YouTube screen capture.">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to Extract Data Points From a Chart</h1>
+  <span class="post-date">Sun, Dec 6, 2015 in
+		
+		<a href="/categories/math" class="btn btn-primary">Math</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/scalability" class="btn btn-primary">Scalability</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f12%2f06%2fget-data-points-from-chart%2f&text=How%20to%20Extract%20Data%20Points%20From%20a%20Chart:https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f12%2f06%2fget-data-points-from-chart%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f12%2f06%2fget-data-points-from-chart%2f&title=How%20to%20Extract%20Data%20Points%20From%20a%20Chart&summary=How%20to%20Extract%20Data%20Points%20From%20a%20Chart&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f12%2f06%2fget-data-points-from-chart%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f12%2f06%2fget-data-points-from-chart%2f&t=How%20to%20Extract%20Data%20Points%20From%20a%20Chart" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f12%2f06%2fget-data-points-from-chart%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>I often see benchmark reports that show charts but don&rsquo;t provide tables of
+numeric results. Some people will make the actual measurements available if
+asked, but I&rsquo;ve been interested in
+<a href="https://www.vividcortex.com/resources/universal-scalability-law/">analyzing</a>
+many systems for which I can&rsquo;t get numbers.  Fortunately, it&rsquo;s usually possible
+to get approximate results without too much trouble. In this blog post I&rsquo;ll show
+several ways to extract estimates of values from a chart image.</p>
+
+<p><img src="/media/2015/12/espresso.jpg" alt="Extracting" /></p>
+
+<p></p>
+
+<p>I&rsquo;ll motivate the idea with a simple chart of a slide I saw at the recent
+PGConfSV conference on a keynote presentation. I was interested in the benchmark
+data (for <a href="https://www.citusdata.com/">CitusDB</a>, in this case) but I am sure
+they are busy and I haven&rsquo;t gotten in touch with them yet about it. So I watched
+the YouTube video of the keynote address, paused it when the slide was showing,
+and took a screenshot.</p>
+
+<p><img src="/media/2015/12/citusdb-benchmark.jpg" alt="CitusDB Benchmark Result" /></p>
+
+<p>I&rsquo;d like to use the Universal Scalability Law to analyze the chart on the left
+and estimate how much of CitusDB&rsquo;s massively parallel processing is serialized.
+I am not an expert on it, but I believe it uses a PostgreSQL node with a plugin
+as a query planner and router, sends queries to shards containing data, and
+combines the results to return them to the client. This is fairly standard
+scatter-gather processing. One of the big limiting factors for such a system is
+typically the query planning and the merging of the results. How much of the
+overall execution time does that take? The Universal Scalability Law can help
+understand that. But to analyze the system, first I need its data.</p>
+
+<p>Let&rsquo;s see how to get it.</p>
+
+<h3 id="doing-it-the-hard-way">Doing It The Hard Way</h3>
+
+<p>I&rsquo;m going to show you two hard ways to do this and suggest a couple of easier
+ways.</p>
+
+<p>One is to use any photo editing software and a ruler or crop function to
+estimate the pixel center of the points on the chart. For example, here&rsquo;s a
+screen capture of dragging from the bottom left of the image to the bottom left
+of the chart to get an X-Y point for the intersection of the chart&rsquo;s X and Y
+axes. I&rsquo;m using the default Mac image editing program here, Preview:</p>
+
+<p><img src="/media/2015/12/using-preview.jpg" alt="Using Preview To Estimate Points" /></p>
+
+<p>The result is X=326,Y=183. Do this repeatedly for all the points on the chart
+and then put the results into a spreadsheet, subtract the origin X and Y from
+all the points, and normalize them relative to known points on the chart axes
+(which you should also measure) and you&rsquo;ve got your results. Here&rsquo;s a screenshot
+of the spreadsheet I made to do this. The points I measured are in green and the
+results are in purple:</p>
+
+<p><img src="/media/2015/12/points-spreadsheet.png" alt="Spreadsheet to calculate results" /></p>
+
+<p>You may <a href="/media/2015/12/spreadsheet.xlsx">download the spreadsheet</a> if you&rsquo;d
+like to look at it.
+It&rsquo;s quite clear from the chart&rsquo;s context that the X-values should actually be
+1, 5, 10 and 20 so those are easy corrections to make.
+Using this technique I estimate the points as follows:</p>
+
+<pre><code> 1   36250
+ 5  110000
+10  195000
+20  313750
+</code></pre>
+
+<p>A similar technique is to use <a href="https://www.desmos.com">Desmos</a>. You can insert
+an image, set its dimensions equal to its pixel count, then create a table and
+use the gear menu to enable dragging on the table&rsquo;s points, turning on the 4-way
+drag handles. Then align points over the chart&rsquo;s points, and you can read off
+the values from the table just as with the Preview app:</p>
+
+<p><img src="/media/2015/12/using-desmos.jpg" alt="Using Desmos" /></p>
+
+<p>One nice thing about this method is that you can then combine the image with any
+graphs you&rsquo;re making. For example, I used this method to facetiously analyze the
+<a href="http://www.vividcortex.com/blog/2015/11/28/a-trendline-is-a-model/">path of the eclipsing
+moon</a> on a
+recent blog post.</p>
+
+<h3 id="easier-ways">Easier Ways</h3>
+
+<p>Why use hard methods like that? I believe the hard ways are still valuable to
+know about. First of all, when you do it you get a firm grasp on the math and
+you&rsquo;re tuned in to what you&rsquo;re working on (or I am, at least). Second, sometimes
+when charts are skewed by, say, the camera&rsquo;s perspective, you have to estimate
+where the points would fall if the skew were corrected.</p>
+
+<p>That said, there are a few tools that are easier to use and produce good
+results. While searching online I found
+<a href="http://digitizer.sourceforge.net/">engauge</a>, <a href="http://www.datathief.org/">Data
+Thief</a>, and <a href="di8itapp">http://di8itapp.com/</a>. But the
+best one I&rsquo;ve found so far is the free online <a href="http://arohatgi.info/WebPlotDigitizer/app/">web plot
+digitizer</a>, which runs in the
+browser and produced quite good results for me. It allows very fine control over
+the placement of the points. The extracted points are:</p>
+
+<pre><code> 0.995104673   32858.00211
+ 5.070422535  108307.8542
+10.07535128   196097.94
+20.17810302   312738.7098
+</code></pre>
+
+<p>Of course, the X-points should be set to 1, 5, 10, and 20 as before.</p>
+
+<p>As a bonus, this app integrates with <a href="https://plot.ly">Plotly</a>, and can
+automatically send the resulting data points there for analysis. Plotly is a
+tool I wasn&rsquo;t aware of previously. I found it quite nice for this type of
+analysis and was able to quickly run a regression against the USL and estimate
+the coefficient of serialization at 4% and the coefficient of crosstalk at 0,
+which is very realistic for this type of system in my experience:</p>
+
+<p><img src="/media/2015/12/plotly.jpg" alt="Plotly" /></p>
+
+<p>That was easy! Easier than using RStudio, perhaps.</p>
+
+<h3 id="conclusions">Conclusions</h3>
+
+<p>Using the techniques I showed in this article you can extract graph points from
+a variety of different images when you lack the source data. Some of these
+techniques are easier to use on large datasets than others, and some are just
+more fun if you feel like doing things manually, but all can produce results
+good enough for many purposes.</p>
+
+<p>If you&rsquo;re curious about the analysis of CitusDB, and what it means for it to
+have a coefficient of serialization (sigma) of about 4%, please read my
+<a href="https://www.vividcortex.com/resources/universal-scalability-law/">introduction to the Universal Scalability
+Law</a>. If
+you&rsquo;re like me, you&rsquo;ll find it fascinating that such a model exists. (Exercise
+for the reader: what&rsquo;s the maximum speedup CitusDB should be able to achieve as
+you add more nodes to it?)</p>
+
+<p><a href="https://www.flickr.com/photos/schill/14418736104/">Photo by Scott Schiller on Flickr</a>.</p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2015/12/13/minimal-social-meta-blog/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2015/11/14/help-me-improve-accessibility/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2015\/12\/06\/get-data-points-from-chart\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      I need your advice on how to package MySQL Toolkit as one file &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="I need your advice on how to package MySQL Toolkit as one file" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2007/06/03/advice-on-packaging-mysql-toolkit/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2007/06/03/advice-on-packaging-mysql-toolkit/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">I need your advice on how to package MySQL Toolkit as one file</h1>
+  <span class="post-date">Sun, Jun 3, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f03%2fadvice-on-packaging-mysql-toolkit%2f&text=I%20need%20your%20advice%20on%20how%20to%20package%20MySQL%20Toolkit%20as%20one%20file:https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f03%2fadvice-on-packaging-mysql-toolkit%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f03%2fadvice-on-packaging-mysql-toolkit%2f&title=I%20need%20your%20advice%20on%20how%20to%20package%20MySQL%20Toolkit%20as%20one%20file&summary=I%20need%20your%20advice%20on%20how%20to%20package%20MySQL%20Toolkit%20as%20one%20file&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f03%2fadvice-on-packaging-mysql-toolkit%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f03%2fadvice-on-packaging-mysql-toolkit%2f&t=I%20need%20your%20advice%20on%20how%20to%20package%20MySQL%20Toolkit%20as%20one%20file" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f03%2fadvice-on-packaging-mysql-toolkit%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>Since starting the <a href="http://code.google.com/p/innotop">innotop</a> and <a href="http://code.google.com/p/maatkit">mysqltoolkit</a> projects on Sourceforge, I have learned a lot about how to use source control more effectively &ndash; especially how branching and tagging can be used. Still, I have limited experience. I want to package all the tools in MySQL Toolkit together and release them in one archive, but I don&rsquo;t know the best way to do it; every idea seems to have drawbacks. Read on for the details, and if you have suggestions, would you please leave comments for me?</p>
+
+<h3 id="how-i-m-versioning-things">How I&rsquo;m versioning things</h3>
+
+<p>I&rsquo;ve been versioning each tool separately, following this naming convention: incremental changes and bug-fixes increment the revision number, major changes bump the minor version, and really really big earth-shaking changes bump the major version number.</p>
+
+<p>Versioning each tool separately makes sense to me, because some tools are stable and others are only half-done. I don&rsquo;t release version 1.0.x until I think the tool satisfies some large subset of user needs, and is stable and safe to use.</p>
+
+<h3 id="how-the-source-is-organized-now">How the source is organized now</h3>
+
+<p>Right now I have organized the Subversion tree like this:</p>
+
+<pre>/branches
+   /1.1
+      /mysql-table-checksum
+/tags
+   /0.8.0
+      /mysql-table-sync
+   /0.9.0
+      /mysql-deadlock-logger
+      /mysql-show-grants
+      /mysql-table-maintainer
+      /mysql-table-sync
+/trunk
+   /mysql-deadlock-logger
+   /mysql-duplicate-key-checker
+   /mysql-find
+   /mysql-query-profiler
+   /mysql-show-grants
+   /mysql-table-checksum
+   /mysql-table-sync</pre>
+
+<p>I rarely branch anything; I do most development in /trunk. When I&rsquo;m ready to release something, I do a <code>svn copy</code> to /tags/version/whatever. If the tag already exists I just copy into it; if not I make a new tag subdirectory and copy into that. I try not to make any changes in /tags (but occasionally I want to change the README file or something and I do it there). I&rsquo;m not super-disciplined about all this, but I rarely deviate from it.</p>
+
+<p>At this point you may be saying &ldquo;whoa, that&rsquo;s awkward.&rdquo; Please let me know if you think there is a better or more natural way to do this. It does feel awkward to me somehow. And it feels like this directory structure, though it grew out of my policy of versioning tools separately, has made the goal of one package more difficult.</p>
+
+<h3 id="how-i-release-packages">How I release packages</h3>
+
+<p>Each tool&rsquo;s subdirectory has a Makefile that has rules to copy the files into a subdirectory, use <code>sed</code> to inject the current version number (contained in the Makefile) into them, and bundle them up. Then I upload them to SourceForge. The resulting package has a Makefile.PL file which, when executed, generates a Makefile with an install rule.</p>
+
+<p>This seems a little redundant to me, and in fact a couple of times I&rsquo;ve accidentally had the Makefile&rsquo;s version number disagree with the version number of the /tags subdirectory. I keep thinking I should be omitting the version number in the Makefile and pulling it from the current directory name in /tags when I build. Or the reverse: have the tagging process be a rule in the Makefile, and that way I can&rsquo;t tag something wrong.</p>
+
+<h3 id="how-to-package-things-up-as-one">How to package things up as one</h3>
+
+<p>I have several goals here:</p>
+
+<ol>
+<li>I want to be able to issue a single <code>make</code> and end up with the latest version of all the tools bundled up together.</li>
+<li>I want the user who unpacks the result to be able to run <code>make install</code> just once and get all of them installed.</li>
+<li>I want to be able to make Debian packages, Gentoo ebuilds and such.</li>
+<li>I want unified documentation with a TOC and cross-links. Currently each tool has its own POD section, which you can read with <code>perldoc</code>, and which by default gets turned into a man page by the install process. I keep thinking of having a man page for the whole package, with an overview of the toolkit&rsquo;s several parts and links to each tool&rsquo;s documentation for details. I also want to be able to generate HTML from this and put it on the Sourceforge project&rsquo;s homepage. POD seems to be a good way to go for the time being, and feels simpler than DocBook or some other format. Thoughts?</li>
+</ol>
+
+<p>I can think of a couple ways to do this. One is to have a single Makefile somewhere that recurses into the /tags subdirectory and finds the latest of each tool, runs the &ldquo;make&rdquo; process on it, and bundles everything up with an auto-generated Makefile.PL. It also needs to generate a unified README or CHANGELOG of the latest set of changes for each tool.</p>
+
+<p>A big question with this approach is what kind of version number policy to have for the unified package. Maybe the same type of thing as for the individual packages: bump the revision number when one or more packages get minor revisions, bump the minor version number when one or more packages gets a new minor revision, and bump the major version number when&hellip; ummm&hellip; a major event happens? It&rsquo;s a little less clear what that would mean.</p>
+
+<p>Another thought is to abandon individual packages altogether and put all the tools into one package with the same version number. This feels wrong to me, but as far as I can tell it&rsquo;s not unheard of. For example, I don&rsquo;t know where InnoDB&rsquo;s version policy is documented, but it seems to be synced with the MySQL version numbers. On the other hand, the individual tools from MySQL say things like &ldquo;mysql Ver 14.12 Distrib 5.0.24a&rdquo; and &ldquo;mysqldump Ver 10.10 Distrib 5.0.24a,&rdquo; so they&rsquo;re not all given the same version number.</p>
+
+<p>Another question is whether I should keep releasing individual packages at all, or just release the unified package. I&rsquo;m inclined to stop releasing individual packages and save myself the work.</p>
+
+<h3 id="what-do-you-suggest">What do you suggest?</h3>
+
+<p>I would love to hear ideas, whether you&rsquo;ve been doing this for decades or never did it at all. I&rsquo;m not afraid to do a lot of work once if it will save me a lot of work on an ongoing basis (for example, completely re-organizing the source tree). And I&rsquo;m willing to hear you say I&rsquo;ve been doing it the wrong way, if you think that&rsquo;s the case. My goal here is to learn from people with more experience and/or more ideas. Thanks for your time!</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2007/06/06/mysql-archiver-091-released/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2007/06/03/mysql-table-checksum-116-released/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2007\/06\/03\/advice-on-packaging-mysql-toolkit\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

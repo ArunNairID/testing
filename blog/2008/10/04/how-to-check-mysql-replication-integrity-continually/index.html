@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How to check MySQL replication integrity continually &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How to check MySQL replication integrity continually" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2008/10/04/how-to-check-mysql-replication-integrity-continually/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2008/10/04/how-to-check-mysql-replication-integrity-continually/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to check MySQL replication integrity continually</h1>
+  <span class="post-date">Sat, Oct 4, 2008 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f04%2fhow-to-check-mysql-replication-integrity-continually%2f&text=How%20to%20check%20MySQL%20replication%20integrity%20continually:https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f04%2fhow-to-check-mysql-replication-integrity-continually%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f04%2fhow-to-check-mysql-replication-integrity-continually%2f&title=How%20to%20check%20MySQL%20replication%20integrity%20continually&summary=How%20to%20check%20MySQL%20replication%20integrity%20continually&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f04%2fhow-to-check-mysql-replication-integrity-continually%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f04%2fhow-to-check-mysql-replication-integrity-continually%2f&t=How%20to%20check%20MySQL%20replication%20integrity%20continually" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f04%2fhow-to-check-mysql-replication-integrity-continually%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>I have recently added some features to <a href="http://www.maatkit.org/">Maatkit&rsquo;s mk-table-checksum</a> tool that can make it easy to checksum the relevant parts of your data more frequently (i.e. <a href="http://www.drgrammar.org/faqs/#59">continually, but not continuously</a>). This in turn makes it possible for you to find out <em>much</em> sooner if a replica becomes different from its master, and then you can take action before the differences affect more of your data.</p>
+
+<p></p>
+
+<p>The new features let you apply your knowledge of your data to the checksumming operation. For example, if table X is append-only, then you can make it checksum only the new rows (those inserted since the last checksum). If the table is MyISAM, then it has a last-modified timestamp, which comes from the .MYI file&rsquo;s timestamp &ndash; that&rsquo;s another easy way to find out whether the table has changed since the last time you ran the checksum.</p>
+
+<p>The new features also let you checksum only part of the data. For example, you can checksum 1/7th of your data each day, which is pretty likely to catch differences if they&rsquo;re widespread. And just in case they&rsquo;re localized, you can checksum a different portion each day so you cover the whole dataset each week.</p>
+
+<p>Finally, you can apply these new options per-table, so some tables get checksummed one way and some another way. In fact, there&rsquo;s now a mechanism for you to specify <em>most</em> options per-table, so you can specify the checksum algorithm, sleep time, chunksize, and a bunch of other things.</p>
+
+<p>Let&rsquo;s take a look at the new features.</p>
+
+<h3 id="checksumming-only-part-of-the-data">Checksumming only part of the data</h3>
+
+<p>Suppose you want a rough idea of whether your data is really different on a replica. Maybe you&rsquo;re a consultant who needs to check a really big data set to see if there&rsquo;s cause for concern. (Hmm, this sounds familiar, almost as though&hellip; nevermind.) One way to do that is to checksum a random sample of the rows. Let&rsquo;s checksum 5% of the data:</p>
+
+<pre>mk-table-checksum --replicate test.checksum --chunksize 1000 --probability 5 localhost</pre>
+
+<p>When this completes, you can check the results on the replica.</p>
+
+<p>While this is handy, it&rsquo;s not what you need if you&rsquo;re trying to set up a routine job to check all your data on an ongoing basis. You want complete coverage over some period of time. That&rsquo;s what <code>--modulo</code> and <code>--offset</code> are for. Let&rsquo;s do 1/7th of the data every day, to achieve full coverage over the course of a week:</p>
+
+<pre>mk-table-checksum --replicate test.checksum --chunksize 1000 \
+   --modulo 7 --offset 'WEEKDAY(NOW())' localhost</pre>
+
+<p>Notice that I&rsquo;m passing a SQL expression to the <code>--offset</code> option. There&rsquo;s a little bit of magic here. The tool puts <code>SELECT</code> in front of this and executes it in MySQL; if there&rsquo;s no error, then the result of the <code>SELECT</code> is used as the option&rsquo;s argument.</p>
+
+<h3 id="checksumming-only-changed-data">Checksumming only changed data</h3>
+
+<p>The final new feature is the ability to checksum based on newness.</p>
+
+<p>Scenario 1 is tables that don&rsquo;t change often, so they can be skipped entirely. Let&rsquo;s skip things that haven&rsquo;t changed in the last week:</p>
+
+<pre>mk-table-checksum --replicate test.checksum --chunksize 1000 \
+   --since 'CURRENT_DATE - INTERVAL 7 DAY' localhost</pre>
+
+<p>Again, the argument is an expression that MySQL can evaluate. (You could also write clever things here, such as selecting from an actual table.) If the table has an <code>Update_time</code> timestamp, and the value of <code>--since</code> looks like a temporal value, then the two are compared and the table can be skipped or checksummed, based on that comparison.</p>
+
+<p>But there&rsquo;s another scenario. The <code>--since</code> value can also be the value of the table&rsquo;s primary key (actually, the column by which the table is chunked, but the primary key is usually preferred for that.) Suppose you have an auto_increment primary key column named ID. Last time you checksummed, the maximum value in that column was 123,456. This time we can checksum only newer rows:</p>
+
+<pre>mk-table-checksum --replicate test.checksum --chunksize 1000 \
+   --tables mydb.mytbl --since 123456 localhost</pre>
+
+<p>The table will be divided into chunks of 1000 rows based on the range of values in the ID column, and the <code>--since</code> value will be applied as an extra <code>WHERE</code> clause mentioning that column. You can also use the <code>--sincecol</code> option to specify which column to apply the <code>WHERE</code> clause to, if necessary.</p>
+
+<h3 id="putting-it-all-together">Putting it all together</h3>
+
+<p>So far these options are useful, but of course you don&rsquo;t want to checksum your servers one table at a time with an option here, an option there, and so on. Let&rsquo;s see how to simplify this so you can just run the tool and make it Do The Right Thing on every table.</p>
+
+<p>This is the purpose of the <code>--argtable</code> argument, which lets you specify per-table options for the checksum operation. You create a table &ndash; I&rsquo;ll use <code>checksum_args</code>, but you can call it whatever you like. What&rsquo;s important is the columns in the table:</p>
+
+<pre>CREATE TABLE checksum_args (
+     db         char(64)     NOT NULL,
+     tbl        char(64)     NOT NULL,
+     -- other columns as desired
+     PRIMARY KEY (db, tbl)
+  );
+</pre>
+
+<p>You pass the name of this table to the tool:</p>
+
+<pre>mk-table-checksum --argtable mydb.checksum_args [other options....]</pre>
+
+<p>Now you can add columns to the table, named the same as the short form of some of mk-table-checksum&rsquo;s options. For example, if you want mydb.mytbl to be checksummed in chunks of 500 rows, add a <code>C</code> column to the table. (The short form of <code>--chunksize</code> is <code>-C</code>.) Now insert a row into the table:</p>
+
+<pre>insert into checksum_args(db, tbl, C) values('mydb', 'mytbl', 500);</pre>
+
+<p>You can also add a <code>since</code> column to this table. And finally, you can use <code>--savesince</code> to specify whether to save the last-used <code>--since</code> back into the table after the checksum operation. This way the value persists from one run to the next. For tables that are skipped based on the timestamp of the table (instead of the biggest known value of the chunk column), the current timestamp is saved instead.</p>
+
+<p>You can also add the <code>--modulo</code> and <code>--offset</code> into the table.</p>
+
+<pre>insert into checksum_args(db, tbl, C, M, O)
+  values('mydb', 'mytbl', 500, 7, 'DAYOFWEEK(NOW())');</pre>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>So that&rsquo;s a quick overview of the new features, which open up a range of new possibilities for frequent checksumming of data. Note that frequent isn&rsquo;t the same as continuous (which is also not the same thing as continual, so don&rsquo;t say the title of this post is false advertising). Continuous verification that a replica is in sync with the master requires some support in the server. However, you could easily checksum the newest rows in certain tables as often as you want, like every minute. In fact it&rsquo;s probably a good idea to do checksums <em>more</em> often, and in smaller nibbles, with the new features I&rsquo;ve explained here. You can ease the workload that way &ndash; spread it over time.</p>
+
+<p>The features are still evolving, and the newest code in the Subversion trunk is what you should probably look at if you&rsquo;re interested in using them. (Some of them aren&rsquo;t completed in the last release.) If you have suggestions or find bugs, please use the <a href="http://code.google.com/p/maatkit/">Maatkit Google Code project</a> to communicate them to the dev team.</p>
+
+<p>But most of all, enjoy and profit from this work, and spread the word about Maatkit!</p>
+
+<p style="border:1px solid red; padding:2em; margin: 2em; background: yellow">
+  Note: In the spring of 2009, there was a major effort to clean up and standardize Maatkit command-line options, so the specific command-line options and column names mentioned in this blog post are no longer valid. Thanks to Sheeri for pointing these out. For example, use chunk-size instead of C, because the -C option went away and &#8211;chunk-size took its place.
+</p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2008/10/09/would-tufte-approve-of-mixing-units-on-a-graph/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2008/10/04/javascript-formatting-and-parsing-functions-now-on-google-code/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2008\/10\/04\/how-to-check-mysql-replication-integrity-continually\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

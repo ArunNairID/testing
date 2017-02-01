@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How MySQL replication got out of sync &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How MySQL replication got out of sync" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2007/11/08/how-mysql-replication-got-out-of-sync/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2007/11/08/how-mysql-replication-got-out-of-sync/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How MySQL replication got out of sync</h1>
+  <span class="post-date">Thu, Nov 8, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f11%2f08%2fhow-mysql-replication-got-out-of-sync%2f&text=How%20MySQL%20replication%20got%20out%20of%20sync:https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f11%2f08%2fhow-mysql-replication-got-out-of-sync%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f11%2f08%2fhow-mysql-replication-got-out-of-sync%2f&title=How%20MySQL%20replication%20got%20out%20of%20sync&summary=How%20MySQL%20replication%20got%20out%20of%20sync&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f11%2f08%2fhow-mysql-replication-got-out-of-sync%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f11%2f08%2fhow-mysql-replication-got-out-of-sync%2f&t=How%20MySQL%20replication%20got%20out%20of%20sync" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f11%2f08%2fhow-mysql-replication-got-out-of-sync%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>I created <a href="http://code.google.com/p/maatkit/">MySQL Table Checksum</a> because I was certain replication replicas were slowly drifting out of sync with their masters, and there was no way to prove it. Once I could prove it, I was able to show that replication gets out of sync for lots of people, lots of times. (If you really want to hear war stories, you should probably talk to one of the MySQL support staff or consulting team members; I&rsquo;m sure they see this a lot more than I do).</p>
+
+<p>I finally figured out what was causing one of my most persistent and annoying out-of-sync scenarios. It turns out to be nothing earth-shaking; it&rsquo;s just an easy-to-overlook limitation of statement-based replication. You could call it a bug, but as far as I can see, there&rsquo;s no way to fix it with statement-based replication. (I&rsquo;d love to be proven wrong). Read on for the details.</p>
+
+<h3 id="the-setup">The setup</h3>
+
+<p>Here&rsquo;s the table I saw getting out of sync, usually within hours of being synced:</p>
+
+<pre>CREATE TABLE `workpriority` (
+  `client` smallint(5) unsigned NOT NULL,
+  `workunit` bigint(20) NOT NULL,
+  `priority` float NOT NULL,
+  `processor` int unsigned NOT NULL default '0',
+  PRIMARY KEY  (`client`,`workunit`),
+  KEY `priority` (`priority`),
+  KEY `processor` (`processor`,`priority`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</pre>
+
+<p>This table is essentially a queue of work that needs to be done, along with the priority of each item (<code>workunit</code> refers to another table, where the application retrieves the work to do). Applications work against this table in parallel. They run an <code>UPDATE</code> statement to claim some work for themselves, then fetch the rows the statement affected. To avoid any race conditions, the &ldquo;token&rdquo; is the result of the <code>CONNECTION_ID()</code> function. Here&rsquo;s the statement:</p>
+
+<pre>update workpriority as p
+   inner join (
+      select client, workunit
+      from workpriority
+      where processor = 0
+      order by priority desc
+      limit 10
+   ) as chosen using(client, workunit)
+   set p.processor = $cxn_id;</pre>
+
+<p>The nested <code>SELECT</code> statement finds 10 unclaimed (<code>processor = 0</code>) rows in order of descending priority. The outer <code>UPDATE</code> statement claims these rows by setting <code>processor</code> to <code>CONNECTION_ID()</code>.</p>
+
+<p>Now the application can find out what work it claimed with a simple <code>SELECT</code> with the token in the <code>WHERE</code> clause. Later, after the application processes each row, it issues the following statement to clean out the table:</p>
+
+<pre>delete from workpriority where client = ? and workunit = ? and processor = ?;</pre>
+
+<h3 id="the-problem">The problem</h3>
+
+<p>The problem seemed to be that some binary log events were not getting replayed on the replica. This table accumulated extra rows on the replicas, as though the DELETE statements weren&rsquo;t getting to the replicas. To test this, I compared the logs and determined that it&rsquo;s not a logging issue; the binary log events are getting to the replica and replaying just fine. I can see them in the replica&rsquo;s relay log and in the replica&rsquo;s binary log (I have <code>log_slave_updates</code> enabled).</p>
+
+<p>So if that&rsquo;s not the problem, what is?</p>
+
+<h3 id="the-bug">The bug</h3>
+
+<p>I already showed you the bug. If you didn&rsquo;t see it, well, neither did I &ndash; for a year.</p>
+
+<p>If you still don&rsquo;t see it, here&rsquo;s a hint: the replicas get out of sync in totally different ways. In other words, the replicas don&rsquo;t even match each other after a little while.</p>
+
+<p>The problem is that <code>ORDER BY... LIMIT</code> is non-deterministic. If several rows are tied for priority, the replicas might (and do!) order them differently than the master did. Then the the <code>UPDATE</code> statement claims different rows on the replicas. Some rows that have been claimed on the master are still marked as 0 on the replica. Then they don&rsquo;t get deleted by the DELETE statement. I was able to confirm this by running a script that does a checksum on this table every few minutes, then as soon as it finds differences dumps the whole table on both the master and the replica. I was able to find some rows that the application hadn&rsquo;t deleted yet. Sure enough, some of them weren&rsquo;t claimed on the replica.</p>
+
+<h3 id="the-fix">The fix</h3>
+
+<p>Very simple: resolve the ties. The query now causes a filesort because it can&rsquo;t use the index to sort, but it&rsquo;s not that big a table and this query doesn&rsquo;t run that often. Here&rsquo;s the fixed query:</p>
+
+<pre>update workpriority as p
+   inner join (
+      select client, workunit
+      from workpriority
+      where processor = 0
+      order by priority desc, workunit
+      limit 10
+   ) as chosen using(client, workunit)
+   set p.processor = $cxn_id;</pre>
+
+<p>This limitation of statement-based replication is so basic and simple, and I&rsquo;ve known about it for a long time, but it&rsquo;s so innocuously hidden in plain sight that it took me forever to see it.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2007/11/09/version-160-of-the-innotop-monitor-for-mysql-released/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2007/11/06/mysql-heartbeat-supports-postgresql/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2007\/11\/08\/how-mysql-replication-got-out-of-sync\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

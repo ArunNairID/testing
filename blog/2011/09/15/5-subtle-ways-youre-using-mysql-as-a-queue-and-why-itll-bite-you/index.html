@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      5 subtle ways you&#39;re using MySQL as a queue, and why it&#39;ll bite you &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="5 subtle ways you&#39;re using MySQL as a queue, and why it&#39;ll bite you" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2011/09/15/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2011/09/15/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">5 subtle ways you&#39;re using MySQL as a queue, and why it&#39;ll bite you</h1>
+  <span class="post-date">Thu, Sep 15, 2011 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/guest-posts" class="btn btn-primary">Guest Posts</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f09%2f15%2f5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you%2f&text=5%20subtle%20ways%20you%27re%20using%20MySQL%20as%20a%20queue%2c%20and%20why%20it%27ll%20bite%20you:https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f09%2f15%2f5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f09%2f15%2f5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you%2f&title=5%20subtle%20ways%20you%27re%20using%20MySQL%20as%20a%20queue%2c%20and%20why%20it%27ll%20bite%20you&summary=5%20subtle%20ways%20you%27re%20using%20MySQL%20as%20a%20queue%2c%20and%20why%20it%27ll%20bite%20you&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f09%2f15%2f5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f09%2f15%2f5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you%2f&t=5%20subtle%20ways%20you%27re%20using%20MySQL%20as%20a%20queue%2c%20and%20why%20it%27ll%20bite%20you" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f09%2f15%2f5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p><em>This post originally appeared on <a href="https://blog.engineyard.com/2011/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/">the Engine Yard blog</a>.</em></p>
+
+<p>I work for Percona, a MySQL consulting company. To augment my memory, I keep a quick-reference text file with notes on interesting issues that customers ask us to solve. One of the categories of frequent problems is attempts to build a job queue in MySQL. I have so many URLs under this bullet point that I stopped keeping track anymore. Customers have endless problems with job queues in their databases. By &ldquo;job queue&rdquo; I simply mean some list of things they&rsquo;ve inserted, which usually need to be processed and marked as completed. I&rsquo;ve seen scores &ndash; maybe hundreds &ndash; of cases like this.</p>
+
+<p>Many people realize the difficulties in building a good job queue or batch processing system, and try not to create one inside MySQL. Although the job queue is a great design pattern from the developer&rsquo;s point of view, they know it&rsquo;s often hard to implement well in a relational database. However, experience shows me that job queues sneak up in unexpected ways, even if you&rsquo;re a seasoned developer.</p>
+
+<p>Here are some of the most common ways I&rsquo;ve seen the job-queue design pattern creep into an application&rsquo;s database. Are you using MySQL for any of the following?</p>
+
+<ol>
+<li><strong>Storing a list of messages to send:</strong> whether it&rsquo;s emails, SMS messages, or friend requests, if you&rsquo;re storing a list of messages in a table and then looking through the list for messages that need to be sent, you&rsquo;ve created a job queue.</li>
+<li><strong>Moderation, token claims, or approval:</strong> do you have a list of pending articles, comments, posts, email validations, or users? If so, you have a job queue.</li>
+<li><strong>Order processing:</strong> If your order-processing system looks for newly submitted orders, processes them, and updates their status, it&rsquo;s a job queue.</li>
+<li><strong>Updating a remote service:</strong> does your ad-management software compute bid changes for ads, and then store them for some other process to communicate with the advertising service? That&rsquo;s a job queue.</li>
+<li><strong>Incremental refresh or synchronization:</strong> if you store a list of items that has changed and needs some background processing, such as files to sync for your new file-sharing service, well, by now you know what that is.</li>
+</ol>
+
+<p>As you can see, queues are sly; they slip into your design without you realizing it. Frankly, many of them aren&rsquo;t really a problem in reality. But the potential is always there, and I&rsquo;ve observed that it&rsquo;s hard to predict which things will become problems. This is usually because it depends on behavior that you don&rsquo;t know in advance, such as which parts of your application will get the most load, or what your users will promote to their friends.</p>
+
+<p>Let&rsquo;s dive a little bit into why job queues can cause trouble, and then I&rsquo;ll show you some ways to help reduce the chance it&rsquo;ll happen to you. The problem is usually very simple: performance. As time passes, the job queue table starts to either perform poorly, or cause other things to perform badly through collateral damage. There are three primary reasons for this:</p>
+
+<ol>
+<li><strong>Polling</strong>. Many of the job queue systems I see have one or more worker processes checking for something to do. This starts to become a problem pretty quickly in a heavily loaded application, for reasons I&rsquo;m about to explain.</li>
+<li><strong>Locking</strong>. The specific implementation of the polling often looks like this: run a SELECT FOR UPDATE to see if there are items to process; if so, UPDATE them in some way to mark them as in-process; then process them and mark them as complete. There are variations on this, not necessarily involving SELECT FOR UPDATE, but often something with similar effects. The problem with SELECT FOR UPDATE is that it usually creates a single synchronization point for all of the worker processes, and you see a lot of processes waiting for the locks to be released with COMMIT. Bad implementations of this (not committing until the workers have processed the items, for example) are really horrible, but even &ldquo;good&rdquo; implementations can cause serious pile-ups.</li>
+<li><strong>Data growth</strong>. I can&rsquo;t tell you how many times I&rsquo;ve seen email list management applications that have a single huge emails table. New emails go into the table with a &ldquo;new&rdquo; status, and then they get updated to mark them as sent. As time passes, these email tables can grow into millions or even billions of rows. Even though there might only be hundreds to thousands of new messages to send, that big bloated table makes all the queries really, really slow. If you combine this with polling and/or locking and lots of load on the server, you have a recipe for epic disaster.</li>
+</ol>
+
+<p>The solutions to these problems are actually rather simple: 1) avoid polling; 2) avoid locking; and 3) avoid storing your queue in the same table as other data. Implementing these solutions can take a bit of creativity, however.</p>
+
+<p>First, let&rsquo;s look at how to avoid polling. I wish that MySQL had listen/notify functionality, the way that PostgreSQL and Microsoft SQL Server do (just to mention two). Alas, MySQL doesn&rsquo;t, but you can simulate it. Here are three ideas: use GET_LOCK() and RELEASE_LOCK(), or write a plugin to communicate through Spread, or make the consumers run a SLEEP(100000) query, and then kill these queries to &ldquo;signal&rdquo; to the worker that there&rsquo;s something to do. These can work quite well, although it&rsquo;d be nice to have a more straightforward solution.</p>
+
+<p>Locking is actually quite easy to avoid. Instead of SELECT FOR UPDATE followed by UPDATE, just UPDATE with a LIMIT, and then see if any rows were affected. The client protocol tells you that; there&rsquo;s no need for another query to the database to check. Make sure autocommit is enabled for this UPDATE, so that you don&rsquo;t hold the resultant locks open for longer than the duration of the statement. If you don&rsquo;t have autocommit enabled, the application must follow up with a COMMIT to release any locks, and that is really no different from SELECT FOR UPDATE. (The rest of the work can be done with autocommit disabled; you need to enable it for only this statement.) While I&rsquo;m wishing for things, I wish that SELECT FOR UPDATE had never been invented. I haven&rsquo;t seen a case yet where it can&rsquo;t be done a better way, nor have I seen a case where it has failed to cause problems</p>
+
+<p>Finally, it&rsquo;s also really easy to avoid the one-big-table syndrome. Just create a separate table for new emails, and when you&rsquo;re done processing them, INSERT them into long-term storage and then DELETE them from the queue table. The table of new emails will typically stay very small and operations on it will be fast. And if you do the INSERT before the DELETE, and use INSERT IGNORE or REPLACE, you don&rsquo;t even need to worry about using a transaction across the two tables, in case your app crashes between. That further reduces locking and other overhead. If you fail to execute the DELETE, you can just have a regular cleanup task retry and purge the orphaned row. (Hmm, sounds like another job queue, no?) You can do much the same thing for any type of queue. For example, articles or comments that are pending approval can go into a separate table. This is really required on a large scale, although you shouldn&rsquo;t worry that your Wordpress blog doesn&rsquo;t do things this way (unless you&rsquo;ve been hired to rewrite CNN.com using Wordpress as a backend).</p>
+
+<p>Finally, and I&rsquo;ve saved perhaps the most obvious solution for last, don&rsquo;t use the database at all! Use a real queueing system, such as Resque, ActiveMQ, RabbitMQ, or Gearman. Be careful, however, that you don&rsquo;t enable persistence to a database and choose to use MySQL for that. Depending on the queue system, that can just reintroduce the problem in a generic way that&rsquo;s even less optimal. Some queue systems use all of the database worst practices I enumerated above.</p>
+
+<p>I hope this article has given you some insight into the variety of ways that job queues inside of MySQL can sneak up on you and bite you in the tendermost parts. And I hope you can learn to recognize and avoid this design pattern yourself, or at least implement it in a way that won&rsquo;t hurt you. It really is such a common problem that it&rsquo;s become one of the classic questions I see. Now, I&rsquo;m off to check my list of pending consulting requests and see what I should work on next.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2011/09/19/well-done-postgres-open/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2011/09/14/high-performance-mysql-third-edition/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2011\/09\/15\/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+	<meta name="generator" content="Hugo 0.17" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Baron Schwartz&#39;s Blog &middot; Stay Curious!
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/09/19/how-lock-tables-interacts-with-the-mysql-slow-query-log/">How LOCK TABLES interacts with the MySQL slow query log</a></h1>
+        <span class="post-date">Sun, Sep 19, 2010</span>
+        Here&rsquo;s a little trivia that you might find helpful. Suppose that I have the following in the MySQL slow query log (abbreviated for clarity):
+ # User@Host: root[root] @ localhost [127.0.0.1] # Time: 100919 17:58:52 # Query_time: 9.648427 Lock_time: 8.648039 select sleep(1) from t limit 1;  To get this into the slow query log, I set the long_query_time to 0 and opened two sessions. In one session I ran LOCK TABLES t WRITE, and in the other I tried to select from that table.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/09/19/how-lock-tables-interacts-with-the-mysql-slow-query-log/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/09/15/making-query-cache-contention-more-obvious/">Making query cache contention more obvious</a></h1>
+        <span class="post-date">Wed, Sep 15, 2010</span>
+        The newest release of Percona Server includes a trivial change that I think will be extremely valuable. This is the addition of a new thread state, &ldquo;Waiting on query cache mutex.&rdquo; Fixing the query cache to make it scalable is hard. Fixing the server to report when the query cache is a bottleneck is not hard. It has historically been very difficult for users to diagnose what&rsquo;s wrong with their server when the query cache is locking it intermittently.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/09/15/making-query-cache-contention-more-obvious/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/09/09/time-tcp-traffic-with-tcprstat/">Time TCP traffic with tcprstat</a></h1>
+        <span class="post-date">Thu, Sep 9, 2010</span>
+        I just realized that I didn&rsquo;t publicize this in the Postgres world, or anywhere but the MySQL blogosphere for that matter. Some folks at my company have released a generic TCP-response-time tool. Very useful for monitoring, benchmarks, historical metrics, and so on. It&rsquo;s kind of like iostat, but for TCP traffic, and fully focused on time, not traffic size. Performance == time and tasks, and this is a lightweight way to measure that data.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/09/09/time-tcp-traffic-with-tcprstat/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/09/07/a-gentle-introduction-to-couchdb-for-relational-practitioners/">A gentle introduction to CouchDB for relational practitioners</a></h1>
+        <span class="post-date">Tue, Sep 7, 2010</span>
+        CouchDB is a document-oriented database written in Erlang that addresses a particular &ldquo;sweet spot&rdquo; in data storage and retrieval needs. This blog post is an introduction to CouchDB for those of us who have a relational database background.
+A CouchDB database doesn&rsquo;t have tables. It has a collection of documents, stored in a B+Tree. A document is a collection of attributes and values. Values can be atomic, or complex nested structures such as arrays and sub-documents.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/09/07/a-gentle-introduction-to-couchdb-for-relational-practitioners/"> &raquo; Continue Reading (about 1500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/09/06/beware-of-svctm-in-linuxs-iostat/">Beware of svctm in Linux&#39;s iostat</a></h1>
+        <span class="post-date">Mon, Sep 6, 2010</span>
+        I&rsquo;ve been studying the source of iostat again and trying to understand whether all of its calculations I explained here are valid and correct. Two of the columns did not seem consistent to me. The await and svctm columns are supposed to measure the average time from beginning to end of requests including device queueing, and actual time to service the request on the device, respectively. But there&rsquo;s really no instrumentation to support that distinction.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/09/06/beware-of-svctm-in-linuxs-iostat/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/09/04/why-mysql-replication-is-better-than-mysqlbinlog-for-recovery/">Why MySQL replication is better than mysqlbinlog for recovery</a></h1>
+        <span class="post-date">Sat, Sep 4, 2010</span>
+        You have a backup, and you have the binary logs between that backup and now. You need to do point-in-time recovery (PITR) for some reason. What do you do? The traditional answer is &ldquo;restore the backup and then use mysqlbinlog to apply the binary logs.&rdquo; But there&rsquo;s a much better way to do it.
+The better way is to set up a server instance with no data, and load the binary logs into it.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/09/04/why-mysql-replication-is-better-than-mysqlbinlog-for-recovery/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/08/23/free-webinar-on-mysql-performance-this-thursday/">Free webinar on MySQL performance this Thursday</a></h1>
+        <span class="post-date">Mon, Aug 23, 2010</span>
+        ODTUG invited me to give a webinar and I said yes, so this Thursday you&rsquo;re invited to join me as I talk about MySQL performance. We&rsquo;ve come a very long way towards a MySQL that can perform well on modern hardware, and there really isn&rsquo;t broad recognition of this. A lot of the best work has gone into the InnoDB &ldquo;plugin&rdquo; storage engine, which was announced after my co-authors and I sent High Performance MySQL to the press.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/08/23/free-webinar-on-mysql-performance-this-thursday/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/08/23/what-are-your-favorite-mysql-bug-reports/">What are your favorite MySQL bug reports?</a></h1>
+        <span class="post-date">Mon, Aug 23, 2010</span>
+        Bug reports can be fun. They can also be terrible. Either way they can be entertaining. On the Drizzle IRC channel today I saw a couple references to MySQL bug reports: it is stop working and Does not make toast (which reminds me of the Mozilla bug report about the kitchen sink). Got any other favourites1?
+1 This one&rsquo;s for Jay.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/08/23/what-are-your-favorite-mysql-bug-reports/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/08/18/oracle-is-improving-mysql/">Oracle is improving MySQL</a></h1>
+        <span class="post-date">Wed, Aug 18, 2010</span>
+        I&rsquo;ve noticed that a steady and perhaps even growing number of bug reports and feature requests are getting resolved for the next milestone release. I continue to see signs that Oracle&rsquo;s next release of MySQL will not only include much of the unreleased good work that&rsquo;s been done over the last few years, but will add a lot of new features and fixes as well.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/08/18/oracle-is-improving-mysql/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/08/16/speaking-at-novarug-on-thursday/">Speaking at NovaRUG on Thursday</a></h1>
+        <span class="post-date">Mon, Aug 16, 2010</span>
+        I&rsquo;ll be joining the NovaRUG (Northern Virginia Ruby Users&rsquo; Group) on Thursday to talk about MySQL performance. See their blog for the details and how to RSVP.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/08/16/speaking-at-novarug-on-thursday/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/08/02/two-subtle-bugs-in-outer-join-queries/">Two subtle bugs in OUTER JOIN queries</a></h1>
+        <span class="post-date">Mon, Aug 2, 2010</span>
+        OUTER JOIN queries in SQL are susceptible to two very subtle bugs that I&rsquo;ve observed a number of times in the real world. Daniel and I have been hammering out ways to automatically detect queries that suffer from these bugs, in a relatively new Maatkit tool called mk-query-advisor. It&rsquo;s part of our series of advisor tools for MySQL. I wrote a blog post about it a while ago. Automated analysis of bad query patterns is a good thing to write tools to do, because catching buggy queries is hard work if you do it manually.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/08/02/two-subtle-bugs-in-outer-join-queries/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/07/21/speaking-at-mysql-meetup-in-northern-virginia/">Speaking at MySQL Meetup in Northern Virginia</a></h1>
+        <span class="post-date">Wed, Jul 21, 2010</span>
+        The closest thing I know of to a &ldquo;Northern Virginia MySQL Meetup&rdquo; is the Sterling Database Data Solutions Group. I got in touch with the organizer and we scheduled a meeting next Wednesday July 28th. I&rsquo;ll be presenting, and so will someone from Fusion-IO, a solid-state storage vendor. This is on short notice, so tell your friends about it! It would be great to grow a strong monthly meetup presence in this area.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/07/21/speaking-at-mysql-meetup-in-northern-virginia/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/07/19/speaking-at-surge-2010/">Speaking at Surge 2010</a></h1>
+        <span class="post-date">Mon, Jul 19, 2010</span>
+        OmniTI&rsquo;s Surge conference is looking really good &ndash; and I&rsquo;m going to be speaking there. The CfP just closed, so the list of speakers is still growing, but it already includes impressive names such as Neil J. Gunther. So far, this speaker list has zero fluff, and reminds me of the Percona Performance Conference. I&rsquo;ll be talking about how not to shard your systems. Sharding is no fun and it&rsquo;s costly.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/07/19/speaking-at-surge-2010/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/07/10/aspersas-mysql-summary-tool/">Aspersa&#39;s mysql-summary tool</a></h1>
+        <span class="post-date">Sat, Jul 10, 2010</span>
+        For those of you who miss what Maatkit&rsquo;s mk-audit tool (now retired) gave you, there&rsquo;s a pair of tools in Aspersa that more than replaces it. I wrote previously about the summary tool. I don&rsquo;t think I have mentioned the mysql-summary tool. It has been under development for a while, and at this point it has quite a lot of functionality. You can see a sample of the output on its manual page.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/07/10/aspersas-mysql-summary-tool/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/07/06/a-review-of-guerrilla-capacity-planning-by-neil-gunther/">A review of Guerrilla Capacity Planning by Neil Gunther</a></h1>
+        <span class="post-date">Tue, Jul 6, 2010</span>
+        Guerrilla Capacity Planning  Guerrilla Capacity Planning. By Neil J. Gunther, Springer 2007. Page count: about 200 pages, plus appendixes. (Here&rsquo;s a link to the publisher&rsquo;s site.)
+Of all the books I&rsquo;ve reviewed, this one has taken me the longest to study first. That&rsquo;s because there is a lot of math involved, and Neil Gunther knows a lot more about it than I do. Here&rsquo;s the short version: I&rsquo;m learning how to use this in the real world, but that&rsquo;s going to take many months, probably years.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/07/06/a-review-of-guerrilla-capacity-planning-by-neil-gunther/"> &raquo; Continue Reading (about 1700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/07/04/a-review-of-cloud-application-architectures-by-george-reese/">A review of Cloud Application Architectures by George Reese</a></h1>
+        <span class="post-date">Sun, Jul 4, 2010</span>
+        Cloud Application Architectures  Cloud Application Architectures. By George Reese, O&rsquo;Reilly 2009. (Here&rsquo;s a link to the publisher&rsquo;s site).
+This is a great book on how to build apps in the cloud! I was happy to see how much depth it went into. It&rsquo;s short &ndash; 150 pages plus some appendixes &ndash; so I was expecting it to be a superficial overview. But it isn&rsquo;t. It is thorough. And it is also obviously built on his own experience building very specific applications that he uses to run his business &ndash; he isn&rsquo;t preaching about stuff he doesn&rsquo;t know first-hand.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/07/04/a-review-of-cloud-application-architectures-by-george-reese/"> &raquo; Continue Reading (about 1000 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/">A review of Web Operations by John Allspaw and Jesse Robbins</a></h1>
+        <span class="post-date">Sat, Jul 3, 2010</span>
+        Web Operations  Web Operations. By John Allspaw and Jesse Robbins, O&rsquo;Reilly 2010, with a chapter by myself. (Here&rsquo;s a link to the publisher&rsquo;s site).
+I wrote a chapter for this book, and it&rsquo;s now on shelves in bookstores near you. I got my dead-tree copy today and read everyone else&rsquo;s contributions to it. It&rsquo;s a good book. A group effort such as this one is necessarily going to have some differences in style and even overlapping content, but overall it works very well.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/"> &raquo; Continue Reading (about 800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/07/03/how-i-keep-track-of-notes/">How I keep track of notes</a></h1>
+        <span class="post-date">Sat, Jul 3, 2010</span>
+        This is the follow-up to my post on how I keep track of tasks. It&rsquo;s important for me to have a good system for keeping notes and other files organized. The problem usually turns out to be that I want them organized several different ways simultaneously: by date, by project, by person, by subject. Alas, if I keep them in files on a hard drive, I can only choose one such organizing strategy, because filesystems are a single hierarchy.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/07/03/how-i-keep-track-of-notes/"> &raquo; Continue Reading (about 800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/07/02/is-maatkit-notable-enough-for-wikipedia-now/">Is Maatkit notable enough for Wikipedia now?</a></h1>
+        <span class="post-date">Fri, Jul 2, 2010</span>
+        The Maatkit article on Wikipedia was removed some time ago, after being deemed not notable. I believe this is no longer the case. It&rsquo;s hard to find a credible book published on MySQL in the last few years that doesn&rsquo;t mention Maatkit, there&rsquo;s quite a bit of blogging about it from MySQL experts and prominent community members, and the toolkit is certainly in wide use &ndash; it&rsquo;s important enough that notable companies are supporting its development.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/07/02/is-maatkit-notable-enough-for-wikipedia-now/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/07/02/the-new-hotness-in-open-core-innodb/">The new hotness in open-core: InnoDB</a></h1>
+        <span class="post-date">Fri, Jul 2, 2010</span>
+        There&rsquo;s lots of buzz lately about the so-called &ldquo;open-core&rdquo; business model of Marten Mickos&rsquo;s new employer. But this is nothing new. Depending on how you define it, InnoDB is &ldquo;open-core,&rdquo; and has been for a long time. The InnoDB Hot Backup (ibbackup) tool was always closed-source. Did anyone ever cry foul and claim that this made InnoDB itself not open-source, or accuse Innobase / Oracle of masquerading as open-source? I don&rsquo;t recall that happening, although sometimes people got suspicious about the interplay between the backup tool and the storage engine.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/07/02/the-new-hotness-in-open-core-innodb/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/page/19/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/page/21/">Older</a>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      A challenge: partition a character set in MySQL &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="A challenge: partition a character set in MySQL" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2007/06/11/a-challenge-partition-a-character-set-in-mysql/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2007/06/11/a-challenge-partition-a-character-set-in-mysql/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A challenge: partition a character set in MySQL</h1>
+  <span class="post-date">Mon, Jun 11, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f11%2fa-challenge-partition-a-character-set-in-mysql%2f&text=A%20challenge%3a%20partition%20a%20character%20set%20in%20MySQL:https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f11%2fa-challenge-partition-a-character-set-in-mysql%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f11%2fa-challenge-partition-a-character-set-in-mysql%2f&title=A%20challenge%3a%20partition%20a%20character%20set%20in%20MySQL&summary=A%20challenge%3a%20partition%20a%20character%20set%20in%20MySQL&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f11%2fa-challenge-partition-a-character-set-in-mysql%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f11%2fa-challenge-partition-a-character-set-in-mysql%2f&t=A%20challenge%3a%20partition%20a%20character%20set%20in%20MySQL" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f06%2f11%2fa-challenge-partition-a-character-set-in-mysql%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>How good are your SQL and/or general coding skills? I have a specific challenge I&rsquo;d like your help solving. I am not sure it&rsquo;s possible, but I&rsquo;d love to be proven wrong.</p>
+
+<p>I&rsquo;ll explain some background for the problem first, and then pose the challenge at the end of the article.</p>
+
+<h3 id="the-problem">The problem</h3>
+
+<p>Several of the algorithms I&rsquo;ve been implementing require data to be partitioned for a divide-and-conquer approach. This is easy enough with numeric and even with temporal data, but character data is more difficult, and I don&rsquo;t have a good strategy yet.</p>
+
+<p>The problem is how to work on only part of the data at a time, yet not miss any of it. In geeky terms, I want to <a href="http://en.wikipedia.org/wiki/Partition_of_a_set">partition the set</a>, which means to divide it into disjoint subsets that complete a <a href="http://en.wikipedia.org/wiki/Cover_(topology)">cover</a> over the set.</p>
+
+<p>To give a little more context, I need to use this in several ways. In one application, I want to <a href="http://code.google.com/p/maatkit">checksum tables</a> a little at a time. The idea is to reduce the impact on the server, with a sleep between the checksums. Another application, which <a href="http://code.google.com/p/maatkit">finds and resolves differences between MySQL tables</a>, needs to partition coarsely at first, then further subdivide partitions that are &ldquo;interesting.&rdquo;</p>
+
+<p>At the moment, I think doing this efficiently requires finding the partition endpoints. This is easy with numeric data. It&rsquo;s very efficient to select the <code>MIN()</code> and <code>MAX()</code> from an indexed column, <code>EXPLAIN</code> a query to see how many rows the query optimizer thinks are in it, and do a little subtraction and division to find the endpoint of each range. These can then go into a <code>BETWEEN</code> clause to implement the partitioning.</p>
+
+<p>I can treat temporal data the same way. Instead of subtracting numbers, I can use <code>DATEDIFF()</code> or similar to find out how large the range is, and then use other date math functions to generate successive endpoints.</p>
+
+<p>Character data isn&rsquo;t so simple. Character sets and collations seem to make it harder to find endpoints and be assured of a cover over the set. If the characters were restricted to 0-9 and A-F, of course I could just treat them as hexadecimal and do ordinary math. Even generating a cover isn&rsquo;t all that hard, but making sure they are disjoint strikes me as hard.</p>
+
+<p>One idea is a binary search, or trial and error, to find endpoints. I could use <code>EXPLAIN</code> to ask how many rows are greater than some value, and vary the value to discover the approximate distribution of the data, choosing endpoints along the way. I think this path is fraught with difficulties, though.</p>
+
+<h3 id="a-challenge">A challenge</h3>
+
+<p>The above paragraphs should give you an idea what I&rsquo;ve been considering for this problem. It might make it easier for people to help me if I give a specific example and ask for a solution. Here we go:</p>
+
+<ul>
+<li>You have a single table in MySQL with a <code>varchar(50)</code> primary key.</li>
+<li>The minimum value in the primary key is &lsquo;aardvark&rsquo; and the maximum is &lsquo;Ð‘ÑŠÐ»Ð³Ð°Ñ€ÑÐºÐ¸.&rsquo; I intentionally won&rsquo;t say any more about the data; your solution must be able to figure out what to do based on limited knowledge, such as using EXPLAIN to access index statistics.</li>
+<li>The charset is utf8 and the collation is case-insensitive.</li>
+<li>There are 18 million rows, more or less, in the table.</li>
+<li>You want to select the data in chunks of approximately a million rows, as explained above.</li>
+<li>The solution must generate about 18 separate queries of around a million rows each, and each query <strong>must not</strong> examine and discard, or scan through, any rows it does not include in the result. I think you want to do this with successive BETWEEN clauses, but if there is another way that is efficient and correct, that&rsquo;s good too.
+
+<ul>
+<li>LIMIT with OFFSET is out of the question, because it actually selects and discards part of its results.</li>
+<li>A single GROUP BY is no good either, because it will run in one query, not 18.</li>
+</ul></li>
+<li>You do not have to do this in pure SQL. You can bring any scripting or programming language to your aid, to help generate queries or do some math or whatever.</li>
+<li>You may not create temporary tables, triggers, views, or stored procedures. Your solution must result in SQL queries beginning with the word &ldquo;SELECT&rdquo; that a user can run without altering anything about the server; the server is read-only for purposes of this challenge. Likewise, you may not alter the table in any way.</li>
+</ul>
+
+<p>Can you think of any solutions?</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2007/06/10/mysql-toolkit-released-as-one-package/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2007\/06\/11\/a-challenge-partition-a-character-set-in-mysql\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

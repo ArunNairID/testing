@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Why is MySQL more popular than PostgreSQL? &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Why is MySQL more popular than PostgreSQL?" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2008/05/18/why-is-mysql-more-popular-than-postgresql/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2008/05/18/why-is-mysql-more-popular-than-postgresql/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Why is MySQL more popular than PostgreSQL?</h1>
+  <span class="post-date">Sun, May 18, 2008 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f05%2f18%2fwhy-is-mysql-more-popular-than-postgresql%2f&text=Why%20is%20MySQL%20more%20popular%20than%20PostgreSQL%3f:https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f05%2f18%2fwhy-is-mysql-more-popular-than-postgresql%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f05%2f18%2fwhy-is-mysql-more-popular-than-postgresql%2f&title=Why%20is%20MySQL%20more%20popular%20than%20PostgreSQL%3f&summary=Why%20is%20MySQL%20more%20popular%20than%20PostgreSQL%3f&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f05%2f18%2fwhy-is-mysql-more-popular-than-postgresql%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f05%2f18%2fwhy-is-mysql-more-popular-than-postgresql%2f&t=Why%20is%20MySQL%20more%20popular%20than%20PostgreSQL%3f" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f05%2f18%2fwhy-is-mysql-more-popular-than-postgresql%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>There is much discussion of why <a href="http://www.mysql.com/">MySQL</a> is more widely adopted than <a href="http://www.postgresql.org/">PostgreSQL</a>. The discussion I&rsquo;ve heard is mostly among the PostgreSQL community members, who believe their favorite database server is better in many ways, and are sometimes puzzled why people would choose an inferior product.</p>
+
+<p>There are also many comparison charts that show one server is better than the other in some ways. These don&rsquo;t really seem to help people with this question, either!</p>
+
+<p>I can&rsquo;t answer for everyone, but I can put it in the form of a question: if I were to replace MySQL with PostgreSQL, what things do I rely on that would become painful or even force a totally different strategy? The answer turns out to be fairly simple for me: replication and upgrades.</p>
+
+<h3 id="replication">Replication</h3>
+
+<p>Love it or hate it, MySQL&rsquo;s built-in replication is absolutely key to much of what I do with MySQL. I can truthfully say that it has lots of problems and limitations. But I can also say this about it:</p>
+
+<ul>
+<li>It&rsquo;s included by default with the server. PostgreSQL&rsquo;s have historically not been included. (I think this is about to change, but I&rsquo;m not sure.)</li>
+<li>It is conceptually very simple. You could call that a weakness and a limitation, but you could also say that it enables a tremendous amount of flexibility. I tend to hold with the latter view. PostgreSQL&rsquo;s replication technologies have a very different complexity profile. That scares me.</li>
+<li>It is easy to set up (it takes just a couple of commands) and is easily scriptable. This is mostly due to its simplicity. I am happy because I know it inside and out.</li>
+<li>It is generally very low overhead. PostgreSQL&rsquo;s main replication system is built on top of triggers and is said not to scale very well. (Disclaimer: this is only what people have told me; I haven&rsquo;t battle-tested it. But I&rsquo;m afraid of it.)</li>
+<li>There is only One Way To Do It. PostgreSQL has lots of different replication systems. That in itself is a pretty significant deterrent for me.</li>
+</ul>
+
+<p>Regardless of the technical strengths and weaknesses of each database&rsquo;s replication systems, it is my perception that MySQL&rsquo;s ultimately lets me do incredibly flexible and useful things; in general it is Just Enough and has just the right combinations of qualities for lots of purposes. And each of its weaknesses is easily avoided or worked around, or just sidestepped &ndash; because MySQL replication&rsquo;s simplicity and flexibility lets me easily choose a different approach.</p>
+
+<h3 id="in-place-upgrades">In-Place Upgrades</h3>
+
+<p>MySQL&rsquo;s files are extremely portable between versions, between operating systems, and even between platforms most of the time (unless you have a system that doesn&rsquo;t use IEEE floating-point format, but who does these days?). That means an upgrade is dead simple.</p>
+
+<p>This may not seem like a big deal, but I work with a lot of data. When you do that, you have to consider the alternatives: what if I couldn&rsquo;t upgrade in-place?</p>
+
+<p>That&rsquo;s the current state of PostgreSQL. You have to dump and reload your data, and when you have a terabyte of data, that&rsquo;s no fun. The workarounds usually involve replicating your data to another server, switching to the other server, upgrading, and switching back. But why should you have to have another server just to upgrade your data?</p>
+
+<p>I see this as a significant &ndash; even critical &ndash; sticking point. It&rsquo;s something I just don&rsquo;t have to think about most of the time with MySQL</p>
+
+<h3 id="are-postgresql-s-other-strengths-enough">Are PostgreSQL&rsquo;s other strengths enough?</h3>
+
+<p>Not for the systems I work on. These two problems seem extremely difficult for me to work around. I rely so heavily on MySQL&rsquo;s replication and in-place upgrades that it feels too daunting to live without them.</p>
+
+<p>What I&rsquo;m trying to do here is give some psychological insight into what makes me feel happy with MySQL, and afraid of the thought of having to solve these problems with PostgreSQL. It may or may not apply broadly; my sense is that these are concerns for others as well, but I could be wrong.</p>
+
+<p>If I were primarily a PostgreSQL user, I&rsquo;m sure there would be similar feelings the other direction. This would explain why some people in the PostgreSQL camp seem to recoil away from MySQL. I&rsquo;d be interested to hear why that is, too.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2008/05/21/i-moved-this-blog-to-pairlite-with-zero-downtime-and-it-was-easy/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2008/05/14/mysql-free-software-but-not-open-source/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2008\/05\/18\/why-is-mysql-more-popular-than-postgresql\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

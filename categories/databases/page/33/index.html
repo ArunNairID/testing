@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Databases &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Databases" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/categories/databases/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/categories/databases/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/05/25/a-review-of-monyog/">A review of MONyog</a></h1>
+        <span class="post-date">Fri, May 25, 2007</span>
+        This is a review of Webyog's MONyog MySQL monitoring tool. The product is still in beta and has some rough edges, but holds promise. Its design includes some interesting architectural decisions I think will help distinguish it from MySQL's own Monitoring and Advisory Service.
+MONyog overview MONyog starts an HTTP listener on your machine. After you start the program, you point your Web browser at localhost:9999. Your browser talks to MONyog, which talks to one or many MySQL servers.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/05/25/a-review-of-monyog/"> &raquo; Continue Reading (about 1100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/05/22/how-to-write-mysql-conditional-comments/">How to write MySQL conditional comments</a></h1>
+        <span class="post-date">Tue, May 22, 2007</span>
+        MySQL&rsquo;s version-specific conditional comment syntax confused me for the longest time. Then I learned about printf formatting rules, and it all became clear. Read on if you don&rsquo;t already know what I mean.
+First I&rsquo;ll explain what I&rsquo;m talking about. MySQL allows specially formatted comments with a server version number embedded in them. Servers newer than the version number will execute the commented-out code, and older servers won&rsquo;t. This is really useful sometimes.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/05/22/how-to-write-mysql-conditional-comments/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/05/17/mysql-table-sync-093-released/">MySQL Table Sync 0.9.3 released</a></h1>
+        <span class="post-date">Thu, May 17, 2007</span>
+        This release of MySQL Table Sync adds the ability to sync only part of a table, adds minor new functionality, and fixes a bug that could crash the tool.
+I will be focusing some effort on this tool soon. If you would like to see particular features, please consider sponsoring them.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/05/17/mysql-table-sync-093-released/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/05/16/mysql-table-checksum-115-released/">MySQL Table Checksum 1.1.5 released</a></h1>
+        <span class="post-date">Wed, May 16, 2007</span>
+        MySQL Table Checksum 1.1.5 adds a some useful features and fixes a couple of bugs. Now you can checksum tables in chunks, and there is an option to pause between chunks as well. This has already helped me recover a very large table that got out of sync on the replicas, and many of you have also requested this feature.
+You can read the full release notes and documentation for the details, but here&rsquo;s an overview:
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/05/16/mysql-table-checksum-115-released/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/05/12/how-fast-is-mysql-table-checksum/">How fast is MySQL Table Checksum?</a></h1>
+        <span class="post-date">Sat, May 12, 2007</span>
+        A few people have asked me how fast MySQL Table Checksum is. As with so many other things, it depends. This article shows how long it takes to checksum real data on a production server I help manage, which might give you a rough idea of how long it&rsquo;ll take on your servers.
+The server and workload This server is a replication master running MySQL 5.0.38. It is a Dell Poweredge 1800 series with dual Xeon 3.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/05/12/how-fast-is-mysql-table-checksum/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/05/11/how-to-eliminate-temporary-tables-in-mysql/">How to eliminate temporary tables in MySQL</a></h1>
+        <span class="post-date">Fri, May 11, 2007</span>
+        I&rsquo;ve written before about how to make MySQL replication reliable. One thing I think you need to do to make statement-based replication reliable is eliminate temporary tables. I found an elegant way to replace temporary tables with real tables in the systems I maintain. This article explains how.
+The problem Temporary tables are anathema to reliable MySQL replica servers. If you have a temporary table and the replica crashes in between accesses to the temporary table, when you restart replication the temporary table no longer exists, and you are in trouble.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/05/11/how-to-eliminate-temporary-tables-in-mysql/"> &raquo; Continue Reading (about 900 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/05/08/mysql-find-090-released/">MySQL Find 0.9.0 released</a></h1>
+        <span class="post-date">Tue, May 8, 2007</span>
+        If you&rsquo;ve used the UNIX find command for more than a trivial find-and-print, you know how powerful it is; it&rsquo;s almost a miniature programming environment to find and manipulate files and directories. What if you could do the same thing with MySQL tables and databases? That was the inspiration for writing this tool. I was about to write several other tools to do some MySQL administrative jobs when I realized I could generalize and make something much more useful and powerful.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/05/08/mysql-find-090-released/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/05/05/mysql-table-checksum-110-released/">MySQL Table Checksum 1.1.0 released</a></h1>
+        <span class="post-date">Sat, May 5, 2007</span>
+        MySQL Table Checksum 1.1.0 adds many improvements, but the most important is a new way to ensure replicas have the same data as their master. Instead of checksumming the replica and the master, it can now insert the checksum results directly on the master via an INSERT.. SELECT statement. This statement will replicate to the replica, where a simple query can find tables that differ from the master. This makes a consistent, lock-free checksum trivially easy.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/05/05/mysql-table-checksum-110-released/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/05/05/slides-for-the-innotop-workshop-at-mysql-conference-and-expo-2007/">Slides for the innotop workshop at MySQL Conference and Expo 2007</a></h1>
+        <span class="post-date">Sat, May 5, 2007</span>
+        The slides for my innotop presentation at the recent MySQL Conference have been posted, along with other presenter&rsquo;s slides, on the conference presentations page. Love that stock photography!
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/05/05/slides-for-the-innotop-workshop-at-mysql-conference-and-expo-2007/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/05/03/innotop-142-released/">innotop 1.4.2 released</a></h1>
+        <span class="post-date">Thu, May 3, 2007</span>
+        This release of the innotop MySQL and InnoDB monitor is a major upgrade in terms of functionality, code quality, and interface consistency. It is the result of me working for over a month to get innotop into shape for the recent MySQL Conference and Expo. Here&rsquo;s a summary of the changes:
+Major changes  Quick-filters to easily filter any column in any display Compatibility with MySQL 3.23 through 6.0 Improved error handling when a server is down, permissions denied, etc Use additional SHOW INNODB STATUS information in 5.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/05/03/innotop-142-released/"> &raquo; Continue Reading (about 800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/04/28/mysql-conference-and-expo-2007-audio/">MySQL Conference and Expo 2007 Audio</a></h1>
+        <span class="post-date">Sat, Apr 28, 2007</span>
+        I recorded many of the sessions I attended at the conference. You can download the audio files in Ogg Vorbis format here. These files will not stay up forever &ndash; I will probably remove them after a few weeks.
+My recorder only records in mp3 format, so I was forced to crank the bitrate down pretty far to avoid ending up with gigabytes of data. Too bad it doesn&rsquo;t record directly to Ogg Vorbis format; if it did, I could get natural-sounding voice-quality at something like 8 kB/sec.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/04/28/mysql-conference-and-expo-2007-audio/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/04/27/mysql-conference-and-expo-2007-day-4/">MySQL Conference and Expo 2007, Day 4</a></h1>
+        <span class="post-date">Fri, Apr 27, 2007</span>
+        In my fourth day at the MySQL Conference and Expo 2007, I attended several great sessions, starting with my own.
+If you&rsquo;re wondering why this is a day late, it&rsquo;s because the conference ended in the late afternoon, and they almost immediately &ndash; within a half-hour or so &#8211; removed the free wireless Internet access in the hotel. That was uncool.
+Keynotes etc I skipped the opening keynotes to polish off last-minute changes to innotop and my presentation.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/04/27/mysql-conference-and-expo-2007-day-4/"> &raquo; Continue Reading (about 2000 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/04/26/mysql-conference-and-expo-2007-day-3/">MySQL Conference and Expo 2007, Day 3</a></h1>
+        <span class="post-date">Thu, Apr 26, 2007</span>
+        In my third day at the MySQL Conference and Expo 2007, I again attended keynotes and sessions, one of which I participated in. This evening I had dinner with a fellow community member and arrived late to the Quiz Show, even though I was supposed to be on one of the teams! I blame it on the restaurant, because they took too long to figure out what I meant when I said &ldquo;kÃ¶nnen wir einen Hubschrauber essen heute abend?
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/04/26/mysql-conference-and-expo-2007-day-3/"> &raquo; Continue Reading (about 2200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/04/25/mysql-conference-and-expo-2007-day-2/">MySQL Conference and Expo 2007, Day 2</a></h1>
+        <span class="post-date">Wed, Apr 25, 2007</span>
+        In my second day at the MySQL Conference and Expo 2007, I attended keynotes, several sessions, and three BoF (Birds of a Feather) sessions. This article is about these sessions. Again, I&rsquo;ll focus on the Big Ideas and let you read other people&rsquo;s blog posts for the small details.
+Keynotes There were three keynotes this morning. Two I won&rsquo;t comment on, but I want to mention the third because it was mostly about the One Laptop Per Child project.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/04/25/mysql-conference-and-expo-2007-day-2/"> &raquo; Continue Reading (about 1300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/04/23/mysql-conference-and-expo-2007-day-1/">MySQL Conference and Expo 2007, Day 1</a></h1>
+        <span class="post-date">Mon, Apr 23, 2007</span>
+        In my first day at the MySQL Conference and Expo 2007, I attended the Scaling and High Availability Architectures tutorial in the morning, and Real-world MySQL Performance Tuning in the afternoon. This is a brief article on each session&rsquo;s Big Ideas, and a short blurb about the conference overall so far.
+I&rsquo;ll also be involved in at least three sessions at the conference, and I describe them.
+If you&rsquo;re interested in short overviews of the sessions I attend, keep watching for my articles.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/04/23/mysql-conference-and-expo-2007-day-1/"> &raquo; Continue Reading (about 900 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/04/12/mysql-table-sync-092-released/">MySQL Table Sync 0.9.2 released</a></h1>
+        <span class="post-date">Thu, Apr 12, 2007</span>
+        MySQL Table Sync 0.9.2 is a bug-fix release. Since the last release users have reported several bugs. I am still postponing new features until after the MySQL Conference and Expo, because I am focusing on the innotop session I&rsquo;ll be presenting at the conference.
+I have also created a new mailing list on sourceforge for discussing all things MySQL Toolkit. Thanks to a user for suggesting the mailing list &ndash; I needed a nudge.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/04/12/mysql-table-sync-092-released/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/04/10/the-innotop-session-at-mysqlconf-2007/">The innotop session at MySQLConf 2007</a></h1>
+        <span class="post-date">Tue, Apr 10, 2007</span>
+        I&rsquo;ll present a session on the innotop MySQL and InnoDB monitoring tool at 2007 MySQL Conference and Expo in a couple of weeks.
+The innotop session will focus on using innotop&rsquo;s basic and intermediate-level features. I&rsquo;ll demonstrate how to install it and get the initial configuration set up. I&rsquo;ll show you what innotop is good at doing, and how to do some of the things I do frequently, such as watch queries, check replication status, and look at what transactions are currently open.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/04/10/the-innotop-session-at-mysqlconf-2007/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/04/08/mysql-sandbox-is-the-best-thing-since-sliced-bread/">MySQL Sandbox is the best thing since sliced bread</a></h1>
+        <span class="post-date">Sun, Apr 8, 2007</span>
+        I&rsquo;ve been preparing for my innotop session at the upcoming MySQL conference, and enlisted Giuseppe Maxia&rsquo;s MySQL Sandbox to help me get a bunch of MySQL servers, from 3.23.58 to 5.2.3, running on one machine. It was super-easy and has helped me find some bugs in innotop. I should have done this a long time ago.
+To get started, I just read through Giuseppe&rsquo;s Sandbox article on O&rsquo;Reilly Databases Blog. After reading this, I downloaded the scripts and a bunch of binary distributions of MySQL (I&rsquo;m using Ubuntu).
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/04/08/mysql-sandbox-is-the-best-thing-since-sliced-bread/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/04/07/how-to-know-if-a-mysql-slave-is-identical-to-its-master/">How to know if a MySQL replica is identical to its master</a></h1>
+        <span class="post-date">Sat, Apr 7, 2007</span>
+        A frequently asked question about MySQL replication is &ldquo;how do I know whether my replica is identical to the master?&rdquo; Until recently there hasn&rsquo;t been a good way to know, but now you can compare all the data in your master to the data in the replicas and get a reliable yes-or-no answer. And you can do this online, efficiently, across many servers simultaneously. Read on to find out how.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/04/07/how-to-know-if-a-mysql-slave-is-identical-to-its-master/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/">MySQL Table Sync vs. SQLyog Job Agent</a></h1>
+        <span class="post-date">Thu, Apr 5, 2007</span>
+        When I wrote my first article on algorithms to compare and synchronize data between MySQL tables, Webyog&rsquo;s Rohit Nadhani left a comment on the article mentioning the SQLyog Job Agent, which has a similar function. Although I have been developing MySQL Table Sync essentially in isolation, I have been meaning to give SQLyog Job Agent a try. I recently did so, and then followed that up with an email conversation with Rohit.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/"> &raquo; Continue Reading (about 2700 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/categories/databases/page/32/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/categories/databases/page/34/">Older</a>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

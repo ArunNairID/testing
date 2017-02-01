@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Collaborate versus the MySQL UC &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Collaborate versus the MySQL UC" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2011/04/18/collaborate-versus-the-mysql-uc/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2011/04/18/collaborate-versus-the-mysql-uc/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Collaborate versus the MySQL UC</h1>
+  <span class="post-date">Mon, Apr 18, 2011 in
+		
+		<a href="/categories/conferences" class="btn btn-primary">Conferences</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f04%2f18%2fcollaborate-versus-the-mysql-uc%2f&text=Collaborate%20versus%20the%20MySQL%20UC:https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f04%2f18%2fcollaborate-versus-the-mysql-uc%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f04%2f18%2fcollaborate-versus-the-mysql-uc%2f&title=Collaborate%20versus%20the%20MySQL%20UC&summary=Collaborate%20versus%20the%20MySQL%20UC&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f04%2f18%2fcollaborate-versus-the-mysql-uc%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f04%2f18%2fcollaborate-versus-the-mysql-uc%2f&t=Collaborate%20versus%20the%20MySQL%20UC" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f04%2f18%2fcollaborate-versus-the-mysql-uc%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>I split my time last week between the IOUG&rsquo;s Collaborate conference in Orlando, Florida and O&rsquo;Reilly&rsquo;s MySQL Conference &#038; Expo in California. The contrast was stark. For me as a MySQLer, Collaborate was a dud. On the other hand, the MySQL conference O&rsquo;Reilly puts on is superb. It is vital to MySQL as a project and as a community, and it follows that it&rsquo;s vital to MySQL&rsquo;s business success. Oracle needs to participate to make it a success in the future.</p>
+
+<p>MySQL at Collaborate had good speakers and content, but no one there is interested in MySQL. MySQL is just from a different world &ndash; it is a curiosity at an Oracle conference. Also, as a speaker, sponsor, and attendee, Collaborate was a giant frustration. I can&rsquo;t recommend it to anyone. (These comments do not reflect on the work that MySQL community members did in recruiting and organizing the MySQL content at the Collaborate conference.) In particular, the experience of submitting talks was so disrespectful of my time and efforts that I have no desire to repeat it. I will spare you the <em>many</em> details, but I&rsquo;m not alone. Many people I know echoed my sentiments and said they are not willing to present there again.</p>
+
+<p>On the other coast, a lot of people were planning to fly east to Collaborate midweek, but upon arriving to California, I overheard many of them discussing the distasteful experiences MySQLers in Orlando were having, and canceling their eastbound flights to stay in California. This was wise.</p>
+
+<p>The O&rsquo;Reilly conference was much the same as in past years, with two notable differences. One, there was a lot of content about other open-source databases. This was good, although I wish that the whole conference could have grown to include them, rather than shrinking MySQL to make room for others. Two, the expo hall was downsized from previous years, a very worrisome sign indeed. I think it&rsquo;s obvious to everyone who&rsquo;s been around a few years that the lack of sponsorship from MySQL themselves is probably the biggest factor in play here. In years past, MySQL made a large contribution to the conference not only as a sponsor, but in publicizing the event and getting exhibitors, sponsors, and attendees there.</p>
+
+<p>I can&rsquo;t read Oracle&rsquo;s mind and I have no insider knowledge to share, but from what I understand, Oracle&rsquo;s well-intentioned strategy was to have the MySQL conference-goers find a new home in tracks annexed to events such as Collaborate and Kaleidoscope, where Oracle would be interacting with an organization they were familiar with. Now that we&rsquo;ve seen this in action a few times, it&rsquo;s crystal clear that it won&rsquo;t work. The open-source mindset is stifled in those events, and I predict that self-respecting speakers won&rsquo;t submit any proposals in the future. As a result, the business environment that&rsquo;s built up around MySQL will dry up and blow away if the strategy doesn&rsquo;t change. That&rsquo;s why I think it is mandatory for Oracle to come to the table with O&rsquo;Reilly and make their MySQL conference continue to happen. I would not be surprised if the people making the decisions at Oracle are simply unaware of the unique atmosphere at the MySQL conference, and how important it has been for MySQL in the past. Without this event, I think Oracle&rsquo;s investments in MySQL could go to waste.</p>
+
+<p>On the bright side, I think that if Oracle puts their shoulders to the MySQL conference&rsquo;s wagon wheel, it could not only return to its previous vigor, but grow far beyond that. And if Oracle wants it to be focused on MySQL instead of including all sorts of other databases, I would not mind that at all. Any talk whose title made it clear that it wasn&rsquo;t about MySQL was rather poorly attended, so although I thought it was nice to have a diversity of databases there, in truth it wasn&rsquo;t all that different from jamming MySQL into Collaborate.</p>
+
+<p><strong>Update: Someone I respect indicated that the discussion in the comments was causing more trouble than it was solving, so I am sorry, but I think it’s best that we honor this request. I’ve disabled comments on this post.</strong></p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2011/04/20/too-many-blog-posts/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2011/04/16/subtleties-in-the-universal-scalability-law/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2011\/04\/18\/collaborate-versus-the-mysql-uc\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

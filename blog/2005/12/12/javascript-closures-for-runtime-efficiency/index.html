@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      JavaScript date parsing and formatting, Part 1 &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="JavaScript date parsing and formatting, Part 1" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2005/12/12/javascript-closures-for-runtime-efficiency/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2005/12/12/javascript-closures-for-runtime-efficiency/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">JavaScript date parsing and formatting, Part 1</h1>
+  <span class="post-date">Mon, Dec 12, 2005 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f12%2fjavascript-closures-for-runtime-efficiency%2f&text=JavaScript%20date%20parsing%20and%20formatting%2c%20Part%201:https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f12%2fjavascript-closures-for-runtime-efficiency%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f12%2fjavascript-closures-for-runtime-efficiency%2f&title=JavaScript%20date%20parsing%20and%20formatting%2c%20Part%201&summary=JavaScript%20date%20parsing%20and%20formatting%2c%20Part%201&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f12%2fjavascript-closures-for-runtime-efficiency%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f12%2fjavascript-closures-for-runtime-efficiency%2f&t=JavaScript%20date%20parsing%20and%20formatting%2c%20Part%201" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f12%2fjavascript-closures-for-runtime-efficiency%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>Have you ever written JavaScript code whose behavior is undefined until runtime, is inefficient, and could be written efficiently if you knew the behavior ahead of time? Here&rsquo;s a way to overcome this: defer it all till runtime, then dynamically build a more efficient function once you know what it has to do. In this article I&rsquo;ll use date formatting as an example of how to take a performance hit <strong>once</strong> on the first invocation, and get extremely fast performance thereafter.</p>
+
+<h3 id="motivation">Motivation</h3>
+
+<p>Picture the following scenario:</p>
+
+<ul>
+<li>a user supplies a formatting string for a date</li>
+<li>the script parses the formatting string</li>
+<li>the script loops through the formatting string and builds the formatted date</li>
+</ul>
+
+<p>Lots of people (<a href="http://www.gazingus.org/html/Date_Formatting_Function.html">1</a>, <a href="http://www.mattkruse.com/javascript/date/source.html">2</a>, <a href="http://www.svendtofte.com/code/date_format/">3</a>) have written JavaScript date-formatting routines with this type of algorithm, which is usually fine unless you want efficiency (for example, processing a large table of values). Then it is a <strong>terrible</strong> approach.</p>
+
+<h3 id="an-example-of-the-inefficient-way-to-do-it">An example of the inefficient way to do it</h3>
+
+<p>I used to use the hard-coded, slow method on my <a href="/blog/2005/09/29/javascript-date-chooser/">JavaScript date chooser</a>. Here&rsquo;s the old, inefficient formatting code:</p>
+
+<pre>Date.prototype.dateFormat = function(format) {
+    var result = "";
+    for (var i = 0; i &lt; format.length; ++i) {
+        result += this.dateToString(format.charAt(i));
+    }
+    return result;
+}
+
+Date.prototype.dateToString = function(character) {
+    switch (character) {
+    case "Y":
+        return this.getFullYear();
+    // snip a bunch of lines
+    default:
+        return character;
+    }
+}</pre>
+
+<p>Here&rsquo;s how I used the code:</p>
+
+<pre>var d = new Date();
+alert(d.dateFormat("Y-m-d"));</pre>
+
+<p>What&rsquo;s wrong with that? Well, looping is slow, and I shouldn&rsquo;t have to re-evaluate the format specifier every time I format a date with the same format specifier. That part of the code should be evaluated just once. For example, the formatting string <code>Y-m-d</code> should just be &ldquo;compiled&rdquo; into something like this:</p>
+
+<pre>return this.getFullYear() + '-' + this.getMonthName()...</pre>
+
+<p>That would be great! But, since the format specifier is passed in at runtime, how is it possible to hard-code that ahead of time?</p>
+
+<h3 id="programs-that-write-programs">Programs that write programs</h3>
+
+<p>It&rsquo;s not possible to hard-code the more efficient method, because I don&rsquo;t know what it&rsquo;s going to do at runtime, but I <em>can</em> code it at runtime, since JavaScript has interesting features common to many languages that allow code to be treated as data and vice versa: JavaScript can write functions dynamically.</p>
+
+<blockquote cite="Andrew Hume">
+  <p>
+    Programs that write programs are the happiest programs in the world.
+  </p>
+</blockquote>
+
+<p>Lots of programming languages can do this. Perl and LISP in particular are great for it, and it&rsquo;s &ldquo;what you do&rdquo; in Artificial Intelligence work. In JavaScript, it&rsquo;s not too hard either: all I need to do is parse the format string and build a definition of the function that will implement it. Assuming I want to name the function <code>format0</code>, I would get something like this:</p>
+
+<pre>var funcString = "Date.prototype.format0 = function() {return this.getFullYear() + '-' + (zeroPad(this.getMonth() + 1)) + '-' + zeroPad(this.getDate());}"</pre>
+
+<p>This isn&rsquo;t a function, it&rsquo;s a string. But by <code>eval()</code>ing it, I can make it a function, and then when I want the date formatted as <code>Y-m-d</code>, I just do this:</p>
+
+<pre>var d = new Date();
+alert(d.format0());</pre>
+
+<h3 id="how-can-i-call-a-function-without-a-name">How can I call a function without a name?</h3>
+
+<p>There&rsquo;s still an obvious problem &ndash; I can&rsquo;t call this code at runtime because I don&rsquo;t know the name <code>format0</code> of my formatting function. It might be the 99th different formatting string that&rsquo;s been turned into a function, not the first. I need to save some way to look it up. How about the following?</p>
+
+<ul>
+<li>call a function with a format specifier</li>
+<li>do a hash lookup with the format specifier, looking for the function that implements the format</li>
+<li>if the function doesn&rsquo;t exist, make one and store its name in the hashtable, keyed on the format string</li>
+<li>call the function and return the result</li>
+</ul>
+
+<p>Sounds good to me! Since JavaScript has associative arrays (objects are associative arrays), I&rsquo;ll use those as the hashtable. The resulting function looks for an entry in the hashtable, builds the function if it&rsquo;s not there, and then uses it. There&rsquo;s an initial cost the first time I format a string with a given format, but after that, it&rsquo;s cheap, so I can go to town. Essentially I&rsquo;m unrolling and pre-compiling a loop. To prove it, I can <code>document.write(Date.prototype.format0);</code> and see what the code ended up being:</p>
+
+<pre>function () { return this.getFullYear() + "-" + String.leftPad(this.getMonth() + 1, 2, "0") + "-" + String.leftPad(this.getDate(), 2, "0"); }</pre>
+
+<p>The functions are named in the order in which they&rsquo;re defined: <code>format0</code>, <code>format1</code> and so forth. Why do that? Why not just use the formatting string&rsquo;s own value as the name of the function? Hashtable keys can be any string value, but functions have to have legal, callable names (at least in some browsers). That&rsquo;s why I&rsquo;m making a legal name for the function and using the hashtable to look it up.</p>
+
+<h3 id="compatibility-with-php-s-date-function">Compatibility with PHP&rsquo;s <code>date</code> function</h3>
+
+<p>In order to implement nearly full compatibility with <a href="http://www.php.net/manual/en/function.date.php">PHP&rsquo;s <code>date</code> function</a>, I had to write a good bit of code, adding my own functionality to the <code>Date</code> object (both to the object itself, and to the prototype). I created several named formatting patterns, similar to the Microsoft .NET formatting patterns, which can be used in lieu of defining your own (see the demo for more). I also added a few functions to some other built-in objects. Please let me know if you find anything wrong with this code. I only wrote it for English; it&rsquo;s not implemented for other cultures.</p>
+
+<p><a href="https://gist.github.com/xaprb/8492729">Here is the JavaScript</a>, and <a href="/media/2005/12/date-formatting-demo.html">here is a demo</a> of the whole shebang.</p>
+
+<h3 id="benchmarks">Benchmarks</h3>
+
+<p>Is it really faster to do it the way I&rsquo;ve described? Yes, it is. It is <a href="/blog/2006/05/14/javascript-date-formatting-benchmarks/">way faster,</a> even when you compare it to code that has far fewer features.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2005/12/12/everyone-is-wrong-sometimes/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2005/12/11/optional-parameters-in-the-where-clause/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2005\/12\/12\/javascript-closures-for-runtime-efficiency\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

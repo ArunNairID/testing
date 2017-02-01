@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Two subtle bugs in OUTER JOIN queries &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Two subtle bugs in OUTER JOIN queries" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2010/08/02/two-subtle-bugs-in-outer-join-queries/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2010/08/02/two-subtle-bugs-in-outer-join-queries/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Two subtle bugs in OUTER JOIN queries</h1>
+  <span class="post-date">Mon, Aug 2, 2010 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f08%2f02%2ftwo-subtle-bugs-in-outer-join-queries%2f&text=Two%20subtle%20bugs%20in%20OUTER%20JOIN%20queries:https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f08%2f02%2ftwo-subtle-bugs-in-outer-join-queries%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f08%2f02%2ftwo-subtle-bugs-in-outer-join-queries%2f&title=Two%20subtle%20bugs%20in%20OUTER%20JOIN%20queries&summary=Two%20subtle%20bugs%20in%20OUTER%20JOIN%20queries&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f08%2f02%2ftwo-subtle-bugs-in-outer-join-queries%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f08%2f02%2ftwo-subtle-bugs-in-outer-join-queries%2f&t=Two%20subtle%20bugs%20in%20OUTER%20JOIN%20queries" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f08%2f02%2ftwo-subtle-bugs-in-outer-join-queries%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>OUTER JOIN queries in SQL are susceptible to two very subtle bugs that I&rsquo;ve observed a number of times in the real world. Daniel and I have been hammering out ways to automatically detect queries that suffer from these bugs, in <a href="http://www.maatkit.org/doc/mk-query-advisor.html">a relatively new Maatkit tool called mk-query-advisor</a>. It&rsquo;s part of our series of advisor tools for MySQL. I wrote <a href="/blog/2010/03/16/try-mk-query-advisor-a-new-maatkit-tool/">a blog post about it</a> a while ago. Automated analysis of bad query patterns is a good thing to write tools to do, because catching buggy queries is hard work if you do it manually.</p>
+
+<p>Let&rsquo;s dive right in and analyze these subtle bugs. Warning: if you don&rsquo;t understand how SQL handles NULL, you&rsquo;re not going to understand the following. Many people have a hard time with NULL, which is why these bugs are so hard to understand and avoid. This is one reason why SQL is a hard language to use properly.</p>
+
+<h3 id="bug-1-a-column-could-be-null-for-two-reasons-and-you-can-t-distinguish-them">Bug 1: a column could be NULL for two reasons, and you can&rsquo;t distinguish them</h3>
+
+<p>If the outer table in your query contains NULL-able columns, and you place a WHERE clause to filter out all but those rows, you&rsquo;re going to get bugs because a non-matching row in the outer table will be all-NULL. Here&rsquo;s an example. Let&rsquo;s start with a plain outer join query:</p>
+
+<pre>
+select * from L left join R on l_id = r_id;
++------+------+---------+
+| l_id | r_id | r_other |
++------+------+---------+
+|    1 |    1 |       5 | 
+|    2 |    2 |    NULL | 
+|    3 | NULL |    NULL | 
++------+------+---------+
+</pre>
+
+<p>Here we see that one row in the outer table is missing, and one row (the middle row) has a NULL r_other column. Now, let&rsquo;s add a WHERE clause:</p>
+
+<pre>
+select * from L left join R on l_id = r_id where r_other is null;
++------+------+---------+
+| l_id | r_id | r_other |
++------+------+---------+
+|    2 |    2 |    NULL | 
+|    3 | NULL |    NULL | 
++------+------+---------+
+</pre>
+
+<p>This query is buggy, because the two rows are returned for completely different reasons, and you can&rsquo;t be sure which is which. IS NULL clauses can safely be placed on the columns used in the JOIN clause, but not on other columns in the outer table that might be NULL.</p>
+
+<h3 id="bug-2-an-outer-join-is-converted-to-inner">Bug 2: an OUTER JOIN is converted to INNER</h3>
+
+<p>If you place a non-null-safe comparison operator on any column in the outer table that isn&rsquo;t part of the JOIN clause, you implicitly disable the outer-ness of the query and convert it to an INNER JOIN. Here&rsquo;s an example:</p>
+
+<pre>
+select * from L left join R on l_id = r_id where r_other > 1;
++------+------+---------+
+| l_id | r_id | r_other |
++------+------+---------+
+|    1 |    1 |       5 | 
++------+------+---------+
+</pre>
+
+<p>The left-outer-ness of the above query is what causes the third row to be output in the first query I showed you above. The greater-than operator in this example automatically makes the left-ness impossible, because anytime there&rsquo;s a row in the inner table that has no match in the outer table, it&rsquo;ll be filled in with NULLs, and those NULLs will be eliminated by the operator. So the effect is that only matching rows will ever be output.</p>
+
+<p>If you want to ponder variations and subtleties of the above, you can read more discussion on <a href="http://code.google.com/p/maatkit/issues/detail?id=950">the issue report where we&rsquo;re hammering out the details</a> of automatically detecting and warning about these sneaky errors.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2010/08/16/speaking-at-novarug-on-thursday/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2010/07/21/speaking-at-mysql-meetup-in-northern-virginia/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2010\/08\/02\/two-subtle-bugs-in-outer-join-queries\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

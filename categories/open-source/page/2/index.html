@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Open Source &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Open Source" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/categories/open-source/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/categories/open-source/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/05/15/disk-latency-versus-filesystem-latency/">Disk latency versus filesystem latency</a></h1>
+        <span class="post-date">Sun, May 15, 2011</span>
+        Brendan Gregg has a very good ongoing series of blog posts about the importance of measuring latency at the layer that&rsquo;s appropriate for the question you are trying to answer. If you&rsquo;re wondering whether I/O latency is a problem for MySQL, you need to measure I/O latency at the filesystem layer, not the disk layer. There are a lot of factors to consider. To quote from his latest post: &gt; This isn’t really a problem with iostat(1M) – it’s a great tool for system administrators to understand the usage of their resources.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/05/15/disk-latency-versus-filesystem-latency/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/05/10/new-maatkit-tool-mk-table-usage/">New Maatkit tool: mk-table-usage</a></h1>
+        <span class="post-date">Tue, May 10, 2011</span>
+        This month&rsquo;s Maatkit release includes a new tool that&rsquo;s kind of an old tool at the same time. We wrote it a couple years ago for a client who has a very large set of tables and many queries and developers, and wants the database&rsquo;s schema and queries to self-document for data-flow analysis purposes. At the time, it was called mk-table-access and was rather limited &ndash; just a few lines of code wrapped around some existing modules, with an output format that wasn&rsquo;t generic enough to be broadly useful.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/05/10/new-maatkit-tool-mk-table-usage/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/05/04/whats-wrong-with-mmm/">What&#39;s wrong with MMM?</a></h1>
+        <span class="post-date">Wed, May 4, 2011</span>
+        I am not a fan of the MMM tool for managing MySQL replication. This is a topic of vigorous debate among different people, and even within Percona not everyone feels the same way, which is why I&rsquo;m posting it here instead of on an official Percona blog. There is room for legitimate differences of opinion, and my opinion is just my opinion. Nonetheless, I think it&rsquo;s important to share, because a lot of people think of MMM as a high availability tool, and that&rsquo;s not a decision to take lightly.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/05/04/whats-wrong-with-mmm/"> &raquo; Continue Reading (about 1100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/04/18/collaborate-versus-the-mysql-uc/">Collaborate versus the MySQL UC</a></h1>
+        <span class="post-date">Mon, Apr 18, 2011</span>
+        I split my time last week between the IOUG&rsquo;s Collaborate conference in Orlando, Florida and O&rsquo;Reilly&rsquo;s MySQL Conference &#038; Expo in California. The contrast was stark. For me as a MySQLer, Collaborate was a dud. On the other hand, the MySQL conference O&rsquo;Reilly puts on is superb. It is vital to MySQL as a project and as a community, and it follows that it&rsquo;s vital to MySQL&rsquo;s business success. Oracle needs to participate to make it a success in the future.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/04/18/collaborate-versus-the-mysql-uc/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/04/10/switching-presentation-display-in-openoffice-org-impress/">Switching Presentation Display in OpenOffice.org Impress</a></h1>
+        <span class="post-date">Sun, Apr 10, 2011</span>
+        If you&rsquo;ve used OpenOffice.org Impress to run a slideshow with your laptop plugged into an external monitor or projector, you&rsquo;ve probably noticed that it prefers to switch the primary and secondary display, showing you the slideshow while it shows your audience the notes and preview of your next slide! This is exactly the reverse of what you want, which is to show your audience the slideshow and let you see notes, the countdown timer, and so on.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/04/10/switching-presentation-display-in-openoffice-org-impress/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/02/17/poor-mans-mytop/">Poor man&#39;s mytop</a></h1>
+        <span class="post-date">Thu, Feb 17, 2011</span>
+        I often need to watch a server that&rsquo;s very minimally configured, e.g. has no Perl DBI libraries installed, and I shouldn&rsquo;t install anything. The following snippet is a quick way to do that:
+watch 'mysqladmin proc | grep -v Sleep | cut -b0-130' Replace 130 by the width of your terminal, naturally.
+(Of course, innotop is much more featureful than mytop, but mytop is the essential functionality we&rsquo;re going for here!
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/02/17/poor-mans-mytop/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/02/05/new-aspersa-io-analysis-tool-diskstats/">New Aspersa I/O analysis tool, diskstats</a></h1>
+        <span class="post-date">Sat, Feb 5, 2011</span>
+        I&rsquo;ve just committed some changes to diskstats, an I/O analysis tool in Aspersa that&rsquo;s actually been in the Subversion repository for a long time, but in a barely usable fashion and with no documentation. Now it&rsquo;s usable and documented.
+It is basically a reimplementation of iostat in awk. Why on earth would I reinvent that wheel? Because I spend a lot of time gathering and analyzing raw data from /proc/diskstats, which is vital to really understanding what the storage subsystem is doing.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/02/05/new-aspersa-io-analysis-tool-diskstats/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/02/02/keeping-docs-and-program-options-in-sync/">Keeping docs and program options in sync</a></h1>
+        <span class="post-date">Wed, Feb 2, 2011</span>
+        One of my pet peeves is when documentation is wrong. Another pet peeve is keeping documentation right. Crack open a source tarball for many programs and you&rsquo;ll see a chunk of text that gets printed out when you use the &#8211;help option, and elsewhere in the program&rsquo;s source code you&rsquo;ll see the definitions of the command-line options. Maintaining a program like this is miserable. Using it is bad, too. I can name a lot of programs that say one thing and do another.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/02/02/keeping-docs-and-program-options-in-sync/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/29/my-sessions-at-the-oreilly-mysql-conference-2011/">My sessions at the O&#39;Reilly MySQL Conference 2011</a></h1>
+        <span class="post-date">Sat, Jan 29, 2011</span>
+        I&rsquo;ll be presenting several sessions at the O&rsquo;Reilly MySQL Conference &amp; Expo 2011, which is April 11-14 in Santa Clara, California. I recommend this conference to anyone interested in open-source databases including MySQL, PostgreSQL, CouchDB, MongoDB, and others. There is very good coverage of a diverse list of open-source databases.
+My sessions are as follows:
+ Building on Strengths, Learning from Differences: a keynote address on the open-source database ecosystem, how we got here, and what we can do to make the most of the future.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/29/my-sessions-at-the-oreilly-mysql-conference-2011/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/19/controlling-maatkit-from-ruby/">Controlling Maatkit from Ruby</a></h1>
+        <span class="post-date">Wed, Jan 19, 2011</span>
+        There is a Ruby interface to Maatkit that looks like a handy idiomatic way to script Maatkit tools.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/19/controlling-maatkit-from-ruby/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/11/new-in-mk-query-digest-variance-to-mean-ratio/">New in mk-query-digest: variance-to-mean ratio</a></h1>
+        <span class="post-date">Tue, Jan 11, 2011</span>
+        This isn&rsquo;t actually new &ndash; it has been out for a few releases. The mk-query-digest tool from Maatkit now outputs information about each class of queries&rsquo; variance-to-mean ratio. The new output goes in a couple of places, including perhaps most usefully the &ldquo;profile&rdquo; report. Here&rsquo;s an example from a real MySQL system:
+# Profile # Rank Query ID Response time Calls R/Call Apdx V/M Item # ==== ================== ================ ===== ====== ==== ===== ======= # 1 0xBFCF8E3F293F6466 11256.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/11/new-in-mk-query-digest-variance-to-mean-ratio/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/12/06/awesome-postgresmysql-cross-pollination/">Awesome Postgres/MySQL cross-pollination</a></h1>
+        <span class="post-date">Mon, Dec 6, 2010</span>
+        There have been a few great blog posts recently from MySQL bloggers about Postgres, and vice versa, with good comments and follow-on from the real experts in both systems. I think this is wonderful. Learning how other databases solve hard problems is highly educational, especially because ACID databases face some of the hardest problems in computing. Making MySQL better is good for PostgreSQL. The reverse is just as true. And we should also be learning from SQLite, and CouchDB, and others who have overcome tough technical hurdles, built successful companies, created thriving and enthusiastic communities, or whatever their success has been.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/12/06/awesome-postgresmysql-cross-pollination/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/11/11/two-examples-of-sphinx-search-at-work/">Two examples of Sphinx search at work</a></h1>
+        <span class="post-date">Thu, Nov 11, 2010</span>
+        Sphinx is an amazing piece of software. Andrew Aksyonoff is an amazing guy, too. But aside from Andrew&rsquo;s many talents, and Sphinx&rsquo;s awesomeness, I wanted to list two related examples of how Sphinx makes the world a better place. Both examples are implemented as open-source software from Ivinco, a company founded by a group of people I used to work with.
+The first is the Sphinx WordPress search plugin. I have repeatedly considered using it on my own blog, but I&rsquo;m running on Pair&rsquo;s shared hosting, so I don&rsquo;t think I should do that.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/11/11/two-examples-of-sphinx-search-at-work/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/11/10/screenshots-of-innotops-new-u-mode/">Screenshots of innotop&#39;s new U mode</a></h1>
+        <span class="post-date">Wed, Nov 10, 2010</span>
+        I&rsquo;ve started an HTML manual for innotop, a &ldquo;top&rdquo; clone for MySQL. It includes screenshots. Right now I only have screenshots for the new U mode, which demonstrates how the User Statistics enhancements in Percona Server can show you which tables and indexes are most used.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/11/10/screenshots-of-innotops-new-u-mode/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/11/09/maatkits-mk-query-digest-learns-about-apdex/">Maatkit&#39;s mk-query-digest learns about Apdex</a></h1>
+        <span class="post-date">Tue, Nov 9, 2010</span>
+        This month&rsquo;s Maatkit release, which just hit the download servers, contains a new feature for mk-query-digest: Apdex scores. The Apdex performance index is a sensible metric of how satisfactory the response time to a request is. Of all the scientific metrics I&rsquo;ve seen, it&rsquo;s the most practical; and of all the practical ones I&rsquo;ve seen, it&rsquo;s the most scientific.
+To use this feature, you need to know what the Apdex threshold means, and you need to know how to configure this in mk-query-digest.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/11/09/maatkits-mk-query-digest-learns-about-apdex/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/11/06/innotop-version-1-8-0-released/">innotop version 1.8.0 released</a></h1>
+        <span class="post-date">Sat, Nov 6, 2010</span>
+        I&rsquo;ve just uploaded the new release of innotop to Google Code. Short version of the changelog: works on MySQL 5.1 with the InnoDB plugin; more efficient; supports Percona/MariaDB USER_STATISTICS data; fixes a bunch of small annoying bugs.
+Longer version:
+2010-11-06: version 1.8.0 Changes: * Don't re-fetch SHOW VARIABLES every iteration; it's too slow on many hosts. * Add a filter to remove EVENT threads in SHOW PROCESSLIST (issue 32). * Add a timestamp to output in -n mode, when -t is specified (issue 37).
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/11/06/innotop-version-1-8-0-released/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/11/02/getting-ready-for-a-new-innotop-release/">Getting ready for a new innotop release</a></h1>
+        <span class="post-date">Tue, Nov 2, 2010</span>
+        It&rsquo;s been ages since we&rsquo;ve had an update to innotop, or at least, it&rsquo;s been a while since the changes were bundled up and released officially. Barring any bug reports against the trunk code, I&rsquo;m about ready to release more than a year&rsquo;s worth of improvements to it:
+ Changes: * Don't re-fetch SHOW VARIABLES every iteration; it's too slow on many hosts. * Add a filter to remove EVENT threads in SHOW PROCESSLIST (issue 32).
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/11/02/getting-ready-for-a-new-innotop-release/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/10/25/oreilly-mysql-conference-cfp-ends-today/">O&#39;Reilly MySQL Conference CfP ends today</a></h1>
+        <span class="post-date">Mon, Oct 25, 2010</span>
+        You have about 14 more hours to submit session proposals to the O&rsquo;Reilly MySQL conference, which is soliciting sessions about all open-source databases: PostgreSQL, CouchDB, Riak, Hadoop, Firebird, you name it. The last-minute proposals are coming fast and furious, as usual, and we have a great selection to choose from, but we need more!
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/10/25/oreilly-mysql-conference-cfp-ends-today/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/10/07/profiling-a-processs-io-usage-with-ioprofile/">Profiling a process&#39;s IO usage with ioprofile</a></h1>
+        <span class="post-date">Thu, Oct 7, 2010</span>
+        I&rsquo;ve written a tool to profile a process&rsquo;s IO usage. It works by gathering lsof and strace from a process, and then figuring out how the file descriptors, function calls, and filenames are all related to each other. The manual page has examples. I&rsquo;m curious to see how it works for you. Note that it might be a good idea to run this on your development or staging system before you go running it against your production MySQL server &ndash; there are rumors of strace misbehaving on some kernels.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/10/07/profiling-a-processs-io-usage-with-ioprofile/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/09/22/aspersa-gets-a-user-manual/">Aspersa gets a user manual</a></h1>
+        <span class="post-date">Wed, Sep 22, 2010</span>
+        It doesn&rsquo;t exist until it is nicely documented. Now Aspersa has documentation. Writing these tools has taught me how powerful and flexible Bash can be. Solving MySQL problems is a lot easier with good tools!
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/09/22/aspersa-gets-a-user-manual/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/categories/open-source/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/categories/open-source/page/3/">Older</a>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

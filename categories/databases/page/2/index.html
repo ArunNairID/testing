@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Databases &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Databases" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/categories/databases/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/categories/databases/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/04/11/percona-live-recap/">Percona Live Recap</a></h1>
+        <span class="post-date">Fri, Apr 11, 2014</span>
+        I had a great time at Percona Live. I think this was the best MySQL conference I&rsquo;ve ever been to. (The food was excellent too. The fastest way to a man&rsquo;s heart is through his stomach.)
+The talks I attended were very good. Jay Janssen&rsquo;s tutorial on Percona XtraDB Cluster was impressive. I can&rsquo;t imagine how much time he must have spent preparing for that.
+I was very happy that Oracle, MariaDB, and WebScaleSQL had a strong presence, too.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/04/11/percona-live-recap/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/03/02/time-series-databases-influxdb/">Time-Series Databases and InfluxDB</a></h1>
+        <span class="post-date">Sun, Mar 2, 2014</span>
+        <p>Time-series databases are of particular interest to me these days. Not only is
+<a href="https://vividcortex.com/">VividCortex</a> working with large-scale time-series
+data, but it&rsquo;s a growing trend in the technology world in general. What&rsquo;s
+perhaps most surprising is the dearth of native time-series databases, either
+commercial or opensource.</p>
+
+<p><img src="/media/2014/03/alice.jpg" alt="No Time to Say Hello" /></p>
+
+<h3 id="the-world-is-time-series">The World is Time-Series</h3>
+
+<p>The data we gather is increasingly timestamped and dealt with in time-series
+ways. For the last 10 years, I&rsquo;ve worked with &ldquo;roll-up&rdquo; or &ldquo;summary&rdquo; tables
+almost constantly. I built, and saw others build, the same types of solutions
+over and over. For example, I probably consulted with over a dozen companies who
+do search-engine marketing and advertising. Cost tables are a given, and there&rsquo;s
+usually cost-per-ad-per-day and half a dozen other summary tables. In my case I
+saw these things in the MySQL context, but you can pick your technology and
+someone&rsquo;s trying to do time-series tasks on top of it.</p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/03/02/time-series-databases-influxdb/"> &raquo; Continue Reading (about 1700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/02/26/mysql-fall-decline-php/">MySQL falls with the decline of PHP</a></h1>
+        <span class="post-date">Wed, Feb 26, 2014</span>
+        <p>Sometimes people&rsquo;s perspective can be so interesting. I mean this with
+absolutely no irony. Josh Berkus wrote recently in a post about upcoming <a href="http://www.databasesoup.com/2014/02/why-hstore2jsonb-is-most-important.html">JSON
+improvements in PostgreSQL 9.4</a>:</p>
+
+<blockquote>
+<p>MySQL largely rose on the success of PHP, and it fell as PHP became
+marginalized.</p>
+</blockquote>
+
+<p>This is an aside in the blog post, off-topic. But it&rsquo;s
+interesting to discuss because it reveals the completely different things people
+see when they look at something. It&rsquo;s like the proverbial story about the blind
+men describing an elephant. We have such a variety of perceptions.</p>
+
+<p><img src="/media/2014/02/kaleidoscope.jpg" alt="Elephant" /></p>
+
+<p>This post, by the way, is not yet another flame war about MySQL versus
+PostgreSQL. To the contrary, it is very important for MySQL users and
+community members to understand that there are other communities who do not
+share the same assumptions, values, and beliefs at all. In my experience, many
+arguments about things like MySQL versus PostgreSQL result from people (or
+groups of people) holding such differences but being unaware of them, and
+therefore misinterpreting words and actions from a group who doesn&rsquo;t share the
+same worldview, believing them to be dishonest, irrational, or hostile.</p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/02/26/mysql-fall-decline-php/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/02/11/bloom-filters/">Bloom Filters Made Easy</a></h1>
+        <span class="post-date">Tue, Feb 11, 2014</span>
+        I mentioned Bloom Filters in my talk today at Strata. Afterwards, someone told me it was the first time he&rsquo;d heard of Bloom Filters, so I thought I&rsquo;d write a little explanation of what they are, what they do, and how they work.
+But then I found that Jason Davies already wrote a great article about it. Play with his live demo. I was able to get a false positive through luck in a few keystrokes: add alice, bob, and carol to the filter, then test the filter for candiceaklda.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/02/11/bloom-filters/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/02/05/mysql-nosql-open-source-google-tech-talk/">MySQL, SQL, NoSQL, Open Source And Beyond: a Google Tech Talk</a></h1>
+        <span class="post-date">Wed, Feb 5, 2014</span>
+        I&rsquo;ve been invited to give a Tech Talk at Google next Thursday, February 13th, from 11:00 to 12:30 Pacific time. Unfortunately the talk won&rsquo;t be streamed live, nor is it open to the general public, but it will be recorded and hosted on YouTube afterwards. I&rsquo;ve also been told that a small number of individuals might be allowed to attend from outside Google. If you would like me to try to get a guest pass for you, please tweet that to @xaprb.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/02/05/mysql-nosql-open-source-google-tech-talk/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/01/30/timestamps-in-mysql/">A simple rule for sane timestamps in MySQL</a></h1>
+        <span class="post-date">Thu, Jan 30, 2014</span>
+        Do you store date or time values in MySQL?
+Would you like to know how to avoid many possible types of pain, most of which you cannot even begin to imagine until you experience them in really fun ways?
+Then this blog post is for you. Here is a complete set of rules for how you can avoid aforementioned pain:
+ All date and time columns shall be INT UNSIGNED NOT NULL, and shall store a Unix timestamp in UTC.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/01/30/timestamps-in-mysql/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/01/23/speaking-at-percona-live/">Speaking at Percona Live</a></h1>
+        <span class="post-date">Thu, Jan 23, 2014</span>
+        I&rsquo;m excited to be speaking at the Percona Live MySQL Conference again this year. I&rsquo;ll present two sessions: Developing MySQL Applications with Go and Knowing the Unknowable: Per-Query Metrics. The first is a walk-through of everything I&rsquo;ve learned over the last 18 months writing large-scale MySQL-backed applications with Google&rsquo;s Go language. The second is about using statistical techniques to find out things you can&rsquo;t even measure, such as how much CPU a query really causes MySQL to use.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/01/23/speaking-at-percona-live/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/12/28/immutability-mvcc-and-garbage-collection/">Immutability, MVCC, and Garbage Collection</a></h1>
+        <span class="post-date">Sat, Dec 28, 2013</span>
+        <p>Not long ago I attended a talk about Datomic, which focused a lot on database
+immutability and its benefits. I hope to illustrate why many database designs
+are much more complicated than Datomic and its ilk. Although Datomic&rsquo;s design
+can be presented as <em>advanced</em>, there&rsquo;s another side to the story, which also
+holds true for similar databases such as CouchDB. It&rsquo;s a really difficult
+problem space, and clean and elegant solutions without nasty edge cases are
+difficult to design and implement.</p>
+
+<p><img src="/media/2013/12/uluru.jpg" alt="Uluru" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/12/28/immutability-mvcc-and-garbage-collection/"> &raquo; Continue Reading (about 2200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/12/16/how-is-the-mariadb-knowledge-base-licensed/">How is the MariaDB Knowledge Base licensed?</a></h1>
+        <span class="post-date">Mon, Dec 16, 2013</span>
+        I clicked around for a few moments but didn&rsquo;t immediately see a license mentioned for the MariaDB knowledgebase. As far as I know, the MySQL documentation is not licensed in a way that would allow copying or derivative works, but at least some of the MariaDB Knowledge Base seems to be pretty similar to the corresponding MySQL documentation. See for example LOAD DATA LOCAL INFILE: MariaDB, MySQL.
+Oracle&rsquo;s MySQL documentation has a licensing notice that states:
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/12/16/how-is-the-mariadb-knowledge-base-licensed/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/12/07/props-to-the-mysql-community-team/">Props to the MySQL Community Team</a></h1>
+        <span class="post-date">Sat, Dec 7, 2013</span>
+        Enough negativity sometimes gets slung around that it&rsquo;s easy to forget how much good is going on. I want to give a public thumbs-up to the great job the MySQL community team, especially Morgan Tocker, is doing. I don&rsquo;t remember ever having so much good interaction with this team, not even in the &ldquo;good old days&rdquo;:
+ Advance notice of things they&rsquo;re thinking about doing (deprecating, changing, adding, etc) Heads-up via private emails about news and upcoming things of interest (new features, upcoming announcements that aren&rsquo;t public yet, etc) Solicitation of opinion on proposals that are being floated internally (do you use this feature, would it hurt you if we removed this option, do you care about this legacy behavior we&rsquo;re thinking about sanitizing) I don&rsquo;t know who or what has made this change happen, but it&rsquo;s really welcome.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/12/07/props-to-the-mysql-community-team/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/12/07/st-sales-engineers-say/">S**t sales engineers say</a></h1>
+        <span class="post-date">Sat, Dec 7, 2013</span>
+        Here&rsquo;s a trip down memory lane. I was just cleaning out some stuff and I found some notes I took from a hilarious MySQL seminar a few years back. I won&rsquo;t say when or where, to protect the guilty.[1]
+I found it so absurd that I had to write down what I was witnessing. Enough time has passed that we can probably all laugh about this now. Times and people have changed.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/12/07/st-sales-engineers-say/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/11/26/explain-update-in-mysql-5-6/">EXPLAIN UPDATE in MySQL 5.6</a></h1>
+        <span class="post-date">Tue, Nov 26, 2013</span>
+        I just tried out EXPLAIN UPDATE in MySQL 5.6 and found unexpected results. This query has no usable index:
+ EXPLAIN UPDATE ... WHERE col1 = 9 AND col2 = 'something'\G *************************** 1. row *************************** id: 1 select_type: SIMPLE table: foo type: index possible_keys: NULL key: PRIMARY key_len: 55 ref: NULL rows: 51 Extra: Using where  The EXPLAIN output makes it seem like a perfectly fine query, but it&rsquo;s a full table scan.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/11/26/explain-update-in-mysql-5-6/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/10/16/continuous-integration-and-deployment/">Continuous integration and deployment</a></h1>
+        <span class="post-date">Wed, Oct 16, 2013</span>
+        I&rsquo;ve been talking to some smart people about deployment. First a little background. One of my colleagues was working on a project that ultimately didn&rsquo;t bear fruit. It was a system for continuous delivery, and involved reacting to git push by building and shipping to production. But it felt as if the problem shouldn&rsquo;t be separated from provisioning, and from setting up a development environment, and so these things got folded in, and the effort became a boil-the-ocean project that had to be set aside.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/10/16/continuous-integration-and-deployment/"> &raquo; Continue Reading (about 1200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/10/01/mysql-isnt-limited-to-nested-loop-joins/">MySQL isn&#39;t limited to nested-loop joins</a></h1>
+        <span class="post-date">Tue, Oct 1, 2013</span>
+        I have followed the &ldquo;Use the Index, Luke!&rdquo; blog for a while. Today Marcus wrote that (I&rsquo;ll paraphrase) MongoDB disgraces NoSQL the same way that MySQL disgraces SQL. I agree with a lot of this, actually, although I&rsquo;m not sure I&rsquo;d put it so strongly. People often like products for good reasons, and to think that legions of developers are stupid or ill-educated is suspect, in my opinion.
+But that wasn&rsquo;t what I meant to write about.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/10/01/mysql-isnt-limited-to-nested-loop-joins/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/09/27/it-happened-again/">It happened again</a></h1>
+        <span class="post-date">Fri, Sep 27, 2013</span>
+        Oracle released a bunch of MySQL stuff they&rsquo;ve been working on since the last huge release, and my blog reader filled up with a few dozen posts I&rsquo;m gonna have to read through so I don&rsquo;t feel ignorant. Dear MySQL Engineering Team, could you take pity on me and release these gradually over the course of a month or so next time? Especially since Google discontinued Reader, and I&rsquo;m using Feedly now, and it has a bug that I can&rsquo;t figure out how to report, which result in articles being marked as read when I scroll, which makes me feel super-paranoid-insecure that I&rsquo;m gonna miss an article that I scrolled over without having read yet.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/09/27/it-happened-again/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/09/13/sending-the-query-to-the-data/">Sending the query to the data</a></h1>
+        <span class="post-date">Fri, Sep 13, 2013</span>
+        It&rsquo;s common wisdom that large-scale database systems require distributing the data across machines. But what seems to be missing in a lot of discussions is distributing the query processing too. By this I mean the actual computation that&rsquo;s performed on the data.
+I just had a conversation with Peter Zaitsev yesterday that helped make concrete some thoughts I&rsquo;ve been having about Cassandra for a while. Because Cassandra doesn&rsquo;t allow you to really do any computation in the data (aggregating, evaluating expressions, and so on), if you&rsquo;re going to use it for truly Big data, you&rsquo;re going to fetch enormous amounts of data across the network.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/09/13/sending-the-query-to-the-data/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/09/10/features-id-like-in-mysql-windowing-functions/">Features I&#39;d like in MySQL: windowing functions</a></h1>
+        <span class="post-date">Tue, Sep 10, 2013</span>
+        Continuing with my wishlist, I&rsquo;ll add windowing functions. They&rsquo;re enormously powerful. They allow you to extend relational logic beyond the strict boundaries of tuples. In MySQL at present, one must use ugly hacks to preserve state from one row to the next, such as user variables &ndash; which are not guaranteed to work if the optimizer changes the query plan.
+And yeah, PostgreSQL and SQL Server have windowing functions too, and once you&rsquo;ve used them it&rsquo;s a little hard to go back.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/09/10/features-id-like-in-mysql-windowing-functions/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/09/09/features-id-like-to-see-in-mysql-ctes/">Features I&#39;d like to see in MySQL: CTEs</a></h1>
+        <span class="post-date">Mon, Sep 9, 2013</span>
+        The pace of MySQL engineering has been pretty brisk for the last few years. I think that most of the credit is due to Oracle, but one should not ignore Percona, Monty Program, Facebook, Google, Twitter, and others. Not only are these organizations (and the individuals I haven&rsquo;t mentioned) innovating a lot, they&rsquo;re providing pressure on Oracle to keep up the improvements, too.
+But if you look back over the last few years, MySQL is still functionally a lot like it used to be.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/09/09/features-id-like-to-see-in-mysql-ctes/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/09/05/can-tokudb-replace-partitioning/">Can TokuDB replace partitioning?</a></h1>
+        <span class="post-date">Thu, Sep 5, 2013</span>
+        I&rsquo;ve been considering using TokuDB for a large dataset, primarily because of its high compression. The data is append-only, never updated, rarely read, and purged after a configurable time.
+I use partitions to drop old data a day at a time. It&rsquo;s much more efficient than deleting rows, and it lets me avoid indexing the data on the time dimension. Partitioning serves as a crude form of indexing, as well as helping purge old data.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/09/05/can-tokudb-replace-partitioning/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/09/04/free-talk-on-mysql-and-go-at-percona-mysql-university-dc/">Free talk on MySQL and Go at Percona MySQL University DC</a></h1>
+        <span class="post-date">Wed, Sep 4, 2013</span>
+        If you&rsquo;re in the Washington, DC area on Sept 12th, be sure to attend Percona University. This is a free 1-day mini-conference to bring developers and system architects up to speed on the latest MySQL products, services and technologies. Some of the topics being covered include Continuent Tungsten; Percona XtraDB Cluster; MySQL Backups in the Real World; MariaDB 10.0; MySQL 5.6 and Percona Server 5.6; Apache Hadoop.
+I&rsquo;ll be speaking about using MySQL with Go.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/09/04/free-talk-on-mysql-and-go-at-percona-mysql-university-dc/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/categories/databases/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/categories/databases/page/3/">Older</a>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

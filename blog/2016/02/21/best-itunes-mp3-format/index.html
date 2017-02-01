@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      The Best Lossy Music Compression &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="The Best Lossy Music Compression" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/media/2016/02/cymatics.jpg" />
+  <meta name="og:description" content="Compression formats such as MP3, AAC, and Ogg Vorbis have a lot of nuances. What&#39;s the best set of tradeoffs?" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2016/02/21/best-itunes-mp3-format/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2016/02/21/best-itunes-mp3-format/">
+  
+  <meta name="description" value="Compression formats such as MP3, AAC, and Ogg Vorbis have a lot of nuances. What&#39;s the best set of tradeoffs?">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">The Best Lossy Music Compression</h1>
+  <span class="post-date">Sun, Feb 21, 2016 in
+		
+		<a href="/categories/music" class="btn btn-primary">Music</a>
+		
+		<a href="/categories/reviews" class="btn btn-primary">Reviews</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2016%2f02%2f21%2fbest-itunes-mp3-format%2f&text=The%20Best%20Lossy%20Music%20Compression:https%3a%2f%2fwww.xaprb.com%2fblog%2f2016%2f02%2f21%2fbest-itunes-mp3-format%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2016%2f02%2f21%2fbest-itunes-mp3-format%2f&title=The%20Best%20Lossy%20Music%20Compression&summary=The%20Best%20Lossy%20Music%20Compression&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2016%2f02%2f21%2fbest-itunes-mp3-format%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2016%2f02%2f21%2fbest-itunes-mp3-format%2f&t=The%20Best%20Lossy%20Music%20Compression" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2016%2f02%2f21%2fbest-itunes-mp3-format%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>I noticed recently that Google Play Music has a set of features I wasn&rsquo;t aware
+of before, and decided to give it a try. Through various kinds of <a href="http://projects.csail.mit.edu/gsb/old-archive/gsb-archive/gsb2000-02-11.html">yak
+shaving</a>,
+I ended up tackling a project I&rsquo;d wanted to look into for a while: <strong>which
+formats and settings are really the best for lossy music compression?</strong></p>
+
+<p>What I learned was both fun and surprising, and ultimately highly practical. If
+you&rsquo;re in a hurry, the summary is that high-quality variable-bitrate MP3
+produced with the LAME encoder is probably the best all-around choice if you
+want broad compatibility; if you want the best sound quality, though, AAC (Apple&rsquo;s native format) or Ogg Vorbis are much better than MP3.</p>
+
+<p>But before I get to that, let&rsquo;s sharpen some yak razors, shall we?</p>
+
+<p><img src="/media/2016/02/cymatics.jpg" alt="Cymatics" /></p>
+
+<p></p>
+
+<p>I have a large library of CDs. Although I listen to more music on Spotify now
+than on CD, many of my CDs are esoteric stuff that is not available on Spotify.
+For years I&rsquo;ve tried keeping it in various music libraries and players so I can
+listen on-the-go. It was never a satisfactory solution. More recently I&rsquo;ve been
+an Apple user, and gradually migrated all of my music into iTunes.
+Unfortunately, my collection is too large to sync to any mobile device or work
+laptop, so unless I&rsquo;m at home, I can&rsquo;t listen to my music.</p>
+
+<h3 id="reevaluating-google-play-music">Reevaluating Google Play Music</h3>
+
+<p>I&rsquo;ve been aware of several services that let you upload your music library to
+the &ldquo;cloud,&rdquo; but was never happy with any of them. It always seemed that I could
+get most of what I wanted, but the lacking features were deal-killers in some
+way, so the situation remained: Spotify on the go, my personal library at home.
+As far as I could see, the choices looked kind of like this:</p>
+
+<ul>
+<li>Spotify: great for subscription-based streaming, cluttered UI, doesn&rsquo;t have
+all my music, doesn&rsquo;t support uploading my personal music.</li>
+<li>Apple services and devices: doesn&rsquo;t fit all my music, too expensive, Music
+Match doesn&rsquo;t seem to actually <em>match</em> anything, no subscription-based streaming
+of stuff I haven&rsquo;t purchased (although that&rsquo;s changed recently). It&rsquo;s been a
+while; maybe I should take another look at this too.</li>
+<li>Amazon Cloud Player: doesn&rsquo;t have a good library of stuff to stream, clunky
+UI, uploading features don&rsquo;t work well (matching of songs doesn&rsquo;t work).</li>
+<li>Pandora, et al: niche.</li>
+<li>Google Play Music: wasn&rsquo;t really in my sphere of consciousness.</li>
+</ul>
+
+<p>It all started with Neil Young. I just got nostalgic for his album <em>Silver and
+Gold</em> one day, and I couldn&rsquo;t find it on Spotify. I am an Amazon Prime member, so
+I thought to look there, but it wasn&rsquo;t available. I own it on CD and didn&rsquo;t want
+to buy it again. While looking around to see where I could get it (I wasn&rsquo;t near
+my home), I stumbled upon Google Play Music again.</p>
+
+<p>Google Play Music turns out to have a surprisingly nice UI on both the web and
+mobile apps, a good library of music for streaming via subscription, and
+supports uploading 50,000 songs on the free plan (enough for me). It also
+supports offline listening via downloading, and permits exporting files that you
+uploaded. Could it be the perfect service?</p>
+
+<p>Because I&rsquo;m already a longtime Spotify customer, I didn&rsquo;t want to switch away
+fully to another service like Google Play Music, but I thought perhaps it&rsquo;d be
+worth trying it out for uploads only, since that adds $0 to my current monthly
+cost.</p>
+
+<p>So I installed the Google Music Manager, let it upload my library, and went on a
+trip.  While away, I cued up <em>Silver and Gold</em>. &ldquo;Good to see you, good to see you
+again,&rdquo; it started, and I smiled. Good to see you again too, Neil.</p>
+
+<p>But then my smile faded. the sound quality was awful! I was so bummed. You might
+already know that I&rsquo;m <a href="/blog/2014/01/16/bose-sennheiser-sony-noise-cancelling-headphones/">kind of picky about the sound quality of my
+music</a>. I&rsquo;ve
+taken some care in importing my music into iTunes, and although occasionally I
+can hear that a song&rsquo;s quality isn&rsquo;t quite as good as I&rsquo;d like, this was another
+matter altogether. It was really painful.</p>
+
+<h3 id="lossy-compression">Lossy Compression</h3>
+
+<p>Someday I&rsquo;d like to <a href="https://graphics.ethz.ch/teaching/mmcom12/slides/mp3_and_aac_brandenburg.pdf">learn about lossy compression in detail by reading
+Karlheinz Brandenburg&rsquo;s paper <em>MP3 and AAC explained</em> more
+carefully</a>,
+but my current understanding of it is that compression schemes such as MP3, Ogg
+Vorbis, and AAC discard portions of the sonic information that the human ear is
+less able to hear, in turn introducing errors that are designed to be hard to
+hear. These are based on &ldquo;psychoacoustic models,&rdquo; which I interpret in my
+layman&rsquo;s terms as factors such as the following:</p>
+
+<ol>
+<li>When the music is loud, it&rsquo;s harder to hear quiet sounds.</li>
+<li>When the music is complicated, we tend to focus on the big themes, not the
+details, and we don&rsquo;t hear well at the high and low frequency limits.</li>
+<li>We don&rsquo;t hear high and low frequencies well when they&rsquo;re quiet.</li>
+<li>Compression artifacts can be masked by the music itself (and thus inaudible)
+if they&rsquo;re quiet enough.</li>
+</ol>
+
+<p>I know there are a variety of compression artifacts. For some reason, the one my
+ear picks up the most is what I call a &ldquo;swishy&rdquo; sound, which I hear in high
+frequencies such as sibilant vowels, cymbals, and the like. When these sounds
+change in amplitude, their frequency spectrum seems to change unnaturally if the
+compression is too lossy, and I cringe. I may be misinterpreting what&rsquo;s
+happening here, but that&rsquo;s how it sounds to my ears: loud cymbals sound bright,
+but as they die out, they become muddy.</p>
+
+<p>I&rsquo;ve also noticed that some songs tend to be hard edge-cases for lossy
+compression. For example, David Gray&rsquo;s song <em>Fugitive</em> requires very high
+quality settings to sound good to my ears. It sounds awful at compression
+settings that make other songs sound pretty good to me.</p>
+
+<p>All lossy compression works by throwing away information, so it&rsquo;s not surprising
+that these effects show up every so often. I accept that as part of the deal.
+But when it&rsquo;s as bad as my Neil Young album sounded, it&rsquo;s unbearable for me.</p>
+
+<p>I would have noticed if my original import into iTunes had sounded
+this bad. What happened? I speculated that Google Play Music had
+transcoded the already-compressed file into another format, adding generation
+loss.  I found a <a href="https://support.google.com/googleplay/answer/1100462">help page on Google Play Music&rsquo;s file format
+support</a> that gave me a
+clue: any non-MP3 file is converted to an MP3 file at the same bit rate. Indeed,
+the song I was listening to downloaded (exported) as a 128k MP3 file, which is
+not very high quality, especially if it has been reencoded.</p>
+
+<p>It seems straightforward to me that the only way to avoid this problem is to
+upload MP3 files to Google Play Music in the first place. I haven&rsquo;t looked at my
+iTunes library, but I&rsquo;m sure it is a variety of formats, including lots of AAC
+files (the iTunes default). I ripped those CDs
+over many years with many different programs. I&rsquo;m not eager to throw it away and
+do it again.</p>
+
+<h3 id="comparing-lossy-compression-formats">Comparing Lossy Compression Formats</h3>
+
+<p>This piqued my curiosity, though: how good are the compression formats, anyway?
+I have been interested in lossy compression for many years. I remember being
+fascinated when MP3 first appeared on the scene, and learning about alternative
+formats such as VQF (TwinVQ), Real Audio.  I remember when WMA arrived, and then
+Ogg Vorbis, and the newest contender, <a href="https://www.opus-codec.org/">Opus</a>.  The
+claimed benefit is usually better sound quality at lower bit rates (smaller file
+sizes). My unqualified, untested assumptions were that:</p>
+
+<ol>
+<li>MP3 wasn&rsquo;t very good relative to its successors, but improved over time.</li>
+<li>Vendor-specific formats such as WMA were not much better.</li>
+<li>Ogg Vorbis was very good, but would never be widely accepted as a standard.</li>
+<li>AAC I wasn&rsquo;t sure about. I thought it was a proprietary Apple format; I
+was wrong.</li>
+</ol>
+
+<p>While browsing around a bit, an additional nuance caught my attention: the major
+MP3 encoding software is the free/opensource LAME and the proprietary, patented
+Fraunhofer encoding software. Apparently iTunes uses Fraunhofer software, not
+LAME, and it seems that lots of people believe LAME produces better sounding MP3
+files than Fraunhofer.</p>
+
+<p>At this point I had a thought: leaving aside my subjective opinions of audio
+quality, it shouldn&rsquo;t be hard to get a firm answer on how well various formats
+perform. Just encode, then decode and subtract from the original signal, and
+look at the resulting errors. Right?</p>
+
+<p><em>I need to caveat what follows. It is not that simple. To do that misses
+the point of perceptual audio coding to a large extent.  However, it is still
+fun and interesting to do.</em></p>
+
+<p>I encoded the first 30 seconds of <em>Fugitive</em> in a variety of formats and
+settings. Then I inverted the original signal, and added the original and
+decoded signals together. (It&rsquo;s necessary to ensure that the two signals are
+exactly aligned in time, or this won&rsquo;t work). This is easy to accomplish in
+Audacity. The result is the encoding <em>error</em>, or roughly the combination of the
+signal that&rsquo;s discarded plus signals that the encoder adds (quantization noise
+and the like). In a way, it&rsquo;s like the audio version of looking at a
+photographic negative overlaid with a positive, seeing what &ldquo;leaks&rdquo; through.</p>
+
+<p>Listening to the error signal is interesting. With high quality compression, it
+essentially sounds like some high-frequency static, in which you can recognize
+the original song&rsquo;s rhythm. At lower quality, it sounds like a muffled version
+of the song, with the midrange elided. You can also hear many of the compression
+artifacts quite easily, such as dropouts in frequency bands. Two of the most
+dramatic examples are the error signals from these compression settings:</p>
+
+<ul>
+<li>iTunes using MP3 with custom settings: highest quality, VBR, 96k minimum.<br>
+<audio controls>
+<source src="/media/2016/02/itunes-highest-vbr.mp3" type="audio/mpeg">
+ Your browser does not support the audio element.
+ </audio></li>
+<li>LAME using 320k constant bit rate.<br>
+<audio controls>
+<source src="/media/2016/02/lame-320.mp3" type="audio/mpeg">
+ Your browser does not support the audio element.
+ </audio></li>
+</ul>
+
+<p>I combined the channels into mono and amplified the signals by 10dB to make
+their waveforms clearer, and took a screenshot of the result. In order, these
+are iTunes AAC defaults, iTunes MP3 at fixed 320k bitrate, iTunes default MP3
+settings, iTunes MP3 at highest quality preset, iTunes MP3 at highest quality
+with VBR at 96k minimum bitrate, LAME at 320k bitrate, LAME at VBR 0 (highest
+quality) setting, Ogg Vorbis at Audacity&rsquo;s highest quality setting (10 out of
+10), and Ogg Vorbis at Audacity&rsquo;s default quality setting of
+5 out of 10.</p>
+
+<p><img src="/media/2016/02/waveforms.png" alt="Waveforms" /></p>
+
+<p>The more information in the error, the more of the original music is missing or
+distorted by added non-music signals. However, it is <em>not</em> true that this means
+the music will sound better. As I said before, the point of perceptual audio
+coding as a compression technique is to throw away as much information as
+possible, thus <em>adding as much error as possible</em>, while trying to keep it below
+the threshold at which a human can perceive it. If successful, ideally this
+actually creates a large error signal but the music still sounds good.
+Poor-quality encoders might produce a small error signal but make the music
+sound bad. So there isn&rsquo;t a direct relationship between the error signal and the
+quality of the music.</p>
+
+<p>Another interesting way to look at the error signal is as a spectrogram:</p>
+
+<p><img src="/media/2016/02/spectrogram.png" alt="Spectrograms" /></p>
+
+<p>Here it&rsquo;s quite clear that all of the iTunes MP3s are missing a lot of bass.
+Contrast the LAME 320 error spectrum to the AAC spectrum, and you can see that
+AAC retains a lot more high-frequency data too.</p>
+
+<h3 id="what-s-the-best-lossy-compression">What&rsquo;s The Best Lossy Compression?</h3>
+
+<p>You can probably guess that I&rsquo;m going to say this, but it depends.  AAC and Ogg
+Vorbis are clearly more advanced than the older MP3 standard, and are capable of
+producing better sounding audio at lower bitrates. However, that&rsquo;s not the only
+thing you might care about:</p>
+
+<ul>
+<li>Compatibility. I don&rsquo;t know why Google Play Music doesn&rsquo;t support AAC
+natively, but it doesn&rsquo;t. Re-encoding a file from AAC into &ldquo;equivalent
+bitrate&rdquo; MP3 files is a terrible idea; the resulting music sounds awful.
+Likewise, I&rsquo;d be pretty happy if everyone supported Ogg Vorbis, but that&rsquo;s
+never going to happen. (Tangent: I&rsquo;ve heard that Spotify uses Ogg Vorbis.)</li>
+<li>The sweet spot. Although a lot of people seem to believe that 320k MP3 files
+are the pinnacle, in reality there&rsquo;s a nonlinear bitrate-versus-quality curve
+for both MP3 and AAC compression (and probably others as well.) There&rsquo;s a
+point of diminishing returns, after which higher bitrates just make the files
+a lot larger without adding much in perceived sound quality. The paper I
+linked to earlier has more information on this, and notes that for MP3 the
+sweet spot is about 128kbit/s, whereas AAC&rsquo;s sweet spot is a bit lower bitrate
+but it doesn&rsquo;t hit as much of a quality ceiling.</li>
+<li>File size. This is the whole point, isn&rsquo;t it? Constant bitrate files at 320k
+aren&rsquo;t very compressed in terms of file size.</li>
+</ul>
+
+<p>On the topic of file sizes, a 40MB song in WAV format compressed about 4x with
+320k MP3, about 5x with the default iTunes AAC format, and a bit more than that
+with LAME&rsquo;s V0 setting.</p>
+
+<p>A lot of audiophiles use lossless compression (which doesn&rsquo;t reduce file size
+much), and produce high-quality MP3 or AAC files from them.  For my purposes,
+I&rsquo;d like to have</p>
+
+<ul>
+<li>Only one compressed copy of my files (I still have the CDs, after all).</li>
+<li>Good quality sound even if it&rsquo;s not perfect.</li>
+<li>Minimal file size.</li>
+<li>Music available everywhere without horrendous reencoding and other problems.</li>
+</ul>
+
+<p>To achieve this, it seems that if I want to use services such as Google Play
+Music, my best option is to encode to MP3 with the LAME encoder and a
+high-quality variable bitrate such as v0 or v1. (Constant bitrates bloat files
+needlessly; lossy compression is designed to achieve a desired perceived
+quality, which doesn&rsquo;t always require a lot of bits). However, I have no desire
+to reencode tens of thousands of songs in this way.</p>
+
+<p>The other option I think I need to consider is using Apple&rsquo;s music service instead of
+Google&rsquo;s. It supports both AAC and MP3 files as I&rsquo;d expect, and now seems to be
+a pretty direct competitor to Spotify and Google&rsquo;s offering. Last time I gave it
+a trial, though, the music matching feature didn&rsquo;t match anything, so it was
+potentially going to upload <em>all</em> of my music, which would have exceeded the
+limits they had at that point and would have cost me a pretty fair amount of
+money.</p>
+
+<p>If I used Apple&rsquo;s services instead, then my choice would be AAC files, not MP3.
+Although MP3 is more broadly compatible, AAC produces clearly better quality
+audio in my opinion, without the penalty of larger file sizes. (<em>Update: I now use Apple Music with the Music Library feature, so I get a combination of my personal library with the Apple-hosted cloud-based music catalog. I&rsquo;ve found this to work really, really well; and I haven&rsquo;t had an audio quality problem yet.</em>)</p>
+
+<p>In closing, I&rsquo;ll leave you with the opening lyrics of <em>Fugitive</em>:</p>
+
+<blockquote>
+<p><em>Is the answer none of the above&hellip;</em></p>
+</blockquote>
+
+<p>Image credits: <a href="https://www.flickr.com/photos/evangrant/8197459006/">Cymatics</a></p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2016/03/19/meditation/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2016/01/09/daily-inspiration-experiment/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2016\/02\/21\/best-itunes-mp3-format\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

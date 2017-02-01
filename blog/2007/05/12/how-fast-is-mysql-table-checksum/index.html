@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How fast is MySQL Table Checksum? &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How fast is MySQL Table Checksum?" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2007/05/12/how-fast-is-mysql-table-checksum/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2007/05/12/how-fast-is-mysql-table-checksum/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How fast is MySQL Table Checksum?</h1>
+  <span class="post-date">Sat, May 12, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f05%2f12%2fhow-fast-is-mysql-table-checksum%2f&text=How%20fast%20is%20MySQL%20Table%20Checksum%3f:https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f05%2f12%2fhow-fast-is-mysql-table-checksum%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f05%2f12%2fhow-fast-is-mysql-table-checksum%2f&title=How%20fast%20is%20MySQL%20Table%20Checksum%3f&summary=How%20fast%20is%20MySQL%20Table%20Checksum%3f&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f05%2f12%2fhow-fast-is-mysql-table-checksum%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f05%2f12%2fhow-fast-is-mysql-table-checksum%2f&t=How%20fast%20is%20MySQL%20Table%20Checksum%3f" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f05%2f12%2fhow-fast-is-mysql-table-checksum%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>A few people have asked me how fast <a href="http://code.google.com/p/maatkit/">MySQL Table Checksum</a> is. As with so many other things, it depends. This article shows how long it takes to checksum real data on a production server I help manage, which might give you a rough idea of how long it&rsquo;ll take on your servers.</p>
+
+<h3 id="the-server-and-workload">The server and workload</h3>
+
+<p>This server is a replication master running MySQL 5.0.38. It is a Dell Poweredge 1800 series with dual Xeon 3.4GHz processors and 2GB RAM, with three 15K SCSI hard drives in a RAID5 configuration. It serves about 40GB of data in InnoDB tables and about 25GB in MyISAM.</p>
+
+<p>I can&rsquo;t say too much about the workload, but I&rsquo;ll tell you what I can. At the time I ran these checksums, it was running many rollup and <code>LOAD DATA INFILE</code> queries on the tables I checksummed. These tend to do a lot of updates, deletes, and inserts. There are also several processes that <code>REPLACE</code> or <code>INSERT.. ON DUPLICATE KEY UPDATE</code> large parts of certain tables which are in the 2-8GB range. At the same time, there are processes running rapid-fire single-row lookups and <code>GROUP BY</code> queries against all or part of these tables. And certain other larger-than-memory tables elsewhere in the server were being updated too, probably flushing the cache.</p>
+
+<p>In other words, these results are under heavy load, and not scientific or repeatable at all (there was definitely heavier load on some of the test runs than others). But it gives you an idea. Your mileage may vary.</p>
+
+<h3 id="the-results">The results</h3>
+
+<p>The following table shows the number of seconds it took to checksum several heavily-used InnoDB tables with various checksum strategies: MySQL&rsquo;s built-in <code>CHECKSUM TABLE</code>, the ACCUM strategy with replication as an <code>INSERT/SELECT</code> (acquires share-mode locks on the whole table for replication consistency), the ACCUM strategy as a plain <code>SELECT</code> without share-mode locks, and the BIT_XOR strategy. If you wish to know more about these strategies and what they do, the MySQL Table Checksum documentation explains them in great detail.</p>
+
+<p>The last column shows how long it takes to run <code>COUNT(*)</code> on the tables in question. As you can see, taking a checksum is sometimes not that much more expensive than a simple <code>COUNT()</code> on InnoDB.</p>
+
+<table class="cleanHeaders elbowroom compact">
+  <th scope="row">
+    Rows
+  </th>
+  
+  <th scope="row">
+    Table Size
+  </th>
+  
+  <th scope="row">
+    CHECKSUM
+  </th>
+  
+  <th scope="row">
+    Replicate/ACCUM
+  </th>
+  
+  <th scope="row">
+    ACCUM
+  </th>
+  
+  <th scope="row">
+    BIT_XOR
+  </th>
+  
+  <th scope="row">
+    COUNT
+  </th></tr> 
+  
+  <tr>
+    <td class="number">
+      49,152
+    </td>
+    
+    <td class="number">
+      317
+    </td>
+    
+    <td class="number">
+    </td>
+    
+    <td class="number">
+    </td>
+    
+    <td class="number">
+    </td>
+    
+    <td class="number">
+    </td>
+    
+    <td class="number">
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="number">
+      1,589,248
+    </td>
+    
+    <td class="number">
+      14,472
+    </td>
+    
+    <td class="number">
+    </td>
+    
+    <td class="number">
+      1
+    </td>
+    
+    <td class="number">
+    </td>
+    
+    <td class="number">
+      1
+    </td>
+    
+    <td class="number">
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="number">
+      100,843,520
+    </td>
+    
+    <td class="number">
+      638,144
+    </td>
+    
+    <td class="number">
+      15
+    </td>
+    
+    <td class="number">
+      12
+    </td>
+    
+    <td class="number">
+      13
+    </td>
+    
+    <td class="number">
+      25
+    </td>
+    
+    <td class="number">
+      8
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="number">
+      332,316,672
+    </td>
+    
+    <td class="number">
+      504,652
+    </td>
+    
+    <td class="number">
+      52
+    </td>
+    
+    <td class="number">
+      56
+    </td>
+    
+    <td class="number">
+      43
+    </td>
+    
+    <td class="number">
+      77
+    </td>
+    
+    <td class="number">
+      4
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="number">
+      2,167,996,416
+    </td>
+    
+    <td class="number">
+      4,341,475
+    </td>
+    
+    <td class="number">
+      258
+    </td>
+    
+    <td class="number">
+      303
+    </td>
+    
+    <td class="number">
+      335
+    </td>
+    
+    <td class="number">
+      541
+    </td>
+    
+    <td class="number">
+      151
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="number">
+      318,636,032
+    </td>
+    
+    <td class="number">
+      517,406
+    </td>
+    
+    <td class="number">
+      31
+    </td>
+    
+    <td class="number">
+      10
+    </td>
+    
+    <td class="number">
+      45
+    </td>
+    
+    <td class="number">
+      92
+    </td>
+    
+    <td class="number">
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="number">
+      1,064,960
+    </td>
+    
+    <td class="number">
+      3,105
+    </td>
+    
+    <td class="number">
+      1
+    </td>
+    
+    <td class="number">
+      1
+    </td>
+    
+    <td class="number">
+      1
+    </td>
+    
+    <td class="number">
+    </td>
+    
+    <td class="number">
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="number">
+      2,818,048
+    </td>
+    
+    <td class="number">
+      2,369
+    </td>
+    
+    <td class="number">
+    </td>
+    
+    <td class="number">
+      1
+    </td>
+    
+    <td class="number">
+      1
+    </td>
+    
+    <td class="number">
+      1
+    </td>
+    
+    <td class="number">
+    </td>
+  </tr></table> 
+  
+
+<p><h3>
+    Conclusion
+  </h3></p>
+
+<p><p>
+    How fast is it? On this server, I&rsquo;m getting about 2GB in roughly five minutes with the ACCUM strategy, or an average of around .44GB/min, under heavy load.
+  </p></p>
+
+<p><p>
+    In real terms, the checksum algorithms I&rsquo;ve designed are within roughly an order of magnitude of the speed of <code>COUNT(*)</code> on InnoDB, and as the table gets larger, this difference decreases to about half, probably because of InnoDB&rsquo;s caches. I think that&rsquo;s the most interesting result from these tests.
+  </p></p>
+
+<p><p>
+    It&rsquo;s also interesting that my checksum algorithms are almost as fast as MySQL&rsquo;s own <code>CHECKSUM TABLE</code> command on this data. This makes sense, given that they both essentially scan the whole table, but I didn&rsquo;t expect it, given that <code>CHECKSUM TABLE</code> is compiled into the server.
+  </p></p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2007/05/16/mysql-table-checksum-115-released/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2007/05/11/how-to-eliminate-temporary-tables-in-mysql/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2007\/05\/12\/how-fast-is-mysql-table-checksum\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

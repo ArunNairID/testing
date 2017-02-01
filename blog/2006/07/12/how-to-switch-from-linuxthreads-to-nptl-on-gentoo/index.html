@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How to switch from linuxthreads to NPTL on Gentoo &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How to switch from linuxthreads to NPTL on Gentoo" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2006/07/12/how-to-switch-from-linuxthreads-to-nptl-on-gentoo/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2006/07/12/how-to-switch-from-linuxthreads-to-nptl-on-gentoo/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to switch from linuxthreads to NPTL on Gentoo</h1>
+  <span class="post-date">Wed, Jul 12, 2006 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f12%2fhow-to-switch-from-linuxthreads-to-nptl-on-gentoo%2f&text=How%20to%20switch%20from%20linuxthreads%20to%20NPTL%20on%20Gentoo:https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f12%2fhow-to-switch-from-linuxthreads-to-nptl-on-gentoo%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f12%2fhow-to-switch-from-linuxthreads-to-nptl-on-gentoo%2f&title=How%20to%20switch%20from%20linuxthreads%20to%20NPTL%20on%20Gentoo&summary=How%20to%20switch%20from%20linuxthreads%20to%20NPTL%20on%20Gentoo&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f12%2fhow-to-switch-from-linuxthreads-to-nptl-on-gentoo%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f12%2fhow-to-switch-from-linuxthreads-to-nptl-on-gentoo%2f&t=How%20to%20switch%20from%20linuxthreads%20to%20NPTL%20on%20Gentoo" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f12%2fhow-to-switch-from-linuxthreads-to-nptl-on-gentoo%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>This article explains how to enable the Native Posix Threading Library (NPTL) on Gentoo GNU/Linux, and how to disable the now-obsolete linuxthreads library so you don&rsquo;t have both on your system.</p>
+
+<p>Linuxthreads and NPTL are part of glibc, the GNU C Library. The recommended threading library for GNU/Linux is now NPTL, not linuxthreads, even though the <a href="http://cristal.inria.fr/~xleroy/linuxthreads/">linuxthreads</a> web page&rsquo;s excerpt in Google says it&rsquo;s &ldquo;The recommended threads package for Linux, also included in glibc 2.0.&rdquo; Development on linuxthreads stopped a while ago, and NPTL is now mature and should be used instead, as it has many advantages.</p>
+
+<h3 id="how-to-enable-nptl-on-gentoo">How to enable NPTL on Gentoo</h3>
+
+<p>Just as with many other things, Gentoo has a USE flag to turn NPTL on. The use flag is, appropriately, <code>nptl</code>. There&rsquo;s a twist, though. As the message during the emerge process notes,</p>
+
+<blockquote>
+<p>Warning! Gentoo&rsquo;s GLIBC with NPTL enabled now behaves like the glibc from almost every other distribution out there. This means that glibc is compiled -twice-, once with linuxthreads and once with nptl. The NPTL version is installed to lib/tls and is still used by default. If you do not need nor want the linuxthreads fallback, you can disable this behavior by adding nptlonly to USE to save yourself some compile time.</p>
+</blockquote>
+
+<p>So, unless you want both libraries, you should add both <code>nptl</code> and <code>nptlonly</code> to your <code>/etc/make.conf</code>. Next you should run <code>revdep-rebuild</code> (from the <code>gentoolkit</code> package) to make sure everything is built to use it.</p>
+
+<p>By the way, &ldquo;tls&rdquo; stands for &ldquo;thread-local storage.&rdquo; <a href="http://en.wikipedia.org/wiki/Thread-local_storage">Wikipedia has a good article on TLS</a>.</p>
+
+<h3 id="how-to-tell-if-it-s-enabled">How to tell if it&rsquo;s enabled</h3>
+
+<p>Even if it&rsquo;s set in your USE flags, your system might not be using NPTL for threading. It has to be enabled in your kernel, glibc has to be compiled with support for it, and there may even be other factors at play. Here are several ways to know if your system is set up to use it.</p>
+
+<p>First, check whether software you compile can be configured with support for NPTL:</p>
+
+<pre>$ getconf GNU_LIBPTHREAD_VERSION
+linuxthreads-0.10</pre>
+
+<p>If you see that output, this system is still using linuxthreads. Just to be sure, you can also execute the library (yep, the library itself can be executed):</p>
+
+<pre>$ /lib/libc.so.6
+GNU C Library stable release version 2.3.6, by Roland McGrath et al.
+... snip ...
+Compiled on a Linux 2.6.11 system on 2006-06-18.
+Available extensions:
+        GNU libio by Per Bothner
+        crypt add-on version 2.1 by Michael Glad and others
+        linuxthreads-0.10 by Xavier Leroy
+        The C stubs add-on version 2.1.2.
+... snip ...</pre>
+
+<p>You want to look at the &ldquo;Available extensions&rdquo; section of the output. Again, in this example you can see linuxthreads is included, but not NPTL.</p>
+
+<p>On the other hand, maybe if you execute <code>/lib/tls/...</code> you&rsquo;d find an NPTL version there. In any case, once you rebuild with the <code>nptlonly</code> USE flag, you should see the following from executing <code>/lib/lib.so.6</code>:</p>
+
+<pre>$ /lib/libc.so.6 
+GNU C Library stable release version 2.3.6, by Roland McGrath et al.
+... snip ...
+Available extensions:
+        GNU libio by Per Bothner
+        crypt add-on version 2.1 by Michael Glad and others
+        Native POSIX Threads Library by Ulrich Drepper et al
+... snip ...</pre>
+
+<p>The <code>getconf</code> call should also return NPTL now.</p>
+
+<p>Certain software will <strong>not</strong> use threads, even if it has linuxthreads available, unless it can use NPTL. Instead it will use multi-processing, which causes a lot more overhead. I have not found anything that complains about the lack of linuxthreads, so I believe it is safe to use <code>ntplonly</code>.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2006/07/16/how-we-enabled-threading-in-mysql/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2006/07/09/so-you-think-your-code-is-in-version-control/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2006\/07\/12\/how-to-switch-from-linuxthreads-to-nptl-on-gentoo\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

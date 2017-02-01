@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      The innotop MySQL and InnoDB monitor &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="The innotop MySQL and InnoDB monitor" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">The innotop MySQL and InnoDB monitor</h1>
+  <span class="post-date">Sun, Jul 2, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/monitoring" class="btn btn-primary">Monitoring</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f02%2finnotop-mysql-innodb-monitor%2f&text=The%20innotop%20MySQL%20and%20InnoDB%20monitor:https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f02%2finnotop-mysql-innodb-monitor%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f02%2finnotop-mysql-innodb-monitor%2f&title=The%20innotop%20MySQL%20and%20InnoDB%20monitor&summary=The%20innotop%20MySQL%20and%20InnoDB%20monitor&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f02%2finnotop-mysql-innodb-monitor%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f02%2finnotop-mysql-innodb-monitor%2f&t=The%20innotop%20MySQL%20and%20InnoDB%20monitor" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f07%2f02%2finnotop-mysql-innodb-monitor%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>MySQL and InnoDB expose lots of information about their internals, but it&rsquo;s hard to gather it all into one place and make sense of it.  I&rsquo;ve written a tool to do that, and you are free to download and use it.  This article introduces innotop, a powerful text-mode MySQL and InnoDB monitoring tool.  It has lots of features, is  fast and configurable, and it&rsquo;s easy to use.</p>
+
+<blockquote>
+<p>Note: <a href="https://vividcortex.com/">VividCortex</a> is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what
+your servers are doing in production. VividCortex offers <a href="https://vividcortex.com/monitoring/mysql/">MySQL performance
+monitoring</a> and <a href="https://vividcortex.com/monitoring/postgres/">PostgreSQL
+performance management</a> among many
+other features.</p>
+</blockquote>
+
+<p>Note: I&rsquo;m now making it a priority to make innotop very stable and robust.  If innotop crashes, please help me fix it.  Please read this article about how to submit a bug report for innotop.  Thanks so much for helping me build a comprehensive test suite!</p>
+
+<p>Why another text-mode monitoring tool?</p>
+
+<p>Because the available ones aren&rsquo;t good enough.  I didn&rsquo;t want to duplicate anyone else&rsquo;s effort, but the other similar tools (mytop, mtop) haven&rsquo;t been actively maintained in years, don&rsquo;t work correctly with newer versions of MySQL, and frankly only offer a small fraction of the features I&rsquo;ve built into innotop.</p>
+
+<p>I said innotop has lots of features and is really flexible.  Here&rsquo;s just a small sampling to give an idea:</p>
+
+<ul>
+<li>11 different modes to show lots of information in very useful ways</li>
+<li>completely configurable &ndash; for example, you can choose which columns to see in every tabular display, in what order, what column to sort by, what direction to sort, add perl regex filters to any column, and on and on.</li>
+<li>offers features no other tool gives you, period.  What was the date, time, and query (plus lots of other info!) of each transaction involved in the last deadlock?  No other tool can give you that.  And that&rsquo;s just one of its dozens of unique features.</li>
+<li>it parses and displays InnoDB information, which is packed full of information.  No other tool even tries to do this.  Parsing the output of the InnoDB monitor is not for the faint of heart!</li>
+<li>its interactive help and configuration make it very easy to learn and highly productive to use.  What keys are mapped in the current mode?  Press &lsquo;?&rsquo; and find out.  What configuration variables can you change?  Press a key and find out.  Every function has context-sensitive help to keep you productive.</li>
+</ul>
+
+<p>Perhaps its most powerful and ambitious feature is the way it presents InnoDB internals.  MySQL is sorely lacking in instrumentation and analysis compared to other major relational database systems (for example, Microsoft SQL Server), and it is just no fun searching through the output of the InnoDB monitors to glean bits of information from it.  In my opinion, this feature alone is a major step forward to looking at what MySQL is doing internally.  The information has always been there, but until now it&rsquo;s been hard for DBAs to use.</p>
+
+<p>innotop is designed to do whatever you need it to do, and if it doesn&rsquo;t, you can let me know how to improve it.  I am continually using and improving this tool, in response to my own needs and those of other people using it.</p>
+
+<p>How to get and install innotop</p>
+
+<p>You can download innotop from this link, and read the documentation here (generated from the embedded POD, which you can also read on the command-line).  You can also press the &lsquo;?&rsquo; key for online, context-sensitive help once innotop is running.</p>
+
+<p>Please send improvements and suggestions to me.  I have been using it for quite a while now, but I&rsquo;m sure there are bugs lurking around somewhere.  In particular, if you find any InnoDB monitor output it can&rsquo;t parse, please send me that output so I can add it to my test suite.</p>
+
+<p>Screenshots</p>
+
+<p>You can find screenshots <a href="http://innotop.googlecode.com/svn/html/screenshots.html">here</a>.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2006/07/03/come-work-with-me/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2006/06/28/why-large-in-clauses-are-problematic/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2006\/07\/02\/innotop-mysql-innodb-monitor\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

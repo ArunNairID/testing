@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Programming &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Programming" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/categories/programming/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/categories/programming/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/04/29/the-difference-between-concurrency-and-parallelism/">The difference between concurrency and parallelism</a></h1>
+        <span class="post-date">Mon, Apr 29, 2013</span>
+        This confuses lots of people, including most recently Todd Hoff of HighScalability fame, who wrote in last week&rsquo;s summary post,
+ Have to say, this distinction has never made sense to me: Concurrency is not parallelism: concurrency is the composition of independently executing processes, while parallelism is the simultaneous execution of (possibly related) computations. Concurrency is about dealing with lots of things at once. Parallelism is about doing lots of things at once.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/04/29/the-difference-between-concurrency-and-parallelism/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/04/17/model-view-controller-considered-harmful/">Model-view-controller considered harmful</a></h1>
+        <span class="post-date">Wed, Apr 17, 2013</span>
+        <p>In 2001 I created a PHP 4 web application framework from scratch as the backbone of a sophisticated application. Back then frameworks weren&rsquo;t cool. Smarty templates were the hotness.</p>
+
+<p>My framework had URL routing, templates with a capable templating syntax similar to mustache, loosely coupled and tightly cohesive object-oriented design, an elegant way to access the database without dumbing it down, and nicely separated business logic and presentation layers &ndash; among many other nice things you find in good frameworks. As the application grew more and more complex, the framework continued to serve well with only occasional enhancements. It&rsquo;s still in use more than a decade later.</p>
+
+<p>I mention this because I think I&rsquo;ve been reasonably capable of designing maintainable systems for a long time. But the so-called MVC paradigm (model, view, controller) has <em>never</em> made sense to me.</p>
+
+<p><img src="/media/2013/04/rectabular-excrusion-bracket.png" alt="Rectabular Excrusion Bracket" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/04/17/model-view-controller-considered-harmful/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/04/16/two-upcoming-go-related-talks-im-giving/">Two upcoming Go-related talks I&#39;m giving</a></h1>
+        <span class="post-date">Tue, Apr 16, 2013</span>
+        I&rsquo;m scheduled to talk about Go a couple times in the upcoming weeks.
+The first is May 4th in Arlington at A Day Of Foster.ly. I&rsquo;ll be a participant in a panel titled Add To Your Programming Toolkit: Languages You Should Know About (Erlang, Clojure, R, Go, etc&hellip;). I&rsquo;m talking about Go, naturally.
+The second May 7th is at my local technology guild, the Neon Guild. I&rsquo;m going to be giving a &ldquo;gentle introduction&rdquo; to Go.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/04/16/two-upcoming-go-related-talks-im-giving/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/03/20/building-mysql-database-applications-with-go/">Building MySQL Database Applications with Go</a></h1>
+        <span class="post-date">Wed, Mar 20, 2013</span>
+        Last night at the Golang-DC meetup I spoke about building (MySQL) database applications with Go. The meetup was well attended and people were very enthusiastic about Go. I spent a few minutes talking about Go in general, how VividCortex uses Go (we&rsquo;ve built our agents, API servers, and all backend processes with Go), why we like it, some of the nice things it enables like making it easy to build very resilient programs, and then I gave the presentation, which I&rsquo;ve embedded below.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/03/20/building-mysql-database-applications-with-go/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2013/02/15/setting-up-a-go-build-system-in-sublime-text-2/">Setting up a Go build system in Sublime Text 2</a></h1>
+        <span class="post-date">Fri, Feb 15, 2013</span>
+        Sublime Text 2 is really nice, but the documentation is truly awful. There are at least 3 versions of it, all of them wrong and incomplete. This blog post shows how I set up a Go build system.
+I am using GoSublime, but that is completely independent of the build system. The goal of GoSublime is nice auto-completion and snippets and so on; the build system is just supposed to invoke a command with Control-B (or Command-B), capture the output, and recognize file/line in the output so you can navigate between build errors easily.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2013/02/15/setting-up-a-go-build-system-in-sublime-text-2/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2012/12/20/when-to-ignore-perfectly-good-advice/">When to ignore perfectly good advice</a></h1>
+        <span class="post-date">Thu, Dec 20, 2012</span>
+        A couple of months ago I bent the ear of a friend whose opinion I really respect. She&rsquo;s a totally sharp engineer who actively writes code for a living as well as managing large teams. She&rsquo;s held top-level technical roles at some large and extremely respectable companies. In short, her perspective and experience is very valuable.
+One of my most important questions was what technologies she saw as established or emerging winners &ndash; good technologies to use as the foundation for a startup.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2012/12/20/when-to-ignore-perfectly-good-advice/"> &raquo; Continue Reading (about 900 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2012/11/20/lessons-learned-from-the-sublime-text-editor/">Lessons learned from the Sublime Text editor</a></h1>
+        <span class="post-date">Tue, Nov 20, 2012</span>
+        Terminal-based, keystroke-driven editors are enormously powerful, and I still haven&rsquo;t seen anything more powerful than Vim. I&rsquo;m a longtime Vim user, and although I&rsquo;m not the world&rsquo;s foremost jaw-dropping expert on Vim, I would call myself an advanced power user at the very least, and probably a true expert. Still, I have maintained a relationship with GUI text editors over the years, too. An editor that has an insertion point for a cursor, and &ldquo;native&rdquo; mouse interaction, has an appeal I&rsquo;ve never quite shaken.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2012/11/20/lessons-learned-from-the-sublime-text-editor/"> &raquo; Continue Reading (about 800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2012/11/13/its-not-just-database-servers/">It&#39;s not just database servers</a></h1>
+        <span class="post-date">Tue, Nov 13, 2012</span>
+        Better performance is important in everything, not just MySQL. I don&rsquo;t want to wait for my text editor to open a file or perform syntax highlighting. I don&rsquo;t want to wait for my version control system to compute diffs or update my copy of the code with other peoples&rsquo; changes. I don&rsquo;t want to wait for my code to compile. I don&rsquo;t want to wait, period.
+Two tools I have enjoyed recently are Git and the Go language.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2012/11/13/its-not-just-database-servers/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2012/10/22/designing-a-database-interface-for-programmers/">Designing a database interface for programmers</a></h1>
+        <span class="post-date">Mon, Oct 22, 2012</span>
+        How do you connect to and converse with your database of choice (MySQL, in my case)? Chances are it&rsquo;s largely formed by the programming language you choose. I&rsquo;ve worked with a variety of programming languages. Anytime I begin learning a new one, I am reminded again that there&rsquo;s more than one way to skin a cat.
+Over the last few years, I&rsquo;ve mostly programmed in Perl and shell. The shell interface to MySQL is simple: the mysql command-line tool.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2012/10/22/designing-a-database-interface-for-programmers/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2012/04/06/a-review-of-clojure-in-action-by-amit-rathore/">A review of Clojure In Action by Amit Rathore</a></h1>
+        <span class="post-date">Fri, Apr 6, 2012</span>
+        Clojure In Action  Clojure In Action, by Amit Rathore. Manning, 2012. About 400 pages.
+This is a lucid and interesting introduction to Clojure and the LISP family of programming languages. It&rsquo;s been years since I programmed in LISP and I found myself recalling those days, at the same time as I learned a lot more than I used to know. Indeed, I realized that my knowledge of LISP was only superficial, and that I probably ought to take some time at some point and learn it deeply enough to have the epiphany people talk about.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2012/04/06/a-review-of-clojure-in-action-by-amit-rathore/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/09/01/want-to-hack-maatkit-and-aspersa-were-hiring/">Want to hack Maatkit and Aspersa? We&#39;re hiring</a></h1>
+        <span class="post-date">Thu, Sep 1, 2011</span>
+        As announced on the Maatkit and Aspersa mailing lists, Daniel and I have created a new toolkit that represents the union of the two, and will be focusing efforts on this Percona Toolkit moving forward. The goal is to make them simpler and significantly more powerful, and to create more tools. The tools will continue to be open-source, but will be developed primarily to meet our MySQL support and consulting staff&rsquo;s needs.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/09/01/want-to-hack-maatkit-and-aspersa-were-hiring/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/05/16/how-to-make-software-testable/">How to make software testable</a></h1>
+        <span class="post-date">Mon, May 16, 2011</span>
+        I&rsquo;m going to try to explain how to make software testable in really practical terms. I won&rsquo;t use words like &ldquo;dependency injection.&rdquo; Those things annoy smart programmers and make them stop listening.
+Here is a pseudocode snippet. There is some function that parses some IP address out of the output of the &ldquo;ifconfig&rdquo; command, and some other code that uses this to get an IP address and do something with it.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/05/16/how-to-make-software-testable/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/05/04/whats-wrong-with-mmm/">What&#39;s wrong with MMM?</a></h1>
+        <span class="post-date">Wed, May 4, 2011</span>
+        I am not a fan of the MMM tool for managing MySQL replication. This is a topic of vigorous debate among different people, and even within Percona not everyone feels the same way, which is why I&rsquo;m posting it here instead of on an official Percona blog. There is room for legitimate differences of opinion, and my opinion is just my opinion. Nonetheless, I think it&rsquo;s important to share, because a lot of people think of MMM as a high availability tool, and that&rsquo;s not a decision to take lightly.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/05/04/whats-wrong-with-mmm/"> &raquo; Continue Reading (about 1100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/03/18/how-to-gather-statistics-at-regular-intervals/">How to gather statistics at regular intervals</a></h1>
+        <span class="post-date">Fri, Mar 18, 2011</span>
+        I gather a lot of statistics such as performance data. Sometimes I have multiple things going on a system and I want to be able to align and compare the resulting data from multiple processes later. That means they need to be aligned on time intervals. Here is a naive way to gather stats at intervals:
+while sleep 1; do gather-some-stats; done  There are two problems: each iteration will take longer than a second, so there will be drift; and the iterations will not be aligned exactly on the clock ticks, so the data isn&rsquo;t as easy to correlate with other samples.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/03/18/how-to-gather-statistics-at-regular-intervals/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/02/17/poor-mans-mytop/">Poor man&#39;s mytop</a></h1>
+        <span class="post-date">Thu, Feb 17, 2011</span>
+        I often need to watch a server that&rsquo;s very minimally configured, e.g. has no Perl DBI libraries installed, and I shouldn&rsquo;t install anything. The following snippet is a quick way to do that:
+watch 'mysqladmin proc | grep -v Sleep | cut -b0-130' Replace 130 by the width of your terminal, naturally.
+(Of course, innotop is much more featureful than mytop, but mytop is the essential functionality we&rsquo;re going for here!
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/02/17/poor-mans-mytop/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/02/02/keeping-docs-and-program-options-in-sync/">Keeping docs and program options in sync</a></h1>
+        <span class="post-date">Wed, Feb 2, 2011</span>
+        One of my pet peeves is when documentation is wrong. Another pet peeve is keeping documentation right. Crack open a source tarball for many programs and you&rsquo;ll see a chunk of text that gets printed out when you use the &#8211;help option, and elsewhere in the program&rsquo;s source code you&rsquo;ll see the definitions of the command-line options. Maintaining a program like this is miserable. Using it is bad, too. I can name a lot of programs that say one thing and do another.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/02/02/keeping-docs-and-program-options-in-sync/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/22/version-1-1-8-of-better-cacti-templates-released/">Version 1.1.8 of Better Cacti Templates released</a></h1>
+        <span class="post-date">Sat, Jan 22, 2011</span>
+        I&rsquo;ve released version 1.1.8 of the Better Cacti Templates project. This release includes a bunch of bug fixes and several important new graphs. There are graphs for the new response-time statistics exposed in Percona Server, and a new set of graphs for MongoDB.
+ VividCortex is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what your servers are doing in production and I consider it far superior to Cacti.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/22/version-1-1-8-of-better-cacti-templates-released/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/11/06/innotop-version-1-8-0-released/">innotop version 1.8.0 released</a></h1>
+        <span class="post-date">Sat, Nov 6, 2010</span>
+        I&rsquo;ve just uploaded the new release of innotop to Google Code. Short version of the changelog: works on MySQL 5.1 with the InnoDB plugin; more efficient; supports Percona/MariaDB USER_STATISTICS data; fixes a bunch of small annoying bugs.
+Longer version:
+2010-11-06: version 1.8.0 Changes: * Don't re-fetch SHOW VARIABLES every iteration; it's too slow on many hosts. * Add a filter to remove EVENT threads in SHOW PROCESSLIST (issue 32). * Add a timestamp to output in -n mode, when -t is specified (issue 37).
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/11/06/innotop-version-1-8-0-released/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/10/02/all-measurements-are-wrong/">All measurements are wrong</a></h1>
+        <span class="post-date">Sat, Oct 2, 2010</span>
+        I had the privilege to meet Neil Gunther and listen to him speak this week at Surge. During his talk, he brought up the point that all measurements are wrong by definition. I thought I knew what he meant, but I was stuck with tunnel vision about floating-point precision and such. I had it all wrong. The real answer is obvious and simple.
+The point is that the process of measuring, and therefore the answer that comes out of the measurement process, is imprecise.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/10/02/all-measurements-are-wrong/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/05/10/new-maatkit-tool-to-compute-index-usage/">New Maatkit tool to compute index usage</a></h1>
+        <span class="post-date">Mon, May 10, 2010</span>
+        In a couple of recent consulting cases, I needed a tool to analyze how a log of queries accesses indexes and tables in the database, specifically, to find out which indexes are not used. I initially hacked together something similar to Daniel Nichter&rsquo;s mysqlidxchk, but using the framework provided by Maatkit, which gave me a pretty good start right out of the box. This was useful in the very tight time constraints I was under, but was not a complete solution.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/05/10/new-maatkit-tool-to-compute-index-usage/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/categories/programming/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/categories/programming/page/3/">Older</a>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

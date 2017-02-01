@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Postgresql &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Postgresql" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/tags/postgresql/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/tags/postgresql/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2009/11/14/recap-of-enterprise-lamp-summit-and-camp/">Recap of Enterprise LAMP Summit and Camp</a></h1>
+        <span class="post-date">Sat, Nov 14, 2009</span>
+        Last week I attended the Enterprise LAMP Summit and Camp in Nashville, Tennessee. I enjoyed the event and met or reconnected with a lot of great people. I was glad to be able to spend time with some folks from the Postgres community. My own sessions focused on MySQL.
+During the Summit I tried to help people understand how to think about performance, and made the case that the Percona versions of the MySQL server are not only the highest-performance available, but uniquely provide the instrumentation necessary to follow a disciplined performance optimization process such as Method R or Goal-Driven Performance Optimization.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2009/11/14/recap-of-enterprise-lamp-summit-and-camp/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2009/11/14/mk-query-digest-now-understands-http/">mk-query-digest now understands HTTP</a></h1>
+        <span class="post-date">Sat, Nov 14, 2009</span>
+        You used to use mk-query-digest to aggregate and report on MySQL&rsquo;s slow query log. Then it got the ability to grab query events from polling SHOW PROCESSLIST. Next we thought, really, how hard can it be to implement the libmysql wire protocol, so we can sniff TCP packets? &hellip; it&rsquo;s hard, but not that hard as it turns out. But why stop there, why not implement memcached protocol too? I think you can see where this is headed.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2009/11/14/mk-query-digest-now-understands-http/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2009/11/03/im-a-postgres-user-as-it-turns-out/">I&#39;m a Postgres user, as it turns out</a></h1>
+        <span class="post-date">Tue, Nov 3, 2009</span>
+        Someone recently posted this to an email list as a sample of an interesting SHOW INNODB STATUS output:
+mysql SHOW ENGINE INNODB STATUS\G _______ _______ |\ /|( ____ \( ____ \ | ) ( || ( \/| ( \/ | | | || (_____ | (__ | | | |(_____ )| __) | | | | ) || ( | (___) |/\____) || (____/\ (_______)\_______)(_______/ _______ _______ _______ _________ _______ _______ _______ _______ ( ____ )( ___ )( ____ \\__ __/( ____ \( ____ )( ____ \( ____ \ | ( )|| ( ) || ( \/ ) ( | ( \/| ( )|| ( \/| ( \/ | (____)|| | | || (_____ | | | | | (____)|| (__ | (_____ | _____)| | | |(_____ ) | | | | ____ | __)| __) (_____ ) | ( | | | | ) | | | | | \_ )| (\ ( | ( ) | | ) | (___) |/\____) | | | | (___) || ) \ \__| (____/\/\____) | |/ (_______)\_______) )_( (_______)|/ \__/(_______/\_______)  I thought it was worth trying out, so I gave it a shot:
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2009/11/03/im-a-postgres-user-as-it-turns-out/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2009/10/25/version-1-1-4-of-improved-cacti-templates-released/">Version 1.1.4 of improved Cacti templates released</a></h1>
+        <span class="post-date">Sun, Oct 25, 2009</span>
+        I&rsquo;ve released version 1.1.4 of my improved Cacti templates. Unlike the prior release, which was solely bug fixes, this one includes new graphs in the MySQL template. Some of the graphs are of data that&rsquo;s exposed in standard MySQL versions, but some of it is available only in Percona&rsquo;s high-performance builds of the MySQL database server. If you don&rsquo;t have a Percona build, those graphs will just contain nothing, but there is no detrimental effect.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2009/10/25/version-1-1-4-of-improved-cacti-templates-released/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2009/10/24/version-1-1-3-of-improved-cacti-graphs-for-mysql-released/">Version 1.1.3 of improved Cacti graphs for MySQL released</a></h1>
+        <span class="post-date">Sat, Oct 24, 2009</span>
+        I&rsquo;ve just released version 1.1.3 of the Cacti templates I wrote for MySQL. This is a bug-fix release only, and affects only ss_get_mysql_stats.php. To upgrade from the previous release, upgrade ss_get_mysql_stats.php. Don&rsquo;t forget to save and restore your configuration options, if any. (Note that there is a feature to help with this: you can keep configuration options in ss_get_mysql_stats.php.cnf to avoid making them in ss_get_mysql_stats.php.)
+ VividCortex is the startup I founded in 2012.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2009/10/24/version-1-1-3-of-improved-cacti-graphs-for-mysql-released/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2009/10/15/a-tip-when-upgrading-mysql-cacti-templates/">A tip when upgrading mysql-cacti-templates</a></h1>
+        <span class="post-date">Thu, Oct 15, 2009</span>
+        A client recently asked me to fix some Cacti graphs that had broken after upgrading the Cacti templates I wrote for MySQL. The symptoms were weird; I&rsquo;m not sure I understand fully what happened, but some of the graphs were OK and some had only part of the data they were supposed to. Some graphs would have one data element as usual, and others would be nan (not a number).
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2009/10/15/a-tip-when-upgrading-mysql-cacti-templates/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2009/08/29/opensql-camp-events-in-2009/">OpenSQL Camp events in 2009</a></h1>
+        <span class="post-date">Sat, Aug 29, 2009</span>
+        There are two OpenSQL Camp events in 2009. This is a conference about any and all open-source databases. The slogan of the inaugural event was &ldquo;of, by, and for the community.&rdquo;
+The first of this year&rsquo;s events just ended last weekend in Germany, and I&rsquo;m really sad that neither I nor anyone else from Percona could attend. But fortunately the amazing crew of organizers has already posted videos of the sessions!
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2009/08/29/opensql-camp-events-in-2009/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2009/06/21/recap-of-southeast-linux-fest-2009/">Recap of Southeast Linux Fest 2009</a></h1>
+        <span class="post-date">Sun, Jun 21, 2009</span>
+        Last weekend, my brother and I attended SELF 2009. A few thoughts on it:
+The mixture of sessions was interesting. There were some really good ones. I think the best session I attended was an OpenSolaris/NetBeans/Glassfish/Virtualbox/ZFS session, given by a Sun employee. He was an excellent presenter, and really showed off the strengths of the technologies in a nice way. He started up enough VMs to make his OpenSolaris laptop chew into swap, and I thought it was fun to see how it dealt with that.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2009/06/21/recap-of-southeast-linux-fest-2009/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2009/05/07/version-112-of-improved-cacti-templates-released/">Version 1.1.2 of improved Cacti templates released</a></h1>
+        <span class="post-date">Thu, May 7, 2009</span>
+        I&rsquo;ve packaged up and released version 1.1.2 of the Cacti templates I&rsquo;ve written for MySQL, Apache, memcached, nginx etc.
+ VividCortex is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what your servers are doing in production and I consider it far superior to Cacti. VividCortex offers MySQL performance monitoring and PostgreSQL performance management among many other features.
+ Anyone who would like to help write documentation (or do anything else, for that matter) is welcomed to participate.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2009/05/07/version-112-of-improved-cacti-templates-released/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2009/05/05/why-mysql-might-not-benefit-from-having-a-mother-ship/">Why MySQL might not benefit from having a mother ship</a></h1>
+        <span class="post-date">Tue, May 5, 2009</span>
+        As I was driving with a colleague in California a couple of weeks ago during the conference, the topic of conversation turned to the notion that Percona and the rest of the MySQL community really need the presence of a central entity that provides a recognized home for the MySQL server. The conversation went something like &ldquo;I was talking to so-and-so, and he said, you know, you guys really need Sun/MySQL, because without the mother ship, things will fall apart and your own business will fail.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2009/05/05/why-mysql-might-not-benefit-from-having-a-mother-ship/"> &raquo; Continue Reading (about 900 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/tags/postgresql/page/3/">Newer</a>
+  
+  
+    <span class="pagination-item older">Older</span>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

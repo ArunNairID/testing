@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Databases &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Databases" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/categories/databases/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/categories/databases/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/">What to do when innotop crashes</a></h1>
+        <span class="post-date">Wed, Aug 2, 2006</span>
+        A couple of people have written in reporting innotop crashes. Unfortunately I don&rsquo;t have access to enough variations of operating systems and MySQL versions to test everything myself, but if you&rsquo;re able to help by sending me a bug report when innotop crashes, I&rsquo;m willing to work on fixing it! I hope soon I&rsquo;ll have a much larger test suite, and am grateful for your help with that. This article explains what information I need to reproduce and debug crashes.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/08/01/innotop-01123-released/">Version 0.1.123 of innotop released</a></h1>
+        <span class="post-date">Tue, Aug 1, 2006</span>
+        I&rsquo;ve made several improvements to the innotop InnoDB and MySQL monitor, and it&rsquo;s ready to get from the innotop homepage.
+As usual, it&rsquo;s a combination of bug fixes, new features, and enhancements to existing features. Changes since version 0.1.112 include
+ More detailed lock information displayed in InnoDB Deadlock mode. A new section in Row Operations / Semaphores mode shows information about the wait array. I&rsquo;ve expanded the test suite a lot.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/08/01/innotop-01123-released/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/31/how-to-analyze-innodb-mysql-locks/">How to find out who is locking a table  in MySQL</a></h1>
+        <span class="post-date">Mon, Jul 31, 2006</span>
+        MySQL is adding more tools to monitor its internals with every new release, but one thing it still lacks is a way to find out who is locking what, and therefore which transactions block which other ones. This is such a vital feature that I&rsquo;m considering writing my own patch to the source! Still, it is possible, to a limited extent, to find out who&rsquo;s locking resources. In this article I&rsquo;ll explain how you can do that.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/31/how-to-analyze-innodb-mysql-locks/"> &raquo; Continue Reading (about 1800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/28/how-to-install-innotop/">How to install innotop</a></h1>
+        <span class="post-date">Fri, Jul 28, 2006</span>
+        This is the first in a series of articles I&rsquo;ll write on how to use innotop, the MySQL and InnoDB monitor I&rsquo;m developing. This article explains how to install innotop.
+Note: this article is outdated now. Please see the innotop homepage for updated installation instructions and download options.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/28/how-to-install-innotop/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/27/why-does-innodb-create-two-indexes-per-foreign-key/">Why does InnoDB create two indexes per foreign key?</a></h1>
+        <span class="post-date">Thu, Jul 27, 2006</span>
+        If you&rsquo;ve ever created foreign keys on an InnoDB table, you&rsquo;ll see it automatically creates indexes, if none exists, on the referenced columns in the parent table, and also in the foreign key columns in the child table. This article explains why both are needed.
+Why index the parent table? When a row is inserted or updated in the child table, the parent table must be searched for a row whose referenced values match the values in the foreign key columns.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/27/why-does-innodb-create-two-indexes-per-foreign-key/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/26/how-to-coordinate-distributed-work-with-mysqls-get_lock/">How to coordinate distributed work with MySQL&#39;s GET_LOCK</a></h1>
+        <span class="post-date">Wed, Jul 26, 2006</span>
+        This article explains how I replaced file-based methods to ensure only one running instance of a program with MySQL&rsquo;s GET_LOCK function. The result is mutual exclusivity that works in a distributed environment, and it&rsquo;s dead simple to implement.
+My current employer used to use a technique similar to the classic Perl &lsquo;Highlander&rsquo; method to ensure only one instance of a certain program would run at any given time. The method was to create a file with a certain name and then get an exclusive, non-blocking lock on the file with the flock() call.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/26/how-to-coordinate-distributed-work-with-mysqls-get_lock/"> &raquo; Continue Reading (about 800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/">How to track what owns a MySQL connection</a></h1>
+        <span class="post-date">Sun, Jul 23, 2006</span>
+        MySQL doesn&rsquo;t yet provide good tools for some troubleshooting tasks. Fortunately, there is some low-hanging fruit you can pluck. One example is a tool to record who owns a MySQL database connection, so long-running transactions can be traced back to the source. This article demonstrates an easy way to solve that problem.
+Introduction One of the reasons I wrote the innotop InnoDB and MySQL monitor was to monitor long-running transactions.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/23/innotop-version-01106-released/">Version 0.1.106 of innotop MySQL/InnoDB monitor released</a></h1>
+        <span class="post-date">Sun, Jul 23, 2006</span>
+        I&rsquo;ve just improved innotop substantially, and released version 0.1.106, and I&rsquo;m also preparing a series of articles on how to use it for real, practical things. I&rsquo;d like to know what you think of it, what problems you have, what features you want. It would be a huge help if you&rsquo;d start it, toggle through its modes, and give me your feedback.
+Enhancements in version 0.1.106 include:
+ InnoDBParser is much more complete and accurate.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/23/innotop-version-01106-released/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/19/3-ways-to-maintain-rollup-tables-in-sql/">3 ways to maintain rollup tables in SQL</a></h1>
+        <span class="post-date">Wed, Jul 19, 2006</span>
+        At both my current and previous employer I&rsquo;ve been involved in designing and maintaining aggregate, or &ldquo;rollup&rdquo; tables for advertising traffic data. I have learned several methods of propagating changes from the atomic data through to its aggregations. This article discusses these methods, how to implement them, and their pros and cons.
+As an example of data that gets rolled up to aggregate tables, I&rsquo;ll use my current employer&rsquo;s data structures (more or less).
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/19/3-ways-to-maintain-rollup-tables-in-sql/"> &raquo; Continue Reading (about 1600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/16/how-we-enabled-threading-in-mysql/">How we enabled threading in MySQL</a></h1>
+        <span class="post-date">Sun, Jul 16, 2006</span>
+        MySQL on GNU/Linux appears to be able to either run multiple processes, or one process and multiple threads. We&rsquo;ve noticed a significant CPU penalty for multiple processes, probably from the context switching overhead. The trouble was, one of our servers wouldn&rsquo;t use threads; it wanted to use multiple processes. This article explains how we got it to use threads instead.
+First, we noticed the master server&rsquo;s CPU utilization was higher than the replica&rsquo;s, even though we expected the type of queries running on the replica should have caused it to have around the same CPU utilization as the master.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/16/how-we-enabled-threading-in-mysql/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/07/what-is-a-sql-blind-insert/">What is a SQL blind insert?</a></h1>
+        <span class="post-date">Fri, Jul 7, 2006</span>
+        SQL blind inserts are a common mistake, but they&rsquo;re easily avoided. This article explains what blind inserts are and how to avoid them, as well as dispelling a common misconception about how to avoid them.
+What is a blind insert? A blind insert is when an INSERT query doesn&rsquo;t specify which columns receive the inserted data. For instance, this query is a blind insert:
+insert into apples select color, price, variety from fruits where type = 'apple'; Notice the query doesn&rsquo;t say what columns are targeted by the INSERT.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/07/what-is-a-sql-blind-insert/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/04/how-to-exploit-mysql-index-optimizations/">How to exploit MySQL index optimizations</a></h1>
+        <span class="post-date">Tue, Jul 4, 2006</span>
+        I&rsquo;ve written a lot recently about MySQL index and table structure, primary keys, surrogate keys, and related optimizations. In this article I&rsquo;ll explain how MySQL&rsquo;s index structures enable an extremely important query optimization, and how that differs between storage engines. I&rsquo;ll also show you how to know and predict when the optimization is triggered, how to design tables and queries so it&rsquo;ll be used, and how to avoid defeating it with poor practices.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/04/how-to-exploit-mysql-index-optimizations/"> &raquo; Continue Reading (about 3000 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/">The innotop MySQL and InnoDB monitor</a></h1>
+        <span class="post-date">Sun, Jul 2, 2006</span>
+        MySQL and InnoDB expose lots of information about their internals, but it&rsquo;s hard to gather it all into one place and make sense of it. I&rsquo;ve written a tool to do that, and you are free to download and use it. This article introduces innotop, a powerful text-mode MySQL and InnoDB monitoring tool. It has lots of features, is fast and configurable, and it&rsquo;s easy to use.
+ Note: VividCortex is the startup I founded in 2012.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/28/why-large-in-clauses-are-problematic/">Why large IN clauses are problematic</a></h1>
+        <span class="post-date">Wed, Jun 28, 2006</span>
+        I&rsquo;ve seen a lot of SQL code that uses an IN clause as a place to put a variable number of parameters, allowing the query to be more flexible. There are several downsides to this technique. This article discusses those downsides and explains how to avoid them.
+Introduction I work in a Perl shop at the moment. We use two SQL utility modules from CPAN extensively: Class::DBI (which I&rsquo;ll discuss in another article) and Ima::DBI.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/28/why-large-in-clauses-are-problematic/"> &raquo; Continue Reading (about 1000 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/">How to select from an update target in MySQL</a></h1>
+        <span class="post-date">Fri, Jun 23, 2006</span>
+        MySQL doesn&rsquo;t allow referring to a table that&rsquo;s targeted for update in a FROM clause, which can be frustrating. There&rsquo;s a better way than creating endless temporary tables, though. This article explains how to update a table while selecting from it in a subquery.
+The problem Suppose I want to update a table with data from a subquery that refers to the same table. I might want to do this for a variety of reasons, such as trying to populate a table with its own aggregate data (this would require assignment from a grouped subquery), updating one row from another row&rsquo;s data without using non-standard syntax, and so on.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/21/forward-only-sql-maintenance-jobs/">How to do efficient forward-only SQL maintenance jobs</a></h1>
+        <span class="post-date">Wed, Jun 21, 2006</span>
+        I&rsquo;ve recently written about techniques for archiving, purging, and re-indexing huge database tables. These techniques exploit both data structure and usage patterns. In this article I&rsquo;ll develop that theme further, and explain how to write more efficient non-backtracking maintenance jobs when the update and insertion patterns permit.
+Motivation In my current employment, I&rsquo;ve been optimizing databases for size, speed, and consistency. As part of my regular monitoring, I checked our master MySQL server for deadlock information and found that a nightly cron job&rsquo;s query had caused other queries to time out or deadlock, then became a deadlock victim itself and died, after loading the server for a long time.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/21/forward-only-sql-maintenance-jobs/"> &raquo; Continue Reading (about 1200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/17/3-ways-to-write-upsert-and-merge-queries-in-mysql/">3 ways to write UPSERT and MERGE queries in MySQL</a></h1>
+        <span class="post-date">Sat, Jun 17, 2006</span>
+        This article is a quick pointer on MySQL&rsquo;s three techniques for UPSERT (update/insert) or MERGE queries. I&rsquo;ve written about this before, but since SQL 2003 has a MERGE statement (which Oracle and DB2 support), many people are asking for similar functionality in MySQL without realizing it already exists. I hope this article helps you find what you need.
+The three tools are
+ REPLACE INSERT ... ON DUPLICATE KEY UPDATE .
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/17/3-ways-to-write-upsert-and-merge-queries-in-mysql/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/">How to avoid unique index violations on updates in MySQL</a></h1>
+        <span class="post-date">Fri, Jun 16, 2006</span>
+        There is a bug in MySQL that causes an UPDATE to fail with a unique index violation, even though the statement doesn&rsquo;t create duplicate values. In this article I&rsquo;ll explain when this bug can happen, and how to work around it.
+The bug This is easiest to demonstrate with SQL:
+create table t (i int not null primary key); insert into t(i) values (1), (2), (3), (4); update t set i = i + 1; -- ERROR 1062 (23000): Duplicate entry '2' for key 1 The bug is caused by MySQL&rsquo;s method of updating the values.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/14/how-to-re-index-a-large-database-table/">How to re-index a large database table</a></h1>
+        <span class="post-date">Wed, Jun 14, 2006</span>
+        In recent articles I explained how I&rsquo;ve optimized queries against large datasets at my current employer, and how I&rsquo;ve written efficient archiving and purging jobs to trim the tables down to a manageable size. This article explains how I re-indexed some of those tables without taking the server offline.
+The technique I used is suitable for when a table has gotten &ldquo;too fat to exercise.&rdquo; In other words, the table is in critical condition, but that very condition makes it hard to do anything with the table, much less re-index or re-arrange the data.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/14/how-to-re-index-a-large-database-table/"> &raquo; Continue Reading (about 2100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/12/benchmarks-for-date-operations-in-mysql/">Benchmarks for DATE operations in MySQL</a></h1>
+        <span class="post-date">Mon, Jun 12, 2006</span>
+        This article compares the relative speed of extracting the date part of a value in MySQL with LEFT() and with the DATE() function.
+LEFT() is faster than DATE(). To prove this, I inserted two million un-indexed sequential values into a table and selected the minimum and maximum values. Both queries are table scans, so it does read through all the records. The table below lists the time in seconds for MAX() on my computer.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/12/benchmarks-for-date-operations-in-mysql/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/categories/databases/page/37/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/categories/databases/page/39/">Older</a>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

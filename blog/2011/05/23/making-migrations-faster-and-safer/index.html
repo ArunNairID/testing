@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Making Migrations Faster and Safer &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Making Migrations Faster and Safer" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2011/05/23/making-migrations-faster-and-safer/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2011/05/23/making-migrations-faster-and-safer/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Making Migrations Faster and Safer</h1>
+  <span class="post-date">Mon, May 23, 2011 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/guest-posts" class="btn btn-primary">Guest Posts</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f05%2f23%2fmaking-migrations-faster-and-safer%2f&text=Making%20Migrations%20Faster%20and%20Safer:https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f05%2f23%2fmaking-migrations-faster-and-safer%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f05%2f23%2fmaking-migrations-faster-and-safer%2f&title=Making%20Migrations%20Faster%20and%20Safer&summary=Making%20Migrations%20Faster%20and%20Safer&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f05%2f23%2fmaking-migrations-faster-and-safer%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f05%2f23%2fmaking-migrations-faster-and-safer%2f&t=Making%20Migrations%20Faster%20and%20Safer" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f05%2f23%2fmaking-migrations-faster-and-safer%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p><em>This post originally appeared on <a href="https://blog.engineyard.com/2011/making-migrations-faster-and-safer/">the Engine Yard blog</a>.</em></p>
+
+<p>Are your migrations the execute-and-pray variety? If so, you are probably not (yet!) running a large application. Even small applications can benefit from a more careful migration process. It&rsquo;s important to establish the process now, before things get big, because it will be much more difficult later. In my study of emergency issues, the single most valuable preventive measure I identified was change control. Migrations involve change, and the more disciplined and careful you are, the less opportunity for problems, and the more safeguards you can build in to help recover quickly if a problem ever does occur.</p>
+
+<p>The single best way to prevent bad changes from happening in production is to execute them in a non-production environment and observe the system. As you might know, ALTER TABLE is generally a blocking operation in MySQL. It can be very hard to predict how long it will take, and the growing sense of panic you&rsquo;ll feel as you watch your entire application pile up is no fun, especially because you don&rsquo;t know if it&rsquo;s about to complete or if you&rsquo;re only 30 seconds into a 3-hour ALTER.</p>
+
+<p>A non-production (staging) environment with a recent copy of your production data is your friend. The part I see a lot of folks stumble over is getting a realistic copy of the data. If you run the migration against a toy dataset, you won&rsquo;t understand how long it&rsquo;s really going to take in production.</p>
+
+<p>To get started, you can restore your latest backup onto the staging server. Use mysqldump or Percona XtraBackup to create a backup if you don&rsquo;t have one. If you&rsquo;re an Engine Yard customer, their clone feature which allows creating a staging environment from a production snapshot works for this as well.</p>
+
+<p>When you run the migration, capture the output and review the timings carefully. Write a little script to help. Here&rsquo;s an example that I use sometimes for my clients. Save the output as migrated.txt, and run this Perl one-liner:</p>
+
+<pre><code>perl -ne '/(\S+): migrated \((.*)s\)/ &amp;&amp; print &quot;$2 $1\n&quot;' migrated.txt | sort -rn -k1,1
+</code></pre>
+
+<p>The output will be execution times and migration names, sorted longest-first. That makes it easy to see which operations might take a long time in production.</p>
+
+<p>The next step is to review the SQL that your migration generates, looking for ALTER and CREATE INDEX statements you can combine. In case you aren&rsquo;t familiar with it, MySQL&rsquo;s ALTER statement generally works by creating a copy of the table in the background, modifying it, and then copying all the rows into it and swapping the tables. A CREATE INDEX statement is really an ALTER statement in MySQL. So if you ALTER a table, and then add an index with CREATE INDEX, you&rsquo;re making MySQL do all that work twice.</p>
+
+<p>The problem is, Rails&rsquo; migration methods often generate multiple alterations to a table behind the scenes. Here&rsquo;s an example:</p>
+
+<pre><code>def self.up
+      add_column :comments, :name, :string
+      add_column :comments, :user_id, :integer, :null =&gt; false
+      add_index :comments, :user_id
+end
+</code></pre>
+
+<p>This code ends up running three separate ALTER statements: one for each added column, and one for the new index. In cases such as this, you might have to execute direct SQL instead. Here&rsquo;s another code snippet that does essentially the same thing:</p>
+
+<pre><code>def self.up
+      execute &quot;ALTER TABLE comments add name varchar(255), add user_id int NOT NULL, add index `index_comments_on_user_id` (`user_id`);&quot;
+end
+</code></pre>
+
+<p>Sometimes you might not notice repeated ALTER statements in the Ruby code, so you should review the migration&rsquo;s generated SQL in staging. Look for any ALTER and CREATE INDEX statements that reference the same table, and merge them. This can save a lot of work for the database, and reduce the amount of time that the migration locks the table.</p>
+
+<p>Do you have tips or suggestions of your own to add to mine? Post them in the comments, I look forward to your feedback!</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2011/05/24/more-on-measuring-io-latency/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2011/05/17/congrats-to-new-relic/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2011\/05\/23\/making-migrations-faster-and-safer\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

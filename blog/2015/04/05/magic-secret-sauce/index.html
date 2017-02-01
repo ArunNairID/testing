@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Beware Of The Only Correct Way To Do It &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Beware Of The Only Correct Way To Do It" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com//media/2015/04/mugs.jpg" />
+  <meta name="og:description" content="Beware of blog posts warning you to beware of things, too." />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2015/04/05/magic-secret-sauce/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2015/04/05/magic-secret-sauce/">
+  
+  <meta name="description" value="Beware of blog posts warning you to beware of things, too.">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Beware Of The Only Correct Way To Do It</h1>
+  <span class="post-date">Sun, Apr 5, 2015 in
+		
+		<a href="/categories/commentary" class="btn btn-primary">Commentary</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f04%2f05%2fmagic-secret-sauce%2f&text=Beware%20Of%20The%20Only%20Correct%20Way%20To%20Do%20It:https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f04%2f05%2fmagic-secret-sauce%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f04%2f05%2fmagic-secret-sauce%2f&title=Beware%20Of%20The%20Only%20Correct%20Way%20To%20Do%20It&summary=Beware%20Of%20The%20Only%20Correct%20Way%20To%20Do%20It&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f04%2f05%2fmagic-secret-sauce%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f04%2f05%2fmagic-secret-sauce%2f&t=Beware%20Of%20The%20Only%20Correct%20Way%20To%20Do%20It" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f04%2f05%2fmagic-secret-sauce%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>Everyone who&rsquo;s been successful at creating something remarkable, and scaling it,
+likely has developed into a repeatable process. If they hadn&rsquo;t, they wouldn&rsquo;t
+have scaled it, and you&rsquo;d never have heard of it. (There are lots of geniuses
+you&rsquo;ve never heard of who&rsquo;ve created remarkable results at an individual level.)</p>
+
+<p>A lot of times they&rsquo;ll go through several iterations of massive success with
+this, then write some books, found a consulting company, go on the speaking
+circuit, and so on. And almost always, they seem to demand rigid adherence to
+specific sacred-cow principles that must remain inviolate.</p>
+
+<p>You should be really skeptical of anything that smells like this. Sacred cows
+make the best steaks, and here&rsquo;s why.</p>
+
+<p><img src="/media/2015/04/mugs.jpg" alt="Mugs" /></p>
+
+<p></p>
+
+<p>No, not the mugs, the mugs aren&rsquo;t why you should be skeptical. But let&rsquo;s talk
+about how this usually plays out by looking at a couple of places I&rsquo;ve seen
+adamant insistence on the one true gospel.  I&rsquo;ll use real examples from some
+things I&rsquo;m currently working on in my business right now.</p>
+
+<h3 id="case-1-salesforce-and-cold-calling-2-0">Case #1: SalesForce and Cold Calling 2.0</h3>
+
+<p>Aaron Ross has a bestselling book called <a href="http://www.amazon.com/Predictable-Revenue-Business-Practices-Salesforce-com/dp/0984380213/?tag=xaprb-20">Predictable
+Revenue</a> in which he
+declares the death and obsolescence of salespeople making cold calls.</p>
+
+<blockquote>
+<p>I define a cold call as &ldquo;calling someone who doesn&rsquo;t know you and isn&rsquo;t
+expecting your call.&rdquo; (page 24).</p>
+</blockquote>
+
+<p>Aaron espouses Cold Calling 2.0, which is a different method of prospecting for
+sales: &ldquo;prospecting into cold accounts without ever making any cold calls.&rdquo;
+(page 24). He returns to this point again and again through the book: never,
+ever make any cold calls. Ever again. Ever.</p>
+
+<p>Aaron claims that this worked incredibly well and is the way the entire
+SalesForce team was trained and scaled.</p>
+
+<p>I don&rsquo;t doubt that they use Cold Calling 2.0 at SalesForce.</p>
+
+<p>But my experience with SalesForce as a CEO/founder of a tech company does
+not match with what Aaron says they did. After we closed our first round of
+funding, my cofounder and I were spammed with cold calls from SalesForce.
+There is no other way to put it. They badgered us mercilessly. <em>Mercilessly.</em>
+Aaron talks about sales development reps being &ldquo;pleasantly persistent.&rdquo; I am not
+proud to say I eventually yelled obscenities into the phone at the sales rep who
+would not take no for an answer. As a rule I do not curse at people and it is
+very rare for me to lose my cool, maybe only happens once every couple of years.
+<em>He cold called me and would not stop calling back every few days even after I,
+the CEO of the company, had asked him to stop and told him the answer was no at
+least several times.</em></p>
+
+<p>Not only that but he called my cofounder as well. And emailed both of us. It was
+infuriating. No means no!</p>
+
+<p>This was a while ago and I am sure my memory has become inaccurate. I bet they
+have records, though, of every interaction. I would be happy to hear that I&rsquo;m
+remembering this wrong. SalesForce, if you&rsquo;d like to correct me, please look
+up Zach E&rsquo;s interactions with me and let me know if I&rsquo;m misinterpreting.</p>
+
+<h3 id="case-2-hubspot-and-permission-based-inbound-marketing">Case #2: HubSpot and Permission-Based / Inbound Marketing</h3>
+
+<p>HubSpot&rsquo;s methodology is <a href="http://www.hubspot.com/inbound-marketing">inbound
+marketing</a>. The idea is that you attract
+people and companies to you by providing them with helpful, relevant
+content. Blogs, webinars, etc. Really valuable stuff. By doing this, you
+help them be successful with or without you, but you also ask them to
+identify themselves (two-way street). You make people aware that in addition to all
+the stuff they can do on their own with the free content and resources you
+provide, you also provide services/products/whatever that will amplify their
+success.</p>
+
+<p>So in HubSpot&rsquo;s case, for example, their blog helps people understand how to do
+marketing that turns strangers into ravingly happy customers. Not just
+customers&mdash;promoters, who can&rsquo;t stop themselves from saying how awesome your
+product or service is. And thus, by doing this &ldquo;marketing that people will
+love,&rdquo; you make everyone aware of your products/services and how valuable they
+are, and magnetically attract customers to yourself. You turn a &ldquo;pushy&rdquo; outbound
+sales/marketing process into a &ldquo;magnetic pull&rdquo; of inbound attraction.</p>
+
+<p>And HubSpot also strongly condemns cold-calling, pushy sales tactics&hellip; they
+recommend <a href="http://blog.hubspot.com/blog/tabid/6307/bid/30718/15-Tenets-of-Proper-Email-Marketing-Etiquette.aspx">permission-based
+marketing</a>
+instead. They talk about the very real dangers of legal repercussions, domain
+blacklisting and spam database scoring, and so on.</p>
+
+<p>My experience with HubSpot?</p>
+
+<p><em>Spammed.</em> Mercilessly spammed. Katie C emailed me. She sent me LinkedIn requests
+and messages. She tweeted to me. I can&rsquo;t remember if she called me. I think she
+did. I know for sure that she found and pushed messages to every possible
+channel you could reach me by. Well, probably not text messages, come to think
+of it. But this went on, and on, and on. I did not respond; I decided to try
+silence instead of &ldquo;no,&rdquo; because I&rsquo;d been spammed out of my mind by people who
+wouldn&rsquo;t take &ldquo;no&rdquo; for an answer.</p>
+
+<p>Did I find HubSpot&rsquo;s outbound sales efforts to be permission-based? No,
+I did not. There were no required CAN-SPAM opt-out links. I had no prior contact
+with them; I&rsquo;m sure they bought my name and contact information from a list like
+all the other spammers did. Did I fall in love with their tactics? No, I did
+not. Had I earned their attention by browsing their site? No. I had never heard
+of them before (and frankly the first impression I got was really poor.)</p>
+
+<p>After Katie C eventually stopped (after sending an increasingly ridiculous,
+over-the-top series of &ldquo;breakup&rdquo; messages, sobbing about how I didn&rsquo;t love her
+anymore), I finally got some peace for a while. Then Andrew F started up.</p>
+
+<p>I&rsquo;d had enough and I reported it to SalesForce&rsquo;s abuse department, because they
+were sending these non-compliant emails from SalesForce.</p>
+
+<h3 id="i-m-a-salesforce-and-hubspot-customer">I&rsquo;m a SalesForce and HubSpot Customer</h3>
+
+<p>Here&rsquo;s the thing. At VividCortex we are customers of <em>both</em> companies. I
+recognize the value of what they provide, and I knew about their offerings.
+Before I even founded the company I knew we&rsquo;d use SalesForce. We used Act-On
+for marketing automation for a while, but recently switched (the reasons why are
+another interesting story) to HubSpot.</p>
+
+<p>We aren&rsquo;t customers because of their obnoxious tactics, but <em>despite</em> them.</p>
+
+<h3 id="why-do-they-do-it">Why Do They Do It?</h3>
+
+<p>If Cold Calling 2.0 and Inbound Marketing are the bees&rsquo; knees, and create
+incredible results, and are sacred cows you should absolutely adhere to, then
+why do these two extremely valuable service providers not follow their own
+advice?</p>
+
+<p>Because one size doesn&rsquo;t fit all. Cold calling <em>does</em> work for some people
+(generally not for me, though there are exceptions). Finding a CEO/founder&rsquo;s
+contact information after a funding round, and pestering the hell out of him/her
+about lead generation on every possible social network and communications
+channel, <em>does</em> work in some cases.</p>
+
+<p>These companies are not satisfied with the results they can obtain from
+following a simple process to the letter. They know they can eke out incremental
+improvements by crossing the line into the &ldquo;off-limits&rdquo; areas.</p>
+
+<h3 id="that-s-why-you-should-be-skeptical">That&rsquo;s Why You Should Be Skeptical</h3>
+
+<p>That&rsquo;s why you should be skeptical of anyone&rsquo;s magic secret sauce. The more they
+insist there is a bedrock principle (or three) that you must absolutely believe
+in, no shades of gray&mdash;the more you should be skeptical.</p>
+
+<p>Going through the sales process with HubSpot, in particular, was like the
+twilight zone. Their sales team was making it sound like HubSpot itself
+generates all of their revenue completely from inbound marketing.</p>
+
+<p>The hypocrisy makes it hard to believe <em>anything</em> they say. Everything becomes
+too good to be true.  It&rsquo;s really weird, because there&rsquo;s cognitive dissonance
+everywhere.</p>
+
+<p>What do I mean by that? It&rsquo;s pretty simple&mdash;I know and I believe in the value
+of inbound marketing.  It <em>works.</em> I&rsquo;ve not only seen it done, but I&rsquo;ve done it
+myself, and the results were incredible. At a previous employer, you practically
+could not do a Google search for a related keyword without my content appearing
+in the first page of results, and usually the first several links. When we
+hooked that up to a marketing automation system, all the numbers went through
+the roof.</p>
+
+<p>It worked at that company, and it&rsquo;s working shockingly well at VividCortex too.</p>
+
+<p>That&rsquo;s why I knew I needed inbound marketing and marketing automation. I knew I
+needed Marketo, Act-On, HubSpot, or another vendor. I didn&rsquo;t know which one I
+wanted to use&mdash;I&rsquo;d used Marketo before and wanted to see if I could find
+something a little better&mdash;but I knew one of these kinds of companies would be
+absolutely vital.</p>
+
+<p>So when HubSpot was telling us how insanely good the results would be from doing
+&ldquo;pure&rdquo; inbound marketing, and I knew that they were simultaneously telling the
+truth and also did not adhere to that advice themselves, I had to get off the
+phone with them and talk with the team about what we&rsquo;d just heard. What was real
+and what was hype?</p>
+
+<p>This is a vitally important exercise anytime someone shows you a
+method/process/practice that&rsquo;s the one true way.</p>
+
+<p>This holds for things I write and say, too. I say disciplined database
+performance optimization depends on measuring the workload the systems handle,
+and without it you&rsquo;re just doing trial-and-error. I say a low-sugar, high-fat,
+minimally-processed diet can transform your body. I say a lot of things to try
+to teach and explain what I&rsquo;ve discovered to work well.</p>
+
+<p>But if you ever catch me insisting there are no exceptions, call me out on it.
+Sometimes cache hit ratios work to tune databases. Sometimes I like to eat ice
+cream. Life&rsquo;s not supposed to be black and white.</p>
+
+<p>Sacred cows make the best steaks.</p>
+
+<p><img src="/media/2015/04/ice-cream.jpg" alt="Ice Cream" /></p>
+
+<p>Mugs by <a href="https://unsplash.com/andrekerygma">André Freitas</a>. Ice cream by
+<a href="https://www.flickr.com/photos/ulteriorepicure/364899832/">ulterior epicure</a>.</p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2015/05/18/what-i-look-for-conference-proposal/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2015/04/04/standing-desk/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2015\/04\/05\/magic-secret-sauce\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

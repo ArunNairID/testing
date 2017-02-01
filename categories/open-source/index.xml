@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> </title>
+    <link>https://www.xaprb.com/categories/open-source/index.xml</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>Copyright (c) 2016</rights>
+    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
+
+    
+        <item>
+          <title>Don&#39;t Miss PGConfSV, Silicon Valley&#39;s Newest PostgreSQL Conference</title>
+          <link>https://www.xaprb.com/blog/2015/10/23/pgconfsv-postgresql-conference/</link>
+          <pubDate>Fri, 23 Oct 2015 13:52:35 -0400</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/10/23/pgconfsv-postgresql-conference/</guid>
+          <description>&lt;p&gt;If you haven&amp;rsquo;t heard about &lt;a href=&#34;http://www.pgconfsv.com/&#34;&gt;PGConfSV&lt;/a&gt; yet, it&amp;rsquo;s a
+conference for the Silicon Valley PostgreSQL community and beyond, featuring
+leading PostgreSQL performance and scalability experts. It&amp;rsquo;s happening November
+17-18 at the South San Francisco Conference Center. I encourage everyone in the
+area to attend, since this is likely to be the best Postgres conference held
+thus far in the Silicon Valley.&lt;/p&gt;
+
+&lt;p&gt;I also urge you to &lt;a href=&#34;http://www.eventbrite.com/e/pgconf-silicon-valley-2015-tickets-16521286613&#34;&gt;buy your tickets&lt;/a&gt; before they sell out! Of course, the earlier
+you buy, the more you save, too. (Use SeeMeSpeak for a 20% discount).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/10/ssfcc.jpg&#34; alt=&#34;Convention Center&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll be at the conference along with some of my colleagues. I&amp;rsquo;m pretty excited
+about this for a few reasons. Allow me to &amp;lsquo;splain why?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;First, &lt;a href=&#34;https://www.xaprb.com/blog/2008/04/01/postgresql-conference-east-2008/&#34;&gt;I&amp;rsquo;ve loved PostgreSQL for a long
+time&lt;/a&gt; although fate has
+mostly seen me work in the MySQL community. I&amp;rsquo;ve attended, spoken, helped
+organize and otherwise been involved in a handful of Postgres events, and this
+conference brings back a lot of good memories and anticipation. Among other
+things, Terry Erisman is one of the principal organizers and he does a
+&lt;em&gt;fantastic&lt;/em&gt; job of overseeing conferences. Seriously. He&amp;rsquo;s one of the big
+reasons the MySQL conference not only continued, but rebounded after the dark
+days of the Sun acquisition. PostgreSQL fans should be thrilled to have him
+involved.&lt;/p&gt;
+
+&lt;p&gt;Secondly, &lt;a href=&#34;https://www.vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is a sponsor, so I&amp;rsquo;ll be
+there in an official capacity.&lt;/p&gt;
+
+&lt;p&gt;Finally, I&amp;rsquo;m
+&lt;a href=&#34;http://www.pgconfsv.com/sessions/analyzing-postgresql-network-traffic-vc-pgsql-sniffer&#34;&gt;speaking&lt;/a&gt;
+about sniffing the network protocol off the wire and analyzing it. If you&amp;rsquo;ve
+seen any of my talks about &amp;ldquo;finding hidden treasures in TCP traffic&amp;rdquo; kinds of
+topics, hopefully you&amp;rsquo;ll have an idea of what might be in store in that talk.&lt;/p&gt;
+
+&lt;p&gt;I also participated in an
+&lt;a href=&#34;https://www.citusdata.com/blog/25-terry/261-pgconf-silicon-valley-speaker-baron-schwartz-vividcortex-%E2%80%8E&#34;&gt;interview&lt;/a&gt;
+leading up to the conference, on why I&amp;rsquo;m so excited not only about this
+particular event, but also why I&amp;rsquo;m more and more excited about PostgreSQL in
+general. As a community and as a technology, it&amp;rsquo;s really exploding onto the
+scene in ways a lot of people don&amp;rsquo;t appreciate yet. (But they will!)&lt;/p&gt;
+
+&lt;p&gt;Come be a part of the next big sea change in opensource relational databases!&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>MySQL, SQL, NoSQL, Open Source And Beyond: a Google Tech Talk</title>
+          <link>https://www.xaprb.com/blog/2014/02/05/mysql-nosql-open-source-google-tech-talk/</link>
+          <pubDate>Wed, 05 Feb 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/02/05/mysql-nosql-open-source-google-tech-talk/</guid>
+          <description>
+
+&lt;p&gt;I&amp;rsquo;ve been invited to give a Tech Talk at Google next Thursday, February 13th,
+from 11:00 to 12:30 Pacific time. Unfortunately the talk won&amp;rsquo;t be streamed live,
+nor is it open to the general public, but it will be recorded and hosted on
+&lt;a href=&#34;http://www.youtube.com/user/GoogleTechTalks&#34;&gt;YouTube&lt;/a&gt; afterwards. I&amp;rsquo;ve also been told that a small number of individuals might
+be allowed to attend from outside Google. If you would like me to try to get a
+guest pass for you, please tweet that to &lt;a href=&#34;https://twitter.com/xaprb&#34;&gt;@xaprb&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The topic is, roughly, databases. Officially,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;mysql-sql-nosql-and-open-source-in-2014-and-beyond&#34;&gt;MySQL, SQL, NoSQL, and Open Source in 2014 and Beyond&lt;/h3&gt;
+
+&lt;p&gt;Predictions are hard to get right, especially when they involve the future.
+Rather than predict the future, I&amp;rsquo;ll explain how I view the relational and
+NoSQL database worlds today, especially the MySQL product and community, but
+including open-source and proprietary data management technologies about which
+I know enough to get in trouble. I&amp;rsquo;ll explain how my self-image as a
+practitioner and contributor has changed, especially as I&amp;rsquo;ve moved from
+consulting (where I tell people what they should do) into being a company
+founder (where I sometimes wish someone would tell me what to do). As for the
+future, I&amp;rsquo;ll express my preferences for specific outcomes, and try to be
+careful what I wish for.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I am excited and a bit nervous. A Google Tech Talk! Wow! Thanks for inviting me,
+Google!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: Slides are embedded below.&lt;/p&gt;
+
+&lt;iframe src=&#34;https://app.box.com/embed_widget/ko7s90gvgiix/s/0d578lmrl6xm487z4ska?view=list&amp;sort=name&amp;direction=ASC&amp;theme=blue&#34; width=&#34;640&#34; height=&#34;420&#34; frameborder=&#34;0&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>The state of MySQL client libraries</title>
+          <link>https://www.xaprb.com/blog/2012/12/26/the-state-of-mysql-client-libraries/</link>
+          <pubDate>Wed, 26 Dec 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/12/26/the-state-of-mysql-client-libraries/</guid>
+          <description>&lt;p&gt;Those who&amp;rsquo;ve been around the MySQL world are probably aware of the much-discussed topics of GPL licensing, dual licensing, and in particular, licensing of the client libraries (also called connectors or drivers) and the &lt;a href=&#34;http://www.mysql.com/about/legal/licensing/foss-exception/&#34;&gt;FOSS exception&lt;/a&gt; to that licensing. This is newly relevant with the announcement of a permissively-licensed MySQL-compatible client library for MariaDB.&lt;/p&gt;
+
+&lt;p&gt;The difference is that this time there&amp;rsquo;s been some question about the provenance and history of the source code. Some people asked me about this. Some of them were aware of a relatively obscure detail: there&amp;rsquo;ve been permissively licensed MySQL client libraries for years, in the form of libdrizzle, a BSD-licensed library for the Drizzle fork of MySQL.&lt;/p&gt;
+
+&lt;p&gt;Here are some of the thoughts that seemed to be going through peoples&amp;rsquo; minds:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This changes everything, doesn&amp;rsquo;t it? Now I don&amp;rsquo;t have to to open-source my application or pay Oracle licensing fees.&lt;/li&gt;
+&lt;li&gt;Is the source code of these new connectors untainted, or am I exposing myself to liability problems by using it?&lt;/li&gt;
+&lt;li&gt;Isn&amp;rsquo;t MariaDB&amp;rsquo;s driver just a copy-paste and LGPL relicense of the BSD-licensed Drizzle driver? Sure, that&amp;rsquo;s legal, but is it ethical?&lt;/li&gt;
+&lt;li&gt;Are these connectors really compatible, or will they cause problems?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Many people seem constitutionally incapable of understanding the GPL. I consider myself forever done with discussions about what the GPL permits or forbids, so I won&amp;rsquo;t address that. But I thought some of these things were worth looking into, at least quickly.&lt;/p&gt;
+
+&lt;p&gt;In particular, I was curious whether the allegations of plagiarism on MariaDB&amp;rsquo;s behalf were true. So I downloaded the latest release of the &lt;a href=&#34;https://launchpad.net/libdrizzle/+download&#34;&gt;Drizzle&lt;/a&gt; and &lt;a href=&#34;http://www.skysql.com/downloads/connectors/c&#34;&gt;MariaDB&lt;/a&gt; C libraries, unpacked the source code, and just took a quick look. Here&amp;rsquo;s what I found.&lt;/p&gt;
+
+&lt;p&gt;The first thing I wanted to check was the allegation that MariaDB&amp;rsquo;s drivers were just an LGPL wrapper or copy-paste of Drizzle&amp;rsquo;s libraries. A few minutes of study showed &lt;strong&gt;no obvious plagiarism from Drizzle&amp;rsquo;s source&lt;/strong&gt;. The MariaDB drivers appear to have a lot more code, documentation, tests, and so on, and it looks to be organized very differently than the Drizzle drivers. Files are in different directory hierarchies, code appears to be split up among files very differently, files are named differently, and so on. After about ten minutes of reading source, &lt;strong&gt;I saw no code that looks similar&lt;/strong&gt;. A cursory grepping of the source code also shows words like &amp;ldquo;infile&amp;rdquo; that appear only in the MariaDB code. If there&amp;rsquo;s plagiarism from Drizzle&amp;rsquo;s library source code, it&amp;rsquo;s going to take a little more work to find it. In fact, from what I see, the Drizzle libraries don&amp;rsquo;t implement all of the protocol&amp;rsquo;s features, and that tangentially answers one of the other questions about true compatibility.&lt;/p&gt;
+
+&lt;p&gt;The next question is about MariaDB&amp;rsquo;s code versus MySQL&amp;rsquo;s code. The MariaDB library&amp;rsquo;s source looks and feels very similar to MySQL&amp;rsquo;s source. This is no surprise to me. If Monty sat alone in a room and coded a library from scratch, based only on the MySQL protocol documents and his memory, I&amp;rsquo;d expect the result to look a lot like MySQL&amp;rsquo;s source code anyway. But when I opened some of the files, things got less clear to me. For example, the copyright header in include/my_list.h begins with this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/* Copyright (C) 2000 MySQL AB &amp;amp;#038; MySQL Finland AB &amp;amp;#038; TCX DataKonsult AB
+
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public
+   License as published by the Free Software Foundation; either
+   version 2 of the License, or (at your option) any later version.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I was surprised. I thought I&amp;rsquo;d see a &amp;ldquo;clean-room&amp;rdquo; reimplementation of the protocol, with no relationship to MySQL&amp;rsquo;s source code. But this file appears to be the same code as MySQL&amp;rsquo;s, although the header says that the file is licensed under the LGPL. I compared that with the same header file in MySQL 5.6&amp;#8242;s source code, and here&amp;rsquo;s the result:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/* Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 of the License.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So that file is licensed under the &amp;ldquo;viral&amp;rdquo; copyleft GPL version 2 only, not the more permissive LGPL version 2 or later. Did the license terms on that file get changed over time? I am not surprised to see Oracle erasing prior copyright history and updating it to show themselves as the owners, but did they change the license from LGPL to GPL too? One way to find out is to check the MySQL 5.0 source code, because that was released before Sun or Oracle entered the picture. Here&amp;rsquo;s the header file&amp;rsquo;s copyright notice for MySQL 5.0.28:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/* Copyright (C) 2000 MySQL AB
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The license matches Oracle&amp;rsquo;s, although of course the copyright owner has changed since then. So it looks to me like Oracle didn&amp;rsquo;t change the license terms; they just updated the ownership information.&lt;/p&gt;
+
+&lt;p&gt;Some important questions arise from this. I&amp;rsquo;m not qualified to answer them because I&amp;rsquo;m neither a lawyer nor a MySQL historian, but I&amp;rsquo;m qualified to ask them and I&amp;rsquo;d surely like to know the answers:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Is a legitimately LGPL-licensed copy of these header files available?&lt;/li&gt;
+&lt;li&gt;What&amp;rsquo;s the origin of the triple copyright ownership listed in MariaDB&amp;rsquo;s header file, to include &amp;ldquo;MySQL Finland AB&amp;rdquo; and &amp;ldquo;TCX DataKonsult AB&amp;rdquo; ? What&amp;rsquo;s the relationship between these entities and MySQL AB?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I think that perhaps someone from Monty Program or SkySQL is in the best position to answer these questions; in fact, Monty himself is probably the most knowledgeable. I&amp;rsquo;m looking forward to understanding more of the history around the source code and its licensing and provenance.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Lessons learned from the Sublime Text editor</title>
+          <link>https://www.xaprb.com/blog/2012/11/20/lessons-learned-from-the-sublime-text-editor/</link>
+          <pubDate>Tue, 20 Nov 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/11/20/lessons-learned-from-the-sublime-text-editor/</guid>
+          <description>&lt;p&gt;Terminal-based, keystroke-driven editors are enormously powerful, and I still haven&amp;rsquo;t seen anything more powerful than Vim. I&amp;rsquo;m a longtime Vim user, and although I&amp;rsquo;m not the world&amp;rsquo;s foremost jaw-dropping expert on Vim, I would call myself an advanced power user at the very least, and probably a true expert. Still, I have maintained a relationship with GUI text editors over the years, too. An editor that has an insertion point for a cursor, and &amp;ldquo;native&amp;rdquo; mouse interaction, has an appeal I&amp;rsquo;ve never quite shaken. I&amp;rsquo;ve used (and been highly productive with) Kate, GEdit, Notepad++, Visual Studio, and many others. I have &lt;em&gt;purchased licenses&lt;/em&gt; for Textpad, Textmate, and most recently &lt;a href=&#34;http://www.sublimetext.com/&#34;&gt;Sublime Text 2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sublime Text is a very nice editor. I&amp;rsquo;ve chosen it for my recent Go programming because of the &lt;a href=&#34;https://github.com/DisposaBoy/GoSublime&#34;&gt;GoSublime&lt;/a&gt; integration, which uses &lt;a href=&#34;https://github.com/nsf/gocode&#34;&gt;gocode&lt;/a&gt; (which also works for Vim, by the way) to provide IDE-like autocomplete and other helpful functionality, like incremental syntax checking and running gofmt on save. Sublime Text also has a limited Vim emulation mode, which lets me drop into Vim command mode for some mouseless productivity.&lt;/p&gt;
+
+&lt;p&gt;Keep in mind that I think Sublime is great, and well worth the license fee. That said, I find its advocates a bit wide-eyed and breathless in their enthusiasm. I keep thinking, &lt;em&gt;Have they never used a decent editor before?&lt;/em&gt; Take the &amp;ldquo;multiple selection&amp;rdquo; feature. You can select something, such as a variable name, then press Control-D repeatedly and select other occurrences of the same text. Then you can type, and all of the occurrences change simultaneously. &lt;em&gt;Revolutionary! Any praise about multiple selections is an understatement!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Really? You&amp;rsquo;ve been able to do that with just as few, or even fewer, keystrokes in Vi or Vim forever:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:%s/oldtext/newtext/gc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;All you have to do is press a key for every occurrence. If you want to change them all without confirmation, leave off the trailing &amp;lsquo;c&amp;rsquo; command to the regular expression. This is &lt;em&gt;basic&lt;/em&gt;, not a power-user feature. It&amp;rsquo;s Unix regex 101 for any number of tools &amp;ndash; nothing new to learn here.&lt;/p&gt;
+
+&lt;p&gt;Similarly, a number of other purportedly &amp;ldquo;new&amp;rdquo; features in Sublime Text 2 are decades old, well-worn and loved in many other text editors. I&amp;rsquo;ll admit that most of the mouse-based, cursor-insertion-point, GUI text editors don&amp;rsquo;t offer these types of features in any usable or convenient way; they just seem to lend themselves much better to terminal-based editors like Vim and Emacs. (Example: passing selected text through a shell command and reinserting it into the file.)&lt;/p&gt;
+
+&lt;p&gt;In fact, many of these older text editors offer &lt;em&gt;way&lt;/em&gt; more functionality than Sublime Text. It doesn&amp;rsquo;t even come close. The find-and-replace in Vim, for example, is way better than the dialog-based functionality in Sublime Text, or nearly any GUI editor for that matter. Not to mention the documentation; Vim&amp;rsquo;s documentation and help system is breathtaking, but Sublime Text&amp;rsquo;s is&amp;hellip; uninspired at best. You can compare terminal-based text editors to Sublime Text on a bunch of dimensions and it comes up way, way short. Again, this is just some rambling thoughts &amp;ndash; I repeat, I bought the license. And I&amp;rsquo;m sure Sublime Text is going to continue improving rapidly, as it has been the whole time I&amp;rsquo;ve been aware of it.&lt;/p&gt;
+
+&lt;p&gt;And now we come to my point: it appears to me, from the enthusiastic response to Sublime Text, that &lt;em&gt;a large proportion of the developer population either uses a weak-sauce text editor or is utterly untrained on using a powerful one.&lt;/em&gt; How else can we explain the enthusiasm? I honestly can&amp;rsquo;t think of anything. And this is a really saddening thought, because it means that thousands of programmers have completely neglected one of the most important things they could do: become truly proficient, if not expert, with their text editor. The text editor is to the programmer as the wrench is to the mechanic, as the compass is to the navigator, as the shoe is to the runner. It is arguably the single most important tool you&amp;rsquo;ll use as a programmer.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s just no excuse. If you aren&amp;rsquo;t using a powerful text editor (and I would count Sublime Text as one), &lt;em&gt;get one.&lt;/em&gt; And if you aren&amp;rsquo;t at least an advanced user of that editor, &lt;em&gt;get a move on it.&lt;/em&gt; I&amp;rsquo;m not the first to say this, but I can&amp;rsquo;t remember or locate the quotation about this topic that I&amp;rsquo;m trying to recall. Maybe someone can help out in the comments.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s your favorite text editor? What&amp;rsquo;s your favorite resource for becoming an amazing wizard with it, so that you regularly do the kinds of tricks that make your friends say &amp;ldquo;hey, what editor is that?&amp;rdquo;&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>How to send input to many terminals</title>
+          <link>https://www.xaprb.com/blog/2012/10/16/how-to-send-input-to-many-terminals/</link>
+          <pubDate>Tue, 16 Oct 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/10/16/how-to-send-input-to-many-terminals/</guid>
+          <description>&lt;p&gt;Do you ever find yourself wanting to open several terminal windows and send the same commands to all of them? I&amp;rsquo;ve had this need many times, and I&amp;rsquo;ve never found a completely satisfactory solution. I&amp;rsquo;ve also known a lot of people who&amp;rsquo;ve written various sets of scripts to help them accomplish such tasks.&lt;/p&gt;
+
+&lt;p&gt;In no particular order, here are a few ways I&amp;rsquo;ve done this in the past:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Facebook&amp;rsquo;s pmysql client&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;http://www.netfort.gr.jp/~dancer/software/dsh.html.en&#34;&gt;dsh&lt;/a&gt; tool&lt;/li&gt;
+&lt;li&gt;Several screen windows named remoteXXX, followed by a bash for-loop: &lt;code&gt;while read cmd; do screen -X at remote# stuff &amp;quot;$cmd&amp;quot;; done&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Using many PuTTY windows and the &lt;a href=&#34;http://www.millardsoftware.com/puttycs&#34;&gt;puttycs&lt;/a&gt; tool&lt;/li&gt;
+&lt;li&gt;Opening many tabs in KDE&amp;rsquo;s Kterm tool and selecting the options to send input to all tabs&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here are some I&amp;rsquo;ve heard about, but never used:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://guichaz.free.fr/polysh/&#34;&gt;PolySH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;rcall&lt;/li&gt;
+&lt;li&gt;A variety of &amp;ldquo;terminal multiplexor&amp;rdquo; web pages I&amp;rsquo;ve &lt;a href=&#34;http://delicious.com/xaprb/terminal+multiplexor&#34;&gt;bookmarked&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Of course, in many cases a technology like Chef or Puppet provides the true solution. But a lot of the MySQL users I&amp;rsquo;ve known haven&amp;rsquo;t grown to the point that they want to spend the upfront time and effort to learn and deploy something like that. They&amp;rsquo;re investing in development instead, and bearing the cost of a little less efficient systems administration process.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s your favorite technique for doing lots of things all at once?&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Announcing innotop 1.9.0</title>
+          <link>https://www.xaprb.com/blog/2012/09/07/announcing-innotop-1-9-0/</link>
+          <pubDate>Fri, 07 Sep 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/09/07/announcing-innotop-1-9-0/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ve just released &lt;a href=&#34;http://code.google.com/p/innotop/&#34;&gt;innotop&lt;/a&gt; version 1.9.0. This version fixes a lot of bugs, makes the tool work better when monitoring dozens of MySQL servers, and adds two new modes: a Health Dashboard and an InnoDB Blockers/Blocked mode.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A new dashboard for innotop</title>
+          <link>https://www.xaprb.com/blog/2012/08/14/a-new-dashboard-for-innotop/</link>
+          <pubDate>Tue, 14 Aug 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/08/14/a-new-dashboard-for-innotop/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;m using innotop again every day, for the first time in a few years. I found that I didn&amp;rsquo;t like the tool that the younger and less experienced version of me created. It is very flexible and has the ability to surface a lot of information about MySQL, but not all on one screen. I wanted a &amp;ldquo;single pane of glass&amp;rdquo; health dashboard for the servers I&amp;rsquo;m monitoring, instead of having to look on various screens for important bits of information.&lt;/p&gt;
+
+&lt;p&gt;The good news is, innotop is very extensible and I know the code because I wrote most of it, so in a short while I had a dashboard that suited me. I committed these changes to trunk, so if you wish you can easily get the code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wget innotop.googlecode.com/svn/trunk/innotop
+$ chmod +x innotop
+$ ./innotop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can select the new &amp;lsquo;A&amp;rsquo; mode by pressing the capital &amp;lsquo;A&amp;rsquo; key. Here is a screenshot (click for full size version):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.xaprb.com/media/2012/08/innotop-mode-A.png&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2012/08/innotop-mode-A-300x236.png&#34; alt=&#34;&#34; title=&#34;innotop-mode-A&#34; width=&#34;300&#34; height=&#34;236&#34; class=&#34;aligncenter size-medium wp-image-2777&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Each line in the table is a single server. From the left, the columns are the server&amp;rsquo;s name, uptime, QPS sparkline, current QPS, length of longest-running user query (excludes replication and system users), number of user threads running (ditto on the meaning of that) as a sparkline and current value, number of connections, open tables, whether replication is OK, how much replication is lagging, and the total of all InnoDB&amp;rsquo;s pending I/O operations.&lt;/p&gt;
+
+&lt;p&gt;The coloration is based on the length of the MaxSQL column and ReplLag column. If Repl is not Yes, the row is colored black on a red background.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Making MySQL comfortable for Oracle DBAs</title>
+          <link>https://www.xaprb.com/blog/2012/03/07/making-mysql-comfortable-for-oracle-dbas/</link>
+          <pubDate>Wed, 07 Mar 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/03/07/making-mysql-comfortable-for-oracle-dbas/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;m at &lt;a href=&#34;http://www.hotsos.com/sym12.html&#34;&gt;Hotsos Symposium&lt;/a&gt; this week, and it suddenly occurred to me that a lot of Oracle DBAs who are beginning to manage MySQL servers might have some things to share with others in a similar role shift:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Familiar, comfortable tools and techniques, or capabilities of the Oracle Database, that you miss in MySQL&lt;/li&gt;
+&lt;li&gt;Equivalents or replacements for the aforementioned&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Do you have anything to share with your fellow DBAs going through ODT (Oracle Delerium Tremens)? Do you have any wishes that you haven&amp;rsquo;t satisfied yet? Post in the comments and let&amp;rsquo;s see if we can create a sort of forum for sharing and/or a wishlist in case someone gets an urge to fill in a missing piece!&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>innotop version 1.8.1 released</title>
+          <link>https://www.xaprb.com/blog/2012/02/25/innotop-version-1-8-1-released/</link>
+          <pubDate>Sat, 25 Feb 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/02/25/innotop-version-1-8-1-released/</guid>
+          <description>&lt;p&gt;The new stable version of &lt;a href=&#34;http://code.google.com/p/innotop/&#34;&gt;innotop&lt;/a&gt; is now released. Version 1.8.1 is a bug-fix-only release, with no new features. It&amp;rsquo;s available for immediate &lt;a href=&#34;http://code.google.com/p/innotop/downloads/list&#34;&gt;download&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Black-Box Performance Analysis with TCP Traffic</title>
+          <link>https://www.xaprb.com/blog/2012/02/23/black-box-performance-analysis-with-tcp-traffic/</link>
+          <pubDate>Thu, 23 Feb 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/02/23/black-box-performance-analysis-with-tcp-traffic/</guid>
+          <description>&lt;p&gt;This is a cross-post from the &lt;a href=&#34;http://www.mysqlperformanceblog.com/2012/02/23/black-box-mysql-performance-analysis-with-tcp-traffic/&#34;&gt;MySQL Performance Blog&lt;/a&gt;. I thought it would be interesting to users of PostgreSQL, Redis, Memcached, and $system-of-interest as well.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is the startup I founded in 2012. It&amp;rsquo;s the easiest way to monitor what
+your servers are doing in production. It does TCP network
+traffic analysis. VividCortex offers &lt;a href=&#34;https://vividcortex.com/monitoring/mysql/&#34;&gt;MySQL performance
+monitoring&lt;/a&gt; and &lt;a href=&#34;https://vividcortex.com/monitoring/postgres/&#34;&gt;PostgreSQL
+performance management&lt;/a&gt; among many
+other features.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For about the past year I&amp;rsquo;ve been formulating a series of tools and practices that can provide deep insight into system performance simply by looking at TCP packet headers, and when they arrive and depart from a system. This works for MySQL as well as a lot of other types of systems, because it doesn&amp;rsquo;t require any of the contents of the packet. Thus, it works without knowledge of what the server and client are conversing about. Packet headers contain only information that&amp;rsquo;s usually regarded as non-sensitive (IP address, port, TCP flags, etc), so it&amp;rsquo;s also very easy to get access to this data even in highly secure environments.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve finally written up a paper that shows some of my techniques for detecting problems in a system, which can be an easy way to answer questions such as &amp;ldquo;is there something we should look into more deeply?&amp;rdquo; without launching a full-blown analysis project first. It&amp;rsquo;s available from the white paper section of our website: &lt;a href=&#34;http://www.percona.com/about-us/mysql-white-paper/mysql-performance-analysis-with-percona-toolkit-and-tcp-ip-network-traffic/&#34;&gt;MySQL Performance Analysis with Percona Toolkit and TCP/IP Network Traffic&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Special mysqldump fingerprinting rule in pt-query-digest</title>
+          <link>https://www.xaprb.com/blog/2011/11/29/special-mysqldump-fingerprinting-rule-in-pt-query-digest/</link>
+          <pubDate>Tue, 29 Nov 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/11/29/special-mysqldump-fingerprinting-rule-in-pt-query-digest/</guid>
+          <description>&lt;p&gt;The pt-query-digest tool has a number of special cases that affect how it &amp;ldquo;fingerprints&amp;rdquo; queries when it groups similar queries together to produce an aggregated report over the group. One of these is a special rule for queries that appear to come from mysqldump, of the following form:&lt;/p&gt;
+
+&lt;pre&gt;SELECT /*!40001 SQL_NO_CACHE */ * FROM `users`&lt;/pre&gt;
+
+&lt;p&gt;All such queries will be fingerprinted together and presented in a single class of queries. I remember many instances where mysqldump queries crowded the report of the &amp;ldquo;most important&amp;rdquo; queries and just caused other queries to be excluded. Grouping them together made it obvious that mysqldump&amp;rsquo;s load on the server was a problem, but didn&amp;rsquo;t obliterate other interesting things we wanted to see in the report.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Want to hack Maatkit and Aspersa? We&#39;re hiring</title>
+          <link>https://www.xaprb.com/blog/2011/09/01/want-to-hack-maatkit-and-aspersa-were-hiring/</link>
+          <pubDate>Thu, 01 Sep 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/09/01/want-to-hack-maatkit-and-aspersa-were-hiring/</guid>
+          <description>&lt;p&gt;As announced on the Maatkit and Aspersa mailing lists, Daniel and I have created a new toolkit that represents the union of the two, and will be focusing efforts on this Percona Toolkit moving forward. The goal is to make them simpler and significantly more powerful, and to create more tools. The tools will continue to be open-source, but will be developed primarily to meet our MySQL support and consulting staff&amp;rsquo;s needs.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re interested in challenging software engineering in Perl and shell, then please &lt;a href=&#34;http://www.percona.com/about-us/career/perl-and-shell-developer/&#34;&gt;apply online&lt;/a&gt;. You can work online from anywhere, but I strongly prefer someone in the Americas timezones.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A clarification on mk-slave-prefetch</title>
+          <link>https://www.xaprb.com/blog/2011/08/21/a-clarification-on-mk-slave-prefetch/</link>
+          <pubDate>Sun, 21 Aug 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/08/21/a-clarification-on-mk-slave-prefetch/</guid>
+          <description>&lt;p&gt;It seems to be a popular misconception that mk-slave-prefetch is designed to keep a MySQL replica server &amp;ldquo;warm&amp;rdquo; and ready to serve production traffic in case the master is demoted or fails. &lt;strong&gt;This is not what mk-slave-prefetch does&lt;/strong&gt;. It&amp;rsquo;s related, and easy to confuse, but its purpose is different.&lt;/p&gt;
+
+&lt;p&gt;The mk-slave-prefetch tool is designed to try to execute a read-only approximation of the write workload that the replica is about to have to perform. It is meant to do this just a little bit before the replication thread (which can only be true if replication is lagging), so that when the replica replays writes to execute replication, it doesn&amp;rsquo;t have to wait for disk I/O.&lt;/p&gt;
+
+&lt;p&gt;Keeping caches warmed up for production traffic requires that the &lt;em&gt;read&lt;/em&gt; workload, which does not flow through relay logs, is executed on the server. If you point mk-slave-prefetch at a server, you&amp;rsquo;re just double-executing the &lt;em&gt;write&lt;/em&gt; workload in a read-only fashion.&lt;/p&gt;
+
+&lt;p&gt;Perhaps an example will clarify. Suppose that a master database has a bunch of writes to WritableTable, and lots and lots of reads to ReadableTable. On the replica, the only queries in the relay log will be on WritableTable. And what will mk-slave-prefetch be doing? Executing SELECT queries against WritableTable. No traffic on ReadableTable at all. If you switch to use the replica as the primary server, ReadableTable&amp;rsquo;s data won&amp;rsquo;t be in the caches.&lt;/p&gt;
+
+&lt;p&gt;To actually warm up the replica, you need to replay the queries against the ReadableTable. You can only find those by looking at the master. You can read its query logs, or watch its processlist, or capture TCP traffic, or any other method of capturing read traffic. There is a feature built into mk-query-digest to help you capture and replay these against the replica: &lt;a href=&#34;http://www.maatkit.org/doc/mk-query-digest.html#execute&#34;&gt;&amp;#8211;execute&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A parting note: mk-slave-prefetch is an extremely niche tool that generally doesn&amp;rsquo;t help replicas keep up with their masters. Only in very special cases is the hardware, data, and workload suitable for what it does.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Easy on the eyes: the solarized color theme</title>
+          <link>https://www.xaprb.com/blog/2011/07/28/easy-on-the-eyes-the-solarized-color-theme/</link>
+          <pubDate>Thu, 28 Jul 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/07/28/easy-on-the-eyes-the-solarized-color-theme/</guid>
+          <description>&lt;p&gt;I recently set up the &lt;a href=&#34;http://ethanschoonover.com/solarized&#34;&gt;solarized&lt;/a&gt; color theme for my terminal emulator. I&amp;rsquo;ve been meaning to do this for a while, but procrastinated. However, I finally got really frustrated with the colors I get from &amp;ldquo;ls&amp;rdquo; sometimes &amp;ndash; I use a dark terminal with light fonts, and the directory listings in particular can become invisible, with dark blue on black.&lt;/p&gt;
+
+&lt;p&gt;Solarized is much improved. All of the colors work well together and are easy on the eyes. What a relief! Recommended for programmers and system administrators. There are plugins or configuration files for a huge variety of programming environments and programs, including Vim of course.&lt;/p&gt;
+
+&lt;p&gt;I use XFCE&amp;rsquo;s terminal, and I found that there was no terminal configuration file for it in the download. But I found a workaround: just append the colors listed in &lt;a href=&#34;https://github.com/sgerrand/solarized/blob/7541ef797ee9a2ef7d95d349f8ae600a5d1b2aef/xfce4-terminal-colors-solarized/terminalrc&#34;&gt;this file&lt;/a&gt; to the end of $HOME/.config/Terminal/terminalrc.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>I&#39;ll be presenting at Postgres Open 2011</title>
+          <link>https://www.xaprb.com/blog/2011/07/19/ill-be-presenting-at-postgres-open-2011/</link>
+          <pubDate>Tue, 19 Jul 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/07/19/ill-be-presenting-at-postgres-open-2011/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ve been accepted to present at the brand-new and very exciting &lt;a href=&#34;http://postgresopen.org/&#34;&gt;Postgres Open 2011&lt;/a&gt; about system scaling, TCP traffic, and mathematical modeling. I&amp;rsquo;m really looking forward to it &amp;ndash; it will be my first PostgreSQL conference in a couple of years! See you there.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Planned change in Maatkit and Aspersa development</title>
+          <link>https://www.xaprb.com/blog/2011/07/06/planned-change-in-maatkit-aspersa-development/</link>
+          <pubDate>Wed, 06 Jul 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/07/06/planned-change-in-maatkit-aspersa-development/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ve just sent &lt;a href=&#34;https://groups.google.com/d/topic/maatkit-discuss/JWW6QEbDoj8/discussion&#34;&gt;an email to the Maatkit discussion list&lt;/a&gt; to announce a planned change to how Maatkit (and Aspersa) are developed. In short, Percona plans to create a Percona Toolkit of MySQL-related utilities, as a fork of Maatkit and Aspersa. I&amp;rsquo;m very happy about this change, and I welcome your responses to that thread on the discussion list.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>How I ended my trial of Gnome 3</title>
+          <link>https://www.xaprb.com/blog/2011/06/28/how-i-ended-my-trial-of-gnome-3/</link>
+          <pubDate>Tue, 28 Jun 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/06/28/how-i-ended-my-trial-of-gnome-3/</guid>
+          <description>&lt;p&gt;tl;dr version: I like XFCE better than Gnome 3.&lt;/p&gt;
+
+&lt;p&gt;I wrote &lt;a href=&#34;https://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/&#34;&gt;previously&lt;/a&gt; about trying out Gnome 3. I&amp;rsquo;ve been using it for about a month now, and it&amp;rsquo;s time for me to make a decision about whether to keep using it or revert to Gnome 2. I&amp;rsquo;m actually on vacation, which ends soon. I need to do this before vacation ends, so I can be fully productive at work.&lt;/p&gt;
+
+&lt;p&gt;My ultimate impression of Gnome 3 is that it&amp;rsquo;s very slick, and makes significant improvements in some ways, but it&amp;rsquo;s not very usable for my purposes, and has too many self-contradictions. I still have the complaints I listed in my earlier blog post, such as the identity crisis between keyboard and mouse use. It is geared to keyboard control in some ways, but not enough to really work, and at the same time it&amp;rsquo;s hard to use it with the mouse. For example, it wastes space on items such as huge thick titlebars (what is that for, if not for the mouse to grab?). Yet window borders are only 1 pixel thick, which is very hard to grab with the mouse when I want to resize, and there are no minimize buttons by default. And there is a big black bar across the top of my screen, which contains a lot of useless items I normally hide. At the same time, this bar isn&amp;rsquo;t configurable and I can&amp;rsquo;t put the things I actually want onto it, so it simply sits there making part of my screen unusable.&lt;/p&gt;
+
+&lt;p&gt;After using Gnome 3 for a while, and trying to customize it to my liking, I gave up a couple of days ago. There are simply too many things that were either designed in a way I don&amp;rsquo;t like, or don&amp;rsquo;t work as designed (bugs). At this point, I revisited my reasons for using Gnome. I used to use XFCE, and Fluxbox before that, but I ultimately decided to use Gnome because it was the default, and I want to avoid customizing my environment as much as possible. Gnome had gotten to the point where it was about as good as anything else, for my purposes.&lt;/p&gt;
+
+&lt;p&gt;So instead of reverting to Gnome 2, since I&amp;rsquo;m going to customize my environment anyway, I decided to go back to XFCE instead. And now I&amp;rsquo;m happy again. It&amp;rsquo;s simple, usable, functional, attractive, and fast. It&amp;rsquo;s easy to customize slightly to my taste (e.g. moving the taskbar to the bottom of the screen, Windows style). And Alt-TAB works sanely. And, I get back some of the things I always missed, such as one-click ways to maximize windows vertically or horizontally.&lt;/p&gt;
+
+&lt;p&gt;When Fedora 16 comes out I&amp;rsquo;ll revisit Gnome 3 and see if it has improved, but for now I&amp;rsquo;m done with my evaluation. I also just set up a new computer for my dad, who&amp;rsquo;s a Windows user, and installed Fedora 14 with Gnome 2, instead of Fedora 15. I hope the Gnome developers are able to collect and integrate enough feedback to make a groundbreaking Gnome 3 interface that still does what people expect and works the way they work, because that is &lt;em&gt;the&lt;/em&gt; key to getting more adoption.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Impressions of Fedora 15 with Gnome 3</title>
+          <link>https://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/</link>
+          <pubDate>Tue, 07 Jun 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/</guid>
+          <description>&lt;p&gt;I finally upgraded from Fedora 13 to Fedora 15 on my beloved &lt;a href=&#34;http://www.amazon.com/dp/B002P3KMVC?tag=xaprb-20&#34;&gt;ASUS-UL30A-X5&lt;/a&gt;. It includes the new Gnome 3, with the &amp;ldquo;Gnome Shell&amp;rdquo; interface. It&amp;rsquo;s quite different from anything else I&amp;rsquo;ve used, and you can read lots of positive and negative impressions around the web.&lt;/p&gt;
+
+&lt;p&gt;Fedora 15 and Gnome 3 have awesome support for my laptop&amp;rsquo;s hardware. It&amp;rsquo;s simply flawless. You could not expect better software/hardware integration if you paid thousands of dollars for something from Steve Jobs. Fedora has been great about this for a long time, actually, although there was a video driver problem in Fedora 13 that would sometimes kernel-panic if I did a lot of suspending and resuming combined with plugging and unplugging external monitors. That&amp;rsquo;s not a problem I&amp;rsquo;ve seen in this release.&lt;/p&gt;
+
+&lt;p&gt;This is my work laptop, so it&amp;rsquo;s not important whether it&amp;rsquo;s cool or exciting. I am generally dealing with a lot of open windows, rapidly switching between them, opening new programs, finding files and directories, and so on. I need the interface to help me with that. So far, results are very positive, with a few things that are either giving me withdrawal pains or simply aren&amp;rsquo;t working as well as I need.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re considering using Gnome 3, don&amp;rsquo;t just try it out on a live CD for ten minutes and decide it&amp;rsquo;s lame. It&amp;rsquo;s completely new and different, and you need to spend a little time actually learning it. You had to learn Mac or Windows or whatever you currently use; if you struggle with Gnome 3 at first, stop struggling and read the documentation for 15 minutes or so. The best and fastest place to get started is with the &lt;a href=&#34;https://live.gnome.org/GnomeShell/CheatSheet&#34;&gt;cheat sheet&lt;/a&gt;. You do things &lt;em&gt;differently&lt;/em&gt; in Gnome 3. You don&amp;rsquo;t have your familiar start menu, taskbar, system tray, desktop icons, and so on. You don&amp;rsquo;t use your mouse, in general, although you can if you want to.&lt;/p&gt;
+
+&lt;p&gt;The Gnome 3 desktop environment is definitely beautiful and well-done. I&amp;rsquo;d say it&amp;rsquo;s the best-designed, fastest, best-integrated desktop I&amp;rsquo;ve used on Linux, and perhaps all-around the best interface I&amp;rsquo;ve used on any platform. (Mac OS X, for example, is very pretty but not very usable IMO, although it&amp;rsquo;s getting better these days with the ability to control it more completely without using the mouse. I&amp;rsquo;m not a Mac fan, for what it&amp;rsquo;s worth.) You can call it eye candy if you wish, and I won&amp;rsquo;t argue, but I&amp;rsquo;ll point out that it&amp;rsquo;s extremely tasteful eye candy. I never felt that KDE&amp;rsquo;s eye candy was anything but garish, by contrast.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s extremely easy and efficient to find and open programs in Gnome 3; much better than using a &amp;ldquo;start menu.&amp;rdquo; Press the &amp;ldquo;Windows key&amp;rdquo; and type the first few letters of the program&amp;rsquo;s name, then press Enter. Done. You can do the same thing to switch between your open windows.&lt;/p&gt;
+
+&lt;p&gt;The most important thing for me is managing a lot of open windows while switching between things a lot. This is the nature of my work, not something I&amp;rsquo;m doing wrong. I haven&amp;rsquo;t gotten used to this yet. I still want to be able to choose a window from the taskbar with my mouse, when I&amp;rsquo;m working with a mouse. It&amp;rsquo;s nice to be able to switch to a window with the keyboard quickly, but I need both abilities. Some activities, such as web browsing and graphics editing, are more mouse-driven. It&amp;rsquo;s most important to me that I don&amp;rsquo;t have to switch between the mouse and the keyboard, rather than solely that the keyboard can be used very easily. When I&amp;rsquo;m text editing in Vim (100% keyboard driven), the abilities to find and switch to other windows with just the keyboard are awesome. But I need both kinds of usability.&lt;/p&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t gotten used to the distinction between alt-tab and alt-backtick, for switching between groups of applications and switching between windows within an application group. I might ultimately decide to configure the behavior back to alt-tab&amp;rsquo;s old familiar behavior. I don&amp;rsquo;t really think of groups of windows as applications/activities in a unit, which I think the Gnome 3 interface really assumes is the case. I group windows by using tabbed interfaces (browser, for example) in most cases; and when I have multiple windows of a single application open, they&amp;rsquo;re usually not related. For example, I&amp;rsquo;ll have several terminals open, but they&amp;rsquo;re not all for one task. I&amp;rsquo;m more likely to have Firefox with three tabs open, and three terminals, and an email or two, and a chat window &amp;ndash; and the three terminals all correspond to different activities.&lt;/p&gt;
+
+&lt;p&gt;Gnome 3&amp;#8242;s partial answer to this task grouping is completely redesigned workspace support. It&amp;rsquo;s awesome &amp;ndash; it&amp;rsquo;s the way it always should have worked. But I&amp;rsquo;m not quite used to using it yet. I expect to use it a lot more as I relearn/unlearn old habits. In the meantime, when I have several Skype chats open and I want to find one of them, it&amp;rsquo;s a bit painful for me because Gnome wants to switch me to Skype, as a whole, rather than switching me to any given chat window. And if one of them is buried and visually not accessible, it&amp;rsquo;s hard for me to use the keyboard to get to it.&lt;/p&gt;
+
+&lt;p&gt;I use IRC a lot at work. I usually use XChat, but I decided to give the Gnome messaging platform a try. It&amp;rsquo;s basically Empathy, tightly integrated into the desktop environment, to make chatting easy and unintrusive. These &lt;a href=&#34;http://www.gnome.org/gnome-3/&#34;&gt;videos&lt;/a&gt; show how this works. Unfortunately, Empathy isn&amp;rsquo;t a very richly featured IRC client, and this is one of those tools that I use so much and so specifically that I have special needs. I was able to tweak Empathy to make it alert me when people mentioned me by name, but I ran out of some other configuration options that I need. XChat lets me create custom key bindings to change my nickname easily, custom highlight words, and so on. From what I can see so far, Empathy doesn&amp;rsquo;t have that ability. And I&amp;rsquo;ve gotten confused or lost a bit of chat history/context a couple of times when odd things happened, such as the person at the other end of a private message chat changing his nickname. I might just need to learn how to use Empathy better, so I&amp;rsquo;m reserving my judgment a bit before I switch back to XChat. But at this point I think that Empathy is better designed for the &amp;ldquo;AOL instant messenger&amp;rdquo; type of chatting than it is for IRC, with its concept of multiple people in a single channel with changing nicknames.&lt;/p&gt;
+
+&lt;p&gt;I had to change one of the default window manager behaviors. My email client (Claws Mail) opens a new window to compose a message, and I have customized Claws to do almost everything with the keyboard. So when I press &amp;lsquo;c&amp;rsquo;, it opens a new message window. Gnome 3 decided to place this window behind my Claws Mail window, with the focus remaining on the main window, and a notification that my new window is ready to use. But then I have to switch focus to the new window to actually use it. This doesn&amp;rsquo;t work for me, so I started gconf-editor and changed the value of /apps/metacity/general/new_windows_always_on_top. That solved the problem.&lt;/p&gt;
+
+&lt;p&gt;I absolutely rely on Revelation for password management, and it has a nice panel applet / widget that I used heavily in Gnome 2. Unfortunately, Gnome 3 has no panels. So I have to use the Revelation program directly, instead of the applet. This is painful. The Revelation interface is not very good. I searched around for another password manager, but couldn&amp;rsquo;t find anything better (they all look worse, frankly). I don&amp;rsquo;t think that the native Gnome keyring manager is the solution I&amp;rsquo;m looking for. I have nearly 200 passwords, and I use dozens of them actively every day &amp;ndash; and the number of paswords probably grows by two or three a week. I would be willing to pay some money for a really good password manager with tight Gnome integration. I&amp;rsquo;d love something keyboard-driven, that I can switch my focus to, type a few characters to search for the account I need to use, hit TAB to highlight the password, copy with CTRL-C, dismiss with ESC, and be on my way.&lt;/p&gt;
+
+&lt;p&gt;The default Gnome 3 interface is too gray and colorless. Active and inactive windows look the same. It&amp;rsquo;s too uniform. I wish the color theme were slightly more imaginative. And the window titlebars are too thick &amp;ndash; it uses too much space. I think all of these things are fixable, but I don&amp;rsquo;t see an easy way to change the visual theme from the preferences dialog. I think I need to install some add-on to do this.&lt;/p&gt;
+
+&lt;p&gt;That brings up another minor wish: the system and user preferences don&amp;rsquo;t seem complete. There isn&amp;rsquo;t enough control in the control panel, so to speak. If you search the Web for tweaks, you see a lot of gconf-editor command-line one-liners. This isn&amp;rsquo;t good for most users; most people need a graphical utility that groups configuration settings together nicely for them. I assume that this is just because it&amp;rsquo;s new, and a lot of the most popular tweaks and add-ons will find their way into the next Gnome 3 release as native, built-in preferences dialogs.&lt;/p&gt;
+
+&lt;p&gt;In summary, I really like Gnome 3 and thank the Gnome team very much for creating it. I hope that many of the hiccups I&amp;rsquo;ve seen so far are just early-adopter syndrome, and it&amp;rsquo;ll get more complete and well-rounded in future releases. I probably need better and more configurable IRC functionality if I&amp;rsquo;m going to switch to using the built-in messaging/chat functionality, and I definitely need a better password manager in general. I might also need a taskbar or something similar to help me switch between running applications and windows when I&amp;rsquo;m using my mouse to control my computer. But all of this is early impressions, and I&amp;rsquo;m trying to learn to be a more skilful Gnome user, so I&amp;rsquo;ll see how that goes.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Using the Nook Color as a full-featured Android tablet</title>
+          <link>https://www.xaprb.com/blog/2011/06/04/using-the-nook-color-as-a-full-featured-android-tablet/</link>
+          <pubDate>Sat, 04 Jun 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/06/04/using-the-nook-color-as-a-full-featured-android-tablet/</guid>
+          <description>
+
+&lt;p&gt;I bought a &lt;a href=&#34;http://www.amazon.com/Barnes-Noble-Color-eBook-Tablet/dp/1400532655/?tag=xaprb-20&#34;&gt;Barnes and Noble Nook Color&lt;/a&gt; e-book reader and ripped out the Nook software, replacing it with the &lt;a href=&#34;http://www.cyanogenmod.com/&#34;&gt;CyanogenMod&lt;/a&gt; distribution of the Android OS. It&amp;rsquo;s really, really nice hardware, and CyanogenMod (CM) is really, really nice software. I love them both, and my regular readers will remember that I&amp;rsquo;m &lt;em&gt;not a gadget guy&lt;/em&gt;. Read on for more.&lt;/p&gt;
+
+&lt;p&gt;I never thought I&amp;rsquo;d get a tablet, until my phone died and I got a Droid 2 as a replacement. With all those gadgets, I just started to find myself using my phone for reading my RSS feeds and so on &amp;ndash; but hating how small the screen was. I started to think again about a tablet after experiencing how handy the smartphone&amp;rsquo;s extra features are.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-nook-color-hardware&#34;&gt;The Nook Color Hardware&lt;/h3&gt;
+
+&lt;p&gt;The Nook Color is a medium-sized Android tablet with a screen that&amp;rsquo;s the same size as the &lt;a href=&#34;http://www.amazon.com/Samsung-Galaxy-Tab-AT-T/dp/B004CYEQF0/?tag=xaprb-20&#34;&gt;Samsung Galaxy Tab&lt;/a&gt;. It&amp;rsquo;s a perfect size for carrying around &amp;ndash; much better than iPads and Xooms and so on, which are just too big for my taste. This device literally fits in the pocket of my jeans (&lt;a href=&#34;https://nookdeveloper.barnesandnoble.com/product/nook-color-specs.html&#34;&gt;specs&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;The screen is amazing. It&amp;rsquo;s super sharp. But the Nook Color doesn&amp;rsquo;t have a microphone or a camera, and it doesn&amp;rsquo;t have any phone service. This is fine. I don&amp;rsquo;t want these items. I want a tablet to use primarily at home for consuming content such as blogs, books, newspapers, music, movies, and so on.&lt;/p&gt;
+
+&lt;p&gt;The best parts: 1) it&amp;rsquo;s way cheaper than a Galaxy Tab or similar tablets. It&amp;rsquo;s $250 at the store. And 2) it&amp;rsquo;s really easy to take off the stripped-down version of Android that comes with it, and put something better on it. Which brings me to my next point.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-software&#34;&gt;The Software&lt;/h3&gt;
+
+&lt;p&gt;When you unpack the box, the Nook has a pretty nice little e-reader installed, with a simplified Android interface. It has limited functionality, which is fine. It does have a web browser and a couple other things, and BN recently added their own application store. But it&amp;rsquo;s really kind of lame. You can only get a small fraction of the apps that you could get through the Android Market.&lt;/p&gt;
+
+&lt;p&gt;I updated to CyanogenMod in two stages. First, I simply rooted the device and made it possible to install arbitrary apps from the Android Market. There&amp;rsquo;s a nice, easy process to do this. It&amp;rsquo;s called &lt;a href=&#34;http://forum.xda-developers.com/showpost.php?p=13270739&amp;amp;#038;postcount=1&#34;&gt;Manual Nooter&lt;/a&gt;. I tried this first instead of just going to CyanogenMod because I wanted to see what it was like. It was okay, but it was really obvious that it was a sort of layer on top of the underlying Nook. Pressing the Home button, for example, brought up a prompt to use the Nook home screen or the hijacked home screen for the new software. I tinkered around with this for a while, enough to determine that I didn&amp;rsquo;t like the patched look and feel. At the same time, I learned that the applications I wanted would work just fine.&lt;/p&gt;
+
+&lt;p&gt;So I moved on to CyanogenMod. Early reviews I&amp;rsquo;d read of this said it wasn&amp;rsquo;t ready for prime time on the Nook, but the newer updates seemed to be well received. So I backed up everything and took the plunge.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s really ridiculously easy to install CyanogenMod on the Nook, even easier if you don&amp;rsquo;t first update your Nook operating system. It took me longer to burn a bootable ROM on a MicroSD card than anything else. Full instructions can be found beginning at &lt;a href=&#34;http://www.cyanogenmod.com/devices/nook-color&#34;&gt;this page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The result is just brilliant. I&amp;rsquo;ve now installed my preferred apps, stripped down the interface by removing some stuff I don&amp;rsquo;t want, such as multiple desktops (CyanogenMod is jammed with features), and I have a simple, elegant, perfectly functioning Android tablet. And I really mean it &amp;ndash; there are no rough edges or crashes or anything you might expect from a third-party OS on your tablet. In fact, one of the things I like the most is that it doesn&amp;rsquo;t come with pre-installed adware, as my Droid did (and the stuff on the Droid can&amp;rsquo;t be uninstalled without rooting it and voiding the warranty, which is not something I&amp;rsquo;m going to do on my work phone).&lt;/p&gt;
+
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;If you want a small, light, thin tablet with WiFi that you can hold in one hand for reading books and newspapers and so on, which is easy to put in a pocket or purse and carry with you, and doesn&amp;rsquo;t cost much, then consider the Nook Color. If you want to turn it into something much more full-featured, then consider ripping out the Nook software and replacing it with CyanogenMod. The result is really superb.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Congrats to New Relic</title>
+          <link>https://www.xaprb.com/blog/2011/05/17/congrats-to-new-relic/</link>
+          <pubDate>Tue, 17 May 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/05/17/congrats-to-new-relic/</guid>
+          <description>&lt;p&gt;New Relic just &lt;a href=&#34;http://blog.newrelic.com/2011/05/17/real-user-monitoring-has-arrived/&#34;&gt;announced the release of new features&lt;/a&gt; that track client-side (front-end) performance, including network time, DOM processing time, and total render time in the browser.&lt;/p&gt;
+
+&lt;p&gt;This is really great functionality. If you aren&amp;rsquo;t using New Relic, you really ought to. It is a web interface to application profiling. It helps you be scientific about performance analysis without knowing it, because the functionality and the user interface make the right thing so obvious you won&amp;rsquo;t even realize you&amp;rsquo;re being methodical and focusing on what matters. And it&amp;rsquo;s got a free introductory level that isn&amp;rsquo;t crippled. A great product just got greater.&lt;/p&gt;
+</description>
+        </item>
+    
+
+  </channel>
+</rss>

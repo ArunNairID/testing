@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Can we afford big data, or do we need smart data? &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Can we afford big data, or do we need smart data?" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2012/11/15/can-we-afford-big-data-or-do-we-need-smart-data/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2012/11/15/can-we-afford-big-data-or-do-we-need-smart-data/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Can we afford big data, or do we need smart data?</h1>
+  <span class="post-date">Thu, Nov 15, 2012 in
+		
+		<a href="/categories/commentary" class="btn btn-primary">Commentary</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f11%2f15%2fcan-we-afford-big-data-or-do-we-need-smart-data%2f&text=Can%20we%20afford%20big%20data%2c%20or%20do%20we%20need%20smart%20data%3f:https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f11%2f15%2fcan-we-afford-big-data-or-do-we-need-smart-data%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f11%2f15%2fcan-we-afford-big-data-or-do-we-need-smart-data%2f&title=Can%20we%20afford%20big%20data%2c%20or%20do%20we%20need%20smart%20data%3f&summary=Can%20we%20afford%20big%20data%2c%20or%20do%20we%20need%20smart%20data%3f&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f11%2f15%2fcan-we-afford-big-data-or-do-we-need-smart-data%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f11%2f15%2fcan-we-afford-big-data-or-do-we-need-smart-data%2f&t=Can%20we%20afford%20big%20data%2c%20or%20do%20we%20need%20smart%20data%3f" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f11%2f15%2fcan-we-afford-big-data-or-do-we-need-smart-data%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>With the Big Data craze that&rsquo;s sweeping the world of technology right now, I often ask myself whether we&rsquo;re deficit-spending, so to speak, with our data consumption habits. I&rsquo;ve seen repeated examples of being unwilling to get rid of data, even though it&rsquo;s unused and nobody can think of a future use for it. At the same time, much Big Data processing I&rsquo;ve seen is brute-force and costly: hitting a not-very-valuable nut with a giant, expensive sledgehammer. I think the combination of these two problems represents a giant opportunity, and I&rsquo;m going to call the solution Smart Data for lack of a better word.</p>
+
+<p>What&rsquo;s the problem, in 25 words or less? I think it&rsquo;s that we&rsquo;re collecting a lot of data <em>simply because we can</em>. Not because we know of any good use for it, but just because it&rsquo;s there.</p>
+
+<p>What is the real cost of all of this data? I think we all know we&rsquo;re well behind the curve in making use of it. A huge industry is springing up to try to catch up to that. It&rsquo;s not a cheap industry, by and large, and I am not sure how much costs can come down. I think that we&rsquo;re going to get steamrolled by this. Organizations will own a lot of data, they&rsquo;ll need software and support organizations and staff to work with it, and they&rsquo;ll need a lot of hardware and power to store it and compute with it. By the time the problem becomes serious and they start to backpedal, there&rsquo;ll be a lot of political and psychological resistance. The costs of this resistance could be high: businesses could grow more slowly or fail, there will certainly be an environmental impact, there might be problems with security and privacy, and so forth.</p>
+
+<p>That&rsquo;s why I believe that if we had a crystal ball, we&rsquo;d find that we don&rsquo;t always need or want Big Data. We need and want what I&rsquo;m going to call Smart Data.</p>
+
+<p>I think most Big Data is utter garbage, collected in the hope that it might be useful, but then unused because no one can figure out whether it&rsquo;s useful. I think that much of it is inherently meaningless and useless, whether we can prove it or not.</p>
+
+<p>Smart Data is a recognition of this. I see it as a set of practices that I believe we need to build around the lifecycle of Big Data. Smart Data is what you get when Big Data is no longer exciting &ldquo;just because.&rdquo; The Smart Data lifecycle will vary, but might look like this:</p>
+
+<ol>
+<li>Capture and record everything, and don&rsquo;t delete any of it.</li>
+<li>Wait for a little while until the data is ready for analysis &ndash; say, several cycles of seasonality.</li>
+<li>Analyze the data and determine which portions of it are meaningful, and what meaningful metrics can be distilled from it.</li>
+<li>Aggregate, compress, distill, extract, and otherwise winnow down the Big Data until the meaning and knowledge remains. In most cases I believe this will constitute a tiny fraction of the original dataset.</li>
+<li>Discard the original dataset, or place it into offline storage if you must.</li>
+<li>Stop retaining the whole incoming data stream. I see a variety of options here &ndash; short-term retention, upfront winnowing, realtime streaming analysis and immediate discarding, and so on.</li>
+<li>Repeat. If you have a new question that you think the original data can answer, but the distilled data can&rsquo;t answer, then either go to your archives and pull it out, or if you&rsquo;ve discarded it, start again at step 1 for a while and accumulate enough data to answer the question.</li>
+</ol>
+
+<p>Here&rsquo;s a diagram that expresses some of these ideas.</p>
+
+<div id="attachment_2961" class="wp-caption aligncenter" style="width: 310px">
+  <img src="/media/2012/11/smart-data-lifecycle-300x268.png" alt="" title="smart-data-lifecycle" width="300" height="268" class="size-medium wp-image-2961" /><p class="wp-caption-text">
+    Smart Data Lifecycle
+  </p>
+</div>
+
+<p>I believe that there&rsquo;s an opportunity to keep the most valuable data and throw away the rest, because I&rsquo;ve been able to do that in my own work. Much of the research I&rsquo;ve done into MySQL performance, for example, is based on ignoring the huge stream of irrelevant data, and focusing on the signal buried in the noise. My work on extracting performance and scalability metrics from TCP traffic is an example, as is my more recent adaptive fault detection work. I&rsquo;ve seen alternative implementations of similar ideas that require enormous amounts of data and very expensive computation, yet don&rsquo;t appear to provide any better results than my cheap-and-easy algorithms that operate efficiently on small amounts of data. I believe this approach represents a competitive advantage for businesses in particular.</p>
+
+<p>What do you think? Are we drowning in data and we don&rsquo;t know it yet, or am I overreacting to a problem that doesn&rsquo;t exist?</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2012/11/20/lessons-learned-from-the-sublime-text-editor/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2012/11/13/its-not-just-database-servers/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2012\/11\/15\/can-we-afford-big-data-or-do-we-need-smart-data\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

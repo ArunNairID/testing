@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      When can I have a big server in the cloud? &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="When can I have a big server in the cloud?" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2011/06/10/when-can-i-have-a-big-server-in-the-cloud/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2011/06/10/when-can-i-have-a-big-server-in-the-cloud/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">When can I have a big server in the cloud?</h1>
+  <span class="post-date">Fri, Jun 10, 2011 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/high-availability" class="btn btn-primary">High Availability</a>
+		
+		<a href="/categories/performance" class="btn btn-primary">Performance</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f06%2f10%2fwhen-can-i-have-a-big-server-in-the-cloud%2f&text=When%20can%20I%20have%20a%20big%20server%20in%20the%20cloud%3f:https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f06%2f10%2fwhen-can-i-have-a-big-server-in-the-cloud%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f06%2f10%2fwhen-can-i-have-a-big-server-in-the-cloud%2f&title=When%20can%20I%20have%20a%20big%20server%20in%20the%20cloud%3f&summary=When%20can%20I%20have%20a%20big%20server%20in%20the%20cloud%3f&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f06%2f10%2fwhen-can-i-have-a-big-server-in-the-cloud%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f06%2f10%2fwhen-can-i-have-a-big-server-in-the-cloud%2f&t=When%20can%20I%20have%20a%20big%20server%20in%20the%20cloud%3f" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f06%2f10%2fwhen-can-i-have-a-big-server-in-the-cloud%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>I was at a conference recently talking with a Major Cloud Hosting Provider and mentioned that for database servers, I really want large instances, quite a bit larger than the largest I can get now. The lack of cloud servers with lots of memory, many <em>fast</em> cores, and fast I/O and network performance leads to premature sharding, which is costly. A large number of applications can currently run on a single real server, but would require sharding to run in any of the popular cloud providers&rsquo; environments. And many of those applications aren&rsquo;t growing rapidly, so by the time they outgrow today&rsquo;s hardware we can pretty much count on simply upgrading and staying on a single machine.</p>
+
+<p>The person I was talking to actually seemed to become angry at me, and basically called me an idiot. This person&rsquo;s opinion is that no one should be running on anything larger than 4GB of memory, and anyone who doesn&rsquo;t build their system to be sharded and massively horizontally scaled is clueless.</p>
+
+<p>I&rsquo;ve received similar push-back from a lot of cloud hosting providers. When I work through the math with clients, a lot of them don&rsquo;t like the ultimate price/performance ratio offered by cloud hosting. Hype doesn&rsquo;t drive everyone&rsquo;s business decisions, so a lot of people are wisely staying far away from cloud hosting for their applications, or even moving whole applications out of cloud hosting into real hardware to consolidate machines and save a lot of money. Some of them are using flash storage devices such as Fusion-io to further lower their TCO (this isn&rsquo;t the right answer for every app, though).</p>
+
+<p>Why do cloud hosting providers work so hard to make everyone buy lots of anemic machines and shard their applications an order of magnitude more than is required? Why aren&rsquo;t they jumping to offer really beefy instances? I think there are a couple of simple reasons.</p>
+
+<p>First, they want to colocate virtual machines and over-provision, just as airlines sell more tickets than there are seats in the plane. It&rsquo;s a numbers game: sell more capacity than you really have, and bet on some of the instances not using all resources allocated to them. Win! Of course, this is only possible with lots of small instances; the law of large numbers doesn&rsquo;t work without lots of instances, and large instances can&rsquo;t be colocated. Cloud providers tend to dislike dedicated instances, which leads to the second reason. They don&rsquo;t want to make strong claims about the availability of any particular machine. This is where the cloud paradigm of &ldquo;you must build to recover from machines vanishing without warning&rdquo; comes from. A dedicated beefy instance wouldn&rsquo;t let the hosting provider push that responsibility onto the application.</p>
+
+<p>There are lots more reasons &ndash; all of them combining into one big overall &ldquo;cloud application architecture best practice&rdquo; &ndash; but I think those are two of the showstoppers.</p>
+
+<p>I really think this is a wrong paradigm. People talk about the cloud being the technology of the future, but in many ways it&rsquo;s pretty stone-age compared to what smart system architects can achieve with high-quality hardware and networking at a much lower cost, with very strong guarantees of performance, consistency, and availability.</p>
+
+<p>Cloud computing is new enough that we don&rsquo;t understand, in a collective sense, how to think about it. (I know that lots of individuals do, but as a whole, there isn&rsquo;t much of a shared understanding.) The real value proposition that I want to see emerge from cloud computing is pretty much orthogonal to what everyone&rsquo;s raving about these days. I want to see the DevOps engineering discipline build momentum around the idea that systems should be treated as services, with architectural components provisioned and controlled through APIs. That can be done completely independently of many of the characteristics of current cloud computing platforms (virtualization, ephemerality, horizontally scaled architectures&hellip;)</p>
+
+<p>And like most people, I&rsquo;ve got an ego and I don&rsquo;t appreciate repeatedly being called a moron by cloud computing providers&rsquo; sales people, who don&rsquo;t know anything about running database servers. I can do math and understand price/performance, and I know the cost and difficulty of building a sharded application. I look forward to the day when I don&rsquo;t have to just bite my tongue and walk on to the next booth. I look forward to cloud hosting providers advancing to the year 2005 or so. I&rsquo;m sure it will happen as we figure this all out.</p>
+
+<p>Feel free to comment, but don&rsquo;t expect me to approve your comment if you&rsquo;re from a cloud provider and you&rsquo;re plugging your platform :)</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2011/06/11/vim-the-ultimate-command-line-password-manager/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2011/06/09/a-review-of-mysql-replication-by-russell-dyer/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2011\/06\/10\/when-can-i-have-a-big-server-in-the-cloud\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

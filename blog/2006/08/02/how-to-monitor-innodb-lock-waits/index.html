@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How to monitor InnoDB lock waits &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How to monitor InnoDB lock waits" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2006/08/02/how-to-monitor-innodb-lock-waits/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2006/08/02/how-to-monitor-innodb-lock-waits/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to monitor InnoDB lock waits</h1>
+  <span class="post-date">Wed, Aug 2, 2006 in
+		
+		<a href="/categories/monitoring" class="btn btn-primary">Monitoring</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f02%2fhow-to-monitor-innodb-lock-waits%2f&text=How%20to%20monitor%20InnoDB%20lock%20waits:https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f02%2fhow-to-monitor-innodb-lock-waits%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f02%2fhow-to-monitor-innodb-lock-waits%2f&title=How%20to%20monitor%20InnoDB%20lock%20waits&summary=How%20to%20monitor%20InnoDB%20lock%20waits&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f02%2fhow-to-monitor-innodb-lock-waits%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f02%2fhow-to-monitor-innodb-lock-waits%2f&t=How%20to%20monitor%20InnoDB%20lock%20waits" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f02%2fhow-to-monitor-innodb-lock-waits%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>This is one in a series of articles on how to use the innotop MySQL and InnoDB monitor. In this article I show how <code>innotop</code> can display locks that are causing a transaction to wait.</p>
+
+<blockquote>
+<p>Note: <a href="https://vividcortex.com/">VividCortex</a> is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what
+your servers are doing in production. VividCortex offers <a href="https://vividcortex.com/monitoring/mysql/">MySQL performance
+monitoring</a> and <a href="https://vividcortex.com/monitoring/postgres/">PostgreSQL
+performance management</a> among many
+other features.</p>
+</blockquote>
+
+<p>First, the background. The output of <code>SHOW ENGINE INNODB STATUS</code>&rsquo;s transaction section prints InnoDB transactions, including information about the locks they&rsquo;re waiting for, if any:</p>
+
+<pre>---TRANSACTION 0 93789797, ACTIVE 20 sec, process no 9537, OS thread id 38900535
+9 starting index read
+mysql tables in use 1, locked 1
+LOCK WAIT 2 lock struct(s), heap size 320
+MySQL thread id 23733, query id 194861215 worker 192.168.0.31 xaprb Updating
+update test.test set a = 1 where a = 2
+------- TRX HAS BEEN WAITING 20 SEC FOR THIS LOCK TO BE GRANTED:
+RECORD LOCKS space id 0 page no 299998 n bits 200 index `PRIMARY` of table `test/test` trx id 0 93789797 lock_mode X locks rec but not gap waiting
+Record lock, heap no 77 PHYSICAL RECORD: n_fields 15; compact format; info bits 0
+[... a bunch of record dump information omitted here ...]</pre>
+
+<p>The important information there is the line beginning RECORD LOCKS. It, together with the line above it, tells what the transaction is waiting for, and for how long.</p>
+
+<p><code>innotop</code> parses this information and formats it for easier comprehension. It&rsquo;s possible to see which transactions are waiting by using the &ldquo;T&rdquo; key to enter InnoDB Transaction mode, and filtering or sorting away all transactions whose &ldquo;lock_wait_time&rdquo; is zero. You&rsquo;d use a similar set of steps as I described in my <a href="/blog/2006/07/31/how-to-analyze-innodb-mysql-locks/">previous article on finding who locks a table</a>.</p>
+
+<p>While this technique will show you which transactions are waiting, it won&rsquo;t show you what they&rsquo;re waiting for. If you have a high-concurrency environment, or if you just have a lot of table or index scans, you might see lots of transactions waiting for locks. Maybe you have a bunch of things being locked for a long time, in many different tables and indexes (not likely, or your server would probably be totally crippled). Or, more likely, there are just a few log-jams causing many transactions to wait. This could be due to bad database architecture, not a fast enough machine, badly written queries, or many other factors. You should be suspicious of badly written queries and badly designed tables first, unless you already know that&rsquo;s not the problem. That&rsquo;s why you need to know what everything is blocked on, and then examine the queries that use it.</p>
+
+<p>For that reason, I created a separate display mode for <code>innotop</code> (new in version 0.1.128), specifically to show information about lock waits. You enter that mode with the &ldquo;W&rdquo; key.</p>
+
+<p>By default it&rsquo;s a pretty terse display, for the reasons I mentioned above. It doesn&rsquo;t show a lot of information about the transactions; just the connection ID and some information about what it&rsquo;s waiting for. If you want to see what the connection is doing, you can toggle back to &ldquo;T&rdquo; or &ldquo;Q&rdquo; mode and get more details, including running <code>EXPLAIN</code> on the query (more about that in future articles). There is also more information that&rsquo;s hidden by default. You can press &ldquo;c&rdquo; to choose the columns you want to view.</p>
+
+<p>This is one method to identify the resources that are most often locked, but as always, I&rsquo;m curious to hear other ideas.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2006/08/02/what-to-do-when-innotop-crashes/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2006\/08\/02\/how-to-monitor-innodb-lock-waits\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

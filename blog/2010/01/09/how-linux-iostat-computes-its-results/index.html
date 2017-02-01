@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How Linux iostat Computes Metrics &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How Linux iostat Computes Metrics" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/media/2010/01/layers.jpg" />
+  <meta name="og:description" content="Explains how Linux iostat computes metrics such as await, queue size, and utilization; and more importantly, how to interpret those metrics" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2010/01/09/how-linux-iostat-computes-its-results/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2010/01/09/how-linux-iostat-computes-its-results/">
+  
+  <meta name="description" value="Explains how Linux iostat computes metrics such as await, queue size, and utilization; and more importantly, how to interpret those metrics">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How Linux iostat Computes Metrics</h1>
+  <span class="post-date">Sat, Jan 9, 2010 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/operations" class="btn btn-primary">Operations</a>
+		
+		<a href="/categories/monitoring" class="btn btn-primary">Monitoring</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2fhow-linux-iostat-computes-its-results%2f&text=How%20Linux%20iostat%20Computes%20Metrics:https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2fhow-linux-iostat-computes-its-results%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2fhow-linux-iostat-computes-its-results%2f&title=How%20Linux%20iostat%20Computes%20Metrics&summary=How%20Linux%20iostat%20Computes%20Metrics&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2fhow-linux-iostat-computes-its-results%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2fhow-linux-iostat-computes-its-results%2f&t=How%20Linux%20iostat%20Computes%20Metrics" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2fhow-linux-iostat-computes-its-results%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>The <code>iostat</code> tool is one of the most important for measuring disk performance, which of course is very relevant for database administrators, whether your chosen database is Postgres, MySQL, Oracle, or anything else that runs on GNU/Linux. Have you ever wondered where statistics like await (average wait for the request to complete) come from? If you look at the disk statistics the <a href="http://www.mjmwired.net/kernel/Documentation/iostats.txt">Linux kernel makes available through files such as /proc/diskstats</a>, you won&rsquo;t see await there. How does iostat compute await? For that matter, how does it compute the average queue size, service time, and utilization? This blog post will show you how that&rsquo;s computed.</p>
+
+<p><img src="/media/2010/01/layers.jpg" alt="Layers" /></p>
+
+<p></p>
+
+<p>First, let&rsquo;s look at the fields in /proc/diskstats. The order and location varies between kernels, but the following applies to 2.6 kernels. For reads and writes, the file contains the number of operations, number of operations merged because they were adjacent, number of sectors, and number of milliseconds spent. Those are available separately for reads and writes, although iostat groups them together in some cases. Additionally, you can find the number of operations in progress, total number of milliseconds during which I/Os were in progress, and the weighted number of milliseconds spent doing I/Os. Those are not available separately for reads and writes.</p>
+
+<p>The last one is very important. The field showing the number of operations in progress is transient &ndash; it shows you the instantaneous value, and this &ldquo;memoryless&rdquo; property means you can&rsquo;t use it to infer the number of I/O operations that are in progress on average. But the last field has memory, because it is defined as follows:</p>
+
+<blockquote>
+<p>Field 11 &ndash; weighted # of milliseconds spent doing I/Os This field is incremented at each I/O start, I/O completion, I/O merge, or read of these stats by the number of I/Os in progress (field 9) times the number of milliseconds spent doing I/O since the last update of this field. This can provide an easy measure of both I/O completion time and the backlog that may be accumulating.</p>
+</blockquote>
+
+<p>So the field indicates the total number of milliseconds that all requests have been in progress. If two requests have been waiting 100ms, then 200ms is added to the field. And thus it records what happened over the duration of the sampling interval, not just what&rsquo;s happening at the instant you look at the file. We&rsquo;ll come back to that later.</p>
+
+<p>Now, given two samples of I/O statistics and the time elapsed between them, we can easily compute everything iostat outputs in -dx mode. I&rsquo;ll take them slightly out of order to reflect how the computations are done internally.</p>
+
+<ul>
+<li>rrqm/s is merely the incremental merges divided by the number of seconds elapsed.</li>
+<li>wrqm/s is similarly simple, and r/s, w/s, rsec/s, and wsec/s are too.</li>
+<li>avgrq-sz is the number of sectors divided by the number of I/O operations.</li>
+<li>avgqu-sz is computed from the last field in the file &ndash; the one that has &ldquo;memory&rdquo; &ndash; divided by the milliseconds elapsed. Hence the units cancel out and you just get the average number of operations in progress during the time period. The name (short for &ldquo;average queue size&rdquo;) is a little bit ambiguous. This value doesn&rsquo;t show how many operations were queued but not yet being serviced &ndash; it shows how many were <em>either</em> in the queue waiting, <em>or</em> being serviced. The exact wording of the kernel documentation is &ldquo;&hellip;as requests are given to appropriate struct request_queue and decremented as they finish.&rdquo;</li>
+<li>%util is the total time spent doing I/Os, divided by the sampling interval. This tells you how much of the time the device was busy, but it doesn&rsquo;t really tell you whether it&rsquo;s reaching its limit of throughput, because the device could be backed by many disks and hence capable of multiple I/O operations simultaneously.</li>
+<li>await is the total time for all I/O operations summed, divided by the number of I/O operations completed.</li>
+<li>svctm is the most complex to derive. It is the utilization divided by the throughput. You saw utilization above; the throughput is the number of I/O operations in the time interval.</li>
+</ul>
+
+<p>Although the computations and their results seem both simple and cryptic, it turns out that you can derive a lot of information from the relationship between these various numbers.</p>
+
+<p>I&rsquo;ve shown how the numbers are computed, but now you might ask, why are those things true? Why are those the correct relationships to use when computing these metrics?</p>
+
+<p>The answer lies in several interrelated theories and properties:</p>
+
+<ol>
+<li>Queueing Theory. This is the study of &ldquo;customers&rdquo; arriving at &ldquo;servers&rdquo; to be
+serviced. In the disk&rsquo;s case, the customers are I/O requests, and the disks
+are the servers. Queueing theory explains the relationship between the length
+of the queue, the number of requests resident in the entire system at a given
+time, the amount of time spent waiting, the amount of time being serviced
+once you stop waiting and reach a device, and so on. The terminology iostat
+uses is rather confusing when compared to queueing theory&rsquo;s standard
+terminology. For example, avgqu-sz seems to be called &ldquo;average queue size,&rdquo;
+but strictly speaking, it is actually the average number of requests
+<em>resident</em>, not just queued. The number queued is a smaller number than those
+resident.</li>
+<li>Little&rsquo;s Law. If you don&rsquo;t know Little&rsquo;s Law, you should really learn it. It
+states that in a stable system, where all requests eventually complete, then
+over the long run, L = &lambda;W, or as I prefer to state it, N=XR. The number of
+requests (customers) resident in the system (whether queued or in service) is
+L or N. It is equal to the arrival rate &lambda; (or throughput X) times the
+residence time W (or response time R).</li>
+<li>The utilization law, &rho; = &lambda;S. This states that utilization is
+throughput times service time.</li>
+</ol>
+
+<p>If you&rsquo;d like to learn more about queueing theory and these relationships, I
+encourage you to do so. It&rsquo;s really required material for anyone doing
+performance-related work in my opinion. I also happen to have written what I
+believe is the most accessible and comprehensible <a href="https://www.vividcortex.com/resources/queueing-theory/">introduction to queueing
+theory</a> available.</p>
+
+<p>Image by <a href="https://www.flickr.com/photos/doug88888/3139395660">doug88888</a>.</p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2010/01/09/review-cacti-network-monitoring-kundu-lavlu/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2010/01/05/switching-from-ubuntu-to-fedora-and-thunderbird-to-claws-mail/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2010\/01\/09\/how-linux-iostat-computes-its-results\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

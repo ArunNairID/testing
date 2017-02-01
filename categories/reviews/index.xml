@@ -1,0 +1,1435 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> </title>
+    <link>https://www.xaprb.com/categories/reviews/index.xml</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>Copyright (c) 2016</rights>
+    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
+
+    
+        <item>
+          <title>The Best Lossy Music Compression</title>
+          <link>https://www.xaprb.com/blog/2016/02/21/best-itunes-mp3-format/</link>
+          <pubDate>Sun, 21 Feb 2016 11:12:56 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2016/02/21/best-itunes-mp3-format/</guid>
+          <description>&lt;p&gt;I noticed recently that Google Play Music has a set of features I wasn&amp;rsquo;t aware
+of before, and decided to give it a try. Through various kinds of &lt;a href=&#34;http://projects.csail.mit.edu/gsb/old-archive/gsb-archive/gsb2000-02-11.html&#34;&gt;yak
+shaving&lt;/a&gt;,
+I ended up tackling a project I&amp;rsquo;d wanted to look into for a while: &lt;strong&gt;which
+formats and settings are really the best for lossy music compression?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;What I learned was both fun and surprising, and ultimately highly practical. If
+you&amp;rsquo;re in a hurry, the summary is that high-quality variable-bitrate MP3
+produced with the LAME encoder is probably the best all-around choice if you
+want broad compatibility; if you want the best sound quality, though, AAC (Apple&amp;rsquo;s native format) or Ogg Vorbis are much better than MP3.&lt;/p&gt;
+
+&lt;p&gt;But before I get to that, let&amp;rsquo;s sharpen some yak razors, shall we?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/02/cymatics.jpg&#34; alt=&#34;Cymatics&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I have a large library of CDs. Although I listen to more music on Spotify now
+than on CD, many of my CDs are esoteric stuff that is not available on Spotify.
+For years I&amp;rsquo;ve tried keeping it in various music libraries and players so I can
+listen on-the-go. It was never a satisfactory solution. More recently I&amp;rsquo;ve been
+an Apple user, and gradually migrated all of my music into iTunes.
+Unfortunately, my collection is too large to sync to any mobile device or work
+laptop, so unless I&amp;rsquo;m at home, I can&amp;rsquo;t listen to my music.&lt;/p&gt;
+
+&lt;h3 id=&#34;reevaluating-google-play-music&#34;&gt;Reevaluating Google Play Music&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been aware of several services that let you upload your music library to
+the &amp;ldquo;cloud,&amp;rdquo; but was never happy with any of them. It always seemed that I could
+get most of what I wanted, but the lacking features were deal-killers in some
+way, so the situation remained: Spotify on the go, my personal library at home.
+As far as I could see, the choices looked kind of like this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spotify: great for subscription-based streaming, cluttered UI, doesn&amp;rsquo;t have
+all my music, doesn&amp;rsquo;t support uploading my personal music.&lt;/li&gt;
+&lt;li&gt;Apple services and devices: doesn&amp;rsquo;t fit all my music, too expensive, Music
+Match doesn&amp;rsquo;t seem to actually &lt;em&gt;match&lt;/em&gt; anything, no subscription-based streaming
+of stuff I haven&amp;rsquo;t purchased (although that&amp;rsquo;s changed recently). It&amp;rsquo;s been a
+while; maybe I should take another look at this too.&lt;/li&gt;
+&lt;li&gt;Amazon Cloud Player: doesn&amp;rsquo;t have a good library of stuff to stream, clunky
+UI, uploading features don&amp;rsquo;t work well (matching of songs doesn&amp;rsquo;t work).&lt;/li&gt;
+&lt;li&gt;Pandora, et al: niche.&lt;/li&gt;
+&lt;li&gt;Google Play Music: wasn&amp;rsquo;t really in my sphere of consciousness.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It all started with Neil Young. I just got nostalgic for his album &lt;em&gt;Silver and
+Gold&lt;/em&gt; one day, and I couldn&amp;rsquo;t find it on Spotify. I am an Amazon Prime member, so
+I thought to look there, but it wasn&amp;rsquo;t available. I own it on CD and didn&amp;rsquo;t want
+to buy it again. While looking around to see where I could get it (I wasn&amp;rsquo;t near
+my home), I stumbled upon Google Play Music again.&lt;/p&gt;
+
+&lt;p&gt;Google Play Music turns out to have a surprisingly nice UI on both the web and
+mobile apps, a good library of music for streaming via subscription, and
+supports uploading 50,000 songs on the free plan (enough for me). It also
+supports offline listening via downloading, and permits exporting files that you
+uploaded. Could it be the perfect service?&lt;/p&gt;
+
+&lt;p&gt;Because I&amp;rsquo;m already a longtime Spotify customer, I didn&amp;rsquo;t want to switch away
+fully to another service like Google Play Music, but I thought perhaps it&amp;rsquo;d be
+worth trying it out for uploads only, since that adds $0 to my current monthly
+cost.&lt;/p&gt;
+
+&lt;p&gt;So I installed the Google Music Manager, let it upload my library, and went on a
+trip.  While away, I cued up &lt;em&gt;Silver and Gold&lt;/em&gt;. &amp;ldquo;Good to see you, good to see you
+again,&amp;rdquo; it started, and I smiled. Good to see you again too, Neil.&lt;/p&gt;
+
+&lt;p&gt;But then my smile faded. the sound quality was awful! I was so bummed. You might
+already know that I&amp;rsquo;m &lt;a href=&#34;https://www.xaprb.com/blog/2014/01/16/bose-sennheiser-sony-noise-cancelling-headphones/&#34;&gt;kind of picky about the sound quality of my
+music&lt;/a&gt;. I&amp;rsquo;ve
+taken some care in importing my music into iTunes, and although occasionally I
+can hear that a song&amp;rsquo;s quality isn&amp;rsquo;t quite as good as I&amp;rsquo;d like, this was another
+matter altogether. It was really painful.&lt;/p&gt;
+
+&lt;h3 id=&#34;lossy-compression&#34;&gt;Lossy Compression&lt;/h3&gt;
+
+&lt;p&gt;Someday I&amp;rsquo;d like to &lt;a href=&#34;https://graphics.ethz.ch/teaching/mmcom12/slides/mp3_and_aac_brandenburg.pdf&#34;&gt;learn about lossy compression in detail by reading
+Karlheinz Brandenburg&amp;rsquo;s paper &lt;em&gt;MP3 and AAC explained&lt;/em&gt; more
+carefully&lt;/a&gt;,
+but my current understanding of it is that compression schemes such as MP3, Ogg
+Vorbis, and AAC discard portions of the sonic information that the human ear is
+less able to hear, in turn introducing errors that are designed to be hard to
+hear. These are based on &amp;ldquo;psychoacoustic models,&amp;rdquo; which I interpret in my
+layman&amp;rsquo;s terms as factors such as the following:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;When the music is loud, it&amp;rsquo;s harder to hear quiet sounds.&lt;/li&gt;
+&lt;li&gt;When the music is complicated, we tend to focus on the big themes, not the
+details, and we don&amp;rsquo;t hear well at the high and low frequency limits.&lt;/li&gt;
+&lt;li&gt;We don&amp;rsquo;t hear high and low frequencies well when they&amp;rsquo;re quiet.&lt;/li&gt;
+&lt;li&gt;Compression artifacts can be masked by the music itself (and thus inaudible)
+if they&amp;rsquo;re quiet enough.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I know there are a variety of compression artifacts. For some reason, the one my
+ear picks up the most is what I call a &amp;ldquo;swishy&amp;rdquo; sound, which I hear in high
+frequencies such as sibilant vowels, cymbals, and the like. When these sounds
+change in amplitude, their frequency spectrum seems to change unnaturally if the
+compression is too lossy, and I cringe. I may be misinterpreting what&amp;rsquo;s
+happening here, but that&amp;rsquo;s how it sounds to my ears: loud cymbals sound bright,
+but as they die out, they become muddy.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve also noticed that some songs tend to be hard edge-cases for lossy
+compression. For example, David Gray&amp;rsquo;s song &lt;em&gt;Fugitive&lt;/em&gt; requires very high
+quality settings to sound good to my ears. It sounds awful at compression
+settings that make other songs sound pretty good to me.&lt;/p&gt;
+
+&lt;p&gt;All lossy compression works by throwing away information, so it&amp;rsquo;s not surprising
+that these effects show up every so often. I accept that as part of the deal.
+But when it&amp;rsquo;s as bad as my Neil Young album sounded, it&amp;rsquo;s unbearable for me.&lt;/p&gt;
+
+&lt;p&gt;I would have noticed if my original import into iTunes had sounded
+this bad. What happened? I speculated that Google Play Music had
+transcoded the already-compressed file into another format, adding generation
+loss.  I found a &lt;a href=&#34;https://support.google.com/googleplay/answer/1100462&#34;&gt;help page on Google Play Music&amp;rsquo;s file format
+support&lt;/a&gt; that gave me a
+clue: any non-MP3 file is converted to an MP3 file at the same bit rate. Indeed,
+the song I was listening to downloaded (exported) as a 128k MP3 file, which is
+not very high quality, especially if it has been reencoded.&lt;/p&gt;
+
+&lt;p&gt;It seems straightforward to me that the only way to avoid this problem is to
+upload MP3 files to Google Play Music in the first place. I haven&amp;rsquo;t looked at my
+iTunes library, but I&amp;rsquo;m sure it is a variety of formats, including lots of AAC
+files (the iTunes default). I ripped those CDs
+over many years with many different programs. I&amp;rsquo;m not eager to throw it away and
+do it again.&lt;/p&gt;
+
+&lt;h3 id=&#34;comparing-lossy-compression-formats&#34;&gt;Comparing Lossy Compression Formats&lt;/h3&gt;
+
+&lt;p&gt;This piqued my curiosity, though: how good are the compression formats, anyway?
+I have been interested in lossy compression for many years. I remember being
+fascinated when MP3 first appeared on the scene, and learning about alternative
+formats such as VQF (TwinVQ), Real Audio.  I remember when WMA arrived, and then
+Ogg Vorbis, and the newest contender, &lt;a href=&#34;https://www.opus-codec.org/&#34;&gt;Opus&lt;/a&gt;.  The
+claimed benefit is usually better sound quality at lower bit rates (smaller file
+sizes). My unqualified, untested assumptions were that:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;MP3 wasn&amp;rsquo;t very good relative to its successors, but improved over time.&lt;/li&gt;
+&lt;li&gt;Vendor-specific formats such as WMA were not much better.&lt;/li&gt;
+&lt;li&gt;Ogg Vorbis was very good, but would never be widely accepted as a standard.&lt;/li&gt;
+&lt;li&gt;AAC I wasn&amp;rsquo;t sure about. I thought it was a proprietary Apple format; I
+was wrong.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;While browsing around a bit, an additional nuance caught my attention: the major
+MP3 encoding software is the free/opensource LAME and the proprietary, patented
+Fraunhofer encoding software. Apparently iTunes uses Fraunhofer software, not
+LAME, and it seems that lots of people believe LAME produces better sounding MP3
+files than Fraunhofer.&lt;/p&gt;
+
+&lt;p&gt;At this point I had a thought: leaving aside my subjective opinions of audio
+quality, it shouldn&amp;rsquo;t be hard to get a firm answer on how well various formats
+perform. Just encode, then decode and subtract from the original signal, and
+look at the resulting errors. Right?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;I need to caveat what follows. It is not that simple. To do that misses
+the point of perceptual audio coding to a large extent.  However, it is still
+fun and interesting to do.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I encoded the first 30 seconds of &lt;em&gt;Fugitive&lt;/em&gt; in a variety of formats and
+settings. Then I inverted the original signal, and added the original and
+decoded signals together. (It&amp;rsquo;s necessary to ensure that the two signals are
+exactly aligned in time, or this won&amp;rsquo;t work). This is easy to accomplish in
+Audacity. The result is the encoding &lt;em&gt;error&lt;/em&gt;, or roughly the combination of the
+signal that&amp;rsquo;s discarded plus signals that the encoder adds (quantization noise
+and the like). In a way, it&amp;rsquo;s like the audio version of looking at a
+photographic negative overlaid with a positive, seeing what &amp;ldquo;leaks&amp;rdquo; through.&lt;/p&gt;
+
+&lt;p&gt;Listening to the error signal is interesting. With high quality compression, it
+essentially sounds like some high-frequency static, in which you can recognize
+the original song&amp;rsquo;s rhythm. At lower quality, it sounds like a muffled version
+of the song, with the midrange elided. You can also hear many of the compression
+artifacts quite easily, such as dropouts in frequency bands. Two of the most
+dramatic examples are the error signals from these compression settings:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;iTunes using MP3 with custom settings: highest quality, VBR, 96k minimum.&lt;br&gt;
+&lt;audio controls&gt;
+&lt;source src=&#34;https://www.xaprb.com/media/2016/02/itunes-highest-vbr.mp3&#34; type=&#34;audio/mpeg&#34;&gt;
+ Your browser does not support the audio element.
+ &lt;/audio&gt;&lt;/li&gt;
+&lt;li&gt;LAME using 320k constant bit rate.&lt;br&gt;
+&lt;audio controls&gt;
+&lt;source src=&#34;https://www.xaprb.com/media/2016/02/lame-320.mp3&#34; type=&#34;audio/mpeg&#34;&gt;
+ Your browser does not support the audio element.
+ &lt;/audio&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I combined the channels into mono and amplified the signals by 10dB to make
+their waveforms clearer, and took a screenshot of the result. In order, these
+are iTunes AAC defaults, iTunes MP3 at fixed 320k bitrate, iTunes default MP3
+settings, iTunes MP3 at highest quality preset, iTunes MP3 at highest quality
+with VBR at 96k minimum bitrate, LAME at 320k bitrate, LAME at VBR 0 (highest
+quality) setting, Ogg Vorbis at Audacity&amp;rsquo;s highest quality setting (10 out of
+10), and Ogg Vorbis at Audacity&amp;rsquo;s default quality setting of
+5 out of 10.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/02/waveforms.png&#34; alt=&#34;Waveforms&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The more information in the error, the more of the original music is missing or
+distorted by added non-music signals. However, it is &lt;em&gt;not&lt;/em&gt; true that this means
+the music will sound better. As I said before, the point of perceptual audio
+coding as a compression technique is to throw away as much information as
+possible, thus &lt;em&gt;adding as much error as possible&lt;/em&gt;, while trying to keep it below
+the threshold at which a human can perceive it. If successful, ideally this
+actually creates a large error signal but the music still sounds good.
+Poor-quality encoders might produce a small error signal but make the music
+sound bad. So there isn&amp;rsquo;t a direct relationship between the error signal and the
+quality of the music.&lt;/p&gt;
+
+&lt;p&gt;Another interesting way to look at the error signal is as a spectrogram:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/02/spectrogram.png&#34; alt=&#34;Spectrograms&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here it&amp;rsquo;s quite clear that all of the iTunes MP3s are missing a lot of bass.
+Contrast the LAME 320 error spectrum to the AAC spectrum, and you can see that
+AAC retains a lot more high-frequency data too.&lt;/p&gt;
+
+&lt;h3 id=&#34;what-s-the-best-lossy-compression&#34;&gt;What&amp;rsquo;s The Best Lossy Compression?&lt;/h3&gt;
+
+&lt;p&gt;You can probably guess that I&amp;rsquo;m going to say this, but it depends.  AAC and Ogg
+Vorbis are clearly more advanced than the older MP3 standard, and are capable of
+producing better sounding audio at lower bitrates. However, that&amp;rsquo;s not the only
+thing you might care about:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Compatibility. I don&amp;rsquo;t know why Google Play Music doesn&amp;rsquo;t support AAC
+natively, but it doesn&amp;rsquo;t. Re-encoding a file from AAC into &amp;ldquo;equivalent
+bitrate&amp;rdquo; MP3 files is a terrible idea; the resulting music sounds awful.
+Likewise, I&amp;rsquo;d be pretty happy if everyone supported Ogg Vorbis, but that&amp;rsquo;s
+never going to happen. (Tangent: I&amp;rsquo;ve heard that Spotify uses Ogg Vorbis.)&lt;/li&gt;
+&lt;li&gt;The sweet spot. Although a lot of people seem to believe that 320k MP3 files
+are the pinnacle, in reality there&amp;rsquo;s a nonlinear bitrate-versus-quality curve
+for both MP3 and AAC compression (and probably others as well.) There&amp;rsquo;s a
+point of diminishing returns, after which higher bitrates just make the files
+a lot larger without adding much in perceived sound quality. The paper I
+linked to earlier has more information on this, and notes that for MP3 the
+sweet spot is about 128kbit/s, whereas AAC&amp;rsquo;s sweet spot is a bit lower bitrate
+but it doesn&amp;rsquo;t hit as much of a quality ceiling.&lt;/li&gt;
+&lt;li&gt;File size. This is the whole point, isn&amp;rsquo;t it? Constant bitrate files at 320k
+aren&amp;rsquo;t very compressed in terms of file size.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On the topic of file sizes, a 40MB song in WAV format compressed about 4x with
+320k MP3, about 5x with the default iTunes AAC format, and a bit more than that
+with LAME&amp;rsquo;s V0 setting.&lt;/p&gt;
+
+&lt;p&gt;A lot of audiophiles use lossless compression (which doesn&amp;rsquo;t reduce file size
+much), and produce high-quality MP3 or AAC files from them.  For my purposes,
+I&amp;rsquo;d like to have&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Only one compressed copy of my files (I still have the CDs, after all).&lt;/li&gt;
+&lt;li&gt;Good quality sound even if it&amp;rsquo;s not perfect.&lt;/li&gt;
+&lt;li&gt;Minimal file size.&lt;/li&gt;
+&lt;li&gt;Music available everywhere without horrendous reencoding and other problems.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To achieve this, it seems that if I want to use services such as Google Play
+Music, my best option is to encode to MP3 with the LAME encoder and a
+high-quality variable bitrate such as v0 or v1. (Constant bitrates bloat files
+needlessly; lossy compression is designed to achieve a desired perceived
+quality, which doesn&amp;rsquo;t always require a lot of bits). However, I have no desire
+to reencode tens of thousands of songs in this way.&lt;/p&gt;
+
+&lt;p&gt;The other option I think I need to consider is using Apple&amp;rsquo;s music service instead of
+Google&amp;rsquo;s. It supports both AAC and MP3 files as I&amp;rsquo;d expect, and now seems to be
+a pretty direct competitor to Spotify and Google&amp;rsquo;s offering. Last time I gave it
+a trial, though, the music matching feature didn&amp;rsquo;t match anything, so it was
+potentially going to upload &lt;em&gt;all&lt;/em&gt; of my music, which would have exceeded the
+limits they had at that point and would have cost me a pretty fair amount of
+money.&lt;/p&gt;
+
+&lt;p&gt;If I used Apple&amp;rsquo;s services instead, then my choice would be AAC files, not MP3.
+Although MP3 is more broadly compatible, AAC produces clearly better quality
+audio in my opinion, without the penalty of larger file sizes. (&lt;em&gt;Update: I now use Apple Music with the Music Library feature, so I get a combination of my personal library with the Apple-hosted cloud-based music catalog. I&amp;rsquo;ve found this to work really, really well; and I haven&amp;rsquo;t had an audio quality problem yet.&lt;/em&gt;)&lt;/p&gt;
+
+&lt;p&gt;In closing, I&amp;rsquo;ll leave you with the opening lyrics of &lt;em&gt;Fugitive&lt;/em&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Is the answer none of the above&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Image credits: &lt;a href=&#34;https://www.flickr.com/photos/evangrant/8197459006/&#34;&gt;Cymatics&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>A Standing Desk On The Cheap</title>
+          <link>https://www.xaprb.com/blog/2015/04/04/standing-desk/</link>
+          <pubDate>Sat, 04 Apr 2015 03:51:18 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/04/04/standing-desk/</guid>
+          <description>&lt;p&gt;Everyone loves (or
+&lt;a href=&#34;http://www.newyorker.com/humor/daily-shouts/switched-standing-desk-now&#34;&gt;mocks&lt;/a&gt;)
+a good standing desk, but most of us don&amp;rsquo;t love the price.
+Adjustable sit/stand desks and bolt-on apparatus I&amp;rsquo;ve seen cost up to $1000 to
+$5000. I have a feeling if you get something on the cheap end of that scale, you
+probably will regret it. There are less expensive ones that just sit on your
+desk, but they seem like abominations I would hate to use.&lt;/p&gt;
+
+&lt;p&gt;As an alternative I won&amp;rsquo;t regret because it&amp;rsquo;s cheap and minimalistic, I&amp;rsquo;ve
+been using a simple but effective
+&lt;a href=&#34;http://www.amazon.com/dp/B004QXIFCC/?tag=xaprb-20&#34;&gt;adjustable laptop holder&lt;/a&gt;
+for a few years. It&amp;rsquo;s easy to place on a desktop or counter. At this point there
+are a few of them at work and one at home. I keep recommending them to friends
+so I might as well just post it here too.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/04/furinno.jpg&#34; alt=&#34;Furinno Adjustable Laptop Stand&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I prefer the raspberry pink, obviously, but it also comes in black and a couple
+other colors if you don&amp;rsquo;t like that. I&amp;rsquo;m also reasonably sure that I&amp;rsquo;ve bought a
+few different brands of similar items and they&amp;rsquo;re all probably from the same
+original manufacturer. Here&amp;rsquo;s &lt;a href=&#34;http://www.amazon.com/gp/product/B00E6X7O5Q/?tag=xaprb-20&#34;&gt;one alternative
+brand&lt;/a&gt; and here&amp;rsquo;s
+&lt;a href=&#34;http://www.amazon.com/gp/product/B00HZT1WK6/?tag=xaprb-20&#34;&gt;another Furinno
+model&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I was worried at first that it wouldn&amp;rsquo;t be solid enough. I hate when things
+vibrate around and jiggle. Interestingly, it works great for a laptop, though,
+because I rest my hands on the computer and that stabilizes it.&lt;/p&gt;
+
+&lt;p&gt;I use it &amp;ldquo;upside down&amp;rdquo; with the curled lip toward me. The way it&amp;rsquo;s meant to be
+used (and the way it&amp;rsquo;s pictured) makes my wrists go into an awkward position.
+This doesn&amp;rsquo;t work well for laptops, but is good for reading books and so on.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s also great for reading in bed and holding a tablet. Really quite
+multipurpose. You can configure it very flexibly. Or use it to elevate your
+laptop to the same height as your monitor while placed on your desk, to use
+multiple monitors side by side.&lt;/p&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t accessorized but I&amp;rsquo;m tempted to get one of these
+&lt;a href=&#34;http://www.amazon.com/dp/B00K5WBH50/?tag=xaprb-20&#34;&gt;mousepads&lt;/a&gt;. I&amp;rsquo;m resisting.&lt;/p&gt;
+
+&lt;p&gt;Related: I also use a &lt;a href=&#34;http://www.amazon.com/LapGear-Classic-Original-Lapdesk-45364/dp/B00FZM969E/?tag=xaprb-20&#34;&gt;lap desk&lt;/a&gt;
+probably 2-3 hours per day for reading, writing, and sitting with a laptop. I
+prefer wooden ones with curved edges. Plastic ones warp and feel bad to rest my
+hands on. Here&amp;rsquo;s the one I have.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/04/lapdesk.jpg&#34; alt=&#34;LapGear Lap Desk&#34; /&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>The Ultimate Pen</title>
+          <link>https://www.xaprb.com/blog/2015/03/07/ultimate-pen-marker-face-off/</link>
+          <pubDate>Sat, 07 Mar 2015 13:52:41 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/03/07/ultimate-pen-marker-face-off/</guid>
+          <description>&lt;p&gt;In &lt;a href=&#34;https://www.xaprb.com/blog/2013/07/10/ultimate-notebook-and-journal-face-off/&#34;&gt;The Ultimate Notebook&lt;/a&gt;,
+I reviewed a large list of notebooks I bought in my quest for the perfect one
+for me. (I&amp;rsquo;m happy to say that I&amp;rsquo;ve been using the &lt;a href=&#34;http://www.amazon.com/gp/product/B0072WW8K4/?tag=xaprb-20&#34;&gt;Quo Vadis Habana in Raspberry&lt;/a&gt; exclusively
+for a while). But what about the perfect pen? Ah, pens. As much a personal
+matter as notebooks are. I&amp;rsquo;ve tried a variety of pens. Here&amp;rsquo;s my review of some
+of them.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/03/pens.jpg&#34; alt=&#34;Pens&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;First, what am I looking for? My ideal pen is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Used for note-taking, usually in a business context&lt;/li&gt;
+&lt;li&gt;Felt-tipped so it doesn&amp;rsquo;t leak on planes&lt;/li&gt;
+&lt;li&gt;Permanent, fade-proof black ink&lt;/li&gt;
+&lt;li&gt;Small&lt;/li&gt;
+&lt;li&gt;Durable so it survives occupational hazards like accidental hard pressure&lt;/li&gt;
+&lt;li&gt;Long-lasting so it doesn&amp;rsquo;t run out of ink too fast&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With that in mind, here&amp;rsquo;s a rundown of pens I&amp;rsquo;ve used.&lt;/p&gt;
+
+&lt;h3 id=&#34;marvy-uchida-le-pen&#34;&gt;Marvy (Uchida) Le Pen&lt;/h3&gt;
+
+&lt;p&gt;I was introduced to this Japanese pen by &lt;a href=&#34;http://katemats.com/&#34;&gt;Kate Matsudaira&lt;/a&gt; and have used it for years. It comes in a variety of colors and is inexpensive to &lt;a href=&#34;http://www.amazon.com/Uchida-Pen-12-Color-Set/dp/B005987DYE/?tag=xaprb-20&#34;&gt;buy&lt;/a&gt; in singles or bulk packs. It&amp;rsquo;s also resold under various brands, such as in Michael&amp;rsquo;s stores under the Recollections brand. (If that&amp;rsquo;s not the same pen under a different brand it is a remarkable imitation.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/03/le-pen.jpg&#34; alt=&#34;Marvy Le Pen&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Inexpensive&lt;/li&gt;
+&lt;li&gt;Reasonable lifetime&lt;/li&gt;
+&lt;li&gt;Slim form factor&lt;/li&gt;
+&lt;li&gt;Good value and performance overall&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Runs out of ink after a while&lt;/li&gt;
+&lt;li&gt;The tip tends to wear down; depending on the paper, can wear down fast and the pen is useless&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;sakura-pigma-micron&#34;&gt;Sakura Pigma Micron&lt;/h3&gt;
+
+&lt;p&gt;Another Japanese pen brand, these high-quality pens are great for writing, sketching, and precise drawing.  Sakura makes a variety of styles, colors, and thicknesses of pen. I am fond of about a 0.3mm tip. Here&amp;rsquo;s a &lt;a href=&#34;http://www.amazon.com/Sakura-50034-6-Piece-Micron-005-0-20mm/dp/B00K3KRMFI/?tag=xaprb-20&#34;&gt;six-pack in 0.20mm Black&lt;/a&gt; that&amp;rsquo;s a good value. You can also get variety packs&amp;mdash;a single color in various widths; a single width in a variety of colors; combinations thereof. Here&amp;rsquo;s &lt;a href=&#34;http://www.amazon.com/Sakura-Pigma-Micron-0-20mm-Width/dp/B00C16VXXY/?tag=xaprb-20&#34;&gt;a 10-pack in a single color you can choose&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/03/sakura-pigma-micron.jpg&#34; alt=&#34;Sakura Pigma Micron&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Quality is top-notch&lt;/li&gt;
+&lt;li&gt;Great for precision drawing and use with instruments such as straight-edges&lt;/li&gt;
+&lt;li&gt;Long-lasting, both in ink quantity and in tip durability&lt;/li&gt;
+&lt;li&gt;Very popular with many artists, engineers, architects, and the like&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bulkier and thicker&lt;/li&gt;
+&lt;li&gt;More expensive, though not much&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ll be more annoyed when you lose one of these&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sakura also makes tons of other kinds of pens I also think are suitable for note-taking, such as the &lt;a href=&#34;http://www.amazon.com/Sakura-34281-Microperm-Blister-Ultra-Fine/dp/B003IG9LCQ/?tag=xaprb-20&#34;&gt;Microperm&lt;/a&gt;. Many of these items will be available at your local office supply or craft supply store. Just don&amp;rsquo;t go in there with too much time to spare. Who knows what you&amp;rsquo;ll end up buying.&lt;/p&gt;
+
+&lt;h3 id=&#34;staedtler-pigment-liner&#34;&gt;Staedtler Pigment Liner&lt;/h3&gt;
+
+&lt;p&gt;These premium liners are made in Germany and I love them. They come in various sets of different widths, with their own plastic case. They are definitely designed for people who are serious about pens for precision work. They&amp;rsquo;re quite similar in form factor to the Sakuras. I&amp;rsquo;m not sure which is better quality. I have a &lt;a href=&#34;http://www.amazon.com/gp/product/B004L87XRA/?tag=xaprb-20&#34;&gt;set of various widths in black&lt;/a&gt; and I don&amp;rsquo;t think I&amp;rsquo;ll end up using some of the thicker and thinner widths, so it might be more economical to buy uni-size sets of the Sakura pens next time. If there is a next time&amp;mdash;these pens have a reputation for lasting forever.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/03/staedtler-pigment-liner.jpg&#34; alt=&#34;Staedtler Pigment Liner&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Staedtler also makes a related model, the &lt;a href=&#34;http://www.amazon.com/Triplus-Fineliner-Pens-Metal-Assorted/dp/B0007OEE7E/?tag=xaprb-20&#34;&gt;Triplus Fineliner&lt;/a&gt; pens, which I haven&amp;rsquo;t tried yet, but they look really nice.&lt;/p&gt;
+
+&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Amazing pens that make you feel like more of an artist/engineer just by holding them&lt;/li&gt;
+&lt;li&gt;High quality, highly durable, permanent ink&lt;/li&gt;
+&lt;li&gt;Resist drying out if you forget to cap them&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You&amp;rsquo;ll be so sad if you forget one in the coffee shop&lt;/li&gt;
+&lt;li&gt;Sets aren&amp;rsquo;t as flexibly configured, so if you don&amp;rsquo;t want the full variety of sizes, you might be buying pens you won&amp;rsquo;t use&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;things-to-do-with-your-pens&#34;&gt;Things To Do With Your Pens&lt;/h3&gt;
+
+&lt;p&gt;Once you&amp;rsquo;ve picked up a pen like one of the above, you may be overcome with an
+irrational desire to do something with it, such as:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Practice Zentangling (have a &lt;a href=&#34;http://www.amazon.com/Sakura-50011-11-Piece-Zentangle-Clamshell/dp/B00794AHLC/?tag=xaprb-20&#34;&gt;kit&lt;/a&gt; maybe?)&lt;/li&gt;
+&lt;li&gt;Study Spencerian penmanship&lt;/li&gt;
+&lt;li&gt;Draw something in the style of Art Deco blended with steampunk&lt;/li&gt;
+&lt;li&gt;Keep a diary&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+
+&lt;p&gt;I still have a lot of the Le Pen pens hanging around, because I bought a few large boxes of them (one for the office, one for home, which my wife has been dipping into as well; there&amp;rsquo;s another +1 for Le Pen). I think I&amp;rsquo;ll be using these for a while. I usually have one in my pocket, sometimes two (!!), and several in my bag. They&amp;rsquo;re not expensive and they write nicely. On the other hand I don&amp;rsquo;t feel as special writing with them.&lt;/p&gt;
+
+&lt;p&gt;I love the Sakura and Staedtler pens.&lt;/p&gt;
+
+&lt;p&gt;Really, I love all the pens I&amp;rsquo;ve written about here.&lt;/p&gt;
+
+&lt;p&gt;Great places to buy pens, in addition to the Amazon.com links embedded above, include&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jetpens.com/&#34;&gt;JetPens&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.shopwritersbloc.com/&#34;&gt;Writers Bloc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Your local craft supplies or office supply store&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Write! Write more! It&amp;rsquo;s therapeutic. And don&amp;rsquo;t forget to &lt;a href=&#34;https://www.xaprb.com/blog/2013/07/10/ultimate-notebook-and-journal-face-off/&#34;&gt;choose an amazing notebook to write in&lt;/a&gt;.&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>The Goal</title>
+          <link>https://www.xaprb.com/blog/2014/05/24/the-goal/</link>
+          <pubDate>Sat, 24 May 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/05/24/the-goal/</guid>
+          <description>&lt;p&gt;Once upon a time I managed several teams of consultants. At a certain stage of the organization&amp;rsquo;s growth, we wanted to achieve a higher billable-time utilization more easily, and we wanted more structure and process.&lt;/p&gt;
+
+&lt;p&gt;Cary Millsap, about whom I have written quite a bit elsewhere on this blog, suggested that I might profit from reading &lt;a href=&#34;http://www.amazon.com/Goal-Process-Ongoing-Improvement/dp/0884271951/?tag=xaprb-20&#34;&gt;&lt;em&gt;The Goal&lt;/em&gt;&lt;/a&gt; by Eliyahu Goldratt. I will let history be the judge of the outcome, but from my perspective, this was revolutionary for me. It is a clear watershed moment in my memory: I lived life one way and saw things through one lens before, and afterwards everything was different.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/horse-race.jpg&#34; alt=&#34;Horse Race&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The Goal&lt;/em&gt; helped me relate what I had learned about performance in the computer context &amp;mdash; queueing theory, system optimization, computer architecture, and so on &amp;mdash; to organizations. It taught me that, at least in some senses, humans and their interactions form systems that obey fundamentally the same laws as computer components. This is not to dehumanize people and treat them as components. Far from it: &lt;em&gt;The Goal&lt;/em&gt; helped me to organize my thoughts and knowledge about computers by giving me human analogies. It helped me deepen and strengthen my intuition about how things work.&lt;/p&gt;
+
+&lt;p&gt;I will summarize some of the main points of &lt;em&gt;The Goal&lt;/em&gt; in this article, but I encourage you to read the book. It is a parable in the form of a novel, similar in some ways to Daniel Quinn&amp;rsquo;s &lt;a href=&#34;http://www.amazon.com/Ishmael-Adventure-Spirit-Daniel-Quinn/dp/0553375407/?tag=xaprb-20&#34;&gt;&lt;em&gt;Ishmael&lt;/em&gt;&lt;/a&gt; or Dan Millman&amp;rsquo;s &lt;a href=&#34;http://www.amazon.com/Way-Peaceful-Warrior-Changes-Lives/dp/1932073205/?tag=xaprb-20&#34;&gt;&lt;em&gt;Way Of The Peaceful Warrior&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;background&#34;&gt;Background&lt;/h3&gt;
+
+&lt;p&gt;At the time I read &lt;em&gt;The Goal&lt;/em&gt;, the consulting group was experiencing tremendous demand, overcommitment to an explosion of inititatives that were too many and varied to execute well, and cash flow challenges. As for myself, I was not only leading the consulting team, but also serving as the main salesperson and an executive at large.&lt;/p&gt;
+
+&lt;p&gt;The first response to the pressures on the organization was to grow it by hiring quickly.
+As a seasoned manager might guess, this amplified many of the problems. In a nutshell, &lt;em&gt;the organization was not scalable&lt;/em&gt; and there was chaos at every turn.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/chaos.jpg&#34; alt=&#34;Chaos&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Reading &lt;em&gt;The Goal&lt;/em&gt; gave me the first surge of hope I&amp;rsquo;d had in a while. Acting on it solved many problems: some immediately, some long-term. Some things I saw clearly could be improved but was unable to effect the changes I wanted. But the first benefit was hope where I had been hopeless.&lt;/p&gt;
+
+&lt;h3 id=&#34;summary-of-the-goal&#34;&gt;Summary of The Goal&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;The Goal&lt;/em&gt; introduces the Theory of Constraints, a process of business
+improvement. It&amp;rsquo;s a novel about business process optimization, centered around a
+factory that&amp;rsquo;s always losing money and missing deadlines.
+The manager solves these problems by understanding the true goal of the
+factory.&lt;/p&gt;
+
+&lt;p&gt;What did he learn?&lt;/p&gt;
+
+&lt;p&gt;The goal of a business is to&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;make money by increasing net profit,&lt;/li&gt;
+&lt;li&gt;while simultaneously increasing return on investment,&lt;/li&gt;
+&lt;li&gt;and simultaneously increasing cash flow.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All three are necessary.  To accomplish these, the
+business needs to&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;increase throughput,&lt;/li&gt;
+&lt;li&gt;while simultaneously reducing inventory,&lt;/li&gt;
+&lt;li&gt;and simultaneously reducing operating expense.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These terms have specific meanings.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Throughput: the rate at which the system generates &lt;em&gt;money&lt;/em&gt;
+ through sales.&lt;/li&gt;
+&lt;li&gt;Inventory: the &lt;em&gt;money&lt;/em&gt; the system has invested in
+ purchasing things to sell.&lt;/li&gt;
+&lt;li&gt;Operating expense: &lt;em&gt;money&lt;/em&gt; spent to turn inventory into
+ throughput.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that all of these are in a common unit, money. Inventory, for example, is not a physical concept, it&amp;rsquo;s monetary. These definitions describe a model of a business as a system of monetary throughput:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;money entering the system&lt;/li&gt;
+&lt;li&gt;money contained inside the system&lt;/li&gt;
+&lt;li&gt;money leaving the system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Achieving the business&amp;rsquo;s goal requires maximizing the money coming in, minimizing money leaving, and minimizing money that&amp;rsquo;s absorbed into the system. It&amp;rsquo;s that simple.&lt;/p&gt;
+
+&lt;p&gt;It surprises the manager to learn that his factory&amp;rsquo;s goal is the same as the
+business&amp;rsquo;s goal (his factory is a smaller part of a larger business). This is a
+general principle: each component&amp;rsquo;s goal is the same as the system&amp;rsquo;s goal.&lt;/p&gt;
+
+&lt;p&gt;Now that we have a cogent model of a business and its goals in the starkest possible terms, it is necessary to understand what constrains or limits it in each of these dimensions.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/chain.jpg&#34; alt=&#34;Chain&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are two primary and strongly related factors, both of which affect business processes: dependencies and variations.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dependencies, or dependent events, are things that have to happen before other things can happen.&lt;/li&gt;
+&lt;li&gt;Statistical variations are variations in start times, stop times, or durations of events.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Variations cause unpredictability, and dependencies cause unpredictability to accumulate and cascade through the system. The only way to keep throughput stable at the process&amp;rsquo;s output is to have excess capacity and buffers in the system. The traditional wisdom of trimming capacity to fit demand (in an attempt to cut waste) will increase the system&amp;rsquo;s unpredictability, drop throughput, and increase inventory. These work against the business&amp;rsquo;s goal.&lt;/p&gt;
+
+&lt;p&gt;This is nothing more than queueing theory, but much more simply explained than usual.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The Goal&lt;/em&gt; introduces a process of continuous improvement towards
+the business&amp;rsquo;s goal.  Simplified, it is basically identifying bottlenecks, finding ways to exploit them, prioritizing that, and then looking for the next bottleneck. This is the Theory of Constraints.&lt;/p&gt;
+
+&lt;h3 id=&#34;optimizing-the-consulting-teams&#34;&gt;Optimizing The Consulting Teams&lt;/h3&gt;
+
+&lt;p&gt;The process of improvement above sounds incredibly obvious, and it is once you see it. After all, I&amp;rsquo;d been doing the same thing in systems performance optimization for years. The magic is in understanding the meaning of constraints, variations, dependencies, throughput, inventory, and so on as it relates to the organization and its processes.&lt;/p&gt;
+
+&lt;p&gt;While studying &lt;em&gt;The Goal&lt;/em&gt; I frequently put the book down and excitedly noted things that had just occurred to me. For example, I created a massive list of constraints. These were always things that had frustrated me, but I&amp;rsquo;d never seen clearly how badly they impacted the organization until I considered them as constraints. To list a few:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Timezone differences&lt;/li&gt;
+&lt;li&gt;Unsatisfied prerequisites such as access to the systems where work was to be performed, or availability of a consultant with the required skills&lt;/li&gt;
+&lt;li&gt;Communication delays&lt;/li&gt;
+&lt;li&gt;Interruptions&lt;/li&gt;
+&lt;li&gt;Transitions between available/unavailable, such as travel or vacation time&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There were many more, perhaps several dozen. I was on an airplane while doing much of this work, and I remember bursting with excitement. I just couldn&amp;rsquo;t wait to start fixing some of the problems that were suddenly so obvious.&lt;/p&gt;
+
+&lt;p&gt;One of the clearest problems was that I was a huge constraint myself. I was dependent on many things in the business, and I made a lot of the business dependent on me in turn. For example, I would dedicate myself full-time to consulting when there was too much demand, and when demand slacked, I would stop working with customers and make sales calls. The result is ridiculously obvious in hindsight, but while I was in the midst of it, I couldn&amp;rsquo;t see how I was causing the entire organization&amp;rsquo;s workload to overcorrect in giant swings of the pendulum, from too much demand to everyone being practically idle. Hiring a salesperson was the key to solving this problem, so that variations in the sales process were eliminated. The operative word there is &amp;ldquo;variations.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/chain-link.jpg&#34; alt=&#34;Dependencies&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Another major theme that jumped out at me was the ways in which the lack of process was causing problems with inbound work, inventory, and throughput. Lack of process caused a lot of variation in work, and lack of knowledge-sharing caused dependencies amongst people, projects, and teams. Lack of process was either at the root of problems, or intimately involved in them. As I recall, I did not identify a single constraint that could not be improved by better and more consistent processes. For readers who are interested in this line of thought, I can suggest the book &lt;a href=&#34;http://www.amazon.com/E-Myth-Revisited-Small-Businesses-About/dp/0887307280/?tag=xaprb-20&#34;&gt;&lt;em&gt;The E-Myth Revisited&lt;/em&gt;&lt;/a&gt; by Michael Gerber.&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;The Goal&lt;/em&gt; helped me reduce the complexity of a large consulting group and its attendant business processes and pains to simplest possible terms &amp;mdash; things I could understand and relate clearly to myself and to others. The principles and concepts that weave through &lt;em&gt;The Goal&lt;/em&gt; are easy to grasp and easy to work with, but at the same time there&amp;rsquo;s little danger of over-simplification.&lt;/p&gt;
+
+&lt;p&gt;As an aside, &lt;em&gt;The Goal&lt;/em&gt; contributed directly to the thought processes that led to my founding VividCortex, and to crucial breakthroughs such as defining a &lt;a href=&#34;https://vividcortex.com/blog/2014/04/24/fault-anomaly-detection/&#34;&gt;system fault&lt;/a&gt; in terms of throughput, inventory, and operating expense. You can read more about this in a &lt;a href=&#34;https://vividcortex.com/blog/2014/04/21/monitoring-is-dead-long-live-performance-management/&#34;&gt;blog post&lt;/a&gt; explaining how and why VividCortex is different from a monitoring system.&lt;/p&gt;
+
+&lt;p&gt;Photo credits: &lt;a href=&#34;https://www.flickr.com/photos/kingstongal/6011726882/&#34;&gt;horse race&lt;/a&gt;,
+&lt;a href=&#34;https://www.flickr.com/photos/almostinfamous/4603824077/&#34;&gt;smoke&lt;/a&gt;,
+&lt;a href=&#34;https://www.flickr.com/photos/intherough/3470183543&#34;&gt;chain&lt;/a&gt;,
+&lt;a href=&#34;https://www.flickr.com/photos/willmontague/3813295674/&#34;&gt;chain-link fence&lt;/a&gt;.&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>A review of Bose, Sony, and Sennheiser noise-cancelling headphones</title>
+          <link>https://www.xaprb.com/blog/2014/01/16/bose-sennheiser-sony-noise-cancelling-headphones/</link>
+          <pubDate>Thu, 16 Jan 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/01/16/bose-sennheiser-sony-noise-cancelling-headphones/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ve used active noise-cancelling headphones for over ten years now, and have owned several pairs of Bose, one of Sony, and most recently a pair of Sennheiser headphones.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/01/sennheiser-pxc-450.png&#34; alt=&#34;Sennheiser PXC 450 NoiseGard Active Noise-Canceling Headphones&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Sennheisers are my favorites. I thought I&amp;rsquo;d write down why I&amp;rsquo;ve gone through so many sets of cans and what I like and dislike about them.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;bose-quietcomfort-15-acoustic-noise-cancelling-headphones-http-www-amazon-com-bose-quietcomfort-acoustic-cancelling-headphones-dp-b0054jj0qw-tag-xaprb-20&#34;&gt;&lt;a href=&#34;http://www.amazon.com/Bose-QuietComfort-Acoustic-Cancelling-Headphones/dp/B0054JJ0QW/?tag=xaprb-20&#34;&gt;Bose QuietComfort 15 Acoustic Noise Cancelling Headphones&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/01/bose-quiet-comfort.png&#34; alt=&#34;Bose QuietComfort 15 Acoustic Noise Cancelling Headphones&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m sure you&amp;rsquo;re familiar with &lt;a href=&#34;http://www.amazon.com/Bose-QuietComfort-Acoustic-Cancelling-Headphones/dp/B0054JJ0QW/?tag=xaprb-20&#34;&gt;Bose QuietComfort&lt;/a&gt; headphones. They&amp;rsquo;re the iconic &amp;ldquo;best-in-class&amp;rdquo; noise-cancelling headphones, the ones you see everywhere. Yet, after owning several pairs (beginning with Quiet Comfort II in 2003), I decided I&amp;rsquo;m not happy with them and won&amp;rsquo;t buy them anymore. Why not?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;They&amp;rsquo;re not very good quality. I&amp;rsquo;ve worn out two pairs and opted to sell the third pair that Bose sent me as a replacement. Various problems occurred, including torn speakers that buzzed and grated. I just got tired of sending them back to Bose for servicing.&lt;/li&gt;
+&lt;li&gt;They&amp;rsquo;re more expensive than I think they&amp;rsquo;re worth, especially given the cheap components used.&lt;/li&gt;
+&lt;li&gt;They don&amp;rsquo;t sound bad&amp;mdash;but to my ears they still have the classic Bose fairy-dust processing, which sounds rich and pleasant at first but then fatigues me.&lt;/li&gt;
+&lt;li&gt;They produce a sensation of suction on the eardrums that becomes uncomfortable over long periods of time.&lt;/li&gt;
+&lt;li&gt;They can&amp;rsquo;t be used in non-cancelling mode. In other words, if the battery is dead, they&amp;rsquo;re unusable.&lt;/li&gt;
+&lt;li&gt;On a purely personal note, I think Bose crosses the line into greed and jealousy. I know this in part because I used to work at Crutchfield, and saw quite a bit of interactions with Bose. As an individual&amp;mdash;well, try selling a pair of these on eBay, and you&amp;rsquo;ll see what I mean. I had to jump through all kinds of hoops after my first listing was cancelled for using a stock photo that eBay themselves suggested and provided in the listing wizard. &lt;a href=&#34;http://cgi3.ebay.com/ws/eBayISAPI.dll?ViewUserPage&amp;amp;userid=Bosetracker&#34;&gt;Here&lt;/a&gt; is the information the take-down notice directed me to.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On the plus side, the fit is very comfortable physically, they cancel noise very well, and they&amp;rsquo;re smaller than some other noise-cancelling headphones. Also on the plus side, every time I&amp;rsquo;ve sent a pair in for servicing, Bose has just charged me $100 and sent me a new pair.&lt;/p&gt;
+
+&lt;h3 id=&#34;sony-mdr-nc200d-http-www-amazon-com-sony-canceling-stereo-headphones-mdr-nc200d-dp-b005la53bk-tag-xaprb-20&#34;&gt;&lt;a href=&#34;http://www.amazon.com/Sony-Canceling-Stereo-Headphones-MDR-NC200D/dp/B005LA53BK/?tag=xaprb-20&#34;&gt;Sony MDR-NC200D&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/01/sony-mdr-nc200d.png&#34; alt=&#34;Sony MDR-NC200D&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When I sent my last pair of Bose in for servicing, they replaced them with a factory-sealed pair of new ones in the box, and I decided to sell them on eBay and buy a set of &lt;a href=&#34;http://www.amazon.com/Sony-Canceling-Stereo-Headphones-MDR-NC200D/dp/B005LA53BK/?tag=xaprb-20&#34;&gt;Sony MDR-NC200D&lt;/a&gt; headphones, which were about $100 less money than new Bose headphones at the time. I read online reviews and thought it was worth a try.&lt;/p&gt;
+
+&lt;p&gt;First, the good points. The Sonys are more compact even than the Bose, although as I recall they&amp;rsquo;re a little heavier. And the noise cancellation works quite well. The passive noise blocking (muffling) is in itself quite good. You can just put them on without even turning on the switch, and block a lot of ambient noise. The sound quality is also quite good, although there is a slight hiss when noise cancellation is enabled. Active cancellation is good, but not as good as the Bose.&lt;/p&gt;
+
+&lt;p&gt;However, it wasn&amp;rsquo;t long before I realized I couldn&amp;rsquo;t keep them. The Sonys sit on the ear, and don&amp;rsquo;t enclose the ear and sit against the skull as the Bose do. They&amp;rsquo;re on-the-ear, not over-the-ear. Although this doesn&amp;rsquo;t feel bad at first, in about 20 minutes it starts to hurt. After half an hour it&amp;rsquo;s genuinely painful. This may not be your experience, but my ears just start to hurt after being pressed against my head for a little while.&lt;/p&gt;
+
+&lt;p&gt;I had to sell the Sonys on eBay too. My last stop was the Sennheisers.&lt;/p&gt;
+
+&lt;h3 id=&#34;sennheiser-pxc-450-noisegard-active-noise-canceling-headphones-http-www-amazon-com-sennheiser-pxc-450-noise-canceling-headphones-dp-b000r2pc2m-tag-xaprb-20&#34;&gt;&lt;a href=&#34;http://www.amazon.com/Sennheiser-PXC-450-Noise-Canceling-Headphones/dp/B000R2PC2M/?tag=xaprb-20&#34;&gt;Sennheiser PXC 450 NoiseGard Active Noise-Canceling Headphones&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/01/sennheiser-pxc-450.png&#34; alt=&#34;Sennheiser PXC 450 NoiseGard Active Noise-Canceling Headphones&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://www.amazon.com/Sennheiser-PXC-450-Noise-Canceling-Headphones/dp/B000R2PC2M/?tag=xaprb-20&#34;&gt;Sennheiser PXC 450&lt;/a&gt; headphones are midway in price between the Bose and the Sony: a little less expensive than the Bose. I&amp;rsquo;ve had them a week or so and I&amp;rsquo;m very happy with them so far.&lt;/p&gt;
+
+&lt;p&gt;This is not the first pair of Sennheisers I&amp;rsquo;ve owned. I&amp;rsquo;ve had a pair of open-air higher-end Sennheisers for over a decade. I absolutely love them, so you can consider me a Sennheiser snob to some extent.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m pleased to report that the PXC 450s are Sennheisers through and through. They have amazing sound, and the big cups fit comfortably around my ears. They are a little heavier than my other Sennheisers, but still a pleasure to wear.&lt;/p&gt;
+
+&lt;p&gt;The nice thing is that not only does noise cancellation work very well (on par with Bose&amp;rsquo;s, I&amp;rsquo;d say), but there is no sensation of being underwater with pressure or suction on the eardrums. Turn on the noise cancellation switch and the noise just vanishes, but there&amp;rsquo;s no strange feeling as a result. Also, these headphones can work in passive mode, with noise cancellation off, and don&amp;rsquo;t need a battery to work.&lt;/p&gt;
+
+&lt;p&gt;On the downside, if you want to travel with them, they&amp;rsquo;re a little bigger than the Bose. However I&amp;rsquo;ve travelled with the Bose headphones several times and honestly I find even them too large to be convenient. I don&amp;rsquo;t use noise-cancelling headphones for travel, as a result.&lt;/p&gt;
+
+&lt;p&gt;Another slight downside is that the earcups aren&amp;rsquo;t completely &amp;ldquo;empty&amp;rdquo; inside. There are some caged-over protrusions with the machinery inside. Depending on the shape of your ears, these might brush your ears if you move your head. I find that if I don&amp;rsquo;t place the headphones in the right spot on my head, they do touch my ears every now and then.&lt;/p&gt;
+
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;After owning several pairs of top-rated noise-cancelling headphones, I think the Sennheisers are the clear winners in price, quality, comfort, and sound. Your mileage may vary.&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>The Ultimate Notebook</title>
+          <link>https://www.xaprb.com/blog/2013/07/10/ultimate-notebook-and-journal-face-off/</link>
+          <pubDate>Wed, 10 Jul 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/07/10/ultimate-notebook-and-journal-face-off/</guid>
+          <description>&lt;p&gt;If you&amp;rsquo;re like me, you spend so much time typing on a computer that a good notebook or journal is one of life&amp;rsquo;s finer pleasures. I&amp;rsquo;ve kept a diary of my personal life for close to 30 years now, and I have a shelf full of journals. I&amp;rsquo;ve found a great many that I enjoy writing in, and choosing a different one each time is part of the fun.&lt;/p&gt;
+
+&lt;p&gt;But thus far, my quest for a notepad has been unsatisfying. Many notepads have loved me, but I&amp;rsquo;m sorry to say their love has been unrequited. I&amp;rsquo;ve tried all the usual things: Moleskine, loose-leaf paper, binders, what have you. But I never found something that is practical, functional, a joy to write on, and a pleasure to look at and hold. I just can&amp;rsquo;t settle into a long-term relationship with my notebook, because I haven&amp;rsquo;t met The Right One yet.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/notebook.jpg&#34; alt=&#34;Notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;So, naturally, I decided to stage a giant contest amongst all the premium notebooks I could find by reading online reviews, searching the Internet, and visiting my local retailers. Read on, but I warn you, I&amp;rsquo;ve spent hundreds of dollars amassing a collection, and I&amp;rsquo;m not going to waste all that on a short blog post. And yes, there will be a winner at the end.&lt;/p&gt;
+
+&lt;p&gt;You might also be interested in my &lt;a href=&#34;https://www.xaprb.com/blog/2015/03/07/ultimate-pen-marker-face-off/&#34;&gt;review of the ultimate pen for note-taking&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/notepads.jpg&#34; alt=&#34;Notepads&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Before I review any of the notebooks, let me explain what I&amp;rsquo;m looking for.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-perfect-notebook&#34;&gt;The Perfect Notebook&lt;/h3&gt;
+
+&lt;p&gt;My quest for the Holy Grail of notebooks began innocently enough when I happened to read that &lt;a href=&#34;http://katemats.com/&#34;&gt;Kate Matsudaira&lt;/a&gt; is a notebook connoisseur and will only write on Semikolon Il Creativo notebooks with &lt;a href=&#34;http://www.amazon.com/gp/product/B004IMAQTG/?tag=xaprb-20&#34;&gt;Uchida Le Pen pens&lt;/a&gt;.  Intrigued, I included one of each in my next batch of &amp;ldquo;stuff&amp;rdquo; from Amazon.com. I immediately fell in love with the pens, but the notebook was much larger than I expected it to be&amp;mdash;far too large to be practical as I travel and carry it hither and yon.&lt;/p&gt;
+
+&lt;p&gt;So what do I want?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The size. It needs to be large enough to write on easily, leaving readable margins, without wasting a high percentage of the paper. It needs to be small enough to slip into a bag or hold in a hand with several other things; it should be neither bulky nor so small that it gets lost and slides to the bottom and gets all crumpled by other things.&lt;/li&gt;
+&lt;li&gt;The proportions. Too tall and skinny is bad; too short and wide is bad. Something fairly standard is best, like the usual A* paper proportions.&lt;/li&gt;
+&lt;li&gt;The thickness and number of pages. Enough to last a while. Not so many that it&amp;rsquo;s heavy or bulky in a messenger bag; not so many that if I lose it, a giant chunk of my life and professional notes is gone. There&amp;rsquo;s always some risk, but it needs to be balanced.&lt;/li&gt;
+&lt;li&gt;The type of cover. Rigid, thick covers waste space and add weight, as well as being difficult to pack in a carry-on bag. Something springy and thin, but substantial enough to help with writing, is best.&lt;/li&gt;
+&lt;li&gt;The binding. I write on both sides of the paper, and it needs to fold open easily and flat, be very durable, and not force me to write awkwardly when I&amp;rsquo;m writing in the center margin of the left-hand page. It should also not curl awkwardly when I&amp;rsquo;m near the first or the last page.&lt;/li&gt;
+&lt;li&gt;The closure. I&amp;rsquo;m not a big fan of elastic closures; they get in the way more than they help.&lt;/li&gt;
+&lt;li&gt;The paper quality. As I said, I write on both sides. It needs to resist bleed-through and be smooth and strong.&lt;/li&gt;
+&lt;li&gt;The ruling. I like ruled notebooks, but can do all right with blank. If there&amp;rsquo;s ruling, it needs to be pretty narrow. Nothing wastes more paper and annoys me more than too-wide ruling. Any ruling also shouldn&amp;rsquo;t force or encourage me to leave too much of a margin.&lt;/li&gt;
+&lt;li&gt;The index, table of contents, helper charts, page numbers, and so on. Some of these things are wonderful in moderation; a table of contents and page numbers, for example, are a delight. I can quickly index a notebook after using it, and it becomes immensely more useful for reference. Do I need 12 pages of conversion tables and timezone maps? Not really.&lt;/li&gt;
+&lt;li&gt;The bookmarks or page markers. I prefer a silken ribbon for journals, but for notebooks I actually prefer none; my favorite is &lt;a href=&#34;http://www.amazon.com/gp/product/1593593422/?tag=xaprb-20&#34;&gt;these magnetic owl page markers&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The design. This is the most subjective and intangible thing of all. The design needs to be professional, a little bit creative, and inspiring. It should make me feel like an artist as well as an engineer. If I may stereotype for a moment, the Germans perhaps err on the side of being too mechanical, the Swiss can sometimes feel as if everything is meant to be a coffee-table conversation piece, and the Americans can be deathly boring. I want something that makes me feel light and nimble, practical, yet &amp;hellip; a craftsman, somehow.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Is that really so much to ask?&lt;/p&gt;
+
+&lt;h3 id=&#34;the-categories&#34;&gt;The Categories&lt;/h3&gt;
+
+&lt;p&gt;After assessing a number of books, including some extras provided by my wonderful and resourceful wife, I&amp;rsquo;ve realized there are really three categories. Regardless of what a notebook or journal is designed for, in my mind it ends up in one of these, even if it&amp;rsquo;s supposed to be something else:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Journals. Journals tend to have a bit larger margins, may offer fold-over magnetic covers or other clasps, and are usually mid-sized. They often have beautiful designs on the covers, but are relatively plain inside. If notebooks were coffee, these would be a latte.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Moleskines and imitations. These come in several sizes but generally have elastic loop clasps, minimal features such as a single pocket inside the back cover, and are generally boring and middle-of-the-road in nearly every way. As coffee, these are a cup of Americano at best.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The exceptional notebooks. These vary more widely and have a lot of personality and special features. These are espressos, macchiatos, and cappuccinos.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And now, let&amp;rsquo;s get right down to brass tacks!&lt;/p&gt;
+
+&lt;h3 id=&#34;the-contenders&#34;&gt;The Contenders&lt;/h3&gt;
+
+&lt;p&gt;Allow me to repeat the photo from before:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/notepads.jpg&#34; alt=&#34;Notepads&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the left, and roughly in order of size, these are:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;An Italian leatherette journal by Markings&lt;/li&gt;
+&lt;li&gt;A Semikolon Il Creativo, large&lt;/li&gt;
+&lt;li&gt;A Quo Vadis Habana&lt;/li&gt;
+&lt;li&gt;An iPad for size perspective ;-)&lt;/li&gt;
+&lt;li&gt;A PaperBlanks journal&lt;/li&gt;
+&lt;li&gt;A Peter Pauper Press journal&lt;/li&gt;
+&lt;li&gt;Another PaperBlanks journal&lt;/li&gt;
+&lt;li&gt;A Mead Cambridge notebook&lt;/li&gt;
+&lt;li&gt;A deconstructed journal by Studio Oh!&lt;/li&gt;
+&lt;li&gt;A Whitelines Squared notebook&lt;/li&gt;
+&lt;li&gt;A Clairefontaine notebook&lt;/li&gt;
+&lt;li&gt;A Barnes &amp;amp; Noble journal refill&lt;/li&gt;
+&lt;li&gt;A Leuchtturm 1917 notebook&lt;/li&gt;
+&lt;li&gt;A Moleskine notebook&lt;/li&gt;
+&lt;li&gt;A Chameleon Like notebook&lt;/li&gt;
+&lt;li&gt;A Semikolon Il Creativo, small&lt;/li&gt;
+&lt;li&gt;A (small) Chameleon Like notebook&lt;/li&gt;
+&lt;li&gt;A teNues CoolNotes notebook&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ll notice some new additions to this post, at the end, which are not pictured above.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Whew! That&amp;rsquo;s a lot of reviewing to do. I&amp;rsquo;ll go through them [mostly] in order. I&amp;rsquo;ve uploaded hi-resolution photos; click on thumbnails to see the bigger picture. In some cases I&amp;rsquo;ve linked through to Amazon, when a product is available there. Some others I never buy online, or can&amp;rsquo;t find online, although you may be able to find them if you search. You can see more photos of the notebooks there. I&amp;rsquo;ve focused mostly on the inside of the books, but there are good photos online of the exterior too.&lt;/p&gt;
+
+&lt;h3 id=&#34;italian-leatherette-journal-by-markings&#34;&gt;Italian leatherette journal by Markings&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/markings-italian-leatherette.jpg&#34; alt=&#34;Italian leatherette journal by Markings&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a wonderful journal that I&amp;rsquo;m going to enjoy filling up. Though the design is understated, and I tend to like some eye candy on my journals, the cover is supple and has a suede feel, and there are enough pages to be a good journal. (Unlike my notebooks, I like a diary to last a good while.) The paper is smooth and heavy, the ruling and margins are nice, and overall it feels great.&lt;/p&gt;
+
+&lt;p&gt;As a notebook, I can&amp;rsquo;t really use it. It&amp;rsquo;s too large, too thick, and too heavy to carry around. The teacup in the photo is a bit oversized, so it is actually a bit larger than it looks.&lt;/p&gt;
+
+&lt;p&gt;192 pages, 10.25 x 7.5 x .75 inches. Rule width: .3125 inches. Bought at Target for $12.99.&lt;/p&gt;
+
+&lt;h3 id=&#34;semikolon-il-creativo-large&#34;&gt;Semikolon Il Creativo, large&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/semikolon-creativo-large.jpg&#34; alt=&#34;Semikolon Il Creativo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the notebook that started this whole quest. It&amp;rsquo;s perhaps the most &amp;ldquo;designed&amp;rdquo; of all of them, with an elaborate perpetual calendar on every page in German, French, and English. It also has several pages of table of contents and calendar overview at the front, and sheets of stickers and labels are included. I immediately wanted to label everything in sight. The notebook made me feel like putting my whole life in order, and I knew I&amp;rsquo;d feel great about it if I did.&lt;/p&gt;
+
+&lt;p&gt;The main problem is that it&amp;rsquo;s way too big for me to carry around.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/semikolon-il-creativo.jpg&#34; alt=&#34;Semikolon Il Creativo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I want something a lot slimmer, to start with. The cover is nice and flexible, and there are other nice features, but I can&amp;rsquo;t get past the bulk. I also have a gripe with the ruling, which is too wide. I&amp;rsquo;m forced to write way too spaced-out, or to write two lines per rule, which is annoying and cramped.&lt;/p&gt;
+
+&lt;p&gt;The paper is a bit coarse, almost ridged, and I am pretty sure that this texture is intentional. It should be great for pencils, but is not as good for the pens that I use.&lt;/p&gt;
+
+&lt;p&gt;This notebook is designed for notes, but I&amp;rsquo;ll use it as a journal. I wonder if I&amp;rsquo;ll write less about emotional things and dreams, and more about analytical things?&lt;/p&gt;
+
+&lt;p&gt;304 pages, 10 x 7.75 x 1.0 inches. Rule width: .375 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B005DVEUDO/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $14.97.&lt;/p&gt;
+
+&lt;h3 id=&#34;quo-vadis-habana&#34;&gt;Quo Vadis Habana&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/quo-vadis-habana.jpg&#34; alt=&#34;Quo Vadis Habana&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This notebook is a big step down in size and bulk from the previous two. It&amp;rsquo;s a much more practical size to carry around, and it has the best cover of all of them, in my opinion. The cover isn&amp;rsquo;t quite rigid; it&amp;rsquo;s flexible enough not to be annoying and uncomfortable in a thin bag with other things crammed in. The paper is top-notch quality &amp;ndash; silky smooth and creamy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/quo-vadis-small.jpg&#34; alt=&#34;Quo Vadis Habana&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The corners are rounded, which is always appreciated in a notebook. And, the notebook and the paper are made in the USA, from certified sustainable forests.&lt;/p&gt;
+
+&lt;p&gt;The ruling might extend a little too close to the margins, but although the book doesn&amp;rsquo;t open completely flat, it comes very close; close enough that there shouldn&amp;rsquo;t be a problem with the margins.&lt;/p&gt;
+
+&lt;p&gt;All in all, a very nice notebook, and one of the top contenders for certain.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: this is now my favorite notebook and I doubt I&amp;rsquo;ll change from using it.
+I can&amp;rsquo;t say enough about how amazing the paper is. It&amp;rsquo;s gorgeous, smooth,
+doesn&amp;rsquo;t bleed through. It feels wonderful and writes beautifully.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;160 pages, 6.375 x 9.625 x .625 inches. Rule width: .222 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B0072WW8K4/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for
+$20.99. I&amp;rsquo;ve also bought in &lt;a href=&#34;http://www.shopwritersbloc.com/habana-journal-large-blank-raspberry.html&#34;&gt;blank (unlined) in bulk from Writers Bloc&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;paperblanks-journal&#34;&gt;PaperBlanks journal&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/paper-blanks.jpg&#34; alt=&#34;PaperBlanks journal&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These are my favorite journals. They have a ribbon marker, a magnetic clasp cover, a huge variety of beautiful cover designs to choose from, and they&amp;rsquo;re easy to find at Barnes &amp;amp; Noble. I&amp;rsquo;ve probably bought over a dozen of these. It&amp;rsquo;s great when there&amp;rsquo;s a sale; I&amp;rsquo;ll buy several at a time.&lt;/p&gt;
+
+&lt;p&gt;The paper isn&amp;rsquo;t quite as nice as I&amp;rsquo;d want in a notebook, but it&amp;rsquo;s great for journaling. It is slightly rough. The journals are plain inside, with no decorations, and a small note on the inside cover about the pattern reproduced on the outside. For example, I&amp;rsquo;m currently writing in the one shown closed, and this cover is inspired by a Persian Safavid-style design from centuries ago.&lt;/p&gt;
+
+&lt;p&gt;I wouldn&amp;rsquo;t use these for note-taking. They&amp;rsquo;re a little too bulky, the ruling is a little too wide, and the covers are too rigid.&lt;/p&gt;
+
+&lt;p&gt;288 pages, 9 x 7 x .875 inches. Rule width: .318 inches. Bought at Barnes &amp;#038; Noble for $18.95.&lt;/p&gt;
+
+&lt;h3 id=&#34;peter-pauper-press-journal&#34;&gt;Peter Pauper Press journal&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/peter-pauper.jpg&#34; alt=&#34;Peter Pauper Press journal&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This journal is certainly in the same class as the PaperBlanks journals. It&amp;rsquo;s about the same size, and also has beautiful art on the cover; in this case, a Van Gogh. The paper is a little heavier, and there&amp;rsquo;s no clasp to hold the cover shut. It has slightly fewer pages and is a little thinner.&lt;/p&gt;
+
+&lt;p&gt;192 pages, 9 x 7.5 x .75 inches. Rule width: .318 inches. Bought at &lt;a href=&#34;http://www.amazon.com/Almond-Blossom-Journal-Notebook-Diary/dp/144130357X/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $13.49.&lt;/p&gt;
+
+&lt;h3 id=&#34;mead-cambridge-notebook&#34;&gt;Mead Cambridge notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/mead-cambridge.jpg&#34; alt=&#34;Mead Cambridge notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This notebook is a great find, in my opinion. It&amp;rsquo;s a good size, is thin and flexible with a semi-rigid cover, has trimmed corners to avoid dog-earing, and has nice paper. It&amp;rsquo;s all business, but is just sophisticated enough to feel good, too.&lt;/p&gt;
+
+&lt;p&gt;As you can see, I&amp;rsquo;ve chosen a variant that has an extra column on the right for notes to be set aside. I&amp;rsquo;m going to give this a try because I often find myself going back and cramming cross-references or additional information into the margins. There is a variant without this extra column, however.&lt;/p&gt;
+
+&lt;p&gt;The ruling is a nice width &amp;ndash; just right for me. The color might be a little too dark, though. It could be lighter, or even use light dots, like a signature line, and it&amp;rsquo;d be nicer in my opinion.&lt;/p&gt;
+
+&lt;p&gt;The downsides: the binding doesn&amp;rsquo;t quite open flat, though it comes very close, and I&amp;rsquo;m not sure if it&amp;rsquo;s going to be all that durable, though the notepad is thin enough that it shouldn&amp;rsquo;t have a long heavy-duty life to wear it out. The ruling doesn&amp;rsquo;t have any margin in the center of the binding. This might seem like a nitpick, but without that guide I find myself cramming my pen into the crevice when writing on the left page, and having trouble with an even left-margin when writing on the right page.&lt;/p&gt;
+
+&lt;p&gt;All in all, one of the top choices for a notebook, due to its design, practical size, and low price.&lt;/p&gt;
+
+&lt;p&gt;160 pages, 8.625 x 6.75 x .4375 inches. Rule width: .220 inches. Bought at Target for $8.95.&lt;/p&gt;
+
+&lt;h3 id=&#34;deconstructed-journal-by-studio-oh&#34;&gt;Deconstructed journal by Studio Oh!&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/studio-oh-deconstructed-clock.jpg&#34; alt=&#34;Deconstructed journal by Studio Oh!&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This journal is perhaps the most versatile of the notebooks and journals I&amp;rsquo;ve shown here, because it could easily be a very respectable notebook as well. Its binding is the most attention-grabbing feature. Take a look:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/studio-oh-deconstructed-clock-edge.jpg&#34; alt=&#34;Deconstructed journal by Studio Oh!&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The journal opens absolutely flat, without a hint of resistance. This is the flattest-opening notebook I&amp;rsquo;ve ever seen. Will the binding hold up? On close inspection, it does seem pretty well-bound. I suspect it&amp;rsquo;ll last.&lt;/p&gt;
+
+&lt;p&gt;The cover is quite rigid, the corners are rounded, the paper is silky and smooth though perhaps a bit thin, and overall it feels really nice. The only points against it, as far as a notebook, are the ruling width and the stiff covers. It&amp;rsquo;s also a little heavy, now that I think about it. Still, it&amp;rsquo;ll easily be a great journal, and could be a very nice notebook too.&lt;/p&gt;
+
+&lt;p&gt;192 pages, 8.625 x 6.5 x .6875 inches. Rule width: .3125 inches. Bought at &lt;a href=&#34;http://www.amazon.com/Studio-Oh-Deconstructed-Journal-Epoque/dp/B005K03NHW/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $13.85; also available from Barnes &amp;amp; Noble.&lt;/p&gt;
+
+&lt;h3 id=&#34;whitelines-squared-notebook&#34;&gt;Whitelines Squared notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/whitelines-squared.jpg&#34; alt=&#34;Whitelines Squared notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This premium-quality notebook has a really unusual feature: instead of white paper with dark lines, it has slightly gray paper with white lines. The idea is that this is less distracting and will glare and contrast less, and that what you write will stand out, rather than conflicting with the lines. I chose a &amp;ldquo;graph paper&amp;rdquo; or grid, instead of a lined/ruled notebook.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a nice size (A5, perfect!), has really nice paper, and is made with a C02-neutral process. It&amp;rsquo;s sharply designed and utilitarian, with a black cover that has a single orange horizontal stripe. There&amp;rsquo;s no arguing that it&amp;rsquo;s not a high-end notebook.&lt;/p&gt;
+
+&lt;p&gt;The downsides? The cover is rigid, and the corners are squared instead of rounded. The binding doesn&amp;rsquo;t open flat; in fact, it doesn&amp;rsquo;t really even come close, and this will be a nuisance. Although the white-lined feature seems nice, I wish it didn&amp;rsquo;t extend all the way to the edge of the paper. The grid feature does give some guidance for margins, but I foresee myself getting greedy in the margins accidentally.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m going to have to say that a couple of the others are nicer, because of their binding and ruling with margins.&lt;/p&gt;
+
+&lt;p&gt;200 pages, 8.5 x 6 x .6875 inches. Rule width: .197 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B0052XQDUG/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $11.95.&lt;/p&gt;
+
+&lt;h3 id=&#34;clairefontaine-notebook&#34;&gt;Clairefontaine notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/clairefontaine.jpg&#34; alt=&#34;Clairefontaine notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This notebook is practical and functional, with a plain black cover that&amp;rsquo;s flexible, and rounded corners. Inside there&amp;rsquo;s no decoration or jazz; just basic, plain ruled paper.&lt;/p&gt;
+
+&lt;p&gt;The paper, though, is a highlight. This is Clairefontaine&amp;rsquo;s famous high-quality paper, and I&amp;rsquo;ve used it before. It&amp;rsquo;s really nice quality.&lt;/p&gt;
+
+&lt;p&gt;The notebook is also a great size: not too thick, not too large (A5 again), easy to carry.&lt;/p&gt;
+
+&lt;p&gt;Downside? There are no margins, and the ruling is wide for my taste. The binding doesn&amp;rsquo;t open as flat as I&amp;rsquo;d like. Still, a very good choice for a notebook.&lt;/p&gt;
+
+&lt;p&gt;192 pages, 8.125 x 5.875 x .4375 inches. Rule width: .3125 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B003JMZT98/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $10.99.&lt;/p&gt;
+
+&lt;h3 id=&#34;barnes-noble-journal-refill&#34;&gt;Barnes &amp;amp; Noble journal refill&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/barnes-noble-refill.jpg&#34; alt=&#34;Barnes &amp;amp; Noble journal refill&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I grabbed this journal refill from the shelves at B/N for one reason: it&amp;rsquo;s simple and inexpensive. It&amp;rsquo;s designed to replace the interior of some kind of journal, I&amp;rsquo;m not sure what exactly. The paper is a high-quality Italian ivory, and the cover is heavy card stock. The binding opens very flat, more so than many of the notebooks I&amp;rsquo;ve mentioned above.&lt;/p&gt;
+
+&lt;p&gt;On the downside, the corners are not rounded, and there is a decoration at the bottom of each page, which shouts out &amp;ldquo;journal!&amp;rdquo; and not &amp;ldquo;professional notes!&amp;rdquo; Still, it&amp;rsquo;s a better choice for notes than some of the notepads I&amp;rsquo;ve bought.&lt;/p&gt;
+
+&lt;p&gt;224 pages, 8.25 x 5.75 x .625 inches. Rule width: .26 inches. Bought at Barnes &amp;amp; Noble for $7.95.&lt;/p&gt;
+
+&lt;h3 id=&#34;leuchtturm-1917-notebook&#34;&gt;Leuchtturm 1917 notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/leuchtturm-1917.jpg&#34; alt=&#34;Leuchtturm 1917 notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This Leuchtturm 1917 notebook has a very analytical, practical feel. It has some great standout features, too, such as page numbers on every page, and the paper is obviously good quality. It also has some nice additions, such as stickers for labeling and archiving, and the binding is very nice, although it doesn&amp;rsquo;t quite open flat easily.&lt;/p&gt;
+
+&lt;p&gt;Other than the added touches such as page numbers and high-quality paper, you could easily mistake it for a Moleskine if you weren&amp;rsquo;t a notebook snob. The cover is plain black, with a bit more flex than a Moleskine cover, rounded corners (and the pages are rounded too). As soon as you open it and examine it, though, you see why their motto is &amp;ldquo;details make all the difference.&amp;rdquo; It&amp;rsquo;s obviously a step up in quality from a Moleskine. For example, although the ruling is essentially the same in design and width, it&amp;rsquo;s much lighter than the Moleskine&amp;rsquo;s obtrusive, coarse rules.&lt;/p&gt;
+
+&lt;p&gt;249 pages, 5.75 x 8.25 x .6875 inches. Rule width: .236 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B002CVAU1Y/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $15.99.&lt;/p&gt;
+
+&lt;h3 id=&#34;moleskine-notebook&#34;&gt;Moleskine notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/moleskine.jpg&#34; alt=&#34;Moleskine notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ah, Moleskine, how we love to love you and pay a premium for you. Yet you&amp;rsquo;re so&amp;hellip; boring. Your paper isn&amp;rsquo;t all that great, your cover is uninspiring, your heavy ruling goes all the way across the page with no margin, your elastic droops and sags. Goodness knows why you&amp;rsquo;ve gotten a reputation for being great, because you&amp;rsquo;re not the best. Of course, lots of people are making great things with Moleskine; here&amp;rsquo;s some cropped &lt;a href=&#34;https://www.flickr.com/photos/flyingturtle/1820081554/&#34;&gt;art via Steve Loya&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/art-by-loya.jpg&#34; alt=&#34;Moleskine art by Steve Loya&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bottom line: Moleskine notebooks are functional, with a nice binding, but you can get a much better notebook for less.&lt;/p&gt;
+
+&lt;p&gt;240 pages, 8.25 x 5.25 x .625 inches. Rule width: .236 inches. Bought at &lt;a href=&#34;http://www.amazon.com/Moleskine-Classic-Cover-Large-Notebook/dp/8883701143/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $15.41.&lt;/p&gt;
+
+&lt;h3 id=&#34;chameleon-like-medium-notebook&#34;&gt;Chameleon Like medium notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/chameleon-like-large.jpg&#34; alt=&#34;Chameleon Like medium notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is essentially another Moleskine look-alike, although it&amp;rsquo;s a size smaller and has a tan cover instead of black. The binding is actually nicer, though the paper is not as nice. Overall, nothing remarkable to see here.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s at this size and form factor that the notebooks definitely start to get too small for me. A small, rigid notebook like this isn&amp;rsquo;t the easiest thing to carry or write on, and you end up wasting a lot of space unless you cram your writing really close to the edges of the pages, which makes everything unpleasant.&lt;/p&gt;
+
+&lt;p&gt;192 pages, 7 x 5 x .625 inches. Rule width: .278 inches. Source: freebie at a conference, though apparently they can be had for about $4.99.&lt;/p&gt;
+
+&lt;h3 id=&#34;semikolon-il-creativo-notebook&#34;&gt;Semikolon Il Creativo notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/semikolon-creativo-small.jpg&#34; alt=&#34;Semikolon Il Creativo notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the small version of the large Il Creativo mentioned above. When I saw that the large one was too big for me, I tried to buy a medium one, but it was unavailable from any sellers I could find, so I tried the small one. Unfortunately, like Goldilocks and the Three Bears, this one is Really Too Small. It&amp;rsquo;s cramped to write in. It&amp;rsquo;s just as thick and blocky as the large size. It has too many pages. And it has that annoyingly wide ruling.&lt;/p&gt;
+
+&lt;p&gt;I wanted to like it. But I just can&amp;rsquo;t. I wish I&amp;rsquo;d been able to get a medium-sized one, but frankly I wouldn&amp;rsquo;t have enjoyed it all that much either. Alas!&lt;/p&gt;
+
+&lt;p&gt;304 pages, 5.625 x 4.375 x 1 inch. Rule width: .375 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B005DVEU1G/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $8.37.&lt;/p&gt;
+
+&lt;h3 id=&#34;small-chameleon-like-notebook&#34;&gt;Small Chameleon Like notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/chameleon-like-small.jpg&#34; alt=&#34;Small Chameleon Like notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is just the smaller version of the above Chameleon Like notebook. Way too small for my taste.&lt;/p&gt;
+
+&lt;h3 id=&#34;tenues-coolnotes-notebook&#34;&gt;teNues CoolNotes notebook&lt;/h3&gt;
+
+&lt;p&gt;Ditto &amp;ndash; this notebook is another mini-Moleskine-lookalike.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-spark-notebook&#34;&gt;The Spark Notebook&lt;/h3&gt;
+
+&lt;p&gt;This isn&amp;rsquo;t just a notebook, it&amp;rsquo;s a yearly planner. The amazing Kate Matsudaira
+created this and crowdfunded it in 2014. You should absolutely
+&lt;a href=&#34;http://www.thesparknotebook.com/&#34;&gt;sign up for the next edition&lt;/a&gt;. I bought one
+as a gift for my wife.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/spark-notebook.jpg&#34; alt=&#34;Spark Notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;baron-fig-confidant&#34;&gt;Baron Fig Confidant&lt;/h3&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://www.baronfig.com/pages/confidant&#34;&gt;Baron Fig Confidant&lt;/a&gt; is a lovingly
+hand-designed notebook made for those who are serious about getting back to the
+basics, appreciating craftsmanship, and writing on a book made for enduring
+quality.&lt;/p&gt;
+
+&lt;p&gt;Baron Fig sent me a complimentary copy. It&amp;rsquo;s very nice! As I understand it, the
+next editions will all incorporate feedback from users such as me and you.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/confidant-photo-01.jpg&#34; alt=&#34;Baron Fig Confidant&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The feedback I gave them:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Thanks for the notebook! Feedback thus far - paper seems nice. I&amp;rsquo;m not a big
+dot-grid guy. I like a slightly taller page, but the width is nice. I also
+like thinner books so they fit in my bag without bulking it so much, and more
+flexible cover, for the same reason. The woven cover is slightly unpleasant
+for my fingers somehow, a little reminiscent of burlap bags I handled a lot as
+a kid that chewed up my skin a lot. Lastly, to truly nit-pick, the edges of
+the pages have a slight curl from cutting in one direction, which feels sharp
+in one direction and slippery the other. The lie-flat binding is good.
+Overall, a great notebook!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We agreed that I may need a therapist to help me overcome my burlap issues from
+childhood. If you know anyone who specializes in inner-child-burlap memories,
+let me know.&lt;/p&gt;
+
+&lt;h3 id=&#34;shinola-large-hard-linen-journal&#34;&gt;Shinola Large Hard Linen Journal&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.shinola.com/shop/journals/large-hard-linen.html&#34;&gt;This notebook&lt;/a&gt; is
+similar to the Baron Fig in that it has a bit more bulk, stiffness, and
+coarseness than I prefer. However, if you&amp;rsquo;re an engineer/architect/surveyor type
+or if you just prefer that form factor, it&amp;rsquo;s also very nice indeed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/shinola.jpg&#34; alt=&#34;Shinola&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;maruman-mnemosyne-special-memo-notepad&#34;&gt;Maruman Mnemosyne Special Memo Notepad&lt;/h3&gt;
+
+&lt;p&gt;I know some people who love these notebooks, but I haven&amp;rsquo;t owned one myself:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p&gt;There is my life before these beautiful landscape notebooks, and my life after: &lt;a href=&#34;http://t.co/NMj7AN89FH&#34;&gt;http://t.co/NMj7AN89FH&lt;/a&gt; After is better.&lt;/p&gt;&amp;mdash; John Allspaw (@allspaw) &lt;a href=&#34;https://twitter.com/allspaw/status/572008337228886016&#34;&gt;March 1, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/maruman-mnemosyne-special-memo-notepad.jpg&#34; alt=&#34;Maruman Mnemosyne Special Memo Notepad&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find them on &lt;a href=&#34;http://www.amazon.com/Maruman-Mnemosyne-Special-Memo-Notepad/dp/B001A1TO14/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; and &lt;a href=&#34;http://www.jetpens.com/Maruman-Mnemosyne-Special-Memo-Notepad-A5-5.8-X-8.3-7-mm-Rule-Divisions-24-Lines-X-80-Sheets/pd/4585&#34;&gt;JetPens&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-winners&#34;&gt;The Winners&lt;/h3&gt;
+
+&lt;p&gt;It depends.&lt;/p&gt;
+
+&lt;p&gt;Do you want a journal? I think you can hardly go wrong with the Peter Pauper or the PaperBlanks. The Studio Oh! is a great choice too, especially because it&amp;rsquo;s actually a nicer grade of book and is a little less pricey. It isn&amp;rsquo;t as beautiful, though. On the larger side, the Markings leatherette is a hefty journal that will last a long time, though it&amp;rsquo;s plain too. And if you want a journal that screams &amp;ldquo;Swiss watch designer&amp;rsquo;s journal!&amp;rdquo; then maybe you&amp;rsquo;d like the Semikolon Il Creativo.&lt;/p&gt;
+
+&lt;p&gt;Do you want a Moleskine? Then buy one. Do you want something like it but better quality? Then get the &lt;a href=&#34;http://www.amazon.com/gp/product/B002CVAU1Y/?tag=xaprb-20&#34;&gt;Leuchtturm&lt;/a&gt;, hands down. It&amp;rsquo;s easily the nicest thing in the Moleskine class. I also like the Clairefontaine a lot, and if you&amp;rsquo;re looking for something a little different, you might like the Whitelines.&lt;/p&gt;
+
+&lt;p&gt;Do you want a big, bulky, analytical notebook? That&amp;rsquo;s the Semikolon Il Creativo for you again. Organize thyself!&lt;/p&gt;
+
+&lt;p&gt;But if you&amp;rsquo;re like me and you really want a compact, flexible, practical notebook that slips easily into a messenger bag, opens flat, has nice paper, is slim and inexpensive &amp;ndash; then I&amp;rsquo;m leaning towards recommending the &lt;a href=&#34;http://www.amazon.com/gp/product/B0072WW8K4/?tag=xaprb-20&#34;&gt;Quo Vadis Habana&lt;/a&gt; or the Mead Cambridge Premium Notebook, depending on your taste. Note that I can&amp;rsquo;t find the Cambridge online, but if you&amp;rsquo;re near a Target it&amp;rsquo;s probably easy to find. I might go back and buy a half dozen or so, just in case that turns out not to be true!&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Update: alas, I can no longer find the Cambridge anywhere. So sad. I&amp;rsquo;ve been using the Quo Vadis exclusively for the last several books I&amp;rsquo;ve bought. I&amp;rsquo;ve switched from lined to blank and bought them in bulk from &lt;a href=&#34;http://www.shopwritersbloc.com/habana-journal-large-blank-raspberry.html&#34;&gt;Writers Bloc&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In general, the ultimate notebook for me is 80-100 sheets of paper or 160-200 pages (I&amp;rsquo;ve listed pages above, to make everything consistent), an A5 size, and has pretty minimal features &amp;ndash; no need for a ribbon or an elastic strap &amp;ndash; just nice-quality paper, a slim and flexible design, and the right ruling and margins.&lt;/p&gt;
+
+&lt;p&gt;You might also be interested in my &lt;a href=&#34;https://www.xaprb.com/blog/2015/03/07/ultimate-pen-marker-face-off/&#34;&gt;review of the ultimate pen for note-taking&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here are my favorites in one photo. The rest is up to you. Happy writing, drawing, designing, sketching, scheduling, and organizing!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/best-notebooks-journals.jpg&#34; alt=&#34;Best Notebooks and Journals&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/levinardo/4753547868/&#34;&gt;Lead image credit&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>A review of Republic Wireless&#39;s cellphone service</title>
+          <link>https://www.xaprb.com/blog/2013/03/22/a-review-of-republic-wirelesss-cellphone-cervice/</link>
+          <pubDate>Fri, 22 Mar 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/03/22/a-review-of-republic-wirelesss-cellphone-cervice/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ve been trying out Republic Wireless, a startup that offers very inexpensive wireless service: $19 for unlimited talk, text, and data. In a nutshell: they resell Sprint&amp;rsquo;s network, and you agree to connect to wifi as much as possible; they use the Internet instead of the cell network when you&amp;rsquo;re on wifi. I thought for $19/month it wouldn&amp;rsquo;t hurt to give it a try. After several months, my experience has been that it isn&amp;rsquo;t worth using at all, no matter how cheap it is.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t want to dwell on the problems at great length, but here are some of the issues I&amp;rsquo;ve had.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The phone is junk. It&amp;rsquo;s a super-low-quality Motorola Defy XT, which is basically hardware and software (Android) from 3 years ago. It has flaky behavior such as turning off the screen when I try to use the keypad during a call, for example, when I try to press the 7 key to delete a message from voicemail. It also does bizarre things like rotating the screen from landscape to portrait repeatedly and unpredictably when I&amp;rsquo;m in the middle of trying to use it. It&amp;rsquo;s a really poor experience in every way; my 3-year-old Droid 2 was much better.&lt;/li&gt;
+&lt;li&gt;Sprint&amp;rsquo;s network is awful. Just awful. Voice quality is terrible. I haven&amp;rsquo;t been able to actually have a call for more than a couple of minutes at a time. It disconnects or goes into some kind of zombie state where the call still seems to be connected but nobody can hear anything &amp;ndash; or only one person&amp;rsquo;s voice gets through. The phone is literally unusable as a telephone.&lt;/li&gt;
+&lt;li&gt;Connecting to wifi doesn&amp;rsquo;t work. I connect to wifi, I have a strong signal, and their VOIP software uses the cell network instead. It&amp;rsquo;s incredibly buggy. VOIP calls are better than over-the-air calls, but not much.&lt;/li&gt;
+&lt;li&gt;Something is wrong with number routing. I&amp;rsquo;ve gotten calls from people who were dialing completely different numbers (same area code, but different last 7 digits.) When these people apologized and hung up, then tried calling the number they were trying to reach, they&amp;rsquo;d get me again. This never happened on Verizon.&lt;/li&gt;
+&lt;li&gt;Customer service isn&amp;rsquo;t merely bad, it&amp;rsquo;s actually nonexistent. They just use a community forum, and they don&amp;rsquo;t even answer threads on the forum. See, for example, &lt;a href=&#34;https://community.republicwireless.com/message/63090&#34;&gt;my thread asking them to make voicemail passwords optional&lt;/a&gt;, after they removed passwords from everyone&amp;rsquo;s voicemail (which is a serious and well-demonstrated privacy/security blunder).&lt;/li&gt;
+&lt;li&gt;Text messages stopped working several weeks ago, with basically no notification except for a relatively hidden post in some area of the community forums. Last I looked, there&amp;rsquo;s no update on whether they&amp;rsquo;re even trying to fix this.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;m sure there is more, but that should be enough for now. The summary is that the phone is almost completely unusable for voice calls, completely unusable for text, and practically unusable for anything I&amp;rsquo;d like to do that requires data (e.g. typing an email) because of the hardware&amp;rsquo;s flakiness. It&amp;rsquo;s little more than a small, poorly behaved Android tablet that I paid $250 for.&lt;/p&gt;
+
+&lt;p&gt;My wife and I switched from our previous price-gouging phone network at the same time, and both of us have had all the same issues. So this isn&amp;rsquo;t &amp;ldquo;just me.&amp;rdquo; There&amp;rsquo;s a sample size of at least 2.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A review of Clojure In Action by Amit Rathore</title>
+          <link>https://www.xaprb.com/blog/2012/04/06/a-review-of-clojure-in-action-by-amit-rathore/</link>
+          <pubDate>Fri, 06 Apr 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/04/06/a-review-of-clojure-in-action-by-amit-rathore/</guid>
+          <description>&lt;p&gt;&lt;div id=&#34;attachment_2701&#34; class=&#34;wp-caption alignleft&#34; style=&#34;width: 210px&#34;&gt;
+  &lt;a href=&#34;http://www.amazon.com/Clojure-Action-Amit-Rathore/dp/1935182595/?tag=xaprb-20&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2012/04/clojure-in-action.png&#34; alt=&#34;&#34; title=&#34;Clojure In Action&#34; width=&#34;200&#34; height=&#34;250&#34; class=&#34;size-full wp-image-2701&#34; /&gt;&lt;/a&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
+    Clojure In Action
+  &lt;/p&gt;
+&lt;/div&gt; Clojure In Action, by Amit Rathore. Manning, 2012. About 400 pages.&lt;/p&gt;
+
+&lt;p&gt;This is a lucid and interesting introduction to Clojure and the LISP family of programming languages. It&amp;rsquo;s been years since I programmed in LISP and I found myself recalling those days, at the same time as I learned a lot more than I used to know. Indeed, I realized that my knowledge of LISP was only superficial, and that I probably ought to take some time at some point and learn it deeply enough to have the epiphany people talk about. (Can I plead that I&amp;rsquo;ve had the epiphany with SQL? No? How about XSLT &amp;ndash; it&amp;rsquo;s basically LISP in XML? Drat.)&lt;/p&gt;
+
+&lt;p&gt;The book is in two parts. First you learn about the fundamentals of Clojure, how it works on the JVM, state and concurrency, and so forth. In the second part there&amp;rsquo;s a lot of deeper and more specific topics. You could say that the first part is about learning the language and environment, and the second part is about how to really put Clojure, um, into action. Conventions, idioms, and the like make their appearance in both parts, but in the second part there&amp;rsquo;s a lot of specific topics like building web applications with Clojure and creating DSLs.&lt;/p&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t read the whole book. I saved parts of it for later. Perhaps that&amp;rsquo;s a shame, but perhaps I&amp;rsquo;m just not ready for them yet, either. In any case I found the parts that I read to be well worth my time.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>How I ended my trial of Gnome 3</title>
+          <link>https://www.xaprb.com/blog/2011/06/28/how-i-ended-my-trial-of-gnome-3/</link>
+          <pubDate>Tue, 28 Jun 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/06/28/how-i-ended-my-trial-of-gnome-3/</guid>
+          <description>&lt;p&gt;tl;dr version: I like XFCE better than Gnome 3.&lt;/p&gt;
+
+&lt;p&gt;I wrote &lt;a href=&#34;https://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/&#34;&gt;previously&lt;/a&gt; about trying out Gnome 3. I&amp;rsquo;ve been using it for about a month now, and it&amp;rsquo;s time for me to make a decision about whether to keep using it or revert to Gnome 2. I&amp;rsquo;m actually on vacation, which ends soon. I need to do this before vacation ends, so I can be fully productive at work.&lt;/p&gt;
+
+&lt;p&gt;My ultimate impression of Gnome 3 is that it&amp;rsquo;s very slick, and makes significant improvements in some ways, but it&amp;rsquo;s not very usable for my purposes, and has too many self-contradictions. I still have the complaints I listed in my earlier blog post, such as the identity crisis between keyboard and mouse use. It is geared to keyboard control in some ways, but not enough to really work, and at the same time it&amp;rsquo;s hard to use it with the mouse. For example, it wastes space on items such as huge thick titlebars (what is that for, if not for the mouse to grab?). Yet window borders are only 1 pixel thick, which is very hard to grab with the mouse when I want to resize, and there are no minimize buttons by default. And there is a big black bar across the top of my screen, which contains a lot of useless items I normally hide. At the same time, this bar isn&amp;rsquo;t configurable and I can&amp;rsquo;t put the things I actually want onto it, so it simply sits there making part of my screen unusable.&lt;/p&gt;
+
+&lt;p&gt;After using Gnome 3 for a while, and trying to customize it to my liking, I gave up a couple of days ago. There are simply too many things that were either designed in a way I don&amp;rsquo;t like, or don&amp;rsquo;t work as designed (bugs). At this point, I revisited my reasons for using Gnome. I used to use XFCE, and Fluxbox before that, but I ultimately decided to use Gnome because it was the default, and I want to avoid customizing my environment as much as possible. Gnome had gotten to the point where it was about as good as anything else, for my purposes.&lt;/p&gt;
+
+&lt;p&gt;So instead of reverting to Gnome 2, since I&amp;rsquo;m going to customize my environment anyway, I decided to go back to XFCE instead. And now I&amp;rsquo;m happy again. It&amp;rsquo;s simple, usable, functional, attractive, and fast. It&amp;rsquo;s easy to customize slightly to my taste (e.g. moving the taskbar to the bottom of the screen, Windows style). And Alt-TAB works sanely. And, I get back some of the things I always missed, such as one-click ways to maximize windows vertically or horizontally.&lt;/p&gt;
+
+&lt;p&gt;When Fedora 16 comes out I&amp;rsquo;ll revisit Gnome 3 and see if it has improved, but for now I&amp;rsquo;m done with my evaluation. I also just set up a new computer for my dad, who&amp;rsquo;s a Windows user, and installed Fedora 14 with Gnome 2, instead of Fedora 15. I hope the Gnome developers are able to collect and integrate enough feedback to make a groundbreaking Gnome 3 interface that still does what people expect and works the way they work, because that is &lt;em&gt;the&lt;/em&gt; key to getting more adoption.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A review of SQL Antipatterns by Bill Karwin</title>
+          <link>https://www.xaprb.com/blog/2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/</link>
+          <pubDate>Sat, 11 Jun 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/</guid>
+          <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557?tag=xaprb-20&#34;&gt;&lt;img style=&#34;float:left; margin-right:10px&#34; src=&#34;https://www.xaprb.com/media/2011/06/bksqla_xlargecover.jpg&#34; alt=&#34;&#34; title=&#34;SQL Antipatterns&#34; width=&#34;190&#34; height=&#34;228&#34; class=&#34;alignleft size-full wp-image-2372&#34; /&gt;&lt;/a&gt; &lt;a href=&#34;http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557?tag=xaprb-20&#34;&gt;SQL Antipatterns&lt;/a&gt;, by Bill Karwin, Pragmatic Bookshelf, 2010. About 300 pages. Here&amp;rsquo;s a &lt;a href=&#34;http://pragprog.com/titles/bksqla/sql-antipatterns&#34;&gt;link to the publisher&amp;rsquo;s site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I loved this book. (Disclosure: Bill is a colleague of mine.) This is the first book I&amp;rsquo;ve read from the Pragmatic Bookshelf, and if the rest are like this one, I want to read them. The quality of the writing is way above the average technical book. Techniques that feel gimmicky and forced in other books, such as fake stories to introduce each chapter, actually work here (because they&amp;rsquo;re real stories, not fake ones). Each topic is named in a memorable way and introduced very cleverly. Little quotes and excerpts are tastefully used to illustrate and reinforce the topics. The end result is that it&amp;rsquo;s a lot of fun to read. If you do nothing more than read the first and last page of each chapter, you&amp;rsquo;ll enjoy it and learn a lot at the same time.&lt;/p&gt;
+
+&lt;p&gt;The target audience here is developers who must work with databases, not database administrators per se. But if you&amp;rsquo;re a DBA and you&amp;rsquo;re having a hard time explaining something to a developer, you could do a lot worse than referring to this book. The content is database-agnostic, with specific mention of a broad variety of databases such as MySQL, Oracle, SQL Server, and more when appropriate.&lt;/p&gt;
+
+&lt;p&gt;There are four major categories of mistakes: logical database design, physical database design, queries, and development practices. These cover 25 &amp;ldquo;anti-patterns&amp;rdquo; showing how not to do things, and explaining why they&amp;rsquo;re wrong, when it might be a good idea to do it that way anyhow, and what your alternatives are.&lt;/p&gt;
+
+&lt;p&gt;For example, the first pattern is titled Jaywalking. The name is a reference to avoiding intersections, i.e. storing comma-delimited lists in a single column. The chapter explains what&amp;rsquo;s hard to do in a database that&amp;rsquo;s designed in this manner, and how to sniff out the use of this antipattern. Then it explains how to create an intersection table, and ends with a pithy recommendation to &amp;ldquo;store each value in its own column and row.&amp;rdquo; Pretty straightforward, and much more effective than a lecture on all the different varieties of normal forms.&lt;/p&gt;
+
+&lt;p&gt;Sometimes I thought of some other alternatives. For example, in avoiding FLOAT data types to prevent rounding errors for currency values, the book suggests using DECIMAL. But another option is storing an integer number of the smallest currency unit (pennies, in the US dollar currency). And I thought of lots more antipatterns, such as using a table as a queue, which often happens sneakily, without anyone realizing it. I am sure we could all suggest more antipatterns and alternatives. Anything can be taken to extremes; I think this book wisely stops before the point of burn-out.&lt;/p&gt;
+
+&lt;p&gt;Like Bill Karwin, I see developers make these mistakes constantly, so I recommend this book to every developer who interacts with a database. It might be a good book to buy for new team members, if you&amp;rsquo;re the team leader.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A review of MySQL Replication by Russell Dyer</title>
+          <link>https://www.xaprb.com/blog/2011/06/09/a-review-of-mysql-replication-by-russell-dyer/</link>
+          <pubDate>Thu, 09 Jun 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/06/09/a-review-of-mysql-replication-by-russell-dyer/</guid>
+          <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/MySQL-Replication-Administrators-Guide/dp/0983185409/?tag=xaprb-20&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2011/06/mysql_replication_front_cover_sm.jpg&#34; alt=&#34;&#34; style=&#34;float:left&#34; title=&#34;mysql_replication_front_cover_sm&#34; width=&#34;200&#34; height=&#34;313&#34; class=&#34;alignleft size-full wp-image-2360&#34; /&gt;&lt;/a&gt; &lt;a href=&#34;http://www.amazon.com/MySQL-Replication-Administrators-Guide/dp/0983185409/?tag=xaprb-20&#34;&gt;MySQL Replication&lt;/a&gt; by Russell Dyer, Silent Killdeer, 2010. About 180 pages.&lt;/p&gt;
+
+&lt;p&gt;This is a pocket-sized guide to setting up and managing MySQL replication. It is self-published and made via print-on-demand technology. Topics include how replication works, setting up replication, making backups, and administering replication after it&amp;rsquo;s working. There are several appendixes for replication-related functionality in the MySQL server and command-line tools.&lt;/p&gt;
+
+&lt;p&gt;This book doesn&amp;rsquo;t go into great depth, so don&amp;rsquo;t expect it to be a reference manual to replication internals or anything like that. It&amp;rsquo;s more of a how-to manual for beginners, walking through the basics of binary and relay logs, SQL and I/O threads, and so on.&lt;/p&gt;
+
+&lt;p&gt;I wish it were more comprehensive in some areas, and talked about tools such as Percona XtraBackup and Maatkit. I don&amp;rsquo;t think any book on replication today is complete without these tools. I also wish the text font had serifs and was colored black instead of a foggy gray color. This might be an artifact of the print-on-demand technology, I&amp;rsquo;m not sure.&lt;/p&gt;
+
+&lt;p&gt;Some readers will likely prefer the official MySQL manual to this book, while others might find the book to be a convenient and helpful reference. If I had to summarize the book in a sentence, I&amp;rsquo;d say that it tells readers the basics of setting up and administering replication, but excludes advanced topics, some of which I&amp;rsquo;d consider essential (e.g. Maatkit, Percona XtraBackup).&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A review of PostgreSQL 9 Administration Cookbook by Riggs and Krosing</title>
+          <link>https://www.xaprb.com/blog/2011/06/08/a-review-of-postgresql-9-administration-cookbook-by-riggs-and-krosing/</link>
+          <pubDate>Wed, 08 Jun 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/06/08/a-review-of-postgresql-9-administration-cookbook-by-riggs-and-krosing/</guid>
+          <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/PostgreSQL-Admin-Cookbook-Simon-Riggs/dp/1849510288/?tag=xaprb-20&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2011/06/postgreql-administration-cookbook.jpg&#34; alt=&#34;&#34; title=&#34;postgreql-administration-cookbook&#34; width=&#34;200&#34; height=&#34;247&#34; class=&#34;alignleft size-full wp-image-2351&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/PostgreSQL-Admin-Cookbook-Simon-Riggs/dp/1849510288/?tag=xaprb-20&#34;&gt;PostgreSQL 9 Administration Cookbook&lt;/a&gt;. By Simon Riggs and Hannu Krosing, Packt, 2010. Approximately 330 pages.&lt;/p&gt;
+
+&lt;p&gt;This is a good book for PostgreSQL database administrators to pick up, especially if you&amp;rsquo;re new to PostgreSQL but familiar with another system such as Oracle, SQL Server, or MySQL. It has more than 80 &amp;ldquo;recipes&amp;rdquo; that range from quick tips to moderately detailed discussion of how to accomplish specific tasks. The chapters and recipes are well organized, and you can either read the book from start to finish or jump to a specific recipe for quick help.&lt;/p&gt;
+
+&lt;p&gt;The major topics are introductory/overview, configuration, managing tables and data, security, managing the server itself, monitoring, maintenance, performance, backup and recovery, replication, and upgrades. The chapter list mimics that list pretty well, though I lumped some chapters together in my topic list.&lt;/p&gt;
+
+&lt;p&gt;Some of the same topics are covered in much greater detail in Greg Smith&amp;rsquo;s excellent &lt;em&gt;PostgreSQL 9 High Performance&lt;/em&gt;, &lt;a href=&#34;https://www.xaprb.com/blog/2011/02/13/a-review-of-postgresql-9-0-high-performance-by-gregory-smith/&#34;&gt;which I reviewed previously&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;On the negative side, I can only remark that the cookbook format in general isn&amp;rsquo;t my favorite; each &amp;ldquo;recipe&amp;rdquo; is quite formulaic, with little sub-headings titled &amp;ldquo;getting ready, how to do it, how it works, there&amp;rsquo;s more, see also.&amp;rdquo; But it works pretty well nonetheless as a quick-reference guide.&lt;/p&gt;
+
+&lt;p&gt;Overall worth picking up, unless you&amp;rsquo;re quite knowledgeable about PostgreSQL already, in which case I wouldn&amp;rsquo;t expect you to learn much from this book.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Impressions of Fedora 15 with Gnome 3</title>
+          <link>https://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/</link>
+          <pubDate>Tue, 07 Jun 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/</guid>
+          <description>&lt;p&gt;I finally upgraded from Fedora 13 to Fedora 15 on my beloved &lt;a href=&#34;http://www.amazon.com/dp/B002P3KMVC?tag=xaprb-20&#34;&gt;ASUS-UL30A-X5&lt;/a&gt;. It includes the new Gnome 3, with the &amp;ldquo;Gnome Shell&amp;rdquo; interface. It&amp;rsquo;s quite different from anything else I&amp;rsquo;ve used, and you can read lots of positive and negative impressions around the web.&lt;/p&gt;
+
+&lt;p&gt;Fedora 15 and Gnome 3 have awesome support for my laptop&amp;rsquo;s hardware. It&amp;rsquo;s simply flawless. You could not expect better software/hardware integration if you paid thousands of dollars for something from Steve Jobs. Fedora has been great about this for a long time, actually, although there was a video driver problem in Fedora 13 that would sometimes kernel-panic if I did a lot of suspending and resuming combined with plugging and unplugging external monitors. That&amp;rsquo;s not a problem I&amp;rsquo;ve seen in this release.&lt;/p&gt;
+
+&lt;p&gt;This is my work laptop, so it&amp;rsquo;s not important whether it&amp;rsquo;s cool or exciting. I am generally dealing with a lot of open windows, rapidly switching between them, opening new programs, finding files and directories, and so on. I need the interface to help me with that. So far, results are very positive, with a few things that are either giving me withdrawal pains or simply aren&amp;rsquo;t working as well as I need.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re considering using Gnome 3, don&amp;rsquo;t just try it out on a live CD for ten minutes and decide it&amp;rsquo;s lame. It&amp;rsquo;s completely new and different, and you need to spend a little time actually learning it. You had to learn Mac or Windows or whatever you currently use; if you struggle with Gnome 3 at first, stop struggling and read the documentation for 15 minutes or so. The best and fastest place to get started is with the &lt;a href=&#34;https://live.gnome.org/GnomeShell/CheatSheet&#34;&gt;cheat sheet&lt;/a&gt;. You do things &lt;em&gt;differently&lt;/em&gt; in Gnome 3. You don&amp;rsquo;t have your familiar start menu, taskbar, system tray, desktop icons, and so on. You don&amp;rsquo;t use your mouse, in general, although you can if you want to.&lt;/p&gt;
+
+&lt;p&gt;The Gnome 3 desktop environment is definitely beautiful and well-done. I&amp;rsquo;d say it&amp;rsquo;s the best-designed, fastest, best-integrated desktop I&amp;rsquo;ve used on Linux, and perhaps all-around the best interface I&amp;rsquo;ve used on any platform. (Mac OS X, for example, is very pretty but not very usable IMO, although it&amp;rsquo;s getting better these days with the ability to control it more completely without using the mouse. I&amp;rsquo;m not a Mac fan, for what it&amp;rsquo;s worth.) You can call it eye candy if you wish, and I won&amp;rsquo;t argue, but I&amp;rsquo;ll point out that it&amp;rsquo;s extremely tasteful eye candy. I never felt that KDE&amp;rsquo;s eye candy was anything but garish, by contrast.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s extremely easy and efficient to find and open programs in Gnome 3; much better than using a &amp;ldquo;start menu.&amp;rdquo; Press the &amp;ldquo;Windows key&amp;rdquo; and type the first few letters of the program&amp;rsquo;s name, then press Enter. Done. You can do the same thing to switch between your open windows.&lt;/p&gt;
+
+&lt;p&gt;The most important thing for me is managing a lot of open windows while switching between things a lot. This is the nature of my work, not something I&amp;rsquo;m doing wrong. I haven&amp;rsquo;t gotten used to this yet. I still want to be able to choose a window from the taskbar with my mouse, when I&amp;rsquo;m working with a mouse. It&amp;rsquo;s nice to be able to switch to a window with the keyboard quickly, but I need both abilities. Some activities, such as web browsing and graphics editing, are more mouse-driven. It&amp;rsquo;s most important to me that I don&amp;rsquo;t have to switch between the mouse and the keyboard, rather than solely that the keyboard can be used very easily. When I&amp;rsquo;m text editing in Vim (100% keyboard driven), the abilities to find and switch to other windows with just the keyboard are awesome. But I need both kinds of usability.&lt;/p&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t gotten used to the distinction between alt-tab and alt-backtick, for switching between groups of applications and switching between windows within an application group. I might ultimately decide to configure the behavior back to alt-tab&amp;rsquo;s old familiar behavior. I don&amp;rsquo;t really think of groups of windows as applications/activities in a unit, which I think the Gnome 3 interface really assumes is the case. I group windows by using tabbed interfaces (browser, for example) in most cases; and when I have multiple windows of a single application open, they&amp;rsquo;re usually not related. For example, I&amp;rsquo;ll have several terminals open, but they&amp;rsquo;re not all for one task. I&amp;rsquo;m more likely to have Firefox with three tabs open, and three terminals, and an email or two, and a chat window &amp;ndash; and the three terminals all correspond to different activities.&lt;/p&gt;
+
+&lt;p&gt;Gnome 3&amp;#8242;s partial answer to this task grouping is completely redesigned workspace support. It&amp;rsquo;s awesome &amp;ndash; it&amp;rsquo;s the way it always should have worked. But I&amp;rsquo;m not quite used to using it yet. I expect to use it a lot more as I relearn/unlearn old habits. In the meantime, when I have several Skype chats open and I want to find one of them, it&amp;rsquo;s a bit painful for me because Gnome wants to switch me to Skype, as a whole, rather than switching me to any given chat window. And if one of them is buried and visually not accessible, it&amp;rsquo;s hard for me to use the keyboard to get to it.&lt;/p&gt;
+
+&lt;p&gt;I use IRC a lot at work. I usually use XChat, but I decided to give the Gnome messaging platform a try. It&amp;rsquo;s basically Empathy, tightly integrated into the desktop environment, to make chatting easy and unintrusive. These &lt;a href=&#34;http://www.gnome.org/gnome-3/&#34;&gt;videos&lt;/a&gt; show how this works. Unfortunately, Empathy isn&amp;rsquo;t a very richly featured IRC client, and this is one of those tools that I use so much and so specifically that I have special needs. I was able to tweak Empathy to make it alert me when people mentioned me by name, but I ran out of some other configuration options that I need. XChat lets me create custom key bindings to change my nickname easily, custom highlight words, and so on. From what I can see so far, Empathy doesn&amp;rsquo;t have that ability. And I&amp;rsquo;ve gotten confused or lost a bit of chat history/context a couple of times when odd things happened, such as the person at the other end of a private message chat changing his nickname. I might just need to learn how to use Empathy better, so I&amp;rsquo;m reserving my judgment a bit before I switch back to XChat. But at this point I think that Empathy is better designed for the &amp;ldquo;AOL instant messenger&amp;rdquo; type of chatting than it is for IRC, with its concept of multiple people in a single channel with changing nicknames.&lt;/p&gt;
+
+&lt;p&gt;I had to change one of the default window manager behaviors. My email client (Claws Mail) opens a new window to compose a message, and I have customized Claws to do almost everything with the keyboard. So when I press &amp;lsquo;c&amp;rsquo;, it opens a new message window. Gnome 3 decided to place this window behind my Claws Mail window, with the focus remaining on the main window, and a notification that my new window is ready to use. But then I have to switch focus to the new window to actually use it. This doesn&amp;rsquo;t work for me, so I started gconf-editor and changed the value of /apps/metacity/general/new_windows_always_on_top. That solved the problem.&lt;/p&gt;
+
+&lt;p&gt;I absolutely rely on Revelation for password management, and it has a nice panel applet / widget that I used heavily in Gnome 2. Unfortunately, Gnome 3 has no panels. So I have to use the Revelation program directly, instead of the applet. This is painful. The Revelation interface is not very good. I searched around for another password manager, but couldn&amp;rsquo;t find anything better (they all look worse, frankly). I don&amp;rsquo;t think that the native Gnome keyring manager is the solution I&amp;rsquo;m looking for. I have nearly 200 passwords, and I use dozens of them actively every day &amp;ndash; and the number of paswords probably grows by two or three a week. I would be willing to pay some money for a really good password manager with tight Gnome integration. I&amp;rsquo;d love something keyboard-driven, that I can switch my focus to, type a few characters to search for the account I need to use, hit TAB to highlight the password, copy with CTRL-C, dismiss with ESC, and be on my way.&lt;/p&gt;
+
+&lt;p&gt;The default Gnome 3 interface is too gray and colorless. Active and inactive windows look the same. It&amp;rsquo;s too uniform. I wish the color theme were slightly more imaginative. And the window titlebars are too thick &amp;ndash; it uses too much space. I think all of these things are fixable, but I don&amp;rsquo;t see an easy way to change the visual theme from the preferences dialog. I think I need to install some add-on to do this.&lt;/p&gt;
+
+&lt;p&gt;That brings up another minor wish: the system and user preferences don&amp;rsquo;t seem complete. There isn&amp;rsquo;t enough control in the control panel, so to speak. If you search the Web for tweaks, you see a lot of gconf-editor command-line one-liners. This isn&amp;rsquo;t good for most users; most people need a graphical utility that groups configuration settings together nicely for them. I assume that this is just because it&amp;rsquo;s new, and a lot of the most popular tweaks and add-ons will find their way into the next Gnome 3 release as native, built-in preferences dialogs.&lt;/p&gt;
+
+&lt;p&gt;In summary, I really like Gnome 3 and thank the Gnome team very much for creating it. I hope that many of the hiccups I&amp;rsquo;ve seen so far are just early-adopter syndrome, and it&amp;rsquo;ll get more complete and well-rounded in future releases. I probably need better and more configurable IRC functionality if I&amp;rsquo;m going to switch to using the built-in messaging/chat functionality, and I definitely need a better password manager in general. I might also need a taskbar or something similar to help me switch between running applications and windows when I&amp;rsquo;m using my mouse to control my computer. But all of this is early impressions, and I&amp;rsquo;m trying to learn to be a more skilful Gnome user, so I&amp;rsquo;ll see how that goes.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Using the Nook Color as a full-featured Android tablet</title>
+          <link>https://www.xaprb.com/blog/2011/06/04/using-the-nook-color-as-a-full-featured-android-tablet/</link>
+          <pubDate>Sat, 04 Jun 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/06/04/using-the-nook-color-as-a-full-featured-android-tablet/</guid>
+          <description>
+
+&lt;p&gt;I bought a &lt;a href=&#34;http://www.amazon.com/Barnes-Noble-Color-eBook-Tablet/dp/1400532655/?tag=xaprb-20&#34;&gt;Barnes and Noble Nook Color&lt;/a&gt; e-book reader and ripped out the Nook software, replacing it with the &lt;a href=&#34;http://www.cyanogenmod.com/&#34;&gt;CyanogenMod&lt;/a&gt; distribution of the Android OS. It&amp;rsquo;s really, really nice hardware, and CyanogenMod (CM) is really, really nice software. I love them both, and my regular readers will remember that I&amp;rsquo;m &lt;em&gt;not a gadget guy&lt;/em&gt;. Read on for more.&lt;/p&gt;
+
+&lt;p&gt;I never thought I&amp;rsquo;d get a tablet, until my phone died and I got a Droid 2 as a replacement. With all those gadgets, I just started to find myself using my phone for reading my RSS feeds and so on &amp;ndash; but hating how small the screen was. I started to think again about a tablet after experiencing how handy the smartphone&amp;rsquo;s extra features are.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-nook-color-hardware&#34;&gt;The Nook Color Hardware&lt;/h3&gt;
+
+&lt;p&gt;The Nook Color is a medium-sized Android tablet with a screen that&amp;rsquo;s the same size as the &lt;a href=&#34;http://www.amazon.com/Samsung-Galaxy-Tab-AT-T/dp/B004CYEQF0/?tag=xaprb-20&#34;&gt;Samsung Galaxy Tab&lt;/a&gt;. It&amp;rsquo;s a perfect size for carrying around &amp;ndash; much better than iPads and Xooms and so on, which are just too big for my taste. This device literally fits in the pocket of my jeans (&lt;a href=&#34;https://nookdeveloper.barnesandnoble.com/product/nook-color-specs.html&#34;&gt;specs&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;The screen is amazing. It&amp;rsquo;s super sharp. But the Nook Color doesn&amp;rsquo;t have a microphone or a camera, and it doesn&amp;rsquo;t have any phone service. This is fine. I don&amp;rsquo;t want these items. I want a tablet to use primarily at home for consuming content such as blogs, books, newspapers, music, movies, and so on.&lt;/p&gt;
+
+&lt;p&gt;The best parts: 1) it&amp;rsquo;s way cheaper than a Galaxy Tab or similar tablets. It&amp;rsquo;s $250 at the store. And 2) it&amp;rsquo;s really easy to take off the stripped-down version of Android that comes with it, and put something better on it. Which brings me to my next point.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-software&#34;&gt;The Software&lt;/h3&gt;
+
+&lt;p&gt;When you unpack the box, the Nook has a pretty nice little e-reader installed, with a simplified Android interface. It has limited functionality, which is fine. It does have a web browser and a couple other things, and BN recently added their own application store. But it&amp;rsquo;s really kind of lame. You can only get a small fraction of the apps that you could get through the Android Market.&lt;/p&gt;
+
+&lt;p&gt;I updated to CyanogenMod in two stages. First, I simply rooted the device and made it possible to install arbitrary apps from the Android Market. There&amp;rsquo;s a nice, easy process to do this. It&amp;rsquo;s called &lt;a href=&#34;http://forum.xda-developers.com/showpost.php?p=13270739&amp;amp;#038;postcount=1&#34;&gt;Manual Nooter&lt;/a&gt;. I tried this first instead of just going to CyanogenMod because I wanted to see what it was like. It was okay, but it was really obvious that it was a sort of layer on top of the underlying Nook. Pressing the Home button, for example, brought up a prompt to use the Nook home screen or the hijacked home screen for the new software. I tinkered around with this for a while, enough to determine that I didn&amp;rsquo;t like the patched look and feel. At the same time, I learned that the applications I wanted would work just fine.&lt;/p&gt;
+
+&lt;p&gt;So I moved on to CyanogenMod. Early reviews I&amp;rsquo;d read of this said it wasn&amp;rsquo;t ready for prime time on the Nook, but the newer updates seemed to be well received. So I backed up everything and took the plunge.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s really ridiculously easy to install CyanogenMod on the Nook, even easier if you don&amp;rsquo;t first update your Nook operating system. It took me longer to burn a bootable ROM on a MicroSD card than anything else. Full instructions can be found beginning at &lt;a href=&#34;http://www.cyanogenmod.com/devices/nook-color&#34;&gt;this page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The result is just brilliant. I&amp;rsquo;ve now installed my preferred apps, stripped down the interface by removing some stuff I don&amp;rsquo;t want, such as multiple desktops (CyanogenMod is jammed with features), and I have a simple, elegant, perfectly functioning Android tablet. And I really mean it &amp;ndash; there are no rough edges or crashes or anything you might expect from a third-party OS on your tablet. In fact, one of the things I like the most is that it doesn&amp;rsquo;t come with pre-installed adware, as my Droid did (and the stuff on the Droid can&amp;rsquo;t be uninstalled without rooting it and voiding the warranty, which is not something I&amp;rsquo;m going to do on my work phone).&lt;/p&gt;
+
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;If you want a small, light, thin tablet with WiFi that you can hold in one hand for reading books and newspapers and so on, which is easy to put in a pocket or purse and carry with you, and doesn&amp;rsquo;t cost much, then consider the Nook Color. If you want to turn it into something much more full-featured, then consider ripping out the Nook software and replacing it with CyanogenMod. The result is really superb.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A review of PostgreSQL 9.0 High Performance by Gregory Smith</title>
+          <link>https://www.xaprb.com/blog/2011/02/13/a-review-of-postgresql-9-0-high-performance-by-gregory-smith/</link>
+          <pubDate>Sun, 13 Feb 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/02/13/a-review-of-postgresql-9-0-high-performance-by-gregory-smith/</guid>
+          <description>&lt;p style=&#34;float:left&#34;&gt;
+  &lt;div id=&#34;attachment_2209&#34; class=&#34;wp-caption alignleft&#34; style=&#34;width: 253px&#34;&gt;
+    &lt;a href=&#34;http://www.amazon.com/dp/184951030X?tag=xaprb-20&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2011/02/postgresql_9.0_high_performance-243x300.jpg&#34; alt=&#34;PostgreSQL 9.0 High Performance&#34; title=&#34;PostgreSQL 9.0 High Performance&#34; width=&#34;243&#34; height=&#34;300&#34; class=&#34;size-medium wp-image-2209&#34; /&gt;&lt;/a&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
+      PostgreSQL 9.0 High Performance
+    &lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;a href=&#34;http://www.amazon.com/dp/184951030X?tag=xaprb-20&#34;&gt;PostgreSQL 9.0 High Performance&lt;/a&gt;. By Gregory Smith, Packt 2010. About 420 pages. (Here&#39;s a link to &lt;a href=&#34;https://www.packtpub.com/postgresql-90-high-performance/book&#34;&gt;the publisher&#39;s page for this book&lt;/a&gt;.)
+&lt;/p&gt;
+
+&lt;p&gt;I enjoyed this book a lot and recommend it to everyone who uses PostgreSQL or MySQL. MySQL users should benefit from understanding PostgreSQL. Beyond that, I learned a lot from this book that I can apply directly to MySQL. In particular, the book begins with a few chapters on hardware performance, benchmarking, and configuration. This material is database-agnostic and very well done. There is about 70 pages of it &amp;ndash; it goes into a lot of details. It is more detailed than the similar material in my own book High Performance MySQL.&lt;/p&gt;
+
+&lt;p&gt;The rest of the book is much more focused on PostgreSQL. There are chapters on memory use, server configuration, maintenance (with a good survey of how PostgreSQL handles things like MVCC), benchmarking, indexing, query optimization, statistics, monitoring and trending, pooling, caching, replication, partitioning, proxies, and finally an extensive laundry list of common problems and how to solve them.&lt;/p&gt;
+
+&lt;p&gt;It was a pleasure to read &amp;ndash; the quality and clarity of the writing is very good. Greg is an excellent writer and obviously put a lot of work into this book.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: &lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is the startup I founded in 2012. It&amp;rsquo;s the easiest way to monitor what
+your servers are doing in production. VividCortex offers &lt;a href=&#34;https://vividcortex.com/monitoring/mysql/&#34;&gt;MySQL performance
+monitoring&lt;/a&gt; and &lt;a href=&#34;https://vividcortex.com/monitoring/postgres/&#34;&gt;PostgreSQL
+performance management&lt;/a&gt; among many
+other features.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A review of CouchDB, the Definitive Guide by Anderson, Lenhardt, and Slater</title>
+          <link>https://www.xaprb.com/blog/2010/12/26/a-review-of-couchdb-the-definitive-guide-by-anderson-lenhardt-and-slater/</link>
+          <pubDate>Sun, 26 Dec 2010 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2010/12/26/a-review-of-couchdb-the-definitive-guide-by-anderson-lenhardt-and-slater/</guid>
+          <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/CouchDB-Definitive-Guide-Relax-Animal/dp/0596155891/?tag=xaprb-20&#34;&gt;CouchDB, the Definitive Guide&lt;/a&gt;. By J. Chris Anderson, Jan Lehnardt, and Noah Slater, O&amp;rsquo;Reilly 2010. About 260 pages.&lt;/p&gt;
+
+&lt;p&gt;This is a good introduction to CouchDB. I would like more information about server internals from a book titled &amp;ldquo;definitive guide.&amp;rdquo; But it orients the reader well and shows CouchDB&amp;rsquo;s strengths and use cases clearly. The writing is straightforward and well organized. I think it does a great job at helping the reader see the possibilities and the elegance inherent to the data model and conventions built into CouchDB. I ended up feeling very enthusiastic about CouchDB.&lt;/p&gt;
+
+&lt;p&gt;My complaints about the book are that it sometimes doesn&amp;rsquo;t go into enough depth, and it is a little wide-eyed in places. One example is the section explaining how CouchDB can scale to exabyte datasets. I would also like to see a little more formal or rigorous treatment of some topics; I saw the phrase &amp;ldquo;crash-only design&amp;rdquo; in several places, but the book never explained what that means.&lt;/p&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t read any of the other books on CouchDB yet, but this book was fun enough to read and made me interested enough that I would like to.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A review of MongoDB, the Definitive Guide by Chodorow and Dirolf</title>
+          <link>https://www.xaprb.com/blog/2010/12/14/a-review-of-mongodb-the-definitive-guide-by-chodorow-and-dirolf/</link>
+          <pubDate>Tue, 14 Dec 2010 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2010/12/14/a-review-of-mongodb-the-definitive-guide-by-chodorow-and-dirolf/</guid>
+          <description>&lt;p style=&#34;float:left&#34;&gt;
+  &lt;div id=&#34;attachment_2114&#34; class=&#34;wp-caption alignleft&#34; style=&#34;width: 190px&#34;&gt;
+    &lt;a href=&#34;http://www.amazon.com/dp/1449381561?tag=xaprb-20&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2010/12/mongodb-definitive-guide.gif&#34; alt=&#34;MongoDB, the Definitive Guide&#34; title=&#34;MongoDB, the Definitive Guide&#34; width=&#34;180&#34; height=&#34;236&#34; class=&#34;size-full wp-image-2114&#34; /&gt;&lt;/a&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
+      MongoDB, the Definitive Guide
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/dp/1449381561?tag=xaprb-20&#34;&gt;MongoDB, the Definitive Guide&lt;/a&gt;, by Kristina Chodorow and Michael Dirolf, 2010. About 200 pages. (Here&amp;rsquo;s a &lt;a href=&#34;http://oreilly.com/catalog/0636920001096&#34;&gt;link to the publisher&amp;rsquo;s site&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;This is a good introduction to MongoDB, mostly from the application developer&amp;rsquo;s point of view. After reading through this, I felt that I understood the concepts well, although I am not a MongoDB expert, so I can&amp;rsquo;t pretend to be a fact-checker. The topics are clearly and logically presented for the most part; there is a small amount of repetition in one of the appendixes, but I don&amp;rsquo;t mind that. The writing and editing is top-notch, as I&amp;rsquo;ve come to expect from O&amp;rsquo;Reilly.&lt;/p&gt;
+
+&lt;p&gt;Read this book if you want to learn what MongoDB is, what it does, and how to use it. Don&amp;rsquo;t expect that you will learn everything there is to know about topics such as administration and tuning, although it&amp;rsquo;ll be a good start. (The MongoDB documentation is an excellent reference to continue your education in those areas.)&lt;/p&gt;
+
+&lt;p&gt;You might be pleasantly surprised at the lack of hype in this book. It wasn&amp;rsquo;t written by wide-eyed fanboys, and it does mention the weaknesses of MongoDB, although it understandably doesn&amp;rsquo;t spend any time bashing MongoDB for having shortcomings. I think you&amp;rsquo;ll get a balanced view of the database&amp;rsquo;s strengths and weaknesses, certainly enough to make a responsible decision about whether it&amp;rsquo;s worth investigating more deeply.&lt;/p&gt;
+
+&lt;p&gt;To sum up, as I wrote to the authors, &amp;ldquo;Nice book. Very well written, very clear and objective.&amp;rdquo;&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A review of Relational Database Design and the Optimizers by Lahdenmaki and Leach</title>
+          <link>https://www.xaprb.com/blog/2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/</link>
+          <pubDate>Sun, 19 Sep 2010 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/</guid>
+          <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Relational-Database-Index-Design-Optimizers/dp/0471719994/?tag=xaprb-20&#34;&gt;Relational Database Index Design and the Optimizers&lt;/a&gt;. By Tapio Lahdenmaki and Mike Leach, Wiley 2005.&lt;/p&gt;
+
+&lt;p&gt;I picked this book up on the advice of an Oracle expert, and after one of my colleagues had read it and mentioned it to me. The focus is on how to design indexes that will produce the best performance for various types of queries. It goes into quite a bit of detail on how databases execute specific types of queries, including sort-merge joins and multiple index access, and develops a generic cost model that can be used to produce a quick upper-bound estimate (QUBE) for the execution time of a query. The book focuses on DB2, Oracle, and SQL Server, but applies equally well to MySQL and PostgreSQL.&lt;sup&gt;&amp;dagger;&lt;/sup&gt; I learned a lot from this book, and will add it to my list of essential books.&lt;/p&gt;
+
+&lt;p&gt;There are too many myths and rules of thumb about index design. This book debunks them pretty thoroughly. It walks the reader through the process of understanding what a database does to execute a query, and how much that costs; and then what a database does to execute a data modification, and how much that costs. Given this knowledge, you can answer questions such as &amp;ldquo;what is the ideal index for each of these two queries?&amp;rdquo; and &amp;ldquo;should the queries have separate indexes, or is it better to find a compromise that will be good for both of them?&amp;rdquo; and even &amp;ldquo;how much slower will the compromise be for each query?&amp;rdquo; In many cases, the results are non-obvious, and often don&amp;rsquo;t agree with the rules of thumb you might have been taught. Generally, the book concludes, we should use indexes much more than we often do, and we should not hold irrational fears about the cost of maintaining indexes.&lt;/p&gt;
+
+&lt;p&gt;After reading this book, you&amp;rsquo;ll understand what makes an index good or bad for a query (a three-star ranking system), what makes a query possible or impossible to index ideally, the quick upper-bound estimate of execution time, the Basic Question, finding the cheapest adequate index, difficult predicates, index slices, and a host of other valuable concepts. In addition, there&amp;rsquo;s an entire chapter on a method for finding queries that are not well indexed. Some of the methods in this book are things I already had notes to implement in Maatkit tools, but others are new to me. The method of finding promising culprits is something I learned in this book, and I think it&amp;rsquo;s very valuable for a tool such as mk-query-digest with the Percona enhancements to the slow query log.&lt;/p&gt;
+
+&lt;p&gt;There are a few things I&amp;rsquo;ll point out so it doesn&amp;rsquo;t seem like an unqualified endorsement. One, the book is not as easy to read as it could be. The editors should have removed 99% of the places where the authors italicized or otherwise emphasized words; there&amp;rsquo;s a lot of emphasis on relatively unimportant or random words. Barely a sentence is free of italics. Second, the book was written in 2005 and today&amp;rsquo;s machines have much more memory. (This generally makes the book&amp;rsquo;s points more valid, not less valid.) Finally, the cost model is based on spinning disks, and the QUBE method needs slightly different parameters to work correctly on solid-state storage, or indeed even many modern SANs. However, that&amp;rsquo;s not a big deal &amp;ndash; just measure your storage system&amp;rsquo;s performance, plug in the correct random versus sequential access time, and the model is still valid.&lt;/p&gt;
+
+&lt;p&gt;&lt;sup&gt;&amp;dagger;&lt;/sup&gt; Note that although at the time of writing PostgreSQL did not yet support index-only queries, which is a major focus of the book, the various cost models apply equally well. One must simply account for the cost of the table access, and not assume that the index is the only thing that&amp;rsquo;s touched by the query. In general, you&amp;rsquo;re going to need to know the internals of your database server to apply this book&amp;rsquo;s wisdom.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A review of Guerrilla Capacity Planning by Neil Gunther</title>
+          <link>https://www.xaprb.com/blog/2010/07/06/a-review-of-guerrilla-capacity-planning-by-neil-gunther/</link>
+          <pubDate>Tue, 06 Jul 2010 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2010/07/06/a-review-of-guerrilla-capacity-planning-by-neil-gunther/</guid>
+          <description>&lt;div id=&#34;attachment_1949&#34; class=&#34;wp-caption alignleft&#34; style=&#34;width: 163px&#34;&gt;
+  &lt;a href=&#34;http://www.amazon.com/Guerrilla-Capacity-Planning-Tactical-Applications/dp/3540261389?tag=xaprb-20&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2010/07/guerrilla_capacity_planning.jpg&#34; alt=&#34;Guerrilla Capacity Planning&#34; title=&#34;Guerrilla Capacity Planning&#34; width=&#34;153&#34; height=&#34;231&#34; class=&#34;size-full wp-image-1949&#34; /&gt;&lt;/a&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
+    Guerrilla Capacity Planning
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Guerrilla-Capacity-Planning-Tactical-Applications/dp/3540261389?tag=xaprb-20&#34;&gt;Guerrilla Capacity Planning&lt;/a&gt;. By Neil J. Gunther, Springer 2007. Page count: about 200 pages, plus appendixes. (Here&amp;rsquo;s &lt;a href=&#34;http://www.springer.com/computer/communication+networks/book/978-3-540-26138-4&#34;&gt;a link to the publisher&amp;rsquo;s site&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;Of all the books I&amp;rsquo;ve reviewed, this one has taken me the longest to study first. That&amp;rsquo;s because there is a lot of math involved, and Neil Gunther knows a lot more about it than I do. Here&amp;rsquo;s the short version: I&amp;rsquo;m learning how to use this in the real world, but that&amp;rsquo;s going to take many months, probably years. I&amp;rsquo;ve already spent about 10 months studying this book, and have read it all the way through twice &amp;ndash; parts of it five times or more. Needless to say, if I didn&amp;rsquo;t think this was a book with value, I wouldn&amp;rsquo;t be doing that. But you&amp;rsquo;ll only get out of this book what you put in. If you want to learn a wholly new way to understand software and hardware scalability, and how to do capacity planning as a result, then buy the book and set aside some study time. But don&amp;rsquo;t think you&amp;rsquo;re going to breeze through this book and end up with a simple N-step method to take capacity forecasts to your boss. If you want that, buy &lt;a href=&#34;https://www.xaprb.com/blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/&#34;&gt;John Allspaw&amp;rsquo;s book&lt;/a&gt; instead. (If you&amp;rsquo;re reading this blog post, you need that book.)&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t want to spend a lot of time talking about Neil&amp;rsquo;s method, because honestly the book isn&amp;rsquo;t about the method first and foremost, and I think many readers will have a hard time digging the capacity planning method out of the math-ness. This book is, in a sense, a textbook or workbook for his training courses. It begins with a lot of general topics, such as how managers think about capacity, risk, what&amp;rsquo;s needed in the world of businesses that are driven by Wall Street, ITIL, and so on. Then there&amp;rsquo;s the mathematical background for the rest of the book, things like significant digits and expressing error.&lt;/p&gt;
+
+&lt;p&gt;The part of the book that I&amp;rsquo;m still studying begins in Chapter 4, which introduces ways to quantify scalability. The math begins with &lt;a href=&#34;http://en.wikipedia.org/wiki/Amdahl%27s_law&#34;&gt;Amdahl&amp;rsquo;s Law&lt;/a&gt;, which you may have heard of. It turns out that not only can this be used to understand how much overall speedup is possible by speeding up part of a process, which is how I&amp;rsquo;m used to using it, but it can be used to model what is possible with parallelization. (I think I actually learned this in my university classes, but I&amp;rsquo;d forgotten its uses in parallel computing since then.) Anyway, it&amp;rsquo;s a straightforward model that makes intuitive sense and is easy to accept. I believe in it because it&amp;rsquo;s so logical and simple, and because I&amp;rsquo;ve worked with it for a long time. That&amp;rsquo;s the last bit of math in this book that I can understand so solidly, because after that, we get into a lot of things that have to do with interaction between concurrently performed work, and &lt;em&gt;nothing&lt;/em&gt; is ever intuitive about that domain.&lt;/p&gt;
+
+&lt;p&gt;Now, when you&amp;rsquo;re talking about scalability, you generally are working with scalability of concurrent systems, and queueing theory is Topic Number One. Proper queueing theory is correctly modeled, under certain very restricted conditions, by the &lt;a href=&#34;http://en.wikipedia.org/wiki/Erlang_%28unit%29#Erlang_C_formula&#34;&gt;Erlang C formula&lt;/a&gt;. This is a complex bit of math, and although I believe in it, I don&amp;rsquo;t understand it enough to know how it&amp;rsquo;s derived or proven to be correct. Well, there&amp;rsquo;s no Erlang C math in this book. Neil Gunther goes a completely different direction. Instead of modeling the impact of queueing through the math that describes the model, he creates a new model. Let&amp;rsquo;s leave the model for later, and just look at what&amp;rsquo;s nice about &lt;em&gt;not&lt;/em&gt; using Erlang C math to model computer system scalability:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The Erlang C formula requires complex calculations.&lt;/li&gt;
+&lt;li&gt;It is valid only in restricted conditions, and &lt;a href=&#34;http://carymillsap.blogspot.com/2010/03/robbs-question-about-mmm.html&#34;&gt;it&amp;rsquo;s a lot of work to prove that your workload conforms&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;It models queueing delay, but it doesn&amp;rsquo;t model coherency delay.&lt;/li&gt;
+&lt;li&gt;It requires inputs such as service time, which are difficult or impossible to measure accurately.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Someone once said that all models are wrong, but some models are useful. Neil Gunther heads in the direction of a more useful model. First, he proves that two parameters are necessary and sufficient to create a realistic model. Next, he introduces another parameter into Amdahl&amp;rsquo;s Law to account for coherency delay. The resulting (still simple) equation models serial delay (the reverse of parallel speedup) and coherency delay. Now we have a model for how a system scales &lt;em&gt;under a given workload as you increasingly parallelize the hardware&lt;/em&gt;. This is the &lt;strong&gt;universal scalability model&lt;/strong&gt;. From the mathematical point of view, it&amp;rsquo;s the crowning achievement of this book. I&amp;rsquo;m very much summarizing, by the way. There&amp;rsquo;s a lot to think about in developing such a model, so the reader gets quite a tour de force here. Along the way Neil shows how you can arrive at the same surprising result through an entirely different route, without even using Amdahl&amp;rsquo;s Law as a starting point.&lt;/p&gt;
+
+&lt;p&gt;There are other models. Neil discusses these. They all have problems. Some don&amp;rsquo;t model what we know can happen in the real world &amp;ndash; retrograde scaling &amp;ndash; where performance can decrease when you add more power to a system. Others are physically impossible, predicting negative speedup. Negative speedup means the system&amp;rsquo;s performance goes below zero. As in, you ask it to do work, and it, uh, takes back work it&amp;rsquo;s already done? Impossible. So it certainly looks like Neil&amp;rsquo;s model is the strongest contender. By the way, &lt;a href=&#34;https://www.xaprb.com/blog/2010/05/01/a-review-of-forecasting-oracle-performance-by-craig-shallahamer/&#34;&gt;Craig Shallahamer&amp;rsquo;s book on forecasting Oracle performance&lt;/a&gt; uses the universal scalability model, although without the mathematical rigor.&lt;/p&gt;
+
+&lt;p&gt;Now, the problem is how to apply this in the real world. To model a system&amp;rsquo;s performance, you have to know the value of those two magical parameters. How on earth can you find these values? This seems to be just as hard as Erlang C math. But Neil shows the second most remarkable thing: if you transform the universal scalability model around a bit, then &lt;strong&gt;you get a polynomial of degree two&lt;/strong&gt;. This is exciting because if you take some measurements of your system&amp;rsquo;s observed performance at different points on the scalability curve (holding the work per processor constant, and adding more processors), and then transform those measurements in an equivalent manner, you can &lt;strong&gt;fit a regression curve&lt;/strong&gt; through those points. Now you can reverse the transformations to the equation, plug in the coefficients of the quadratic equation that resulted from the curve-fitting, and out come the parameters you need for the universal scalability equation! Final result: you can extrapolate out beyond your observations and predict the system&amp;rsquo;s scalability.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;re not done. All of this was about hardware scalability: &amp;ldquo;how much faster will this system run if I add more CPUs?&amp;rdquo; Software scalability is next. Neil goes back to the basics, starting with how Amdahl&amp;rsquo;s Law applies to software speedup, and essentially covers all the same ground we&amp;rsquo;ve already covered, but this time modeling what happens when you hold the hardware constant, and increase the concurrency of the workload the software is serving. It turns out that exactly the same scalability model holds for software as it did for hardware. This is why he calls it the universal scalability model. But not only that, it works for multi-tier architectures of arbitrary complexity.&lt;/p&gt;
+
+&lt;p&gt;And this is why I say I am not competent to really prove or disprove the validity of the whole thing. It makes sense to me that even a multi-tier architecture can conform to a model with two parameters. As we know in the real world, there is usually a single worst bottleneck, a weakest link. And therefore no matter how complex the architecture, the dominant factors limiting scalability are still coherency and/or queueing at the bottleneck, and how much you can parallelize (Amdahl&amp;rsquo;s Law). Thus, the universal scalability model intuitively might be valid for such architectures. But proving it &amp;ndash; wow, that&amp;rsquo;s way beyond me. I know my limits. I&amp;rsquo;m taking it all on faith, experience, and intuition at this point.&lt;/p&gt;
+
+&lt;p&gt;In my mind, the results Neil Gunther derives up to this point in the book would have been plenty. However, there&amp;rsquo;s lots more left in the book. The rest of the book is about how to use the model for capacity planning, but surprisingly, it&amp;rsquo;s not about just how to use the universal scalability model. It&amp;rsquo;s about Guerrilla Capacity Planning in the real world. Right after exploring software scalability, he dives into virtualization for a whole chapter &amp;ndash; and then shows you how to measure, model, and predict the scalability of various virtualization technologies. Next chapter: web site capacity planning. After that? &amp;ldquo;Gargantuan Computing: GRIDs and P2P.&amp;rdquo; Yep, he analyzes the scalability limits of Gnutella and friends. And then, apparently just because he can, he dissects arguments about network traffic in general (read: &amp;ldquo;how scalable is the Internet?&amp;rdquo;). I can&amp;rsquo;t pretend to understand all this myself. I&amp;rsquo;m just following along.&lt;/p&gt;
+
+&lt;p&gt;I have a feeling that Neil Gunther is kind of like Einstein: his real gift is his ability to create thought experiments that make the model accessible to mortals. Maybe someday he&amp;rsquo;ll be a legend you learn about in CS101 classes, or maybe someday he&amp;rsquo;ll be proven wrong like Newton, who knows. In the meantime, I&amp;rsquo;m going to keep working on applying it all in the real world, especially to MySQL, and see what comes of it. The fact that I&amp;rsquo;m still doing that bears out what I said earlier: you aren&amp;rsquo;t going to just waltz through this book and come away with a clear picture of how to work through a capacity planning method. You&amp;rsquo;ll have some work to do. If you want an elegant and simple capacity planning method, then you should buy &lt;a href=&#34;https://www.xaprb.com/blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/&#34;&gt;John Allspaw&amp;rsquo;s &lt;em&gt;The Art Of Capacity Planning&lt;/em&gt;&lt;/a&gt; instead.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A review of Cloud Application Architectures by George Reese</title>
+          <link>https://www.xaprb.com/blog/2010/07/04/a-review-of-cloud-application-architectures-by-george-reese/</link>
+          <pubDate>Sun, 04 Jul 2010 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2010/07/04/a-review-of-cloud-application-architectures-by-george-reese/</guid>
+          <description>&lt;div id=&#34;attachment_1938&#34; class=&#34;wp-caption alignleft&#34; style=&#34;width: 190px&#34;&gt;
+  &lt;a href=&#34;http://www.amazon.com/dp/0596156367?tag=xaprb-20&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2010/07/cloud_application_architectures.gif&#34; alt=&#34;Cloud Application Architectures&#34; title=&#34;Cloud Application Architectures&#34; width=&#34;180&#34; height=&#34;236&#34; class=&#34;size-full wp-image-1938&#34; /&gt;&lt;/a&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
+    Cloud Application Architectures
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/dp/0596156367?tag=xaprb-20&#34;&gt;Cloud Application Architectures&lt;/a&gt;. By George Reese, O&amp;rsquo;Reilly 2009. (Here&amp;rsquo;s &lt;a href=&#34;http://oreilly.com/catalog/9780596156374&#34;&gt;a link to the publisher&amp;rsquo;s site&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;This is a great book on how to build apps in the cloud! I was happy to see how much depth it went into. It&amp;rsquo;s short &amp;ndash; 150 pages plus some appendixes &amp;ndash; so I was expecting it to be a superficial overview. But it isn&amp;rsquo;t. It is thorough. And it is also obviously built on his own experience building very specific applications that he uses to run his business &amp;ndash; he isn&amp;rsquo;t preaching about stuff he doesn&amp;rsquo;t know first-hand. Finally, George Reese is a good writer! It&amp;rsquo;s impressive. This is how he covers so much ground with so much depth in so few pages, and it all makes sense. He takes a side trip every now and then, but it&amp;rsquo;s always in the right place at the right time &amp;ndash; how to do a snapshot for backups, for example &amp;ndash; and isn&amp;rsquo;t distracting. For a technical book, it has an amazing narrative flow.&lt;/p&gt;
+
+&lt;p&gt;The book begins with an intro to cloud computing in general, with definitions and an explanation of different models, plus cost estimates of traditional IT, managed hosting, and cloud computing for an app. There&amp;rsquo;s a brief overview of the Amazon platform. This book is mostly about Amazon, and states that up front. There are references and comparisons to other providers throughout, and later there&amp;rsquo;ll be two appendixes on GoGrid and Rackspace, each written by a representative of that company. I was happy that the author brought in people to write those, instead of doing it himself. They are non-promotional in nature, and quite short. That adds value to the book, which would have been fine without them, honestly.&lt;/p&gt;
+
+&lt;p&gt;Back to chapter two now &amp;ndash; a deeper introduction to Amazon, moving through all the major components, but especially EC2, S3, and EBS. Here we also start to see a focus on the platform as a whole &amp;ndash; availability zones, security, redundancy, reliability. These topics are treated fairly and woven into every chapter. It&amp;rsquo;s clear that the author doesn&amp;rsquo;t want to isolate these topics, but rather explain them in context so your mind is always on them as each new topic is introduced. Chapter 3 picks all this up again: considering a move into the cloud? More cost comparisons, more explanations of concepts such as availability and how they translate into the Amazon cloud. Performance, disaster recovery and a few other topics show up here.&lt;/p&gt;
+
+&lt;p&gt;Chapter 4 is about how to build an app in the cloud: web app design, making multiple machines work together, handling failure, building AMIs, privacy, and operating databases (especially MySQL) in the cloud. The privacy section is particularly good. I&amp;rsquo;d recommend this to anyone building an app that might process personally identifiable information or financial information, in or out of the cloud. And as I said already, this is one of the types of things he weaves into the whole book. Chapter 5 picks right up and keeps going: it&amp;rsquo;s about security. Data security, regulatory compliance, network security, host security, how to respond if there&amp;rsquo;s a breach. And then Chapter 6 is on disaster recovery: planning, implementing, managing.&lt;/p&gt;
+
+&lt;p&gt;Chapter 7 is titled &amp;ldquo;scaling,&amp;rdquo; but it&amp;rsquo;s more than that. It starts with capacity planning. Here&amp;rsquo;s one of my favorite quotes: &amp;ldquo;some think they no longer need to engage in capacity planning&amp;hellip; [others] think of tens or hundreds of thousands of dollars in consulting fees. Both thoughts are dangerous myths&amp;hellip;&amp;rdquo; There&amp;rsquo;s a reference to &lt;a href=&#34;https://www.xaprb.com/blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/&#34;&gt;John Allspaw&amp;rsquo;s excellent book on capacity planning&lt;/a&gt;. (I saw that he was a tech reviewer for this book, too.) This chapter covers how you predict and provision for capacity needs in the cloud, including the &amp;ldquo;automatic scaling&amp;rdquo; holy grail, how it can bite you, and how to keep that from happening. It also talks about how you scale vertically in the cloud. It doesn&amp;rsquo;t talk about why &lt;a href=&#34;https://www.xaprb.com/blog/2010/06/01/under-provisioning-the-curse-of-the-cloud/&#34;&gt;it&amp;rsquo;s hard to really be sure about your capacity needs in the cloud&lt;/a&gt;, but that&amp;rsquo;s okay given the other material covered in the chapter.&lt;/p&gt;
+
+&lt;p&gt;And that&amp;rsquo;s it! After this, it&amp;rsquo;s 3 appendixes. One is an AWS reference, and then there&amp;rsquo;s the two on GoGrid and Rackspace.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s to criticize? Well, not a lot really. I read every word in this book, I promise. Here&amp;rsquo;s what I noticed: he talked about database corruption from unexpected shutdowns &amp;ndash; he should have said &amp;ldquo;use InnoDB,&amp;rdquo; because that&amp;rsquo;s pretty much a MyISAM problem. He talked about taking backups from replication replicas &amp;ndash; he should have said &amp;ldquo;don&amp;rsquo;t just trust replication, verify it with mk-table-checksum.&amp;rdquo; I also think he encourages a little too much trust that cloud providers are always magically going to have the capacity you need; it felt a bit naive, but this is actually a fundamental point in whether you&amp;rsquo;re going to use the cloud or not. Nobody knows how much excess capacity Amazon has, and as we know, &lt;a href=&#34;http://en.wikipedia.org/wiki/Northeast_Blackout_of_2003&#34;&gt;weird things happen&lt;/a&gt;. But if you&amp;rsquo;re going to embrace a cloud platform, you&amp;rsquo;re going to have to trust to a certain extent.&lt;/p&gt;
+
+&lt;p&gt;A couple other things to nitpick: in Chapter 1, when talking about availability, he writes &amp;ldquo;[if] even 1 minute of downtime in a year is entirely unacceptable, you almost certainly want to opt for a managed services environment&amp;hellip; [if] 99.995% is good enough, you can&amp;rsquo;t beat the cloud.&amp;rdquo; But these numbers are unrealistic and don&amp;rsquo;t have enough context to explain what he means. Finally, in a couple of places he talks about algorithms for generating unique identifiers and dealing with concurrent access, but these don&amp;rsquo;t have a deep enough explanation to prevent novices from shooting themselves in the foot with wrong assumptions such as &lt;em&gt;a timestamp will always increase between each subsequent access.&lt;/em&gt; But a savvy developer will recognize those problems and won&amp;rsquo;t be bitten.&lt;/p&gt;
+
+&lt;p&gt;This book is the first one to go onto &lt;a href=&#34;https://www.xaprb.com/blog/essential-books/&#34;&gt;my list of essential books&lt;/a&gt; in a while. I&amp;rsquo;ll be keeping this one on my own bookshelf.&lt;/p&gt;
+</description>
+        </item>
+    
+
+  </channel>
+</rss>

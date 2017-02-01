@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How to use CSS to go beyond separation of content and presentation &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How to use CSS to go beyond separation of content and presentation" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2005/12/15/css-good-practice-separate-layout-and-presentation/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2005/12/15/css-good-practice-separate-layout-and-presentation/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to use CSS to go beyond separation of content and presentation</h1>
+  <span class="post-date">Thu, Dec 15, 2005 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f15%2fcss-good-practice-separate-layout-and-presentation%2f&text=How%20to%20use%20CSS%20to%20go%20beyond%20separation%20of%20content%20and%20presentation:https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f15%2fcss-good-practice-separate-layout-and-presentation%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f15%2fcss-good-practice-separate-layout-and-presentation%2f&title=How%20to%20use%20CSS%20to%20go%20beyond%20separation%20of%20content%20and%20presentation&summary=How%20to%20use%20CSS%20to%20go%20beyond%20separation%20of%20content%20and%20presentation&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f15%2fcss-good-practice-separate-layout-and-presentation%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f15%2fcss-good-practice-separate-layout-and-presentation%2f&t=How%20to%20use%20CSS%20to%20go%20beyond%20separation%20of%20content%20and%20presentation" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f12%2f15%2fcss-good-practice-separate-layout-and-presentation%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>One of CSS&rsquo;s loftiest goals was to help separate content and presentation on the Web<sup>1</sup>. It has succeeded to some degree, bringing great benefits in terms of maintainability, usability, and accessibility.</p>
+
+<h3 id="think-at-a-higher-level">Think at a higher level</h3>
+
+<p>There is much noise about content and presentation, but it&rsquo;s not the only beneficial separation. In fact, pick any dimensions you wish, and I think you can benefit by distinguishing among them <em>at least to some degree</em>: content, presentation, structure, behavior, and so forth.</p>
+
+<p>One reason separation is good that it actually lets me factor out repetition and shared aspects, and deal with them just once. In this sense, I&rsquo;m not just separating things in one place, I&rsquo;m bringing them together in another. Aspect-Oriented Programming is a great example from the programming world. However, it is technique, rather than technology, that is important. CSS doesn&rsquo;t guarantee the separation &ndash; it&rsquo;s how I use it that matters.</p>
+
+<p>With this in mind, I am currently ruminating the following: I think it&rsquo;s a Good Thing to separate layout and presentation <em>within CSS</em>. Again, these are just dimensions within one technology; I think making the proper distinction between the two is just a good practice.</p>
+
+<h3 id="definitions">Definitions</h3>
+
+<p>First let me define the terms as I use them in this article:</p>
+
+<dl>
+<dt>Layout Styles</dt>
+<dd>dictate how the elements of the page are arranged: where is the navigation, is the content a fixed-width column that&rsquo;s centered on the page, and so forth. Layout markup is usually about setting some properties of elements that hold the &ldquo;real content&rdquo; of the page.</dd>
+<dt>Presentational Styles</dt>
+<dd>specify how the &ldquo;real content&rdquo; appears: font size, colors, borders, link hover effects and so forth.</dd>
+</dl>
+
+<h3 id="what-this-means-on-a-real-website">What this means on a real website</h3>
+
+<p>In terms of a typical website that uses CSS for both purposes (layout and presentation), many elements on the page will have both types of styles. Global navigation, for example, will almost certainly have some positioning styles attached to a container, and often will have hover effects on links too. What if I want to change how the page is laid out, but not be distracted by all the font sizes on headers, margins on the lists, and so forth? I&rsquo;ve done this myself and found it difficult to sort through an entire stylesheet, ignoring the presentation haystack to find the layout needle. Since then I&rsquo;ve tried to keep the two separate, either by just using comments to mark separate sections within the one file, or by using two files. <code>@include</code> is great for this &ndash; the presentation stylesheet can include the layout stylesheet at the beginning. It helps a lot.</p>
+
+<p>I don&rsquo;t consider myself an expert on this. Not much attention has been paid to good practices when writing stylesheets. Everyone&rsquo;s writing about standards, browsers, and so forth. For some reason, good writing practices don&rsquo;t seem to be sexy (yet), and maybe that&rsquo;s why everyone is eager to write about other things. I think this may have a lot to do with who&rsquo;s writing CSS. In many cases, it&rsquo;s not programmers, so as a programmer, I often find people&rsquo;s stylesheets to be big freakin&rsquo; messes. In traditional programming, much effort has gone into studying what makes code maintainable, easily verifiable, and so forth. Similar work doesn&rsquo;t seem to exist for CSS (though I personally feel the same principles apply). There&rsquo;s not much, if any, guidance about style when writing CSS. How to indent, naming guidelines, and order of properties come to my mind when I think of this. Again, I don&rsquo;t think I have anything more to offer than other people, but I&rsquo;m thinking about it. Maybe at some point I&rsquo;ll put some time into it and produce my own code standards for CSS. I&rsquo;m sure others will start doing so as well, especially as CSS becomes more widely used and some people start getting stuck with bad code. When people get fed up with it, they&rsquo;ll do something about it :-)</p>
+
+<h3 id="perfection-is-an-illusion">Perfection is an illusion</h3>
+
+<p>As a side note, I would like to say complete separation of content and presentation (or anything else) is not possible in many cases, despite some people&rsquo;s <a href="http://www.alistapart.com/articles/separationdilemma/">insistence to the contrary</a>. It&rsquo;s a myth. A lot of this is because any given feature often belongs in several domains, so imposing a strict hierarchy rarely works (the realization that hierarchical taxonomies are flawed is exactly where all the &ldquo;tagging&rdquo; in Web 2.0 is coming from). I wrote my thesis on visual and informational representations of music and I&rsquo;ve found it&rsquo;s rarely clear-cut, be it music or text. My experience with music made me take a fresh look at HTML, and I was amazed at how my perspective changed. There&rsquo;s much to be gained from an 80% solution, though, so fire away!</p>
+
+<hr />
+
+<p>[1] People say this many different ways, such as &ldquo;structure and presentation&rdquo; and so forth. My memory says &ldquo;content and presentation&rdquo; was the first such phrase to be bandied about, and the terminology has changed over the last 6-8 years.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2005/12/20/javascript-date-parsing/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2005/12/15/more-ways-to-use-udfs-instead-of-openxml/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2005\/12\/15\/css-good-practice-separate-layout-and-presentation\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

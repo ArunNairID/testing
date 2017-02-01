@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      A Review of Cacti Network Monitoring by Kundu and Lavlu &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="A Review of Cacti Network Monitoring by Kundu and Lavlu" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2010/01/09/review-cacti-network-monitoring-kundu-lavlu/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2010/01/09/review-cacti-network-monitoring-kundu-lavlu/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A Review of Cacti Network Monitoring by Kundu and Lavlu</h1>
+  <span class="post-date">Sat, Jan 9, 2010 in
+		
+		<a href="/categories/monitoring" class="btn btn-primary">Monitoring</a>
+		
+		<a href="/categories/operations" class="btn btn-primary">Operations</a>
+		
+		<a href="/categories/reviews" class="btn btn-primary">Reviews</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2freview-cacti-network-monitoring-kundu-lavlu%2f&text=A%20Review%20of%20Cacti%20Network%20Monitoring%20by%20Kundu%20and%20Lavlu:https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2freview-cacti-network-monitoring-kundu-lavlu%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2freview-cacti-network-monitoring-kundu-lavlu%2f&title=A%20Review%20of%20Cacti%20Network%20Monitoring%20by%20Kundu%20and%20Lavlu&summary=A%20Review%20of%20Cacti%20Network%20Monitoring%20by%20Kundu%20and%20Lavlu&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2freview-cacti-network-monitoring-kundu-lavlu%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2freview-cacti-network-monitoring-kundu-lavlu%2f&t=A%20Review%20of%20Cacti%20Network%20Monitoring%20by%20Kundu%20and%20Lavlu" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f01%2f09%2freview-cacti-network-monitoring-kundu-lavlu%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p><a href="http://www.amazon.com/Cacti-Network-Monitoring-Ibrahim-Lavlu/dp/1847195962?tag=xaprb-20"><img src="/media/2010/01/cacti-network-monitoring.jpg" alt="Cacti Network Monitoring" title="Cacti Network Monitoring" width="240" height="240" class="size-full wp-image-1531" /></a></p>
+
+<blockquote>
+<p><a href="https://vividcortex.com/">VividCortex</a> is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what
+your servers are doing in production and I consider it far superior to Cacti. VividCortex offers <a href="https://vividcortex.com/monitoring/mysql/">MySQL performance
+monitoring</a> and <a href="https://vividcortex.com/monitoring/postgres/">PostgreSQL
+performance management</a> among many
+other features.</p>
+</blockquote>
+
+<p><a href="http://www.amazon.com/Cacti-Network-Monitoring-Ibrahim-Lavlu/dp/1847195962?tag=xaprb-20">Cacti 0.8 Network Monitoring</a>, Dinangkur Kundu and S. M. Ibrahim Lavlu, Packt, 2009. Page count: 110 pages.</p>
+
+<p>This is a quite short book that covers some of the breadth but very little of the depth of Cacti. For example, it focuses on Cacti as an SNMP tool for graphing network data, but SNMP is only one of the many ways Cacti can collect data, and of course it graphs anything, not just networks. Each chapter takes the reader through the most important topics, with some code listings and screenshots. On the plus side, this makes it very easy to read quickly, because it doesn&rsquo;t go off on many tangents about special cases and errors.</p>
+
+<p>I don&rsquo;t want to criticize too much, but I think I should give a summary of the major shortcomings. First, the book is just too small, especially for the price. It is also not very well edited; it seems to have been edited by non-English speakers. Finally, it constantly refers to Cacti as a monitoring tool, even talking about the need to find out about crashed equipment and so on &ndash; but it doesn&rsquo;t clearly say that Cacti is only for performance graphing, not for monitoring and alerting. I wish they had not flung the word &ldquo;monitoring&rdquo; around so casually.</p>
+
+<p>In terms of topics, it has an overview, installation, creating graphs, creating templates, managing users, SNMP, data queries, and basic administration. The strongest point is the explanation of SNMP. The other chapters have a lot of needless information and screenshots. The installation chapter, for example, goes through installing prerequisites from APT &ndash; which APT can do itself.</p>
+
+<p>In the end it&rsquo;s light reading that shouldn&rsquo;t take you long to finish &ndash; an overview in case you don&rsquo;t know much about Cacti.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2010/01/10/version-1-1-6-of-better-cacti-templates-released/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2010/01/09/how-linux-iostat-computes-its-results/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2010\/01\/09\/review-cacti-network-monitoring-kundu-lavlu\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      A review of Optimizing Oracle Performance by Cary Millsap &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="A review of Optimizing Oracle Performance by Cary Millsap" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2009/11/07/a-review-of-optimizing-oracle-performance-by-cary-millsap/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2009/11/07/a-review-of-optimizing-oracle-performance-by-cary-millsap/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A review of Optimizing Oracle Performance by Cary Millsap</h1>
+  <span class="post-date">Sat, Nov 7, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/reviews" class="btn btn-primary">Reviews</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2009%2f11%2f07%2fa-review-of-optimizing-oracle-performance-by-cary-millsap%2f&text=A%20review%20of%20Optimizing%20Oracle%20Performance%20by%20Cary%20Millsap:https%3a%2f%2fwww.xaprb.com%2fblog%2f2009%2f11%2f07%2fa-review-of-optimizing-oracle-performance-by-cary-millsap%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2009%2f11%2f07%2fa-review-of-optimizing-oracle-performance-by-cary-millsap%2f&title=A%20review%20of%20Optimizing%20Oracle%20Performance%20by%20Cary%20Millsap&summary=A%20review%20of%20Optimizing%20Oracle%20Performance%20by%20Cary%20Millsap&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2009%2f11%2f07%2fa-review-of-optimizing-oracle-performance-by-cary-millsap%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2009%2f11%2f07%2fa-review-of-optimizing-oracle-performance-by-cary-millsap%2f&t=A%20review%20of%20Optimizing%20Oracle%20Performance%20by%20Cary%20Millsap" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2009%2f11%2f07%2fa-review-of-optimizing-oracle-performance-by-cary-millsap%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <div id="attachment_1416" class="wp-caption alignleft" style="width: 238px">
+  <a href="http://www.amazon.com/Optimizing-Oracle-Performance-Cary-Millsap/dp/059600527X?tag=xaprb-20"><img src="/media/2009/11/optimizing_oracle_performance-228x300.jpg" alt="Optimizing Oracle Performance" title="Optimizing Oracle Performance" width="228" height="300" class="size-medium wp-image-1416" /></a><p class="wp-caption-text">
+    Optimizing Oracle Performance
+  </p>
+</div>
+
+<p><a href="http://www.amazon.com/Optimizing-Oracle-Performance-Cary-Millsap/dp/059600527X?tag=xaprb-20">Optimizing Oracle Performance</a>. By <a href="http://www.method-r.com/">Cary Millsap</a>, O&rsquo;Reilly 2003. Page count: about 375 pages with appendices. (Here&rsquo;s <a href="http://oreilly.com/catalog/9780596005276">a link to the publisher&rsquo;s site</a>.)</p>
+
+<p>This is easily one of the best books I&rsquo;ve ever read on performance optimization. I&rsquo;ve just finished reading it for the second-and-a-half time in two weeks, and I very rarely read a book more than once. I&rsquo;ve been telling a lot of people about it.</p>
+
+<p>Despite the title, it is actually not about Oracle performance. It is a book on how to optimize a) any system, including a MySQL-based application b) the process of optimization itself. It is very, very good, and I highly recommend it to all database users. My bet is that most people will learn more by reading this book than by spending thousands of dollars on conferences and training, especially since a lot of what you&rsquo;ll learn from those sources is wrong and harmful. So not only will you save money and time on learning, you&rsquo;ll reap great rewards thereafter.</p>
+
+<p>The book is organized into three sections. The first section explains a performance optimization methodology called <em>Method R</em> (for response time) that is designed to deterministically advance from identifying what needs to be optimized, to collecting diagnostic data, and then choosing the correct activities to optimize. Simply put, it is probably the clearest and most logical process I&rsquo;ve ever seen for focusing on what matters. It is quite similar to our process at Percona, which we call Goal-Driven Performance Optimization. But Cary does a really good job explaining it. Cary told me that he wrote the book while simultaneously developing Method R training classes, and did dozens of classes before the book went to press. You can tell!</p>
+
+<p>The second and third parts of the book are about putting the method into practice.</p>
+
+<p>Cary shows many typical mistakes, such as focusing on ratios, working on things that &ldquo;look bad,&rdquo; ignorance of Amdahl&rsquo;s Law, trying to draw conclusions about specific activities by examining system-wide information, and so on. He brings the focus back to response time again and again.</p>
+
+<p>Another typical &ldquo;tuning mistake&rdquo; is not knowing when to quit. Cary shows how to know when further performance improvements, even if they&rsquo;re possible, will not be economically justified. At the point where the gains don&rsquo;t exceed the cost, you&rsquo;re done. The system is optimized. Maybe it&rsquo;s not performing as well as it could, but if it costs too much to get any more performance, it&rsquo;s still optimal.</p>
+
+<p>This is a book that backs up every assertion with references to source material, or even with a proof or derivation from first principles. It is significantly more rigorous than most books of this type. There&rsquo;s a very good chapter on kernel timings that explains a ton of stuff about how processes work, measurement intrusion effect, quantization error, and so on.</p>
+
+<p>There is a very good section on queueing theory, with excellent examples of using it to prove that a desired improvement is mathematically impossible and/or impractically expensive. There are also examples of how to use queueing theory to predict when a hardware upgrade will worsen your performance problems. (And lots of other examples of when &ldquo;optimizing&rdquo; something will actually make it worse, as for example improving performance of some task other than the one you&rsquo;re interested in, thereby making it use and contend for more resources &ndash; and hurting performance of the task you wanted to improve.)</p>
+
+<p>What is it NOT about? It&rsquo;s not about how to write more efficient SQL &ndash; there is practically nothing in the book about SQL. It&rsquo;s not about how everything inside Oracle works, though it does have one or two chapters that are mostly about how to apply the principles to Oracle through extended SQL trace files, a discussion that will transfer well to any other system that emits trace data. (Read these, or you&rsquo;ll miss learning about quantization error and such!)</p>
+
+<p>Highly, highly recommended.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2009/11/10/planned-obsolescence-stinks/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2009/11/03/im-a-postgres-user-as-it-turns-out/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2009\/11\/07\/a-review-of-optimizing-oracle-performance-by-cary-millsap\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

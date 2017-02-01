@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      What Does The Universal Scalability Law Reveal About MySQL? &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="What Does The Universal Scalability Law Reveal About MySQL?" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/media/2015/11/chicken.jpg" />
+  <meta name="og:description" content="A formal mathematical analysis of MySQL&#39;s scalability yields obvious results." />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2015/11/12/universal-scalability-law-teach-mysql/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2015/11/12/universal-scalability-law-teach-mysql/">
+  
+  <meta name="description" value="A formal mathematical analysis of MySQL&#39;s scalability yields obvious results.">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">What Does The Universal Scalability Law Reveal About MySQL?</h1>
+  <span class="post-date">Thu, Nov 12, 2015 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f12%2funiversal-scalability-law-teach-mysql%2f&text=What%20Does%20The%20Universal%20Scalability%20Law%20Reveal%20About%20MySQL%3f:https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f12%2funiversal-scalability-law-teach-mysql%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f12%2funiversal-scalability-law-teach-mysql%2f&title=What%20Does%20The%20Universal%20Scalability%20Law%20Reveal%20About%20MySQL%3f&summary=What%20Does%20The%20Universal%20Scalability%20Law%20Reveal%20About%20MySQL%3f&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f12%2funiversal-scalability-law-teach-mysql%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f12%2funiversal-scalability-law-teach-mysql%2f&t=What%20Does%20The%20Universal%20Scalability%20Law%20Reveal%20About%20MySQL%3f" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f12%2funiversal-scalability-law-teach-mysql%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>In the last couple of weeks, there have been a few blog posts about benchmarks
+comparing the performance of various versions of MySQL and variants such as
+MariaDB. There&rsquo;s also been some analysis of the results using formal models such
+as Neil Gunther&rsquo;s Universal Scalability Law.</p>
+
+<p>What can the Universal Scalability Law (USL) teach us about the performance
+characteristics of these systems, as revealed by the benchmarks? To find out,
+I&rsquo;ll examine one particular benchmark, <a href="https://blog.mariadb.org/maria-10-1-mysql-5-7-commodity-hardware/">MariaDB 10.1 and MySQL 5.7 performance
+on commodity hardware</a>.</p>
+
+<p><img src="/media/2015/11/chicken.jpg" alt="chicken" /></p>
+
+<p></p>
+
+<p>The context for this benchmark, in a nutshell, is that MySQL 5.7 was just
+released as GA, and the published performance results are spectacular, from the
+point of view of throughput on large servers. Although this is good, showing
+that MySQL can scale to do lots of work on large servers, the MariaDB
+benchmarkers wanted to understand how a simple benchmark would run on a typical
+commodity server.</p>
+
+<p>The benchmark compares several versions of MySQL. Neil
+<a href="https://twitter.com/DrQz/status/658628244413878272">tweeted</a> an analysis
+of the benchmark with the USL:</p>
+
+<p><img src="/media/2015/11/usl-njg-1.png" alt="usl-njg-1" /></p>
+
+<p>Be careful with that chart, because the horizontal axis is log-scaled, not
+linear. What can we learn from that? First of all, if you&rsquo;re familiar with the
+USL at all you&rsquo;ll instantly recognize that the system isn&rsquo;t behaving as the USL
+predicts. A much better way to model this is to use only the first few
+datapoints to predict what might happen if the system didn&rsquo;t encounter the
+limitation we can see beginning at 8 connections. Neil <a href="https://twitter.com/DrQz/status/658774806578335744">did this
+too</a>:</p>
+
+<p><img src="/media/2015/11/usl-njg-2.png" alt="usl-njg-2" /></p>
+
+<p>Neil&rsquo;s commentary, which I&rsquo;ll paraphrase for clarity, is *If you can remove the
+bottleneck at 118k queries per second, the USL predicts that the system will hit
+a ceiling around 250k queries per second. Can MySQL or MariaDB get there? If
+not, why not? With the USL, it&rsquo;s no longer OK to just measure, you have to
+<strong>EXPLAIN</strong> the data.*</p>
+
+<p>The explanation is simple. The server has 4 cores and 8
+threads:</p>
+
+<blockquote>
+<p>Intel Xeon E5 E5–1630v3   4/8t  <br>
+3,7 / 3,8 GHz 64  GB RAM<br>
+DDR4 ECC 2133 MHz 2 ×2TB  SOFT</p>
+</blockquote>
+
+<p>This server can run only 8 queries simultaneously. After that, adding
+more connections trying to run queries is not going to improve things.</p>
+
+<p>The USL doesn&rsquo;t include parameters that model the fixed size of underlying
+hardware and other resources, and as a result, it&rsquo;s very common to find some
+type of resource saturation that creates a ceiling it doesn&rsquo;t predict. This is a
+perfect example.</p>
+
+<p>As I discuss in my new <a href="https://www.vividcortex.com/resources/universal-scalability-law/">50-page ebook on the
+Universal Scalability Law</a>,
+it&rsquo;s rather pointless to try to use the USL to assess behavior beyond a
+saturation point such as the one you can see in this benchmark. That&rsquo;s why
+fitting the USL to the data up to and including 8 connections is the right
+approach.</p>
+
+<p>Beyond the saturation point, all you can see is whether, under increased queue
+length, the server stays efficient or wastes effort.  Most servers lose
+efficiency. To find out exactly what causes this, please read the ebook I linked
+above.</p>
+
+<p>The charts above are all of several versions of the server analyzed together. I
+think it&rsquo;s a better idea to analyze only a single version of the server. Let&rsquo;s
+look at the results for MySQL 5.6.27 only, because on this benchmark it beat the
+other versions:</p>
+
+<pre>
+clients qps
+1 24456
+2 45314
+4 78024
+8 126892
+16 129029
+32 127780
+64 125526
+128 124158
+256 116337
+</pre>
+
+<p>And the USL analysis of this data up to 8 clients:</p>
+
+<p><img src="/media/2015/11/usl.png" alt="USL" /></p>
+
+<p>There&rsquo;s such a small <em>kappa</em> coefficient that it should be ignored, however,
+<em>sigma</em> is about 7.4%, which is quite significant and limits performance very
+seriously. If you&rsquo;re familiar with the USL this provides concrete ideas about
+what needs to be changed, and defines how far you can scale this server on this
+type of configuration. When I was at Percona in the 2009-2011 timeframe we made
+a business out of finding and alleviating those kinds of bottlenecks,
+which is what led to XtraDB and eventually to Percona Server.</p>
+
+<p>Takeaways:</p>
+
+<ol>
+<li>When a system hits an obvious ceiling, don&rsquo;t try to fit the USL to the data
+beyond that point. Especially when you know the hardware explains the
+behavior simply.</li>
+<li>What happens beyond that point does indicate something about the server&rsquo;s
+ability to go beyond saturation without completely spitting its cereal. We
+see essentially a flatline here, but in older versions of MySQL we used to
+see serious retrograde scalability.</li>
+<li>The USL&rsquo;s parameters point you in the right direction to find and fix
+scalability problems.</li>
+<li>There are lots of weird and contradictory results for lots of benchmarks.
+Benchmarketing is everywhere. <a href="https://www.vividcortex.com/resources/universal-scalability-law/">Learn about the Universal Scalability
+Law</a> and
+innoculate yourself against lots of brain twisters.</li>
+</ol>
+
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/2/20/Chicken_February_2009-1.jpg">photo credit</a></p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2015/11/14/help-me-improve-accessibility/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2015/11/10/what-its-like/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2015\/11\/12\/universal-scalability-law-teach-mysql\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

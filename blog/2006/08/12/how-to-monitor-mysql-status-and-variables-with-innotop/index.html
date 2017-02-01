@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How to monitor MySQL status and variables with innotop &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How to monitor MySQL status and variables with innotop" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2006/08/12/how-to-monitor-mysql-status-and-variables-with-innotop/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2006/08/12/how-to-monitor-mysql-status-and-variables-with-innotop/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to monitor MySQL status and variables with innotop</h1>
+  <span class="post-date">Sat, Aug 12, 2006 in
+		
+		<a href="/categories/monitoring" class="btn btn-primary">Monitoring</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f12%2fhow-to-monitor-mysql-status-and-variables-with-innotop%2f&text=How%20to%20monitor%20MySQL%20status%20and%20variables%20with%20innotop:https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f12%2fhow-to-monitor-mysql-status-and-variables-with-innotop%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f12%2fhow-to-monitor-mysql-status-and-variables-with-innotop%2f&title=How%20to%20monitor%20MySQL%20status%20and%20variables%20with%20innotop&summary=How%20to%20monitor%20MySQL%20status%20and%20variables%20with%20innotop&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f12%2fhow-to-monitor-mysql-status-and-variables-with-innotop%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f12%2fhow-to-monitor-mysql-status-and-variables-with-innotop%2f&t=How%20to%20monitor%20MySQL%20status%20and%20variables%20with%20innotop" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f12%2fhow-to-monitor-mysql-status-and-variables-with-innotop%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>This is one in a series of articles on how to use innotop, a MySQL and InnoDB monitor. In this article I&rsquo;ll explain how innotop can make it much easier to collect useful information from <code>SHOW STATUS</code> and <code>SHOW VARIABLES</code> into one place. There are three modes in innotop that do this in different ways, so one of them may meet your needs.</p>
+
+<blockquote>
+<p>Note: <a href="https://vividcortex.com/">VividCortex</a> is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what
+your servers are doing in production. VividCortex offers <a href="https://vividcortex.com/monitoring/mysql/">MySQL performance
+monitoring</a> and <a href="https://vividcortex.com/monitoring/postgres/">PostgreSQL
+performance management</a> among many
+other features.</p>
+</blockquote>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>The output of <code>SHOW STATUS</code> and <code>SHOW VARIABLES</code> is one of the most useful tools for troubleshooting a MySQL server and getting a sense of how well it&rsquo;s running, what type of workload it&rsquo;s under, and so forth. In case you&rsquo;re not familiar with these, I recommend you <a href="http://dev.mysql.com/doc/refman/5.0/en/show.html">read up on them in the MySQL manual</a> before you read the rest of this article. You will get more out of the article if you understand what information is behind my examples.</p>
+
+<p>The most basic method of getting at these variables is to issue a <code>SHOW</code> command, but the result is fairly certain to be an information overload, even if you use <code>LIKE</code> to constrain the results. Another thing you often need to know is how the values change over time; how many table scans happen per second, for example? It&rsquo;s hard to compare results of <code>SHOW</code> commands quickly, but you need to do that to understand what&rsquo;s happening in the server.</p>
+
+<p>The classic tool for this is MySQL&rsquo;s own <code>mysqladmin</code>. You can run it with the <code>-i</code> and <code>-r</code> arguments to tell it to keep printing values every so often, and print the difference from the last set of values when it does so. A basic command to watch status variables might be the following:</p>
+
+<pre>mysqladmin extended -i10 -r</pre>
+
+<p>You can pipe that through <code>grep</code> to filter the results a little too.</p>
+
+<p>There is clearly much room for improvement. I&rsquo;ve included three different ways of viewing this information more easily and flexibly in innotop, and I&rsquo;ll explain those next.</p>
+
+<h3 id="method-one-v-mode">Method one: V mode</h3>
+
+<p>Before we begin: If you haven&rsquo;t already, you should download and install innotop, and run these examples on your own server. It&rsquo;s a lot more interesting when you get to see how your own server is running. And if you&rsquo;re not upgraded to the latest and greatest version of innotop, it&rsquo;s worth doing; there are a lot more features in each new version. Specifically, I&rsquo;m going to show some features only available in version 0.1.139.</p>
+
+<p>Okay, on to the good stuff. Start innotop, and switch to V mode with the &ldquo;V&rdquo; key. V stands for &ldquo;Variables and Status.&rdquo; It displays a table with a row for each chosen value, and a column for each set of values you want to view. Values can be chosen from anything you can find in <code>SHOW STATUS</code> or <code>SHOW VARIABLES</code>.</p>
+
+<p>Let me explain that a bit more. The leftmost column shows which values I&rsquo;ve chosen to display. Each row has one value. As you go to the right, you see the values themselves. First you see the most current values, then the ones before that, and so on &ndash; all the way till the far-right column.</p>
+
+<p>There are a couple things to notice about this display:</p>
+
+<ol>
+<li>The display is incremental. That is, I&rsquo;m not displaying the real values here. I&rsquo;m displaying the difference between snapshots. You can see the <code>Uptime</code> value is incremented by 60 in each successive column. That&rsquo;s because I&rsquo;ve chosen a sleep time of 60 seconds between snapshots. (I usually choose <code>Uptime</code> as the first value so I can see what time range is displayed).</li>
+<li>The far-right column is not incremental. That&rsquo;s because it&rsquo;s the earliest snapshot innotop has in memory, so there&rsquo;s nothing earlier to subtract from it. Besides, you don&rsquo;t always want to know the difference between values. Sometimes you want to know the value itself. This gives you a baseline so you can see both the incremental and absolute values at the same time.</li>
+<li>The second line of the display, above the values table, shows you the current display options. You can see incremental is on, and per-second average is off. You can toggle this with the &ldquo;i&rdquo; and &ldquo;a&rdquo; keys, so you can instantly switch back and forth between several views on the data.</li>
+<li>Long-number display is on. You can toggle it on and off with the &ldquo;l&rdquo; key (that&rsquo;s a lowercase &ldquo;L&rdquo;) for a more compact display.</li>
+</ol>
+
+<p>It&rsquo;s a pretty compact way to look at 8 minutes of history for the server, wouldn&rsquo;t you agree? You can easily get a lot more information from this display than with the other methods I&rsquo;ve discussed. But there&rsquo;s more!</p>
+
+<ul>
+<li>I include several preset choices of values to display with innotop. You can toggle back and forth between them with the keys &ldquo;0&#8243; through &ldquo;9&#8243;. There are presets for the query cache, table and index scans, InnoDB variables, transaction statements, and more. All in all, there&rsquo;s room for ten sets of values.</li>
+<li>You can customize each set with the &ldquo;c&rdquo; key. Pick and choose from any value in STATUS and VARIABLES, as I said. This gets saved in your configuration file, so it&rsquo;s there when you quit and restart innotop.</li>
+<li>You can choose the number of snapshots you want to display, from 2 to 9, so you can decide how much history you want to look at on one screen.</li>
+</ul>
+
+<h3 id="method-2-modelled-after-tload">Method 2: modelled after <code>tload</code></h3>
+
+<p>Another way to monitor these variables is to draw a graph in the style of <code>tload</code>. The theory behind this mode is that you choose a few values (with the &ldquo;c&rdquo; key, as usual) and innotop will scale the per-second average of the values against the maximum it has ever seen, and use that to draw a pretty graph. You enter Graph mode with the &ldquo;G&rdquo; key.</p>
+
+<p>This isn&rsquo;t quite like <code>tload</code>, because the graph runs from top to bottom, not left to right. It prints out a header periodically, including the &ldquo;max value&rdquo; against which it is scaling.</p>
+
+<p>In practice, I haven&rsquo;t quite gotten this right yet. I&rsquo;m not sure how to scale it. I have no problems doing the math, but scaling against &ldquo;the max value ever seen&rdquo; doesn&rsquo;t seem to produce good results. Sometimes it results in a nice graph; other times not. I keep thinking there must be a good way to calculate actual server load, so it can be graphed meaningfully, but I can&rsquo;t think of it. Any suggestions?</p>
+
+<p>I&rsquo;m not very happy with this mode. If I can&rsquo;t figure out a way to make it more useful, I may get rid of this functionality, even though it&rsquo;s only a few lines of code.</p>
+
+<h3 id="method-3-modelled-after-vmstat">Method 3: modelled after <code>vmstat</code></h3>
+
+<p>My co-worker John anticipated that the graph wouldn&rsquo;t be that useful, much to his credit, and asked me if I could imitate <code>vmstat</code> and <code>iostat</code> instead of drawing a graph. The result is &ldquo;S&rdquo; mode. It can print the same information as &ldquo;G&rdquo; mode, except it prints values instead of a graph.</p>
+
+<p>I think this is more useful than &ldquo;G&rdquo; mode, though it&rsquo;s somewhat redundant to the &ldquo;V&rdquo; mode I demonstrated above. Because the values are laid out across the screen, and time flows from bottom to top of the screen, you can fit fewer values on the screen, but you can view a longer time window.</p>
+
+<h3 id="recap-of-the-modes">Recap of the modes</h3>
+
+<p>I just showed you three modes innotop has for monitoring status and variable information from a MySQL server:</p>
+
+<ol>
+<li>&ldquo;V&rdquo; mode prints a table of snapshots, with lots of different options.</li>
+<li>&ldquo;G&rdquo; mode tries to print a graph, but doesn&rsquo;t always do a very good job.</li>
+<li>&ldquo;S&rdquo; mode prints something similar to &ldquo;V&rdquo; mode, but the data is laid out differently.</li>
+</ol>
+
+<p>The three modes are basically different ways of looking at the same values. There&rsquo;s some redundancy among them, but because it requires so little code to do each of them, I don&rsquo;t care about the redundancy from a coding standpoint. I don&rsquo;t mind maintaining three features with similar functionality, if it gives more ways to use the monitor.</p>
+
+<p>If you have any suggestions for improvements, I&rsquo;m waiting to hear from you :-)</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>In this article I explained the old-fashioned way to monitor the output of <code>SHOW STATUS</code>and <code>SHOW VARIABLES</code>, and then showed you how innotop can make this a lot faster and easier, and hopefully give you enough different views on the data that you can find one you like.</p>
+
+<p>Stay tuned to learn more about innotop; there is a lot more to tell! You can <a href="/index.xml">subscribe via feeds or e-mail</a> to keep current.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2006/08/13/four-types-of-database-abstraction-layers/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2006/08/10/how-to-use-order-by-and-limit-on-multi-table-updates-in-mysql/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2006\/08\/12\/how-to-monitor-mysql-status-and-variables-with-innotop\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

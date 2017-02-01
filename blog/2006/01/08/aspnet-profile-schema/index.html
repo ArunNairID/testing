@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      ASP.NET&#39;s Profile DB schema &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="ASP.NET&#39;s Profile DB schema" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2006/01/08/aspnet-profile-schema/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2006/01/08/aspnet-profile-schema/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">ASP.NET&#39;s Profile DB schema</h1>
+  <span class="post-date">Sun, Jan 8, 2006 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f01%2f08%2faspnet-profile-schema%2f&text=ASP.NET%27s%20Profile%20DB%20schema:https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f01%2f08%2faspnet-profile-schema%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f01%2f08%2faspnet-profile-schema%2f&title=ASP.NET%27s%20Profile%20DB%20schema&summary=ASP.NET%27s%20Profile%20DB%20schema&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f01%2f08%2faspnet-profile-schema%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f01%2f08%2faspnet-profile-schema%2f&t=ASP.NET%27s%20Profile%20DB%20schema" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f01%2f08%2faspnet-profile-schema%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>ASP.NET has built-in functionality to store profile information about a user. The DB table schema has several design trade-offs that make it somewhat inflexible for certain uses.</p>
+
+<p>ASP.NET will write a custom class, given the properties you want, such as name and birthdate. It will also take care of hooking the plumbing up in the database (there is a little script to create the profile tables in the database). It then stores and retrieves the data on subsequent requests. The feature can handle both text and binary data, but for simplicity&rsquo;s sake, I&rsquo;ll just ignore the binary. Since the profile could contain arbitrary information, the table has to be designed to accommodate any type of data &ndash; essentially name/value pairs. Here&rsquo;s the table schema:</p>
+
+<pre>CREATE TABLE dbo.aspnet_Profile (
+    UserId uniqueidentifier NOT NULL PRIMARY KEY CLUSTERED,
+    PropertyNames ntext NOT NULL,
+    PropertyValuesString ntext NOT NULL,
+    PropertyValuesBinary image NOT NULL,
+    LastUpdatedDate datetime NOT NULL
+)</pre>
+
+<p>Hmmm, that&rsquo;s an interesting schema. How do you store name/value pairs in that? I&rsquo;d expect to see a <code>UserID</code> column and a <code>Name</code> column, with the primary key on <code>UserID</code> and <code>Name</code>, but it looks like they must be storing the data another way. For one thing, there can&rsquo;t be multiple rows per user &ndash; all the values have to be in one row. I could see someone arguing that&rsquo;s a good idea, because it would keep the data all on one page &ndash; but the columns are <code>ntext</code> and <code>image</code> so they&rsquo;re not stored in-page anyway. That results in a compact table, with a small clustered index to seek for the user&rsquo;s row, but then the DB has to seek to other pages and find the data stored in those three columns. So how is the data stored?</p>
+
+<pre>select top 1 UserId, PropertyNames, PropertyValuesString from aspnet_Profile;</pre>
+
+<p>Results:</p>
+
+<table class="borders collapsed compact">
+  <tr>
+    <th>
+      UserId
+    </th>
+    
+    <th>
+      PropertyNames
+    </th>
+    
+    <th>
+      PropertyValuesString
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      017D...[snip]...
+    </td>
+    
+    <td>
+      User.LName:S:0:5:User.FName:S:5:4:
+    </td>
+    
+    <td>
+      SmithJohn
+    </td>
+  </tr></table> 
+  
+
+<p><p>
+    Yuck! So the object just dehydrates itself in a similar fashion as PHP&rsquo;s <a href="http://www.php.net/manual/en/function.serialize.php"><code>serialize</code></a> and re-writes the entire row whenever it saves itself into the database (I&rsquo;m guessing it re-writes the entire row; perhaps it&rsquo;s smart enough to know that the binary data doesn&rsquo;t need to be re-written if only the text has changed, though the design doesn&rsquo;t instill much confidence about that). This is a very bad design. The table isn&rsquo;t even first normal form. There is also no decent way to use this data except through the Profile objects. I can&rsquo;t grab the data and query it for reports or whatnot. And finally, those ubiquitous Microsoft <code>uniqueidentifier</code> 128-bit surrogate keys are rearing their ugly heads.
+  </p></p>
+
+<p><p>
+    I&rsquo;m surprised and nonplussed. After all the gazillions of dollars that went into ASP.NET 2.0&hellip; I&rsquo;ll give them some credit and say &ldquo;it&rsquo;s good that they found a way to store the data in the table without customizing the table schema based on the desired profile properties,&rdquo; but this design is barely a step up from that. This schema is missing all the obvious benefits of normalization.
+  </p></p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2006/01/10/grouping-data-visually-with-row-groups/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2006/01/06/easy-solutions/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2006\/01\/08\/aspnet-profile-schema\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

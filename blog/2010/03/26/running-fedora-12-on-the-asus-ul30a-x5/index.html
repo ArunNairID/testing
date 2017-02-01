@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Running Fedora 12 on the ASUS UL30A-X5 &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Running Fedora 12 on the ASUS UL30A-X5" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2010/03/26/running-fedora-12-on-the-asus-ul30a-x5/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2010/03/26/running-fedora-12-on-the-asus-ul30a-x5/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Running Fedora 12 on the ASUS UL30A-X5</h1>
+  <span class="post-date">Fri, Mar 26, 2010 in
+		
+		<a href="/categories/reviews" class="btn btn-primary">Reviews</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f03%2f26%2frunning-fedora-12-on-the-asus-ul30a-x5%2f&text=Running%20Fedora%2012%20on%20the%20ASUS%20UL30A-X5:https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f03%2f26%2frunning-fedora-12-on-the-asus-ul30a-x5%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f03%2f26%2frunning-fedora-12-on-the-asus-ul30a-x5%2f&title=Running%20Fedora%2012%20on%20the%20ASUS%20UL30A-X5&summary=Running%20Fedora%2012%20on%20the%20ASUS%20UL30A-X5&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f03%2f26%2frunning-fedora-12-on-the-asus-ul30a-x5%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f03%2f26%2frunning-fedora-12-on-the-asus-ul30a-x5%2f&t=Running%20Fedora%2012%20on%20the%20ASUS%20UL30A-X5" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2010%2f03%2f26%2frunning-fedora-12-on-the-asus-ul30a-x5%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p><div id="attachment_1694" class="wp-caption alignleft" style="width: 310px"><a href="http://www.amazon.com/dp/B002P3KMVC?tag=xaprb-20"><img src="/media/2010/03/ASUS-UL30A-X5-300x255.jpg" alt="ASUS-UL30A-X5" title="ASUS-UL30A-X5" width="300" height="255" class="size-medium wp-image-1694" /></a><p class="wp-caption-text">ASUS-UL30A-X5</p></div><p>I&rsquo;ve had an <a href="http://www.amazon.com/dp/B002P3KMVC?tag=xaprb-20">ASUS-UL30A-X5</a> for about two weeks now.  This is the nicest laptop I&rsquo;ve ever owned (and I was a laptop owner before that was cool).  I&rsquo;m absolutely thrilled.</p></p>
+
+<p>I used a Dell Inspiron 1501 for the last 4 years, the AMD model.  Everything was a pain due to poor Linux compatibility.  I blamed some of it on other things.  For example, I thought my external monitor was low quality because all the pixels crawled like ants.  I got this laptop and immediately everything I'd had a problem with was a non-issue. Skype audio -- works great.  Suspend and resume -- works great.  Everything.  I didn't know how much pain I was in until I got this laptop.</p>
+
+<p>I also considered buying an <a href="http://www.amazon.com/gp/product/B00318CG8M?tag=xaprb-20">HP Pavilion DM-3</a> and a <a href="http://www.amazon.com/dp/B002OOWC06?tag=xaprb-20">Toshiba Satellite T135</a>, both very nice machines also, and much in the same class as far as size, weight, and battery life.  I physically drove around to a bunch of stores and saw them, picked them up, etc.  In the end, I think they are all great laptops, but after watching multiple YouTube reviews of all of them, it became clear that ASUS had built a killer machine.</p>
+
+<p>Main selling points for me are the size, the weight, and the battery life.  Those were what I was shopping for.  In more detail:</p>
+
+<ul>
+<li>Small and light.  Nice size for travel. 13.3 inch screen, really a perfect size.</li>
+<li>Long battery life.  They claim 12 hours.  They're really not kidding, I've gotten about 9 hours of honest work on a single charge, and I'm not clocking the CPUs down.  I'm not exactly running compilers the whole time, but I'm talking on Skype, running an external monitor, using the wireless, running CPU-intensive things like LaTeX builds, and so on.</li>
+<li>Nice display!  It's LED-backed, very bright, very white (makes my old laptop look dirty yellow/green in comparison).</li>
+<li>Nice keyboard!</li>
+<li>Fast.  This is not a gerbil-pusher running an Atom processor, it is fast, and the chip has the virtualization features that help a lot when I'm running VirtualBox.  It's much more powerful than my old laptop, more than powerful enough for OpenOffice.org to be snappy. DDR3 memory too.  Definitely a high performance laptop.</li>
+<li>4GB of memory, and more hard drive space than I'll ever use.  I can't believe how big the drives are these days.</li>
+<li>Cool running -- almost cold.  Quiet too.</li>
+<li>Did I mention that it works flawlessly with Linux? (The stock Fedora 12 install has a flaky wireless driver; just 'yum update' to get a new kernel, and you're golden.)</li>
+</ul>
+
+<p>Downsides?  Not many.  The touchpad is a bit too sticky.  The display doesn't open flat, it only opens back to about 120 degrees.</p>
+
+<p>I did a lot of research and brought myself up to speed on the latest hardware.  One thing I learned that surprised me: you have to be careful with the Intel chips these days.  The model numbers make it hard to tell what you're getting.  You have to go to the Intel website and use their comparator.  I also learned what you probably know already: most of these computers come in an Intel flavor, and an AMD flavor that typically has ATI graphics and other components.  The differences are manifold: the AMD machines are typically $100 cheaper, have half the battery life, and have all kinds of problems with weak driver support in Linux.</p>
+
+<p>My wife can tell you how much I agonized over this.  Should I buy a new laptop?  Ehhh... my old one got the job done, I felt guilty about hurting the environment by paying for another computer to be built, I did't want to spend money... blah blah blah.  I should have gotten off the fence ages ago and just bought it.  Actually I take that back, it's only been available for 6 months or so.</p>
+
+<p><a href="http://www.amazon.com/dp/B002C1BBU8"><a href="/media/2010/03/Samsung-USB-DVD-Writer-e1269655480766.jpg"><img src="/media/2010/03/Samsung-USB-DVD-Writer-e1269655480766.jpg" alt="Samsung-USB-DVD-Writer" title="Samsung-USB-DVD-Writer" width="100" height="100" class="alignleft size-full wp-image-1699" /></a></a><p>I bought mine from <a href="http://www.amazon.com/dp/B002P3KMVC?tag=xaprb-20">Amazon</a>, which was actually the best deal on the web, even after researching <a href="http://www.dealnews.com/">dealnews</a> and other sites.  None of the stores I visited had it in stock; they only had the AMD model.</p></p>
+
+<p>It has no internal optical disk drive, which is actually a good thing for me -- I probably pop a disc in once every two months, if that.  So I bought an <a href="http://www.amazon.com/dp/B002C1BBU8?tag=xaprb-20">external DVD burner</a>, pictured at left, which is also quite nice.  It works great to boot from it.  I promptly booted from it to a Fedora CD and wiped the whole drive to install a real operating system.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2010/03/28/the-need-for-tunability-and-measurability/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2010/03/16/try-mk-query-advisor-a-new-maatkit-tool/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2010\/03\/26\/running-fedora-12-on-the-asus-ul30a-x5\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

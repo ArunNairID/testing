@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How to analyze statistics from SQL Query Analyzer &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How to analyze statistics from SQL Query Analyzer" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2005/11/30/quickly-compile-query-statistics-from-sql-query-analyzer/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2005/11/30/quickly-compile-query-statistics-from-sql-query-analyzer/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to analyze statistics from SQL Query Analyzer</h1>
+  <span class="post-date">Wed, Nov 30, 2005 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f11%2f30%2fquickly-compile-query-statistics-from-sql-query-analyzer%2f&text=How%20to%20analyze%20statistics%20from%20SQL%20Query%20Analyzer:https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f11%2f30%2fquickly-compile-query-statistics-from-sql-query-analyzer%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f11%2f30%2fquickly-compile-query-statistics-from-sql-query-analyzer%2f&title=How%20to%20analyze%20statistics%20from%20SQL%20Query%20Analyzer&summary=How%20to%20analyze%20statistics%20from%20SQL%20Query%20Analyzer&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f11%2f30%2fquickly-compile-query-statistics-from-sql-query-analyzer%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f11%2f30%2fquickly-compile-query-statistics-from-sql-query-analyzer%2f&t=How%20to%20analyze%20statistics%20from%20SQL%20Query%20Analyzer" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2005%2f11%2f30%2fquickly-compile-query-statistics-from-sql-query-analyzer%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>Microsoft SQL Query Analyzer prints out statistics as text, and it can be tough to wade through it all. Here is an <code>awk</code> script for quickly analyzing those statistics.</p>
+
+<h3 id="analyzing-the-stats">Analyzing the stats</h3>
+
+<p>First, remember you can use SQL Server Profiler to measure your query&rsquo;s performance. Profiler is a very powerful tool, and everyone writing queries should be familiar with it.</p>
+
+<p>For one-off queries, though, it may be faster to simply turn on the desired statistics and run the query, then grab the output and analyze it directly. Here is one quick way to analyze the output caused by <code>set statistics io on</code> and <code>set statistics time on</code>: use <code>awk</code>!</p>
+
+<p>Here is a simple <code>awk</code> program. Save it to a file named <code>sql-stats.awk</code>:</p>
+
+<pre>/CPU time/ {
+    cpu += $4
+    elapsed += $9
+}
+/Scan count/ {
+    scans += substr($5, 1, index($5, ",") - 1)
+    reads += substr($8, 1, index($8, ",") - 1)
+    physi += substr($11, 1, index($11, ",") - 1)
+    ahead += substr($14, 1, index($14, ".") - 1)
+}
+END {
+    printf("Scans:            %7d\n", scans);
+    printf("Logical reads:    %7d\n", reads);
+    printf("Physical reads:   %7d\n", physi);
+    printf("Read-ahead reads: %7d\n", ahead);
+    printf("CPU time:         %7d ms\n", cpu);
+    printf("Elapsed time:     %7d ms\n", elapsed);
+}</pre>
+
+<p>Now follow these steps to sum the statistics for easy consumption:</p>
+
+<ul>
+<li>get <a href="http://cm.bell-labs.com/cm/cs/who/bwk/awk95.exe">awk</a>, if you don&rsquo;t have it</li>
+<li>turn on the desired statistics</li>
+<li>execute your query</li>
+<li>switch from the results tab to the messages tab, and copy the messages to the clipboard</li>
+<li>paste the messages into a text file called <code>stats.txt</code></li>
+<li>execute <code>awk</code> against the file as follows:</li>
+</ul>
+
+<pre>C:> awk -f sql-stats.awk stats.txt</pre>
+
+<p>The results should look something like this:</p>
+
+<pre>Scans:               1110
+Logical reads:     531208
+Physical reads:       187
+Read-ahead reads:  131895
+CPU time:          146922 ms
+Elapsed time:      200718 ms</pre>
+
+<h3 id="watch-out-for-query-caches">Watch out for query caches!</h3>
+
+<p>Remember, for unbiased results, you need to initialize your caches to a known state before comparing queries:</p>
+
+<pre>dbcc freeproccache
+dbcc dropcleanbuffers</pre>
+
+<p>Please share if you have other ideas. You could get as fancy as you want with awk, but this solves my common need.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2005/12/01/windows-xps-built-in-unzipping-functionality-is-not-trustworthy/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2005/11/29/the-four-tools/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2005\/11\/30\/quickly-compile-query-statistics-from-sql-query-analyzer\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

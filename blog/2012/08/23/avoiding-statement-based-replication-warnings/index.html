@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Avoiding statement-based replication warnings &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Avoiding statement-based replication warnings" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2012/08/23/avoiding-statement-based-replication-warnings/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2012/08/23/avoiding-statement-based-replication-warnings/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Avoiding statement-based replication warnings</h1>
+  <span class="post-date">Thu, Aug 23, 2012 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f08%2f23%2favoiding-statement-based-replication-warnings%2f&text=Avoiding%20statement-based%20replication%20warnings:https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f08%2f23%2favoiding-statement-based-replication-warnings%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f08%2f23%2favoiding-statement-based-replication-warnings%2f&title=Avoiding%20statement-based%20replication%20warnings&summary=Avoiding%20statement-based%20replication%20warnings&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f08%2f23%2favoiding-statement-based-replication-warnings%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f08%2f23%2favoiding-statement-based-replication-warnings%2f&t=Avoiding%20statement-based%20replication%20warnings" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2012%2f08%2f23%2favoiding-statement-based-replication-warnings%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>Although not perfect, MySQL replication was probably the killer feature that made MySQL the default database for web applications some time ago. Since then, MySQL replication has been improved greatly, with such notable changes as row-based replication. At the same time, the replication engineering team has made MySQL replication more conservative and less forgiving of foot-gun errors. These have gone a long way towards helping users avoid some of the problems that made replication sometimes drift out of sync with the master copy, sometimes silently.</p>
+
+<p>In some cases I think the strictness has gone a little too far. One example is the server&rsquo;s identification of statements that are unsafe for replication because they are nondeterministic. Here is a statement in an application I manage, which is designed to claim some work from a queue. After running this statement, the application checks if any rows were affected, and if so, it then fetches and processes the rows:</p>
+
+<pre>update pending_jobs set token = ?
+where token is null
+  and (owner_pid is null or owner_pid <> ?)
+order by id
+limit 1;</pre>
+
+<p>MySQL will write to the server&rsquo;s error log when this statement is issued and binlog_format=STATEMENT, because of the presence of a LIMIT in the statement: <em>120823 20:59:12 [Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted. Statement: [statement follows]</em></p>
+
+<p>This becomes a problem very quickly, because in fact the statement is deterministic and the rows to be affected can be predicted perfectly. The server is just being overly strict. The general technique illustrated here is a superior alternative to some other ways of <a href="http://www.engineyard.com/blog/2011/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/">implementing a queue in a database table</a>. But if a superior alternative floods the error log with spurious messages, it must be avoided anyway.</p>
+
+<p>The solution I chose in this case is a blend of SQL and application code. Part of the logic &ndash; the limit &ndash; must be handled in the application code, and pulled out of the UPDATE statement so the server will consider it to be deterministic. Here is pseudocode for the result:</p>
+
+<pre>
+function claim_a_job() {
+   $pid   = get_pid();
+   $token = md5(rand(), time(), $pid);
+   @jobs  = query(
+            "select id from pending_jobs
+             where token is null and (owner_pid is null or owner_pid <> ?)
+             order by id", $pid);
+   foreach ( $job in @jobs ) {
+      next unless query("update pending_jobs set token=?
+                         where token is null and id=?", $token, $job);
+      return $job;
+   }
+   return null;
+}
+</pre>
+
+<p>This code finds all unclaimed rows and tries to claim each one in turn. If there&rsquo;s a race condition and another worker has claimed the job in the meantime, no rows will be updated. If the UPDATE affects a row, then the function claimed the job successfully, and the job&rsquo;s ID is returned. The most important thing, however, is that the SQL lacks any constructs such as LIMIT that might cause errors to be spewed into the log. I want my logs to be silent so that I can detect when something really important actually happens.</p>
+
+<p>Percona Server has a feature to disable logging this warning, which is a mixed blessing. I want to find all such queries and examine them, because some of them might be a legitimate risk to replication integrity. If I disable the logging, it becomes much harder, though I can potentially do it by inspecting TCP traffic instead. I do wish that official MySQL supported the ability to silence warnings selectively, however.</p>
+
+<p>Another possible solution would be to switch to row-based binary logging, which comes with many other benefits as well. But such a change is not to be taken lightly; it requires a careful assessment of the server and its workload, lest there be unintended consequences.</p>
+
+<p>An even better solution would be to implement some additional features in the server. Many of the features that developers like the most about NoSQL databases such as MongoDB and Redis (or even PostgreSQL) are special-case behaviors to simplify things that are awkward to do in most databases. Examples include atomically adding and removing from a queue, and features to avoid polling, such as LISTEN and NOTIFY.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2012/08/28/mysql-kill-could-be-so-much-more-exciting/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2012/08/22/optimizing-in-queries-against-a-compound-index/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2012\/08\/23\/avoiding-statement-based-replication-warnings\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

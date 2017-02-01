@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      MySQL Conference and Expo 2008, Day One &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="MySQL Conference and Expo 2008, Day One" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2008/04/16/mysql-conference-and-expo-2008-day-one/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2008/04/16/mysql-conference-and-expo-2008-day-one/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL Conference and Expo 2008, Day One</h1>
+  <span class="post-date">Wed, Apr 16, 2008 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f16%2fmysql-conference-and-expo-2008-day-one%2f&text=MySQL%20Conference%20and%20Expo%202008%2c%20Day%20One:https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f16%2fmysql-conference-and-expo-2008-day-one%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f16%2fmysql-conference-and-expo-2008-day-one%2f&title=MySQL%20Conference%20and%20Expo%202008%2c%20Day%20One&summary=MySQL%20Conference%20and%20Expo%202008%2c%20Day%20One&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f16%2fmysql-conference-and-expo-2008-day-one%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f16%2fmysql-conference-and-expo-2008-day-one%2f&t=MySQL%20Conference%20and%20Expo%202008%2c%20Day%20One" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f16%2fmysql-conference-and-expo-2008-day-one%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>Today is the first day at the conference (aside from the tutorials, which were yesterday). Here&rsquo;s what I went to:</p>
+
+<h3 id="new-subquery-optimizations-in-6-0">New Subquery Optimizations in 6.0</h3>
+
+<p>By Sergey Petrunia. This was a similar session to one I went to last year. MySQL has a few cases where subqueries are badly optimized, and this session went into the details of how this is being addressed in MySQL 6.0. There are several new optimization techniques for all types of subqueries, such as inside-out subqueries, materialization, and converting to joins. The optimizations apply to scalar subqueries and subqueries in the FROM clause. Performance results are very good, depending on which data you choose to illustrate. The overall point is that the worst-case subquery nastiness should be resolved. I&rsquo;m speaking of WHERE NOT IN(SELECT&hellip;) and friends. It remains to be seen how this shakes out as 6.0 matures, and what edge cases will pop up.</p>
+
+<h3 id="the-lost-art-of-the-self-join">The Lost Art Of the Self Join</h3>
+
+<p>This was just great. Among many other things, Beat Vontobel showed how a Su Doku can be solved entirely with declarative queries: a very large self-join query against a table of digits and a table of the board&rsquo;s initial state. I had been promoting this session because last year&rsquo;s was so very good. I can&rsquo;t wait to see what he comes up with for next year. Can he find another creative idea? Time will tell.</p>
+
+<p>He wasn&rsquo;t able to solve a 9&#215;9 puzzle with MySQL because of the limitation on the number of joins, but PostgreSQL had no trouble doing it.</p>
+
+<h3 id="explain-demystified">EXPLAIN Demystified</h3>
+
+<p>This was my session, of course. (Slides will be on the O&rsquo;Reilly conference site, if they aren&rsquo;t already). It went great, I thought. The room was full and people were standing in the back of the room and in the door. The questions came fast and furious; all really good questions. I think we ended up exploring a lot of the MySQL query execution method, strengths, and weaknesses by the time we were through. And I gave away all the remaining Maatkit t-shirts. Hopefully the people who took them will wear them tomorrow and the conference will be sea of deep, rich red shirts.</p>
+
+<p>Someone did an audio recording of the session, but I don&rsquo;t recall who it was.</p>
+
+<h3 id="investigating-innodb-scalability-limits">Investigating InnoDB Scalability Limits</h3>
+
+<p>This session was given by Peter Zaitsev (disclosure: I now work for <a href="http://www.percona.com/">Percona</a>, the company he co-founded). Peter and Vadim Tkachenko spent a lot of time over the last weeks and months running a dizzying array of benchmarks on MySQL 5.0.22, 5.0.51, and 5.1.24 (if I recall the versions correctly). They were able to show InnoDB&rsquo;s scaling patterns for a number of different micro-benchmarks on a variety of configurations. If you didn&rsquo;t attend, please look up the slides if you care about InnoDB performance. A lot of work went into the benchmarks &ndash; a lot of work. The slides should be on the conference website or on our blog, <a href="http://www.mysqlperformanceblog.com/">http://www.mysqlperformanceblog.com/</a>.</p>
+
+<h3 id="replication-tricks-and-tips">Replication Tricks and Tips</h3>
+
+<p>Lars Thalmann and Mats Kindahl gave this session. At a high level, I&rsquo;d say it was a run-down of all the different ways you can use MySQL replication. Replication is really a flexible tool, and they covered a large array of the most important ways you can use it to achieve different purposes. Many of the techniques they mentioned are implemented by various tools in <a href="http://www.maatkit.org/">Maatkit</a>. A couple of the others are implemented in <a href="http://code.google.com/p/mysql-master-master/">MySQL Master Master Manager</a> and <a href="http://code.google.com/p/mysql-mmre/">MySQL Semi Multi-Master</a> tools. Don&rsquo;t re-code these! You can save weeks of work and get quality code by using the pre-built tools. (I built Maatkit, so I know exactly how tricky it is to get some of these things right.)</p>
+
+<h3 id="bof-sessions">BoF Sessions</h3>
+
+<p>I dropped in on a few BoF sessions, including the Sphinx one and the PBXT/Blob Streaming one. (Keep an eye on the PrimeBase folks &ndash; they are up to great things.) Ronald Bradford protected me from those who wanted to get me drunk. Hint: it&rsquo;s really easy&hellip; I have to say, though, Monty&rsquo;s black vodka was amazing.</p>
+
+<p>Speaking of Blob Streaming, Paul McCullagh and I were talking earlier in the day about the project&rsquo;s name, MyBS. This has been smirked about a few times. I think it&rsquo;s a great name, because after all my initials are BS (I usually insert one of my four middle names in to alleviate this problem, but I digress). The conversation went like this:</p>
+
+<p>Me: I like it. My initials are BS.</p>
+
+<p>Paul: BS actually means British Standard, so it can&rsquo;t be bad.</p>
+
+<p>Me: Better than American Standard. That&rsquo;s a toilet.</p>
+
+<p>We also debated the merits of watching the original move The Blob. It&rsquo;s a classic. It must be good.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2008/04/16/get-a-free-sample-chapter-of-high-performance-mysql-second-edition/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2008/04/15/a-different-angle-on-the-mysql-conference/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2008\/04\/16\/mysql-conference-and-expo-2008-day-one\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

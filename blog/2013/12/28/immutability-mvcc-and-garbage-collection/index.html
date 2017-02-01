@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Immutability, MVCC, and Garbage Collection &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Immutability, MVCC, and Garbage Collection" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/media/2013/12/uluru.jpg" />
+  <meta name="og:description" content="Immutable databases seem elegant but create difficult tradeoffs, sometimes resolved via short-term immutability." />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2013/12/28/immutability-mvcc-and-garbage-collection/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2013/12/28/immutability-mvcc-and-garbage-collection/">
+  
+  <meta name="description" value="Immutable databases seem elegant but create difficult tradeoffs, sometimes resolved via short-term immutability.">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Immutability, MVCC, and Garbage Collection</h1>
+  <span class="post-date">Sat, Dec 28, 2013 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/best-of" class="btn btn-primary">Best Of</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f12%2f28%2fimmutability-mvcc-and-garbage-collection%2f&text=Immutability%2c%20MVCC%2c%20and%20Garbage%20Collection:https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f12%2f28%2fimmutability-mvcc-and-garbage-collection%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f12%2f28%2fimmutability-mvcc-and-garbage-collection%2f&title=Immutability%2c%20MVCC%2c%20and%20Garbage%20Collection&summary=Immutability%2c%20MVCC%2c%20and%20Garbage%20Collection&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f12%2f28%2fimmutability-mvcc-and-garbage-collection%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f12%2f28%2fimmutability-mvcc-and-garbage-collection%2f&t=Immutability%2c%20MVCC%2c%20and%20Garbage%20Collection" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f12%2f28%2fimmutability-mvcc-and-garbage-collection%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>Not long ago I attended a talk about Datomic, which focused a lot on database
+immutability and its benefits. I hope to illustrate why many database designs
+are much more complicated than Datomic and its ilk. Although Datomic&rsquo;s design
+can be presented as <em>advanced</em>, there&rsquo;s another side to the story, which also
+holds true for similar databases such as CouchDB. It&rsquo;s a really difficult
+problem space, and clean and elegant solutions without nasty edge cases are
+difficult to design and implement.</p>
+
+<p><img src="/media/2013/12/uluru.jpg" alt="Uluru" /></p>
+
+<p></p>
+
+<h3 id="datomic-and-immutability">Datomic and Immutability</h3>
+
+<p>From what I can understand as a non-expert, the Datomic-in-a-nutshell is that it uses an append-only B-tree to record data, and never updates any data after it&rsquo;s written. The speaker wasn&rsquo;t sure what an append-only B-tree was, but his detailed description matched AOBTs perfectly.</p>
+
+<p>Why is this a big deal? Immutable data confers a lot of nice benefits. Here&rsquo;s an incomplete summary:</p>
+
+<ul>
+<li>It&rsquo;s more cacheable.</li>
+<li>It&rsquo;s easier to reason about.</li>
+<li>It&rsquo;s less likely to get corrupted from bugs and other problems.</li>
+<li>You can rewind history and view the state at any point in the past, by using an &ldquo;old&rdquo; root for the tree.</li>
+<li>Backups are simple: just copy the file, no need to take the database offline. In fact, you can do continuous backups.</li>
+<li>Replication is simple and fast.</li>
+<li>Crash recovery is simple and fast.</li>
+<li>It&rsquo;s easier to build a reliable system on unreliable components with immutability.</li>
+</ul>
+
+<p>In general, immutability results in a lot of nice, elegant properties that just feel wonderful.</p>
+
+<h3 id="prior-art">Prior Art</h3>
+
+<p>Datomic is not alone in choosing immutability. I have seen at least two other databases architected similarly. Their creators highlighted many of the same benefits. In fact, if you listened to early talks from the architects of RethinkDB, you could practically search and replace &ldquo;RethinkDB&rdquo; with &ldquo;Datomic&rdquo;. The same is true of CouchDB. To list a few links to RethinkDB&rsquo;s history: <a href="http://techcrunch.com/2009/07/28/yc-funded-rethinkdb-a-mysql-storage-engine-built-from-the-ground-up-for-ssds/">1</a>, <a href="http://www.bytebot.net/blog/archives/2009/07/28/rethinkdb-all-the-rage-today">2</a>, <a href="http://carcaddar.blogspot.com/2009/10/append-only-databases.html">3</a>.</p>
+
+<p>That last one links to <a href="http://blogs.msdn.com/b/pathelland/archive/2007/06/14/accountants-don-t-use-erasers.aspx">Accountants Don&rsquo;t Use Erasers,</a> a blog post that brought append-only storage into the minds of many people at the time.</p>
+
+<p>Beyond databases, don&rsquo;t forget about filesystems, such as ZFS for example. Many of the same design techniques are employed here.</p>
+
+<p>Back to RethinkDB; around 2011 or so, its append-only design wasn&rsquo;t as prominent anymore. What happened?</p>
+
+<h3 id="append-only-blues">Append-Only Blues</h3>
+
+<p>Immutability can be costly. Later I&rsquo;ll explain how those costs are paid by lots of databases that don&rsquo;t build so heavily around immutability, too.</p>
+
+<p>The first is that space usage grows forever. Logically, people insert facts, and then update the database with new facts. Physically, if what you&rsquo;re doing is just recording newer facts that obsolete old ones, then you end up with outdated rows. It may feel nice to be able to access those old facts, but the reality is most people don&rsquo;t want that, and don&rsquo;t want to pay the cost (infinitely growing storage) for it.</p>
+
+<p>The second is fragmentation. If entities are made of related facts, and some facts are updated but others aren&rsquo;t, then as the database grows and new facts are recorded, an entity ends up being scattered widely over a lot of storage. This gets slow, even on SSDs with fast random access. Solving this can be difficult and introduce lots of complexity.</p>
+
+<p>The last is that a data structure or algorithm that&rsquo;s elegant and pure, but has one or more worst cases, can fall apart rather violently in real-world usage. That&rsquo;s because real-world usage is often much more diverse than you&rsquo;d suspect. A database that has a &ldquo;tiny worst-case scenario&rdquo; can end up hitting that worst-case behavior for something rather more than a tiny fraction of its users. In my personal experience, it&rsquo;s often a significant <em>majority</em>. An easy example in a different domain is sort algorithms. Nobody implements straightforward best-performance-most-of-the-time sort algorithms because if they do, things go to hell in a handbasket rather quickly. Databases end up with similar <a href="https://groups.google.com/forum/#!topic/rethinkdb/Bcg1NPTU6do">hard cases</a> to handle.</p>
+
+<p>There are more challenges, many of them much harder to talk about and understand (dealing with concurrency, for example), but these are the biggest, most obvious ones I&rsquo;ve seen.</p>
+
+<p>As a result, you can see RethinkDB <a href="http://www.quora.com/In-the-RethinkDB-paper-one-of-the-references-is-to-An-append-only-index-tree-structure-which-was-supposed-to-appear-in-the-fourth-quarter-of-2009.-Is-this-paper-available-today">quickly putting append-only, immutable design behind them</a>. They stopped talking and writing about it. Their whitepaper, &ldquo;Rethinking Database Storage&rdquo;, is gone from their website (rethinkdb.com/papers/whitepaper.pdf) but you can get it from the <a href="https://web.archive.org/web/20090806193803/http://www.rethinkdb.com/papers/whitepaper.pdf">wayback machine</a>.</p>
+
+<p>Reality sunk in and they had to move on from elegant theories to the bitterness of solving real-world problems. Whenever you hear about a new database, remember this: <em>this shit is really, really, really hard.</em> It typically takes many years for a database or storage engine to become production-ready in the real world.</p>
+
+<p><em>Update: I can&rsquo;t find the reference anymore, but I think my view of history was
+too simplistic; another important aspect of the story is that they just moved on
+to other problems once the storage layer matured. I&rsquo;m leaving the above para as
+it is and I&rsquo;d like to modify it to say that was my opinion at the time I wrote
+this post.</em></p>
+
+<p>This blog post isn&rsquo;t about RethinkDB, though. I&rsquo;m just using their evolution over time as an example of what happens when theory meets reality.</p>
+
+<h3 id="the-couchdb-problem">The CouchDB Problem</h3>
+
+<p>Around the same time as RethinkDB, a new NoSQL database called CouchDB was built on many of the same premises. In fact, I even blogged a quick overview of it as it started to become commercialized: <a href="/blog/2010/09/07/a-gentle-introduction-to-couchdb-for-relational-practitioners/">A gentle introduction to CouchDB for relational practitioners</a>.</p>
+
+<p>CouchDB had so many benefits from using immutability. MVCC (multi-version concurrency control), instant backup and recovery, crash-only design. But the big thing everyone complained about was&hellip; <a href="http://wiki.apache.org/couchdb/Compaction">compaction</a>. CouchDB became a little bit legendary for compaction.</p>
+
+<p>You see, CouchDB&rsquo;s files would grow forever, and you&rsquo;d fill up your disks if you didn&rsquo;t do something about it. What could you do about it? CouchDB&rsquo;s answer was that you would periodically save a complete new database, without old versions of documents that had been obsoleted. It&rsquo;s a rewrite-the-whole-database process. The most obvious problem with this was that you had to reserve twice as much disk space as you needed for your database, because you needed enough space to write a new copy. If your disk got too full, compaction would fail because there wasn&rsquo;t space for two copies.</p>
+
+<p>And if you were writing into your database too fast, compaction would never catch up with the writes. And there were a host of other problems that could potentially happen.</p>
+
+<p>Datomic seems to have all of these problems too, up to and including stop-the-world blocking of writes (which in my book is complete unavailability of the database).</p>
+
+<h3 id="acid-mvcc-relational-databases">ACID MVCC Relational Databases</h3>
+
+<p>There is a class of database systems that has long been aware of the challenges with the database designs I&rsquo;ve mentioned so far. Oracle, SQL Server, MySQL (InnoDB), and PostgreSQL all have arrived at designs that share some properties in common. These characteristics go some ways towards satisfying the needs of general-purpose database storage and retrieval in wide ranges of use cases, with excellent performance under mixed workloads. Depending on your workload, they arguably have relatively few and rare worst-case behaviors.</p>
+
+<p>The properties are ACID transactions with multi-version concurrency control (MVCC). The relational aspect is ancillary. You could build these properties in a variety of non-SQL, non-relational databases. It just happens that the databases that have been around longer than most, and are more mature and sophisticated, are mostly relational. That&rsquo;s why these design choices and characteristics show up in relational databases &ndash; no other reason as far as I know.</p>
+
+<p>Multi-version concurrency control lets database users see a consistent state of the database at a point in time, even as the database accepts changes from other users concurrently.</p>
+
+<p>How is this done? By keeping old versions of rows. These databases operate roughly as follows: when a row is updated, an old version is kept if there&rsquo;s any transaction that still needs to see it. When the old versions aren&rsquo;t needed any more, they&rsquo;re purged. Implementation details and terminology vary. I can speak most directly about InnoDB, which never updates a row in the primary key (which is the table itself). Instead, a new row is written, and the database is made to recognize this as the &ldquo;current&rdquo; state of the world. Old row versions are kept in a history list; access to this is slower than access to the primary key. Thus, the current state of the database is optimized to be the fastest to access.</p>
+
+<p>Now, about ACID transactions. Managing the write-ahead log and flushing dirty pages to disk is one of the most complex and hardest things an ACID database does, in my opinion. The process of managing the log and dirty pages in memory is called checkpointing.</p>
+
+<p>Write-ahead logging and ACID, caching, MVCC, and old-version-purge are often intertwined to some extent, for implementation reasons. This is a very complex topic and <a href="http://www.amazon.com/Transaction-Processing-Concepts-Techniques-Management/dp/1558601902/?tag=xaprb-20">entire</a> <a href="http://www.amazon.com/Transactional-Information-Systems-Algorithms-Concurrency/dp/1558605088/?tag=xaprb-20">books</a> (huge books!) have been written about it.</p>
+
+<p>What&rsquo;s happening in such a database is a combination of <strong>short-term immutability</strong>, read and write optimizations to save and/or coalesce redundant work, and continuous &ldquo;compaction&rdquo; and reuse of disk space to stabilize disk usage and avoid infinite growth. Doing these things a little bit at a time allows the database to gradually take care of business without needing to stop the world. Unfortunately, this is incredibly hard, and I am unaware of any such database that is completely immune to &ldquo;furious flushing,&rdquo; &ldquo;garbage collection pause,&rdquo; &ldquo;compaction stall,&rdquo; &ldquo;runaway purge,&rdquo; &ldquo;VACUUM blocking,&rdquo; &ldquo;checkpoint stall,&rdquo; or whatever it tends to be called in your database of choice. There is usually a combination of some kind of workload that can push things over the edge. The most obvious case is if you try to change the database faster than the hardware can physically keep up. Because a lot of this work is done in the background so that it&rsquo;s non-blocking and can be optimized in various ways, most databases will allow you to overwork the background processes if you push foreground activity hard enough.</p>
+
+<p>Show me a database and I&rsquo;ll show you someone complaining about these problems. I&rsquo;ll start out: <a href="http://www.mysqlperformanceblog.com/2012/09/04/adaptive-flushing-in-mysql-5-6/">MySQL&rsquo;s adaptive flushing</a> has been beaten to death by Percona and Oracle engineers. <a href="http://basho.com/leveldb-in-riak-1-2/">Riak on LevelDB</a>: &ldquo;On a test server, LevelDB in 1.1 saw stalls of 10 to 90 seconds every 3 to 5 minutes. In Riak 1.2, levelDB sometimes sees one stall every 2 hours for 10 to 30 seconds.&rdquo; <a href="http://rhaas.blogspot.com/2011/03/troubleshooting-stuck-vacuums.html">PostgreSQL&rsquo;s VACUUM can stall out</a>. I can go on. Every one of those problems is being improved somehow, but also can be triggered if circumstances are right. It&rsquo;s hard (impossible?) to avoid completely.</p>
+
+<h3 id="evolution-of-append-only">Evolution of Append-Only</h3>
+
+<p>The one-thing-at-a-time architecture of append-only systems, with periodic rewrites of the whole database, almost inevitably evolves into continuous, concurrent performing of the same tasks. Immutability can&rsquo;t live forever. It&rsquo;s better to do things continuously in the background than to accrue a bunch of debt and then pay it back in one giant blocking operation.</p>
+
+<p>That&rsquo;s how most mature, sophisticated databases with lots of scar tissue end up over time. The result is that Oracle (for example) can sustain combinations of workloads such as very high-frequency small operations reads and writes, together with days-long read-heavy and write-heavy batch processing, simultaneously, and providing good performance for both! That&rsquo;s hard to achieve in a database that can only do one thing at a time.</p>
+
+<p>So, keep that in mind if you start to feel like immutability is the elegant &ldquo;hallelujah&rdquo; solution that&rsquo;s been overlooked. It hasn&rsquo;t been overlooked. It&rsquo;s in the literature, and it&rsquo;s in the practice and industry. It&rsquo;s been refined for decades. It&rsquo;s well worth looking at the problems mature general-purpose databases have solved. New databases are overwhelmingly likely to run into some of them, and perhaps end up implementing the same solutions as well. (Note: I don&rsquo;t claim that there are no mature immutable databases. I&rsquo;m not aware of any, but I bet there are some.)</p>
+
+<p>Note that I am not SQL purist or a relational curmudgeon claiming that it&rsquo;s all been done before. I have a lot of respect for the genuinely new advancements in the field, and there is a hell of a lot of it, even in databases whose edge cases I just discussed.</p>
+
+<p>What do you think? Also, if I&rsquo;ve gone too far, missed something important, gotten anything wrong, or otherwise need some education myself, please let me know so I can a) learn and b) correct my error.</p>
+
+<p>References/links that might be useful:</p>
+
+<ul>
+<li><a href="http://www.datastax.com/dev/blog/compaction-improvements-in-cassandra-21">http://www.datastax.com/dev/blog/compaction-improvements-in-cassandra-21</a></li>
+</ul>
+
+<p><em>Note: I&rsquo;ve incorporated feedback into this blog post. It was needlessly
+inflammatory. You can see the history on my GitHub account. Please point out
+further areas I can improve it.</em></p>
+
+<p><a href="https://www.flickr.com/photos/eedh/5993544190/">Pic Credit</a></p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2014/01/15/using-hugo/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2013/12/26/early-access-books-a-double-edged-sword/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2013\/12\/28\/immutability-mvcc-and-garbage-collection\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

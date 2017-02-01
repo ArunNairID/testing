@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> </title>
+    <link>https://www.xaprb.com/categories/conferences/index.xml</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>Copyright (c) 2016</rights>
+    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
+
+    
+        <item>
+          <title>Don&#39;t Miss PGConfSV, Silicon Valley&#39;s Newest PostgreSQL Conference</title>
+          <link>https://www.xaprb.com/blog/2015/10/23/pgconfsv-postgresql-conference/</link>
+          <pubDate>Fri, 23 Oct 2015 13:52:35 -0400</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/10/23/pgconfsv-postgresql-conference/</guid>
+          <description>&lt;p&gt;If you haven&amp;rsquo;t heard about &lt;a href=&#34;http://www.pgconfsv.com/&#34;&gt;PGConfSV&lt;/a&gt; yet, it&amp;rsquo;s a
+conference for the Silicon Valley PostgreSQL community and beyond, featuring
+leading PostgreSQL performance and scalability experts. It&amp;rsquo;s happening November
+17-18 at the South San Francisco Conference Center. I encourage everyone in the
+area to attend, since this is likely to be the best Postgres conference held
+thus far in the Silicon Valley.&lt;/p&gt;
+
+&lt;p&gt;I also urge you to &lt;a href=&#34;http://www.eventbrite.com/e/pgconf-silicon-valley-2015-tickets-16521286613&#34;&gt;buy your tickets&lt;/a&gt; before they sell out! Of course, the earlier
+you buy, the more you save, too. (Use SeeMeSpeak for a 20% discount).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/10/ssfcc.jpg&#34; alt=&#34;Convention Center&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll be at the conference along with some of my colleagues. I&amp;rsquo;m pretty excited
+about this for a few reasons. Allow me to &amp;lsquo;splain why?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;First, &lt;a href=&#34;https://www.xaprb.com/blog/2008/04/01/postgresql-conference-east-2008/&#34;&gt;I&amp;rsquo;ve loved PostgreSQL for a long
+time&lt;/a&gt; although fate has
+mostly seen me work in the MySQL community. I&amp;rsquo;ve attended, spoken, helped
+organize and otherwise been involved in a handful of Postgres events, and this
+conference brings back a lot of good memories and anticipation. Among other
+things, Terry Erisman is one of the principal organizers and he does a
+&lt;em&gt;fantastic&lt;/em&gt; job of overseeing conferences. Seriously. He&amp;rsquo;s one of the big
+reasons the MySQL conference not only continued, but rebounded after the dark
+days of the Sun acquisition. PostgreSQL fans should be thrilled to have him
+involved.&lt;/p&gt;
+
+&lt;p&gt;Secondly, &lt;a href=&#34;https://www.vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is a sponsor, so I&amp;rsquo;ll be
+there in an official capacity.&lt;/p&gt;
+
+&lt;p&gt;Finally, I&amp;rsquo;m
+&lt;a href=&#34;http://www.pgconfsv.com/sessions/analyzing-postgresql-network-traffic-vc-pgsql-sniffer&#34;&gt;speaking&lt;/a&gt;
+about sniffing the network protocol off the wire and analyzing it. If you&amp;rsquo;ve
+seen any of my talks about &amp;ldquo;finding hidden treasures in TCP traffic&amp;rdquo; kinds of
+topics, hopefully you&amp;rsquo;ll have an idea of what might be in store in that talk.&lt;/p&gt;
+
+&lt;p&gt;I also participated in an
+&lt;a href=&#34;https://www.citusdata.com/blog/25-terry/261-pgconf-silicon-valley-speaker-baron-schwartz-vividcortex-%E2%80%8E&#34;&gt;interview&lt;/a&gt;
+leading up to the conference, on why I&amp;rsquo;m so excited not only about this
+particular event, but also why I&amp;rsquo;m more and more excited about PostgreSQL in
+general. As a community and as a technology, it&amp;rsquo;s really exploding onto the
+scene in ways a lot of people don&amp;rsquo;t appreciate yet. (But they will!)&lt;/p&gt;
+
+&lt;p&gt;Come be a part of the next big sea change in opensource relational databases!&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>How to Organize a Tech Conference</title>
+          <link>https://www.xaprb.com/blog/2015/10/06/organizing-conferences/</link>
+          <pubDate>Tue, 06 Oct 2015 10:53:36 -0400</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/10/06/organizing-conferences/</guid>
+          <description>&lt;p&gt;Running a conference is hard work, and lots of things need to come together in
+just the right way to make it a great experience for everyone. This blog post is
+a collection of the most important things I&amp;rsquo;ve seen conference organizers get
+wrong (with the best intentions). It&amp;rsquo;s not comprehensive, but I  hope it will
+help point out &amp;ldquo;low-hanging fruit&amp;rdquo; for interested people. Hopefully you&amp;rsquo;ll be
+able to avoid some of the mistakes as a result.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/10/audience.jpg&#34; alt=&#34;audience&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;know-your-audiences&#34;&gt;Know Your Audiences&lt;/h3&gt;
+
+&lt;p&gt;I organized my first tech conference in 2008 and I didn&amp;rsquo;t do a great job. I
+focused almost exclusively on the experience of the attendees, and I didn&amp;rsquo;t
+understand the broader picture. Fortunately others helped and it wasn&amp;rsquo;t a
+disaster. I learned a lot from them.&lt;/p&gt;
+
+&lt;p&gt;There are several audiences at a conference, not a single one.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Attendees&lt;/strong&gt; typically say they come for great content, fun, networking, and
+inspiration.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Speakers&lt;/strong&gt; usually speak for their own interests, a company&amp;rsquo;s, or
+altruistically.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vendors or Sponsors&lt;/strong&gt; usually want to attract relevant potential buyers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Organizers&lt;/strong&gt; often have an interest in bringing the attendees and sponsors
+together. It might be a company that makes a business from running
+conferences, as with O&amp;rsquo;Reilly; or it could be a group of people interested in
+promoting a community or technology, as with Gophercon and the Go language.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It seems obvious to state these things, but so often conference organizers
+ignore the needs of one of the audiences. Don&amp;rsquo;t forget, too, that there are
+others such as the local community (e.g. the restaurants and hotels nearby).&lt;/p&gt;
+
+&lt;p&gt;A well-balanced conference is a conscious choice to mix the interests and needs
+of all of the audiences as much as possible.&lt;/p&gt;
+
+&lt;h3 id=&#34;food-and-drink&#34;&gt;Food and Drink&lt;/h3&gt;
+
+&lt;p&gt;Good food and drink (coffee, alcoholic beverages) at a conference is extremely
+important. Without these, the conference gets destroyed and reconvened
+several times a day. People have to leave and try to find some food, wait in
+lines, walk around in the rain, get lost, come back late and miss the talks they
+wanted to see (thus disrupting the talks when they enter late)&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Feed your attendees unless you&amp;rsquo;re right in the middle of a food paradise.
+You&amp;rsquo;ll reap the rewards and so will they. Get sponsors to help and it&amp;rsquo;ll be a
+virtuous circle.&lt;/p&gt;
+
+&lt;p&gt;What you feed them is also very important. I&amp;rsquo;m gluten sensitive and I can&amp;rsquo;t tell
+you how many times I&amp;rsquo;ve walked down a buffet line, only to see literally nothing
+I can eat. The menu is things like bread, pasta, sandwiches, couscous salad and
+pizza. Not kidding&amp;mdash;gluten (and high carbs/starches) in every single dish. And
+what about people with common allergies such as nuts? Salads with nuts in them,
+or cheese sprinkled instead of being in a separate dish&amp;hellip; These things aren&amp;rsquo;t
+hard to fix. It&amp;rsquo;s easy to accommodate most peoples&amp;rsquo; needs. Just ask for help from
+someone whose diet isn&amp;rsquo;t like yours; find a gluten-sensitive vegetarian for
+example. There are lots of them.&lt;/p&gt;
+
+&lt;h3 id=&#34;planning-in-advance&#34;&gt;Planning In Advance&lt;/h3&gt;
+
+&lt;p&gt;Many conferences don&amp;rsquo;t plan far enough in advance. Not planning and announcing
+things leads to a lot of problems. You have to consider your audiences, again:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sponsors are committing to other events and their calendars are filling up.&lt;/li&gt;
+&lt;li&gt;Speakers are too!&lt;/li&gt;
+&lt;li&gt;All of the attendees, sponsors, and speakers are not only committing to other
+things, but may have challenges getting coverage for family needs (babysitter
+help while they&amp;rsquo;re away), booking travel at reasonable rates, and the like.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you wait longer than other shows to open and announce your call for
+proposals, in particular, you won&amp;rsquo;t get proposals because other shows will
+already have accepted the speakers you want. This typically means at least 6
+months, often 8 months. Back out the schedule and see where you need to plan; it
+varies depending on the type of event, but you want a good amount of time to
+sell tickets (and if there&amp;rsquo;s any travel involved you need to do that much
+earlier), a chunk of time for going through various ticket pricing increases
+such as early-bird and discount; time for a committee and community to promote
+the agenda you&amp;rsquo;ve chosen; time for the committee to choose the speakers and
+talks; time for the talks to be submitted; time for the word to get out&amp;mdash;again, you need at least 6 months as a bare minimum for most events.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve had to miss a lot of great conferences because the organizers didn&amp;rsquo;t plan
+and announce far enough in advance.&lt;/p&gt;
+
+&lt;p&gt;The CfP is particularly important. It needs to be announced and publicized
+repeatedly. It&amp;rsquo;s a big effort. It also needs to be highly visible on the
+conference website. I&amp;rsquo;ve seen conferences with CfPs inadvertently accessible
+only from links in emails and Tweets, not directly linked from the website.
+The website needs to promote whatever&amp;rsquo;s stage-appropriate as time passes: the
+CfP, registration, and then the schedule/agenda.&lt;/p&gt;
+
+&lt;p&gt;Many conferences I know don&amp;rsquo;t do a good enough job asking last year&amp;rsquo;s speakers
+to speak again at future events. I&amp;rsquo;ve gotten emails asking me why I didn&amp;rsquo;t
+propose talks for a show where I was a speaker in previous years, implying that
+I&amp;rsquo;d shunned the conference, when the reality is the conference ignored &lt;em&gt;me&lt;/em&gt;. I
+heard nothing about the conference or CfP until the accusatory email. This
+should not be hard; use MailChimp or similar to just create a simple email list.&lt;/p&gt;
+
+&lt;p&gt;A very important part of announcement and promotion is to use a guaranteed
+delivery format such as email, not a maybe-you-notice-it social media channel. I
+have known conferences that rely on Twitter. They didn&amp;rsquo;t realize that a
+significant part of their audience was not watching their Twitter account. They
+assumed their speakers, in particular, were watching them intently&amp;mdash;when the
+reality is the speakers were leading lives doing other things. I&amp;rsquo;ve gotten blank
+stares at times when I remarked on this being the reason I missed things. Email
+is key.  Twitter is auxiliary. Again, build email lists in MailChimp and keep
+records in spreadsheets, don&amp;rsquo;t wing it or do it ad-hoc. Otherwise you will miss
+important things and important people, and the result will be hurt feelings and
+burned bridges.&lt;/p&gt;
+
+&lt;p&gt;If you can, announce the next year&amp;rsquo;s date and venue during each show. Many
+people and companies really do need to plan a full year in advance.&lt;/p&gt;
+
+&lt;h3 id=&#34;speaker-selection-acceptance-and-announcement&#34;&gt;Speaker Selection, Acceptance, and Announcement&lt;/h3&gt;
+
+&lt;p&gt;You need to treat speakers respectfully. If you haven&amp;rsquo;t been in their shoes, it
+is easy to mess this up badly. Here is a sample of the ways conferences have
+inadvertently treated me badly as a speaker:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Burdensome processes that ask me to jump through hoops&lt;/li&gt;
+&lt;li&gt;Taking too long to make a decision&lt;/li&gt;
+&lt;li&gt;Failing to confirm acceptance or rejection with me&lt;/li&gt;
+&lt;li&gt;Publishing and promoting my talk before getting my acceptance&lt;/li&gt;
+&lt;li&gt;Accepting my talk publicly, e.g. on Twitter, instead of privately&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The worst speaker management sin an organizer can commit, in my opinion, is
+promoting me as a speaker without asking me first. I&amp;rsquo;ve had this happen several
+times when I had already made conflicting plans because the conference didn&amp;rsquo;t
+plan and announce early enough. Then it looks like I am the jerk for backing
+out. Not cool.&lt;/p&gt;
+
+&lt;p&gt;By the way, the choice of whether to pay speakers (or just reimburse them) is
+highly dependent on many factors, so I don&amp;rsquo;t think any universal policy is
+appropriate for me to recommend.&lt;/p&gt;
+
+&lt;h3 id=&#34;conference-format&#34;&gt;Conference Format&lt;/h3&gt;
+
+&lt;p&gt;I am a big fan of single-track conferences. Examples are Monitorama and
+Gophercon. The temptation to cram more content in by multi-tracking is strong
+and I understand the pressures. Organizers who resist this end up with the
+highest quality conferences I&amp;rsquo;ve ever participated in.&lt;/p&gt;
+
+&lt;p&gt;I understand that big trade shows are a different matter and I&amp;rsquo;ve organized
+those too. That&amp;rsquo;s fine, those are necessary. But if you want to respect speakers
+and attendees and really achieve a goal of community building and education,
+single-track is the way to do it. There is a way to work sponsorship into this,
+by the way, although naturally such a conference is less focused on sponsors.
+Monitorama does a great job of this.&lt;/p&gt;
+
+&lt;h3 id=&#34;diversity-and-safety&#34;&gt;Diversity and Safety&lt;/h3&gt;
+
+&lt;p&gt;Have a mission statement. Everything changes when you do. It doesn&amp;rsquo;t need to be
+public. Just know why you&amp;rsquo;re doing what you&amp;rsquo;re doing.&lt;/p&gt;
+
+&lt;p&gt;You &lt;strong&gt;must&lt;/strong&gt; have and enforce a code of conduct. Don&amp;rsquo;t invent one, just copy one
+from a conference that does it well and offers theirs for reuse. If you don&amp;rsquo;t
+know what I&amp;rsquo;m talking about you really need to do more research on this
+yourself. It&amp;rsquo;s beyond the scope of this post.&lt;/p&gt;
+
+&lt;p&gt;Beyond this, having a diverse committee will produce a much better conference.
+You&amp;rsquo;ll avoid all kinds of problems that come from monocultures (such as a
+gluten-only menu). These problems are easily avoided; it&amp;rsquo;s a really simple thing
+to just get some diversity onto the committee.&lt;/p&gt;
+
+&lt;p&gt;A mission statement and a diverse committee should take care of all the other
+things you will care about for your specific event (such as outreach to and
+inclusion of a diverse audience and roster of speakers).&lt;/p&gt;
+
+&lt;h3 id=&#34;give-sponsors-what-they-pay-for&#34;&gt;Give Sponsors What They Pay For&lt;/h3&gt;
+
+&lt;p&gt;Sponsors/vendors/exhibitors do not want to ruin your conference, they want to
+improve it. If you have not been one, you might not understand their needs, and
+again you might make simple mistakes that are literally the difference between
+them getting their money&amp;rsquo;s worth or you losing next year&amp;rsquo;s sponsorship goodwill.
+Here are some simple mistakes I&amp;rsquo;ve seen that wreck things for sponsors:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Failing to print name and affiliation (company) in large type on badges.
+Sponsors at a booth are very busy and they want to save their staff&amp;rsquo;s time as
+well as treat the booth visitors well. The name and company need to be visible
+from a few paces away. You&amp;rsquo;d be surprised how many people come to a conference
+with the express purpose of cruising the expo hall and trying to prey on the
+sponsors (e.g. trying to sell them cloud hosting). This gets in the way of
+what the sponsors are there for. Name badges solve a lot of this: you can ask
+people to move along so you can spend time with the right people.&lt;/li&gt;
+&lt;li&gt;Failing to print a QR or other scannable code on a badge for sponsors to
+efficiently take a record that follow up is needed. This is not evil. It&amp;rsquo;s
+time efficiency. People who have no interest in being scanned will not present
+their badges for scanning. Sponsors who are savvy are only scanning badges
+when there&amp;rsquo;s a good conversation that results in a follow-up request anyway.&lt;/li&gt;
+&lt;li&gt;Not including sponsors in the show. A classic mistake is holding a reception
+or open bar outside of the booth area. Shows that lay out the booth area so
+that lunch, coffee, and reception traffic flows through it are doing everyone
+a favor. Many attendees also want to browse the exhibit hall but can&amp;rsquo;t if they
+have conflicting needs (I need to go get my coffee and get back to another
+session, I can&amp;rsquo;t make time to go out of my way for the expo!)&lt;/li&gt;
+&lt;li&gt;Interfering with conversations in the booth area.  &lt;strong&gt;No loud music in the expo
+hall!&lt;/strong&gt; If you have music or a DJ, keep it &lt;em&gt;background&lt;/em&gt;.  Sponsors don&amp;rsquo;t want
+to have to lean into people&amp;rsquo;s faces and yell to be heard. At a recent
+conference I was literally wiping spit from my face as people at the booth
+asked me to demonstrate VividCortex, and repeated requests to turn it down
+were not respected over the course of several days. This one&amp;rsquo;s a personal
+peeve for me, as people who know me can attest.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Conferences organized by people who&amp;rsquo;ve been exhibitors are usually easy to tell
+from those that are just organized by people who&amp;rsquo;ve spoken/attended. If sponsors
+and exhibit areas are afterthoughts it&amp;rsquo;s a waste of time and money for sponsors.
+Again, including a diversity of viewpoints on a committee helps avoid simple
+mistakes like this.&lt;/p&gt;
+
+&lt;p&gt;To give you a sense of how important this is, I do reference checks on every
+single conference we decide to sponsor at VividCortex. I will look at last
+year&amp;rsquo;s event and see who sponsored, then call or email them and ask if they had
+a good experience. I also regularly give feedback to other companies, so I&amp;rsquo;m not
+the only one who does this. A lot of conferences that get rave reviews from
+attendees (best tech conference I&amp;rsquo;ve seen in years!) are a waste of time for
+sponsors.&lt;/p&gt;
+
+&lt;p&gt;Good advice is to think of how to put talks on one side, an expo hall in the
+middle, and food and drink either intermingled with or on the other side of the
+expo hall. It usually can be done. Few things are more frustrating to a
+sponsor than flying across an ocean, setting up a booth, and sitting at the
+booth alone for the evening reception/party while all the drinking and talking
+is happening two rooms over.&lt;/p&gt;
+
+&lt;p&gt;Depending on the type of conference, it might be appropriate to help publicize
+the sponsor&amp;rsquo;s participation. This can be as simple as tweeting about the sponsor
+(or sponsored talks), inclusion in newsletters, press releases, all the way up
+to dedicated publicity campaigns. It can definitely be overdone, however.
+One cloud event is unlike anything I&amp;rsquo;ve ever seen. They are obviously hiring armies of
+social media spam accounts, because there have been thousands of Tweets like the
+following (redacted to avoid naming names):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/10/cloudexpo.png&#34; alt=&#34;cloudexpo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s definitely not the way to do it.&lt;/p&gt;
+
+&lt;h3 id=&#34;be-nice-to-the-organizers&#34;&gt;Be Nice To The Organizers&lt;/h3&gt;
+
+&lt;p&gt;Organizing a conference is a stressful job. There are so many potholes you can
+step in. Some have serious consequences, such as using PayPal to accept payment
+and having all your funds frozen.  That kind of thing can destroy an event (or
+even an organizer&amp;rsquo;s personal finances). And a lot of stuff has to be done by the
+seat of your pants or at the last minute, unless you&amp;rsquo;re a pro and have it down
+to a set of checklists.&lt;/p&gt;
+
+&lt;p&gt;As such, if you&amp;rsquo;re a sponsor, attendee, or speaker, please try to be nice to the
+organizers. They&amp;rsquo;re doing their best. It&amp;rsquo;s much harder than you think it is to
+run a conference. (It&amp;rsquo;s also way more expensive.)&lt;/p&gt;
+
+&lt;h3 id=&#34;lots-of-other-things&#34;&gt;Lots Of Other Things&lt;/h3&gt;
+
+&lt;p&gt;There are tons of other things that can go wrong.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bad wifi&lt;/li&gt;
+&lt;li&gt;Bad A/V&lt;/li&gt;
+&lt;li&gt;Trouble with vendors, unions, and logistics&lt;/li&gt;
+&lt;li&gt;And so on&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, these are largely things that most conference organizers are aware of,
+in my experience. They may do a good job or not, but they&amp;rsquo;re not ignorant of it.
+In this post I&amp;rsquo;ve tried to focus on things that conferences seem to get wrong
+repeatedly because they&amp;rsquo;re non-obvious mistakes.&lt;/p&gt;
+
+&lt;p&gt;Feedback is welcome!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/presta/104538840/&#34;&gt;pic credit&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>History Repeats: MySQL, MongoDB, Percona, and Open Source</title>
+          <link>https://www.xaprb.com/blog/2015/05/22/percona-mongodb-mysql-history-repeat/</link>
+          <pubDate>Fri, 22 May 2015 13:51:18 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/05/22/percona-mongodb-mysql-history-repeat/</guid>
+          <description>&lt;p&gt;History is repeating again. MongoDB is breaking out of the niche into the
+mainstream, performance and instrumentation are terrible in specific cases,
+MongoDB isn&amp;rsquo;t able to fix all the problems alone, and an ecosystem is growing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/05/leaf.jpg&#34; alt=&#34;Leaf&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;This should really be a series of blog posts, because there&amp;rsquo;s a book&amp;rsquo;s worth of
+things happening, but I&amp;rsquo;ll summarize instead. Randomly ordered:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MongoDB is in many respects closely following MySQL&amp;rsquo;s development, 10 years
+offset. Single index per query, MyISAM-like storage engine, etc.
+&lt;a href=&#34;https://www.xaprb.com/blog/2013/04/29/what-tokudb-might-mean-for-mongodb/&#34;&gt;Background&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Tokutek built an excellent transactional storage engine and replaced
+MongoDB&amp;rsquo;s, calling it TokuMX. Results were dramatically better performance
+(plus ACID). MongoDB&amp;rsquo;s response was to buy WiredTiger and make it the default
+storage engine in MongoDB 3.0.&lt;/li&gt;
+&lt;li&gt;Percona acquired Tokutek. A book should be written about this someday. The
+impact to both the MySQL and MongoDB communities cannot be overstated. This
+changes everything. It also changes everything for Percona, which now has a
+truly differentiated product for both database offerings. This moves them
+solidly into being a product company, not just support/services/consulting; it
+is a good answer to the quandary of trying to keep up with the InnoDB
+engineers.&lt;/li&gt;
+&lt;li&gt;Facebook acquired Parse, which is probably one of the larger MongoDB
+installations.&lt;/li&gt;
+&lt;li&gt;Facebook&amp;rsquo;s Mark Callaghan, among others, stopped spending all his time on
+InnoDB mutexes and so forth. For the last year or so he&amp;rsquo;s been extremely
+active in the MongoDB community. The MongoDB community is lucky to have a
+genius of Mark&amp;rsquo;s caliber finding and solving problems. There are others, but
+if Mark Callaghan is working on your open source product in earnest, you&amp;rsquo;ve
+arrived.&lt;/li&gt;
+&lt;li&gt;Just as in MySQL, but even earlier, there are lots of -As-A-Service providers
+for MongoDB, and it&amp;rsquo;s likely a significant portion of future growth happens
+here.&lt;/li&gt;
+&lt;li&gt;MongoDB&amp;rsquo;s conference is jaw-droppingly expensive for a vendor, to the point of
+being exclusive. At the same time, MongoDB hasn&amp;rsquo;t quite recognized and
+embraced some of the things going on outside their walls. If you remember &lt;a href=&#34;https://www.percona.com/blog/2009/02/05/announcing-percona-performance-conference-2009-on-april-22-23/&#34;&gt;the
+events of 2009 in the MySQL
+community&lt;/a&gt;,
+Percona&amp;rsquo;s &lt;a href=&#34;https://www.percona.com/news-and-events/mongodb-events/mongodb-community-openhouse&#34;&gt;announcement of an alternative MongoDB
+conference&lt;/a&gt;
+might feel a little like deja vu. I&amp;rsquo;m not sure of the backstory behind this,
+though.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At the same time that history is repeating in the MongoDB world, a tremendous
+amount of stuff is happening quietly in other major communities too. Especially
+MySQL, but also in PostgreSQL, ElasticSearch, Cassandra and other opensource
+databases. I&amp;rsquo;m probably only qualified to write about the MySQL side of things;
+I&amp;rsquo;m pretty sure most people don&amp;rsquo;t know a lot of the interesting things that are
+going on behind the scenes that will have long-lasting effects. Maybe I&amp;rsquo;ll write
+about that someday.&lt;/p&gt;
+
+&lt;p&gt;In the meanwhile, I think we&amp;rsquo;re all in for an exciting ride as MongoDB &lt;a href=&#34;https://www.xaprb.com/blog/2013/01/10/bold-predictions-on-which-nosql-databases-will-survive/&#34;&gt;proves me right&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;PS: VividCortex is building a MongoDB monitoring solution that will address many
+of the shortcomings of existing ones. (We have been a bit quiet about it, just
+out of busyness rather than a desire for secrecy, but now you know.) It&amp;rsquo;s in
+beta now.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/96dpi/3645537177/&#34;&gt;Cropped image by 96dpi&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>What I Look For In A Conference Proposal</title>
+          <link>https://www.xaprb.com/blog/2015/05/18/what-i-look-for-conference-proposal/</link>
+          <pubDate>Mon, 18 May 2015 13:51:18 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/05/18/what-i-look-for-conference-proposal/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ve written a few times before about how to write a good conference proposal.
+I&amp;rsquo;ve been on the committee of various conferences many times. It&amp;rsquo;s surprising
+how few people actually can write good proposals. Somehow it&amp;rsquo;s also suprisingly
+hard to explain what makes a good one, so I&amp;rsquo;m going to give this another try.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/05/laptop.jpg&#34; alt=&#34;Laptop&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I think the key thing to remember, and the reason it&amp;rsquo;s so hard to write a good
+proposal, is that you&amp;rsquo;re writing to several audiences simultaneously. By the
+way, I don&amp;rsquo;t claim to be good at this myself. Like I said, it&amp;rsquo;s hard. When I
+look at my own proposals I often cringe and think, &amp;ldquo;why wasn&amp;rsquo;t I able to do a
+better job on this one?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Your primary audiences are&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The reviewers or conference committee. An excellent talk that&amp;rsquo;s not accepted
+is an excellent talk that never happens.&lt;/li&gt;
+&lt;li&gt;The audience who&amp;rsquo;s trying to figure out what talks to attend. An excellent
+talk that doesn&amp;rsquo;t draw a crowd is a failure, frankly.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You also have to think about the medium and context where the audiences see the
+session proposal. Let&amp;rsquo;s dig into each audience and see what&amp;rsquo;s going through
+their minds. If you don&amp;rsquo;t do this you&amp;rsquo;re not going to succeed.&lt;/p&gt;
+
+&lt;h3 id=&#34;reviewers-and-conference-committees&#34;&gt;Reviewers and Conference Committees&lt;/h3&gt;
+
+&lt;p&gt;The reviewers are scanning through several hundred proposals. It&amp;rsquo;s a lot of
+work. If you&amp;rsquo;ve ever tried to go through a stack of resumes, it&amp;rsquo;s similar to
+that. Picture yourself reviewing 20 or 50 conference proposals in a row.  Would
+your brain turn off? I can assure you that after 100, 200, 300 proposals it&amp;rsquo;s
+difficult to stay sharp and objective.&lt;/p&gt;
+
+&lt;p&gt;As a reviewer, I&amp;rsquo;m trying to keep a lot of things in mind, and make decisions
+&lt;strong&gt;quickly&lt;/strong&gt;. Frankly I have to. I don&amp;rsquo;t have days to spend on this. You have to
+help me with this. Here&amp;rsquo;s what I&amp;rsquo;m looking for.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A good title. It should be short, punchy, accurate, and clear. It should
+avoid buzzwords. There&amp;rsquo;s an unfortunate tendency for a lot of proposals to
+have titles like &amp;ldquo;The something, the something, and the something: some words
+after the colon that really matter.&amp;rdquo; I do not think this is a successful
+pattern. Everything before the colon is wasted. I would advise reading
+Copyblogger&amp;rsquo;s Magnetic Headlines series. There are a hundred ways to write a
+great title. &lt;strong&gt;Titles matter more than anything else.&lt;/strong&gt; Don&amp;rsquo;t waste your
+title.&lt;/li&gt;
+&lt;li&gt;The presenter. Who is it? Where do they work?&lt;/li&gt;
+&lt;li&gt;The submitter. Is it a PR-submitted presentation? If you have someone submit
+your proposal on your behalf, it&amp;rsquo;s instant skepticism. Lots of people just
+shotgun-submit canned proposals to tons of conferences. They have speaking
+quotas to fill. They&amp;rsquo;re professional mouthpieces. They rarely are good for
+the conference and I&amp;rsquo;m on guard against them. My advice is to submit your own
+sessions.&lt;/li&gt;
+&lt;li&gt;The body of the proposal. This varies by conference; some have just one piece
+of content, some have a short abstract and a longer description, for use in
+specific media (I&amp;rsquo;ll get to this later). The main thing here is that &lt;strong&gt;you
+need to be clear and honest&lt;/strong&gt; in these. You cannot make me work to understand
+you. I&amp;rsquo;ll repeat that for emphasis. &lt;strong&gt;You cannot make me work to understand
+you.&lt;/strong&gt; I have to be able to immediately grasp what you&amp;rsquo;re going to talk about
+and what the audience will take away from it. I also need to know what your
+assertions are. You can&amp;rsquo;t just ask questions and leave me wondering if you
+have answers and what they are. An example is &lt;em&gt;in today&amp;rsquo;s hyper-networked
+world, is a meal with your boss still relevant?&lt;/em&gt; You need to make your
+position clear. Eliminate ambiguity. You&amp;rsquo;re not giving away your secrets, and
+mystery isn&amp;rsquo;t a winning tactic for getting people to your talk.&lt;/li&gt;
+&lt;li&gt;Any sign of vendor pitches. I love when vendors clearly go out of their way
+to provide valuable content. For example, right now I&amp;rsquo;ve just reviewed some
+proposals from a CDN provider about image optimization. The CDN&amp;rsquo;s customer
+base is clearly going to care greatly about this and it&amp;rsquo;s a great service to
+them.  Win. If it were a talk about why you need CDNs and how CDNs save money
+and improve performance, that&amp;rsquo;s a vendor pitch. I don&amp;rsquo;t believe you&amp;rsquo;ll give a
+good talk on this. If it&amp;rsquo;s &amp;ldquo;learn how Big Company X and Big Company Y
+migrated to a HybridCDN and saved&amp;hellip;&amp;rdquo; pitch. This is not the place for case
+studies and vendor ads. If you can&amp;rsquo;t tell if it passes the sniff test, a) get
+someone else to check, and b) don&amp;rsquo;t submit it. Think of a different topic.&lt;/li&gt;
+&lt;li&gt;(Related) End runs. Don&amp;rsquo;t try to propose Topic A while planning to present on
+something more pitchy.  I&amp;rsquo;ll smell you out, I promise. It&amp;rsquo;s amazing the sixth
+sense you develop reading a few hundred proposals.&lt;/li&gt;
+&lt;li&gt;Buzzword bingo. Be yourself and present what you have to offer. Don&amp;rsquo;t try to
+ride hype waves. Everyone else is doing that, &lt;em&gt;trust me&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The key guidelines I&amp;rsquo;d give here are to make your proposal absolutely clear and
+as brief as you can. Take a lot of time and make it possible to scan and
+instantly figure out what the talk is about. That&amp;rsquo;s what a committee member is
+doing: trying to figure out what you&amp;rsquo;re about and what the talk is about.&lt;/p&gt;
+
+&lt;p&gt;Remember the old quote, often attributed to Mark Twain?&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I wanted to write you a short letter, but I didn&amp;rsquo;t have time, so I wrote you a
+long one instead.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Take the time to make your proposal short.&lt;/p&gt;
+
+&lt;p&gt;Now, the other thing I&amp;rsquo;m doing as a committee member is trying to judge whether
+the session proposal is &lt;em&gt;good&lt;/em&gt; or not.  To decide that, I have to put myself
+into the shoes of the second audience.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-attendees&#34;&gt;The Attendees&lt;/h3&gt;
+
+&lt;p&gt;The attendees are the second audience, and as a committee member/reviewer it&amp;rsquo;s
+my job to decide whether the talk is good for them. A successful proposal will
+be a good experience during the conference, but more importantly, &lt;strong&gt;the proposal
+has to lure the audience in.&lt;/strong&gt; A talk that&amp;rsquo;s given to an empty room is a
+failure, no matter how good it is.&lt;/p&gt;
+
+&lt;p&gt;Do you know how the audience decides what they&amp;rsquo;re going to attend?&lt;/p&gt;
+
+&lt;p&gt;They look at the printed grid of the schedule, in most cases. It looks like
+this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/05/session-grid.png&#34; alt=&#34;session grid&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So what can we conclude from this? &lt;strong&gt;Spend a lot of effort on your headline.&lt;/strong&gt;
+I&amp;rsquo;m not going to throw stones at glass houses, but most headlines/titles are
+&lt;em&gt;terrible&lt;/em&gt;. You have an opportunity to really stand out here. Your title
+will be read in isolation, most of the time. Embrace that.&lt;/p&gt;
+
+&lt;p&gt;In some cases, if you&amp;rsquo;re lucky, audiences will read a little more deeply. It
+might look like this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/05/session-hover.png&#34; alt=&#34;session hover&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That is still not a lot of content to work with. You have to make every word
+punch above its weight!&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t, you will not get people in the room. It&amp;rsquo;s as simple as that.&lt;/p&gt;
+
+&lt;p&gt;Your actual talk/presentation is not what matters. It doesn&amp;rsquo;t matter how high
+quality it is. What you&amp;rsquo;re &amp;ldquo;selling,&amp;rdquo; both to the audience and to the committee,
+is the proposal. Not the talk itself. Don&amp;rsquo;t forget that. The talk is just
+follow-through on your promise of a great session.&lt;/p&gt;
+
+&lt;h3 id=&#34;how-i-rate-proposals&#34;&gt;How I Rate Proposals&lt;/h3&gt;
+
+&lt;p&gt;Now that I&amp;rsquo;ve read through your proposal and thought about these fundamentals
+(what talk do you plan to give, and how will the audience perceive your
+proposal) I need to judge and rate you. How do I do this?&lt;/p&gt;
+
+&lt;p&gt;I try to rate talks based on these things:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Is this the right talk for the conference? Is it on-topic?&lt;/li&gt;
+&lt;li&gt;Is the talk, itself, likely to be high quality?&lt;/li&gt;
+&lt;li&gt;Are there any disqualifiers, such as vendor pitchiness?&lt;/li&gt;
+&lt;li&gt;Does this speaker really believe in the subject and talk?&lt;/li&gt;
+&lt;li&gt;Is the proposal clear? Don&amp;rsquo;t make me second-guess you. It&amp;rsquo;s a red flag.&lt;/li&gt;
+&lt;li&gt;Is the title magnetic?&lt;/li&gt;
+&lt;li&gt;Is the summary/abstract to-the-point?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In other words, I&amp;rsquo;m trying to decide: &lt;em&gt;when an audience member scans the
+program, are they going to understand clearly what this person wants to present,
+and will they want to go to this talk? and if they do go, am I confident they
+will have a good experience?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;There are also things I try &lt;em&gt;not&lt;/em&gt; to do, as a reviewer.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;I do not judge you, personally. Oh, okay, I&amp;rsquo;m biased &amp;ndash; everyone is biased.
+It&amp;rsquo;s true. But I try not to think about &amp;ldquo;John is a good speaker and he&amp;rsquo;s
+really smart and knows a lot about this.&amp;rdquo; Not usually, anyway. Some speakers
+are engaging and I know that. Their audience is going to have a great time
+and come away talking about that session. I keep that in mind, sometimes.&lt;/li&gt;
+&lt;li&gt;I do not try to agree or disagree with you. I am not going to &amp;ldquo;legislate from
+the bench.&amp;rdquo; If that were my job, the conference&amp;rsquo;s content would be much less
+diverse. I will try to rate your proposal based on how strong it is, not on
+whether I think you&amp;rsquo;re wrong. It bothers me a little when I see other
+reviewers rating talks like &amp;ldquo;I&amp;rsquo;ve used technology X and it was not good, so
+I&amp;rsquo;m going to vote down this proposal about how great it is.&amp;rdquo; I don&amp;rsquo;t do that.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h3&gt;
+
+&lt;p&gt;Here are my take-aways:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Make your proposal speak to the committee. Understand that they are reading
+hundreds of proposals as fast as they can.&lt;/li&gt;
+&lt;li&gt;Make your title speak to the audience. Get them in the room. You have
+approximately seven words to do that. Don&amp;rsquo;t waste any of them.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I wanted to write a short, pithy blog post about this, but I didn&amp;rsquo;t have enough
+time, so I wrote a long rambling one instead.&lt;/p&gt;
+
+&lt;p&gt;Sorry about that.&lt;/p&gt;
+
+&lt;h3 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://unwiredcouch.com/2015/09/25/talk-prep.html&#34;&gt;Daniel Schauenberg on conference prep&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://unsplash.com/photos/SpVHcbuKi6E/&#34;&gt;Photo by William Iven&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>Can You Bring A Guitar To Velocity?</title>
+          <link>https://www.xaprb.com/blog/2014/11/03/bring-guitar-velocity/</link>
+          <pubDate>Mon, 03 Nov 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/11/03/bring-guitar-velocity/</guid>
+          <description>&lt;p&gt;I need help. I&amp;rsquo;m giving an Ignite talk at &lt;a href=&#34;http://velocityconf.com/velocityeu2014/&#34;&gt;Velocity
+EU&lt;/a&gt; that involves a guitar. I
+don&amp;rsquo;t want to bring a guitar all the way from America just for this. Would you
+please loan me one?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/01/4542297929_49286da35a.jpg&#34; alt=&#34;guitar&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;It doesn&amp;rsquo;t need to be anything special &amp;ndash; any old classical or acoustic 6-string
+standard guitar will do. All I&amp;rsquo;m going to do is tune it.&lt;br /&gt;
+If you can bring a guitar to loan me, please post in the comments or give me a
+shout on &lt;a href=&#34;https://twitter.com/xaprb&#34;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thank you in advance!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/doug88888/4542297929/&#34;&gt;Pic Credit&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>Win a Free Pass to Velocity</title>
+          <link>https://www.xaprb.com/blog/2014/10/30/win-free-pass-velocity/</link>
+          <pubDate>Thu, 30 Oct 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/10/30/win-free-pass-velocity/</guid>
+          <description>&lt;p&gt;&lt;a href=&#34;http://velocityconf.com&#34;&gt;O&amp;rsquo;Reilly Velocity&lt;/a&gt; is November 17-19 in Barcelona. O’Reilly gave me a 2-day pass to give away, and I decided to have some fun with it. We’re also giving away a pass on the &lt;a href=&#34;https://vividcortex.com/blog/2014/10/30/win-a-free-pass-to-velocity-barcelona/&#34;&gt;VividCortex blog&lt;/a&gt;, so you can double your odds of winning.&lt;/p&gt;
+
+&lt;p&gt;For your chance to win a 2-day pass, do one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Answer any of the following questions; or&lt;/li&gt;
+&lt;li&gt;Write a haiku that’s somehow relevant to Velocity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tweet your answers to @xaprb with #velocitytrivia. You can find the answers to the questions on the &lt;a href=&#34;http://velocityconf.com&#34;&gt;velocityconf.com&lt;/a&gt; website. Speed and accuracy is your friend in this game, as answers will not be accepted after November 6. I’ll announce the winner November 7. Good luck!&lt;/p&gt;
+
+&lt;p&gt;Here are the questions:&lt;/p&gt;
+
+&lt;p&gt;Q.1: Which sessions are about anomaly detection? Make sure you look for one that doesn’t have “anomaly” in the title.&lt;/p&gt;
+
+&lt;p&gt;Q.2: Which session (link to it) might help you avoid cognitive traps?&lt;/p&gt;
+
+&lt;p&gt;Q.3: Which session (link to it) is absolutely swimming in puns?&lt;/p&gt;
+
+&lt;p&gt;Q.4:What are the “five reasons” to come to Velocity? Bolded reasons are fine. (hint, reading About Velocity will help)&lt;/p&gt;
+
+&lt;p&gt;Q.5: Which Velocity EU Event gives you 5 minutes to get on stage and talk your latest passion, idea or hack?&lt;/p&gt;
+
+&lt;p&gt;Q.6: Who’s going to get up on stage and use math and physics to tune a musical instrument, and what does that have to do with web performance and operations?&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Meditate With Me At Velocity</title>
+          <link>https://www.xaprb.com/blog/2014/06/24/meditate-at-velocity/</link>
+          <pubDate>Tue, 24 Jun 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/06/24/meditate-at-velocity/</guid>
+          <description>&lt;p&gt;Join me and other &lt;a href=&#34;http://velocityconf.com/&#34;&gt;Velocity&lt;/a&gt; attendees during the Wednesday afternoon 2:40pm break for a 10-15 minute guided meditation session appropriate for people of any faith or of none.&lt;/p&gt;
+
+&lt;p&gt;Meditation has a host of scientifically proven immediate and long-term benefits. If you get an extra 10% of clarity and effectiveness for the rest of the afternoon, you&amp;rsquo;ll end up learning more and making your conference experience more worthwhile.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/06/stones.jpg&#34; alt=&#34;meditation&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll guide you through a process of checking in and becoming aware of your body and mind. Then we&amp;rsquo;ll let the body rest until we come back for it, while we turn our attention to the breath for a few minutes. During this time we&amp;rsquo;ll notice and be gently curious about thoughts and feelings that spontaneously arise. Then we&amp;rsquo;ll bring our attention back to our bodies and senses, and finish with a few deep breaths.&lt;/p&gt;
+
+&lt;p&gt;This practice is easy and nonjudgmental. Your mileage may vary, but I find that I&amp;rsquo;m able to take the resulting sense of calm and clarity with me into my other activities afterwards.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ll begin at 3pm sharp, so please arrive a few minutes early. I haven&amp;rsquo;t yet finalized the meeting location. &lt;a href=&#34;https://twitter.com/xaprb&#34;&gt;Follow me on Twitter&lt;/a&gt; and when I settle on a good location, I&amp;rsquo;ll announce it. Retweet my announcement if you plan to join us, so I have a sense of how much room we&amp;rsquo;ll need.&lt;/p&gt;
+
+&lt;p&gt;If you want to add this to your Google Calendar, here&amp;rsquo;s a &lt;a target=&#34;_blank&#34; href=&#34;https://www.google.com/calendar/event?action=TEMPLATE&amp;tmeid=djBmbGRuM2RhZm5rMjBwazc4Yml2b2RjOTAgYmFyb25Adml2aWRjb3J0ZXguY29t&amp;tmsrc=baron%40vividcortex.com&#34;&gt;link to an event&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/villamon/4468869725/&#34;&gt;Pic Credit&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>Two of My Favorite Conferences: Velocity and Surge</title>
+          <link>https://www.xaprb.com/blog/2014/06/18/my-favorite-conferences-velocity-surge/</link>
+          <pubDate>Wed, 18 Jun 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/06/18/my-favorite-conferences-velocity-surge/</guid>
+          <description>&lt;p&gt;Two of my favorite conferences are coming up. One&amp;rsquo;s just next week, and
+another&amp;rsquo;s in the fall.&lt;/p&gt;
+
+&lt;h3 id=&#34;velocity&#34;&gt;Velocity&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.kqzyfj.com/click-7094008-11742203&#34;&gt;Velocity&lt;/a&gt; is such a great event.
+I wanted to go for years, and when I finally did it was honestly one of the
+highlights of my professional career. I still don&amp;rsquo;t know what I did get get
+invited to speak that first year. It was a golden horseshoe falling out of the
+sky and landing right in front of me.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/06/velocity.png&#34; alt=&#34;Velocity&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not the talks (though those are great). It&amp;rsquo;s the people. The people
+at Velocity are the people I want to spend my career with, the people thinking
+about the same types of problems I am, the people trying to work on similar
+solutions. They&amp;rsquo;re building companies, they&amp;rsquo;re making open source, they&amp;rsquo;re
+customers, they&amp;rsquo;re consultants, they&amp;rsquo;re just passionate practitioners. It&amp;rsquo;s just
+amazing what happens when this kind of group gets together.&lt;/p&gt;
+
+&lt;p&gt;And yeah, it&amp;rsquo;s partially because I&amp;rsquo;m a loyal O&amp;rsquo;Reilly fan. I admit it: I love
+O&amp;rsquo;Reilly, I truly do. It&amp;rsquo;s a remarkable group of people that has inspired me for
+more than a decade, and I owe a lot of who I am to O&amp;rsquo;Reilly.&lt;/p&gt;
+
+&lt;p&gt;Velocity starts next Tuesday in Santa Clara. If you don&amp;rsquo;t go to that one,
+there&amp;rsquo;s several other incarnations in New York, Barcelona, and Beijing at
+different times of the year. I&amp;rsquo;ll be in Santa Clara next week, in the
+&lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; booth. Come say hi if you&amp;rsquo;re there.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an affiliate link that has a 20% discount code embedded in it:
+&lt;a href=&#34;http://www.kqzyfj.com/click-7094008-11742203&#34;&gt;Velocity AFF20&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;surge&#34;&gt;Surge&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;ve often said that &lt;a href=&#34;http://surge.omniti.com/&#34;&gt;Surge&lt;/a&gt; is Velocity without the grandiosity and with more
+emphasis on hardcore software and systems engineering &amp;mdash; and a much smaller
+price tag.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/06/surge.png&#34; alt=&#34;Surge&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been at every Surge event since the beginning, and I would not miss it.
+It&amp;rsquo;s that good. I can say all the same things about Surge as I can about
+Velocity, except it&amp;rsquo;s a lot easier and less expensive to get to, and it&amp;rsquo;s a lot
+easier to decide to attend the talks there. At Velocity sometimes I feel lost
+because the event is so big, and I end up not really attending many
+presentations, and just hanging out in the hallway track. Not so at Surge.
+Bonus: talks are always recorded and online, so you can go find out for yourself
+how good they are.&lt;/p&gt;
+
+&lt;p&gt;The climate at Surge is also quite different in terms of the topics. Velocity is
+ostensibly about the Web: backend, frontend, browser, and mobile are front and
+center. As a result, you can certainly find yourself in an unfamiliar clique, if
+you&amp;rsquo;re, say, a database administrator at a lunch table full of people who want to
+argue about how much hardware acceleration will save battery life in a mobile
+browser. Whether that bothers you or not is up to you, but I&amp;rsquo;ve found that Surge
+is birds of my feather for sure. It&amp;rsquo;s all about people who build what runs the
+Internet (not necessarily what you use to engage with the Internet).&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m pretty loyal to the folks behind Surge, too. For one thing, a lot of them
+are the same people who make Velocity awesome. For another, many of them have
+helped me tremendously in my career and in founding VividCortex.&lt;/p&gt;
+
+&lt;p&gt;Surge is in early-bird pricing right now. Having run conferences before, I know
+why early-bird pricing exists. If you think you&amp;rsquo;ll attend, do yourself and them
+a favor and sign up at a discount now. Here, click &lt;a href=&#34;http://surge.omniti.com/2014&#34;&gt;this&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h3&gt;
+
+&lt;p&gt;There are no conclusions. Conferences are good. I love Velocity. I love Surge.
+Go. Learn a lot. Share a lot. Make the world a better place.&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>Monitorama 2014: This One Weird Time-Series Math Trick</title>
+          <link>https://www.xaprb.com/blog/2014/05/06/one-weird-time-series-math-trick/</link>
+          <pubDate>Tue, 06 May 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/05/06/one-weird-time-series-math-trick/</guid>
+          <description>&lt;p&gt;Monitorama 2014 Portland has been a great show. I&amp;rsquo;ve enjoyed the technical
+nature of the talks, the diversity of the speakers, the topics from hilarious to
+thought-provoking, and the stage in a theater, set up for a Shakespearean
+tragedy.&lt;/p&gt;
+
+&lt;p&gt;I have also taken a lot of notes. For example, Toufic from Metafor Software
+suggested that the audience look into the Kolmogorov-Smirnov test. I am proud of
+the slide that made its way into my talk as a result:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/05/smirnov.jpg&#34; alt=&#34;Smirnov&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My slides are embedded below. Enjoy. I&amp;rsquo;ve also uploaded an &lt;a href=&#34;https://www.xaprb.com/media/2014/05/time-series-tricks.xlsx&#34;&gt;Excel spreadsheet&lt;/a&gt; you
+can use to tinker with the math and reproduce my results. Let me know if I did
+anything wrong, please!&lt;/p&gt;
+
+&lt;iframe src=&#34;https://app.box.com/embed_widget/hnd0llg8tzut/s/o60h3cxbp5fa1u5jw1pu?view=list&amp;sort=name&amp;direction=ASC&amp;theme=blue&#34; width=&#34;500&#34; height=&#34;400&#34; frameborder=&#34;0&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Freeing some Velocity videos</title>
+          <link>https://www.xaprb.com/blog/2013/11/09/freeing-some-velocity-videos/</link>
+          <pubDate>Sat, 09 Nov 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/11/09/freeing-some-velocity-videos/</guid>
+          <description>&lt;p&gt;Following my &lt;a href=&#34;https://www.xaprb.com/blog/2013/10/24/should-velocity-videos-be-free/&#34; title=&#34;Should Velocity videos be free?&#34;&gt;previous post on Velocity videos&lt;/a&gt;, I had some private email conversations with good folks at O&amp;rsquo;Reilly, and a really nice in-person exchange with a top-level person as well. I was surprised to hear them encourage me to publish my videos online freely!&lt;/p&gt;
+
+&lt;p&gt;I still believe that nothing substitutes for the experience of attending an O&amp;rsquo;Reilly conference in-person, but I&amp;rsquo;ll also be the first to admit that my talks are usually more conceptual and academic than practical, and designed to start a conversation rather than to tell you the Truth According To Baron. Thus, I think they&amp;rsquo;re worth sharing more widely.&lt;/p&gt;
+
+&lt;p&gt;O&amp;rsquo;Reilly alleviated my concerns about &amp;ldquo;killing the golden goose,&amp;rdquo; but I like one person&amp;rsquo;s take on the cost of O&amp;rsquo;Reilly&amp;rsquo;s conferences. &amp;ldquo;You think education is expensive? Try ignorance.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll post some of my past talks soon for your enjoyment.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Get out of your comfort zone</title>
+          <link>https://www.xaprb.com/blog/2013/10/25/get-out-of-your-comfort-zone/</link>
+          <pubDate>Fri, 25 Oct 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/10/25/get-out-of-your-comfort-zone/</guid>
+          <description>&lt;p&gt;One of the most valuable life skills you can ever develop is to overcome the urge to stay within your comfort zone. If you stay where you&amp;rsquo;re familiar and feel safe, two things might happen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You might find out that it&amp;rsquo;s not safe after all. Bad things can happen where you feel at home just as well as out of the familar.&lt;/li&gt;
+&lt;li&gt;Nothing good will happen. You might skate through life without even living it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Last week at Velocity I responded to an invitation from O&amp;rsquo;Reilly to join a lunch with Per Scholas. I didn&amp;rsquo;t know much about Per Scholas, but I&amp;rsquo;ve learned to say yes to invitations from O&amp;rsquo;Reilly. The night before, I watched an inspiring &lt;a href=&#34;http://www.youtube.com/watch?v=t0qcDwDPQ-Q&#34;&gt;talk&lt;/a&gt; during Ignite, from the founder of Per Scholas.&lt;/p&gt;
+
+&lt;p&gt;Impressed, I began to really look forward to spending some time with the Per Scholas folks the next day at lunch. The idea was pretty simple: people who were working through the Per Scholas training would pair up one-for-one (as I understand it) with people like myself &amp;ndash; technologists, entrepreneurs, hackers, makers, people with perhaps something to share.&lt;/p&gt;
+
+&lt;p&gt;I sat down at a table in the designated area, leaving lots of room beside me for people to join. None of the Per Scholas students was there yet. I chatted idly with two other people at the table. Soon one of the Per Scholas staff members sat down with us. I asked her a series of questions for ten minutes or so. She explained that she helped people with basic life and work skills, coaching and mentoring even after they leave the intensive study program.&lt;/p&gt;
+
+&lt;p&gt;Still no students had joined us. Suddenly I looked over at another table and saw that it had filled entirely with Per Scholas students, shoulder to shoulder.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Basic life skill number 1 is to build your network and learn from unfamiliar people,&amp;rdquo; I remarked to the staffer next to me. &amp;ldquo;They are missing an opportunity to mingle with us.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Yes,&amp;rdquo; she answered. &amp;ldquo;They are.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;And then you could (metaphorically) hear the crickets chirping. I finished my lunch and left.&lt;/p&gt;
+
+&lt;p&gt;I won&amp;rsquo;t brag about myself, but I can say that the other people at that table were damn sure worth getting to know. As for me, I considered it a complete waste of my time; I&amp;rsquo;d chosen it over a conversation I really wanted to attend elsewhere. There&amp;rsquo;s another blog post in here somewhere &amp;ndash; this isn&amp;rsquo;t the first time I&amp;rsquo;ve had this kind of experience.&lt;/p&gt;
+
+&lt;p&gt;Per Scholas students aren&amp;rsquo;t paying anything (financially) for their training. Are they getting what they&amp;rsquo;re paying for? You bet they are. Like all of us, they will get out of it exactly what they put into it.&lt;/p&gt;
+
+&lt;p&gt;Get out of your comfort zone. If you don&amp;rsquo;t, the worst thing in the world happens to you: &lt;em&gt;nothing&lt;/em&gt;.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Should Velocity videos be free?</title>
+          <link>https://www.xaprb.com/blog/2013/10/24/should-velocity-videos-be-free/</link>
+          <pubDate>Thu, 24 Oct 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/10/24/should-velocity-videos-be-free/</guid>
+          <description>&lt;p&gt;At the closing keynote of the recent Velocity conference in New York, an audience member stepped up to the microphone and called for O&amp;rsquo;Reilly to provide videos of the event free to the public, instead of behind a paywall. The conference chairs, who don&amp;rsquo;t call the shots on such matters, squirmed and looked at the person who does call the shots, a few feet away.&lt;/p&gt;
+
+&lt;p&gt;Someone volunteered the information that speakers are able to download their own talks and post them freely if they wish. The original commenter then asked the audience, which presumably included most of the speakers, to do so en masse.&lt;/p&gt;
+
+&lt;p&gt;As a speaker, frequent conference-goer, author, technologist, and even a sometimes-organizer of such events, I can&amp;rsquo;t say I agree with this suggestion. I think it&amp;rsquo;s self-defeating.&lt;/p&gt;
+
+&lt;p&gt;The commenter&amp;rsquo;s request was prefaced by something to the effect of &amp;ldquo;we should open up all this great content and thought-provoking conversation more widely.&amp;rdquo; But I think that sometimes, you gotta want something badly enough to pay for it, even if it feels like it&amp;rsquo;s a shame to ask people to pay for access to the club that makes the world a better place.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know O&amp;rsquo;Reilly&amp;rsquo;s numbers, but I know conferences are a tough business. O&amp;rsquo;Reilly&amp;rsquo;s in an even tougher industry in general &amp;ndash; publishing. Much of the thought leadership at events like Velocity comes from the authors, editors, bloggers, and other communicators of technical and cultural excellence. Most of these people have worked really hard for comparatively little financial reward. I never got the impression that my editor Andy Oram, who is really dedicated to his life&amp;rsquo;s passion, is a rich man. I would be surprised if O&amp;rsquo;Reilly is raking in the cash.&lt;/p&gt;
+
+&lt;p&gt;The videos of the content are, as I understand, quite lucrative for O&amp;rsquo;Reilly. Maybe O&amp;rsquo;Reilly could consider something like making videos of conferences free after a couple of years when they&amp;rsquo;re selling less actively, but those videos are probably a big part of what makes Velocity possible &amp;ndash; and sustains their business overall.&lt;/p&gt;
+
+&lt;p&gt;The Velocity conference, and those like it, is a venue for changing the world. I&amp;rsquo;ve witnessed it time and time again. The network that lives in and around the conferences, publishing, blogging, and so on is a symbiotic ecosystem. It&amp;rsquo;s all a very real part of O&amp;rsquo;Reilly&amp;rsquo;s mission to &amp;ldquo;spread the knowledge of innovators.&amp;rdquo; I know I sound like a shill, but seriously, not many organizations do what O&amp;rsquo;Reilly does, and you can&amp;rsquo;t undercut them without broad consequences.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s not kill the golden goose. If you think the videos are valuable, great. Tell people they&amp;rsquo;re worth paying for. Better yet &amp;ndash; put your money where your mouth is and show up at the conference yourself.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Edit&lt;/strong&gt; Just to clarify, I&amp;rsquo;m not advocating for O&amp;rsquo;Reilly to remove the freedom for speakers to do as they see fit with their own videos. I just don&amp;rsquo;t think it&amp;rsquo;s a good thing if every speaker decides to post the video just to make an end run around O&amp;rsquo;Reilly&amp;rsquo;s policy en masse. John Allspaw said it well in an email to me: &amp;ldquo;You think education is expensive? Try ignorance!&amp;rdquo;&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Speaking at Percona University Sept 12th</title>
+          <link>https://www.xaprb.com/blog/2013/08/18/speaking-at-percona-university-sept-12th/</link>
+          <pubDate>Sun, 18 Aug 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/08/18/speaking-at-percona-university-sept-12th/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ll be joining Percona for a free day of MySQL education and insight at their upcoming &lt;a href=&#34;http://www.percona.com/news-and-events/percona-university/washington-dc&#34;&gt;Percona University Washington DC event on September 12th&lt;/a&gt;. My topic is accessing MySQL from Google&amp;rsquo;s Go programming language. I&amp;rsquo;ve learned a lot about this over the past year or so, and hopefully I can help you get a quick-start.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re not familiar with Go, it&amp;rsquo;s the darling of the Hacker News crowd these days. Anything with &amp;ldquo;Go&amp;rdquo; in its title gets to the front page for at least a little while! Go is a great systems programming language. It&amp;rsquo;s safe to say I&amp;rsquo;ve fallen in love with it, and it&amp;rsquo;s now my favorite programming language of all those I&amp;rsquo;ve used over my entire career. I chose it because it&amp;rsquo;s ideally suited for VividCortex&amp;rsquo;s agent programs (zero dependencies, compiled, lightweight, high performance, robust, makes concurrency easy and safe), and we&amp;rsquo;re using it for our API servers and backend processing jobs for many of the same reasons.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s a lot of great content at these free Percona University events. If you&amp;rsquo;re not near Washington DC, you should sign up for Percona&amp;rsquo;s &lt;a href=&#34;http://www.percona.com/subscribe&#34;&gt;conferences and training newsletter&lt;/a&gt; so you find out about the next one near you.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Speaking at Strata NYC: Making Big Data Small</title>
+          <link>https://www.xaprb.com/blog/2013/08/18/speaking-at-strata-nyc-making-big-data-small/</link>
+          <pubDate>Sun, 18 Aug 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/08/18/speaking-at-strata-nyc-making-big-data-small/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;m off to my first &lt;a href=&#34;http://strataconf.com/stratany2013/&#34;&gt;Strata&lt;/a&gt; conference, and I&amp;rsquo;m speaking! I&amp;rsquo;ve always wanted to attend Strata. (OSCON too, but I haven&amp;rsquo;t yet made it there.)&lt;/p&gt;
+
+&lt;p&gt;My session will be about &lt;a href=&#34;http://strataconf.com/stratany2013/public/schedule/detail/31435&#34;&gt;ways to make big data small&lt;/a&gt;, in both the storage and processing dimensions, without losing much of the value.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/08/4985831624_fc6cc446c9-300x156.jpg&#34; alt=&#34;4985831624_fc6cc446c9&#34; width=&#34;300&#34; height=&#34;156&#34; class=&#34;aligncenter size-medium wp-image-3248&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re familiar with Bloom Filters, this is an example. Bloom Filters let you answer the question,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Is value X a member of this data set? Yes, or no?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;by substituting the question,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Is value X a member of this data set? Probably yes, or definitely no?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You lose a small and quantifiable amount of precision in the &amp;ldquo;yes,&amp;rdquo; and you gain massive savings in storage and processing cost. Bloom Filters are typically used when you need a definite answer, but only as a pre-filtering step, because if the answer happens to be No, you save the effort of looking through the set to try to find your data.&lt;/p&gt;
+
+&lt;p&gt;That worldview or philosophy is a valuable thing to keep in your pocket when you&amp;rsquo;re working with large amounts of data, and that&amp;rsquo;s the topic of my Strata Conference / Hadoop World NYC 2013 talk.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/dwysiu/4985831624/&#34;&gt;(photo credit)&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>My recipe for more enjoyable presentations</title>
+          <link>https://www.xaprb.com/blog/2013/07/02/my-recipe-for-more-enjoyable-presentations/</link>
+          <pubDate>Tue, 02 Jul 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/07/02/my-recipe-for-more-enjoyable-presentations/</guid>
+          <description>&lt;p&gt;Since I started making my presentations more beautiful, people have often asked me my secret. It&amp;rsquo;s not a secret, and it&amp;rsquo;s really quite simple to do.&lt;/p&gt;
+
+&lt;p&gt;First, realize that it&amp;rsquo;s not about you. It&amp;rsquo;s about your audience. Now, get &lt;em&gt;and read&lt;/em&gt; a few good books on presentations. Your presentations, and your presentation skills, need to be good. You can&amp;rsquo;t just make things beautiful to compensate for badness in other areas. This is something I&amp;rsquo;m always working on. (On the other hand, many a great presenter has doomed him/herself with awful slides.)&lt;/p&gt;
+
+&lt;p&gt;My list of recommended books includes those from Nancy Duarte, especially &lt;a href=&#34;http://www.amazon.com/slide-ology-Science-Creating-Presentations/dp/0596522347/?tag=xaprb-20&#34;&gt;Slide:ology&lt;/a&gt; and &lt;a href=&#34;http://www.amazon.com/Resonate-Present-Stories-Transform-Audiences/dp/0470632011/?tag=xaprb-20&#34;&gt;Resonate&lt;/a&gt;. I have also found &lt;a href=&#34;http://www.amazon.com/TJ-Walkers-Secret-Foolproof-Presentations/dp/1929774885/?tag=xaprb-20&#34;&gt;these&lt;/a&gt; &lt;a href=&#34;http://www.amazon.com/Confessions-Public-Speaker-English/dp/1449301959/?tag=xaprb-20&#34;&gt;books&lt;/a&gt; really helpful. Some of these I found in the airport, of all places.&lt;/p&gt;
+
+&lt;p&gt;Second, develop great content, and practice it. See the books above.&lt;/p&gt;
+
+&lt;p&gt;Third, use a good professionally-designed template. Pay $30 for crying out loud. Are you a graphic designer? No? How much is your time worth? I&amp;rsquo;ve &lt;a href=&#34;http://www.keynotepro.com/&#34;&gt;bought Keynote templates from Keynote Pro&lt;/a&gt; among other places. I&amp;rsquo;ve also hired people to help build custom slides for important talks, such as keynote addresses at major conferences.&lt;/p&gt;
+
+&lt;p&gt;Finally, and this is the part I enjoy the most: I rarely put text alone on a slide. I&amp;rsquo;ll almost always choose a master that has space for a little text (and I usually try to use only a few words) and an image. I&amp;rsquo;ll emphasize this: use only a couple of words on the slides. The words on the slide should cue you, if necessary, to remember what to talk about. For the audience, they should convey the overall theme &amp;ndash; think of it as hashtags &amp;ndash; of the things you&amp;rsquo;re talking about now. Do not put the full content on the slides.&lt;/p&gt;
+
+&lt;p&gt;Then I find an image that seems to fit. My favorite way to do this is a Flickr search for CC-licensed content, sorted by interestingness.&lt;/p&gt;
+
+&lt;p&gt;In Chrome, I use a custom search engine. The keyword is &amp;ldquo;f&amp;rdquo; and the URL pattern is:&lt;/p&gt;
+
+&lt;pre&gt;
+    http://www.flickr.com/search/?q=%s&amp;#038;l=cc&amp;#038;ct=0&amp;#038;mt=photos&amp;#038;adv=1&amp;#038;s=int
+&lt;/pre&gt;
+
+&lt;p&gt;Try it. Here&amp;rsquo;s a Flickr search for &lt;a href=&#34;http://www.flickr.com/search/?q=heart&amp;amp;#038;l=cc&amp;amp;#038;ct=0&amp;amp;#038;mt=photos&amp;amp;#038;adv=1&amp;amp;#038;s=int&#34;&gt;heart&lt;/a&gt;, for example. Isn&amp;rsquo;t that a beautiful page full of images?&lt;/p&gt;
+
+&lt;p&gt;Even if your slides are a boring template, and your talk isn&amp;rsquo;t that great, and your presentation skills aren&amp;rsquo;t that polished, your audience will automatically find your talk much more pleasant now. And it&amp;rsquo;s all about your audience. Remember that!&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Quantifying Abnormal Behavior in System Metrics</title>
+          <link>https://www.xaprb.com/blog/2013/06/25/quantifying-abnormal-behavior-in-system-metrics/</link>
+          <pubDate>Tue, 25 Jun 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/06/25/quantifying-abnormal-behavior-in-system-metrics/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ve posted &lt;a href=&#34;https://vividcortex.com/blog/2013/06/25/quantifying-abnormal-behavior/&#34;&gt;slides for my Velocity talk on VividCortex&amp;rsquo;s blog&lt;/a&gt;. The talk explained how we use exponentially weighted moving statistics to generate a meta-metric of abnormality for the time-series metrics measured from MySQL. That&amp;rsquo;s kind of a mouthful. Maybe you had to be there :-)&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A great talk on Go concurrency patterns</title>
+          <link>https://www.xaprb.com/blog/2013/05/24/a-great-talk-on-go-concurrency-patterns/</link>
+          <pubDate>Fri, 24 May 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/05/24/a-great-talk-on-go-concurrency-patterns/</guid>
+          <description>&lt;p&gt;This &lt;a href=&#34;https://developers.google.com/events/io/sessions/332768653&#34;&gt;35-minute video&lt;/a&gt; from the recent Google I/O conference explains how to use Go&amp;rsquo;s concurrency primitives &amp;ndash; goroutines, channels, and the &lt;code&gt;select&lt;/code&gt; statement &amp;ndash; to do things elegantly, correctly, and safely in a few lines of Go, which would otherwise turn your brain into a pretzel in most programming languages.&lt;/p&gt;
+
+&lt;p&gt;My favorite thing about Go is that a good Go program looks self-evident and obvious, even when it may be doing things that would be insanely complex in another language. Callbacks, closures, mutexes, and so on just disappear, and the program itself emerges, looking completely unimpressive. In many cases I think &amp;ldquo;what&amp;rsquo;s the big deal about that?&amp;rdquo; until I realize how hard it would be to write in Java, or Perl, or so on. A lot of the code in Percona Toolkit, for example, involved &amp;ldquo;&lt;a href=&#34;http://bazaar.launchpad.net/~percona-toolkit-dev/percona-toolkit/2.1/view/head:/bin/pt-query-digest#L11835&#34;&gt;pipelines&lt;/a&gt;&amp;rdquo; of callbacks passing data along to other callbacks for further processing. These were hard to reason about, hard to make resilient to errors and allow clean termination, and were redesigned several times, never very successfully in my opinion. In Go, channels make those kinds of tasks so simple. Such a program in Go looks suspiciously like a Unix | pipe | and | filter | program. If you think about it, the Unix shell itself is a great example of using &amp;ldquo;channels&amp;rdquo; successfully to trivialize what would otherwise be a migraine-inducing task.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Two upcoming Go-related talks I&#39;m giving</title>
+          <link>https://www.xaprb.com/blog/2013/04/16/two-upcoming-go-related-talks-im-giving/</link>
+          <pubDate>Tue, 16 Apr 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/04/16/two-upcoming-go-related-talks-im-giving/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;m scheduled to talk about Go a couple times in the upcoming weeks.&lt;/p&gt;
+
+&lt;p&gt;The first is May 4th in Arlington at &lt;a href=&#34;http://www.dayoffosterly.com/&#34;&gt;A Day Of Foster.ly&lt;/a&gt;. I&amp;rsquo;ll be a participant in a panel titled &lt;em&gt;Add To Your Programming Toolkit: Languages You Should Know About (Erlang, Clojure, R, Go, etc&amp;hellip;)&lt;/em&gt;. I&amp;rsquo;m talking about Go, naturally.&lt;/p&gt;
+
+&lt;p&gt;The second May 7th is at my local technology guild, the &lt;a href=&#34;http://neonguild.org/&#34;&gt;Neon Guild&lt;/a&gt;. I&amp;rsquo;m going to be giving a &amp;ldquo;gentle introduction&amp;rdquo; to Go. I&amp;rsquo;ve been programming in Go for less than a year, so my first impressions are still fresh. If you are in the Charlottesville area and you haven&amp;rsquo;t been to a Neon Guild meeting, do yourself a favor and show up. It&amp;rsquo;s free and no RSVP is required. Description:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;It seems that every time I tell someone we&amp;rsquo;ve chosen Go as our primary language at VividCortex, they respond with something like &amp;ldquo;I&amp;rsquo;ve heard about Go! Neat! What is it like? Why did you choose it? Are you happy with it?&amp;rdquo; The answer is that Go is a fascinating language that&amp;rsquo;s working great for us. After many years of programming in everything from C to Java to C# to Perl to LISP to Shell, I&amp;rsquo;m pretty much in love with Go. There are particular reasons I chose it for our special use case, but beyond just niche considerations, it&amp;rsquo;s working great as a general-purpose, high-performance, very productive systems language. I&amp;rsquo;ll try to contain my enthusiasm and tell a story about evaluating it, learning it, and then learning it more deeply.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hope to see you at one of these events. If you see me, wave and introduce yourself, and give me a business card so I can &lt;s&gt;stalk&lt;/s&gt; connect with you on LinkedIn!&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Adaptive Fault Detection food fight</title>
+          <link>https://www.xaprb.com/blog/2013/03/12/adaptive-fault-detection-food-fight/</link>
+          <pubDate>Tue, 12 Mar 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/03/12/adaptive-fault-detection-food-fight/</guid>
+          <description>&lt;p&gt;I was a guest on the &lt;a href=&#34;http://foodfightshow.org/2013/03/adaptive-fault-detection.html&#34;&gt;Food Fight Show&lt;/a&gt; last week, along with a bevy of really smart people asking and answering tough questions on fault detection. We didn&amp;rsquo;t talk a lot about MySQL, but given that &lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is focusing on MySQL initially, pretty much all of my experience with zero-threshold, zero-configuration fault detection is MySQL-based.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a fun conversation with a lot of insights into the industry, what&amp;rsquo;s wrong with current monitoring tools, and where monitoring is going. Also, it&amp;rsquo;s sold out now, but &lt;a href=&#34;http://monitorama.com/&#34;&gt;Monitorama&lt;/a&gt; is a conference you might be interested in if you&amp;rsquo;re doing monitoring (and who isn&amp;rsquo;t?)&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Upcoming events of interest for MySQLers</title>
+          <link>https://www.xaprb.com/blog/2013/03/08/upcoming-events-of-interest-for-mysqlers/</link>
+          <pubDate>Fri, 08 Mar 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/03/08/upcoming-events-of-interest-for-mysqlers/</guid>
+          <description>
+
+&lt;p&gt;Here is a collection of upcoming events that are interesting to me as a MySQL user (in some cases because I&amp;rsquo;m speaking). I think some of them are must-see events. I am sure I am missing a lot of events, but some of these are only publicized in specific channels, and I wanted to mention them here to help spread the word.&lt;/p&gt;
+
+&lt;h3 id=&#34;upcoming-meetups&#34;&gt;Upcoming Meetups&lt;/h3&gt;
+
+&lt;p&gt;This coming Thursday, Charlottesville&amp;rsquo;s Neon Guild tech group will &lt;a href=&#34;http://agile-cville-march-meeting.eventbrite.com/&#34;&gt;co-host a Meetup with a noted Kanban expert&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m joining two Meetups soon to talk about building database (MySQL) applications with the Go programming language:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.meetup.com/Central-Virginia-MySQL-Meetup/events/106865662/&#34;&gt;Wednesday, March 13, 2013 in Charlottesville Virginia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.meetup.com/Golang-DC/events/106865142/&#34;&gt;Tuesday, March 19, 2013 in Alexandria, Virginia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;upcoming-conferences&#34;&gt;Upcoming Conferences&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.percona.com/live/mysql-conference-2013/&#34;&gt;Percona Live MySQL Conference and Expo 2013&lt;/a&gt; in Santa Clara, CA April 22-25, 2013. This is &lt;strong&gt;the&lt;/strong&gt; annual MySQL conference. I&amp;rsquo;m not speaking this year, but&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://velocityconf.com/velocity2013&#34;&gt;Velocity Web Performance And Operations Conference&lt;/a&gt; June 18-20, Santa Clara, CA. This is an amazing event that brings together the best and brightest people who are building the future of the Internet. I am speaking on &lt;a href=&#34;http://velocityconf.com/velocity2013/public/schedule/detail/28118&#34;&gt;quantifying system normality&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;upcoming-call-for-proposals&#34;&gt;Upcoming Call For Proposals&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://surge.omniti.com/2013/&#34;&gt;OmniTI Surge, Maryland, Sep 12-13&lt;/a&gt;. CfP closes May 1st.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://velocityconf.com/velocityny2013/public/cfp/261&#34;&gt;Velocity New York 2013 Call for Participation&lt;/a&gt; (Oct 14-16). Proposals Due Apr 29th.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+    
+
+  </channel>
+</rss>

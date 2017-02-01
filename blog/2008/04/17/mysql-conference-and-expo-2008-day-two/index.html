@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      MySQL Conference and Expo 2008, Day Two &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="MySQL Conference and Expo 2008, Day Two" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2008/04/17/mysql-conference-and-expo-2008-day-two/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2008/04/17/mysql-conference-and-expo-2008-day-two/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL Conference and Expo 2008, Day Two</h1>
+  <span class="post-date">Thu, Apr 17, 2008 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f17%2fmysql-conference-and-expo-2008-day-two%2f&text=MySQL%20Conference%20and%20Expo%202008%2c%20Day%20Two:https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f17%2fmysql-conference-and-expo-2008-day-two%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f17%2fmysql-conference-and-expo-2008-day-two%2f&title=MySQL%20Conference%20and%20Expo%202008%2c%20Day%20Two&summary=MySQL%20Conference%20and%20Expo%202008%2c%20Day%20Two&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f17%2fmysql-conference-and-expo-2008-day-two%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f17%2fmysql-conference-and-expo-2008-day-two%2f&t=MySQL%20Conference%20and%20Expo%202008%2c%20Day%20Two" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f04%2f17%2fmysql-conference-and-expo-2008-day-two%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>Day two of the conference was a little disappointing, as far as sessions went. There were several time blocks where I simply wasn&rsquo;t interested in any of the sessions. Instead, I went to the expo hall and tried to pry straight answers out of sly salespeople. Here&rsquo;s what I attended.</p>
+
+<h3 id="paying-it-forward-harnessing-the-mysql-contributory-resources">Paying It Forward: Harnessing the MySQL Contributory Resources</h3>
+
+<p>This was a talk focused on how MySQL has made it possible for community members to contribute to MySQL. There was quite a bit of talk about IRC channels, mailing lists, and the like. However, the talk gave short shrift to how MySQL plans to become truly open source (in terms of its development model, not its license). I think there was basically nothing to talk about there. I had a good conversation about some of my concerns with the speaker and some others from MySQL right afterwards.</p>
+
+<p>There was basically nobody there &ndash; I didn&rsquo;t count, but I&rsquo;d say maybe 10 or 12 people. I think this is a telling sign.</p>
+
+<h3 id="architecture-of-maria-a-new-storage-engine-with-a-transactional-design">Architecture of Maria: A New Storage Engine with a Transactional Design</h3>
+
+<p>I was interested in this talk because I&rsquo;m interested in the tension between Falcon and Maria (and between Falcon and everything, for that matter) but I left and went to the expo hall again after a bit. The talk was good but I&rsquo;d already seen and/or read it, and the question-and-answer component wasn&rsquo;t enough to keep me there.</p>
+
+<h3 id="the-mysql-query-cache">The MySQL Query Cache</h3>
+
+<p>This was the second session I gave at the conference, and again it was standing-room-only, with nearly 300 attendees according to the person who was watching the door. The questions were frequent and added a lot to the discussion. Slides will be on the conference website when they post them.</p>
+
+<h3 id="grazr-lessons-learned-building-a-web-2-0-application-using-mysql">Grazr: Lessons Learned Building a Web 2.0 Application Using MySQL</h3>
+
+<p>I was keenly interested in this talk because a) I am a big fan of Patrick Galbraith&rsquo;s work with many different projects, and b) I had heard a lot about <a href="http://www.grazr.com/">Grazr</a> but didn&rsquo;t know much about it. However, I missed most of the talk. About ten minutes into it, I got a call I couldn&rsquo;t refuse: my wife!</p>
+
+<p>However, I did sneak back into the room for the last bit too. And I gave Grazr a try. Unfortunately, I got really confused by it; I tried a bunch of different ways to import my Google Reader&rsquo;s OPML. I got that to work, but then I couldn&rsquo;t figure out how to read the feeds in the OPML via Grazr. Then I think I figured that out (I&rsquo;m not sure) but it didn&rsquo;t strike me as a very handy way to read my feeds. I&rsquo;ll try taking another look at it later if I get time. (I&rsquo;m all ears if there&rsquo;s a better way to read feeds).</p>
+
+<h3 id="extending-mysql">Extending MySQL</h3>
+
+<p>This one was mostly for fun. I knew a lot about UDFs already (I&rsquo;ve created some) and I knew about the pluggable storage engine API. But I didn&rsquo;t know about pluggable event daemons. Holy cow, what a great way to shoot yourself (or your server) in the foot! All the power of an atomic bomb, with all the safety of SPF 5 sunblock in a nuclear attack. Or something like that. But darn, it sure is nifty. Brian is a great speaker too &ndash; very lively.</p>
+
+<p>You know, there&rsquo;s another way to extend MySQL that most people don&rsquo;t seem to know about, which Brian didn&rsquo;t mention. That is procedures (not stored procedures). They are sort of like a post-filter for a result set, and like UDFs they&rsquo;ve been around forever. I have never heard of anyone writing their own, but there&rsquo;s an example in the server itself: <a href="http://dev.mysql.com/doc/refman/4.1/en/procedure-analyse.html">PROCEDURE ANALYSE</a>.</p>
+
+<h3 id="expo-hall">Expo hall</h3>
+
+<p>I went to the expo hall to meet and greet many of the companies that Percona (my employer) is already working with (doing independent benchmarks, performance verification, analysis etc) or will be in the future. I also wanted to grill some of the vendors on their technology. Usually I find them very cagey; they claim X times faster this-or-that, but won&rsquo;t tell you how, and won&rsquo;t tell you what their systems don&rsquo;t do well. I don&rsquo;t understand why they take this approach; you can&rsquo;t hide your system&rsquo;s strong and weak spots. There is no security through obscurity, and shrewd independent observers are going to get to the bottom of it with or without your permission.</p>
+
+<p>So, for instance, I was talking with <a href="http://www.tokutek.com/">Tokutek,</a> who claimed to be a drop-in replacement for InnoDB with 200x better performance and apparently no downsides. However, on closer questioning, I did get him to admit that the system has table-level locking. Thus it won&rsquo;t give any concurrency, so saying it&rsquo;s a drop-in InnoDB replacement is questionable. And the comparison against InnoDB seemed contrived to create a worst-case situation with bad tuning and a workload so it would perform terribly. An honest comparison tunes both systems to their highest performance and measures them; you can&rsquo;t tune one system as badly as possible and compare it to the other&rsquo;s best-case performance. I pressed on further and asked about range scans in some specific cases (they claim they&rsquo;re great at range queries, and equal to InnoDB on everything else). At last they admitted they can&rsquo;t perform well on some very common queries such as real-life queries InnoDB performs very well on for me. They said these are &ldquo;point queries&rdquo; but that&rsquo;s not true; you can design indexes to support many different ways to range-query a table in InnoDB and get great performance. So it sounds to me like Tokutek&rsquo;s storage format is extremely narrowly focused, and there is indeed a trade-off. I will be interested to see how their technology develops, though. It&rsquo;s not done yet.</p>
+
+<h3 id="in-general">In general</h3>
+
+<p>There are a lot of Maatkit t-shirts walking around, which makes me happy. If I&rsquo;d printed 200 of them, I probably could have given them all away. I was wearing a <a href="http://www.postgresql.org/">PostgreSQL</a> t-shirt myself. Proudly, I might add. I&rsquo;m not the only person here who&rsquo;s interested in PostgreSQL. This morning I met a person from EnterpriseDB.</p>
+
+<p>Yesterday was a bit slow in terms of interesting sessions, but there was a lot going on in the hallways, the expo hall, the meetings over lunch, and so on.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2008/04/19/spring-2008-issue-of-mysql-magazine/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2008/04/16/get-a-free-sample-chapter-of-high-performance-mysql-second-edition/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2008\/04\/17\/mysql-conference-and-expo-2008-day-two\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> </title>
+    <link>https://www.xaprb.com/categories/commentary/index.xml</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>Copyright (c) 2016</rights>
+    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
+
+    
+        <item>
+          <title>Feelings and Behaviors</title>
+          <link>https://www.xaprb.com/blog/2016/01/03/feelings-and-behaviors/</link>
+          <pubDate>Sun, 03 Jan 2016 15:56:52 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2016/01/03/feelings-and-behaviors/</guid>
+          <description>&lt;p&gt;It&amp;rsquo;s a new year and I drew a diagram.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2016/01/feelings-and-behaviors.png&#34; alt=&#34;Feelings and Behaviors&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;This diagram shows the spectra of what I can pay attention to and focus upon.
+Along one axis, I can range between focusing on my feelings, or focusing on
+other peoples&amp;rsquo; feelings. On the other, I can observe and learn from my actions
+and their consequences, or I can notice what others do and what results.&lt;/p&gt;
+
+&lt;p&gt;This diagram probably means something different to everyone
+who reads it, but here&amp;rsquo;s what it means to me:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The healthiest people I know tend to care about &lt;strong&gt;what they do and how other
+people feel&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The most troubled people I&amp;rsquo;ve known have focused on &lt;strong&gt;how they feel and what
+other people do.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;The other two quadrants are less pathological; more about them later.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I drew circles in the top-right and bottom-left because I believe there are
+positions of dynamic equilibrium in these locations.  People who live top-right
+don&amp;rsquo;t fix their attention unwaveringly on other/self; rather, they move fluidly
+between external and internal observation and reasoning. This virtuous cycle is
+a dynamic dance of loving, generous relationships.&lt;/p&gt;
+
+&lt;p&gt;I used to live bottom-left, which is a vicious cycle, not a virtuous one. I saw
+myself as a helpless victim, against whom the universe and world constantly
+plotted.  I spent my time and energy noticing how I felt, ignoring my behaviors,
+and blaming my feelings on what other people had &amp;ldquo;done to&amp;rdquo; me.  I modulated
+these behaviors only enough to poke my head out of my hole and confirm my
+suspicions that I was just a casualty of &amp;ldquo;the system&amp;rdquo; and the deck was all
+stacked against me.&lt;/p&gt;
+
+&lt;p&gt;The other two quadrants don&amp;rsquo;t tend to be positions of equilibrium long-term.
+Whether a person ends up top-right or bottom-left is a product of many different
+possible circumstances, in my experience (N=1).&lt;/p&gt;
+
+&lt;p&gt;There are more regions on this map than I&amp;rsquo;ve shown. For example, there are
+people who live top-left in healthy ways. And most people aren&amp;rsquo;t possible to
+represent as a point on the map. They occupy some area, usually rather fluidly.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m continually inspired by the people around me who live more in the top right
+quadrant.  To the extent that I move upwards and rightwards this New Year, I
+know I will be the better for it.&lt;/p&gt;
+
+&lt;p&gt;I experience fewer moments of that old bottom-left behavior every New Year than
+I did the year before. This is usually because of the choices I make&amp;ndash;much less
+so than random events or other peoples&amp;rsquo; actions.&lt;/p&gt;
+
+&lt;p&gt;Above all, I can choose where I direct my attention. This is tangible evidence
+of what I really value.&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>Why I Don&#39;t Give Personal Tech Support</title>
+          <link>https://www.xaprb.com/blog/2015/09/29/personal-tech-support/</link>
+          <pubDate>Tue, 29 Sep 2015 22:04:16 -0700</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/09/29/personal-tech-support/</guid>
+          <description>&lt;p&gt;I don&amp;rsquo;t give personal, one-to-one technical support for open source software
+I&amp;rsquo;ve created, nor do I help people with SQL or other questions. The reasons are not obvious to many people, and this blog is meant to document them.&lt;/p&gt;
+
+&lt;p&gt;What do I mean by personal tech support? I mean I don&amp;rsquo;t use private email or other means to answer questions about software I&amp;rsquo;ve created. I don&amp;rsquo;t troubleshoot bugs or answer how-to questions individually.&lt;/p&gt;
+
+&lt;p&gt;The reasons are simple:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I don&amp;rsquo;t have time to solve everyone&amp;rsquo;s issues.&lt;/li&gt;
+&lt;li&gt;If I solve your problem, it will recur for someone else, who will ask me
+again.&lt;/li&gt;
+&lt;li&gt;Your problem is probably shared by other people. They can help you find the
+solution.&lt;/li&gt;
+&lt;li&gt;When you find a solution, if it&amp;rsquo;s done in public, it will answer many other
+peoples&amp;rsquo; questions. They will not ask anyone for help, they will only need to
+ask Google.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Although I tell people to use forums and mailing lists, they still regularly ask me for individual, private technical help on email. I understand why, and I don&amp;rsquo;t mind.&lt;/p&gt;
+
+&lt;p&gt;What I don&amp;rsquo;t understand is why they won&amp;rsquo;t follow through when I respond and ask them to use a public forum. It&amp;rsquo;s as if the question is not important enough to bother posting publicly, but if I happened to be in the mood to answer it personally they&amp;rsquo;d find that valuable.&lt;/p&gt;
+
+&lt;p&gt;In some cases I can tell that people have read the documentation directing them to use the mailing list, and have &lt;em&gt;instead gone to some trouble to seek me out&lt;/em&gt; and ask me a personal favor
+one-on-one. It&amp;rsquo;s as if they&amp;rsquo;re even more determined to get individual help after I tell them I won&amp;rsquo;t give it!&lt;/p&gt;
+
+&lt;p&gt;This blog post is an effort to save time in the future: I have gotten tired of saying no in a personal, individual way. I&amp;rsquo;ll just respond with the URL of this blog post. If you have gotten an email from me containing only the URL of this blog post, please consider your motives and whether you have been respectful to yourself and others.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Beware Of The Only Correct Way To Do It</title>
+          <link>https://www.xaprb.com/blog/2015/04/05/magic-secret-sauce/</link>
+          <pubDate>Sun, 05 Apr 2015 13:51:18 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/04/05/magic-secret-sauce/</guid>
+          <description>&lt;p&gt;Everyone who&amp;rsquo;s been successful at creating something remarkable, and scaling it,
+likely has developed into a repeatable process. If they hadn&amp;rsquo;t, they wouldn&amp;rsquo;t
+have scaled it, and you&amp;rsquo;d never have heard of it. (There are lots of geniuses
+you&amp;rsquo;ve never heard of who&amp;rsquo;ve created remarkable results at an individual level.)&lt;/p&gt;
+
+&lt;p&gt;A lot of times they&amp;rsquo;ll go through several iterations of massive success with
+this, then write some books, found a consulting company, go on the speaking
+circuit, and so on. And almost always, they seem to demand rigid adherence to
+specific sacred-cow principles that must remain inviolate.&lt;/p&gt;
+
+&lt;p&gt;You should be really skeptical of anything that smells like this. Sacred cows
+make the best steaks, and here&amp;rsquo;s why.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/04/mugs.jpg&#34; alt=&#34;Mugs&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;No, not the mugs, the mugs aren&amp;rsquo;t why you should be skeptical. But let&amp;rsquo;s talk
+about how this usually plays out by looking at a couple of places I&amp;rsquo;ve seen
+adamant insistence on the one true gospel.  I&amp;rsquo;ll use real examples from some
+things I&amp;rsquo;m currently working on in my business right now.&lt;/p&gt;
+
+&lt;h3 id=&#34;case-1-salesforce-and-cold-calling-2-0&#34;&gt;Case #1: SalesForce and Cold Calling 2.0&lt;/h3&gt;
+
+&lt;p&gt;Aaron Ross has a bestselling book called &lt;a href=&#34;http://www.amazon.com/Predictable-Revenue-Business-Practices-Salesforce-com/dp/0984380213/?tag=xaprb-20&#34;&gt;Predictable
+Revenue&lt;/a&gt; in which he
+declares the death and obsolescence of salespeople making cold calls.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I define a cold call as &amp;ldquo;calling someone who doesn&amp;rsquo;t know you and isn&amp;rsquo;t
+expecting your call.&amp;rdquo; (page 24).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Aaron espouses Cold Calling 2.0, which is a different method of prospecting for
+sales: &amp;ldquo;prospecting into cold accounts without ever making any cold calls.&amp;rdquo;
+(page 24). He returns to this point again and again through the book: never,
+ever make any cold calls. Ever again. Ever.&lt;/p&gt;
+
+&lt;p&gt;Aaron claims that this worked incredibly well and is the way the entire
+SalesForce team was trained and scaled.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t doubt that they use Cold Calling 2.0 at SalesForce.&lt;/p&gt;
+
+&lt;p&gt;But my experience with SalesForce as a CEO/founder of a tech company does
+not match with what Aaron says they did. After we closed our first round of
+funding, my cofounder and I were spammed with cold calls from SalesForce.
+There is no other way to put it. They badgered us mercilessly. &lt;em&gt;Mercilessly.&lt;/em&gt;
+Aaron talks about sales development reps being &amp;ldquo;pleasantly persistent.&amp;rdquo; I am not
+proud to say I eventually yelled obscenities into the phone at the sales rep who
+would not take no for an answer. As a rule I do not curse at people and it is
+very rare for me to lose my cool, maybe only happens once every couple of years.
+&lt;em&gt;He cold called me and would not stop calling back every few days even after I,
+the CEO of the company, had asked him to stop and told him the answer was no at
+least several times.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Not only that but he called my cofounder as well. And emailed both of us. It was
+infuriating. No means no!&lt;/p&gt;
+
+&lt;p&gt;This was a while ago and I am sure my memory has become inaccurate. I bet they
+have records, though, of every interaction. I would be happy to hear that I&amp;rsquo;m
+remembering this wrong. SalesForce, if you&amp;rsquo;d like to correct me, please look
+up Zach E&amp;rsquo;s interactions with me and let me know if I&amp;rsquo;m misinterpreting.&lt;/p&gt;
+
+&lt;h3 id=&#34;case-2-hubspot-and-permission-based-inbound-marketing&#34;&gt;Case #2: HubSpot and Permission-Based / Inbound Marketing&lt;/h3&gt;
+
+&lt;p&gt;HubSpot&amp;rsquo;s methodology is &lt;a href=&#34;http://www.hubspot.com/inbound-marketing&#34;&gt;inbound
+marketing&lt;/a&gt;. The idea is that you attract
+people and companies to you by providing them with helpful, relevant
+content. Blogs, webinars, etc. Really valuable stuff. By doing this, you
+help them be successful with or without you, but you also ask them to
+identify themselves (two-way street). You make people aware that in addition to all
+the stuff they can do on their own with the free content and resources you
+provide, you also provide services/products/whatever that will amplify their
+success.&lt;/p&gt;
+
+&lt;p&gt;So in HubSpot&amp;rsquo;s case, for example, their blog helps people understand how to do
+marketing that turns strangers into ravingly happy customers. Not just
+customers&amp;mdash;promoters, who can&amp;rsquo;t stop themselves from saying how awesome your
+product or service is. And thus, by doing this &amp;ldquo;marketing that people will
+love,&amp;rdquo; you make everyone aware of your products/services and how valuable they
+are, and magnetically attract customers to yourself. You turn a &amp;ldquo;pushy&amp;rdquo; outbound
+sales/marketing process into a &amp;ldquo;magnetic pull&amp;rdquo; of inbound attraction.&lt;/p&gt;
+
+&lt;p&gt;And HubSpot also strongly condemns cold-calling, pushy sales tactics&amp;hellip; they
+recommend &lt;a href=&#34;http://blog.hubspot.com/blog/tabid/6307/bid/30718/15-Tenets-of-Proper-Email-Marketing-Etiquette.aspx&#34;&gt;permission-based
+marketing&lt;/a&gt;
+instead. They talk about the very real dangers of legal repercussions, domain
+blacklisting and spam database scoring, and so on.&lt;/p&gt;
+
+&lt;p&gt;My experience with HubSpot?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Spammed.&lt;/em&gt; Mercilessly spammed. Katie C emailed me. She sent me LinkedIn requests
+and messages. She tweeted to me. I can&amp;rsquo;t remember if she called me. I think she
+did. I know for sure that she found and pushed messages to every possible
+channel you could reach me by. Well, probably not text messages, come to think
+of it. But this went on, and on, and on. I did not respond; I decided to try
+silence instead of &amp;ldquo;no,&amp;rdquo; because I&amp;rsquo;d been spammed out of my mind by people who
+wouldn&amp;rsquo;t take &amp;ldquo;no&amp;rdquo; for an answer.&lt;/p&gt;
+
+&lt;p&gt;Did I find HubSpot&amp;rsquo;s outbound sales efforts to be permission-based? No,
+I did not. There were no required CAN-SPAM opt-out links. I had no prior contact
+with them; I&amp;rsquo;m sure they bought my name and contact information from a list like
+all the other spammers did. Did I fall in love with their tactics? No, I did
+not. Had I earned their attention by browsing their site? No. I had never heard
+of them before (and frankly the first impression I got was really poor.)&lt;/p&gt;
+
+&lt;p&gt;After Katie C eventually stopped (after sending an increasingly ridiculous,
+over-the-top series of &amp;ldquo;breakup&amp;rdquo; messages, sobbing about how I didn&amp;rsquo;t love her
+anymore), I finally got some peace for a while. Then Andrew F started up.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d had enough and I reported it to SalesForce&amp;rsquo;s abuse department, because they
+were sending these non-compliant emails from SalesForce.&lt;/p&gt;
+
+&lt;h3 id=&#34;i-m-a-salesforce-and-hubspot-customer&#34;&gt;I&amp;rsquo;m a SalesForce and HubSpot Customer&lt;/h3&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the thing. At VividCortex we are customers of &lt;em&gt;both&lt;/em&gt; companies. I
+recognize the value of what they provide, and I knew about their offerings.
+Before I even founded the company I knew we&amp;rsquo;d use SalesForce. We used Act-On
+for marketing automation for a while, but recently switched (the reasons why are
+another interesting story) to HubSpot.&lt;/p&gt;
+
+&lt;p&gt;We aren&amp;rsquo;t customers because of their obnoxious tactics, but &lt;em&gt;despite&lt;/em&gt; them.&lt;/p&gt;
+
+&lt;h3 id=&#34;why-do-they-do-it&#34;&gt;Why Do They Do It?&lt;/h3&gt;
+
+&lt;p&gt;If Cold Calling 2.0 and Inbound Marketing are the bees&amp;rsquo; knees, and create
+incredible results, and are sacred cows you should absolutely adhere to, then
+why do these two extremely valuable service providers not follow their own
+advice?&lt;/p&gt;
+
+&lt;p&gt;Because one size doesn&amp;rsquo;t fit all. Cold calling &lt;em&gt;does&lt;/em&gt; work for some people
+(generally not for me, though there are exceptions). Finding a CEO/founder&amp;rsquo;s
+contact information after a funding round, and pestering the hell out of him/her
+about lead generation on every possible social network and communications
+channel, &lt;em&gt;does&lt;/em&gt; work in some cases.&lt;/p&gt;
+
+&lt;p&gt;These companies are not satisfied with the results they can obtain from
+following a simple process to the letter. They know they can eke out incremental
+improvements by crossing the line into the &amp;ldquo;off-limits&amp;rdquo; areas.&lt;/p&gt;
+
+&lt;h3 id=&#34;that-s-why-you-should-be-skeptical&#34;&gt;That&amp;rsquo;s Why You Should Be Skeptical&lt;/h3&gt;
+
+&lt;p&gt;That&amp;rsquo;s why you should be skeptical of anyone&amp;rsquo;s magic secret sauce. The more they
+insist there is a bedrock principle (or three) that you must absolutely believe
+in, no shades of gray&amp;mdash;the more you should be skeptical.&lt;/p&gt;
+
+&lt;p&gt;Going through the sales process with HubSpot, in particular, was like the
+twilight zone. Their sales team was making it sound like HubSpot itself
+generates all of their revenue completely from inbound marketing.&lt;/p&gt;
+
+&lt;p&gt;The hypocrisy makes it hard to believe &lt;em&gt;anything&lt;/em&gt; they say. Everything becomes
+too good to be true.  It&amp;rsquo;s really weird, because there&amp;rsquo;s cognitive dissonance
+everywhere.&lt;/p&gt;
+
+&lt;p&gt;What do I mean by that? It&amp;rsquo;s pretty simple&amp;mdash;I know and I believe in the value
+of inbound marketing.  It &lt;em&gt;works.&lt;/em&gt; I&amp;rsquo;ve not only seen it done, but I&amp;rsquo;ve done it
+myself, and the results were incredible. At a previous employer, you practically
+could not do a Google search for a related keyword without my content appearing
+in the first page of results, and usually the first several links. When we
+hooked that up to a marketing automation system, all the numbers went through
+the roof.&lt;/p&gt;
+
+&lt;p&gt;It worked at that company, and it&amp;rsquo;s working shockingly well at VividCortex too.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s why I knew I needed inbound marketing and marketing automation. I knew I
+needed Marketo, Act-On, HubSpot, or another vendor. I didn&amp;rsquo;t know which one I
+wanted to use&amp;mdash;I&amp;rsquo;d used Marketo before and wanted to see if I could find
+something a little better&amp;mdash;but I knew one of these kinds of companies would be
+absolutely vital.&lt;/p&gt;
+
+&lt;p&gt;So when HubSpot was telling us how insanely good the results would be from doing
+&amp;ldquo;pure&amp;rdquo; inbound marketing, and I knew that they were simultaneously telling the
+truth and also did not adhere to that advice themselves, I had to get off the
+phone with them and talk with the team about what we&amp;rsquo;d just heard. What was real
+and what was hype?&lt;/p&gt;
+
+&lt;p&gt;This is a vitally important exercise anytime someone shows you a
+method/process/practice that&amp;rsquo;s the one true way.&lt;/p&gt;
+
+&lt;p&gt;This holds for things I write and say, too. I say disciplined database
+performance optimization depends on measuring the workload the systems handle,
+and without it you&amp;rsquo;re just doing trial-and-error. I say a low-sugar, high-fat,
+minimally-processed diet can transform your body. I say a lot of things to try
+to teach and explain what I&amp;rsquo;ve discovered to work well.&lt;/p&gt;
+
+&lt;p&gt;But if you ever catch me insisting there are no exceptions, call me out on it.
+Sometimes cache hit ratios work to tune databases. Sometimes I like to eat ice
+cream. Life&amp;rsquo;s not supposed to be black and white.&lt;/p&gt;
+
+&lt;p&gt;Sacred cows make the best steaks.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/04/ice-cream.jpg&#34; alt=&#34;Ice Cream&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mugs by &lt;a href=&#34;https://unsplash.com/andrekerygma&#34;&gt;André Freitas&lt;/a&gt;. Ice cream by
+&lt;a href=&#34;https://www.flickr.com/photos/ulteriorepicure/364899832/&#34;&gt;ulterior epicure&lt;/a&gt;.&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>The Ultimate Pen</title>
+          <link>https://www.xaprb.com/blog/2015/03/07/ultimate-pen-marker-face-off/</link>
+          <pubDate>Sat, 07 Mar 2015 13:52:41 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/03/07/ultimate-pen-marker-face-off/</guid>
+          <description>&lt;p&gt;In &lt;a href=&#34;https://www.xaprb.com/blog/2013/07/10/ultimate-notebook-and-journal-face-off/&#34;&gt;The Ultimate Notebook&lt;/a&gt;,
+I reviewed a large list of notebooks I bought in my quest for the perfect one
+for me. (I&amp;rsquo;m happy to say that I&amp;rsquo;ve been using the &lt;a href=&#34;http://www.amazon.com/gp/product/B0072WW8K4/?tag=xaprb-20&#34;&gt;Quo Vadis Habana in Raspberry&lt;/a&gt; exclusively
+for a while). But what about the perfect pen? Ah, pens. As much a personal
+matter as notebooks are. I&amp;rsquo;ve tried a variety of pens. Here&amp;rsquo;s my review of some
+of them.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/03/pens.jpg&#34; alt=&#34;Pens&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;First, what am I looking for? My ideal pen is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Used for note-taking, usually in a business context&lt;/li&gt;
+&lt;li&gt;Felt-tipped so it doesn&amp;rsquo;t leak on planes&lt;/li&gt;
+&lt;li&gt;Permanent, fade-proof black ink&lt;/li&gt;
+&lt;li&gt;Small&lt;/li&gt;
+&lt;li&gt;Durable so it survives occupational hazards like accidental hard pressure&lt;/li&gt;
+&lt;li&gt;Long-lasting so it doesn&amp;rsquo;t run out of ink too fast&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With that in mind, here&amp;rsquo;s a rundown of pens I&amp;rsquo;ve used.&lt;/p&gt;
+
+&lt;h3 id=&#34;marvy-uchida-le-pen&#34;&gt;Marvy (Uchida) Le Pen&lt;/h3&gt;
+
+&lt;p&gt;I was introduced to this Japanese pen by &lt;a href=&#34;http://katemats.com/&#34;&gt;Kate Matsudaira&lt;/a&gt; and have used it for years. It comes in a variety of colors and is inexpensive to &lt;a href=&#34;http://www.amazon.com/Uchida-Pen-12-Color-Set/dp/B005987DYE/?tag=xaprb-20&#34;&gt;buy&lt;/a&gt; in singles or bulk packs. It&amp;rsquo;s also resold under various brands, such as in Michael&amp;rsquo;s stores under the Recollections brand. (If that&amp;rsquo;s not the same pen under a different brand it is a remarkable imitation.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/03/le-pen.jpg&#34; alt=&#34;Marvy Le Pen&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Inexpensive&lt;/li&gt;
+&lt;li&gt;Reasonable lifetime&lt;/li&gt;
+&lt;li&gt;Slim form factor&lt;/li&gt;
+&lt;li&gt;Good value and performance overall&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Runs out of ink after a while&lt;/li&gt;
+&lt;li&gt;The tip tends to wear down; depending on the paper, can wear down fast and the pen is useless&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;sakura-pigma-micron&#34;&gt;Sakura Pigma Micron&lt;/h3&gt;
+
+&lt;p&gt;Another Japanese pen brand, these high-quality pens are great for writing, sketching, and precise drawing.  Sakura makes a variety of styles, colors, and thicknesses of pen. I am fond of about a 0.3mm tip. Here&amp;rsquo;s a &lt;a href=&#34;http://www.amazon.com/Sakura-50034-6-Piece-Micron-005-0-20mm/dp/B00K3KRMFI/?tag=xaprb-20&#34;&gt;six-pack in 0.20mm Black&lt;/a&gt; that&amp;rsquo;s a good value. You can also get variety packs&amp;mdash;a single color in various widths; a single width in a variety of colors; combinations thereof. Here&amp;rsquo;s &lt;a href=&#34;http://www.amazon.com/Sakura-Pigma-Micron-0-20mm-Width/dp/B00C16VXXY/?tag=xaprb-20&#34;&gt;a 10-pack in a single color you can choose&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/03/sakura-pigma-micron.jpg&#34; alt=&#34;Sakura Pigma Micron&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Quality is top-notch&lt;/li&gt;
+&lt;li&gt;Great for precision drawing and use with instruments such as straight-edges&lt;/li&gt;
+&lt;li&gt;Long-lasting, both in ink quantity and in tip durability&lt;/li&gt;
+&lt;li&gt;Very popular with many artists, engineers, architects, and the like&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bulkier and thicker&lt;/li&gt;
+&lt;li&gt;More expensive, though not much&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ll be more annoyed when you lose one of these&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sakura also makes tons of other kinds of pens I also think are suitable for note-taking, such as the &lt;a href=&#34;http://www.amazon.com/Sakura-34281-Microperm-Blister-Ultra-Fine/dp/B003IG9LCQ/?tag=xaprb-20&#34;&gt;Microperm&lt;/a&gt;. Many of these items will be available at your local office supply or craft supply store. Just don&amp;rsquo;t go in there with too much time to spare. Who knows what you&amp;rsquo;ll end up buying.&lt;/p&gt;
+
+&lt;h3 id=&#34;staedtler-pigment-liner&#34;&gt;Staedtler Pigment Liner&lt;/h3&gt;
+
+&lt;p&gt;These premium liners are made in Germany and I love them. They come in various sets of different widths, with their own plastic case. They are definitely designed for people who are serious about pens for precision work. They&amp;rsquo;re quite similar in form factor to the Sakuras. I&amp;rsquo;m not sure which is better quality. I have a &lt;a href=&#34;http://www.amazon.com/gp/product/B004L87XRA/?tag=xaprb-20&#34;&gt;set of various widths in black&lt;/a&gt; and I don&amp;rsquo;t think I&amp;rsquo;ll end up using some of the thicker and thinner widths, so it might be more economical to buy uni-size sets of the Sakura pens next time. If there is a next time&amp;mdash;these pens have a reputation for lasting forever.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/03/staedtler-pigment-liner.jpg&#34; alt=&#34;Staedtler Pigment Liner&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Staedtler also makes a related model, the &lt;a href=&#34;http://www.amazon.com/Triplus-Fineliner-Pens-Metal-Assorted/dp/B0007OEE7E/?tag=xaprb-20&#34;&gt;Triplus Fineliner&lt;/a&gt; pens, which I haven&amp;rsquo;t tried yet, but they look really nice.&lt;/p&gt;
+
+&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Amazing pens that make you feel like more of an artist/engineer just by holding them&lt;/li&gt;
+&lt;li&gt;High quality, highly durable, permanent ink&lt;/li&gt;
+&lt;li&gt;Resist drying out if you forget to cap them&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You&amp;rsquo;ll be so sad if you forget one in the coffee shop&lt;/li&gt;
+&lt;li&gt;Sets aren&amp;rsquo;t as flexibly configured, so if you don&amp;rsquo;t want the full variety of sizes, you might be buying pens you won&amp;rsquo;t use&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;things-to-do-with-your-pens&#34;&gt;Things To Do With Your Pens&lt;/h3&gt;
+
+&lt;p&gt;Once you&amp;rsquo;ve picked up a pen like one of the above, you may be overcome with an
+irrational desire to do something with it, such as:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Practice Zentangling (have a &lt;a href=&#34;http://www.amazon.com/Sakura-50011-11-Piece-Zentangle-Clamshell/dp/B00794AHLC/?tag=xaprb-20&#34;&gt;kit&lt;/a&gt; maybe?)&lt;/li&gt;
+&lt;li&gt;Study Spencerian penmanship&lt;/li&gt;
+&lt;li&gt;Draw something in the style of Art Deco blended with steampunk&lt;/li&gt;
+&lt;li&gt;Keep a diary&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+
+&lt;p&gt;I still have a lot of the Le Pen pens hanging around, because I bought a few large boxes of them (one for the office, one for home, which my wife has been dipping into as well; there&amp;rsquo;s another +1 for Le Pen). I think I&amp;rsquo;ll be using these for a while. I usually have one in my pocket, sometimes two (!!), and several in my bag. They&amp;rsquo;re not expensive and they write nicely. On the other hand I don&amp;rsquo;t feel as special writing with them.&lt;/p&gt;
+
+&lt;p&gt;I love the Sakura and Staedtler pens.&lt;/p&gt;
+
+&lt;p&gt;Really, I love all the pens I&amp;rsquo;ve written about here.&lt;/p&gt;
+
+&lt;p&gt;Great places to buy pens, in addition to the Amazon.com links embedded above, include&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jetpens.com/&#34;&gt;JetPens&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.shopwritersbloc.com/&#34;&gt;Writers Bloc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Your local craft supplies or office supply store&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Write! Write more! It&amp;rsquo;s therapeutic. And don&amp;rsquo;t forget to &lt;a href=&#34;https://www.xaprb.com/blog/2013/07/10/ultimate-notebook-and-journal-face-off/&#34;&gt;choose an amazing notebook to write in&lt;/a&gt;.&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>Respectful Introductions and Recommendations</title>
+          <link>https://www.xaprb.com/blog/2014/02/23/respectful-introductions-recommendations/</link>
+          <pubDate>Sun, 23 Feb 2014 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2014/02/23/respectful-introductions-recommendations/</guid>
+          <description>&lt;p&gt;In the last few years of my career, I&amp;rsquo;ve increasingly been involved in meeting
+people. This often involves requests or offers for recommendations,
+introductions, and so forth.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve learned to be very careful about making or accepting such offers or
+requests, and I&amp;rsquo;d like to share my current thoughts about that with you, because
+a lot of trouble can come of a seemingly innocent request or offer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/02/elephant.jpg&#34; alt=&#34;Elephant&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;the-stakes-are-high&#34;&gt;The Stakes Are High&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Martha, that&amp;rsquo;s so great that you are starting a business in the diabetes care
+industry! You should really meet my friend Jack. He could be extremely helpful
+to you, and I am sure he would appreciate knowing about your startup.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Does that sound so dangerous? Believe me, it is. A lot is on the line for you,
+Martha, and Jack. Consider:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How well do you know Martha? What if you&amp;rsquo;re wrong about her business? If you
+introduce her to Jack, things might go wrong. They could turn out to be
+competitors. Or perhaps Martha is doing something that Jack thinks is
+unethical or is the wrong way to treat diabetes.&lt;/li&gt;
+&lt;li&gt;How well do you know Jack? Is he really going to be helpful to Martha? Does he
+want to be? Does he have time to spend with her?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Factors such as these mean that you are putting your relationship with Jack at
+risk. You may wear out your welcome and Jack may not want to be your friend
+anymore.&lt;/p&gt;
+
+&lt;p&gt;You are also risking your relationship with Martha. It sounds like this is a new
+relationship, so you&amp;rsquo;re on tenuous ground here; the risk of a misstep is high.
+If it&amp;rsquo;s more established, then you may be at lower risk, but the damage to you is
+potentially higher.&lt;/p&gt;
+
+&lt;p&gt;You are, finally, putting Martha and Jack at risk in various ways. You&amp;rsquo;re
+imposing on Jack&amp;rsquo;s time and potentially risking his reputation, and ditto for
+Martha.&lt;/p&gt;
+
+&lt;p&gt;A seemingly innocent offer to help is actually writing a metaphorical check
+against the Relationship Banking Account you have with Martha and Jack, and
+asking them to extend credit to each other as well. Since they don&amp;rsquo;t have a
+Relationship Bank Account with each other, the credit they&amp;rsquo;ll extend to each
+other comes out of &lt;em&gt;your&lt;/em&gt; accounts with them. If it&amp;rsquo;s not a productive match,
+then that withdrawal becomes a bounced check.&lt;/p&gt;
+
+&lt;p&gt;In my experiences over the last year or so, in particular, I&amp;rsquo;ve been introduced
+to a lot of people with management experience, a desire to find companies to
+invest in, and so on. Most of the time, courtesy obliges me to have a phone call
+or meet them for a meal or similar. Very few of these meetings have been truly
+helpful to either of us. I&amp;rsquo;m not saying anyone wasted my time, but I&amp;rsquo;ve ended up
+talking to dozens of people and the only outcomes have been pleasant
+conversations.&lt;/p&gt;
+
+&lt;h3 id=&#34;offering-versus-asking&#34;&gt;Offering Versus Asking&lt;/h3&gt;
+
+&lt;p&gt;The above scenario is when you &lt;em&gt;offer&lt;/em&gt; a favor. You can see how much is at risk
+in that scenario.  Consider how much more is at risk when you &lt;em&gt;ask&lt;/em&gt; for a favor,
+such as an introduction. You are asking your friend to broker a meeting with
+someone from whom you presumably &lt;em&gt;also&lt;/em&gt; want to ask some favor. &amp;ldquo;Do me a favor,
+would you, and ask your friend to do you a favor so I can ask him to do me a
+favor?&amp;rdquo; It should be obvious how much credit you&amp;rsquo;re asking everyone to extend
+everyone else. You need to treat this with great care, because again if things
+don&amp;rsquo;t work out, you are not the only one who can get hurt.&lt;/p&gt;
+
+&lt;p&gt;Likewise, if you&amp;rsquo;re the one who&amp;rsquo;s being asked for an introduction, consider the
+consequences. If I said yes every time someone asked me to introduce them to a
+friend of mine, soon I wouldn&amp;rsquo;t have any friends. I need to know all of the
+people well and be pretty certain that there will be a positive outcome for all
+of them and myself.&lt;/p&gt;
+
+&lt;p&gt;This often means that I might need to check with my friend and see if they&amp;rsquo;d
+like to meet. Or, instead of putting them in touch with each other directly, I
+might just send the asker&amp;rsquo;s contact information on with a brief note. Or if I
+don&amp;rsquo;t have enough relationship built up with the person who&amp;rsquo;s asking the favor,
+I might need to explain that to them. This is certainly a more positive way to
+build my relationship with them in the future.&lt;/p&gt;
+
+&lt;p&gt;In general, you need to have &lt;em&gt;earned&lt;/em&gt; the favor with the person from whom you&amp;rsquo;re
+asking it. Otherwise you risk ending up with a negative balance in your
+Relationship Bank Account.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/02/boardroom.jpg&#34; alt=&#34;Boardroom&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now I&amp;rsquo;m going to share a few examples of when things have gone wrong, as sort of case
+studies. These are all real stories, and names have been slightly abbreviated
+although sometimes the parties don&amp;rsquo;t deserve protection.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-pushy-investor&#34;&gt;The Pushy Investor&lt;/h3&gt;
+
+&lt;p&gt;It is true that &amp;ldquo;ask and you shall receive.&amp;rdquo; If you don&amp;rsquo;t ask, nothing happens.
+But if all you do is ask, you end up &lt;em&gt;persona non grata&lt;/em&gt; pretty fast.&lt;/p&gt;
+
+&lt;p&gt;In 2013 Kyle (my co-founder) and I were fundraising from venture capitalists. A
+particular investor, Max G, listened to our pitch and said he&amp;rsquo;d like to follow
+up on it by calling our advisors, one of whom is at a large company. The next
+thing we heard was this email from the advisor:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Phone call just ended. I think he was more interested in figuring out what
+technologies my employer is interested in which wasn&amp;rsquo;t the purpose for the call.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;That never went any further as far as fundraising/investment went, but not too
+long after that I got an email from Max G:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Subject: Quick Ask&lt;/p&gt;
+
+&lt;p&gt;Baron,&lt;/p&gt;
+
+&lt;p&gt;One of our fastest growing software companies is looking for a VP for
+training/educational services. Who are the rock stars in the open source world
+that you can recommend? Are you at liberty to tell me who the best from [&amp;hellip;]
+is? I can keep my source confidential.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Translation: he&amp;rsquo;s asking me to help him poach from someone I respect highly.
+Unfortunately, &lt;strong&gt;I did not think of it that way at the time.&lt;/strong&gt; My first thought
+was that &lt;a href=&#34;https://www.xaprb.com/blog/2013/03/12/playing-matchmaker-for-job-seekers-and-recruiters/&#34;&gt;I could help a friend get a dream job&lt;/a&gt;, which is something I have
+done several times in the past. So I responded. Not in a way that I feel badly
+about now, but still, I wouldn&amp;rsquo;t do it again. (How much would you bet that he
+wrote an email that started out, &amp;ldquo;Baron said that you and I should talk&amp;hellip;&amp;rdquo; ?)&lt;/p&gt;
+
+&lt;p&gt;Radio silence for a while.&lt;/p&gt;
+
+&lt;p&gt;Then, another email from Max G:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Subject: Company you should look at&lt;/p&gt;
+
+&lt;p&gt;[investor] and [name-drop] recently backed a high-profile entrepreneur
+who most recently [&amp;hellip;]&lt;/p&gt;
+
+&lt;p&gt;It is super early (pre-product), but we’re eager to connect with some of the
+best people in demand gen to run the concept by. [&amp;hellip;]’s name came up at
+[&amp;hellip;]. Could you run this by [&amp;hellip;] to see if he’s open for an intro? Would
+love to make the connection with him.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I never replied. Max G already had a negative account balance with me and I
+never should have let it get that far.&lt;/p&gt;
+
+&lt;p&gt;Moral of this story is to be careful when someone asks you for a favor, lest you
+end up granting it and then wishing you hadn&amp;rsquo;t, as I did.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-veiled-sales-request&#34;&gt;The Veiled Sales Request&lt;/h3&gt;
+
+&lt;p&gt;I got a connection request on LinkedIn from someone named Paul S, whose request
+said:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We are a startup having developed a reactive programming based backend
+service [database-specific details followed].
+We are interested in your feedback on this and some new products we
+are working on. Can we please set up a time on Webex for next week.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I have often enjoyed giving feedback on products and their marketing position,
+both to companies developing the products, friends trying to figure out what
+products they need, investors doing diligence, etc. This sounded almost like
+that, but something made an alarm bell go off. I responded:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Can you be more specific what kind of feedback you&amp;rsquo;re looking for? My
+expertise is fairly narrow.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The reply from Paul S:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Our target market is database developer and architects and from your profile
+it looks like you have lots of experience there. We are keen to get your
+feedback on the usability of our product for these audience and the language
+we ought to use to reach them. Also we are working on a new product and keen
+to get your feedback on that.&lt;/p&gt;
+
+&lt;p&gt;Hope that helps and you can spare 30-45 minutes and see what we can show you and
+give us some feedback.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The guy didn&amp;rsquo;t even have the decency to comply with my request and be honest
+that he was going to give me a sales pitch. I disconnected from him on LinkedIn.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-shotgun-blast&#34;&gt;The Shotgun Blast&lt;/h3&gt;
+
+&lt;p&gt;Someone named Nick emailed me this through LinkedIn:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Could we please talk tomorrow, We started [&amp;hellip;] in EMEA and I would
+ appreciate a call?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The thing is, the company he mentioned is someone I have a long and good
+relationship with. So even though this request was out of the blue, there was no
+context or reason why I&amp;rsquo;d want to comply, I had no idea what he wanted, etc I
+was reluctant to just mark it as spam. If I ignored him, I would potentially be
+offering some offense or lack of grace to that company and my relationships
+there, however slight, even if nobody could really blame me for declining.&lt;/p&gt;
+
+&lt;p&gt;I opted to write back:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Happy to talk, but I&amp;rsquo;d like to know the topic first.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Nick responded that he was just looking to get to know me, and later in his
+message mentioned that he is looking around for a job in management and sales.
+I replied that we are too early for that. But I&amp;rsquo;d never hire someone with such
+poor communications skills for a job like that anyway.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-request-to-promote-to-my-friends&#34;&gt;The Request To Promote To My Friends&lt;/h3&gt;
+
+&lt;p&gt;We use a company called Intercom to embed a contact widget in our app. I haven&amp;rsquo;t
+really been all that thrilled with the product; it&amp;rsquo;s not bad, but it&amp;rsquo;s not
+amazing. This is relevant, because while I was asking them to fix bugs for me,
+they implemented a new feature instead:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2014/02/intercom-asking-for-recommendation.png&#34; alt=&#34;Intercom&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Intercom definitely had not earned my recommendation. What was more irritating,
+and continues to be, is that &lt;em&gt;the feature itself is buggy&lt;/em&gt;. I had to email them
+and ask how to disable it, because it kept showing on every page load. After
+following their instructions, it continues to reappear every now and then.&lt;/p&gt;
+
+&lt;p&gt;They are being very foolish by continuing to show me this request. It&amp;rsquo;s pushed
+me more towards the point of leaving them and going to a competitor.&lt;/p&gt;
+
+&lt;p&gt;The moral of this story is that you had better earn the recommendation you ask
+for.&lt;/p&gt;
+
+&lt;h3 id=&#34;requests-for-my-address-book&#34;&gt;Requests For My Address Book&lt;/h3&gt;
+
+&lt;p&gt;Once upon a time, I was looking to add my existing network to my LinkedIn
+account. I thought, sure, I&amp;rsquo;ll give them my Gmail login, why not? I&amp;rsquo;ll just
+revoke it and change my password right afterwards. No harm there, right?&lt;/p&gt;
+
+&lt;p&gt;Then I learned what they did with that: &lt;a href=&#34;http://gigaom.com/2013/09/21/linkedin-is-breaking-into-user-emails-spamming-contacts-lawsuit/&#34;&gt;LinkedIn is &amp;ldquo;breaking into&amp;rdquo; user
+emails, spamming contacts – lawsuit&lt;/a&gt;. And even after I deleted all of the
+imported contacts from my account, I know they still have them, because they
+continue to show me &amp;ldquo;connection recommendations&amp;rdquo; for people who don&amp;rsquo;t have
+LinkedIn accounts and whose names and emails are distinctively the same as the
+information from my address book.&lt;/p&gt;
+
+&lt;p&gt;I will never again do something like this. I will never again install a LinkedIn
+app on my phone (because it requires access to my contact list). I do not trust
+LinkedIn. It is a vital tool for my professional work and career, but still,
+I&amp;rsquo;ve come close to deleting my account out of disgust and anger.&lt;/p&gt;
+
+&lt;p&gt;I similarly distrust many other services that have anything to gain from getting
+access to my contact list, and that keeps me from installing a lot of their apps
+on my phone.&lt;/p&gt;
+
+&lt;p&gt;Moral of the story: yuck.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-favor-followed-by-an-awkward-moment&#34;&gt;The Favor Followed By An Awkward Moment&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;ll end with a story where I was in the wrong.&lt;/p&gt;
+
+&lt;p&gt;While Kyle and I were fundraising I asked someone who had been very helpful to
+me in the past for introductions to a couple of top-tier investors. This person
+knows my work very well and has great stature in the industry. He could make a
+strong representation that we were interesting to investors.  His introductions
+were very helpful.&lt;/p&gt;
+
+&lt;p&gt;Later I hired one of his employees &amp;ndash; someone who lived practically next door to
+me, whose wife had a close relationship with my wife.  The last thing I wanted
+to do was burn any bridges for him; what if he got a better counter-offer, or
+decided at the last minute not to join? So although I normally would have said
+something to his boss at some safe point, I opted to stay completely out of it.&lt;/p&gt;
+
+&lt;p&gt;I then got an email from his boss, to the effect of, &amp;ldquo;I don&amp;rsquo;t mind that you
+hired my employee.  But after all I&amp;rsquo;ve done to help you, I think I deserved the
+courtesy to hear about it from you first.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;He was right, and I learned a valuable lesson from that. This was a delicate
+situation, but I should have gotten advice on it. In hindsight I wish I&amp;rsquo;d waited
+for the all-clear from the new employee and given this person a call as soon as
+the new employee said it was OK.&lt;/p&gt;
+
+&lt;p&gt;Moral? Well&amp;hellip; I&amp;rsquo;m still sad about this one. The moral is sometimes you can&amp;rsquo;t
+put Humpty Dumpty back together again.&lt;/p&gt;
+
+&lt;h3 id=&#34;photo-credits&#34;&gt;Photo Credits&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flickr.com/photos/adriensifre/8006712599/&#34;&gt;http://www.flickr.com/photos/adriensifre/8006712599/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flickr.com/photos/ericphoto2/8865468071/&#34;&gt;http://www.flickr.com/photos/ericphoto2/8865468071/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+        </item>
+    
+        <item>
+          <title>Early-access books: a double-edged sword</title>
+          <link>https://www.xaprb.com/blog/2013/12/26/early-access-books-a-double-edged-sword/</link>
+          <pubDate>Thu, 26 Dec 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/12/26/early-access-books-a-double-edged-sword/</guid>
+          <description>&lt;p&gt;Many technical publishers offer some kind of &amp;ldquo;early access&amp;rdquo; to unfinished versions of books. Manning has &lt;a href=&#34;http://www.manning.com/about/meap.html&#34;&gt;MEAP&lt;/a&gt;, for example, and there&amp;rsquo;s even &lt;a href=&#34;https://leanpub.com/&#34;&gt;LeanPub&lt;/a&gt; which is centered on this idea. I&amp;rsquo;m not a fan of buying these, in most circumstances. Why not?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Many authors never finish their books. A prominent example: Nathan Marz&amp;rsquo;s book on &lt;a href=&#34;http://www.manning.com/marz/&#34;&gt;Big Data&lt;/a&gt; was supposed to be published in 2012; the date has been pushed back to March 2014 now. At least a few of my friends have told me their feelings about paying for this book and &amp;ldquo;never&amp;rdquo; getting it. I&amp;rsquo;m not blaming Marz, and I don&amp;rsquo;t want this to be about authors. I&amp;rsquo;m just saying many books are never finished (and as an author, I know why!), and readers get irritated about this.&lt;/li&gt;
+&lt;li&gt;When the book is unfinished, it&amp;rsquo;s often of much less value. The whole is greater than the sum of the parts.&lt;/li&gt;
+&lt;li&gt;When the book is finished, you have to re-read it, which is a lot of wasted work, and figuring out what&amp;rsquo;s changed from versions you&amp;rsquo;ve already read is a big exercise too. To some extent, editions create a similar problem[1]. I think that successive editions of books are less likely to be bought and really read, unless there&amp;rsquo;s a clear signal that both the subject and the book have changed greatly. Unfortunately, most technical books are outdated before they&amp;rsquo;re even in print. Editions are a necessary evil to keep up with the changes in industry and practice.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I know that O&amp;rsquo;Reilly has tried to figure out how to address this, too, and I sent an email to my editor along the lines of this blog post.&lt;/p&gt;
+
+&lt;p&gt;I know this is a very one-sided opinion. I had a lengthy email exchange with LeanPub, for example. I know they, and a lot of others including likely readers of this blog, see things very differently than I do.&lt;/p&gt;
+
+&lt;p&gt;Still, I don&amp;rsquo;t think anyone has a great solution to the combination of problems created by static books written about a changing world. But early-access to unfinished books has always seemed to me like compounding the problems, not resolving them.&lt;/p&gt;
+
+&lt;p&gt;[1] &lt;em&gt;Rant: The classic counter-example for editions is math and calculus textbooks, which can charitably be described as a boondoggle. Calculus hasn&amp;rsquo;t changed much for generations, either in theory or practice. Yet new editions of two leading textbooks are churned out every couple of years. They offer slightly prettier graphics or newer instructions for a newer edition of the TI-something calculator &amp;ndash; cosmetic differences. But mostly, they offer new homework sets, so students can&amp;rsquo;t buy and use the older editions, nor can they resell them for more than a small fraction of the purchase price. Oh, and because the homework is always changing, bugs in the homework problems are ever-present. It&amp;rsquo;s a complete ripoff. Fortunately, technical writers generally behave better than this. OK, rant over.&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Napkin math: How much waste does Celestial Seasonings save?</title>
+          <link>https://www.xaprb.com/blog/2013/12/22/napkin-math-how-much-waste-does-celestial-seasonings-save/</link>
+          <pubDate>Sun, 22 Dec 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/12/22/napkin-math-how-much-waste-does-celestial-seasonings-save/</guid>
+          <description>&lt;p&gt;I was idly reading the Celestial Seasonings box today while I made tea. Here&amp;rsquo;s the end flap:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/12/tea-bag.png&#34; alt=&#34;tea-bag&#34; width=&#34;424&#34; height=&#34;410&#34; class=&#34;aligncenter size-full wp-image-3359&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It seemed hard to believe that they really save 3.5 million pounds of waste just by not including that extra packaging, so I decided to do some back-of-the-napkin math.&lt;/p&gt;
+
+&lt;p&gt;How much paper is in each package of non-Celestial-Seasonings tea? The little bag is about 2 inches by 2 inches, it&amp;rsquo;s two-sided, and there&amp;rsquo;s a tag, staple, and string. Call it 10 square inches.&lt;/p&gt;
+
+&lt;p&gt;How heavy is the paper? It feels about the same weight as normal copy paper. Amazon.com lists a box of 5000 sheets of standard letter-sized paper at a shipping weight of 50 pounds (including the cardboard box, but we&amp;rsquo;ll ignore that). Pretend that each sheet (8.5 * 11 inches = 93.5 square inches) is about 100 square inches. That&amp;rsquo;s .0001 pounds per square inch.&lt;/p&gt;
+
+&lt;p&gt;How much tea does Celestial Seasonings sell every year? Wikipedia says their sales in the US are over $100M, and they are a subsidiary of Hain Celestial, which has a lot of other large brands. Hain&amp;rsquo;s sales last year were just under $500M. $100M is a good enough ballpark number. Each box of 20 tea bags sells at about $3.20 on their website, and I think it&amp;rsquo;s cheaper at my grocery store. Call it $3.00 per box, so we&amp;rsquo;ll estimate the volume of tea bags on the high side (to make up for the low-side estimate caused by pretending there&amp;rsquo;s 100 square inches per sheet of paper). That means they sell about 33.3M boxes, or 667M bags, of tea each year.&lt;/p&gt;
+
+&lt;p&gt;If they put bags, tags, and strings on all of them, I estimated 10 square inches of paper per bag, so at .0001 pound per square inch that&amp;rsquo;s .001 pound of extra paper and stuff per bag. That means they&amp;rsquo;d use about 667 thousand pounds of paper to bag up all that tea.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s quite a difference from the 3.5 million pounds of waste they claim they save. Did I do the math wrong or assume something wrong?&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Freeing some Velocity videos</title>
+          <link>https://www.xaprb.com/blog/2013/11/09/freeing-some-velocity-videos/</link>
+          <pubDate>Sat, 09 Nov 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/11/09/freeing-some-velocity-videos/</guid>
+          <description>&lt;p&gt;Following my &lt;a href=&#34;https://www.xaprb.com/blog/2013/10/24/should-velocity-videos-be-free/&#34; title=&#34;Should Velocity videos be free?&#34;&gt;previous post on Velocity videos&lt;/a&gt;, I had some private email conversations with good folks at O&amp;rsquo;Reilly, and a really nice in-person exchange with a top-level person as well. I was surprised to hear them encourage me to publish my videos online freely!&lt;/p&gt;
+
+&lt;p&gt;I still believe that nothing substitutes for the experience of attending an O&amp;rsquo;Reilly conference in-person, but I&amp;rsquo;ll also be the first to admit that my talks are usually more conceptual and academic than practical, and designed to start a conversation rather than to tell you the Truth According To Baron. Thus, I think they&amp;rsquo;re worth sharing more widely.&lt;/p&gt;
+
+&lt;p&gt;O&amp;rsquo;Reilly alleviated my concerns about &amp;ldquo;killing the golden goose,&amp;rdquo; but I like one person&amp;rsquo;s take on the cost of O&amp;rsquo;Reilly&amp;rsquo;s conferences. &amp;ldquo;You think education is expensive? Try ignorance.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll post some of my past talks soon for your enjoyment.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Get out of your comfort zone</title>
+          <link>https://www.xaprb.com/blog/2013/10/25/get-out-of-your-comfort-zone/</link>
+          <pubDate>Fri, 25 Oct 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/10/25/get-out-of-your-comfort-zone/</guid>
+          <description>&lt;p&gt;One of the most valuable life skills you can ever develop is to overcome the urge to stay within your comfort zone. If you stay where you&amp;rsquo;re familiar and feel safe, two things might happen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You might find out that it&amp;rsquo;s not safe after all. Bad things can happen where you feel at home just as well as out of the familar.&lt;/li&gt;
+&lt;li&gt;Nothing good will happen. You might skate through life without even living it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Last week at Velocity I responded to an invitation from O&amp;rsquo;Reilly to join a lunch with Per Scholas. I didn&amp;rsquo;t know much about Per Scholas, but I&amp;rsquo;ve learned to say yes to invitations from O&amp;rsquo;Reilly. The night before, I watched an inspiring &lt;a href=&#34;http://www.youtube.com/watch?v=t0qcDwDPQ-Q&#34;&gt;talk&lt;/a&gt; during Ignite, from the founder of Per Scholas.&lt;/p&gt;
+
+&lt;p&gt;Impressed, I began to really look forward to spending some time with the Per Scholas folks the next day at lunch. The idea was pretty simple: people who were working through the Per Scholas training would pair up one-for-one (as I understand it) with people like myself &amp;ndash; technologists, entrepreneurs, hackers, makers, people with perhaps something to share.&lt;/p&gt;
+
+&lt;p&gt;I sat down at a table in the designated area, leaving lots of room beside me for people to join. None of the Per Scholas students was there yet. I chatted idly with two other people at the table. Soon one of the Per Scholas staff members sat down with us. I asked her a series of questions for ten minutes or so. She explained that she helped people with basic life and work skills, coaching and mentoring even after they leave the intensive study program.&lt;/p&gt;
+
+&lt;p&gt;Still no students had joined us. Suddenly I looked over at another table and saw that it had filled entirely with Per Scholas students, shoulder to shoulder.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Basic life skill number 1 is to build your network and learn from unfamiliar people,&amp;rdquo; I remarked to the staffer next to me. &amp;ldquo;They are missing an opportunity to mingle with us.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Yes,&amp;rdquo; she answered. &amp;ldquo;They are.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;And then you could (metaphorically) hear the crickets chirping. I finished my lunch and left.&lt;/p&gt;
+
+&lt;p&gt;I won&amp;rsquo;t brag about myself, but I can say that the other people at that table were damn sure worth getting to know. As for me, I considered it a complete waste of my time; I&amp;rsquo;d chosen it over a conversation I really wanted to attend elsewhere. There&amp;rsquo;s another blog post in here somewhere &amp;ndash; this isn&amp;rsquo;t the first time I&amp;rsquo;ve had this kind of experience.&lt;/p&gt;
+
+&lt;p&gt;Per Scholas students aren&amp;rsquo;t paying anything (financially) for their training. Are they getting what they&amp;rsquo;re paying for? You bet they are. Like all of us, they will get out of it exactly what they put into it.&lt;/p&gt;
+
+&lt;p&gt;Get out of your comfort zone. If you don&amp;rsquo;t, the worst thing in the world happens to you: &lt;em&gt;nothing&lt;/em&gt;.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Is soliciting a review commercial or transactional?</title>
+          <link>https://www.xaprb.com/blog/2013/10/21/is-soliciting-a-review-commercial-or-transactional/</link>
+          <pubDate>Mon, 21 Oct 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/10/21/is-soliciting-a-review-commercial-or-transactional/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ve booked rooms through hotels.com a few times, and they always send me followup emails asking me to rate the stay and so forth. In my view this is commercial/marketing email, not transactional, and I should be able to opt out of it. I don&amp;rsquo;t want to get the emails and I don&amp;rsquo;t want to rate the hotels, in part because I don&amp;rsquo;t believe in the validity of such ratings/reviews (&lt;a href=&#34;http://www.forbes.com/sites/cherylsnappconner/2013/05/09/the-dark-side-of-reputation-management-how-it-affects-your-business/&#34;&gt;reference&lt;/a&gt;, &lt;a href=&#34;http://www.edmunds.com/about/press/edmundscom-reaches-settlement-with-company-accused-of-submitting-fraudulent-car-dealer-ratings-and-reviews.html&#34;&gt;reference&lt;/a&gt;). But there&amp;rsquo;s no unsubscribe link at the bottom of the email, and there&amp;rsquo;s no setting in their website to opt out of it.&lt;/p&gt;
+
+&lt;p&gt;So I sent them a request:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Why can&amp;rsquo;t I opt out of your leave-a-review emails after staying at a hotel? I am sure this is a gray area, but in my mind it&amp;rsquo;s a marketing email, not a transactional email, because it&amp;rsquo;s not required for you to fulfill an order or similar. Please include an unsubscribe link in these emails and please include a setting in the account preferences as well.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Their response:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Thank you for contacting Hotels.com Customer Support regarding your request to unsubscribed from the leave-a-review emails after a completed stay.
+We are sorry to hear about the inconvenience.
+We regret to inform you that we were unable to unsubscribe your email address from guest reviews emails. Please be advised that we are requesting for reviews for us to have a useful source of feedback for a property to gauge performance in key areas such as service, cleanliness, and overall guest satisfaction.
+We appreciate your business and we look forward to assisting you in the future.
+Arlene T.
+Hotels.com Customer Support Specialist&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I think Hotels.com needs to take an objective look at what they&amp;rsquo;re doing. What&amp;rsquo;s the real outcome of their policy? I believe they&amp;rsquo;re working at odds with their stated intentions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I&amp;rsquo;m pretty sure one could quickly find lots of studies and statistics to show that the reviews they receive will be badly skewed towards the negative &amp;ndash; probably so skewed that any statistician would reject them out of hand.&lt;/li&gt;
+&lt;li&gt;If people don&amp;rsquo;t want to leave reviews, they won&amp;rsquo;t leave reviews, period. No matter how many emails you send them. I can delete the email; I&amp;rsquo;m not forced to act on it.&lt;/li&gt;
+&lt;li&gt;I resent having to delete an email I don&amp;rsquo;t want to get, and emails like this should be optional. It isn&amp;rsquo;t as if allowing an opt-out would decrease the chance of getting feedback. People who like to leave reviews will not opt-out. Anyone who opts out isn&amp;rsquo;t going to leave feedback anyway.&lt;/li&gt;
+&lt;li&gt;They&amp;rsquo;re pissing off at least some customers (okay, at least one). Curmudgeonly people like myself are in fact likely to stop using Hotels.com altogether, thus reducing the possible audience from which to get feedback.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I really think this topic is common sense, but if common sense is in short supply, perhaps some valuable lessons about how to run a business and how to provide customer support can be gleaned upon deep inspection. I won&amp;rsquo;t even rant about the fake apology and fake appreciation of my business.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m going to reply to them and send the URL of this blog post.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>More Notebooks and Journals!</title>
+          <link>https://www.xaprb.com/blog/2013/10/13/more-notebooks-and-journals/</link>
+          <pubDate>Sun, 13 Oct 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/10/13/more-notebooks-and-journals/</guid>
+          <description>
+
+&lt;p&gt;Something interesting happened after I published my &lt;a href=&#34;https://www.xaprb.com/blog/2013/07/10/ultimate-notebook-and-journal-face-off/&#34; title=&#34;Ultimate notebook and journal face-off&#34;&gt;ultimate notebook and journal face-off&lt;/a&gt; blog post a couple of months ago. I received an email from a company called &lt;a href=&#34;http://www.grandluxe.com/online-store.html&#34;&gt;Grandluxe&lt;/a&gt;, asking if I&amp;rsquo;d like to receive some stationery products in hopes that if I liked them, I&amp;rsquo;d write a review on them. I had never heard of them before, but they&amp;rsquo;ve been making paper products for 68 years, and apparently are trying to break out of the Asian market into international territory.&lt;/p&gt;
+
+&lt;p&gt;I agreed, and they sent me quite a large box of notebooks. They also sent me their full product line catalog. So you could say that, as a notebook nerd, I&amp;rsquo;m in heaven!&lt;/p&gt;
+
+&lt;p&gt;I really like the products. (I&amp;rsquo;ve already disclosed my bias. But I&amp;rsquo;ll do it again. I was given these free of charge.)&lt;/p&gt;
+
+&lt;h3 id=&#34;monologue-ruled-notebook&#34;&gt;Monologue Ruled Notebook&lt;/h3&gt;
+
+&lt;p&gt;They sent me an entire set of the &lt;a href=&#34;http://www.grandluxe.com/index.php/online-store/monologue-ruled-note-book-a5.html&#34;&gt;Monologue&lt;/a&gt; ruled notebook in A5 size, assorted attractive colors. It is very similar to a Moleskine-class notebook. It has a slightly softer and more &amp;ldquo;grippy&amp;rdquo; cover, but otherwise there&amp;rsquo;s little difference. I had enough to give one to my wife, to each of my coworkers, and keep the prettiest color for myself.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/10/ruled-note-book.png&#34; alt=&#34;ruled-note-book&#34; width=&#34;587&#34; height=&#34;279&#34; class=&#34;aligncenter size-full wp-image-3277&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;mythology-notebook&#34;&gt;Mythology Notebook&lt;/h3&gt;
+
+&lt;p&gt;I received three small (A6) and one A5 in this product line. The paper is a little smoother and the edges are gilded in gold and silver colors. The covers are charcoal black with silvery/goldish undertones. They are hard and stiff, not soft and flexible like the Monologue, and have a knurled or bumpy feel. The spine is embossed with the product name in gilding to match the edge of the sheets. The A5 has a pseudo-reptile-skin pattern on the binding. These would make a great gift or promotional item, because they look really sophisticated. Note that the colors in the image below are a little exaggerated; in reality the gold/silver tones are more subtle.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/10/mythology.png&#34; alt=&#34;mythology&#34; width=&#34;425&#34; height=&#34;425&#34; class=&#34;aligncenter size-full wp-image-3278&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This item doesn&amp;rsquo;t seem to be available on their online store yet, but you can find more details and images &lt;a href=&#34;http://www.grandluxe.com/notebooks-journals.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;monolette-notebook&#34;&gt;Monolette Notebook&lt;/h3&gt;
+
+&lt;p&gt;This is a slim notebook with a flexible cover (thick paper, not rigid at all) that comes in combination packs. Each pack has one ruled notebook and one blank notebook with perforated pages for easy tear-out.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/10/monolette.png&#34; alt=&#34;monolette&#34; width=&#34;600&#34; height=&#34;600&#34; class=&#34;aligncenter size-full wp-image-3279&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This item doesn&amp;rsquo;t seem to be available on their online store yet, but you can find more details and images &lt;a href=&#34;http://www.grandluxe.com/notebooks-journals.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;bullet-journaling&#34;&gt;Bullet Journaling&lt;/h3&gt;
+
+&lt;p&gt;I recently stumbled on an interesting system of journaling / note-taking called &lt;a href=&#34;http://www.bulletjournal.com/&#34;&gt;Bullet Journal&lt;/a&gt;. Although it&amp;rsquo;s a little bit over-the-top in some ways, and sometimes feels like being told the obvious or told to follow a system that seems unlikely to hold together in the &amp;ldquo;real world,&amp;rdquo; it is fun to see that other people enjoy taking notes on paper as much as I do. Worth a read.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.bulletjournal.com/&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/10/bullet-journal-300x106.png&#34; alt=&#34;bullet-journal&#34; width=&#34;300&#34; height=&#34;106&#34; class=&#34;aligncenter size-medium wp-image-3281&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;There&amp;rsquo;s an embarrassment of riches to choose from when it comes to journals and notebooks, and my bookshelf is stockpiled with a couple of years&amp;rsquo; worth now that I&amp;rsquo;ve done this epic series. But in today&amp;rsquo;s digital world, can you ever get too much of good old paper and pen? Enjoy the simpler pleasures&amp;hellip; I hope this blog has helped with that a little bit.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Using encryption? You&#39;re suspicious</title>
+          <link>https://www.xaprb.com/blog/2013/08/01/using-encryption-youre-suspicious/</link>
+          <pubDate>Thu, 01 Aug 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/08/01/using-encryption-youre-suspicious/</guid>
+          <description>&lt;p&gt;Yesterday more details on the NSA&amp;rsquo;s secret and illegal monitoring activities were &lt;a href=&#34;http://www.theguardian.com/world/2013/jul/31/nsa-top-secret-program-online-data&#34;&gt;revealed&lt;/a&gt;. (Yes, the NSA revealed some things themselves, but as far as I can tell, that was only a conciliatory effort and didn&amp;rsquo;t actually reveal more details &amp;ndash; just more talk.)&lt;/p&gt;
+
+&lt;p&gt;Remember my recent series of blog posts, where I claimed that privacy in today&amp;rsquo;s world is impossible without &lt;a href=&#34;https://www.xaprb.com/blog/2013/07/05/without-free-software-and-hardware-privacy-is-impossible/&#34; title=&#34;Without free software and hardware, privacy is impossible&#34;&gt;trustworthy hardware/software&lt;/a&gt;, privacy is impossible unless it&amp;rsquo;s &lt;a href=&#34;https://www.xaprb.com/blog/2013/07/06/privacy-is-impossible-unless-its-the-default/&#34; title=&#34;Privacy is impossible unless it’s the default&#34;&gt;default&lt;/a&gt;, and privacy is &lt;a href=&#34;https://www.xaprb.com/blog/2013/07/17/email-snooping-is-a-small-fraction-of-the-story/&#34; title=&#34;Email snooping is a small fraction of the story&#34;&gt;essentially unachievable&lt;/a&gt; because of the scope of the problem, and the way we&amp;rsquo;ve built our society and technologies?&lt;/p&gt;
+
+&lt;p&gt;I also said that those who use privacy, which is non-default, are making themselves targets for surveillance:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;But if you and I use this technology right now to encrypt our communications, we’ll actually make ourselves more interesting targets. That’s partially because we’d be among the few people doing so. Have you ever noticed that nothing draws attention like whispering in a public place? I don’t know what proportion of ordinary email between everyday people is encrypted, but if pressed, I’d guess it’s fewer than one email in 50,000.** That’s an extraordinarily strong signal to authorities looking for needles in the haystack of Internet activity**. I wouldn’t be surprised if the NSA has large-scale brute-force encryption-cracking clusters dedicated to forcibly decrypting the few encrypted emails that wend their way around the Internet.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Yesterday, yet another &lt;a href=&#34;http://www.theguardian.com/world/interactive/2013/jul/31/nsa-xkeyscore-program-full-presentation&#34;&gt;ugly NSA slideshow&lt;/a&gt; was made public. Take a look at slide 15:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.xaprb.com/media/2013/08/nsa-finding-targets.png&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/08/nsa-finding-targets-300x219.png&#34; alt=&#34;nsa-finding-targets&#34; width=&#34;300&#34; height=&#34;219&#34; class=&#34;aligncenter size-medium wp-image-3242&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Look at the following slides, too: they discuss decrypting people&amp;rsquo;s encrypted activities to inspect. Refer to the closing sentence of my quoted paragraph above. Read the full article, linked at the top of this blog post. The amount and specificity of surveillance being performed is stunning.&lt;/p&gt;
+
+&lt;p&gt;Am I psychic? No, this stuff is pretty obvious. As I said previously, it&amp;rsquo;s inevitable. Nothing is going to stop these agencies from doing this stuff. If it&amp;rsquo;s resisted strongly enough, they&amp;rsquo;ll just knuckle down and do it more and more secretly. They won&amp;rsquo;t stop doing it; they will just try to stop being caught in the act.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>The Ultimate Notebook</title>
+          <link>https://www.xaprb.com/blog/2013/07/10/ultimate-notebook-and-journal-face-off/</link>
+          <pubDate>Wed, 10 Jul 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/07/10/ultimate-notebook-and-journal-face-off/</guid>
+          <description>&lt;p&gt;If you&amp;rsquo;re like me, you spend so much time typing on a computer that a good notebook or journal is one of life&amp;rsquo;s finer pleasures. I&amp;rsquo;ve kept a diary of my personal life for close to 30 years now, and I have a shelf full of journals. I&amp;rsquo;ve found a great many that I enjoy writing in, and choosing a different one each time is part of the fun.&lt;/p&gt;
+
+&lt;p&gt;But thus far, my quest for a notepad has been unsatisfying. Many notepads have loved me, but I&amp;rsquo;m sorry to say their love has been unrequited. I&amp;rsquo;ve tried all the usual things: Moleskine, loose-leaf paper, binders, what have you. But I never found something that is practical, functional, a joy to write on, and a pleasure to look at and hold. I just can&amp;rsquo;t settle into a long-term relationship with my notebook, because I haven&amp;rsquo;t met The Right One yet.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/notebook.jpg&#34; alt=&#34;Notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;So, naturally, I decided to stage a giant contest amongst all the premium notebooks I could find by reading online reviews, searching the Internet, and visiting my local retailers. Read on, but I warn you, I&amp;rsquo;ve spent hundreds of dollars amassing a collection, and I&amp;rsquo;m not going to waste all that on a short blog post. And yes, there will be a winner at the end.&lt;/p&gt;
+
+&lt;p&gt;You might also be interested in my &lt;a href=&#34;https://www.xaprb.com/blog/2015/03/07/ultimate-pen-marker-face-off/&#34;&gt;review of the ultimate pen for note-taking&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/notepads.jpg&#34; alt=&#34;Notepads&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Before I review any of the notebooks, let me explain what I&amp;rsquo;m looking for.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-perfect-notebook&#34;&gt;The Perfect Notebook&lt;/h3&gt;
+
+&lt;p&gt;My quest for the Holy Grail of notebooks began innocently enough when I happened to read that &lt;a href=&#34;http://katemats.com/&#34;&gt;Kate Matsudaira&lt;/a&gt; is a notebook connoisseur and will only write on Semikolon Il Creativo notebooks with &lt;a href=&#34;http://www.amazon.com/gp/product/B004IMAQTG/?tag=xaprb-20&#34;&gt;Uchida Le Pen pens&lt;/a&gt;.  Intrigued, I included one of each in my next batch of &amp;ldquo;stuff&amp;rdquo; from Amazon.com. I immediately fell in love with the pens, but the notebook was much larger than I expected it to be&amp;mdash;far too large to be practical as I travel and carry it hither and yon.&lt;/p&gt;
+
+&lt;p&gt;So what do I want?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The size. It needs to be large enough to write on easily, leaving readable margins, without wasting a high percentage of the paper. It needs to be small enough to slip into a bag or hold in a hand with several other things; it should be neither bulky nor so small that it gets lost and slides to the bottom and gets all crumpled by other things.&lt;/li&gt;
+&lt;li&gt;The proportions. Too tall and skinny is bad; too short and wide is bad. Something fairly standard is best, like the usual A* paper proportions.&lt;/li&gt;
+&lt;li&gt;The thickness and number of pages. Enough to last a while. Not so many that it&amp;rsquo;s heavy or bulky in a messenger bag; not so many that if I lose it, a giant chunk of my life and professional notes is gone. There&amp;rsquo;s always some risk, but it needs to be balanced.&lt;/li&gt;
+&lt;li&gt;The type of cover. Rigid, thick covers waste space and add weight, as well as being difficult to pack in a carry-on bag. Something springy and thin, but substantial enough to help with writing, is best.&lt;/li&gt;
+&lt;li&gt;The binding. I write on both sides of the paper, and it needs to fold open easily and flat, be very durable, and not force me to write awkwardly when I&amp;rsquo;m writing in the center margin of the left-hand page. It should also not curl awkwardly when I&amp;rsquo;m near the first or the last page.&lt;/li&gt;
+&lt;li&gt;The closure. I&amp;rsquo;m not a big fan of elastic closures; they get in the way more than they help.&lt;/li&gt;
+&lt;li&gt;The paper quality. As I said, I write on both sides. It needs to resist bleed-through and be smooth and strong.&lt;/li&gt;
+&lt;li&gt;The ruling. I like ruled notebooks, but can do all right with blank. If there&amp;rsquo;s ruling, it needs to be pretty narrow. Nothing wastes more paper and annoys me more than too-wide ruling. Any ruling also shouldn&amp;rsquo;t force or encourage me to leave too much of a margin.&lt;/li&gt;
+&lt;li&gt;The index, table of contents, helper charts, page numbers, and so on. Some of these things are wonderful in moderation; a table of contents and page numbers, for example, are a delight. I can quickly index a notebook after using it, and it becomes immensely more useful for reference. Do I need 12 pages of conversion tables and timezone maps? Not really.&lt;/li&gt;
+&lt;li&gt;The bookmarks or page markers. I prefer a silken ribbon for journals, but for notebooks I actually prefer none; my favorite is &lt;a href=&#34;http://www.amazon.com/gp/product/1593593422/?tag=xaprb-20&#34;&gt;these magnetic owl page markers&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The design. This is the most subjective and intangible thing of all. The design needs to be professional, a little bit creative, and inspiring. It should make me feel like an artist as well as an engineer. If I may stereotype for a moment, the Germans perhaps err on the side of being too mechanical, the Swiss can sometimes feel as if everything is meant to be a coffee-table conversation piece, and the Americans can be deathly boring. I want something that makes me feel light and nimble, practical, yet &amp;hellip; a craftsman, somehow.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Is that really so much to ask?&lt;/p&gt;
+
+&lt;h3 id=&#34;the-categories&#34;&gt;The Categories&lt;/h3&gt;
+
+&lt;p&gt;After assessing a number of books, including some extras provided by my wonderful and resourceful wife, I&amp;rsquo;ve realized there are really three categories. Regardless of what a notebook or journal is designed for, in my mind it ends up in one of these, even if it&amp;rsquo;s supposed to be something else:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Journals. Journals tend to have a bit larger margins, may offer fold-over magnetic covers or other clasps, and are usually mid-sized. They often have beautiful designs on the covers, but are relatively plain inside. If notebooks were coffee, these would be a latte.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Moleskines and imitations. These come in several sizes but generally have elastic loop clasps, minimal features such as a single pocket inside the back cover, and are generally boring and middle-of-the-road in nearly every way. As coffee, these are a cup of Americano at best.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The exceptional notebooks. These vary more widely and have a lot of personality and special features. These are espressos, macchiatos, and cappuccinos.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And now, let&amp;rsquo;s get right down to brass tacks!&lt;/p&gt;
+
+&lt;h3 id=&#34;the-contenders&#34;&gt;The Contenders&lt;/h3&gt;
+
+&lt;p&gt;Allow me to repeat the photo from before:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/notepads.jpg&#34; alt=&#34;Notepads&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the left, and roughly in order of size, these are:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;An Italian leatherette journal by Markings&lt;/li&gt;
+&lt;li&gt;A Semikolon Il Creativo, large&lt;/li&gt;
+&lt;li&gt;A Quo Vadis Habana&lt;/li&gt;
+&lt;li&gt;An iPad for size perspective ;-)&lt;/li&gt;
+&lt;li&gt;A PaperBlanks journal&lt;/li&gt;
+&lt;li&gt;A Peter Pauper Press journal&lt;/li&gt;
+&lt;li&gt;Another PaperBlanks journal&lt;/li&gt;
+&lt;li&gt;A Mead Cambridge notebook&lt;/li&gt;
+&lt;li&gt;A deconstructed journal by Studio Oh!&lt;/li&gt;
+&lt;li&gt;A Whitelines Squared notebook&lt;/li&gt;
+&lt;li&gt;A Clairefontaine notebook&lt;/li&gt;
+&lt;li&gt;A Barnes &amp;amp; Noble journal refill&lt;/li&gt;
+&lt;li&gt;A Leuchtturm 1917 notebook&lt;/li&gt;
+&lt;li&gt;A Moleskine notebook&lt;/li&gt;
+&lt;li&gt;A Chameleon Like notebook&lt;/li&gt;
+&lt;li&gt;A Semikolon Il Creativo, small&lt;/li&gt;
+&lt;li&gt;A (small) Chameleon Like notebook&lt;/li&gt;
+&lt;li&gt;A teNues CoolNotes notebook&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ll notice some new additions to this post, at the end, which are not pictured above.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Whew! That&amp;rsquo;s a lot of reviewing to do. I&amp;rsquo;ll go through them [mostly] in order. I&amp;rsquo;ve uploaded hi-resolution photos; click on thumbnails to see the bigger picture. In some cases I&amp;rsquo;ve linked through to Amazon, when a product is available there. Some others I never buy online, or can&amp;rsquo;t find online, although you may be able to find them if you search. You can see more photos of the notebooks there. I&amp;rsquo;ve focused mostly on the inside of the books, but there are good photos online of the exterior too.&lt;/p&gt;
+
+&lt;h3 id=&#34;italian-leatherette-journal-by-markings&#34;&gt;Italian leatherette journal by Markings&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/markings-italian-leatherette.jpg&#34; alt=&#34;Italian leatherette journal by Markings&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a wonderful journal that I&amp;rsquo;m going to enjoy filling up. Though the design is understated, and I tend to like some eye candy on my journals, the cover is supple and has a suede feel, and there are enough pages to be a good journal. (Unlike my notebooks, I like a diary to last a good while.) The paper is smooth and heavy, the ruling and margins are nice, and overall it feels great.&lt;/p&gt;
+
+&lt;p&gt;As a notebook, I can&amp;rsquo;t really use it. It&amp;rsquo;s too large, too thick, and too heavy to carry around. The teacup in the photo is a bit oversized, so it is actually a bit larger than it looks.&lt;/p&gt;
+
+&lt;p&gt;192 pages, 10.25 x 7.5 x .75 inches. Rule width: .3125 inches. Bought at Target for $12.99.&lt;/p&gt;
+
+&lt;h3 id=&#34;semikolon-il-creativo-large&#34;&gt;Semikolon Il Creativo, large&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/semikolon-creativo-large.jpg&#34; alt=&#34;Semikolon Il Creativo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the notebook that started this whole quest. It&amp;rsquo;s perhaps the most &amp;ldquo;designed&amp;rdquo; of all of them, with an elaborate perpetual calendar on every page in German, French, and English. It also has several pages of table of contents and calendar overview at the front, and sheets of stickers and labels are included. I immediately wanted to label everything in sight. The notebook made me feel like putting my whole life in order, and I knew I&amp;rsquo;d feel great about it if I did.&lt;/p&gt;
+
+&lt;p&gt;The main problem is that it&amp;rsquo;s way too big for me to carry around.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/semikolon-il-creativo.jpg&#34; alt=&#34;Semikolon Il Creativo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I want something a lot slimmer, to start with. The cover is nice and flexible, and there are other nice features, but I can&amp;rsquo;t get past the bulk. I also have a gripe with the ruling, which is too wide. I&amp;rsquo;m forced to write way too spaced-out, or to write two lines per rule, which is annoying and cramped.&lt;/p&gt;
+
+&lt;p&gt;The paper is a bit coarse, almost ridged, and I am pretty sure that this texture is intentional. It should be great for pencils, but is not as good for the pens that I use.&lt;/p&gt;
+
+&lt;p&gt;This notebook is designed for notes, but I&amp;rsquo;ll use it as a journal. I wonder if I&amp;rsquo;ll write less about emotional things and dreams, and more about analytical things?&lt;/p&gt;
+
+&lt;p&gt;304 pages, 10 x 7.75 x 1.0 inches. Rule width: .375 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B005DVEUDO/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $14.97.&lt;/p&gt;
+
+&lt;h3 id=&#34;quo-vadis-habana&#34;&gt;Quo Vadis Habana&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/quo-vadis-habana.jpg&#34; alt=&#34;Quo Vadis Habana&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This notebook is a big step down in size and bulk from the previous two. It&amp;rsquo;s a much more practical size to carry around, and it has the best cover of all of them, in my opinion. The cover isn&amp;rsquo;t quite rigid; it&amp;rsquo;s flexible enough not to be annoying and uncomfortable in a thin bag with other things crammed in. The paper is top-notch quality &amp;ndash; silky smooth and creamy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/quo-vadis-small.jpg&#34; alt=&#34;Quo Vadis Habana&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The corners are rounded, which is always appreciated in a notebook. And, the notebook and the paper are made in the USA, from certified sustainable forests.&lt;/p&gt;
+
+&lt;p&gt;The ruling might extend a little too close to the margins, but although the book doesn&amp;rsquo;t open completely flat, it comes very close; close enough that there shouldn&amp;rsquo;t be a problem with the margins.&lt;/p&gt;
+
+&lt;p&gt;All in all, a very nice notebook, and one of the top contenders for certain.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: this is now my favorite notebook and I doubt I&amp;rsquo;ll change from using it.
+I can&amp;rsquo;t say enough about how amazing the paper is. It&amp;rsquo;s gorgeous, smooth,
+doesn&amp;rsquo;t bleed through. It feels wonderful and writes beautifully.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;160 pages, 6.375 x 9.625 x .625 inches. Rule width: .222 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B0072WW8K4/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for
+$20.99. I&amp;rsquo;ve also bought in &lt;a href=&#34;http://www.shopwritersbloc.com/habana-journal-large-blank-raspberry.html&#34;&gt;blank (unlined) in bulk from Writers Bloc&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;paperblanks-journal&#34;&gt;PaperBlanks journal&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/paper-blanks.jpg&#34; alt=&#34;PaperBlanks journal&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These are my favorite journals. They have a ribbon marker, a magnetic clasp cover, a huge variety of beautiful cover designs to choose from, and they&amp;rsquo;re easy to find at Barnes &amp;amp; Noble. I&amp;rsquo;ve probably bought over a dozen of these. It&amp;rsquo;s great when there&amp;rsquo;s a sale; I&amp;rsquo;ll buy several at a time.&lt;/p&gt;
+
+&lt;p&gt;The paper isn&amp;rsquo;t quite as nice as I&amp;rsquo;d want in a notebook, but it&amp;rsquo;s great for journaling. It is slightly rough. The journals are plain inside, with no decorations, and a small note on the inside cover about the pattern reproduced on the outside. For example, I&amp;rsquo;m currently writing in the one shown closed, and this cover is inspired by a Persian Safavid-style design from centuries ago.&lt;/p&gt;
+
+&lt;p&gt;I wouldn&amp;rsquo;t use these for note-taking. They&amp;rsquo;re a little too bulky, the ruling is a little too wide, and the covers are too rigid.&lt;/p&gt;
+
+&lt;p&gt;288 pages, 9 x 7 x .875 inches. Rule width: .318 inches. Bought at Barnes &amp;#038; Noble for $18.95.&lt;/p&gt;
+
+&lt;h3 id=&#34;peter-pauper-press-journal&#34;&gt;Peter Pauper Press journal&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/peter-pauper.jpg&#34; alt=&#34;Peter Pauper Press journal&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This journal is certainly in the same class as the PaperBlanks journals. It&amp;rsquo;s about the same size, and also has beautiful art on the cover; in this case, a Van Gogh. The paper is a little heavier, and there&amp;rsquo;s no clasp to hold the cover shut. It has slightly fewer pages and is a little thinner.&lt;/p&gt;
+
+&lt;p&gt;192 pages, 9 x 7.5 x .75 inches. Rule width: .318 inches. Bought at &lt;a href=&#34;http://www.amazon.com/Almond-Blossom-Journal-Notebook-Diary/dp/144130357X/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $13.49.&lt;/p&gt;
+
+&lt;h3 id=&#34;mead-cambridge-notebook&#34;&gt;Mead Cambridge notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/mead-cambridge.jpg&#34; alt=&#34;Mead Cambridge notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This notebook is a great find, in my opinion. It&amp;rsquo;s a good size, is thin and flexible with a semi-rigid cover, has trimmed corners to avoid dog-earing, and has nice paper. It&amp;rsquo;s all business, but is just sophisticated enough to feel good, too.&lt;/p&gt;
+
+&lt;p&gt;As you can see, I&amp;rsquo;ve chosen a variant that has an extra column on the right for notes to be set aside. I&amp;rsquo;m going to give this a try because I often find myself going back and cramming cross-references or additional information into the margins. There is a variant without this extra column, however.&lt;/p&gt;
+
+&lt;p&gt;The ruling is a nice width &amp;ndash; just right for me. The color might be a little too dark, though. It could be lighter, or even use light dots, like a signature line, and it&amp;rsquo;d be nicer in my opinion.&lt;/p&gt;
+
+&lt;p&gt;The downsides: the binding doesn&amp;rsquo;t quite open flat, though it comes very close, and I&amp;rsquo;m not sure if it&amp;rsquo;s going to be all that durable, though the notepad is thin enough that it shouldn&amp;rsquo;t have a long heavy-duty life to wear it out. The ruling doesn&amp;rsquo;t have any margin in the center of the binding. This might seem like a nitpick, but without that guide I find myself cramming my pen into the crevice when writing on the left page, and having trouble with an even left-margin when writing on the right page.&lt;/p&gt;
+
+&lt;p&gt;All in all, one of the top choices for a notebook, due to its design, practical size, and low price.&lt;/p&gt;
+
+&lt;p&gt;160 pages, 8.625 x 6.75 x .4375 inches. Rule width: .220 inches. Bought at Target for $8.95.&lt;/p&gt;
+
+&lt;h3 id=&#34;deconstructed-journal-by-studio-oh&#34;&gt;Deconstructed journal by Studio Oh!&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/studio-oh-deconstructed-clock.jpg&#34; alt=&#34;Deconstructed journal by Studio Oh!&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This journal is perhaps the most versatile of the notebooks and journals I&amp;rsquo;ve shown here, because it could easily be a very respectable notebook as well. Its binding is the most attention-grabbing feature. Take a look:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/studio-oh-deconstructed-clock-edge.jpg&#34; alt=&#34;Deconstructed journal by Studio Oh!&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The journal opens absolutely flat, without a hint of resistance. This is the flattest-opening notebook I&amp;rsquo;ve ever seen. Will the binding hold up? On close inspection, it does seem pretty well-bound. I suspect it&amp;rsquo;ll last.&lt;/p&gt;
+
+&lt;p&gt;The cover is quite rigid, the corners are rounded, the paper is silky and smooth though perhaps a bit thin, and overall it feels really nice. The only points against it, as far as a notebook, are the ruling width and the stiff covers. It&amp;rsquo;s also a little heavy, now that I think about it. Still, it&amp;rsquo;ll easily be a great journal, and could be a very nice notebook too.&lt;/p&gt;
+
+&lt;p&gt;192 pages, 8.625 x 6.5 x .6875 inches. Rule width: .3125 inches. Bought at &lt;a href=&#34;http://www.amazon.com/Studio-Oh-Deconstructed-Journal-Epoque/dp/B005K03NHW/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $13.85; also available from Barnes &amp;amp; Noble.&lt;/p&gt;
+
+&lt;h3 id=&#34;whitelines-squared-notebook&#34;&gt;Whitelines Squared notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/whitelines-squared.jpg&#34; alt=&#34;Whitelines Squared notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This premium-quality notebook has a really unusual feature: instead of white paper with dark lines, it has slightly gray paper with white lines. The idea is that this is less distracting and will glare and contrast less, and that what you write will stand out, rather than conflicting with the lines. I chose a &amp;ldquo;graph paper&amp;rdquo; or grid, instead of a lined/ruled notebook.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a nice size (A5, perfect!), has really nice paper, and is made with a C02-neutral process. It&amp;rsquo;s sharply designed and utilitarian, with a black cover that has a single orange horizontal stripe. There&amp;rsquo;s no arguing that it&amp;rsquo;s not a high-end notebook.&lt;/p&gt;
+
+&lt;p&gt;The downsides? The cover is rigid, and the corners are squared instead of rounded. The binding doesn&amp;rsquo;t open flat; in fact, it doesn&amp;rsquo;t really even come close, and this will be a nuisance. Although the white-lined feature seems nice, I wish it didn&amp;rsquo;t extend all the way to the edge of the paper. The grid feature does give some guidance for margins, but I foresee myself getting greedy in the margins accidentally.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m going to have to say that a couple of the others are nicer, because of their binding and ruling with margins.&lt;/p&gt;
+
+&lt;p&gt;200 pages, 8.5 x 6 x .6875 inches. Rule width: .197 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B0052XQDUG/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $11.95.&lt;/p&gt;
+
+&lt;h3 id=&#34;clairefontaine-notebook&#34;&gt;Clairefontaine notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/clairefontaine.jpg&#34; alt=&#34;Clairefontaine notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This notebook is practical and functional, with a plain black cover that&amp;rsquo;s flexible, and rounded corners. Inside there&amp;rsquo;s no decoration or jazz; just basic, plain ruled paper.&lt;/p&gt;
+
+&lt;p&gt;The paper, though, is a highlight. This is Clairefontaine&amp;rsquo;s famous high-quality paper, and I&amp;rsquo;ve used it before. It&amp;rsquo;s really nice quality.&lt;/p&gt;
+
+&lt;p&gt;The notebook is also a great size: not too thick, not too large (A5 again), easy to carry.&lt;/p&gt;
+
+&lt;p&gt;Downside? There are no margins, and the ruling is wide for my taste. The binding doesn&amp;rsquo;t open as flat as I&amp;rsquo;d like. Still, a very good choice for a notebook.&lt;/p&gt;
+
+&lt;p&gt;192 pages, 8.125 x 5.875 x .4375 inches. Rule width: .3125 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B003JMZT98/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $10.99.&lt;/p&gt;
+
+&lt;h3 id=&#34;barnes-noble-journal-refill&#34;&gt;Barnes &amp;amp; Noble journal refill&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/barnes-noble-refill.jpg&#34; alt=&#34;Barnes &amp;amp; Noble journal refill&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I grabbed this journal refill from the shelves at B/N for one reason: it&amp;rsquo;s simple and inexpensive. It&amp;rsquo;s designed to replace the interior of some kind of journal, I&amp;rsquo;m not sure what exactly. The paper is a high-quality Italian ivory, and the cover is heavy card stock. The binding opens very flat, more so than many of the notebooks I&amp;rsquo;ve mentioned above.&lt;/p&gt;
+
+&lt;p&gt;On the downside, the corners are not rounded, and there is a decoration at the bottom of each page, which shouts out &amp;ldquo;journal!&amp;rdquo; and not &amp;ldquo;professional notes!&amp;rdquo; Still, it&amp;rsquo;s a better choice for notes than some of the notepads I&amp;rsquo;ve bought.&lt;/p&gt;
+
+&lt;p&gt;224 pages, 8.25 x 5.75 x .625 inches. Rule width: .26 inches. Bought at Barnes &amp;amp; Noble for $7.95.&lt;/p&gt;
+
+&lt;h3 id=&#34;leuchtturm-1917-notebook&#34;&gt;Leuchtturm 1917 notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/leuchtturm-1917.jpg&#34; alt=&#34;Leuchtturm 1917 notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This Leuchtturm 1917 notebook has a very analytical, practical feel. It has some great standout features, too, such as page numbers on every page, and the paper is obviously good quality. It also has some nice additions, such as stickers for labeling and archiving, and the binding is very nice, although it doesn&amp;rsquo;t quite open flat easily.&lt;/p&gt;
+
+&lt;p&gt;Other than the added touches such as page numbers and high-quality paper, you could easily mistake it for a Moleskine if you weren&amp;rsquo;t a notebook snob. The cover is plain black, with a bit more flex than a Moleskine cover, rounded corners (and the pages are rounded too). As soon as you open it and examine it, though, you see why their motto is &amp;ldquo;details make all the difference.&amp;rdquo; It&amp;rsquo;s obviously a step up in quality from a Moleskine. For example, although the ruling is essentially the same in design and width, it&amp;rsquo;s much lighter than the Moleskine&amp;rsquo;s obtrusive, coarse rules.&lt;/p&gt;
+
+&lt;p&gt;249 pages, 5.75 x 8.25 x .6875 inches. Rule width: .236 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B002CVAU1Y/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $15.99.&lt;/p&gt;
+
+&lt;h3 id=&#34;moleskine-notebook&#34;&gt;Moleskine notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/moleskine.jpg&#34; alt=&#34;Moleskine notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ah, Moleskine, how we love to love you and pay a premium for you. Yet you&amp;rsquo;re so&amp;hellip; boring. Your paper isn&amp;rsquo;t all that great, your cover is uninspiring, your heavy ruling goes all the way across the page with no margin, your elastic droops and sags. Goodness knows why you&amp;rsquo;ve gotten a reputation for being great, because you&amp;rsquo;re not the best. Of course, lots of people are making great things with Moleskine; here&amp;rsquo;s some cropped &lt;a href=&#34;https://www.flickr.com/photos/flyingturtle/1820081554/&#34;&gt;art via Steve Loya&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/art-by-loya.jpg&#34; alt=&#34;Moleskine art by Steve Loya&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bottom line: Moleskine notebooks are functional, with a nice binding, but you can get a much better notebook for less.&lt;/p&gt;
+
+&lt;p&gt;240 pages, 8.25 x 5.25 x .625 inches. Rule width: .236 inches. Bought at &lt;a href=&#34;http://www.amazon.com/Moleskine-Classic-Cover-Large-Notebook/dp/8883701143/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $15.41.&lt;/p&gt;
+
+&lt;h3 id=&#34;chameleon-like-medium-notebook&#34;&gt;Chameleon Like medium notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/chameleon-like-large.jpg&#34; alt=&#34;Chameleon Like medium notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is essentially another Moleskine look-alike, although it&amp;rsquo;s a size smaller and has a tan cover instead of black. The binding is actually nicer, though the paper is not as nice. Overall, nothing remarkable to see here.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s at this size and form factor that the notebooks definitely start to get too small for me. A small, rigid notebook like this isn&amp;rsquo;t the easiest thing to carry or write on, and you end up wasting a lot of space unless you cram your writing really close to the edges of the pages, which makes everything unpleasant.&lt;/p&gt;
+
+&lt;p&gt;192 pages, 7 x 5 x .625 inches. Rule width: .278 inches. Source: freebie at a conference, though apparently they can be had for about $4.99.&lt;/p&gt;
+
+&lt;h3 id=&#34;semikolon-il-creativo-notebook&#34;&gt;Semikolon Il Creativo notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/semikolon-creativo-small.jpg&#34; alt=&#34;Semikolon Il Creativo notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the small version of the large Il Creativo mentioned above. When I saw that the large one was too big for me, I tried to buy a medium one, but it was unavailable from any sellers I could find, so I tried the small one. Unfortunately, like Goldilocks and the Three Bears, this one is Really Too Small. It&amp;rsquo;s cramped to write in. It&amp;rsquo;s just as thick and blocky as the large size. It has too many pages. And it has that annoyingly wide ruling.&lt;/p&gt;
+
+&lt;p&gt;I wanted to like it. But I just can&amp;rsquo;t. I wish I&amp;rsquo;d been able to get a medium-sized one, but frankly I wouldn&amp;rsquo;t have enjoyed it all that much either. Alas!&lt;/p&gt;
+
+&lt;p&gt;304 pages, 5.625 x 4.375 x 1 inch. Rule width: .375 inches. Bought at &lt;a href=&#34;http://www.amazon.com/gp/product/B005DVEU1G/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; for $8.37.&lt;/p&gt;
+
+&lt;h3 id=&#34;small-chameleon-like-notebook&#34;&gt;Small Chameleon Like notebook&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/chameleon-like-small.jpg&#34; alt=&#34;Small Chameleon Like notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is just the smaller version of the above Chameleon Like notebook. Way too small for my taste.&lt;/p&gt;
+
+&lt;h3 id=&#34;tenues-coolnotes-notebook&#34;&gt;teNues CoolNotes notebook&lt;/h3&gt;
+
+&lt;p&gt;Ditto &amp;ndash; this notebook is another mini-Moleskine-lookalike.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-spark-notebook&#34;&gt;The Spark Notebook&lt;/h3&gt;
+
+&lt;p&gt;This isn&amp;rsquo;t just a notebook, it&amp;rsquo;s a yearly planner. The amazing Kate Matsudaira
+created this and crowdfunded it in 2014. You should absolutely
+&lt;a href=&#34;http://www.thesparknotebook.com/&#34;&gt;sign up for the next edition&lt;/a&gt;. I bought one
+as a gift for my wife.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/spark-notebook.jpg&#34; alt=&#34;Spark Notebook&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;baron-fig-confidant&#34;&gt;Baron Fig Confidant&lt;/h3&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://www.baronfig.com/pages/confidant&#34;&gt;Baron Fig Confidant&lt;/a&gt; is a lovingly
+hand-designed notebook made for those who are serious about getting back to the
+basics, appreciating craftsmanship, and writing on a book made for enduring
+quality.&lt;/p&gt;
+
+&lt;p&gt;Baron Fig sent me a complimentary copy. It&amp;rsquo;s very nice! As I understand it, the
+next editions will all incorporate feedback from users such as me and you.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/confidant-photo-01.jpg&#34; alt=&#34;Baron Fig Confidant&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The feedback I gave them:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Thanks for the notebook! Feedback thus far - paper seems nice. I&amp;rsquo;m not a big
+dot-grid guy. I like a slightly taller page, but the width is nice. I also
+like thinner books so they fit in my bag without bulking it so much, and more
+flexible cover, for the same reason. The woven cover is slightly unpleasant
+for my fingers somehow, a little reminiscent of burlap bags I handled a lot as
+a kid that chewed up my skin a lot. Lastly, to truly nit-pick, the edges of
+the pages have a slight curl from cutting in one direction, which feels sharp
+in one direction and slippery the other. The lie-flat binding is good.
+Overall, a great notebook!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We agreed that I may need a therapist to help me overcome my burlap issues from
+childhood. If you know anyone who specializes in inner-child-burlap memories,
+let me know.&lt;/p&gt;
+
+&lt;h3 id=&#34;shinola-large-hard-linen-journal&#34;&gt;Shinola Large Hard Linen Journal&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.shinola.com/shop/journals/large-hard-linen.html&#34;&gt;This notebook&lt;/a&gt; is
+similar to the Baron Fig in that it has a bit more bulk, stiffness, and
+coarseness than I prefer. However, if you&amp;rsquo;re an engineer/architect/surveyor type
+or if you just prefer that form factor, it&amp;rsquo;s also very nice indeed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/shinola.jpg&#34; alt=&#34;Shinola&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;maruman-mnemosyne-special-memo-notepad&#34;&gt;Maruman Mnemosyne Special Memo Notepad&lt;/h3&gt;
+
+&lt;p&gt;I know some people who love these notebooks, but I haven&amp;rsquo;t owned one myself:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p&gt;There is my life before these beautiful landscape notebooks, and my life after: &lt;a href=&#34;http://t.co/NMj7AN89FH&#34;&gt;http://t.co/NMj7AN89FH&lt;/a&gt; After is better.&lt;/p&gt;&amp;mdash; John Allspaw (@allspaw) &lt;a href=&#34;https://twitter.com/allspaw/status/572008337228886016&#34;&gt;March 1, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/maruman-mnemosyne-special-memo-notepad.jpg&#34; alt=&#34;Maruman Mnemosyne Special Memo Notepad&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find them on &lt;a href=&#34;http://www.amazon.com/Maruman-Mnemosyne-Special-Memo-Notepad/dp/B001A1TO14/?tag=xaprb-20&#34;&gt;Amazon&lt;/a&gt; and &lt;a href=&#34;http://www.jetpens.com/Maruman-Mnemosyne-Special-Memo-Notepad-A5-5.8-X-8.3-7-mm-Rule-Divisions-24-Lines-X-80-Sheets/pd/4585&#34;&gt;JetPens&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-winners&#34;&gt;The Winners&lt;/h3&gt;
+
+&lt;p&gt;It depends.&lt;/p&gt;
+
+&lt;p&gt;Do you want a journal? I think you can hardly go wrong with the Peter Pauper or the PaperBlanks. The Studio Oh! is a great choice too, especially because it&amp;rsquo;s actually a nicer grade of book and is a little less pricey. It isn&amp;rsquo;t as beautiful, though. On the larger side, the Markings leatherette is a hefty journal that will last a long time, though it&amp;rsquo;s plain too. And if you want a journal that screams &amp;ldquo;Swiss watch designer&amp;rsquo;s journal!&amp;rdquo; then maybe you&amp;rsquo;d like the Semikolon Il Creativo.&lt;/p&gt;
+
+&lt;p&gt;Do you want a Moleskine? Then buy one. Do you want something like it but better quality? Then get the &lt;a href=&#34;http://www.amazon.com/gp/product/B002CVAU1Y/?tag=xaprb-20&#34;&gt;Leuchtturm&lt;/a&gt;, hands down. It&amp;rsquo;s easily the nicest thing in the Moleskine class. I also like the Clairefontaine a lot, and if you&amp;rsquo;re looking for something a little different, you might like the Whitelines.&lt;/p&gt;
+
+&lt;p&gt;Do you want a big, bulky, analytical notebook? That&amp;rsquo;s the Semikolon Il Creativo for you again. Organize thyself!&lt;/p&gt;
+
+&lt;p&gt;But if you&amp;rsquo;re like me and you really want a compact, flexible, practical notebook that slips easily into a messenger bag, opens flat, has nice paper, is slim and inexpensive &amp;ndash; then I&amp;rsquo;m leaning towards recommending the &lt;a href=&#34;http://www.amazon.com/gp/product/B0072WW8K4/?tag=xaprb-20&#34;&gt;Quo Vadis Habana&lt;/a&gt; or the Mead Cambridge Premium Notebook, depending on your taste. Note that I can&amp;rsquo;t find the Cambridge online, but if you&amp;rsquo;re near a Target it&amp;rsquo;s probably easy to find. I might go back and buy a half dozen or so, just in case that turns out not to be true!&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Update: alas, I can no longer find the Cambridge anywhere. So sad. I&amp;rsquo;ve been using the Quo Vadis exclusively for the last several books I&amp;rsquo;ve bought. I&amp;rsquo;ve switched from lined to blank and bought them in bulk from &lt;a href=&#34;http://www.shopwritersbloc.com/habana-journal-large-blank-raspberry.html&#34;&gt;Writers Bloc&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In general, the ultimate notebook for me is 80-100 sheets of paper or 160-200 pages (I&amp;rsquo;ve listed pages above, to make everything consistent), an A5 size, and has pretty minimal features &amp;ndash; no need for a ribbon or an elastic strap &amp;ndash; just nice-quality paper, a slim and flexible design, and the right ruling and margins.&lt;/p&gt;
+
+&lt;p&gt;You might also be interested in my &lt;a href=&#34;https://www.xaprb.com/blog/2015/03/07/ultimate-pen-marker-face-off/&#34;&gt;review of the ultimate pen for note-taking&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here are my favorites in one photo. The rest is up to you. Happy writing, drawing, designing, sketching, scheduling, and organizing!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/07/best-notebooks-journals.jpg&#34; alt=&#34;Best Notebooks and Journals&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/levinardo/4753547868/&#34;&gt;Lead image credit&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>The moment I first held my newborn daughter in my arms</title>
+          <link>https://www.xaprb.com/blog/2013/06/05/the-moment-i-first-held-my-newborn-daughter-in-my-arms/</link>
+          <pubDate>Wed, 05 Jun 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/06/05/the-moment-i-first-held-my-newborn-daughter-in-my-arms/</guid>
+          <description>&lt;p&gt;This is a personal post, not a technical one. We tell ourselves a lot of lies that are not okay. I want to out one of them. It is important to be real, to be true to oneself. This matters.&lt;/p&gt;
+
+&lt;p&gt;The lie starts something like this: the moment I held my newborn child in my arms, I looked into her tiny face and felt an all-encompassing, pure love. I was breathless. I could not think, speak, or move. My life was complete, and I knew I was changed forever in that instant. I knew that I would do anything for this tiny creature, even give up my own life.&lt;/p&gt;
+
+&lt;p&gt;This script is repeated ad nauseum in books, TV shows, movies, songs, and most of all, person-to-person. If you have children, ask yourself, is this honestly the experience you had? No? Well, you&amp;rsquo;re not alone, because this is by and large an absurd lie. Unsurprisingly, psychologists who study attachment can tell you that most people take time &amp;ndash; some of them a lot of time &amp;ndash; to become strongly attached to their children. If you don&amp;rsquo;t have this phony experience of mindblowing love at first sight, &lt;em&gt;nothing is wrong with you.&lt;/em&gt; You are perfectly normal and this is okay.&lt;/p&gt;
+
+&lt;p&gt;Many men, in particular, don&amp;rsquo;t feel strong feelings for their children until many months or even years have passed. I know not only through my own experience, but also because I&amp;rsquo;ve asked literally dozens of fathers, and heard not one single story that matches what we&amp;rsquo;re told we should feel by popular media. Shockingly, some men &lt;em&gt;never&lt;/em&gt; feel the feelings of fatherly attachment we&amp;rsquo;re taught we should feel. And that includes many of the best fathers that have ever lived.&lt;/p&gt;
+
+&lt;p&gt;If you aren&amp;rsquo;t a father, maybe you don&amp;rsquo;t know this, but infants do very little for a long time. They are helpless and confused, and they can&amp;rsquo;t move, they don&amp;rsquo;t recognize you, they don&amp;rsquo;t smile, they don&amp;rsquo;t laugh, they don&amp;rsquo;t express affection. They cry, poop, sleep, and eat, and they generally make you cry by interfering with your own pooping, sleeping, and eating. By the time children even begin to crack a smile, parents and grandparents have spent sleep-deprived months mistaking fart grimaces as smiles, out of a desperate desire to believe it&amp;rsquo;s a smile. Beyond smiles, it takes a long time until children return hugs or say &amp;ldquo;Daddy!&amp;rdquo; or snuggle or want to sit on your lap with a book and read.&lt;/p&gt;
+
+&lt;p&gt;The experience of being a father is very special, but let&amp;rsquo;s not lie to ourselves and give ourselves inferiority complexes if we don&amp;rsquo;t feel anything but exhausted and irritated for a long, long time after a child is born. Be patient and honest with yourself. It is more important to be honest than to conform to ridiculous expectations.&lt;/p&gt;
+
+&lt;p&gt;Why do we perpetuate this harmful and inappropriate lie about our blinding love for our children? Maybe it&amp;rsquo;s because we are confused about what love is. Love is not a feeling, it is the act of caring for another&amp;rsquo;s well-being, through conscious decision and a huge effort against internal resistance, because you know it is the right thing to do and for no other reason. Loving feelings are sometimes a result of loving action, and often don&amp;rsquo;t come soon or strongly, but real love is not conditioned upon the feelings, because they are an effect, not a cause. If you&amp;rsquo;re interested in this line of thought, I recommend reading &amp;ldquo;The Road Less Traveled&amp;rdquo; by M. Scott Peck. Love is not a feeling. I know this is not what most cultures teach, but it&amp;rsquo;s true.&lt;/p&gt;
+
+&lt;p&gt;And if you do have an amazing experience of overwhelming feelings in those first few moments, be a little reserved in how you share it with others, okay? It could be a great favor (an act of love, in fact) to a great many people.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Why building a free service can be a disservice</title>
+          <link>https://www.xaprb.com/blog/2013/05/18/why-building-a-free-service-can-be-a-disservice/</link>
+          <pubDate>Sat, 18 May 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/05/18/why-building-a-free-service-can-be-a-disservice/</guid>
+          <description>&lt;p&gt;Like many others, I don&amp;rsquo;t think that RSS is dead. It&amp;rsquo;s my favorite way to keep up with highly valuable content on the Web. So I&amp;rsquo;m in the market for a replacement for Google Reader, along with millions of others. As I&amp;rsquo;ve evaluated options, I&amp;rsquo;ve had to eliminate some of them because I&amp;rsquo;m not sure they&amp;rsquo;re serious about what they&amp;rsquo;re doing. This post is about my thought process and why I think entrepreneurs should challenge themselves to get serious, and signal that intent, by not building free services.&lt;/p&gt;
+
+&lt;p&gt;As I&amp;rsquo;ve looked around, a number of replacement or alternative services exist. Some of them offer a subscription, but also a free (or freemium) model. Some are free-only. As I assess each of these, I am measuring them against some important questions.&lt;/p&gt;
+
+&lt;p&gt;First, although the main thing I care about is the product and how it serves my use-case needs, one of my meta-needs is longevity. I don&amp;rsquo;t want to change things. I want to find things that work, and stick with them. I just don&amp;rsquo;t have the bandwidth to go through this process all the time. I&amp;rsquo;ll stick with something old-but-serviceable for a long time after my friends tell me that the new kid on the block is so much better.&lt;/p&gt;
+
+&lt;p&gt;So I really want to know that the people behind the product are damn serious about building it into a lasting service, which means a lasting business. I want to know that they&amp;rsquo;re not in it for a quick flip-to-big-company-that&amp;rsquo;ll-kill-it, it&amp;rsquo;s not an acqui-hire-me strategy, it&amp;rsquo;s not a lifestyle project or a hobby, it&amp;rsquo;s not something they&amp;rsquo;ll tire of and go take a job with another company.&lt;/p&gt;
+
+&lt;p&gt;Remember Delicious and Magnolia? A bunch of my friends switched from the former to the latter, and then there was a spectacular data loss incident, and they all lost all of their bookmarks. And the guy who ran Magnolia seemed to signal that he wasn&amp;rsquo;t willing to press on when the going got tough. When it became clear that it&amp;rsquo;d cost some money and time to recover the corrupt data he hadn&amp;rsquo;t backed up, even though his users were loyal and willing to help, he shut the service down. Something similar almost happened with Couchsurfing. In both cases, the users/customers felt (and were) set up to be betrayed because the service was never a mutual obligation; it was an offer of something free with no expectations in either direction. Ah, but expectations always exist, and to avoid acknowledging that is tantamount to dishonesty by omission.&lt;/p&gt;
+
+&lt;p&gt;When I look for a service or product that I&amp;rsquo;m going to rely on to do something for me &amp;ndash; such as aggregating my chosen Web content &amp;ndash; I&amp;rsquo;m doing it because the value to me is real. It&amp;rsquo;s a huge time-saver. Time is worth money. I want to see signs that they understand this and insist that I give them money in return for the benefit.&lt;/p&gt;
+
+&lt;p&gt;If a service is free, one must speculate. There are a variety of reasons something is free, but usually, when a product is free, YOU are the product. This is the case with Facebook and Google. I&amp;rsquo;m OK with this when I understand it and I believe that the company knows how to take the product-of-me and build a business on it.&lt;/p&gt;
+
+&lt;p&gt;In most cases, however, I want to pay. Not too much, but more than a little.&lt;/p&gt;
+
+&lt;p&gt;Paying an appropriate amount of money gives me a lot of assurances. First, it means the company has their act together on a much larger scale than just running the IT and technical stuff. It&amp;rsquo;s relatively easy to build a product &amp;ndash; much harder to build a company. The logistics of assembling the business around the product are pretty large. Second, it means I have a right to expect good service and to complain. Businesses that are trying to drive the cost down send the signal that they&amp;rsquo;re just paying attention to competitors, not customers. I had a lot of experience with Virtual PBX products a few years ago &amp;ndash; they were all charging pennies, and there was no one I could pay a decent chunk of money to. That meant that I was entitled to dropped and misrouted calls and horrible voice quality and poor customer service. It&amp;rsquo;s frustrating when there isn&amp;rsquo;t a solid alternative and you can tell that the market is just being gutted by a price race to the bottom. The elephants fighting means the ant gets trampled.&lt;/p&gt;
+
+&lt;p&gt;I recently tried to use a service that integrates with Github and provides a really valuable add-on. It&amp;rsquo;s built up as a free open-source project that is now trying to commercialize. There are several products and companies in this space; I assume Github will eventually acquire one, and the others will become irrelevant. This is unfortunate, because you have to assume the teams behind the products understand this and are angling to be first in line for the acquisition. That sends a strong signal about their real motivations &amp;ndash; &amp;ldquo;not the customer.&amp;rdquo; I tried Product A, and was able to convince them to take me as a paying alpha user (they mostly offer the product for free.) But they were charging way too much &amp;ndash; many times what I pay for Github. It doesn&amp;rsquo;t make sense to pay several multiples of Github, to add a feature to Github. I negotiated a long-term deal that was in my interests: not too much, not too little, 12-month deal &amp;ndash; should have been a no-brainer for them, because as a young company, if you have ambitions, this is what you&amp;rsquo;re dying to show investors. But after they agreed to the terms, they couldn&amp;rsquo;t get their invoicing process together. After a while I found another company doing something similar, who were totally on the ball. This other company offered a free trial period to assess the product, but after that you pay or you leave. They&amp;rsquo;ve done a great job for me and I haven&amp;rsquo;t had a second thought.&lt;/p&gt;
+
+&lt;p&gt;So, back to the point &amp;ndash; as an entrepreneur, I think you should get serious, and signal your intention by charging an appropriate amount of money. Don&amp;rsquo;t copy giant companies who offer things for free. That free (or freemium) strategy only works in very special cases. You should understand what those cases are &amp;ndash; if you don&amp;rsquo;t, get someone business savvy to help with your strategy. The vast, vast majority of businesses are emphatically not right for free/freemium.&lt;/p&gt;
+
+&lt;p&gt;Charging also obligates you to what you&amp;rsquo;re offering. It gives you no easy out, mentally. I think a lot of people may be subconsciously more comfortable with leaving themselves that out: &lt;em&gt;if this gets tough, I don&amp;rsquo;t have to feel guilty, because it&amp;rsquo;s not like I owed the users anything&lt;/em&gt;. (If you&amp;rsquo;re thinking about &amp;ldquo;users&amp;rdquo; instead of &amp;ldquo;customers&amp;rdquo; you&amp;rsquo;re probably doing it wrong.) Man up and charge your customers, and accept the obligation that comes in return. Now when shit hits the fan, you damn well better stay up all night fixing it. You can&amp;rsquo;t just go &amp;ldquo;I&amp;rsquo;m tired, and it&amp;rsquo;s Friday night. Screw it. I&amp;rsquo;ll get back to work on this Monday.&amp;rdquo; (If you&amp;rsquo;re scared of being obligated to work all weekend on a few hours of sleep, you&amp;rsquo;re also probably doing it wrong.)&lt;/p&gt;
+
+&lt;p&gt;Building something for free can be a way to avoid risk, avoid complexity, avoid boring/mundane/hard things that don&amp;rsquo;t feel rewarding. But those things are exactly what make you grow, and you do yourself and your customers (users) a huge disservice if you don&amp;rsquo;t challenge yourself to grow. Growth comes from risk, and creates risk. That&amp;rsquo;s what life is about. See, this is the difference between a nerd/coder and an entrepreneur. An entrepreneur puts his/her career on the line and takes the risk.&lt;/p&gt;
+
+&lt;p&gt;I want a Google Reader replacement from an entrepreneur.&lt;/p&gt;
+
+&lt;p&gt;I want to end by clarifying a few points. 1) This isn&amp;rsquo;t about Google Reader; it just provided the inspiration. 2) Google Reader is free in a manner of speaking, so it might seem odd that I&amp;rsquo;m insisting that its replacement be non-free. Google Reader is in a special category because it&amp;rsquo;s owned by a company that I believe is unlikely to close its doors soon. None of the replacements I&amp;rsquo;ve seen so far are in that position. 3) I&amp;rsquo;m not saying that none of the replacements I&amp;rsquo;m looking at is built by an entrepreneur who&amp;rsquo;s serious about making a business from it &amp;ndash; but some of them are not clearly identifiable as anything more than hobby projects.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>What&#39;s the lesson from daily deals sites?</title>
+          <link>https://www.xaprb.com/blog/2013/05/09/whats-the-lesson-from-daily-deals-sites/</link>
+          <pubDate>Thu, 09 May 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/05/09/whats-the-lesson-from-daily-deals-sites/</guid>
+          <description>&lt;p&gt;I found myself in a, ahem, lively discussion with someone recently. It started when I said &amp;ldquo;there was always something wrong about the daily deals businesses (i.e. Groupon), but I&amp;rsquo;m sure they&amp;rsquo;ll teach us what&amp;rsquo;s really needed.&amp;rdquo; Turns out this person ran a local daily-deals site. Oops.&lt;/p&gt;
+
+&lt;p&gt;My feeling is that anytime something doesn&amp;rsquo;t take root and grow into a lasting business, there&amp;rsquo;s a lesson to learn. Early social-networking sites weren&amp;rsquo;t quite a match with needs. More recent ones have gotten something right that the early ones missed. More than one thing needs to be gotten right. In particular, to achieve good user adoption, the value you deliver for the user, what you ask in return, and what the user perceives of both the value and the returned favor are all very delicate balances.&lt;/p&gt;
+
+&lt;p&gt;I always felt that these were out of balance in daily-deals businesses because they framed things wrong for the customer. If I get a daily-deals coupon to go try something out, I might be motivated to try it, but my core belief is that if I wasn&amp;rsquo;t already a customer, I&amp;rsquo;m not going to become one after my cheapo trial. I think one of the main reasons for that is that the daily-deal coupon sends the signal that the product isn&amp;rsquo;t worth the usual price. I firmly believe that most people live by &amp;ldquo;you get what you pay for,&amp;rdquo; and that this is a two-way street. If you don&amp;rsquo;t pay a lot, then you don&amp;rsquo;t think it&amp;rsquo;s worth a lot.&lt;/p&gt;
+
+&lt;p&gt;When I joined Percona, their consulting rate was $200 per hour. Complaints about this high rate were widespread, both externally and internally (consultants thought it was too high also). But something funny was going on: customers wouldn&amp;rsquo;t keep their appointments with consultants, and they didn&amp;rsquo;t seem to care. I made it a policy that missed appointments would be billed anyway, and that didn&amp;rsquo;t change anything. So I experimented with the rates. After trying out various rates for about a month, $300 per hour seemed to be a sweet spot. Serious customers were still willing to pay, we weeded out many bad customers who only caused trouble, and most importantly, a lot fewer appointments were missed.&lt;/p&gt;
+
+&lt;p&gt;I experienced something similar in my individual consultancy. I worked on a pro bono basis for a local immigrant health clinic. I had a bad feeling that I was taken for granted, and one day when I was at the clinic early to finish up the project, I stood in the early morning cold for half an hour before I realized that nobody was coming to meet me and let me into the building. After that I stopped doing anything pro bono, and I always had a good feeling that my services were appreciated.&lt;/p&gt;
+
+&lt;p&gt;So while arguing about the daily deals sites, I recalled the feeling I always had: that there was something wrong with the business model &amp;ndash; that it was undermining what it was supposed to promote. And that vague notion came back to me: the decline of daily deals should teach us what ought to be done instead.&lt;/p&gt;
+
+&lt;p&gt;Later, it came to me: A daily-deals offer is like a one-night stand, with no expectation of a long-term relationship. Without this agreement at the foundation of the relationship, the match between the ask and the offer is lopsided, and the &amp;ldquo;customer&amp;rdquo; becomes an exploiter, instead of a customer.&lt;/p&gt;
+
+&lt;p&gt;And with that, I realized that I had it wrong. Far from being the leading indicator, the daily deals sites were actually behind the times. There have been businesses for many years doing what they should have done. I&amp;rsquo;ve supported some of them myself. I&amp;rsquo;m referring to BMG&amp;rsquo;s music subscription, Omaha Steaks, book-of-the-month clubs, gourmet coffee or wine subscriptions, and so on.&lt;/p&gt;
+
+&lt;p&gt;You begin these relationships with several subtly intertwined things, including a good introductory offer, an upfront agreement on the real value of what you&amp;rsquo;re getting in the trial, and an agreement to be a long-term customer. Oh, sure, you can change your mind and cancel after the introductory offer is up. But agreeing and then canceling is different from never agreeing. There&amp;rsquo;s probably a lot of psychological research related to what I&amp;rsquo;m claiming, and I&amp;rsquo;m sure that some of it contradicts me, but I believe that &amp;ldquo;buy 10 CDs at $1 each, then we&amp;rsquo;ll send one per month at full price thereafter, and if you buy X more within a year you get another batch at $1 each&amp;rdquo; is very different from &amp;ldquo;you can rip this merchant off by walking out of his store with $1 CDs and no actual or implied obligation.&amp;rdquo; With BMG&amp;rsquo;s music subscription service, you opt in and then you have to opt out again (either once-and-for-all, or once every month). And maybe your conscious brain says &amp;ldquo;I&amp;rsquo;m going to just cancel after I get my cheap CDs,&amp;rdquo; but I&amp;rsquo;m an astute enough observer of myself to know that my subconscious feels differently about the matter. In the back of my mind, I feel like I&amp;rsquo;m cheating BMG if I cancel before I buy enough CDs at full price to be a profitable customer for them. The conscience gets involved. It never gets involved with a daily deal &amp;ndash; there&amp;rsquo;s no opt-in to opt-out of.&lt;/p&gt;
+
+&lt;p&gt;Perhaps what the daily deals sites need to do is bring a platform for this kind of long-term relationship, and managing the logistics, to lots of companies so they don&amp;rsquo;t have to reinvent it on their own. Perhaps there is a &amp;ldquo;next time we&amp;rsquo;ll get this right&amp;rdquo; for daily deals after all.&lt;/p&gt;
+
+&lt;p&gt;On that note, it&amp;rsquo;s a good thing &lt;a href=&#34;http://gearhartschocolates.com/&#34;&gt;Gearhart&amp;rsquo;s Chocolates&lt;/a&gt; doesn&amp;rsquo;t have a BMG-like deal, because you&amp;rsquo;d have me at &amp;ldquo;chocolate.&amp;rdquo; (If you don&amp;rsquo;t know who they are, it&amp;rsquo;s a local Charlottesville chocolatier that is easily one of the best in the entire world, and priced to match. I send their variety pack as thank-yous fairly often. Just another perk of living in Charlottesville.)&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Model-view-controller considered harmful</title>
+          <link>https://www.xaprb.com/blog/2013/04/17/model-view-controller-considered-harmful/</link>
+          <pubDate>Wed, 17 Apr 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/04/17/model-view-controller-considered-harmful/</guid>
+          <description>&lt;p&gt;In 2001 I created a PHP 4 web application framework from scratch as the backbone of a sophisticated application. Back then frameworks weren&amp;rsquo;t cool. Smarty templates were the hotness.&lt;/p&gt;
+
+&lt;p&gt;My framework had URL routing, templates with a capable templating syntax similar to mustache, loosely coupled and tightly cohesive object-oriented design, an elegant way to access the database without dumbing it down, and nicely separated business logic and presentation layers &amp;ndash; among many other nice things you find in good frameworks. As the application grew more and more complex, the framework continued to serve well with only occasional enhancements. It&amp;rsquo;s still in use more than a decade later.&lt;/p&gt;
+
+&lt;p&gt;I mention this because I think I&amp;rsquo;ve been reasonably capable of designing maintainable systems for a long time. But the so-called MVC paradigm (model, view, controller) has &lt;em&gt;never&lt;/em&gt; made sense to me.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2013/04/rectabular-excrusion-bracket.png&#34; alt=&#34;Rectabular Excrusion Bracket&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The design goals make sense. See above. It&amp;rsquo;s just that I find MVC itself &amp;ndash; the abstraction and implementation of those goals &amp;ndash; to be unhelpful at best, on a day I&amp;rsquo;m being charitable. On a day I&amp;rsquo;m telling it like it is, I&amp;rsquo;ll just bluntly say MVC is the most confusing pile of acronym bulls**t I can think of.&lt;/p&gt;
+
+&lt;p&gt;Tell me, without knowing what MVC is, what would you guess the model represents? Controller? View? It would be bad enough if these were abstract terms like &amp;ldquo;node&amp;rdquo; or &amp;ldquo;resource,&amp;rdquo; but they&amp;rsquo;re not abstract. They hint at meaning, and then you discover that MVC doesn&amp;rsquo;t align with the hinted-at meaning. Instead, the M, V, and C represent concepts that are vague and hard to understand, and are kind of a stretch to mentally fit with the terms. This is worse than abstract, it&amp;rsquo;s misleading. It&amp;rsquo;s like bait-and-switch for someone who&amp;rsquo;s trying to grasp what it means.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know where MVC came from and I&amp;rsquo;m sure I won&amp;rsquo;t change my mind if I find out. I have a hard time believing that I&amp;rsquo;m the only one who wishes someone had formed a committee[1] to discuss what kind of names to represent the concepts. Especially since there are so many frameworks that abstract things slightly differently, because MVC apparently doesn&amp;rsquo;t suit their designers either, and thus it&amp;rsquo;s necessary to explain the relationship between Framework X&amp;rsquo;s view of the world, and how that loosely maps to the MVC view of the world. It becomes a sloppy comparison to a sloppy analogy.&lt;/p&gt;
+
+&lt;p&gt;Even more fun: some folks try to invent an MVC framework, like the original ASP.NET, and &amp;ldquo;get it wrong,&amp;rdquo; to disdainful criticism. Then they have to reinvent it, sometimes several times.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s kind of like the OSI 7-layer model, which everyone agrees doesn&amp;rsquo;t actually represent modern networking technology stacks cleanly, and yet everyone talks about the OSI layers. There&amp;rsquo;s a clean way to think about networking layers, but the OSI model ain&amp;rsquo;t it. Or NoSQL &amp;ndash; the most unhelpful, undescriptive name for an &amp;hellip; amorphous category of technologies or worldviews or design patterns or whatever&amp;hellip; ever.&lt;/p&gt;
+
+&lt;p&gt;The lesson: great concepts that teach great truths, and could result in great advances in engineering due to a common mental model around which other things can be built, can be sidetracked by slapping an ill-fitting monicker or set of analogies on them. And sometimes we never seem to get another chance. NoSQL believers can&amp;rsquo;t seem to think of anything better than NoSQL as a name (and neither can I, as much as I deplore the NoSQL name). We&amp;rsquo;re stuck.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m sure my strong opinions on this are a) somewhat ignorant and b) not shared by everyone. Discuss! :-)&lt;/p&gt;
+
+&lt;p&gt;[1] Yes, I&amp;rsquo;m aware that awful things come from committees, like SQL. But I have faith that it would have been better than MVC.&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>A review of Republic Wireless&#39;s cellphone service</title>
+          <link>https://www.xaprb.com/blog/2013/03/22/a-review-of-republic-wirelesss-cellphone-cervice/</link>
+          <pubDate>Fri, 22 Mar 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/03/22/a-review-of-republic-wirelesss-cellphone-cervice/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ve been trying out Republic Wireless, a startup that offers very inexpensive wireless service: $19 for unlimited talk, text, and data. In a nutshell: they resell Sprint&amp;rsquo;s network, and you agree to connect to wifi as much as possible; they use the Internet instead of the cell network when you&amp;rsquo;re on wifi. I thought for $19/month it wouldn&amp;rsquo;t hurt to give it a try. After several months, my experience has been that it isn&amp;rsquo;t worth using at all, no matter how cheap it is.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t want to dwell on the problems at great length, but here are some of the issues I&amp;rsquo;ve had.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The phone is junk. It&amp;rsquo;s a super-low-quality Motorola Defy XT, which is basically hardware and software (Android) from 3 years ago. It has flaky behavior such as turning off the screen when I try to use the keypad during a call, for example, when I try to press the 7 key to delete a message from voicemail. It also does bizarre things like rotating the screen from landscape to portrait repeatedly and unpredictably when I&amp;rsquo;m in the middle of trying to use it. It&amp;rsquo;s a really poor experience in every way; my 3-year-old Droid 2 was much better.&lt;/li&gt;
+&lt;li&gt;Sprint&amp;rsquo;s network is awful. Just awful. Voice quality is terrible. I haven&amp;rsquo;t been able to actually have a call for more than a couple of minutes at a time. It disconnects or goes into some kind of zombie state where the call still seems to be connected but nobody can hear anything &amp;ndash; or only one person&amp;rsquo;s voice gets through. The phone is literally unusable as a telephone.&lt;/li&gt;
+&lt;li&gt;Connecting to wifi doesn&amp;rsquo;t work. I connect to wifi, I have a strong signal, and their VOIP software uses the cell network instead. It&amp;rsquo;s incredibly buggy. VOIP calls are better than over-the-air calls, but not much.&lt;/li&gt;
+&lt;li&gt;Something is wrong with number routing. I&amp;rsquo;ve gotten calls from people who were dialing completely different numbers (same area code, but different last 7 digits.) When these people apologized and hung up, then tried calling the number they were trying to reach, they&amp;rsquo;d get me again. This never happened on Verizon.&lt;/li&gt;
+&lt;li&gt;Customer service isn&amp;rsquo;t merely bad, it&amp;rsquo;s actually nonexistent. They just use a community forum, and they don&amp;rsquo;t even answer threads on the forum. See, for example, &lt;a href=&#34;https://community.republicwireless.com/message/63090&#34;&gt;my thread asking them to make voicemail passwords optional&lt;/a&gt;, after they removed passwords from everyone&amp;rsquo;s voicemail (which is a serious and well-demonstrated privacy/security blunder).&lt;/li&gt;
+&lt;li&gt;Text messages stopped working several weeks ago, with basically no notification except for a relatively hidden post in some area of the community forums. Last I looked, there&amp;rsquo;s no update on whether they&amp;rsquo;re even trying to fix this.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;m sure there is more, but that should be enough for now. The summary is that the phone is almost completely unusable for voice calls, completely unusable for text, and practically unusable for anything I&amp;rsquo;d like to do that requires data (e.g. typing an email) because of the hardware&amp;rsquo;s flakiness. It&amp;rsquo;s little more than a small, poorly behaved Android tablet that I paid $250 for.&lt;/p&gt;
+
+&lt;p&gt;My wife and I switched from our previous price-gouging phone network at the same time, and both of us have had all the same issues. So this isn&amp;rsquo;t &amp;ldquo;just me.&amp;rdquo; There&amp;rsquo;s a sample size of at least 2.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>The right way to do social</title>
+          <link>https://www.xaprb.com/blog/2013/03/14/the-right-way-to-do-social/</link>
+          <pubDate>Thu, 14 Mar 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/03/14/the-right-way-to-do-social/</guid>
+          <description>&lt;p&gt;The technology industry moves incredibly fast, from one bubble to another. Web 2.0. Online auctions. (Remember when the Internet was filled with hundreds of eBay clones?) Social. Mobile. Location-based. Big Data. Whatever.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t think anyone will call me insightful for observing that the general idea of &amp;ldquo;social&amp;rdquo; had a peak in its hype cycle some time ago. I&amp;rsquo;d say three years ago was really the peak. At some point, lots of people were excited about applying social-ness to everything. Social was going to be the way everything happened in the future. Businesses were going to revolutionize the way internal communications happened by making everything social. Government was going to be more transparent by being social. We were all going to be constantly tuned in to all this frenzy of everything happening &amp;ndash; events, information, whatnot &amp;ndash; and it would all be saturated with socialness. &lt;em&gt;(This sounds like a new level of hell to me, but some people thought it was a good thing.)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;There were basically no bounds to what social could do. IT was going to get more agile through things like social monitoring, for example, like &lt;a href=&#34;http://nodeable.com/&#34;&gt;Nodeable&lt;/a&gt;. It&amp;rsquo;s since been renamed and pivoted entirely, but what I remember was that people chit-chatting and promoting/liking/recommending and having relevance-based feeds about system problems was going to improve the signal-to-noise ratio of monitoring alerts, and allow IT staff to focus on stuff that really needed to be fixed.&lt;/p&gt;
+
+&lt;p&gt;Social became a golden hammer. Got a social hammer? Everything looks like a social nail. Bang, bang, bang. Solve it with social, get rich with social.&lt;/p&gt;
+
+&lt;p&gt;Personally, I have no use for most social media. I tried Facebook for a few months. It&amp;rsquo;s a platform for little info-bites that are distracting, pleasing, fun, endorphin-releasing. But in my opinion, it is not a way to meaningfully engage with people I really care about on a deep level. So I deactivated my account. Google is trying to go the same route with Google+ and I have no use for that either. The idea that a crowd of people babbling is going to produce something relevant and actually valuable for me, is not something I agree with. Both Facebook and Google+ are this way. I would much rather &lt;em&gt;pull&lt;/em&gt; my content from carefully selected places than have it &lt;em&gt;pushed&lt;/em&gt; to me by algorithms and the so-called &amp;ldquo;wisdom of crowds.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;In other words, most social media seems to me to be more about popularity than relevance, value, or meaningfulness. I truly do not care what other people think about pictures or events or celebrities or news or whatever. Their opinions have a very small chance of matching mine. Opinion-based social is just another name for popularity-based social. I have observed that the things I value the most are often the least popular. Just look at how most world governments are run and it&amp;rsquo;s easy to see that crowd-pleasing things and sensible things are pretty much mutually exclusive.&lt;/p&gt;
+
+&lt;p&gt;But there is more than one way to do social.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s real, enduring value in the concepts of social. Take a look at Github. It isn&amp;rsquo;t promoted as &amp;ldquo;the social coding platform where code gets social and social is how the code is socialized,&amp;rdquo; but their TITLE tag talks about making better code together. Use their service and what do you do? You have conversations in issues. You have comments on commits and pull requests. You can @mention people. You interact with other coders via code, code itself becomes conversational, and coders have meta-conversations on those conversations. It&amp;rsquo;s totally social. Heck, Git itself, by its very design, is social.&lt;/p&gt;
+
+&lt;p&gt;But Github is not &lt;strong&gt;overtly&lt;/strong&gt; social. That&amp;rsquo;s the difference. They don&amp;rsquo;t act as if social is first, and code hosting and issue tracking is secondary. They don&amp;rsquo;t act as if the core value proposition is socialness and code hosting is just the medium through which they do it.&lt;/p&gt;
+
+&lt;p&gt;I think that&amp;rsquo;s the right way to do it. Take a solid business idea &amp;ndash; code hosting and revision control and so on &amp;ndash; and add the ability for people to have meta-interactions around it, where it makes sense and actually enriches the core of the business.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Playing matchmaker for job seekers and recruiters</title>
+          <link>https://www.xaprb.com/blog/2013/03/12/playing-matchmaker-for-job-seekers-and-recruiters/</link>
+          <pubDate>Tue, 12 Mar 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/03/12/playing-matchmaker-for-job-seekers-and-recruiters/</guid>
+          <description>&lt;p&gt;One of the most rewarding things you can do is help someone get a great job or hire a great person for the position they need to fill. I have traveled a lot, written books, done a bunch of consulting, and spoken widely on MySQL, other databases, open source, and so forth. I&amp;rsquo;ve gotten to know a lot of people, some I&amp;rsquo;d call good friends, and many of them are leading large organizations. I think this is both a privilege and a serious responsibility.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a privilege because I can ask some of these people for help or introductions or advice sometimes. It&amp;rsquo;s a responsibility because I need to be ready to do something for them, too. In many cases it&amp;rsquo;s a pay-it-forward kind of readiness.&lt;/p&gt;
+
+&lt;p&gt;Many, many people contact me looking for people to hire. I keep a list. When someone tells me they are on the job market, I try to match them with openings I&amp;rsquo;m aware of, if any are appropriate. (Many fewer people tell me they&amp;rsquo;re looking for jobs than tell me they&amp;rsquo;re trying to recruit.)&lt;/p&gt;
+
+&lt;p&gt;These are my friends, on both sides. I don&amp;rsquo;t introduce people unless I think everyone is really genuinely bringing something great to the table. A great position &amp;ndash; a great talent &amp;ndash; the right circumstances and attitudes.&lt;/p&gt;
+
+&lt;p&gt;When I do introduce people, I usually do it one-sidedly, depending on the situation. For example, I&amp;rsquo;ll forward the candidate&amp;rsquo;s resume and contact information sometimes, with a few words of introduction. At other times I&amp;rsquo;ll just BCC the candidate. Or I might send the recruiting party&amp;rsquo;s information to the candidate.&lt;/p&gt;
+
+&lt;p&gt;People usually take this very seriously, but occasionally I&amp;rsquo;ve referred several people to a company only to find out that the company didn&amp;rsquo;t follow up on the introduction. That&amp;rsquo;s pretty much the last chance that company will get from me. If I made a special personal effort to send you someone fantastic who&amp;rsquo;s really qualified for the job, and you didn&amp;rsquo;t contact that candidate, there&amp;rsquo;s really no excuse for such rudeness. You&amp;rsquo;re telling me you don&amp;rsquo;t think my experience and judgment about who&amp;rsquo;s good for the job is valid. I won&amp;rsquo;t offer it again, then.&lt;/p&gt;
+
+&lt;p&gt;Recruiters are an interesting lot. They have a bad reputation, and I think that&amp;rsquo;s because a few aggressive, pushy people poison the well for the rest of the recruiters. Most recruiters are really good people doing a hard and extremely valuable job, with a lot of care and personal attention to their client as well as their candidates. If you&amp;rsquo;ve ever built a team, you know how hard it can be. Many recruiters are used to being treated very badly because of their profession&amp;rsquo;s reputation. I try to make up for that by being extra nice to them. Recruiters who contact me by email often get a personal call in return, and always a personal email reply with a thank you. In almost all cases, recruiters will tell me who their client is after I&amp;rsquo;ve introduced myself. I only refer my friends to recruiters when I know who they&amp;rsquo;re recruiting for, and I never make an end run around recruiters. They are doing a mostly thankless job, and they should not be cheated out of their commission.&lt;/p&gt;
+
+&lt;p&gt;Over the years I&amp;rsquo;ve been lucky enough to help a half dozen friends find jobs, and there&amp;rsquo;s pretty much no better feeling. If you&amp;rsquo;re looking, let me know. I know really good people who are looking for you. I&amp;rsquo;m never too busy to help make introductions.&lt;/p&gt;
+</description>
+        </item>
+    
+
+  </channel>
+</rss>

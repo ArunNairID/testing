@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Progress on Maatkit bounty, part 2 &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Progress on Maatkit bounty, part 2" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2007/12/03/progress-on-maatkit-bounty-part-2/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2007/12/03/progress-on-maatkit-bounty-part-2/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Progress on Maatkit bounty, part 2</h1>
+  <span class="post-date">Mon, Dec 3, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f03%2fprogress-on-maatkit-bounty-part-2%2f&text=Progress%20on%20Maatkit%20bounty%2c%20part%202:https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f03%2fprogress-on-maatkit-bounty-part-2%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f03%2fprogress-on-maatkit-bounty-part-2%2f&title=Progress%20on%20Maatkit%20bounty%2c%20part%202&summary=Progress%20on%20Maatkit%20bounty%2c%20part%202&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f03%2fprogress-on-maatkit-bounty-part-2%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f03%2fprogress-on-maatkit-bounty-part-2%2f&t=Progress%20on%20Maatkit%20bounty%2c%20part%202" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f03%2fprogress-on-maatkit-bounty-part-2%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>Ironically, the <a href="/blog/2007/11/30/progress-on-maatkit-bounty/">Stream</a> algorithm I wrote as the simplest possible syncing algorithm does what the <a href="/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/">much more efficient algorithm I wrote some time ago</a> can&rsquo;t do: sync a table without a primary key, as long as there are no duplicate rows. In fact, it&rsquo;s so dumb, it will happily sync any table, even if there are no indexes.</p>
+
+<p>The flash of inspiration I had on Friday has turned out to be good insight. It immediately showed me how I can re-use a lot of the hard work I&rsquo;ve already done for other tools. Chunking and nibbling are the names I&rsquo;ve given to two algorithms I&rsquo;ve developed for processing tables a little at a time. Chunking looks for a suitable index and generates an array of <code>WHERE</code> clauses that will divide the table into pieces of approximately a given size (number of rows or number of bytes). I use this on mk-table-checksum and mk-parallel-dump. It requires an indexed column I can treat as a number one way or another. That includes temporal values.</p>
+
+<p>Nibbling is related. It&rsquo;s an efficient way to do something like LIMIT X, Y without scanning through the first X rows. It also requires a suitable index, but the code I wrote to make it work with mk-archiver is really generous about what &ldquo;suitable&rdquo; means. It&rsquo;ll basically work with any index. It selects some rows with LIMIT Y and uses the last-fetched row to start the next select.</p>
+
+<p>Both algorithms will adapt well to finding and resolving differences in rows, a chunk at a time. The general procedure is to create the <code>WHERE</code> clauses that define boundaries around the chunk of rows, then checksum the whole chunk. The result is a tiny little hash value. If this differs between the source and destination tables, the next step is to checksum the rows individually and fetch their primary or unique key columns. This uses a little more network bandwidth, but it&rsquo;s still not bad unless the key (or the chunk) is huge. Any rows whose checksums differ can then be fetched by the key and synced.</p>
+
+<p>The more complex algorithms, which were in the original table-sync tool, will come later. They can be potentially much more efficient in terms of network traffic, but they have drawbacks too, such as the granularity of locking. The mk-table-sync tool will soon be able to choose the best algorithm that causes the least locking and just do it without any fuss. For example, if it sees a nice primary key it can use for chunking, and it sees that the table is InnoDB, it&rsquo;ll just chunk and use <code>SELECT FOR UPDATE</code>. Voila, no table locks, and not much of the table will be locked at a time (it&rsquo;ll commit between chunks).</p>
+
+<p>Right now I&rsquo;ve gotten a simple interface for code that finds differences in rows, a plugin-like interface for implementing each of the algorithms uniformly, an interface for resolving differences, and a few other things. I&rsquo;m about to embark on the Chunk algorithm for syncing.</p>
+
+<p>I don&rsquo;t think most people will consider this a big deal, but don&rsquo;t expect the final product to correctly sync tables without a primary key and with duplicate rows. Comparing tables with duplicates is absolutely meaningless. If you can&rsquo;t write a <code>WHERE</code> clause that uniquely identifies a row, you&rsquo;re done.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2007/12/06/things-i-love-about-perl/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2007/11/30/progress-on-maatkit-bounty/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2007\/12\/03\/progress-on-maatkit-bounty-part-2\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

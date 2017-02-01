@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How I patched InnoDB to show locks held &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How I patched InnoDB to show locks held" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2007/12/21/how-i-patched-innodb-to-show-locks-held/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2007/12/21/how-i-patched-innodb-to-show-locks-held/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How I patched InnoDB to show locks held</h1>
+  <span class="post-date">Fri, Dec 21, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f21%2fhow-i-patched-innodb-to-show-locks-held%2f&text=How%20I%20patched%20InnoDB%20to%20show%20locks%20held:https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f21%2fhow-i-patched-innodb-to-show-locks-held%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f21%2fhow-i-patched-innodb-to-show-locks-held%2f&title=How%20I%20patched%20InnoDB%20to%20show%20locks%20held&summary=How%20I%20patched%20InnoDB%20to%20show%20locks%20held&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f21%2fhow-i-patched-innodb-to-show-locks-held%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f21%2fhow-i-patched-innodb-to-show-locks-held%2f&t=How%20I%20patched%20InnoDB%20to%20show%20locks%20held" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f12%2f21%2fhow-i-patched-innodb-to-show-locks-held%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>I&rsquo;ve written before about how to figure out <a href="/blog/2007/09/18/how-to-debug-innodb-lock-waits/">which connection is holding the InnoDB locks</a> for which other connections are waiting. In other words, how to figure out who&rsquo;s blocking you from getting work done when you get InnoDB lock timeouts or other InnoDB lock contention. The short and sweet: turn on the InnoDB lock monitor and use <a href="http://code.google.com/p/innotop/">innotop</a> to look at the locks held and waited-for.</p>
+
+<p>The InnoDB lock monitor has a few major disadvantages, though:</p>
+
+<ul>
+<li>It spews InnoDB status dumps into your log files</li>
+<li>It prints tons of lock information you don&rsquo;t want to see (it prints three lines of text for every row that&rsquo;s locked, each of them in several formats just in case you need it!)</li>
+<li>It can be so verbose that it crowds out the rest of the InnoDB status output, or even causes you not to see anything but a single lock</li>
+</ul>
+
+<p>Basically, it&rsquo;s written for the InnoDB developers, not for a MySQL DBA.</p>
+
+<p>Fixing this requires changing the server and/or storage engine; there&rsquo;s no configuration you can change. The easiest solution, in my view, is to a) turn off the verbose output b) print the locks held by default. Sure there are better ways, such as using <code>INFORMATION_SCHEMA</code> tables, but this is by far the lowest-hanging fruit.</p>
+
+<p>By the way, I think the InnoDB developers are working on exporting some status to pluggable <code>INFORMATION_SCHEMA</code> tables in future releases.</p>
+
+<p>Since MySQL is Free Software, I was able to patch InnoDB and MySQL the way I want them. The patch is attached to my <a href="http://bugs.mysql.com/bug.php?id=29126">feature request for fixing InnoDB lock output</a>. It&rsquo;s unlikely to be included in the MySQL server itself, but perhaps it&rsquo;ll help someone else too.</p>
+
+<p>With this patch, you get two new server variables, which you can set in either your <code>my.cnf</code> file, or dynamically via SET GLOBAL. By default, they are as follows:</p>
+
+<pre>mysql> show variables like 'innodb_show%';
++---------------------------+-------+
+| Variable_name             | Value |
++---------------------------+-------+
+| innodb_show_locks_held    | 10    | 
+| innodb_show_verbose_locks | 0     | 
++---------------------------+-------+</pre>
+
+<p>The first is the number of locks to print for each transaction. The second is whether to print the verbose record dumps for each lock. (My advice is to leave the second variable at 0).</p>
+
+<p>Now when you run <code>SHOW INNODB STATUS</code>, you&rsquo;ll see something like the following in the TRANSACTIONS section:</p>
+
+<pre>---TRANSACTION 0 268216580, ACTIVE 27 sec, process no 16382, OS thread id 2424191888
+2 lock struct(s), heap size 320
+MySQL thread id 8, query id 949 localhost 192.168.0.5 xaprb
+TABLE LOCK table `test/t1` trx id 0 268216580 lock mode IX
+RECORD LOCKS space id 0 page no 2670602 n bits 72 index `PRIMARY` of table `test/t1` trx id 0 268216580 lock_mode X locks rec but not gap</pre>
+
+<p>I caused that output by doing a <code>SELECT FOR UPDATE</code> query on an InnoDB table in a transaction.</p>
+
+<p>If this were all I did, it would still be a big help in figuring out who&rsquo;s blocking whom. But I also made <a href="http://code.google.com/p/innotop/">innotop</a> smarter to take advantage of the new output. Now it aggregates locks held and waited-for in L mode, so you can see very quickly &ldquo;something is waiting for a lock on this table, and something else has a lock on the same table.&rdquo; This works fine even when you haven&rsquo;t applied my patch, but my patch lets you debug lock waits much more cleanly.</p>
+
+<p>And as a bonus, it&rsquo;ll prevent your <code>SHOW INNODB STATUS</code> from being completely overwritten when you have a big deadlock.</p>
+
+<p>All in all, it&rsquo;s been a huge relief to have this applied to the servers I manage. Sometimes InnoDB&rsquo;s status output used to drive me nuts. I stopped complaining and did something about it!</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2007/12/27/maatkit-version-1579-released/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2007/12/16/maatkit-version-1508-released/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2007\/12\/21\/how-i-patched-innodb-to-show-locks-held\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

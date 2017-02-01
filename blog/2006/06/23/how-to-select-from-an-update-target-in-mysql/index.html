@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How to select from an update target in MySQL &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How to select from an update target in MySQL" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to select from an update target in MySQL</h1>
+  <span class="post-date">Fri, Jun 23, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f06%2f23%2fhow-to-select-from-an-update-target-in-mysql%2f&text=How%20to%20select%20from%20an%20update%20target%20in%20MySQL:https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f06%2f23%2fhow-to-select-from-an-update-target-in-mysql%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f06%2f23%2fhow-to-select-from-an-update-target-in-mysql%2f&title=How%20to%20select%20from%20an%20update%20target%20in%20MySQL&summary=How%20to%20select%20from%20an%20update%20target%20in%20MySQL&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f06%2f23%2fhow-to-select-from-an-update-target-in-mysql%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f06%2f23%2fhow-to-select-from-an-update-target-in-mysql%2f&t=How%20to%20select%20from%20an%20update%20target%20in%20MySQL" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f06%2f23%2fhow-to-select-from-an-update-target-in-mysql%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>MySQL doesn&rsquo;t allow referring to a table that&rsquo;s targeted for update in a <code>FROM</code> clause, which can be frustrating. There&rsquo;s a better way than creating endless temporary tables, though. This article explains how to update a table while selecting from it in a subquery.</p>
+
+<h3 id="the-problem">The problem</h3>
+
+<p>Suppose I want to update a table with data from a subquery that refers to the same table. I might want to do this for a variety of reasons, such as trying to populate a table with its own aggregate data (this would require assignment from a grouped subquery), updating one row from another row&rsquo;s data <a href="/blog/2006/03/11/many-to-one-problems-in-sql/">without using non-standard syntax</a>, and so on. Here&rsquo;s a contrived example:</p>
+
+<pre>create table apples(variety char(10) primary key, price int);
+
+insert into apples values('fuji', 5), ('gala', 6);
+
+update apples
+    set price = (select price from apples where variety = 'gala')
+    where variety = 'fuji';</pre>
+
+<p>The error message is <code>ERROR 1093 (HY000): You can't specify target table 'apples' for update in FROM clause</code>. The MySQL manual mentions this at the bottom of the <a href="http://dev.mysql.com/doc/refman/5.0/en/update.html">UPDATE documentation</a>: &ldquo;Currently, you cannot update a table and select from the same table in a subquery.&rdquo;</p>
+
+<p>It&rsquo;s pretty easy to work around the problem in this contrived example, but there are times when it&rsquo;s not possible to write the query without subqueries that refer to the update target. There is a workaround, though.</p>
+
+<h3 id="the-workaround">The workaround</h3>
+
+<p>Since MySQL materializes subqueries in the <code>FROM</code> clause (<a href="/blog/2005/09/26/sql-subqueries-and-derived-tables/">&ldquo;derived tables&rdquo;</a>) as temporary tables, wrapping the subquery into another inner subquery in the FROM clause causes it to be executed and stored into a temporary table, then referenced implicitly in the outer subquery. The following statement will succeed:</p>
+
+<pre>update apples
+   set price = (
+      select price from (
+         select * from apples
+      ) as x
+      where variety = 'gala')
+   where variety = 'fuji';</pre>
+
+<p>If you want to know more about how this works, read the relevant section in the <a href="http://dev.mysql.com/doc/internals/en/select-derived.html">MySQL Internals Manual</a>.</p>
+
+<h3 id="problems-this-trick-doesn-t-avoid">Problems this trick doesn&rsquo;t avoid</h3>
+
+<p>One common frustration this doesn&rsquo;t solve is the issue of badly optimized queries in the <code>IN()</code> clause, which are rewritten as correlated subqueries, sometimes (usually?) causing terrible performance. Wrapping the subquery in another subquery doesn&rsquo;t prevent the optimizer from rewriting it as a correlated subquery, though, unless I go to extremes. In any case it&rsquo;s better to just <a href="/blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/">rewrite such a query as a join</a>.</p>
+
+<p>Another thing it won&rsquo;t do is allow a query to refer to a temporary table more than once. Neither of these issues is solvable with the &ldquo;wrap it in a subquery&rdquo; trick because they are created at query compile time, whereas the update issue I was able to solve above happens at query run time.</p>
+
+<p>If you enjoyed this article, <a href="/index.xml">subscribe via feeds or e-mail</a> to receive my articles regularly.</p>
+
+<p><strong>Update 2006-08-29</strong> The queries I&rsquo;ve given here are sloppy, performance-wise. You don&rsquo;t want to just <code>select * from table</code> in the subquery in real life; I just wanted to keep the examples simple. In reality you should only be selecting the columns you need in that innermost query, and adding a good <code>WHERE</code> clause to limit the results, too.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2006/06/26/how-to-convert-text-to-columns-in-openofficeorg-calc/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2006/06/21/forward-only-sql-maintenance-jobs/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2006\/06\/23\/how-to-select-from-an-update-target-in-mysql\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

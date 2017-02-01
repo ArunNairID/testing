@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      A progress report on MySQL Table Sync &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="A progress report on MySQL Table Sync" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2007/04/02/a-progress-report-on-mysql-table-sync/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2007/04/02/a-progress-report-on-mysql-table-sync/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A progress report on MySQL Table Sync</h1>
+  <span class="post-date">Mon, Apr 2, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f02%2fa-progress-report-on-mysql-table-sync%2f&text=A%20progress%20report%20on%20MySQL%20Table%20Sync:https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f02%2fa-progress-report-on-mysql-table-sync%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f02%2fa-progress-report-on-mysql-table-sync%2f&title=A%20progress%20report%20on%20MySQL%20Table%20Sync&summary=A%20progress%20report%20on%20MySQL%20Table%20Sync&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f02%2fa-progress-report-on-mysql-table-sync%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f02%2fa-progress-report-on-mysql-table-sync%2f&t=A%20progress%20report%20on%20MySQL%20Table%20Sync" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2007%2f04%2f02%2fa-progress-report-on-mysql-table-sync%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>I wrote an article late last week about <a href="/blog/2007/03/30/comparison-of-table-sync-algorithms/">benchmark results for the two table-synchronization algorithms</a> I&rsquo;ve been implementing for the <a href="http://code.google.com/p/maatkit">MySQL Table Sync</a> tool. I&rsquo;ve spent some time developing a test suite for the tool, and learned some really interesting things about the general problem of synchronizing tables.</p>
+
+<h3 id="progress-on-mysql-table-sync">Progress on MySQL Table Sync</h3>
+
+<p>My test suite caught some great bugs, but not as many as I&rsquo;d expected, which is a great feeling. I haven&rsquo;t yet packaged the fixes up and released them to Sourceforge, by the way, so my earlier comment &ndash; &ldquo;I consider this tool unsuitable for production use&rdquo; &ndash; still holds. (You can grab the code from Subversion if you wish).</p>
+
+<p>The biggest bug was an error in my log-base-two arithmetic in the bottom-up sync algorithm. It&rsquo;s the kind of thing that stares me in the face and I don&rsquo;t see it until I have a nice test suite. I also found that I was doing drilldowns in the wrong order in the top-down algorithm.</p>
+
+<p>I&rsquo;ve added some features and documentation, too. This tool is getting pretty complex, and I want to give good guidance on how to use it.</p>
+
+<h3 id="a-tough-problem">A tough problem</h3>
+
+<p>I discovered there are lots of subtleties to finding and resolving differences between tables, which the literature had not prepared me for (probably because previous efforts weren&rsquo;t trying to cover all the cases I am). One interesting problem I found was comparing tables with characters Perl doesn&rsquo;t sort the same way as MySQL.</p>
+
+<p>This is an issue because the tool does not fetch both tables into memory and examine them there. That would be a disaster on large data sets. Instead, it uses a merge algorithm to work with just one row at a time from each table. It basically gets a forward-only cursor into the tables. Working with one row at a time is not how I&rsquo;m used to dealing with relational data, so I had to think creatively and ask for help.</p>
+
+<p>The solution &ndash; and I think this is the only way to do this &ndash; is to ask MySQL to compare character data when I&rsquo;m not confident Perl will sort it the same way MySQL will. The <code>STRCMP()</code> function, along with careful use of charsets and collations, is the key. This adds a small bit of extra network traffic in some cases, but I was able to optimize this to only do calls to MySQL when really needed. The number of extra calls should be very small for normal cases.</p>
+
+<p>The tool will now (as of the latest trunk code) work very well on every test case I&rsquo;ve been able to generate. This is not completely solved for earlier versions of MySQL, and I still have a TODO or three in the code, but I have generated thousands of random tables, filled them with random data, messed with the data in random ways, and run the sync tool against them &ndash; and it syncs them every time.</p>
+
+<h3 id="another-interesting-problem">Another interesting problem</h3>
+
+<p>There are cases where there is literally no way to update rows whose non-primary key columns have changed. Consider the following example:</p>
+
+<pre>create table test1(
+  a int not null primary key,
+  b int not null, unique key(b)
+);
+insert into test1(a,b) values(1,1),(2,2);
+
+create table test2 like test1;
+insert into test2(a,b) values(1,2),(2,1);
+
+select * from test1;
++---+---+
+| a | b |
++---+---+
+| 1 | 1 | 
+| 2 | 2 | 
++---+---+
+
+select * from test2;
++---+---+
+| a | b |
++---+---+
+| 1 | 2 | 
+| 2 | 1 | 
++---+---+</pre>
+
+<p>Notice that column <code>b</code> has a unique key on it. Now let&rsquo;s run the sync tool against these two tables, and ask it to print out the queries it would issue to sync the tables:</p>
+
+<pre>$ mysql-table-sync -1 test1 test2 -p
+UPDATE `test2` SET `b`='1' WHERE `a` = '1';
+UPDATE `test2` SET `b`='2' WHERE `a` = '2';</pre>
+
+<p>It found that the two rows have the same primary key in each table, so of course they must be the same row &ndash; it&rsquo;s just that their <code>b</code> value has changed. The rows must therefore be updated, right? Let&rsquo;s try again and tell it to execute the queries to sync the table this time:</p>
+
+<pre>$ mysql-table-sync -1 test1 test2 -x
+DBD::mysql::db do failed: Duplicate entry '1' for key 2 at mysql-table-sync line 1028.</pre>
+
+<p>This table cannot be synced with straightforward <code>UPDATE</code> statements. I see three ways to do it:</p>
+
+<ol>
+<li>update one row to another value, fix the second row, then fix the first row again.</li>
+<li>delete one row and update the other, then re-insert the first.</li>
+<li>delete both rows and then re-insert the correct data.</li>
+</ol>
+
+<p>The third technique is the only feasible one to do programmatically. I&rsquo;ve added such a feature to the tool, and it will now handle these two tables correctly:</p>
+
+<pre>$ mysql-table-sync test1 test2 -p --deleteinsert
+DELETE FROM `test2` WHERE `a` = '1';
+DELETE FROM `test2` WHERE `a` = '2';
+INSERT INTO `test2`(`a`,`b`) VALUES('1','1');
+INSERT INTO `test2`(`a`,`b`) VALUES('2','2');</pre>
+
+<p>The neat thing is, it only required a couple lines of code to change. That&rsquo;s always a good feeling.</p>
+
+<h3 id="general-mysql-toolkit-news">General MySQL Toolkit news</h3>
+
+<p>There is much more to do. If you want to help, it would be great to have a volunteer webmaster for the project, among other things.</p>
+
+<p>In other unrelated news, I noticed this project has been in Sourceforge&rsquo;s top 1000 for a while now, hovering in the 800 and 900 range. I&rsquo;m kind of surprised &ndash; Sourceforge has hundreds of thousands of projects. I expect this is somewhat inflated by the fact that I have so far not released the tools in one package, so the download numbers may be a bit higher than they&rsquo;d otherwise be.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2007/04/05/is-mysql-ready-for-the-enterprise/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2007/03/30/comparison-of-table-sync-algorithms/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2007\/04\/02\/a-progress-report-on-mysql-table-sync\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

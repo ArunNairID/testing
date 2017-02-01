@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How to install and maintain multiple WordPress blogs easily &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How to install and maintain multiple WordPress blogs easily" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2008/03/11/how-to-install-and-maintain-multiple-wordpress-blogs-easily/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2008/03/11/how-to-install-and-maintain-multiple-wordpress-blogs-easily/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to install and maintain multiple WordPress blogs easily</h1>
+  <span class="post-date">Tue, Mar 11, 2008 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f03%2f11%2fhow-to-install-and-maintain-multiple-wordpress-blogs-easily%2f&text=How%20to%20install%20and%20maintain%20multiple%20WordPress%20blogs%20easily:https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f03%2f11%2fhow-to-install-and-maintain-multiple-wordpress-blogs-easily%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f03%2f11%2fhow-to-install-and-maintain-multiple-wordpress-blogs-easily%2f&title=How%20to%20install%20and%20maintain%20multiple%20WordPress%20blogs%20easily&summary=How%20to%20install%20and%20maintain%20multiple%20WordPress%20blogs%20easily&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f03%2f11%2fhow-to-install-and-maintain-multiple-wordpress-blogs-easily%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f03%2f11%2fhow-to-install-and-maintain-multiple-wordpress-blogs-easily%2f&t=How%20to%20install%20and%20maintain%20multiple%20WordPress%20blogs%20easily" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f03%2f11%2fhow-to-install-and-maintain-multiple-wordpress-blogs-easily%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>My wife has a site that needs two WordPress blog installations. The URLs differ by a subdirectory name. Both blogs need to be (URL-wise) subdirectories of /blog/. They need to be completely independent of each other, yet use the same custom theme. And there used to be just a single blog, which was <em>not</em> in a subdirectory; its permalinks must not break. (It has nice URLs with the date and title in them, not post ID-style URLs). And because I&rsquo;m the husband, I get to maintain it, so tack &ldquo;easy to maintain&rdquo; onto the requirements (it must be easy to upgrade WP in both blogs, for example). In this article I&rsquo;ll show you how I did it with a single .htaccess file, a single copy of WordPress, two MySQL databases, and a single configuration file.</p>
+
+<h3 id="fixing-urls">Fixing URLs</h3>
+
+<p>As I mentioned, there used to be a blog at /blog/ which must not break. Suppose this blog was about dogs and my wife has recently started blogging about cats. She wants two completely independent blogs: /blog/dogs/ and /blog/cats/. Now the old permalinks structure, e.g. /blog/2006/03/01/dogs-are-great/, must redirect to /blog/<strong>dogs/</strong>2006/03/01/dogs-are-great/. How to do this?</p>
+
+<p>I&rsquo;m not a mod_rewrite wizard, but I figured there must be a way. And indeed there is: if an incoming URL doesn&rsquo;t contain dogs or cats, it can be rewritten and redirected to the new URL. Here&rsquo;s the code, which goes in /blog/.htaccess:</p>
+
+<pre>RewriteBase /blog/
+RewriteCond %{REQUEST_URI} !dogs|cats
+RewriteRule ^(.*)$ http://www.furryfriends.org/blog/dogs/$1 [R]
+</pre>
+
+<p>(By the way, the furryfriends thing is just an example, not the real site name).</p>
+
+<p>So far, so good. That works just fine: when I access a URL without dogs or cats in it, it redirects me. But I need to do more: I need rewrite rules to match the date-and-title permalinks both blogs will use. I accomplish that like so:</p>
+
+<pre>RewriteCond %{REQUEST_URI} dogs|cats
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (dogs|cats) /blog/$1/index.php [L]
+</pre>
+
+<p>This is basically the same thing WordPress usually does, but I&rsquo;ve made it tolerate either dogs or cats and figure out which installation should get the request. The .htaccess file lives in /blog/, not inside /dogs/ or /cats/ where it would be hard to maintain (it would get wiped out with upgrades). I can see different ways of doing this, but this is the way I chose. So here&rsquo;s the whole file:</p>
+
+<pre>&lt;IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Anything to the old address (e.g. /blog/foo/bar) goes to the new address
+# (e.g. /blog/dogs/foo/bar)
+RewriteBase /blog/
+RewriteCond %{REQUEST_URI} !dogs|cats
+RewriteRule ^(.*)$ http://www.furryfriends.org/blog/dogs/$1 [R]
+
+# If that fired, then we didn't reach this code.  If we did, then this rule
+# should do what a normal WP rule does.
+RewriteCond %{REQUEST_URI} dogs|cats
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (dogs|cats) /blog/$1/index.php [L]
+&lt;/IfModule>
+</pre>
+
+<p>Are there any better ways of doing this? I&rsquo;m curious. Leave a comment if you know of one.</p>
+
+<h3 id="fixing-the-maintenance-headache">Fixing the maintenance headache</h3>
+
+<p>Installing two copies of WordPress, then customizing both is a pain. And it makes upgrades harder, too. I&rsquo;d have to upgrade them both, fiddle with plugins (some of them are customized, too) etc etc. Even backups would be more complicated. It would be all too easy to screw up and delete some data. There are just so many ways this is a bad idea.</p>
+
+<p>It occurred to me that I could use a single copy and turn the dogs/ and cats/ subdirectories in the filesystem into symbolic links. (Windows users, you can stop reading now: this won&rsquo;t work for you).</p>
+
+<p>To make the blogs, the WordPress installation, and the custom blog theme all independent of each other, I created the following filesystem hierarchy:</p>
+
+<pre>blog/
+   wordpress/
+      2.3.2/
+         [The usual WP files are here]
+      wp_content/
+         plugins/
+         uploads/
+         themes/
+            my_custom_theme/
+</pre>
+
+<p>What I&rsquo;ve done is separate the custom bits &ndash; the parts that don&rsquo;t ship with WordPress &ndash; away from the files I want to upgrade when I upgrade WordPress. How will this work, though?</p>
+
+<p>I&rsquo;ll make symbolic links from the dogs/ and cats/ directories to the currently installed version of WordPress. So, from the root directory of the website, I type the following at the command line:</p>
+
+<pre>$ ln -s wordpress/2.3.2/ dogs
+$ ln -s wordpress/2.3.2/ cats
+$ cd wordpress/2.3.2/
+$ rm -rf wp-content/
+$ ln -s ../wp-content wp-content
+</pre>
+
+<p>The directory hierarchy now looks like this:
+<pre>blog/
+   cats/ -&gt; wordpress/
+   dogs/ -&gt; wordpress/
+   wordpress/
+      2.3.2/
+         [The usual WP files are here]
+         wp-content/ -&gt; ../wp-content
+      wp_content/
+         plugins/
+         uploads/
+         themes/
+            my_custom_theme/
+</pre></p>
+
+<p>This is looking pretty good! There&rsquo;s only one minor detail missing: because both blogs are running literally the same code via the magic of symlinks, each blog is trying to access the same database tables. I need to customize the WordPress configuration file, too. I&rsquo;ll just give each installation a different table name prefix in wp-config.php:
+<pre>$table_prefix  = strpos($_SERVER[&lsquo;REQUEST_URI&rsquo;], &lsquo;blog/cats/&rsquo;) ? &lsquo;wp<em>cats</em>&rsquo; : &lsquo;wp_dogs&rsquo;;
+</pre></p>
+
+<p>And voila, it works perfectly now. I accessed the two URLs, ran through the installation procedure twice, and have two completely independent blogs running the same code in the same database.</p>
+
+<h3 id="the-upgrade-procedure">The upgrade procedure</h3>
+
+<p>So, this is all a little complicated, right? What if I&rsquo;ve forgotten how I did it when I upgrade next time, or what if someone else does it instead of me? I wrote myself a little README file to fix this. Here&rsquo;s what it says:</p>
+
+<pre>This is how to upgrade Lynn's blog.
+
+The two blogs are actually using shared files, which are symlinked to make
+it so there is only one copy of files.  You can't change the files in one
+without changing them in the other.
+
+The wp-content subdirectory is symlinked.
+
+The wp-config file is customized so it will work in either blog:
+
+$table_prefix  = strpos($_SERVER['REQUEST_URI'], 'blog/cats/') ? 'wp_cats_' : 'wp_dogs';
+
+To upgrade, 
+
+ 1. Download the latest version and unpack it inside wordpress/ as 2.3.2/
+    or whatever version it is.
+ 2. Then go into that directory.
+ 3. Remove the wp-content/ directory completely.
+ 4. Then symlink it like this: ln -s ../wp-content wp-content
+ 5. Now re-customize wp-config.php
+ 6. Go back to the blog/ directory.  rm dogs cats
+ 7. ln -s wordpress/2.3.2/ dogs
+ 8. ln -s wordpress/2.3.2/ cats
+</pre>
+
+<p>It&rsquo;s still a manual process, but it should take me all of thirty seconds. I&rsquo;m okay with that. As long as I remember there&rsquo;s a README file, that is!</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2008/03/16/maatkit-version-1877-released/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2008/03/09/a-very-fast-fnv-hash-function-for-mysql/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2008\/03\/11\/how-to-install-and-maintain-multiple-wordpress-blogs-easily\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

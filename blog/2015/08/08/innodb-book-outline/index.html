@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      An Outline for a Book on InnoDB &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="An Outline for a Book on InnoDB" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/media/2015/08/iceberg.jpg" />
+  <meta name="og:description" content="This would have been epic. Epic. EPIC. But it never happened." />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2015/08/08/innodb-book-outline/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2015/08/08/innodb-book-outline/">
+  
+  <meta name="description" value="This would have been epic. Epic. EPIC. But it never happened.">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">An Outline for a Book on InnoDB</h1>
+  <span class="post-date">Sat, Aug 8, 2015 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f08%2f08%2finnodb-book-outline%2f&text=An%20Outline%20for%20a%20Book%20on%20InnoDB:https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f08%2f08%2finnodb-book-outline%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f08%2f08%2finnodb-book-outline%2f&title=An%20Outline%20for%20a%20Book%20on%20InnoDB&summary=An%20Outline%20for%20a%20Book%20on%20InnoDB&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f08%2f08%2finnodb-book-outline%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f08%2f08%2finnodb-book-outline%2f&t=An%20Outline%20for%20a%20Book%20on%20InnoDB" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f08%2f08%2finnodb-book-outline%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>Years ago I pursued my interest in InnoDB&rsquo;s architecture and design, and became impressed with its sophistication. Another way to say it is that <a href="/blog/2014/12/08/eventual-consistency-simpler-than-mvcc/">InnoDB is complicated, as are all MVCC databases</a>. However, InnoDB manages to hide the bulk of its complexity entirely from most users.</p>
+
+<p><img src="/media/2015/08/iceberg.jpg" alt="Iceberg" /></p>
+
+<p>I decided to at least outline a book on InnoDB. After researching it for a while, it became clear that it would need to be a series of books in multiple volumes, with somewhere between 1000 and 2000 pages total.</p>
+
+<p>At one time I actually understood a lot of this material, but I have forgotten most of it now.</p>
+
+<p>I did not begin writing. Although it is incomplete, outdated, and in some cases wrong, I share the outline here in case anyone is interested. It might be of particular interest to someone who thinks it&rsquo;s an easy task to write a new database.</p>
+
+<p></p>
+
+<p><code>
+High-Level Outline:</p>
+
+<ul>
+<li>Introduction</li>
+<li>Intro to Major Features</li>
+<li>The InnoDB Architecture</li>
+<li>Indexes</li>
+<li>Transactions in InnoDB</li>
+<li>Locking in InnoDB</li>
+<li>Deadlocks</li>
+<li>Multi-Version Concurrency Control (MVCC)</li>
+<li>Old Row Versions and the Undo Space</li>
+<li>Data Storage and Layout</li>
+<li>Data Types</li>
+<li>Large Value Storage and Compression</li>
+<li>The Transaction Logs</li>
+<li>Ensuring Data Integrity</li>
+<li>The Insert Buffer (Change Buffer)</li>
+<li>The Adaptive Hash Index</li>
+<li>Buffer Pool Management</li>
+<li>Memory Management</li>
+<li>Checkpoints and Flushing</li>
+<li>Startup, Crash Recovery, and Shutdown</li>
+<li>InnoDB&rsquo;s I/O Behavior and File Management</li>
+<li>Data Manipulation (DML) Operations</li>
+<li>The System Tables</li>
+<li>Data Definition (DDL) Operations</li>
+<li>Foreign Keys</li>
+<li>InnoDB&rsquo;s Interface to MySQL</li>
+<li>Index Implementation</li>
+<li>Data Distribution Statistics</li>
+<li>How MySQL executes queries with InnoDB</li>
+<li>Internal Maintenance Tasks</li>
+<li>Tuning InnoDB</li>
+<li>Mutexes and Latches</li>
+<li>InnoDB Threads</li>
+<li>Internal Structures</li>
+<li>XtraBackup</li>
+<li>InnoDB Recovery Tools</li>
+<li>Inspecting Status</li>
+</ul>
+
+<p>Section-By-Section Detailed Outline:</p>
+
+<ul>
+<li><p>Introduction</p>
+
+<ul>
+<li>History of InnoDB, what its roots are, context of the integration into
+MySQL and the Oracle purchase, etc</li>
+<li>Based on Gray &amp; Reuters book</li>
+<li>high-level organization: USER visible things first, after enough
+high-level overview to understand the big features and moving parts; then
+INTERNALS afterwards.</li>
+</ul></li>
+
+<li><p>Intro to Major Features</p>
+
+<ul>
+<li>Transactions</li>
+<li>ACID</li>
+<li>MVCC</li>
+<li>multi-version read consistency</li>
+<li>row-level locking</li>
+<li>standard isolation levels</li>
+<li>automatic deadlock detection</li>
+<li>Foreign Keys</li>
+<li>Clustered Indexes</li>
+<li>Page Compression</li>
+<li>Crash Recovery</li>
+<li>Exercises</li>
+</ul></li>
+
+<li><p>The InnoDB Architecture</p>
+
+<ul>
+<li>This will be a high-level introduction, just enough to understand the
+following chapters</li>
+<li>Storage on disk</li>
+<li>Pages, and page sizes</li>
+<li>Extents</li>
+<li>Segments</li>
+<li>Tablespaces
+
+<ul>
+<li>The main tablespace and its major components</li>
+<li>Data pages</li>
+<li>data dictionary</li>
+<li>insert buffer</li>
+<li>undo log area</li>
+<li>doublewrite buffer</li>
+<li>reserved spaces for hardcoded offsets</li>
+<li>see Vadim&rsquo;s diagram on HPM blog</li>
+<li>individual tablespaces for file-per-table</li>
+</ul></li>
+<li>redo log files</li>
+<li>Storage in memory</li>
+<li>the buffer pool and its major components
+
+<ul>
+<li>Data pages</li>
+</ul></li>
+<li>other memory usage
+
+<ul>
+<li>adaptive hash index</li>
+</ul></li>
+<li>Major data structures</li>
+<li>LRU list</li>
+<li>flush list</li>
+<li>free list</li>
+<li>Exercises</li>
+</ul></li>
+
+<li><p>Indexes</p>
+
+<ul>
+<li>clustered</li>
+<li>logically nearby pages can be physically distant, so sequential scan isn&rsquo;t
+guaranteed to be sequential</li>
+<li>no need to update when rows are moved to different pages</li>
+<li>changing PK value is expensive</li>
+<li>insert order</li>
+<li>random inserts are expensive: splits, fragmentation, bad space utilization/fill factor</li>
+<li>sequential inserts build least fragmented table</li>
+<li>consider auto_increment</li>
+<li>optimize table rebuilds, will compact PK but not secondary
+
+<ul>
+<li>they are built by insertion, not by sort, except for plugin fast creation</li>
+<li>secondaries can be dropped and recreated in fast mode in the plugin to defrag</li>
+<li>but this won&rsquo;t shrink the tablespace</li>
+</ul></li>
+<li>primary vs secondary</li>
+<li>secondary causes 2 lookups, also might cause lookup to PK to check row
+visibility because secondary has version per-page, not per-row</li>
+<li>PK ranges are very efficient</li>
+<li>PK updates are in-place, secondary are delete+insert</li>
+<li>automatic promotion of unique secondary</li>
+<li>auto-creation of a primary key</li>
+<li>primary columns are stored in secondary indexes</li>
+<li>long primary keys expensive</li>
+<li>uniqueness; is checking deferred, or immediate?</li>
+<li>there is no prefix compression as there is in myisam, so indexes can be larger</li>
+<li>rows contain trxn info, but secondary indexes do also at the page level
+(enables index-covered queries; more on this later)</li>
+<li>Exercises</li>
+</ul></li>
+
+<li><p>Transactions in InnoDB</p>
+
+<ul>
+<li>A transaction is a sequence of actions that starts in one legal state, and
+ends in another legal state (need a good definition)</li>
+<li>from Heikki&rsquo;s slides: atomic (all committed or rolled back at once),
+consistent (operate on a consistent ivew of the data, and leave the data
+in a consistent state at the end); isolated (don&rsquo;t see effects of other txns
+on the system until after commit); durable (all changes persist, even after
+a failure)
+
+<ul>
+<li>consistency means that any data I see is consistent with all other data I see
+at a single point in time (there are exceptions to this)</li>
+</ul></li>
+<li>How are they started, and in what conditions?</li>
+<li>what is the transaction ID and its relationship to the LSN?</li>
+<li>what is the system version number (LSN)?</li>
+<li>what is a minitransaction/mtr?</li>
+<li>when are they committed?</li>
+<li>how are savepoints implemented?</li>
+<li>what happens on commit?</li>
+<li>XA and interaction with the binary logs</li>
+<li>fsync()s</li>
+<li>group commit</li>
+<li>what happens on rollback?</li>
+<li>they are meant to be short-lived and commit; what if they stay open a long
+time or roll back?</li>
+</ul></li>
+
+<li><p>Locking in InnoDB</p>
+
+<ul>
+<li>locking is needed to ensure consistency, and so that transactions can
+operate in isolation from each other</li>
+<li>row-level</li>
+<li>non-locking consistent reads by default</li>
+<li>pessimistic locking</li>
+<li>locks are stored in a per-page bitmap</li>
+<li>compact: 3-8 bits per lock</li>
+<li>sparse pages have more memory and CPU overhead per locked row</li>
+<li>no lock escalation to page-level or table-level</li>
+<li>row locking</li>
+<li>S locks</li>
+<li>X locks</li>
+<li>there is row-level locking on indexes, (but it may require access to PK
+to see if there is a current version of the row to lock, right?)</li>
+<li>Heikki says a delete-marked index record can carry a lock.  What are the
+cases where this would happen?  Why does it matter?  I imagine that a
+DELETE statement locks the row, deletes it, and leaves it there locked.</li>
+<li>supremum row can carry a lock, but infimum cannot (maybe we should discuss
+later in another chapter)</li>
+<li>table locking - IS and IX locks</li>
+<li>InnoDB uses multiple-granularity locking, see <a href="http://en.wikipedia.org/wiki/Multiple_granularity_locking">http://en.wikipedia.org/wiki/Multiple_granularity_locking</a></li>
+<li>also called two-phase locking, perhaps?  Baron&rsquo;s a bit confused</li>
+<li>before setting a S row lock, it sets an intention lock IS on the table</li>
+<li>before setting a X row lock, it sets an intention lock IX on the table</li>
+<li>auto-increment locks</li>
+<li>needed for stmt replication</li>
+<li>before 5.0: table-level for the whole statement, even if the insert provided the value</li>
+<li>released at statement end, not txn end</li>
+<li>this is a serious bottleneck</li>
+<li>5.1 and later: two more types of behavior (Look up _____&rsquo;s issues, I think they
+had some problem with it; also Mark Callaghan talked about a catch-22 with it)</li>
+<li>row replication lets lock be released faster, or avoid it completely
+
+<ul>
+<li>complex behavior: interleaved numbers, gaps in sequences</li>
+</ul></li>
+<li>locks set by types of statements</li>
+<li>select doesn&rsquo;t set locks unless it&rsquo;s serializable</li>
+<li>select lock in share mode
+
+<ul>
+<li>sets shared next-key locks on all index records it sees</li>
+</ul></li>
+<li>select for update
+
+<ul>
+<li>sets exclusive next-key locks on all index records it sees, as well as locking the PK</li>
+</ul></li>
+<li>insert into tbl1 select from tbl2
+
+<ul>
+<li>sets share locks on all rows it scans in tbl2 to prevent phantoms</li>
+<li>can be reduced in 5.1 with read-committed; does a consistent non-locking read,</li>
+<li>but requires rbr or it will be unsafe for replication</li>
+</ul></li>
+<li>update and delete set exclusive next-key locks on all records they find (in pk/2nd?)</li>
+<li>insert sets an x-lock on the inserted record (not next-key, so it doesn&rsquo;t prevent others)
+
+<ul>
+<li>if there is a duplicate key error, sets s-lock on the index record (why?)</li>
+</ul></li>
+<li>replace is like an insert
+
+<ul>
+<li>if there is a key collision, places x-next-key-lock on the updated row</li>
+</ul></li>
+<li>insert&hellip;select&hellip;where sets x-record-lock on each destination row, and S-next-key-locks
+on source rows, unless innodb_locks_unsafe_for_binlog is set</li>
+<li>create&hellip;select is an insert..select in disguise</li>
+<li>if there is a FK, anything that checks the constraint sets S-record-locks on the records
+it looks at.  Also sets locks if the constraint fails (why?)</li>
+<li>lock types and compatibility matrix</li>
+<li>how is lock wait timeout implemented, and what happens to trx that times out?</li>
+<li>infimum/supremum &ldquo;records&rdquo; can be locked but don&rsquo;t correspond to real rows
+(should we defer this till later?)</li>
+<li>gap locking, etc are discussed later</li>
+</ul></li>
+
+<li><p>Deadlocks</p>
+
+<ul>
+<li>how are deadlocks detected?</li>
+<li>cycle in the waits-for graph</li>
+<li>or, too many recursions (200)</li>
+<li>or, too many locks checked (1 million, I think?)</li>
+<li>performance impact, disabling</li>
+<li>do txn check when the set a lock (I think so) or is there a deadlock thread as Peter&rsquo;s slides say?</li>
+<li>deadlock behavior</li>
+<li>how is a victim chosen? which one is rolled back?
+
+<ul>
+<li>txn that modified the fewest rows</li>
+</ul></li>
+<li>how about deadlocks with &gt; 2 transactions involved and SHOW INNODB STATUS</li>
+<li>causes of deadlocks</li>
+<li>foreign keys</li>
+<li>gap locking</li>
+<li>transactions accessing table through different indexes</li>
+<li>how to reduce deadlocks</li>
+<li>make txns use same index in same order</li>
+<li>short txns, fewer modifications, commit often</li>
+<li>use rbr and read_committed in 5.1, reduces gap locking</li>
+<li>in 5.0, use innodb_locks_unsafe_for_binlog to remove gap locking</li>
+</ul></li>
+
+<li><p>Multi-Version Concurrency Control (MVCC)</p>
+
+<ul>
+<li>ensures isolation with minimal locking</li>
+<li>isolation means that while transactions are changing data, other transactions
+see only a legal state of the database &ndash; either as of the start of the txn
+that is changing stuff, or at the end after it commits, but not midway</li>
+<li>readers can read without being blocked by writers, and vice versa</li>
+<li>writers block each other</li>
+<li>TODO: some of the details here need to be moved to the next chapter, or they need to be merged</li>
+<li>old row versions are kept until no longer visible, then deleted in background (purge)</li>
+<li>Read views</li>
+<li>how LSN is used for mvcc, &ldquo;txn sees between X and Y&rdquo;: DB_TRX_ID (6 bytes?) column</li>
+<li>updates write a new version, move the old one to the undo space, even before commit
+
+<ul>
+<li>short rows are faster to update</li>
+<li>whole rows are versioned, except for BLOBs</li>
+</ul></li>
+<li>deletes update the txn ids, leave it in place &ndash; special-case of update</li>
+<li>inserts have a txn id in the future &ndash; but they still write to undo space and it is
+discarded after commit</li>
+<li>mvcc causes index bloat for deletions, but not for updates; updates cause undo space bloat</li>
+<li>what the oldest view is used for, in srv0srv.c</li>
+<li>Transaction isolation levels</li>
+<li>SERIALIZABLE
+
+<ul>
+<li>Locking reads as if LOCK IN SHARE MODE.</li>
+<li>Bypass multi versioning</li>
+<li>No consistent reads; everyone sees latest state of DB.</li>
+</ul></li>
+<li>REPEATABLE-READ (default)
+
+<ul>
+<li>Read commited data at it was on start of transaction</li>
+<li>the snapshot begins with the first consistent read in the txn</li>
+<li>begin transaction with consistent snapshot starts it &ldquo;now&rdquo;</li>
+<li>update/delete use next-key locking</li>
+<li>Is only for reads; multiversioning is for reads, not for writes.
+For example, you can delete a row and commit from one session.  Another session can
+still see the row, but if it tries to update it, will affect 0 rows.</li>
+<li>FOR UPDATE and LOCK IN SHARE MODE and INSERT..SELECT will drop out of
+this isolation level, because you can only lock or intend to update the
+most recent version of the row, not an old version.
+<a href="http://bugs.mysql.com/bug.php?id=17228">http://bugs.mysql.com/bug.php?id=17228</a>
+&ldquo;transaction isolation level question from a student in class&rdquo; thread Mar 2011
+&ldquo;Re: REPEATABLE READ doesn&rsquo;t work correctly in InnoDB tables?&rdquo; ditto</li>
+</ul></li>
+<li>READ-COMMITED
+
+<ul>
+<li>Read commited data as it was at start of statement &ndash; &ldquo;up to date&rdquo;</li>
+<li>each select uses its own snapshot; internally consistent, but not over whole txn</li>
+<li>in 5.1, most gap-locking removed; requires row-based logging.</li>
+<li>unique key checks in 2nd indexes, and some FK checks, still need to set gap locks</li>
+<li>prevents inserting child row after parent is deleted</li>
+<li>which FK checks?</li>
+</ul></li>
+<li>READ-UNCOMMITED
+
+<ul>
+<li>Read non committed data as it is changing live</li>
+<li>No consistency, even within a single statement</li>
+</ul></li>
+<li>which is best to use? is read-committed really better, as a lot of people believe?</li>
+<li><a href="http://www.mysqlperformanceblog.com/2011/01/12/innodb-undo-segment-siz-and-transaction-isolation/">http://www.mysqlperformanceblog.com/2011/01/12/innodb-undo-segment-siz-and-transaction-isolation/</a></li>
+<li>phantom rows: you don&rsquo;t see it in the first query, you see it when you query again;
+stmt replication can&rsquo;t tolerate them (not a problem in row-based); avoided by gap locking</li>
+<li>Lock types for MVCC:</li>
+<li>Next-key locks</li>
+<li>gap locks
+
+<ul>
+<li>gap locks are simply a prohibition from inserting into the gap</li>
+<li>they don&rsquo;t give permission to do anything, they just block others</li>
+<li>example: if I hold an exclusive next-key lock on a record, I can&rsquo;t always insert
+into the gap before it; someone might have a gap lock or a waiting next-key lock
+request.</li>
+<li>different modes of locks are allowed to coexist, because of gap merging via purge</li>
+<li>holding a gap lock prevents others from inserting, but doesn&rsquo;t permit me to insert;
+I must wait for conflicting locks to be released (many txns can hold the same gap lock)</li>
+<li>supremum can be gap-locked, infimum can&rsquo;t &ndash; why not?</li>
+<li>which isolation levels use them?</li>
+<li>types: next-key (locks key and gap before it), gap lock (just the gap before the key),
+record-only (just the key), insert-intention gap lock (held while waiting to insert
+into a gap).</li>
+<li>searches for a unique key use record-only locks to minimize gap locking (pk updates,
+for example)</li>
+</ul></li>
+<li>insert-intention locking</li>
+<li>index locking (<a href="http://dom.as/2011/07/03/innodb-index-lock/">http://dom.as/2011/07/03/innodb-index-lock/</a>)</li>
+<li>when MVCC is bypassed:</li>
+<li>updates: can only update a row that exists currently (what about delete?)</li>
+<li>select lock in share mode
+
+<ul>
+<li>sets shared next-key locks on all index records it sees</li>
+</ul></li>
+<li>select for update
+
+<ul>
+<li>sets exclusive next-key locks on all index records it sees, as well as locking the PK</li>
+</ul></li>
+<li>insert into tbl1 select from tbl2
+
+<ul>
+<li>sets share locks on all rows it scans in tbl2 to prevent phantoms</li>
+<li>can be reduced in 5.1 with read-committed; does a consistent non-locking read,</li>
+<li>but requires rbr or it will be unsafe for replication</li>
+</ul></li>
+<li>locking reads are slower, because they have to set locks (check for deadlocks)</li>
+<li>How locks on a secondary index must lock the primary key, the impact of
+this on the txn isolation level</li>
+<li>indexes contain pointers to all versions</li>
+<li>Index key 5 will point to all rows which were 5 in the past</li>
+<li>TODO: clarify this with Peter</li>
+<li>Exercises</li>
+<li>is there really such a thing as a unique index in InnoDB?</li>
+</ul></li>
+
+<li><p>Old Row Versions and the Undo Space</p>
+
+<ul>
+<li>old row versions are used for MVCC and rollback of uncommitted txns that fail</li>
+<li>they provide Consistency: each txn sees data at a consistent point in time
+so old row versions are needed
+
+<ul>
+<li>cannot be updated: history cannot change; thus old row versions aren&rsquo;t locked</li>
+</ul></li>
+<li>each row in index contains DB_ROLL_PTR column, 7 bytes, points to older version</li>
+<li>They are stored in a linked list, so a txn that reads old rows is slow,
+and rows that are updated many times are very slow, and long running txns
+that update a lot of rows can impact other txns</li>
+<li>&ldquo;rows read&rdquo; is logical at the mysql level, but at the innodb level, many rows could be read</li>
+<li>there is no limit on number of old versions to keep</li>
+<li>history list</li>
+<li>rollback segment / rseg</li>
+<li>what is the difference between this and an undo segment / undo tablespace?</li>
+<li>purge of old row versions</li>
+<li>how it is done in the main loop</li>
+<li>how it is done in a separate thread</li>
+<li>interaction with long-running transactions, when a row version can be
+purged, txn isolation level of long-running transactions</li>
+<li>it leaves a hole / fragmentation (see __________?id=17673)</li>
+<li>purging can change gaps, which are gap-locked; what happens to them?</li>
+<li>a deleted row is removed from an index; two gaps merge.  The new bigger gap
+inherits both the locks from the gaps, and the lock that was on the deleted row</li>
+<li>innodb_max_purge_lag slows down updates when purge falls behind</li>
+</ul></li>
+
+<li><p>Data Storage and Layout</p>
+
+<ul>
+<li>Tablespaces</li>
+<li>what is in the global tablespace; why it grows; why it can&rsquo;t be shrunk</li>
+<li>main tablespace can be multiple files concatenated</li>
+<li>legacy: raw device</li>
+<li>tablespace header =&gt; id, size</li>
+<li>segments, how they are used</li>
+<li>leaf and non-leaf node segments for each index (makes scans more sequential IO)
+thus each index has two segments for these types of pages</li>
+<li>rollback segment</li>
+<li>insert buffer segment</li>
+<li>segment allocation: small vs large, page-at-time vs extent-at-a-time</li>
+<li>how free pages are recycled within the same segment</li>
+<li>when a segment can be reused
+All pages in extent must be free before it is used in
+different segment of same tablespace</li>
+<li>file-per-table</li>
+<li>advantages: reclaim space, store data on different drives (symlinking and its pitfalls),
+backup/restore single tables, supports compression</li>
+<li>disadvantages: filesystem per-inode mutexes, longer recovery, uses more space</li>
+<li>free space within a segment can be used by same table only</li>
+<li>how to import and export tables with xtradb, how this is different from
+import and export in standard innodb</li>
+<li>file growth/extension, and how it is done</li>
+<li>ibdata1: innodb_autoextend_increment</li>
+<li>individual table .ibd files don&rsquo;t respect that setting</li>
+<li><a href="http://bugs.mysql.com/56433">http://bugs.mysql.com/56433</a> bug about mutex lock during extension, Yasufumi patched</li>
+<li>file formats (redundant, compact, barracuda, etc)</li>
+<li>Page format</li>
+<li>types of pages</li>
+<li>Row format</li>
+<li>never fragmented, except blobs are stored in multiple pieces</li>
+<li>there can be a lot of empty space between rows on the page</li>
+<li>infimum/supremum records</li>
+<li>how SHOW TABLE STATUS works: see issue 17673</li>
+</ul></li>
+
+<li><p>Data Types</p>
+
+<ul>
+<li>Data types supported, and their storage format</li>
+<li>Nulls</li>
+<li>are nulls equal with respect to foreign keys?  what about unique indexes?</li>
+<li>Exercises</li>
+</ul></li>
+
+<li><p>Large Value Storage and Compression</p>
+
+<ul>
+<li>Page compression</li>
+<li>new in plugin</li>
+<li>requires file-per-table and Barracuda</li>
+<li>Pages are kept uncompressed in memory
+
+<ul>
+<li>TODO: Peter says both compressed and uncompressed can be kept in memory</li>
+</ul></li>
+<li>compression is mostly per-page</li>
+<li>uses zlib, zlib library version must match exactly on recovery, because inflate/deflate sizes must match exactly, so can&rsquo;t do recovery on different mysql version than the crash was on, ditto for xtrabackup backup/prepare; if libz is not linked statically, this can cause problems (use ldd to see); recovery might be immature for compressed table spaces. <a href="http://bugs.mysql.com/bug.php?id=62011">http://bugs.mysql.com/bug.php?id=62011</a></li>
+<li>TODO: peter says Uses fancy tricks: Per page update log to avoid re-compression</li>
+<li>not really configurable</li>
+<li>syntax: ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=4; Estimate how well the data will compress</li>
+<li>problems:
+
+<ul>
+<li>fs-level might be more efficient b/c page size is too small for good compression ratio</li>
+<li>we have to guess/hint how much it can be compressed</li>
+<li>setting is per-table, not per-index, but indexes vary in suitability</li>
+</ul></li>
+<li>TODO: Peter says KEY_BLOCK_SIZE=16; - Only compress externally stored BLOBs - Can reduce size without overhead</li>
+<li>Blob/large value storage (large varchar/text has same behavior)</li>
+<li>small blobs are stored in the page whole, if they fit (max row len: ~8000 bytes, ~<sup>1</sup>&frasl;<sub>2</sub> page)
+<a href="http://www.facebook.com/notes/mysql-at-facebook/how-many-pages-does-innodb-for-tables-with-large-columns/10150481019790933">http://www.facebook.com/notes/mysql-at-facebook/how-many-pages-does-innodb-for-tables-with-large-columns/10150481019790933</a></li>
+<li>large blobs are stored out-of-page on a dedicated extent, first 768 bytes in-page
+
+<ul>
+<li>same allocation rules as for any extent: page by page, then extent at a time</li>
+<li>this can waste a lot of space; it makes sense to combine blobs if possible</li>
+</ul></li>
+<li>Barracuda format lets us store the whole thing out-of-page, without the 768-byte prefix</li>
+<li>no need to move blobs to their own table &ndash; innodb won&rsquo;t read them unless needed</li>
+<li>but the 768-byte prefix can make rows larger anyway</li>
+<li>blob I/O is always &ldquo;pessimistic&rdquo;</li>
+<li>how are BLOBs handled with MVCC and old row versions?</li>
+<li>externally stored blobs are not updated in-place, a new version is created</li>
+<li>does a row that contains a blob, which gets updated without touching the blob, create a new
+row that refers to the same copy of the blob as the old row does?</li>
+<li>how is undo space handed? TODO: in-page/in-extent with the row, or in the undo log area?</li>
+</ul></li>
+
+<li><p>The Transaction Logs</p>
+
+<ul>
+<li>circular</li>
+<li>File format: not page formatted, record formatted</li>
+<li>512 byte units (prevents o_direct, causes read-around writes)</li>
+<li>if logs fit in os buffer, may improve performance; otherwise puts
+pressure on memory, written circularly and never read except for
+read-around writes, so OS caching is useless</li>
+<li>tunable in XtraDB</li>
+<li>records are physiological: page # and operation to perform</li>
+<li>records are idempotent</li>
+<li>only redo, not undo</li>
+<li>what LSN is (bytes written to tx log, tx ID, system version number)</li>
+<li>where it is used (each page is versioned, each row has 2 lsns in the pk)</li>
+<li>given a LSN, where does it point to in the physical files? (it&rsquo;s modulo, I think)</li>
+<li>Changing the log file size</li>
+<li>Headers and magic offsets, e.g. where the last checkpoint is written</li>
+<li>Never implemented:</li>
+<li>multiple log groups</li>
+<li>log archiving (maybe implemented once, then removed?)</li>
+</ul></li>
+
+<li><p>Ensuring Data Integrity</p>
+
+<ul>
+<li>Page checksums (old, new, and faster implementations)</li>
+<li>checked when page is read in</li>
+<li>updated when it is flushed</li>
+<li>how much overhead this causes</li>
+<li>disable-able, not recommended</li>
+<li>the doublewrite buffer</li>
+<li>it isn&rsquo;t really a &ldquo;buffer&rdquo; like other buffers</li>
+<li>avoiding torn pages / partial page writes</li>
+<li>it is a short-term page-level log; pages contain tablespaceid+pageid</li>
+<li>process: write to buffer; sync; write original location; sync</li>
+<li>after crash recovery, we check the buffer and the original location, update original if needed</li>
+<li>unlike postgres, we don&rsquo;t write a full page to log after checkpoint (logs aren&rsquo;t page-oriented)</li>
+<li>how big it is; configuring it to a different file in xtradb</li>
+<li>uses sequential IO, so overhead is not 2x</li>
+<li>higher overhead on SSD, plus more wear</li>
+<li>safe to disable on ZFS</li>
+<li>Exercises</li>
+</ul></li>
+
+<li><p>The Insert Buffer (Change Buffer)</p>
+
+<ul>
+<li>changes to non-unique secondary index leaf pages that aren&rsquo;t in the buffer pool are saved for later</li>
+<li>it is transactional, not a volatile cache</li>
+<li>how much performance improvement it gives: said to be 15x reduction in random IO</li>
+<li>how it is purged/merged</li>
+<li>in the background, when there is time.  This is why STOP SLAVE can trigger a huge flood of IO.
+
+<ul>
+<li>the rate is controlled by innodb_io_capacity, innodb_ibuf_accel_rate</li>
+<li>done by main thread (?)</li>
+<li>might not be fast enough &ndash; dedicated thread in xtradb</li>
+</ul></li>
+<li>also (transparently) in the foreground, when the page that has un-applied changes is read from disk for some other reason.</li>
+<li>if a lot of changes need to be merged, it can slow down page reads.</li>
+<li>it is changed to &ldquo;change buffer&rdquo; in recent plugin</li>
+<li>tunability</li>
+<li>it can take up to <sup>1</sup>&frasl;<sub>2</sub> of the buffer pool, which isn&rsquo;t tunable in standard innodb</li>
+<li>xtradb lets you disable it, and set the max size</li>
+<li>newer innodb plugin changed insert buffer to change buffering, and lets you disable them</li>
+<li>disabling can be good for SSDs (why?)</li>
+<li>inspecting status; status info after restart only shows since restart, not over the lifetime of the database</li>
+<li>it is stored in ibdata1 file.  Pages are treated same as normal buffer pool pages, subject to LRU etc.</li>
+<li>what happens on shutdown: you can set fast_shutdown off, so a full merge happens (slow)</li>
+<li>after a restart, it can slow down, because pages aren&rsquo;t in the buffer pool, so random IO is needed to find them and merge changes into them</li>
+<li>Things that were designed but never implemented</li>
+<li>multiple insert buffers</li>
+</ul></li>
+
+<li><p>The Adaptive Hash Index</p>
+
+<ul>
+<li>think of it as &ldquo;recently accessed index cache&rdquo;</li>
+<li>it&rsquo;s a kind of partial index: build for values that are accessed often</li>
+<li>fast lookups for records recently accessed, which are in the buffer pool</li>
+<li>is a btree that works for both pk and secondary indexes</li>
+<li>can be built for full index entries, and for prefixes of them, depending on how they are looked up</li>
+<li>not configurable, except you can disable it</li>
+<li>how much does it help performance?</li>
+<li>there is only one, it has a single mutex, can slow things a lot</li>
+<li>xtradb lets you partition it</li>
+</ul></li>
+
+<li><p>Buffer Pool Management</p>
+
+<ul>
+<li>dirty pages vs clean pages</li>
+<li>the insert buffer in memory</li>
+<li>configuration and status inspection</li>
+<li>the LRU list: pages in leat recently used order; has midpoint in newer innodb</li>
+<li>young-old sublists and performance: <a href="http://www.mysqlperformanceblog.com/2011/11/13/side-load-may-massively-impact-your-mysql-performance/">http://www.mysqlperformanceblog.com/2011/11/13/side-load-may-massively-impact-your-mysql-performance/</a></li>
+<li>the flush list: pages in oldest modified order</li>
+<li>the free list: pages that are not used</li>
+<li>overhead per buffer pool page makes it consume more memory than expected,
+e.g. see <a href="http://www.facebook.com/note.php?note_id=491430345932">http://www.facebook.com/note.php?note_id=491430345932</a> and
+<a href="http://www.mysqlperformanceblog.com/2010/08/23/innodb-memory-allocation-ulimit-and-opensuse/">http://www.mysqlperformanceblog.com/2010/08/23/innodb-memory-allocation-ulimit-and-opensuse/</a></li>
+<li>multiple buffer pools</li>
+</ul></li>
+
+<li><p>Memory Management</p>
+
+<ul>
+<li>system versus own malloc</li>
+<li>the additional memory pool: stores dictionary</li>
+<li>the adaptive hash index in memory</li>
+<li>latch/lock storage (is that stored in the buffer pool?)</li>
+</ul></li>
+
+<li><p>Checkpoints and Flushing</p>
+
+<ul>
+<li>fuzzy vs sharp checkpoints</li>
+<li>what happens when innodb has not enough free pages, or no space in the log files?</li>
+<li>checkpoint spikes/stalls/furious flushing</li>
+<li>smoothing out checkpoint writes</li>
+<li>flush algorithms</li>
+<li>standard in old innodb</li>
+<li>adaptive checkpointing (xtradb)</li>
+<li>adaptive flushing (innodb-plugin)</li>
+<li>neighbor page flushing: next/prev pages (hurts SSD; tunable in xtradb)</li>
+<li>flushing and page replacement</li>
+<li>why page replacement? must clean a page before we can replace it with another from disk.</li>
+<li>server tries to keep some pages clean: 10% in older versions, 25% in newer (innodb_max_dirty_pages_pct)</li>
+<li>LRU algorithms: old, new</li>
+<li>two-part lru list to guard against wiping out on scans (midpoint insertion)</li>
+<li>the lru page replacement algorithm is explained by Inaam:
+<a href="http://www.mysqlperformanceblog.com/2011/01/13/different-flavors-of-innodb-flushing/">http://www.mysqlperformanceblog.com/2011/01/13/different-flavors-of-innodb-flushing/</a>
+1) if a block is available in the free list grab it.
+2) else scan around 10% or the LRU list to find a clean block
+3) if a clean block is found grab it
+4) else trigger LRU flush and increment Innodb_buffer_pool_wait_free
+5) after the LRU flush is finished try again
+6) if able to find a block grab it otherwise repeat the process scanning deeper into the LRU list
+There are some other areas to take care of like having an additional LRU
+for compressed pages with uncompressed frames etc. And
+Innodb_buffer_pool_wait_free is not indicative of total number of LRU
+flushes. It tracks flushes that are triggered above. There are other
+places in the code which will trigger an LRU flush as well.</li>
+<li>flush list</li>
+<li>contains a list of pages that are dirty, in LSN order</li>
+<li>the main thread schedules some flushes to keep clean pages available</li>
+<li>this is a checkpoint, as well, because it flushes from the end of the flush list</li>
+<li>innodb_io_capacity is used by innodb here, but not by xtradb
+
+<ul>
+<li>assumed to be the disk&rsquo;s writes-per-second capacity</li>
+<li>Peter writes: Affects number of background flushes and insert buffer
+merges (5% for each).  What does 5% mean?</li>
+</ul></li>
+<li>when the server is idle, it&rsquo;ll do more flushing</li>
+<li>flushing to replace is done in the user thread</li>
+<li>What happens on shutdown</li>
+</ul></li>
+
+<li><p>Startup, Crash Recovery, and Shutdown</p>
+
+<ul>
+<li>What is done to boot the system up at start?</li>
+<li>Fast vs slow shutdown</li>
+<li>implications for the insert buffer,
+<a href="http://dev.mysql.com/doc/innodb/1.1/en/innodb-downgrading-issues-ibuf.html">http://dev.mysql.com/doc/innodb/1.1/en/innodb-downgrading-issues-ibuf.html</a></li>
+<li>What is done to prepare for shutdown?</li>
+<li>setting innodb_max_dirty_pages_pct to prepare</li>
+<li>you can&rsquo;t kill the server and it is blocking, so shutdown can take a while otherwise</li>
+<li>What structures in the server have to be warmed up or cooled off? e.g. LRU
+list, dirty pages&hellip;</li>
+<li>stages of recovery: doublewrite restore, redo, undo</li>
+<li>redo is synchronous: scan logs, read pages, compare LSNs
+
+<ul>
+<li>it happens in batches</li>
+</ul></li>
+<li>undo is in the background since 5.0
+
+<ul>
+<li>faster with big logs (why?)</li>
+<li>alter table commits every 10k rows to avoid long undos</li>
+<li>very large dml is a problem, causes long undo after crash; don&rsquo;t kill long txns lightly</li>
+</ul></li>
+<li>how long will recovery take? 5.0 and 5.1 had slow algorithm; fixed in newer releases
+
+<ul>
+<li>buffer pool size also matters; in old versions, configure for small size, then restart</li>
+<li><a href="http://bugs.mysql.com/bug.php?id=29847">http://bugs.mysql.com/bug.php?id=29847</a></li>
+</ul></li>
+<li>larger logs = longer recovery, but it also depends on row sizes, database size, workload</li>
+<li>are there cases when recovery is impossible? during DDL, .FRM file is not atomic</li>
+<li>how innodb checks and uses the binary log during recovery</li>
+<li>the recovery threads &ndash; transactions are replayed w/o mysql threads, so they
+look different</li>
+</ul></li>
+
+<li><p>InnoDB&rsquo;s I/O Behavior and File Management</p>
+
+<ul>
+<li>How files are created, deleted, shrunk, expanded</li>
+<li>How InnoDB opens data files: o_direct, etc</li>
+<li>buffered vs direct IO</li>
+<li>buffered:
+
+<ul>
+<li>advantage: faster warmup, faster flushes, reduce inode locking on ext3</li>
+<li>bad: swap pressure, double buffering, loss of effective memory</li>
+</ul></li>
+<li>direct:</li>
+<li>Optimistic vs pessimistic IO
+<a href="http://dom.as/2011/07/03/innodb-index-lock/">http://dom.as/2011/07/03/innodb-index-lock/</a></li>
+<li>How InnoDB opens log files</li>
+<li>always buffered, except in xtradb</li>
+<li>How InnoDB writes and flushes data files and log files</li>
+<li>the log buffer</li>
+<li>flushing logs to disk; innodb_flush_log_at_trx_commit; what is safe in what conditions</li>
+<li>I/O threads</li>
+<li>the dedicated IO threads</li>
+<li>the main thread does IO in its main loop</li>
+<li>dedicated threads for purge, insert buffer merge etc</li>
+<li>read-ahead/prefetches for random and sequential IO; how an extent is determined to
+need prefetching</li>
+<li>don&rsquo;t count on it much</li>
+<li>random read-ahead removed in version X, added back; impact of it</li>
+<li>merging operations together, reordering, neighbor page operations
+<a href="http://dom.as/2011/07/03/innodb-index-lock/">http://dom.as/2011/07/03/innodb-index-lock/</a></li>
+<li>async io</li>
+<li>simulated: arrays, slots</li>
+<li>native on Windows and in Linux in version 1.1</li>
+<li>which I/O operations can be foregrounded and backgrounded</li>
+<li>most writes are in the background</li>
+<li>flushes can be sync if there are no free pages</li>
+<li>log writes can be sync or async, configurable</li>
+<li>thresholds: 75% and 85% by default (confirm)</li>
+<li>what operations block in innodb? background threads sometimes block
+foreground threads; MarkC has written about;
+<a href="http://bugs.mysql.com/bug.php?id=55004">http://bugs.mysql.com/bug.php?id=55004</a></li>
+<li>I/O operations for things like insert buffer merge (causes reads) and old row version purge</li>
+<li>the purpose of files like &ldquo;/tmp/ibPR9NL1 (deleted)&rdquo;</li>
+</ul></li>
+
+<li><p>Data Manipulation (DML) Operations</p>
+
+<ul>
+<li>select</li>
+<li>insert</li>
+<li>update</li>
+<li>delete</li>
+<li>does it compact? ___________?id=14473</li>
+</ul></li>
+
+<li><p>The System Tables</p>
+
+<ul>
+<li>sys_tables</li>
+<li>sys_indexes</li>
+<li>sys_foreign</li>
+<li>sys_stats</li>
+<li>sys_fields</li>
+</ul></li>
+
+<li><p>Data Definition (DDL) Operations</p>
+
+<ul>
+<li>How CREATE TABLE works</li>
+<li>How ALTER TABLE works</li>
+<li>Doesn&rsquo;t it internally commit every 10k rows?</li>
+<li>create index</li>
+<li>fast index creation; sort buffers; sort buffer size</li>
+<li>Creates multiple transactions: see email Re: ALTER TABLE showing up more than once in &lsquo;SHOW ENGINE INNODB STATUS&rsquo; Transaction list?</li>
+<li>optimize table</li>
+<li>analyze table</li>
+<li>How DROP TABLE works</li>
+<li>with file-per-table, it is DROP TABLESPACE, which blocks the server; see
+<a href="https://bugs.launchpad.net/percona-server/+bug/712591">https://bugs.launchpad.net/percona-server/+bug/712591</a></li>
+<li>InnoDB&rsquo;s internal stored procedure language</li>
+</ul></li>
+
+<li><p>Foreign Keys</p>
+
+<ul>
+<li>implications for locking: causes additional locking, opportunities for deadlocks</li>
+<li>cascades</li>
+<li>nulls</li>
+<li>rows that point to themselves, or rows that have cycles; can they be deleted?</li>
+<li>is checking immediate, or deferred? it is immediate, not done at commit.</li>
+<li>names are case sensitive</li>
+<li>indexes required; change in behavior in 4.1</li>
+<li>data types must match exactly</li>
+<li>how they interact with indexes</li>
+<li>appearance in SHOW INNODB STATUS</li>
+<li>they use the internal stored procedures</li>
+<li>InnoDB has to parse the SQL of the CREATE statement</li>
+</ul></li>
+
+<li><p>InnoDB&rsquo;s Interface to MySQL</p>
+
+<ul>
+<li>The Handler interface</li>
+<li>Relationship with .frm file</li>
+<li>Built-In InnoDB</li>
+<li>The InnoDB Plugin</li>
+<li>Converting rows to MySQL&rsquo;s row format</li>
+<li>what columns are in every table (and can&rsquo;t be used in a real table)</li>
+<li>Communicating ha::rows_in_range and ha::info and other statistics</li>
+<li>Communicating index capability bits (enables covering index queries)</li>
+<li>Interaction with the query cache</li>
+<li>MySQL thread statuses</li>
+<li>they appear in INNODB STATUS</li>
+<li>what statuses can be present while query is inside innodb: &ldquo;statistics&rdquo;
+for example</li>
+<li>Implementation in ha_innodb.cc</li>
+<li>Hacks: magic CREATE TABLE statements like innodb_table_monitor,
+parsing the SQL for FK definitions</li>
+<li>how table and row locks are communicated between engine and server</li>
+<li>innodb_table_locks=1 means that innodb knows about server table locks; what does it do
+with them?</li>
+<li>the server knows about row locks &ndash; and it can tell innodb to release non-matched rows?</li>
+<li>Exercises</li>
+</ul></li>
+
+<li><p>Index Implementation</p>
+
+<ul>
+<li>built on b-trees</li>
+<li>leaf vs non-leaf nodes, the row format on them</li>
+<li>secondary indexes</li>
+<li>data pages store the rows in a heap within the page</li>
+<li>page fill factor</li>
+<li>page merges and splits</li>
+<li>is something special done during deletes?</li>
+</ul></li>
+
+<li><p>Data Distribution Statistics</p>
+
+<ul>
+<li>how they are gathered</li>
+<li>inaccuracy</li>
+<li>configurability of whether to gather them or not</li>
+<li>stability/randomness (older InnoDB isn&rsquo;t properly random and is non-uniform)</li>
+<li>how many samples? config options that affect that</li>
+<li>ability to stop resampling</li>
+<li>ability to store persistently with innodb_use_sys_stats_table</li>
+</ul></li>
+
+<li><p>How MySQL executes queries with InnoDB</p>
+
+<ul>
+<li>high-level overview of optimization, statistics</li>
+<li>table locking and lock releasing</li>
+<li>releasing rows locks for rows eliminated by WHERE clause in 5.1; isolation</li>
+<li>index-only (covering index) queries</li>
+<li>how it works</li>
+<li>when an index query must look up the pk (when a page has a newer lsn
+than the query&rsquo;s lsn; rows in secondary indexes don&rsquo;t have LSNs, only the
+page does)</li>
+<li>what extra columns are included in the secondary indexes</li>
+</ul></li>
+
+<li><p>Internal Maintenance Tasks</p>
+
+<ul>
+<li>Old Row Purge</li>
+<li>Insert Buffer Merge</li>
+<li>The statistics collector</li>
+<li>rules for when stats are recomputed
+
+<ul>
+<li>by mysql: at first open, when SHOW TABLE STATUS / INDEX commands are used (configured with innodb_stats_on_metadata) or when ANALYZE TABLE is used)</li>
+<li>by innodb: after size changes 1/16th or after 2B row insertions
+(disable with innodb_stats_auto_update=false)</li>
+</ul></li>
+<li>stats are computed when table is first opened, too</li>
+<li>bug: stats not valid for an index after fast-create (<a href="http://bugs.mysql.com/bug.php?id=62516">http://bugs.mysql.com/bug.php?id=62516</a>)</li>
+<li>Jervin&rsquo;s blog: <a href="http://www.mysqlperformanceblog.com/?p=7516&amp;preview=true">http://www.mysqlperformanceblog.com/?p=7516&amp;preview=true</a></li>
+</ul></li>
+
+<li><p>Tuning InnoDB</p>
+
+<ul>
+<li>buffer pool size</li>
+<li>using multiple buffer pools</li>
+<li>log file size (1h worth of log writes)</li>
+<li>log buffer size (10 sec worth of log writes; bigger for blobs; error if too small)</li>
+<li>checkpoint behavior</li>
+<li>flush_logs_at_trx_commit</li>
+<li>dirty page pct in buffer pool</li>
+<li>setting it lower doesn&rsquo;t smooth IO by causing constant writing &ndash; it causes much more
+IO and doesn&rsquo;t give a buffer to absorb spikes.</li>
+<li>o_direct</li>
+<li>all configuration variables</li>
+</ul></li>
+
+<li><p>Mutexes and Latches</p>
+
+<ul>
+<li>how innodb implements rw-locks and mutexes</li>
+<li>list of the major ones, and what they are for</li>
+<li>the order they are locked in</li>
+<li>log buffer</li>
+<li>buffer pool</li>
+<li>adaptive hash index</li>
+<li>new_index-&gt;mutex</li>
+<li>sync array / sync_array</li>
+<li>ut_delay</li>
+<li>kernel-&gt;mutex
+<a href="http://www.mysqlperformanceblog.com/2011/12/02/kernel_mutex-problem-cont-or-triple-your-throughput/comment-page-1/#comment-850337">http://www.mysqlperformanceblog.com/2011/12/02/kernel_mutex-problem-cont-or-triple-your-throughput/comment-page-1/#comment-850337</a></li>
+<li>approaches to scalability: XtraDB (split into many), InnoDB 1.1 (multiple buffer pools)</li>
+<li>what are spins, spin rounds, OS waits, how are they configurable</li>
+<li>what is the OS wait array</li>
+<li>what are condition variables, and what are they for</li>
+<li>broadcasts are expensive as the txn list grows, according to mark callaghan?</li>
+<li>what are innodb events?  See <a href="http://mysqlha.blogspot.com/2011/02/this-happens-when-you-dont-have.html">http://mysqlha.blogspot.com/2011/02/this-happens-when-you-dont-have.html</a></li>
+</ul></li>
+
+<li><p>InnoDB Threads</p>
+
+<ul>
+<li>thread per connection</li>
+<li>thread statuses (innodb internal ones, not mysql ones)</li>
+<li>user threads</li>
+<li>recovery threads</li>
+<li>IO threads</li>
+<li>main thread</li>
+<li>schedules other things</li>
+<li>flush</li>
+<li>purge</li>
+<li>checkpoint</li>
+<li>insert buffer merge</li>
+<li>deadlock detector</li>
+<li>monitoring thread</li>
+<li>error monitor thread; see sync/sync0arr.c</li>
+<li>statistics thread (??)</li>
+<li>log thread</li>
+<li>purge thread</li>
+<li>innodb_thread_concurrency and the queue, concurrency tickets</li>
+<li>limit includes threads doing disk io or storing data in tmp table</li>
+</ul></li>
+
+<li><p>Internal Structures</p>
+
+<ul>
+<li>Data dictionary</li>
+<li>auto-increment values; populated at startup</li>
+<li>statistics</li>
+<li>system info</li>
+<li>the size overhead per tabel can be 4-10k; this is version dependent</li>
+<li>xtradb lets you limit this</li>
+<li>Arrays</li>
+<li>os_aio_read_array, os_aio_write_array, os_aio_ibuf_array</li>
+<li>mutex/latch/semaphore/whatever arrays</li>
+<li>data structures and what they&rsquo;re used for</li>
+<li>heaps (rows in the page, for example)</li>
+<li>b-trees</li>
+<li>linked lists (?)</li>
+<li>arrays</li>
+</ul></li>
+
+<li><p>XtraBackup</p></li>
+
+<li><p>InnoDB Recovery Tools</p></li>
+
+<li><p>Inspecting Status</p>
+
+<ul>
+<li>SHOW STATUS counters</li>
+<li>Innodb_buffer_pool_wait_free, per Inaam, is not indicative of total number of
+LRU flushes. It tracks flushes that are triggered from an LRU flush; there are more
+places in the code which will trigger an LRU flush as well.</li>
+<li>show innodb status</li>
+<li>innodb status monitor</li>
+<li>lock monitor</li>
+<li>tablespace monitor</li>
+<li>writing to a file</li>
+<li>truncation and the in-memory copy and its filehandle</li>
+<li>information_schema tables in the plugin (esp. locks and trx)</li>
+<li>how it attempts to provide a consistent view of the tables; consult
+<a href="https://bugs.launchpad.net/bugs/677407">https://bugs.launchpad.net/bugs/677407</a></li>
+<li>show mutex status</li>
+</ul></li>
+</ul>
+
+<p>Further reading:</p>
+
+<ul>
+<li><a href="http://blogs.innodb.com/wp/2011/04/mysql-5-6-multi-threaded-purge/">http://blogs.innodb.com/wp/2011/04/mysql-5-6-multi-threaded-purge/</a></li>
+<li>XDES</li>
+<li>The InnoDB core sub-systems are:
+
+<ol>
+<li>The Locking sub-system</li>
+<li>The Transaction sub-system</li>
+<li>MVCC  views
+(<a href="http://blogs.innodb.com/wp/2011/04/mysql-5-6-innodb-scalability-fix-kernel-mutex-removed/">http://blogs.innodb.com/wp/2011/04/mysql-5-6-innodb-scalability-fix-kernel-mutex-removed/</a>)</li>
+</ol></li>
+<li>The Wikipedia article on InnoDB?</li>
+<li>InnoDB does bulk commits for things like ALTER, every 10k rows, to avoid problems internally.
+</code></li>
+</ul>
+
+<p>Photo credits: <a href="https://www.flickr.com/photos/29317846@N03/2743294768/">iceberg</a></p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2015/08/24/baron-schwartz-left-percona/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2015/08/03/anomaly-detection-book/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2015\/08\/08\/innodb-book-outline\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

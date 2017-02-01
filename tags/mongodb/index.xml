@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> </title>
+    <link>https://www.xaprb.com/tags/mongodb/index.xml</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>Copyright (c) 2016</rights>
+    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
+
+    
+        <item>
+          <title>History Repeats: MySQL, MongoDB, Percona, and Open Source</title>
+          <link>https://www.xaprb.com/blog/2015/05/22/percona-mongodb-mysql-history-repeat/</link>
+          <pubDate>Fri, 22 May 2015 13:51:18 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/05/22/percona-mongodb-mysql-history-repeat/</guid>
+          <description>&lt;p&gt;History is repeating again. MongoDB is breaking out of the niche into the
+mainstream, performance and instrumentation are terrible in specific cases,
+MongoDB isn&amp;rsquo;t able to fix all the problems alone, and an ecosystem is growing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/05/leaf.jpg&#34; alt=&#34;Leaf&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;This should really be a series of blog posts, because there&amp;rsquo;s a book&amp;rsquo;s worth of
+things happening, but I&amp;rsquo;ll summarize instead. Randomly ordered:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MongoDB is in many respects closely following MySQL&amp;rsquo;s development, 10 years
+offset. Single index per query, MyISAM-like storage engine, etc.
+&lt;a href=&#34;https://www.xaprb.com/blog/2013/04/29/what-tokudb-might-mean-for-mongodb/&#34;&gt;Background&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Tokutek built an excellent transactional storage engine and replaced
+MongoDB&amp;rsquo;s, calling it TokuMX. Results were dramatically better performance
+(plus ACID). MongoDB&amp;rsquo;s response was to buy WiredTiger and make it the default
+storage engine in MongoDB 3.0.&lt;/li&gt;
+&lt;li&gt;Percona acquired Tokutek. A book should be written about this someday. The
+impact to both the MySQL and MongoDB communities cannot be overstated. This
+changes everything. It also changes everything for Percona, which now has a
+truly differentiated product for both database offerings. This moves them
+solidly into being a product company, not just support/services/consulting; it
+is a good answer to the quandary of trying to keep up with the InnoDB
+engineers.&lt;/li&gt;
+&lt;li&gt;Facebook acquired Parse, which is probably one of the larger MongoDB
+installations.&lt;/li&gt;
+&lt;li&gt;Facebook&amp;rsquo;s Mark Callaghan, among others, stopped spending all his time on
+InnoDB mutexes and so forth. For the last year or so he&amp;rsquo;s been extremely
+active in the MongoDB community. The MongoDB community is lucky to have a
+genius of Mark&amp;rsquo;s caliber finding and solving problems. There are others, but
+if Mark Callaghan is working on your open source product in earnest, you&amp;rsquo;ve
+arrived.&lt;/li&gt;
+&lt;li&gt;Just as in MySQL, but even earlier, there are lots of -As-A-Service providers
+for MongoDB, and it&amp;rsquo;s likely a significant portion of future growth happens
+here.&lt;/li&gt;
+&lt;li&gt;MongoDB&amp;rsquo;s conference is jaw-droppingly expensive for a vendor, to the point of
+being exclusive. At the same time, MongoDB hasn&amp;rsquo;t quite recognized and
+embraced some of the things going on outside their walls. If you remember &lt;a href=&#34;https://www.percona.com/blog/2009/02/05/announcing-percona-performance-conference-2009-on-april-22-23/&#34;&gt;the
+events of 2009 in the MySQL
+community&lt;/a&gt;,
+Percona&amp;rsquo;s &lt;a href=&#34;https://www.percona.com/news-and-events/mongodb-events/mongodb-community-openhouse&#34;&gt;announcement of an alternative MongoDB
+conference&lt;/a&gt;
+might feel a little like deja vu. I&amp;rsquo;m not sure of the backstory behind this,
+though.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At the same time that history is repeating in the MongoDB world, a tremendous
+amount of stuff is happening quietly in other major communities too. Especially
+MySQL, but also in PostgreSQL, ElasticSearch, Cassandra and other opensource
+databases. I&amp;rsquo;m probably only qualified to write about the MySQL side of things;
+I&amp;rsquo;m pretty sure most people don&amp;rsquo;t know a lot of the interesting things that are
+going on behind the scenes that will have long-lasting effects. Maybe I&amp;rsquo;ll write
+about that someday.&lt;/p&gt;
+
+&lt;p&gt;In the meanwhile, I think we&amp;rsquo;re all in for an exciting ride as MongoDB &lt;a href=&#34;https://www.xaprb.com/blog/2013/01/10/bold-predictions-on-which-nosql-databases-will-survive/&#34;&gt;proves me right&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;PS: VividCortex is building a MongoDB monitoring solution that will address many
+of the shortcomings of existing ones. (We have been a bit quiet about it, just
+out of busyness rather than a desire for secrecy, but now you know.) It&amp;rsquo;s in
+beta now.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/96dpi/3645537177/&#34;&gt;Cropped image by 96dpi&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>State Of The Storage Engine - DZone</title>
+          <link>https://www.xaprb.com/blog/2015/04/02/state-of-the-storage-engine/</link>
+          <pubDate>Thu, 02 Apr 2015 03:51:18 -0500</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2015/04/02/state-of-the-storage-engine/</guid>
+          <description>&lt;p&gt;I contributed an article on &lt;a href=&#34;http://www.dzone.com/articles/state-storage-engine&#34;&gt;modern database storage
+engines&lt;/a&gt; to the recent
+&lt;a href=&#34;http://dzone.com/research/guide-to-databases&#34;&gt;DZone Guide To Database and Persistence
+Management&lt;/a&gt;. I&amp;rsquo;m cross-posting the
+article below with DZone&amp;rsquo;s permission.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.xaprb.com/media/2015/04/boardwalk.jpg&#34; alt=&#34;Boardwalk&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Readers of this guide already know the database world is undergoing rapid change. From relational-only, to NoSQL and Big Data, the technologies we use for data storage and retrieval today are much different from even five years ago.&lt;/p&gt;
+
+&lt;p&gt;Today’s datasets are so large, and the workloads so demanding, that one-size-fits-all databases rarely make much sense. When a small inefficiency is multiplied by a huge dataset, the opportunity to use a specialized database to save money, improve performance, and optimize for developer productivity and happiness can be very large. And today’s solid-state storage is vastly different from spinning disks, too. These factors are forcing fundamental changes for database internals: the underlying algorithms, file formats, and data structures. As a result, modern applications are often backed by as many as a dozen distinct types of databases (polyglot persistence). These trends signal significant, long-term change in how databases are built, chosen, and managed.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Most companies can afford only one or two proper in-depth evaluations for a new database.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;textbook-architectures-lose-relevance&#34;&gt;Textbook Architectures Lose Relevance&lt;/h3&gt;
+
+&lt;p&gt;Many of today’s mature relational databases, such as MySQL, Oracle, SQL Server, and PostgreSQL, base much of their architecture and design on decades-old research into transactional storage and relational models that stem from two classic textbooks in the field—known simply as &lt;a href=&#34;http://www.amazon.com/dp/1558601902&#34;&gt;Gray &amp;amp; Reuters&lt;/a&gt; and &lt;a href=&#34;http://www.amazon.com/dp/1558605088&#34;&gt;Weikum &amp;amp; Vossen&lt;/a&gt;. This “textbook architecture” can be described briefly as having:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Row-based storage with fixed schemas&lt;/li&gt;
+&lt;li&gt;B-Tree primary and secondary indexes&lt;/li&gt;
+&lt;li&gt;ACID transaction support&lt;/li&gt;
+&lt;li&gt;Row-based locking&lt;/li&gt;
+&lt;li&gt;MVCC (multi-version concurrency control) implemented by keeping old row versions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But this textbook architecture has been increasingly questioned, not only by newcomers but by leading database architects such as &lt;a href=&#34;http://slideshot.epfl.ch/play/suri_stonebraker&#34;&gt;Michael Stonebraker&lt;/a&gt;. Some new databases depart significantly from the textbook architecture with concepts such as wide-row and columnar storage, no support for concurrency at all, and eventual consistency. It’s worth noting that although NoSQL databases represent obvious changes in the data model and language—how developers access the database—not all NoSQL databases innovate architecturally. Coping with today’s data storage challenges often requires breaking from tradition architecturally, especially in the storage engine.&lt;/p&gt;
+
+&lt;h3 id=&#34;log-structured-merge-trees&#34;&gt;Log-Structured Merge Trees&lt;/h3&gt;
+
+&lt;p&gt;One of the more interesting trends in storage engines is the emergence of log-structured merge trees (LSM trees) as a replacement for the venerable B-Tree index. LSM trees are now about two decades old, and LevelDB is perhaps the most popular implementation. Databases such as Apache HBase, Hyperdex, Apache Cassandra, RocksDB, WiredTiger, and Riak use various types of LSM trees.&lt;/p&gt;
+
+&lt;p&gt;LSM trees work by recording data, and changes to the data, in immutable segments or runs. The segments are usually organized into levels or generations. There are several strategies, but the first level commonly contains the most recent and active data, and lower levels usually have progressively larger and/or older data, depending on the leveling strategy. As data is inserted or changed, the top level fills up and its data is copied into a segment in the second level. Background processes merge segments in each level together, pruning out obsolete data and building lower-level segments in batches. Some LSM tree implementations add other features such as automatic compression, too. There are several benefits to this approach as compared to the classic B-Tree approach:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Immutable storage segments are easily cached and backed up&lt;/li&gt;
+&lt;li&gt;Writes can be performed without reading first, greatly speeding them up&lt;/li&gt;
+&lt;li&gt;Some difficult problems such as fragmentation are avoided or replaced by simpler problems&lt;/li&gt;
+&lt;li&gt;Some workloads can experience fewer random-access I/O operations, which are slow&lt;/li&gt;
+&lt;li&gt;There may be less wear on solid-state storage, which can’t update data in-place&lt;/li&gt;
+&lt;li&gt;It can be possible to eliminate the B-Tree “write cliff,” which happens when the working set no longer fits in memory and writes slow down drastically&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Although many of the problems with B-Tree indexes can be avoided, mitigated, or transformed, LSM tree indexes aren’t a panacea. There are always trade-offs and implementation details. The main set of trade-offs for LSM trees are usually explained in terms of amplification along several dimensions. The amplification is the average ratio of the database’s physical behavior to the logical behavior of the user’s request, over the long-term. It’s usually a ratio of bytes to bytes, but can also be expressed in terms of operations, e.g. number of physical I/O operations performed per logical user request.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Write amplification&lt;/strong&gt; is the multiple of bytes written by the database to bytes changed by the user. Since some LSM trees rewrite unchanging data over time, write amplification can be high in LSM trees.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Read amplification&lt;/strong&gt; is how many bytes the database has to physically read to return values to the user, compared to the bytes returned. Since LSM trees may have to look in several places to find data, or to determine what the data’s most recent value is, read amplification can be high.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Space amplification&lt;/strong&gt; is how many bytes of data are stored on disk, relative to how many logical bytes the database contains. Since LSM trees don’t update in place, values that are updated often can cause space amplification.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition to amplification, LSM trees can have other performance problems, such as read and write bursts and stalls. It’s important to note that amplification and other issues are heavily dependent on workload, configuration of the engine, and the specific implementation. Unlike B-Tree indexes, which have essentially a single canonical implementation, LSM trees are a group of related algorithms and implementations that vary widely.&lt;/p&gt;
+
+&lt;p&gt;There are other interesting technologies to consider besides LSM trees. One is &lt;a href=&#34;https://symas.com/getting-down-and-dirty-with-lmdb-qa-with-symas-corporations-howard-chu-about-symass-lightning-memory-mapped-database/&#34;&gt;Howard Chu&lt;/a&gt;’s LMDB (Lightning Memory-Mapped Database), which is a copy-on-write B-Tree. It is widely used and has inspired clones such as &lt;a href=&#34;https://github.com/boltdb/bolt&#34;&gt;BoltDB&lt;/a&gt;, which is the storage engine behind the up-and-coming &lt;a href=&#34;http://influxdb.com/&#34;&gt;InfluxDB&lt;/a&gt; time-series database. Another LSM alternative is &lt;a href=&#34;http://www.tokutek.com/&#34;&gt;Tokutek’s&lt;/a&gt; fractal trees, which form the basis of high-performance write and space-optimized alternatives to MySQL and MongoDB.&lt;/p&gt;
+
+&lt;h3 id=&#34;evaluating-databases-with-log-structured-merge-trees&#34;&gt;Evaluating Databases With Log-Structured Merge Trees&lt;/h3&gt;
+
+&lt;p&gt;No matter what underlying storage you use, there’s always a trade-off. The iron triangle of storage engines is this:&lt;/p&gt;
+
+&lt;p&gt;You can have &lt;strong&gt;sequential reads without amplification, sequential writes without amplification, or an immutable write-once design&lt;/strong&gt;—&lt;i&gt;pick any two&lt;/i&gt;.&lt;/p&gt;
+
+&lt;p&gt;Today’s emerging Big Data use cases, in which massive datasets are kept in raw form for a long time instead of being summarized and discarded, represent some of the classes of workloads that can potentially be addressed well with LSM tree storage (time-series data is a good example). However, knowledge of the specific LSM implementation must be combined with a deep understanding of the workload, hardware, and application.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;hellip;although NoSQL databases represent obvious changes in the data model and language, not all NoSQL databases innovate architecturally.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Sometimes companies don’t find a database that’s optimized for their exact use case, so they build their own, often borrowing concepts from various databases and newer storage engines to achieve the efficiency and performance they need. An alternative is to adapt an efficient and trusted technology that’s almost good enough. At VividCortex, we ignore the relational features of MySQL and use it as a thin wrapper around InnoDB to store our large-scale, high-velocity time-series data.&lt;/p&gt;
+
+&lt;p&gt;Whatever road you take, a good deal of creativity and experience is required from architects who are looking to overhaul their application’s capabilities. You can’t just assume you’ll plug in a database that will immediately fit your use case. You’ll need to take a much deeper look at the storage engine and the paradigms it is based on.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Baron Schwartz&lt;/strong&gt; is the founder and CEO of &lt;a href=&#34;https://vividcortex.com&#34;&gt;VividCortex&lt;/a&gt;, the best way to see what your production database servers are doing. He is the author of High Performance MySQL and many open-source tools for MySQL administration. He’s also an Oracle ACE and frequent participant in the PostgreSQL community.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To read the full report free of charge, download the
+&lt;a href=&#34;http://dzone.com/research/guide-to-databases&#34;&gt;DZone Guide To Database and Persistence
+Management&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Cropped boardwalk image by &lt;a href=&#34;https://unsplash.com/nmsilva&#34;&gt;Nuno Silva&lt;/a&gt;.&lt;/p&gt;</description>
+        </item>
+    
+        <item>
+          <title>MySQL isn&#39;t limited to nested-loop joins</title>
+          <link>https://www.xaprb.com/blog/2013/10/01/mysql-isnt-limited-to-nested-loop-joins/</link>
+          <pubDate>Tue, 01 Oct 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/10/01/mysql-isnt-limited-to-nested-loop-joins/</guid>
+          <description>&lt;p&gt;I have followed the &amp;ldquo;Use the Index, Luke!&amp;rdquo; blog for a while. Today Marcus &lt;a href=&#34;http://use-the-index-luke.com/blog/2013-10-01/mysql-is-to-sql-like-mongodb-to-nosql&#34;&gt;wrote&lt;/a&gt; that (I&amp;rsquo;ll paraphrase) MongoDB disgraces NoSQL the same way that MySQL disgraces SQL. I agree with a lot of this, actually, although I&amp;rsquo;m not sure I&amp;rsquo;d put it so strongly. People often like products for good reasons, and to think that legions of developers are stupid or ill-educated is suspect, in my opinion.&lt;/p&gt;
+
+&lt;p&gt;But that wasn&amp;rsquo;t what I meant to write about. I wanted to point out something about the blog post that&amp;rsquo;s a little outdated. He wrote, and this time I&amp;rsquo;ll quote, &amp;ldquo;MySQL is rather poor at joining because is only supports nested loops joins. Most other SQL database implement the hash join and sort/merge join algorithms too.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s no longer true that MySQL doesn&amp;rsquo;t support these, and hasn&amp;rsquo;t been for a while, depending on which version of MySQL you look at. What&amp;rsquo;s slightly unfortunate, in my opinion, is that MySQL doesn&amp;rsquo;t call out in the documentation that they&amp;rsquo;re actually implemented. MySQL documentation talks about Multi-Range Read, Block Nested-Loop, and Batched Key Access join &amp;ldquo;optimizations.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Functionally, these are closely related to combinations of hash and sort-merge join algorithms, and really represent mixtures of features from them combined in different ways, depending on the exact query. Most &amp;ldquo;sophisticated&amp;rdquo; RDBMSs also implement a lot of subtle variations &amp;ndash; edge-case optimizations are really worthwhile. It is rarely as cut-and-dried as pure hash-join or sort-merge join. And in the end, there is always &amp;ndash; always &amp;ndash; iteration over rows to match them up, regardless of the data structure used, regardless of the RDBMS. MySQL happens to call these variations &amp;ldquo;nested loop join optimizations&amp;rdquo; and similar phrases, but that&amp;rsquo;s what they are in other RDBMSs too.&lt;/p&gt;
+
+&lt;p&gt;MySQL does very well on many types of joins for which sort-merge and hash-join algorithms are designed. See, for example, &lt;a href=&#34;http://www.mysqlperformanceblog.com/2012/03/21/multi-range-read-mrr-in-mysql-5-6-and-mariadb-5-5/&#34;&gt;this blog post&lt;/a&gt; and &lt;a href=&#34;http://www.mysqlperformanceblog.com/2012/03/12/index-condition-pushdown-in-mysql-5-6-and-mariadb-5-5-and-its-performance-impact/&#34;&gt;this one&lt;/a&gt; and also &lt;a href=&#34;http://www.mysqlperformanceblog.com/2012/05/31/a-case-for-mariadbs-hash-joins/&#34;&gt;this one on MariaDB&amp;rsquo;s further optimizations&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I think the MySQL documentation could help a little by calling things names that normal users understand. The names we see in the documentation are really reflective of how the optimizer internals gurus think about the algorithms, in my opinion. I think the names describe the implementation, not the end result. I&amp;rsquo;d suggest phrasing it differently for general consumption by the DBA public. Perhaps something like &amp;ldquo;sort-merge join implemented with a _____ algorithm.&amp;rdquo; Or perhaps &amp;ndash; and I will admit I don&amp;rsquo;t keep the details fresh in my mind so I&amp;rsquo;m not the one to ask for the right answer &amp;ndash; perhaps the algorithms MySQL uses really aren&amp;rsquo;t as related or comparable as I think they are, and a different type of explanation is in order. But I bet a lot of DBAs from SQL Server and Oracle Database backgrounds would find it helpful to have an explanation in familiar terms. (This concludes my free and probably unwanted advice to the MySQL docs team!)&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>What TokuDB might mean for MongoDB</title>
+          <link>https://www.xaprb.com/blog/2013/04/29/what-tokudb-might-mean-for-mongodb/</link>
+          <pubDate>Mon, 29 Apr 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/04/29/what-tokudb-might-mean-for-mongodb/</guid>
+          <description>&lt;p&gt;Last week &lt;a href=&#34;http://www.tokutek.com/&#34;&gt;Tokutek&lt;/a&gt; &lt;a href=&#34;http://www.tokutek.com/2013/04/announcing-tokudb-v7-open-source-and-more/&#34;&gt;announced&lt;/a&gt; that they&amp;rsquo;re open-sourcing their TokuDB storage engine for MySQL. If you&amp;rsquo;re not familiar with TokuDB, it&amp;rsquo;s an ACID-compliant storage engine with a high-performance index technology known as fractal tree indexing. Fractal trees have a number of nice characteristics, but perhaps the most interesting is that they deliver consistently high performance under varying conditions, such as when data grows much larger than memory or is updated frequently. B-tree indexes tend to get fragmented over time, and exhibit a performance cliff when data doesn&amp;rsquo;t fit in memory anymore.&lt;/p&gt;
+
+&lt;p&gt;The MySQL community is excited about having access to TokuDB&amp;rsquo;s source code, and rightly so. TokuDB is, broadly speaking, aimed at the same category of use cases as Oracle&amp;rsquo;s InnoDB, which has been MySQL&amp;rsquo;s leading storage engine for a long time.&lt;/p&gt;
+
+&lt;p&gt;MySQL&amp;rsquo;s market size is large for an opensource product (roughly $500M to $1B USD, depending on who you talk to), and in a big pond, a stone causes wide ripples. I think the most significant implications, though, are for MongoDB. Tokutek has published a series of &lt;a href=&#34;http://www.tokutek.com/tag/mongodb/&#34;&gt;benchmarks of MongoDB performance with TokuDB&lt;/a&gt; as the storage engine instead of MongoDB&amp;rsquo;s default storage engine. The results are compelling.&lt;/p&gt;
+
+&lt;p&gt;I think TokuDB will rapidly become the storage engine of choice for MongoDB, and could catapult MongoDB into the lead in the NoSQL database arena. This would have profound implications for opensource databases of all flavors, not just NoSQL databases.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s worth revisiting a bit of ancient history for some context.&lt;/p&gt;
+
+&lt;p&gt;Way back in the olden days, MySQL&amp;rsquo;s main storage engine was MyISAM. MyISAM is non-transactional and has table-level locking, meaning that a write (update, insert, delete, or similar) blocked all concurrent access to the table. This is okay for some uses, and can even be very good in special cases, but in the general case it is a disaster. MyISAM introduced some special workarounds for common cases (such as permitting nonblocking inserts to occur at the end of the table), but in the end, you can&amp;rsquo;t fix table-level locking. A mixed workload needs storage that&amp;rsquo;s designed for high read and write concurrency without blocking.&lt;/p&gt;
+
+&lt;p&gt;MyISAM had other problems, such as lacking transactions, being prone to data corruption, and long repair times after a crash.&lt;/p&gt;
+
+&lt;p&gt;As a result, MySQL as a whole was only interesting to a minority of users. For demanding applications it was little more than a curiosity.&lt;/p&gt;
+
+&lt;p&gt;Then came InnoDB. InnoDB introduced ACID transactions, automatic crash recovery, and most importantly, row-based locking and MVCC, which allowed highly concurrent access to rows, so readers and writers don&amp;rsquo;t block each other. InnoDB was the magic that made MySQL a credible choice for a wide range of use cases.&lt;/p&gt;
+
+&lt;p&gt;Most of the interesting chapters in MySQL&amp;rsquo;s history have involved InnoDB in one way or another. To list some highlights: Oracle bought InnoDB&amp;rsquo;s creator Innobase Oy, MySQL scrambled to find a replacement (Maria, Falcon, PBXT), Sun&amp;rsquo;s decision to acquire MySQL was said to be influenced by Falcon, Percona created XtraDB, and Oracle acquired Sun. Things are settling down now, but it&amp;rsquo;s easy to forget how much of a soap opera the MySQL world has lived through because of InnoDB not being owned by MySQL.&lt;/p&gt;
+
+&lt;p&gt;And in the middle of all this came NoSQL databases. In the past half-dozen years, more databases have been invented, popularized, and forgotten than I care to think about. In many cases, though, these databases were criticized as ignoring or reinventing (badly) decades of learning in relational database technology, and even computer science in general. I know I&amp;rsquo;ve looked at my share of face-palm code.&lt;/p&gt;
+
+&lt;p&gt;Databases, by and large, depend on reliable, high-performance storage and retrieval subsystems more than anything else. Many of the NoSQL databases have interesting ideas built on top of bad, bad, bad storage code.&lt;/p&gt;
+
+&lt;p&gt;MongoDB is a case in point. MongoDB reinvented some of the worst parts of MySQL all over again. Storage was initially little more than mmap over a file. I think Mark Callaghan put it best in 2009, when he said &amp;ldquo;Reinventing MyISAM is not a feature.&amp;rdquo; MongoDB&amp;rsquo;s storage at that time really was MyISAM-like. It&amp;rsquo;s improved somewhat since then, but it hasn&amp;rsquo;t had the wholesale rip-and-replace improvement that I think is needed. Not only that, but MongoDB as a whole is still (predictably) built around the limitations of the underlying storage, with coarse-grained locking.&lt;/p&gt;
+
+&lt;p&gt;But MongoDB, like MySQL, has been relevant in spite of these shortcomings. Form your own opinion about why this is, but from my point of view there are two main reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MongoDB was born in an era when the popular databases were frustratingly slow and clunky to work with, and innovation was stalled due to the political drama surrounding them.&lt;/li&gt;
+&lt;li&gt;MongoDB simply feels nice to developers. If you&amp;rsquo;re not a developer, this is a little hard to explain, but it just feels good, like your favorite pair of jeans. Like a hug from a good friend. Like a hammock and a summer day. The difference between an SQL database and MongoDB for many developers is like the difference between an iPod and a cheap knockoff MP3 player. I could go on and on.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It&amp;rsquo;s difficult to overstate the importance of this, because it means that MongoDB may well become an enterprise database, despite what bad opinions you may have about it now. Why is this? It&amp;rsquo;s because developers are king in the modern IT enterprise. Developers determine what technologies get adopted in IT. CTOs like to think the decisions come from the top down, but I&amp;rsquo;ve seen it work the other way time and time again. Developers start to use something that frustrates them less than the alternatives, and a groundswell begins that&amp;rsquo;s impossible to stop. Someday the CTO discovers that the question of whether to use technology X was decided by a junior developer long ago and deployed to production, and now it&amp;rsquo;s too late.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve done it myself. At Crutchfield I hijacked the company-wide policy that migration from legacy VB6 to .NET would proceed along the lines of a transition to VB.NET. I was fighting through awful code day in and day out, and I knew that a more restrictive language would prevent a lot of bad practices. So I wrote several major systems in C# without asking permission. It&amp;rsquo;s a lot easier to get forgiveness than permission. Then I showed off what I&amp;rsquo;d done. When I left Crutchfield, the IT department had chosen C#, not VB.NET, as its language of the future (even though there were, and probably still are, major VB.NET applications).&lt;/p&gt;
+
+&lt;p&gt;Similarly, at Crutchfield I was provided a 15-inch CRT monitor to work on. This was 2003, you understand. Even at that time, it was awful. How can you expect a developer to work on a flickering, small monitor? I bought my own large-screen LCD and put it in my cubicle. Management ordered me to remove it because it was causing a flood of &amp;ldquo;hey, how did Baron get a nice monitor?&amp;rdquo; questions, but the camel already had a nose under the tent. I took my monitor home, but not too long after that we all started to get nicer monitors. I brought my own nice chair to work, too. All told I probably forced Crutchfield to spend thousands of dollars upgrading equipment. You have to be careful about headstrong kids like me &amp;ndash; don&amp;rsquo;t turn your backs on us for a moment.&lt;/p&gt;
+
+&lt;p&gt;This story illustrates why MongoDB is likely to become a major database: because developers enjoy working with it. It feels pleasant and elegant. Remember, most technology decisions are based on how people feel, not on facts. We&amp;rsquo;re not rational beings, so don&amp;rsquo;t expect the best solution to win. Expect people to choose what makes them happy.&lt;/p&gt;
+
+&lt;p&gt;And with the availability of TokuDB, MongoDB is lovable by a lot more people. With reliable storage and transactions, uncool kids can like it too.&lt;/p&gt;
+
+&lt;p&gt;It goes further than just the storage engine. The kernel of MongoDB has code that needs to be fixed, such as the coarse-grained locking code. Tokutek basically forked MongoDB in order to insert TokuDB into it. They had to, in order to get all that locking out of the way and allow MongoDB to shine with TokuDB on the backend.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m not sure exactly how this will play out &amp;ndash; will Tokutek start offering a competitive product? Will there be opensource community-based forks of MongoDB that integrate TokuDB? Will 10gen do the engineering to offer TokuDB as a backend? Will 10gen and Tokutek partner to do the engineering and provide support? Will 10gen acquire Tokutek? Will a large company acquire both? You decide.&lt;/p&gt;
+
+&lt;p&gt;But I believe that a few things are inevitable, and don&amp;rsquo;t require a crystal ball to guess.&lt;/p&gt;
+
+&lt;p&gt;Anyone who cares about MongoDB is going to be using TokuDB as their storage backend within a matter of months. It&amp;rsquo;s happened before &amp;ndash; look at what happened to MySQL and InnoDB. Look at Riak; people dropped Bitcask like a hot potato when LevelDB storage arrived (although it hasn&amp;rsquo;t been a perfect solution).&lt;/p&gt;
+
+&lt;p&gt;Just to be clear, I do not think that MongoDB&amp;rsquo;s parallels with MySQL&amp;rsquo;s history must inevitably repeat in all aspects of the story. The world of databases today (big data, cloud, mobile) is not in the same situation it was when MySQL was creeping into general awareness (web, gaming, social, general lack of good alternatives to commercial databases), and the reasons people use MongoDB now are different from the reasons people chose MySQL back in the day. Still, there&amp;rsquo;s a good chance that MySQL&amp;rsquo;s past can teach us about MongoDB&amp;rsquo;s future, and for some use cases, MongoDB deployments will soon accelerate rapidly. I expect a larger commercial ecosystem to emerge, too; right now the MongoDB market is worth tens of millions, and I&amp;rsquo;d guess in a few years we&amp;rsquo;ll look back and see a sharp inflection point in 2013 and 2014. TokuDB could help propel MongoDB&amp;rsquo;s market size into hundreds of millions of dollars, which is a position occupied uniquely by MySQL today in the opensource database world.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.youtube.com/watch?v=2UFc1pr2yUU&#34;&gt;It&amp;rsquo;s getting real&lt;/a&gt; in the MongoDB world &amp;ndash; this is going to be interesting to watch.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Bold predictions on which NoSQL databases will survive</title>
+          <link>https://www.xaprb.com/blog/2013/01/10/bold-predictions-on-which-nosql-databases-will-survive/</link>
+          <pubDate>Thu, 10 Jan 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/01/10/bold-predictions-on-which-nosql-databases-will-survive/</guid>
+          <description>&lt;p&gt;In case you&amp;rsquo;ve been &lt;a href=&#34;http://www.youtube.com/watch?v=cvXqm0RdJms&#34;&gt;living under a rock&lt;/a&gt; for the last 5 years, the NoSQL movement has changed. There was a time when everyone &amp;ndash; EVERYONE &amp;ndash; was dumping on relational databases, and MySQL in particular. Nonsense like &amp;ldquo;SQL itself is inherently unscalable&amp;rdquo; routinely came out of the mouths of otherwise usually sensible people. But that&amp;rsquo;s cooled off a little bit, thank heavens.&lt;/p&gt;
+
+&lt;p&gt;And what&amp;rsquo;s the new hotness? Well, Big Data, of course! But I digress. In the world of databases, it&amp;rsquo;s move over NoSQL, heeeeeere&amp;rsquo;s NewSQL. I&amp;rsquo;m talkin&amp;rsquo; NuoDB, Clustrix, MySQL Cluster (NDB), and so forth. A lot of people now recognize that it wasn&amp;rsquo;t SQL or the relational model that was a problem &amp;ndash; it was the implementations that had some issues. The pendulum has swung a little away from vilifying SQL, and we don&amp;rsquo;t talk about NoSQL as much as we talk about document-oriented or key-value or whatever.&lt;/p&gt;
+
+&lt;p&gt;Does that spell death for NoSQL databases? Not in my opinion. But I am just in the mood to stick my neck out a bit today, so I&amp;rsquo;m going to do something I don&amp;rsquo;t normally do &amp;ndash; predict the future. Here&amp;rsquo;s my prediction: &lt;strong&gt;there may be many NoSQL databases that live long and healthy lives, but among them will probably be MongoDB, Redis, and Riak&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Discuss!&lt;/p&gt;
+
+&lt;p&gt;PS: this prediction is about what I think will happen. If I get one out of three right, I&amp;rsquo;ll be happy. It&amp;rsquo;s not an endorsement of any database, dismissal of any other database, or an opinion about what I think &lt;em&gt;should&lt;/em&gt; happen. Limitations and exclusions apply. Subject to credit approval, see store for details.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Avoiding statement-based replication warnings</title>
+          <link>https://www.xaprb.com/blog/2012/08/23/avoiding-statement-based-replication-warnings/</link>
+          <pubDate>Thu, 23 Aug 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/08/23/avoiding-statement-based-replication-warnings/</guid>
+          <description>&lt;p&gt;Although not perfect, MySQL replication was probably the killer feature that made MySQL the default database for web applications some time ago. Since then, MySQL replication has been improved greatly, with such notable changes as row-based replication. At the same time, the replication engineering team has made MySQL replication more conservative and less forgiving of foot-gun errors. These have gone a long way towards helping users avoid some of the problems that made replication sometimes drift out of sync with the master copy, sometimes silently.&lt;/p&gt;
+
+&lt;p&gt;In some cases I think the strictness has gone a little too far. One example is the server&amp;rsquo;s identification of statements that are unsafe for replication because they are nondeterministic. Here is a statement in an application I manage, which is designed to claim some work from a queue. After running this statement, the application checks if any rows were affected, and if so, it then fetches and processes the rows:&lt;/p&gt;
+
+&lt;pre&gt;update pending_jobs set token = ?
+where token is null
+  and (owner_pid is null or owner_pid &lt;&gt; ?)
+order by id
+limit 1;&lt;/pre&gt;
+
+&lt;p&gt;MySQL will write to the server&amp;rsquo;s error log when this statement is issued and binlog_format=STATEMENT, because of the presence of a LIMIT in the statement: &lt;em&gt;120823 20:59:12 [Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted. Statement: [statement follows]&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This becomes a problem very quickly, because in fact the statement is deterministic and the rows to be affected can be predicted perfectly. The server is just being overly strict. The general technique illustrated here is a superior alternative to some other ways of &lt;a href=&#34;http://www.engineyard.com/blog/2011/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/&#34;&gt;implementing a queue in a database table&lt;/a&gt;. But if a superior alternative floods the error log with spurious messages, it must be avoided anyway.&lt;/p&gt;
+
+&lt;p&gt;The solution I chose in this case is a blend of SQL and application code. Part of the logic &amp;ndash; the limit &amp;ndash; must be handled in the application code, and pulled out of the UPDATE statement so the server will consider it to be deterministic. Here is pseudocode for the result:&lt;/p&gt;
+
+&lt;pre&gt;
+function claim_a_job() {
+   $pid   = get_pid();
+   $token = md5(rand(), time(), $pid);
+   @jobs  = query(
+            &#34;select id from pending_jobs
+             where token is null and (owner_pid is null or owner_pid &lt;&gt; ?)
+             order by id&#34;, $pid);
+   foreach ( $job in @jobs ) {
+      next unless query(&#34;update pending_jobs set token=?
+                         where token is null and id=?&#34;, $token, $job);
+      return $job;
+   }
+   return null;
+}
+&lt;/pre&gt;
+
+&lt;p&gt;This code finds all unclaimed rows and tries to claim each one in turn. If there&amp;rsquo;s a race condition and another worker has claimed the job in the meantime, no rows will be updated. If the UPDATE affects a row, then the function claimed the job successfully, and the job&amp;rsquo;s ID is returned. The most important thing, however, is that the SQL lacks any constructs such as LIMIT that might cause errors to be spewed into the log. I want my logs to be silent so that I can detect when something really important actually happens.&lt;/p&gt;
+
+&lt;p&gt;Percona Server has a feature to disable logging this warning, which is a mixed blessing. I want to find all such queries and examine them, because some of them might be a legitimate risk to replication integrity. If I disable the logging, it becomes much harder, though I can potentially do it by inspecting TCP traffic instead. I do wish that official MySQL supported the ability to silence warnings selectively, however.&lt;/p&gt;
+
+&lt;p&gt;Another possible solution would be to switch to row-based binary logging, which comes with many other benefits as well. But such a change is not to be taken lightly; it requires a careful assessment of the server and its workload, lest there be unintended consequences.&lt;/p&gt;
+
+&lt;p&gt;An even better solution would be to implement some additional features in the server. Many of the features that developers like the most about NoSQL databases such as MongoDB and Redis (or even PostgreSQL) are special-case behaviors to simplify things that are awkward to do in most databases. Examples include atomically adding and removing from a queue, and features to avoid polling, such as LISTEN and NOTIFY.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Automated, integrated sharding: the new killer database feature</title>
+          <link>https://www.xaprb.com/blog/2012/04/09/automated-integrated-sharding-the-new-killer-database-feature/</link>
+          <pubDate>Mon, 09 Apr 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/04/09/automated-integrated-sharding-the-new-killer-database-feature/</guid>
+          <description>&lt;p&gt;MySQL became wildly successful in part because it had built-in, simple replication. Sure, it had lots of interesting failure scenarios and was not great at first &amp;mdash; it is much better these days &amp;mdash; but it was nevertheless successful because there was a single, out-of-the-box, not-very-complex way to do replication. I have opined many times before that this was one of the killer features missing from PostgreSQL. I think that can large explain why MySQL became more popular more quickly.&lt;/p&gt;
+
+&lt;p&gt;The new killer feature is automatic sharding, in my opinion. If you&amp;rsquo;re not accustomed to the word, &amp;ldquo;sharding&amp;rdquo; means partitioning of a large dataset across many servers.&lt;/p&gt;
+
+&lt;p&gt;It is easy to poke fun at &lt;a href=&#34;http://www.mongodb.org/&#34;&gt;MongoDB&amp;rsquo;s&lt;/a&gt; current limitations, but for all that, it has a story to tell about sharding. There is One Right Way To Do It in MongoDB, and it&amp;rsquo;s a part of the product.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t see sharding being added into the core of MySQL itself, but there are some very interesting efforts headed towards MySQL. There are at least the following companies providing sharding via a proxy or middleware solution, with a lot of other features also available in some products:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.scalebase.com/&#34;&gt;Scalebase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.scalearc.com/&#34;&gt;ScaleArc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.dbshards.com/&#34;&gt;dbShards&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.parelastic.com/&#34;&gt;ParElastic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition, there are community-based efforts, such as &lt;a href=&#34;http://code.google.com/p/shard-query/&#34;&gt;Shard-Query&lt;/a&gt; and the &lt;a href=&#34;http://spiderformysql.com/&#34;&gt;Spider&lt;/a&gt; storage engine. And there&amp;rsquo;s &lt;a href=&#34;http://mysql.com/products/cluster/&#34;&gt;MySQL (NDB) Cluster&lt;/a&gt;, and commercial rip-out-and-plug-in replacements for MySQL such as &lt;a href=&#34;http://www.clustrix.com/&#34;&gt;Clustrix&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Am I missing any? I probably am. You can see and talk to many of these companies at this week&amp;rsquo;s &lt;a href=&#34;http://www.percona.com/live/mysql-conference-2012/&#34;&gt;MySQL conference&lt;/a&gt;, by the way.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>My sessions at the O&#39;Reilly MySQL Conference 2011</title>
+          <link>https://www.xaprb.com/blog/2011/01/29/my-sessions-at-the-oreilly-mysql-conference-2011/</link>
+          <pubDate>Sat, 29 Jan 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/01/29/my-sessions-at-the-oreilly-mysql-conference-2011/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ll be presenting several sessions at the &lt;a href=&#34;http://en.oreilly.com/mysql2011/&#34;&gt;O&amp;rsquo;Reilly MySQL Conference &amp;amp; Expo 2011&lt;/a&gt;, which is April 11-14 in Santa Clara, California. I recommend this conference to anyone interested in open-source databases including MySQL, PostgreSQL, CouchDB, MongoDB, and others. There is very good coverage of a diverse list of open-source databases.&lt;/p&gt;
+
+&lt;p&gt;My sessions are as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.oreilly.com/mysql2011/public/schedule/detail/17808&#34;&gt;Building on Strengths, Learning from Differences&lt;/a&gt;: a keynote address on the open-source database ecosystem, how we got here, and what we can do to make the most of the future.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.oreilly.com/mysql2011/public/schedule/detail/17153&#34;&gt;Forecasting MySQL Performance and Scalability&lt;/a&gt;: mathematical models for forecasting performance and scalability that actually work and are not hard to do. (&lt;a href=&#34;http://www.mysqlperformanceblog.com/2011/01/26/modeling-innodb-scalability-on-multi-core-servers/&#34;&gt;Example&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.oreilly.com/mysql2011/public/schedule/detail/17129&#34;&gt;The Aspersa System Administrator&amp;rsquo;s Toolkit&lt;/a&gt;: this is an under-appreciated toolkit at the moment, but it could be the next Maatkit.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition, I am listed as presenting &lt;a href=&#34;http://en.oreilly.com/mysql2011/public/schedule/detail/17142&#34;&gt;Diagnosing and Fixing MySQL Performance Problems&lt;/a&gt;, a 3-hour tutorial on how to find and solve performance problems with swift and definite results. However, I actually have a scheduling conflict and a couple of my colleagues will present this instead.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Version 1.1.8 of Better Cacti Templates released</title>
+          <link>https://www.xaprb.com/blog/2011/01/22/version-1-1-8-of-better-cacti-templates-released/</link>
+          <pubDate>Sat, 22 Jan 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/01/22/version-1-1-8-of-better-cacti-templates-released/</guid>
+          <description>&lt;p&gt;I&amp;rsquo;ve released version 1.1.8 of the &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/&#34;&gt;Better Cacti Templates&lt;/a&gt; project. This release includes a bunch of bug fixes and several important new graphs. There are &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/MySQLTemplates#MySQL_Query_Response_Time_%28Microseconds%29&#34;&gt;graphs&lt;/a&gt; for the new &lt;a href=&#34;http://www.percona.com/docs/wiki/percona-server:features:response_time_distribution&#34;&gt;response-time statistics exposed in Percona Server&lt;/a&gt;, and a new set of graphs for &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/MongoDBTemplates&#34;&gt;MongoDB&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is the startup I founded in 2012. It&amp;rsquo;s the easiest way to monitor what
+your servers are doing in production and I consider it far superior to Cacti. VividCortex offers &lt;a href=&#34;https://vividcortex.com/monitoring/mysql/&#34;&gt;MySQL performance
+monitoring&lt;/a&gt; and &lt;a href=&#34;https://vividcortex.com/monitoring/postgres/&#34;&gt;PostgreSQL
+performance management&lt;/a&gt; among many
+other features.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There are &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/UpgradingTemplates&#34;&gt;upgrade instructions&lt;/a&gt; on the project wiki for this and all releases. There is also a comprehensive tutorial on &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/CreatingGraphs&#34;&gt;how to create your own graphs and templates&lt;/a&gt; with this project. Use the &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/issues/list&#34;&gt;project issue tracker&lt;/a&gt; (&lt;strong&gt;not the comments on this post!&lt;/strong&gt;) to view and report issues, and use the &lt;a href=&#34;http://groups.google.com/group/better-cacti-templates&#34;&gt;project mailing list&lt;/a&gt; to discuss the templates and scripts.&lt;/p&gt;
+
+&lt;p&gt;The full changelog follows.&lt;/p&gt;
+
+&lt;pre&gt;
+2011-01-22: version 1.1.8
+
+  * The cache file names could conflict due to omitting --port (issue 171).
+  * Load-average parsing did not work correctly at high load (issue 170).
+  * The --mpds option to make-template.pl did not create new inputs (issue 133).
+  * The url and port were reversed in the Nginx commandline (issue 149).
+  * Added $nc_cmd to ss_get_by_ssh.php (issue 154, issue 152).
+  * InnoDB Transactions and other graphs showed NaN instead of 0 (issue 159).
+  * Added graphs for Percona Server response-time distribution (issue 158).
+  * Added graphs for MongoDB (issue 136).
+  * Added a minimum option to the template construction logic (issue 169).
+  * Added memtotal for Memory (issue 146).
+  * make-template.pl sanity checks were too strict (issue 168).
+&lt;/pre&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Schedule for MySQL-and-beyond conference is live</title>
+          <link>https://www.xaprb.com/blog/2010/12/19/schedule-for-mysql-and-beyond-conference-is-live/</link>
+          <pubDate>Sun, 19 Dec 2010 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2010/12/19/schedule-for-mysql-and-beyond-conference-is-live/</guid>
+          <description>&lt;p&gt;&lt;a href=&#34;http://en.oreilly.com/mysql2011/&#34;&gt;O&amp;rsquo;Reilly&amp;rsquo;s 2011 edition of the MySQL conference&lt;/a&gt; has an expanded agenda, with good representation from Postgres, CouchDB, MongoDB, and others. Take a look at &lt;a href=&#34;http://en.oreilly.com/mysql2011/public/schedule/full&#34;&gt;the full schedule listing&lt;/a&gt;, which is being filled out as talks are approved and the speakers verify that they&amp;rsquo;ll give the session.&lt;/p&gt;
+
+&lt;p&gt;I am certainly looking forward to this year&amp;rsquo;s event. A tremendous amount of progress has landed in GA versions of open-source databases this year. To name just a couple, there&amp;rsquo;s a new version of Postgres (9.0) with built-in replication and many more improvements; there&amp;rsquo;s MySQL 5.5 GA; there&amp;rsquo;s the HandlerSocket NoSQL interface to MySQL; Drizzle has a beta release; and the list goes on. I believe that this conference will have balanced and representative coverage of what&amp;rsquo;s really important to users. It isn&amp;rsquo;t dominated by any vendor this year; O&amp;rsquo;Reilly is running the conference independently, and the committee members represent a broad spectrum of databases themselves.&lt;/p&gt;
+
+&lt;p&gt;In short, I am happier than I&amp;rsquo;ve ever been about this great and unique conference. It&amp;rsquo;s definitely going to be the best year so far. Thank you O&amp;rsquo;Reilly for holding it, and thank you to all the great speakers, and thanks to all the companies who sponsor the event.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A review of MongoDB, the Definitive Guide by Chodorow and Dirolf</title>
+          <link>https://www.xaprb.com/blog/2010/12/14/a-review-of-mongodb-the-definitive-guide-by-chodorow-and-dirolf/</link>
+          <pubDate>Tue, 14 Dec 2010 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2010/12/14/a-review-of-mongodb-the-definitive-guide-by-chodorow-and-dirolf/</guid>
+          <description>&lt;p style=&#34;float:left&#34;&gt;
+  &lt;div id=&#34;attachment_2114&#34; class=&#34;wp-caption alignleft&#34; style=&#34;width: 190px&#34;&gt;
+    &lt;a href=&#34;http://www.amazon.com/dp/1449381561?tag=xaprb-20&#34;&gt;&lt;img src=&#34;https://www.xaprb.com/media/2010/12/mongodb-definitive-guide.gif&#34; alt=&#34;MongoDB, the Definitive Guide&#34; title=&#34;MongoDB, the Definitive Guide&#34; width=&#34;180&#34; height=&#34;236&#34; class=&#34;size-full wp-image-2114&#34; /&gt;&lt;/a&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
+      MongoDB, the Definitive Guide
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/dp/1449381561?tag=xaprb-20&#34;&gt;MongoDB, the Definitive Guide&lt;/a&gt;, by Kristina Chodorow and Michael Dirolf, 2010. About 200 pages. (Here&amp;rsquo;s a &lt;a href=&#34;http://oreilly.com/catalog/0636920001096&#34;&gt;link to the publisher&amp;rsquo;s site&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;This is a good introduction to MongoDB, mostly from the application developer&amp;rsquo;s point of view. After reading through this, I felt that I understood the concepts well, although I am not a MongoDB expert, so I can&amp;rsquo;t pretend to be a fact-checker. The topics are clearly and logically presented for the most part; there is a small amount of repetition in one of the appendixes, but I don&amp;rsquo;t mind that. The writing and editing is top-notch, as I&amp;rsquo;ve come to expect from O&amp;rsquo;Reilly.&lt;/p&gt;
+
+&lt;p&gt;Read this book if you want to learn what MongoDB is, what it does, and how to use it. Don&amp;rsquo;t expect that you will learn everything there is to know about topics such as administration and tuning, although it&amp;rsquo;ll be a good start. (The MongoDB documentation is an excellent reference to continue your education in those areas.)&lt;/p&gt;
+
+&lt;p&gt;You might be pleasantly surprised at the lack of hype in this book. It wasn&amp;rsquo;t written by wide-eyed fanboys, and it does mention the weaknesses of MongoDB, although it understandably doesn&amp;rsquo;t spend any time bashing MongoDB for having shortcomings. I think you&amp;rsquo;ll get a balanced view of the database&amp;rsquo;s strengths and weaknesses, certainly enough to make a responsible decision about whether it&amp;rsquo;s worth investigating more deeply.&lt;/p&gt;
+
+&lt;p&gt;To sum up, as I wrote to the authors, &amp;ldquo;Nice book. Very well written, very clear and objective.&amp;rdquo;&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>There&#39;s a European OpenSQL Camp coming up</title>
+          <link>https://www.xaprb.com/blog/2010/06/29/theres-a-european-opensql-camp-coming-up/</link>
+          <pubDate>Tue, 29 Jun 2010 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2010/06/29/theres-a-european-opensql-camp-coming-up/</guid>
+          <description>&lt;p&gt;In addition to the Boston edition, there&amp;rsquo;s an &lt;a href=&#34;http://opensqlcamp.org/Events/FrOSCon2010/&#34;&gt;OpenSQL Camp at the same time and place as FrOSCon&lt;/a&gt; mid-August in Germany. The call for papers is open until July 11th. As always, the conference is about all kinds of open-source databases: MySQL and PostgreSQL are only two of the obvious ones; MongoDB and Cassandra featured prominently at the last one I attended, and SQLite was well represented at the first one.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>OpenSQL Camp Boston 2010</title>
+          <link>https://www.xaprb.com/blog/2010/06/25/opensql-camp-boston-2010/</link>
+          <pubDate>Fri, 25 Jun 2010 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2010/06/25/opensql-camp-boston-2010/</guid>
+          <description>&lt;p&gt;Sheeri and others are organizing another incarnation of &lt;a href=&#34;http://opensqlcamp.org/Events/Boston2010/&#34;&gt;OpenSQL Camp in October in Boston&lt;/a&gt;. You ought to go! It&amp;rsquo;s relevant to MySQL, PostgreSQL, SQLite, and lots of the newer generation of databases &amp;ndash; MongoDB, Cassandra, and so on.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Recap of Portland OpenSQL Camp 2009</title>
+          <link>https://www.xaprb.com/blog/2009/11/17/recap-of-portland-opensql-camp-2009/</link>
+          <pubDate>Tue, 17 Nov 2009 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2009/11/17/recap-of-portland-opensql-camp-2009/</guid>
+          <description>&lt;p&gt;I was at &lt;a href=&#34;http://opensqlcamp.org/Events/Portland2009/&#34;&gt;OpenSQL Camp 2009 in Portland&lt;/a&gt; last weekend. I thought the event was very well done. On Friday we had a pizza party at Old Town Pizza, which was awesome. Saturday and Sunday were breakfast, sessions, lunch (yum), and sessions and hacking. These were held at &lt;a href=&#34;http://www.soukllc.com/&#34;&gt;souk&lt;/a&gt;, a co-working space. After 5PM, people got together for dinner, beer, etc.&lt;/p&gt;
+
+&lt;p&gt;I presented on mk-query-digest &amp;ndash; a live demo of features requested by the audience. Sessions from others that I thought were particularly good included ones on CouchDB and MongoDB. I mixed up the time and missed the session from Tokutek on how fractal tree indexes work. I&amp;rsquo;ll try to watch the video if that one was taped.&lt;/p&gt;
+
+&lt;p&gt;During the hackathons, Daniel and I worked on Maatkit. We are laying groundwork for a more powerful mk-query-digest.&lt;/p&gt;
+
+&lt;p&gt;As you may know, I created OpenSQL Camp. But I was not involved in organizing this or the previous event in Germany, which I think is great. I talked briefly with Eric and Selena about seeing if we could put together a recipe to make the process easy for folks to organize their own. We should be able to lay out checklists and timelines of major things &amp;ndash; location, shirts, sponsorship, budgeting, food. Eric and Selena got great food, much better than the Panera catering I had for the first event. Those kinds of decisions and results should be recorded. It would be great to be able to treat it like a franchise so anyone could just add water and make their own.&lt;/p&gt;
+
+&lt;p&gt;I also might be willing to help organize another on the East Coast, perhaps as soon as next year if I can reduce my workload enough to have the time. I&amp;rsquo;d probably want to do something in or near Washington DC, which is a more convenient location with better public transport than my hometown of Charlottesville.&lt;/p&gt;
+
+&lt;p&gt;It all started out as a response to &lt;a href=&#34;http://groups.google.com/group/oursql-conference&#34;&gt;complaints&lt;/a&gt; about MySQL&amp;rsquo;s annual conference not being a user&amp;rsquo;s conference, but nobody actually doing anything about it. I decided to do something about it, in a more inclusive way. And judging by the attendees and talks at the two I&amp;rsquo;ve gone to, people were happy to say yes to that. I think if there are continued events, that&amp;rsquo;s the ultimate measure of success.&lt;/p&gt;
+</description>
+        </item>
+    
+
+  </channel>
+</rss>

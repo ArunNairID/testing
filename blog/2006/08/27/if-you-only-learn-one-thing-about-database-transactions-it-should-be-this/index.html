@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      If you only learn one thing about database transactions, it should be this &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="If you only learn one thing about database transactions, it should be this" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2006/08/27/if-you-only-learn-one-thing-about-database-transactions-it-should-be-this/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2006/08/27/if-you-only-learn-one-thing-about-database-transactions-it-should-be-this/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">If you only learn one thing about database transactions, it should be this</h1>
+  <span class="post-date">Sun, Aug 27, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f27%2fif-you-only-learn-one-thing-about-database-transactions-it-should-be-this%2f&text=If%20you%20only%20learn%20one%20thing%20about%20database%20transactions%2c%20it%20should%20be%20this:https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f27%2fif-you-only-learn-one-thing-about-database-transactions-it-should-be-this%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f27%2fif-you-only-learn-one-thing-about-database-transactions-it-should-be-this%2f&title=If%20you%20only%20learn%20one%20thing%20about%20database%20transactions%2c%20it%20should%20be%20this&summary=If%20you%20only%20learn%20one%20thing%20about%20database%20transactions%2c%20it%20should%20be%20this&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f27%2fif-you-only-learn-one-thing-about-database-transactions-it-should-be-this%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f27%2fif-you-only-learn-one-thing-about-database-transactions-it-should-be-this%2f&t=If%20you%20only%20learn%20one%20thing%20about%20database%20transactions%2c%20it%20should%20be%20this" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f27%2fif-you-only-learn-one-thing-about-database-transactions-it-should-be-this%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>I&rsquo;ve been writing a lot of articles about locks, deadlocks, and transactions recently, and it occurs to me I&rsquo;ve neglected to mention the single most important thing to know. If you only learn one thing about transactions in database systems, you should learn this, and learn it thoroughly &ndash; burn it into your brain permanently, if possible.</p>
+
+<p><strong>The single most important thing you can do is keep your transactions as small as possible.</strong></p>
+
+<p>That simple practice will improve performance, increase concurrency, reduce deadlocks, and generally create world peace. Plus it&rsquo;ll make you think hard about your queries, which will probably make them higher-quality and better to maintain.</p>
+
+<p>Now, how can you do it? Ah, that&rsquo;s the trick. I offer you six simple suggestions.</p>
+
+<h3 id="1-have-the-right-attitude">1. Have the right attitude</h3>
+
+<p>The way to think about transactions is as an urgent mission. The instant you say <code>START TRANSACTION</code>, the race is on.</p>
+
+<p>It&rsquo;s like when you&rsquo;re waiting in the car for the pouring rain to stop, before you make a mad dash for the house. You prepare yourself, unlock the door, unbuckle the seat belt&hellip; take a deep breath&hellip; <em>START TRANSACTION go go go go COMMIT!</em></p>
+
+<h3 id="2-do-as-few-statements-as-possible">2. Do as few statements as possible</h3>
+
+<p>Do only the statements you need to inside the transaction. Don&rsquo;t make updates to <code>big_huge_table</code> and inserts to <code>giant_table</code>, then poke around inside other tables looking at little things of no consequence before finishing your work. Remember, a transaction is a set of statements that must all succeed together as a unit, or must all fail together as a unit. Include in your transaction only the statements that belong to that unit of work.</p>
+
+<p>If you can do it all in a single query, you don&rsquo;t even need a transaction. By definition, a single query is a one-statement transaction.</p>
+
+<h3 id="3-prepare-as-much-ahead-of-time-as-possible">3. Prepare as much ahead of time as possible</h3>
+
+<p>To help include as few statements as possible in your transaction, look at the order of the queries. Can some of them be moved earlier in the sequence, before the <code>START TRANSACTION</code> statement? If so, good. Do as much preparation as possible before you start the work. Especially think about whether you can check to make sure there&rsquo;s even work to be done, or whether you&rsquo;re likely to be able to finish the work &ndash; if you can find that out ahead of time, you might be able to avoid even doing anything.</p>
+
+<h3 id="4-touch-the-smallest-amount-of-data-possible">4. Touch the smallest amount of data possible</h3>
+
+<p>If possible, avoid changing data that doesn&rsquo;t need to be changed. For example, if you&rsquo;re updating a summary table and you know what was just changed in the table from which the summary is calculated, you may not need to update the entire summary &ndash; maybe just part of it. Use indexes wisely to constrain your work to just part of a table instead of doing the entire table. Use every bit of information at your disposal to avoid working with more data than you need to.</p>
+
+<h3 id="5-don-t-wait-around-before-committing">5. Don&rsquo;t wait around before committing</h3>
+
+<p>The goal is to lock as few resources as possible, for the shortest time possible. To that end, look at whether you can re-order the statements within your transaction. Is it possible to make the big changes later in the transaction? Can you delay getting locks on the really important table, which everyone else is accessing at the same time, until near the end? If so, you might cut down the number of locks and the duration they&rsquo;re held. And definitely commit the transaction as soon as you&rsquo;re done.</p>
+
+<h3 id="6-don-t-sacrifice-consistency">6. Don&rsquo;t sacrifice consistency</h3>
+
+<p>Transactions have a purpose, and you should not be so afraid of holding locks that you commit when only half the work is done. Use transactions deliberately and carefully to group a set of work together into a logical unit. By all means examine whether the unit is bigger than it needs to be, but don&rsquo;t shoot yourself in the foot by committing before the work is all done, out of fear of deadlocks.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Keeping transactions as small as possible is the most important thing to do, but it may not be obvious, especially if you&rsquo;re less experienced with databases. A few easy practices, combined with simple awareness, can go a very long way. But remember &ndash; don&rsquo;t defeat the purpose by cheating yourself out of the very benefits transactions give you.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2006/08/22/mysqls-error-1025-explained/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2006\/08\/27\/if-you-only-learn-one-thing-about-database-transactions-it-should-be-this\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

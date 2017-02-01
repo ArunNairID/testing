@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Blogs &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Blogs" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/16/how-we-enabled-threading-in-mysql/">How we enabled threading in MySQL</a></h1>
+        <span class="post-date">Sun, Jul 16, 2006</span>
+        MySQL on GNU/Linux appears to be able to either run multiple processes, or one process and multiple threads. We&rsquo;ve noticed a significant CPU penalty for multiple processes, probably from the context switching overhead. The trouble was, one of our servers wouldn&rsquo;t use threads; it wanted to use multiple processes. This article explains how we got it to use threads instead.
+First, we noticed the master server&rsquo;s CPU utilization was higher than the replica&rsquo;s, even though we expected the type of queries running on the replica should have caused it to have around the same CPU utilization as the master.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/16/how-we-enabled-threading-in-mysql/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/12/how-to-switch-from-linuxthreads-to-nptl-on-gentoo/">How to switch from linuxthreads to NPTL on Gentoo</a></h1>
+        <span class="post-date">Wed, Jul 12, 2006</span>
+        This article explains how to enable the Native Posix Threading Library (NPTL) on Gentoo GNU/Linux, and how to disable the now-obsolete linuxthreads library so you don&rsquo;t have both on your system.
+Linuxthreads and NPTL are part of glibc, the GNU C Library. The recommended threading library for GNU/Linux is now NPTL, not linuxthreads, even though the linuxthreads web page&rsquo;s excerpt in Google says it&rsquo;s &ldquo;The recommended threads package for Linux, also included in glibc 2.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/12/how-to-switch-from-linuxthreads-to-nptl-on-gentoo/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/09/so-you-think-your-code-is-in-version-control/">So you think your code is in version control?</a></h1>
+        <span class="post-date">Sun, Jul 9, 2006</span>
+        &ldquo;My code is all in version control,&rdquo; Joe said proudly. &ldquo;Everything is versioned. I&rsquo;ll never lose any work.&rdquo; But then he lost some &ldquo;other&rdquo; code he didn&rsquo;t realize was critical. This article is about how to find and safeguard all the hidden code you don&rsquo;t know your business relies on.
+Introduction Everyone knows version control is indespensable. I put everything into version control &ndash; even my GnuCash file is in version control.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/09/so-you-think-your-code-is-in-version-control/"> &raquo; Continue Reading (about 1300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/07/what-is-a-sql-blind-insert/">What is a SQL blind insert?</a></h1>
+        <span class="post-date">Fri, Jul 7, 2006</span>
+        SQL blind inserts are a common mistake, but they&rsquo;re easily avoided. This article explains what blind inserts are and how to avoid them, as well as dispelling a common misconception about how to avoid them.
+What is a blind insert? A blind insert is when an INSERT query doesn&rsquo;t specify which columns receive the inserted data. For instance, this query is a blind insert:
+insert into apples select color, price, variety from fruits where type = 'apple'; Notice the query doesn&rsquo;t say what columns are targeted by the INSERT.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/07/what-is-a-sql-blind-insert/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/04/how-to-exploit-mysql-index-optimizations/">How to exploit MySQL index optimizations</a></h1>
+        <span class="post-date">Tue, Jul 4, 2006</span>
+        I&rsquo;ve written a lot recently about MySQL index and table structure, primary keys, surrogate keys, and related optimizations. In this article I&rsquo;ll explain how MySQL&rsquo;s index structures enable an extremely important query optimization, and how that differs between storage engines. I&rsquo;ll also show you how to know and predict when the optimization is triggered, how to design tables and queries so it&rsquo;ll be used, and how to avoid defeating it with poor practices.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/04/how-to-exploit-mysql-index-optimizations/"> &raquo; Continue Reading (about 3000 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/03/come-work-with-me/">Come work with me!</a></h1>
+        <span class="post-date">Mon, Jul 3, 2006</span>
+        My current employer needs great coders. If you&rsquo;re the type of person who reads my articles regularly, I want you on the team! Come work with me! I&rsquo;ve put up a page describing what we&rsquo;re looking for. I&rsquo;ll keep it current as our needs change.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/03/come-work-with-me/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/">The innotop MySQL and InnoDB monitor</a></h1>
+        <span class="post-date">Sun, Jul 2, 2006</span>
+        MySQL and InnoDB expose lots of information about their internals, but it&rsquo;s hard to gather it all into one place and make sense of it. I&rsquo;ve written a tool to do that, and you are free to download and use it. This article introduces innotop, a powerful text-mode MySQL and InnoDB monitoring tool. It has lots of features, is fast and configurable, and it&rsquo;s easy to use.
+ Note: VividCortex is the startup I founded in 2012.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/28/why-large-in-clauses-are-problematic/">Why large IN clauses are problematic</a></h1>
+        <span class="post-date">Wed, Jun 28, 2006</span>
+        I&rsquo;ve seen a lot of SQL code that uses an IN clause as a place to put a variable number of parameters, allowing the query to be more flexible. There are several downsides to this technique. This article discusses those downsides and explains how to avoid them.
+Introduction I work in a Perl shop at the moment. We use two SQL utility modules from CPAN extensively: Class::DBI (which I&rsquo;ll discuss in another article) and Ima::DBI.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/28/why-large-in-clauses-are-problematic/"> &raquo; Continue Reading (about 1000 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/26/how-to-convert-text-to-columns-in-openofficeorg-calc/">How to convert text to columns in OpenOffice.org Calc</a></h1>
+        <span class="post-date">Mon, Jun 26, 2006</span>
+        Unlike Microsoft Excel, OpenOffice.org 2.0 Calc doesn&rsquo;t have a built-in &ldquo;text to columns&rdquo; feature, which is hard to live without once you&rsquo;re used to it. OpenOffice.org has an extensible add-on architecture, and someone has written a &ldquo;text to columns&rdquo; add-on, but installation may be confusing. In this article I&rsquo;ll explain how to install the add-on.
+I hope this feature will be added into the office suite at some point. Oddly, it seems to already be implemented, but not in the way it&rsquo;s needed.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/26/how-to-convert-text-to-columns-in-openofficeorg-calc/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/">How to select from an update target in MySQL</a></h1>
+        <span class="post-date">Fri, Jun 23, 2006</span>
+        MySQL doesn&rsquo;t allow referring to a table that&rsquo;s targeted for update in a FROM clause, which can be frustrating. There&rsquo;s a better way than creating endless temporary tables, though. This article explains how to update a table while selecting from it in a subquery.
+The problem Suppose I want to update a table with data from a subquery that refers to the same table. I might want to do this for a variety of reasons, such as trying to populate a table with its own aggregate data (this would require assignment from a grouped subquery), updating one row from another row&rsquo;s data without using non-standard syntax, and so on.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/21/forward-only-sql-maintenance-jobs/">How to do efficient forward-only SQL maintenance jobs</a></h1>
+        <span class="post-date">Wed, Jun 21, 2006</span>
+        I&rsquo;ve recently written about techniques for archiving, purging, and re-indexing huge database tables. These techniques exploit both data structure and usage patterns. In this article I&rsquo;ll develop that theme further, and explain how to write more efficient non-backtracking maintenance jobs when the update and insertion patterns permit.
+Motivation In my current employment, I&rsquo;ve been optimizing databases for size, speed, and consistency. As part of my regular monitoring, I checked our master MySQL server for deadlock information and found that a nightly cron job&rsquo;s query had caused other queries to time out or deadlock, then became a deadlock victim itself and died, after loading the server for a long time.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/21/forward-only-sql-maintenance-jobs/"> &raquo; Continue Reading (about 1200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/19/xaprb-scripts-relicensed/">Announcement: Xaprb scripts are re-licensed</a></h1>
+        <span class="post-date">Mon, Jun 19, 2006</span>
+        I have re-licensed some of my scripts under the LGPL, which means you can use them as part of other non-GPL software.
+The scripts in question are:
+ JavaScript number formatting JavaScript date/time formatting and parsing JavaScript date/time chooser for HTML documents JavaScript &ldquo;combo box&rdquo; simulation  Why the change? I&rsquo;ve always released my work under the GPL, but now that I&rsquo;m writing and making available smaller scripts that might be used as part of a larger software system, the GPL isn&rsquo;t as appropriate, because of the licensing requirements it places on the rest of the systems with which the scripts may be used.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/19/xaprb-scripts-relicensed/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/17/3-ways-to-write-upsert-and-merge-queries-in-mysql/">3 ways to write UPSERT and MERGE queries in MySQL</a></h1>
+        <span class="post-date">Sat, Jun 17, 2006</span>
+        This article is a quick pointer on MySQL&rsquo;s three techniques for UPSERT (update/insert) or MERGE queries. I&rsquo;ve written about this before, but since SQL 2003 has a MERGE statement (which Oracle and DB2 support), many people are asking for similar functionality in MySQL without realizing it already exists. I hope this article helps you find what you need.
+The three tools are
+ REPLACE INSERT ... ON DUPLICATE KEY UPDATE .
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/17/3-ways-to-write-upsert-and-merge-queries-in-mysql/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/">How to avoid unique index violations on updates in MySQL</a></h1>
+        <span class="post-date">Fri, Jun 16, 2006</span>
+        There is a bug in MySQL that causes an UPDATE to fail with a unique index violation, even though the statement doesn&rsquo;t create duplicate values. In this article I&rsquo;ll explain when this bug can happen, and how to work around it.
+The bug This is easiest to demonstrate with SQL:
+create table t (i int not null primary key); insert into t(i) values (1), (2), (3), (4); update t set i = i + 1; -- ERROR 1062 (23000): Duplicate entry '2' for key 1 The bug is caused by MySQL&rsquo;s method of updating the values.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/14/how-to-re-index-a-large-database-table/">How to re-index a large database table</a></h1>
+        <span class="post-date">Wed, Jun 14, 2006</span>
+        In recent articles I explained how I&rsquo;ve optimized queries against large datasets at my current employer, and how I&rsquo;ve written efficient archiving and purging jobs to trim the tables down to a manageable size. This article explains how I re-indexed some of those tables without taking the server offline.
+The technique I used is suitable for when a table has gotten &ldquo;too fat to exercise.&rdquo; In other words, the table is in critical condition, but that very condition makes it hard to do anything with the table, much less re-index or re-arrange the data.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/14/how-to-re-index-a-large-database-table/"> &raquo; Continue Reading (about 2100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/12/benchmarks-for-date-operations-in-mysql/">Benchmarks for DATE operations in MySQL</a></h1>
+        <span class="post-date">Mon, Jun 12, 2006</span>
+        This article compares the relative speed of extracting the date part of a value in MySQL with LEFT() and with the DATE() function.
+LEFT() is faster than DATE(). To prove this, I inserted two million un-indexed sequential values into a table and selected the minimum and maximum values. Both queries are table scans, so it does read through all the records. The table below lists the time in seconds for MAX() on my computer.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/12/benchmarks-for-date-operations-in-mysql/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/10/how-to-find-data-distributions-with-sql/">How to find data distributions with SQL</a></h1>
+        <span class="post-date">Sat, Jun 10, 2006</span>
+        In an earlier article I wrote about grouping data into ranks with a catch-all bucket. In this article I&rsquo;ll show you how to group the data into variable-sized buckets any way you please.
+This query came up when a business partner asked me to send over the distribution of some hierarchical data. It&rsquo;s the same category/subcategory/item data as in my article about optimizing joins and subqueries. The partner wanted to know, broadly speaking, &ldquo;how many subcategories have very small and very large numbers of items&rdquo;.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/10/how-to-find-data-distributions-with-sql/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/08/how-to-monitor-server-load-on-gnulinux/">How to monitor server load on GNU/Linux</a></h1>
+        <span class="post-date">Thu, Jun 8, 2006</span>
+        This article introduces six methods and 12 tools for monitoring system load, performance and related information on GNU/Linux and similar systems. I&rsquo;ve seen many articles that mention one or two of these tools, but none that discusses and compares all the ones I find useful.
+VividCortex VividCortex is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what your servers are doing in production. VividCortex offers MySQL performance monitoring and PostgreSQL performance management among many other features.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/08/how-to-monitor-server-load-on-gnulinux/"> &raquo; Continue Reading (about 1100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/07/how-to-update-a-gcc-profile-on-gentoo/">How to update a GCC profile on Gentoo</a></h1>
+        <span class="post-date">Wed, Jun 7, 2006</span>
+        Multiple versions of GCC can be installed side-by-side in a Gentoo GNU/Linux system. This article is a quick overview of GCC profiles and how to manage them.
+Slots in Gentoo Gentoo allows installing multiple versions of packages side-by-side in different &ldquo;slots.&rdquo; This avoids dependency problems. For example, it&rsquo;s possible to run programs that require different versions of libraries, because they can all coexist happily (the lack of this feature on Microsoft Windows is known as DLL hell).
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/07/how-to-update-a-gcc-profile-on-gentoo/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/06/06/what-does-devnull-21-mean/">What does &gt; /dev/null 2&gt;&amp;1 mean?</a></h1>
+        <span class="post-date">Tue, Jun 6, 2006</span>
+        I remember being confused for a very long time about the trailing garbage in commands I saw in Unix systems, especially while watching compilers do their work. Nobody I asked could tell me what the funny greater-thans, ampersands and numbers after the commands meant, and search engines never turned up anything but examples of it being used without explanation. In this article I&rsquo;ll explain those weird commands.
+Here&rsquo;s an example command:
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/06/06/what-does-devnull-21-mean/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/page/48/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/page/50/">Older</a>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

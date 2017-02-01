@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      A close look at New Relic&#39;s scalability chart &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="A close look at New Relic&#39;s scalability chart" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2013/01/07/a-close-look-at-new-relics-scalability-chart/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2013/01/07/a-close-look-at-new-relics-scalability-chart/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A close look at New Relic&#39;s scalability chart</h1>
+  <span class="post-date">Mon, Jan 7, 2013 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/performance" class="btn btn-primary">Performance</a>
+		
+		<a href="/categories/scalability" class="btn btn-primary">Scalability</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f01%2f07%2fa-close-look-at-new-relics-scalability-chart%2f&text=A%20close%20look%20at%20New%20Relic%27s%20scalability%20chart:https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f01%2f07%2fa-close-look-at-new-relics-scalability-chart%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f01%2f07%2fa-close-look-at-new-relics-scalability-chart%2f&title=A%20close%20look%20at%20New%20Relic%27s%20scalability%20chart&summary=A%20close%20look%20at%20New%20Relic%27s%20scalability%20chart&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f01%2f07%2fa-close-look-at-new-relics-scalability-chart%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f01%2f07%2fa-close-look-at-new-relics-scalability-chart%2f&t=A%20close%20look%20at%20New%20Relic%27s%20scalability%20chart" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f01%2f07%2fa-close-look-at-new-relics-scalability-chart%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>I&rsquo;ve written a lot about modeling MySQL with the USL, and I like it best of all the scalability models I&rsquo;ve seen, but it&rsquo;s not the only way to think about scalability. I was aware that New Relic supports a scalability chart, so I decided to take a peek at that. Here&rsquo;s a screenshot of the chart, from <a href="http://blog.newrelic.com/2011/06/13/of-rainbows-and-polka-dots-new-relics-scalability-charts-explained/">their blog</a>:</p>
+
+<p><img alt="blog-rpm-response1" src="/media/2013/01/blog-rpm-response1.png" width="510" height="295" /></p>
+
+<p>Here&rsquo;s how it works. It plots response time (or database time, or CPU) as the dependent variable, versus throughput as the independent variable. There&rsquo;s a line through it to indicate the general shape. Samples are charted as points in a scatter plot. The points are color-coded by the time of day. Outliers are automatically removed.</p>
+
+<p>The focus on response time is really good. That&rsquo;s one of the things I like about New Relic. While most systems show people status counters, and imply that they have some deep insight and meaningfulness (there&rsquo;s usually no meaning to be found in status counters!), New Relic is educating people about the importance of response time, or latency.</p>
+
+<p>But as I read through the blog posts about this chart, it struck me that there&rsquo;s something a little odd about it. The problem, I realized, is that it plots throughput as the independent variable on the chart. But throughput isn&rsquo;t an independent variable. Throughput is the system&rsquo;s output under load, and depends on a) the load on the system, b) the system&rsquo;s scalability. It&rsquo;s a <em>dependent</em> variable.</p>
+
+<p>In a chart like this, it would be even better to show the independent variable as the variable that one can really control: the concurrency or load on the system. By &ldquo;load&rdquo; I mean the usual definition: the amount of work waiting to be completed, i.e. the backlog; this is what a Unix load average measures.</p>
+
+<p>To explain a little more what I mean about throughput being dependent, not independent, here are a few ways to think about it:</p>
+
+<ul>
+<li><p>An independent variable should range from zero to infinity (negative numbers are unphysical in a situation like this, so we exclude that). Throughput has a very finite theoretical and practical upper bound, but concurrency can theoretically go to infinity as work arrives and doesn&rsquo;t complete.</p></li>
+
+<li><p>An independent variable is the variable <em>you can control as an input parameter of a system under test</em>. It&rsquo;s dead-easy to achieve the desired concurrency for a benchmark or other test. It&rsquo;s <em>amazingly</em> difficult to manufacture a desired throughput for a benchmark, even in &ldquo;easy&rdquo; conditions. Computers are unruly beasts &ndash; they are queueing systems, and random variations and dependencies cause throughput to fluctuate greatly. That&rsquo;s because throughput is measured at the <em>output</em> end of the system, after the queues inside the system have had their way with the input and introduced statistical fluctuations into it. It&rsquo;s quite easy to generate a desired <em>arrival rate</em> for a system under test, provided that you have an unbounded number of workers ready to keep submitting more requests as the system queues up and stalls existing workers, but arrivals are not the same as throughput :-) Any way you look at it, you can pick your concurrency and your arrival rate, but you really can&rsquo;t pick your throughput reliably. Throughput is an effect, not a cause.</p></li>
+
+<li><p>An independent variable in a function must map to one and only one value of the dependent variable. But we know that as load increases, a system&rsquo;s throughput rises, peaks, and then falls again as retrograde scalability manifests itself. Suppose a system&rsquo;s throughput goes from 10,000 queries per second at 16 threads, to 20,000 at 32 threads, and back to 10,000 at 64 threads. Now if we flip the chart&rsquo;s axes around and treat throughput as an input, we&rsquo;ll find that a throughput of 10,000 queries per second would map to either 16 or 64 threads. That doesn&rsquo;t describe a real function.</p></li>
+</ul>
+
+<p>So although the New Relic scalability chart shows some of the <em>effects</em> of the system&rsquo;s scalability, and it&rsquo;s great to visualize the variation in response time as throughput varies, it doesn&rsquo;t strike me as quite the right angle of approach.</p>
+
+<p>I&rsquo;m curious to hear from people who may have used this feature. What did you use it for? Were you successful in gaining insight into scalability bottlenecks? How did it help you?</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2013/01/10/bold-predictions-on-which-nosql-databases-will-survive/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2013/01/05/modeling-scalability-with-the-usl-at-concurrencies-less-than-1/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2013\/01\/07\/a-close-look-at-new-relics-scalability-chart\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Databases &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Databases" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/categories/databases/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/categories/databases/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/12/06/get-data-points-from-chart/">How to Extract Data Points From a Chart</a></h1>
+        <span class="post-date">Sun, Dec 6, 2015</span>
+        <p>I often see benchmark reports that show charts but don&rsquo;t provide tables of
+numeric results. Some people will make the actual measurements available if
+asked, but I&rsquo;ve been interested in
+<a href="https://www.vividcortex.com/resources/universal-scalability-law/">analyzing</a>
+many systems for which I can&rsquo;t get numbers.  Fortunately, it&rsquo;s usually possible
+to get approximate results without too much trouble. In this blog post I&rsquo;ll show
+several ways to extract estimates of values from a chart image.</p>
+
+<p><img src="/media/2015/12/espresso.jpg" alt="Extracting" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/12/06/get-data-points-from-chart/"> &raquo; Continue Reading (about 1000 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/11/12/universal-scalability-law-teach-mysql/">What Does The Universal Scalability Law Reveal About MySQL?</a></h1>
+        <span class="post-date">Thu, Nov 12, 2015</span>
+        <p>In the last couple of weeks, there have been a few blog posts about benchmarks
+comparing the performance of various versions of MySQL and variants such as
+MariaDB. There&rsquo;s also been some analysis of the results using formal models such
+as Neil Gunther&rsquo;s Universal Scalability Law.</p>
+
+<p>What can the Universal Scalability Law (USL) teach us about the performance
+characteristics of these systems, as revealed by the benchmarks? To find out,
+I&rsquo;ll examine one particular benchmark, <a href="https://blog.mariadb.org/maria-10-1-mysql-5-7-commodity-hardware/">MariaDB 10.1 and MySQL 5.7 performance
+on commodity hardware</a>.</p>
+
+<p><img src="/media/2015/11/chicken.jpg" alt="chicken" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/11/12/universal-scalability-law-teach-mysql/"> &raquo; Continue Reading (about 800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/10/23/pgconfsv-postgresql-conference/">Don&#39;t Miss PGConfSV, Silicon Valley&#39;s Newest PostgreSQL Conference</a></h1>
+        <span class="post-date">Fri, Oct 23, 2015</span>
+        <p>If you haven&rsquo;t heard about <a href="http://www.pgconfsv.com/">PGConfSV</a> yet, it&rsquo;s a
+conference for the Silicon Valley PostgreSQL community and beyond, featuring
+leading PostgreSQL performance and scalability experts. It&rsquo;s happening November
+17-18 at the South San Francisco Conference Center. I encourage everyone in the
+area to attend, since this is likely to be the best Postgres conference held
+thus far in the Silicon Valley.</p>
+
+<p>I also urge you to <a href="http://www.eventbrite.com/e/pgconf-silicon-valley-2015-tickets-16521286613">buy your tickets</a> before they sell out! Of course, the earlier
+you buy, the more you save, too. (Use SeeMeSpeak for a 20% discount).</p>
+
+<p><img src="/media/2015/10/ssfcc.jpg" alt="Convention Center" /></p>
+
+<p>I&rsquo;ll be at the conference along with some of my colleagues. I&rsquo;m pretty excited
+about this for a few reasons. Allow me to &lsquo;splain why?</p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/10/23/pgconfsv-postgresql-conference/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/10/16/time-series-tagging/">The Case For Tagging In Time Series Data</a></h1>
+        <span class="post-date">Fri, Oct 16, 2015</span>
+        <p>A while ago I wrote a blog post about <a href="/blog/2014/06/08/time-series-database-requirements/">time series database
+requirements</a> that has been
+amazingly popular. Somewhere close to a dozen companies have told me they&rsquo;ve
+built custom in-house time series databases, and that blog post was the first
+draft of a design document for it.</p>
+
+<p>One of the things I said in the post was that I had no use for the &ldquo;tagging&rdquo;
+functionality I&rsquo;ve seen in time series databases such as OpenTSDB. I&rsquo;ve since
+reconsidered, although I think the functionality I now want is a bit different.</p>
+
+<p><img src="/media/2015/10/tagged.jpg" alt="tagged" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/10/16/time-series-tagging/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/08/24/baron-schwartz-left-percona/">Baron Schwartz Left Percona</a></h1>
+        <span class="post-date">Mon, Aug 24, 2015</span>
+        <p>A number of people have commented to me over the last few years that when they
+search for me on Google, it suggests that they might want to search for &ldquo;Baron
+Schwartz left Percona.&rdquo; This is a top suggestion when I search for myself, too.</p>
+
+<p><img src="/media/2015/08/google.png" alt="Google" /></p>
+
+<p>Since people are searching for it, maybe I should explain it.</p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/08/24/baron-schwartz-left-percona/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/08/08/innodb-book-outline/">An Outline for a Book on InnoDB</a></h1>
+        <span class="post-date">Sat, Aug 8, 2015</span>
+        <p>Years ago I pursued my interest in InnoDB&rsquo;s architecture and design, and became impressed with its sophistication. Another way to say it is that <a href="/blog/2014/12/08/eventual-consistency-simpler-than-mvcc/">InnoDB is complicated, as are all MVCC databases</a>. However, InnoDB manages to hide the bulk of its complexity entirely from most users.</p>
+
+<p><img src="/media/2015/08/iceberg.jpg" alt="Iceberg" /></p>
+
+<p>I decided to at least outline a book on InnoDB. After researching it for a while, it became clear that it would need to be a series of books in multiple volumes, with somewhere between 1000 and 2000 pages total.</p>
+
+<p>At one time I actually understood a lot of this material, but I have forgotten most of it now.</p>
+
+<p>I did not begin writing. Although it is incomplete, outdated, and in some cases wrong, I share the outline here in case anyone is interested. It might be of particular interest to someone who thinks it&rsquo;s an easy task to write a new database.</p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/08/08/innodb-book-outline/"> &raquo; Continue Reading (about 5700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/08/03/anomaly-detection-book/">New O&#39;Reilly Book, Anomaly Detection For Monitoring</a></h1>
+        <span class="post-date">Mon, Aug 3, 2015</span>
+        <p><strong>UPDATE:</strong> the book is now available from
+<a href="https://ruxit.com/anomaly-detection/">https://ruxit.com/anomaly-detection/</a>.</p>
+
+<p>Together with <a href="http://preet.am/">Preetam Jinka</a>, I&rsquo;m writing a book for O&rsquo;Reilly
+called <em>Anomaly Detection for Monitoring</em> (working title).</p>
+
+<p>I&rsquo;d like your help with this. Would you please comment,
+<a href="https://twitter.com/xaprb">tweet</a>, or <a href="mailto:baron@xaprb.com">email</a> me
+examples of anomaly detection used for monitoring; and monitoring problems that
+frustrate you, which you think anomaly detection might help solve?</p>
+
+<p>Thanks in advance.</p>
+
+<p><img src="/media/2015/08/outlier.jpg" alt="Outlier" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/08/03/anomaly-detection-book/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/07/21/surprising-database-bottlenecks/">Your Real Database Bottleneck</a></h1>
+        <span class="post-date">Tue, Jul 21, 2015</span>
+        <p>Database performance optimization is usually a topic concerned with indexes, SQL
+design, lock contention, and the like. But the real database bottleneck is the
+siloed culture that accretes around the database and has secondary and tertiary
+effects that are far more pernicious than you might think. The real opportunity
+in database optimization is the interplay between the technology and the
+organization, and its communication structures.</p>
+
+<p><img src="/media/2015/07/bottleneck.jpg" alt="Bottleneck" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/07/21/surprising-database-bottlenecks/"> &raquo; Continue Reading (about 900 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/05/25/what-makes-a-solution-mature/">What Makes A Database Mature?</a></h1>
+        <span class="post-date">Mon, May 25, 2015</span>
+        <p>Many database vendors would like me to take a look at their products and
+consider adopting them for all sorts of purposes. Often they&rsquo;re pitching
+something quite new and unproven as a replacement for mature, boring technology
+I&rsquo;m using happily.</p>
+
+<p>I would consider a new and unproven technology, and I often have. As I&rsquo;ve
+written previously, though, <a href="/blog/2014/06/08/time-series-database-requirements/">a real evaluation takes a lot of
+effort</a>, and that
+makes most evaluations non-starters.</p>
+
+<p>Perhaps the most important thing I&rsquo;m considering is whether the product is
+mature. There are different levels of maturity, naturally, but I want to
+understand whether it&rsquo;s mature enough for me to take a look at it. And in that
+spirit, it&rsquo;s worth understanding what makes a database mature.</p>
+
+<p><img src="/media/2015/05/bristlecone.jpg" alt="Bristlecone" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/05/25/what-makes-a-solution-mature/"> &raquo; Continue Reading (about 2300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/05/22/percona-mongodb-mysql-history-repeat/">History Repeats: MySQL, MongoDB, Percona, and Open Source</a></h1>
+        <span class="post-date">Fri, May 22, 2015</span>
+        <p>History is repeating again. MongoDB is breaking out of the niche into the
+mainstream, performance and instrumentation are terrible in specific cases,
+MongoDB isn&rsquo;t able to fix all the problems alone, and an ecosystem is growing.</p>
+
+<p><img src="/media/2015/05/leaf.jpg" alt="Leaf" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/05/22/percona-mongodb-mysql-history-repeat/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/04/02/state-of-the-storage-engine/">State Of The Storage Engine - DZone</a></h1>
+        <span class="post-date">Thu, Apr 2, 2015</span>
+        <p>I contributed an article on <a href="http://www.dzone.com/articles/state-storage-engine">modern database storage
+engines</a> to the recent
+<a href="http://dzone.com/research/guide-to-databases">DZone Guide To Database and Persistence
+Management</a>. I&rsquo;m cross-posting the
+article below with DZone&rsquo;s permission.</p>
+
+<p><img src="/media/2015/04/boardwalk.jpg" alt="Boardwalk" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/04/02/state-of-the-storage-engine/"> &raquo; Continue Reading (about 1400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2015/03/31/scaling-backend-systems-vividcortex/">Scaling Backend Systems at VividCortex</a></h1>
+        <span class="post-date">Tue, Mar 31, 2015</span>
+        <p>I wrote <a href="http://highscalability.com/blog/2015/3/30/how-we-scale-vividcortexs-backend-systems.html">a guest post for High
+Scalability</a>
+about how we scale our backend systems at VividCortex. It&rsquo;s heavy on MySQL,
+sprinkled with a little bit of Redis&rsquo;s magic pixie dust, and Kafka is also a key
+part of the architecture.</p>
+
+<p><img src="/media/2015/03/fern.jpg" alt="fern" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2015/03/31/scaling-backend-systems-vividcortex/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/12/08/eventual-consistency-simpler-than-mvcc/">If Eventual Consistency Seems Hard, Wait Till You Try MVCC</a></h1>
+        <span class="post-date">Mon, Dec 8, 2014</span>
+        <p>This should sound familiar:</p>
+
+<blockquote>
+<p>One of the great lies about NoSQL databases is that they&rsquo;re simple. Simplicity
+done wrong makes things a lot harder and more complicated to develop and
+operate. Programmers and operations staff end up reimplementing (badly) things
+the database should do.</p>
+</blockquote>
+
+<p>Nobody argued this line of reasoning more vigorously than when trying to defend
+relational databases, especially during the darkest years (ca.  2009-2010), when
+NoSQL still meant <strong>NO SQL DAMMIT</strong>, all sorts of NoSQL databases were
+sprouting, and most of them were massively overhyped.  But as valid as those
+arguments against NoSQL&rsquo;s &ldquo;false economy&rdquo; simplicity were and are, the arguments
+against relational databases&rsquo; complexity hold true, too.</p>
+
+<p><img src="/media/2014/12/puzzle.jpg" alt="Puzzle" /></p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/12/08/eventual-consistency-simpler-than-mvcc/"> &raquo; Continue Reading (about 3100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/06/08/time-series-database-requirements/">Time-Series Database Requirements</a></h1>
+        <span class="post-date">Sun, Jun 8, 2014</span>
+        <p>I&rsquo;ve had conversations about time-series databases with many people over the last couple of years. I <a href="/blog/2014/03/02/time-series-databases-influxdb/">wrote previously</a> about some of the open-source technologies that people commonly use for time-series storage.</p>
+
+<p><img src="/media/2014/06/timeseries.jpg" alt="Time Series" /></p>
+
+<p>Because I have my own ideas about what constitutes a good time-series database, and because a few people have asked me to describe my requirements, I have decided to publish my thoughts here. All opinions that follow are my own, and as you read you should mentally add &ldquo;in my opinion&rdquo; to every sentence.</p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/06/08/time-series-database-requirements/"> &raquo; Continue Reading (about 1600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/05/10/can-mysql-be-12factor-service/">Can MySQL be a 12-factor service?</a></h1>
+        <span class="post-date">Sat, May 10, 2014</span>
+        <p>A while ago I <a href="/blog/2012/04/24/the-mysql-init-script-mess/">wrote</a> about some of the things that can make MySQL unreliable or hard to operate. Some time after that, in a completely unrelated topic, someone made me aware of a set of principles called <a href="http://12factor.net">12-factor</a> that I believe originated from experiences building Heroku.</p>
+
+<p><img src="/media/2014/05/dodecahedron.jpg" alt="Dodecahedron" /></p>
+
+<p>That&rsquo;s been over a year, and I&rsquo;ve come to increasingly agree with the 12-factor principles. I guess I&rsquo;m extremely late to the party, but making applications behave in 12-factor-compliant ways has solved a lot of problems for me.</p>
+
+<p>This experience has repeatedly reminded me of one of the applications that continues to cause a lot of the kinds of pain that the 12-factor principles have solved for me: MySQL.</p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/05/10/can-mysql-be-12factor-service/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/04/29/golang-mysql-drivers/">Go MySQL Drivers</a></h1>
+        <span class="post-date">Tue, Apr 29, 2014</span>
+        If you&rsquo;re interested in Google&rsquo;s Go programming language, perhaps you aren&rsquo;t sure what drivers to use for MySQL. The good news is there are excellent drivers for MySQL.
+There are several opensource ones on GitHub and elsewhere, but the driver I recommend is https://github.com/go-sql-driver/mysql/. Why?
+ It is pure Go, not a wrapper around a C library, and is liberally licensed. It is high performance. A lot of work has gone into making it avoid allocations and consume minimal CPU.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/04/29/golang-mysql-drivers/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/04/28/join-versus-key-value-stores/">JOIN Versus Key-Value Stores</a></h1>
+        <span class="post-date">Mon, Apr 28, 2014</span>
+        <p>I was listening to a conversation recently and heard an experienced engineer express an interesting point of view on joins and key-value databases. I don&rsquo;t entirely agree with it. Here&rsquo;s why.</p>
+
+<p><img src="/media/2014/04/loc.jpg" alt="Library Of Congress" /></p>
+
+<p>First, the opinion. If I may paraphrase, the discussion was something like this:</p>
+
+<ul>
+<li>With experience in building distributed systems, one learns to avoid JOIN.</li>
+<li>Therefore, much of the work of JOIN is done in the application instead of the database.</li>
+<li>Access to the database is usually reduced to simple primary-key lookups.</li>
+<li>Therefore, a key-value store is as good a choice as a relational database.</li>
+</ul>
+
+<p>I&rsquo;m simplifying, because the speaker actually suggested that MySQL makes a really good database for primary-key lookups as well.</p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/04/28/join-versus-key-value-stores/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/04/21/ultima-online-sharding/">Ultima Online and the History of Sharding</a></h1>
+        <span class="post-date">Mon, Apr 21, 2014</span>
+        <p>Have you heard of <em>sharding</em> a database? Of course you have. Do you know where
+the term comes from? Someone asked me this at a cocktail party recently. I gave
+it my best shot.</p>
+
+<p>&ldquo;The earliest I remember was Google engineers using it to describe the
+architecture of some things,&rdquo; I said. &ldquo;That would have been about 2006.&rdquo;</p>
+
+<p>&ldquo;Nope. Much earlier than that,&rdquo; said my new friend.</p>
+
+<p><img src="/media/2014/04/ultima.jpg" alt="ultima" /></p>
+
+<p>I pondered. &ldquo;Well, I guess there was the famous LiveJournal architecture
+article about MySQL. That was, I dunno, 2003?&rdquo;</p>
+
+<p>The person then told me the following history. I can neither
+confirm nor deny it; what do you know about it?</p>
+
+<p></p>
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/04/21/ultima-online-sharding/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/04/13/slides-from-percona-live/">Slides From Percona Live</a></h1>
+        <span class="post-date">Sun, Apr 13, 2014</span>
+        Embedded below are slides for the two talks I gave at Percona Live. The first one is titled knowing the unknowable. It illustrates the special regression technique we developed at VividCortex for computing the amount of CPU, IO, or other resources a query uses within MySQL.
+ The second one is on building MySQL database applications with Go.
+ 
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/04/13/slides-from-percona-live/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2014/04/12/replication-sync-algorithms/">Replication Sync Checking Algorithms</a></h1>
+        <span class="post-date">Sat, Apr 12, 2014</span>
+        I was interested to see the announcement of a MySQL replication synchronization checker utility from Oracle recently. Readers may know that I spent years working on this problem. The tool is now known as pt-table-checksum in Percona Toolkit, but the original work started in 2006. I would say that I personally have spent at least 6 months working on that; adding up all the other Percona Toolkit developers, there might be several man-years of work invested.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2014/04/12/replication-sync-algorithms/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <span class="pagination-item newer">Newer</span>
+  
+  
+    <a class="pagination-item older" href="/categories/databases/page/2/">Older</a>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Making High Performance MySQL&#39;s New Website &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Making High Performance MySQL&#39;s New Website" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com//media/2015/02/hpm-cover-perspective.png" />
+  <meta name="og:description" content="A sweet cover image makes all the difference." />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2015/02/07/creating-high-performance-mysql-new-website/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2015/02/07/creating-high-performance-mysql-new-website/">
+  
+  <meta name="description" value="A sweet cover image makes all the difference.">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Making High Performance MySQL&#39;s New Website</h1>
+  <span class="post-date">Sat, Feb 7, 2015 in
+		
+		<a href="/categories/writing" class="btn btn-primary">Writing</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f02%2f07%2fcreating-high-performance-mysql-new-website%2f&text=Making%20High%20Performance%20MySQL%27s%20New%20Website:https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f02%2f07%2fcreating-high-performance-mysql-new-website%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f02%2f07%2fcreating-high-performance-mysql-new-website%2f&title=Making%20High%20Performance%20MySQL%27s%20New%20Website&summary=Making%20High%20Performance%20MySQL%27s%20New%20Website&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f02%2f07%2fcreating-high-performance-mysql-new-website%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f02%2f07%2fcreating-high-performance-mysql-new-website%2f&t=Making%20High%20Performance%20MySQL%27s%20New%20Website" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f02%2f07%2fcreating-high-performance-mysql-new-website%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p><img src="/media/2015/02/hpm-cover-perspective.png" alt="HPM Cover" /></p>
+
+<p>I recently updated the <a href="http://www.highperfmysql.com">High Performance MySQL</a>
+website to modernize it. I am impressed at how easy it is these days to get a
+great little brochure site hosted. It used to be a lot more work. I used a
+variety of tools and services to do this and decided to share this for people
+who are interested. Hopefully you&rsquo;ll add comments and point me towards more
+tools and tips to make these things even easier for me in the future!</p>
+
+<p></p>
+
+<h3 id="before">Before</h3>
+
+<p>The website used to be a WordPress blog. This used to be my go-to solution for
+everything. It used to be the easiest way to whip together something quickly and
+put it online.</p>
+
+<p>But WordPress sites have a bunch of problems.</p>
+
+<ul>
+<li>They need a database. Database down, website down.</li>
+<li>They need care and feeding. WordPress is a major hack target and you have to
+update it or you&rsquo;re going to end up serving malware and ads without knowing
+it. You also have to update the plugins and themes. It&rsquo;s just a lot of hassle.</li>
+<li>They&rsquo;re not high performance, primarily because of the dynamic content.</li>
+</ul>
+
+<p>I just can&rsquo;t make time to babysit sites like this anymore.
+As a result I&rsquo;ve been moving everything to good old static sites again.
+Static sites used to be a lot of work too. Not anymore.</p>
+
+<h3 id="static-site-generators">Static Site Generators</h3>
+
+<p>Static site generators like <a href="http://jekyllrb.com/">Jekyll</a> are a whole new world
+of writing ease. Write Markdown, run the generator, get a static site fully
+rendered. It&rsquo;s great. Jekyll, though, still has some annoyances. It requires a
+lot of dependencies (my nemesis is <code>bundle install</code>&hellip; I hate how often that
+breaks and takes a long time to work around for whatever version of Ruby gems
+and dependencies and compilers and stuff are involved) and Jekyll itself isn&rsquo;t
+really a site, it&rsquo;s just the scaffolding for a site.</p>
+
+<p>I use <a href="http://gohugo.io/">Hugo</a> for this site because of the amount and
+complexity of content on it. Hugo is nicer than Jekyll in my opinion, much
+better actually. But for a site like High Performance MySQL, a one-page brochure
+is really what&rsquo;s needed. For that, a simple static <code>index.html</code> is better. No
+need for a site generator.</p>
+
+<h3 id="bootstrap-and-bootstrap-themes">Bootstrap and Bootstrap Themes</h3>
+
+<p>Probably the biggest part of making a site these days is creating a good design
+that will look good on everything from a desktop browser to an old iPhone.
+<a href="http://getbootstrap.com/">Twitter Bootstrap</a> provides a foundation for doing a
+lot of that. It&rsquo;s an amazing advancement over the bad old days.</p>
+
+<p>Combine that with thousands of freely available designs/themes based on
+Bootstrap, and you have lots of great options for a brochure site. For this
+site, I chose the
+<a href="http://www.blacktie.co/2013/10/pratt-app-landing-page/">Pratt</a> theme from
+<a href="http://www.blacktie.co/about/">BlackTie</a>. Thanks, Carlos! If you need a custom
+theme, Carlos does freelance work too.</p>
+
+<p><img src="/media/2015/02/pratt-copia.png" alt="Pratt" /></p>
+
+<h3 id="hosting-on-github-pages">Hosting On GitHub Pages</h3>
+
+<p>I&rsquo;d say &ldquo;GitHub Pages is the best-kept secret&rdquo;, but it&rsquo;s not really a secret
+anymore among the people likely to be reading this blog. If you&rsquo;re not familiar
+with GitHub Pages, you should really look into it. It&rsquo;s easily the best way to
+host small sites these days. Anything that doesn&rsquo;t need to be highly dynamic,
+and doesn&rsquo;t need HTTPS access, is a great fit. Even things like blogs that need
+commenting functionality can work great this way. What you get is free, <em>fast</em>
+hosting with a built-in CDN, and everything&rsquo;s taken care of for you. You can use
+Gist to host your source code examples and snippets nicely. And
+maintaining and publishing the site just couldn&rsquo;t be much easier, since GitHub
+hosts the source code, issues, and so on for free as well. <a href="https://pages.github.com/">Learn more about
+GitHub pages</a>.</p>
+
+<h3 id="a-splash-of-panache">A Splash of Panache</h3>
+
+<p>The cover image you saw at the top of this post adds a dash of visual flair. If
+you produce any content and want it to be more attractive and desirable, such as
+ebooks or tutorials, an eye-catching cover image makes all the difference. If
+you have a flat image of the cover, though, how do you turn it into something
+more visually appealing? How do you do this?</p>
+
+<p><img src="/media/2015/02/hpm-rendering.png" alt="HPM Rendered" /></p>
+
+<p>I have access to Photoshop, and I found a great set of ready-made Photoshop
+actions to do this. The site is called <a href="http://www.psdcovers.com/">PSD Covers</a>
+and it contains an action that&rsquo;s ready to use for practically any kind of cover
+you can dream up. One caveat, it didn&rsquo;t initially work well for me due to a bug
+in Photoshop CC 2014, but the
+<a href="http://www.psdcovers.com/photoshop-cc-2014-1-0-canvas-dpi-bug/">workaround</a> is
+easy. I used the <a href="http://www.psdcovers.com/softcover019/">Softcover Handbook</a>
+action. Thanks very much to Simon Lord for sharing this great set of resources
+freely.</p>
+
+<h3 id="making-the-image-smaller">Making The Image Smaller</h3>
+
+<p>Whenever I use an image like the above of the book cover, I tend to run it
+through <a href="http://tinypng.com/">TinyPNG</a>. I often reduce images to just 10% or 20%
+of their original size with this great resource. This makes it a lot more
+feasible to include high-resolution versions of such images so they&rsquo;ll look
+really sharp on devices with very high-resolution screens, like a
+Retina or better Apple device, or even my own favorite Android tablet, the <a href="/blog/2015/01/19/install-cyanogenmod-nook-hdplus/">B&amp;N
+Nook
+HD+</a>.
+If you have a JPEG image, there&rsquo;s a <a href="https://tinyjpg.com/">TinyJPEG</a> site too.
+The resulting hi-res images look great and download fast.</p>
+
+<h3 id="writing-the-content">Writing The Content</h3>
+
+<p>This is the easy and fun part for me, because I like to write. In this case, I
+mostly just copy-pasted the content off the old Wordpress site, and then
+massaged it a bit. I did discard all of the old blog posts that used to exist on
+that site, but I don&rsquo;t think anyone cares. It never should have been a &ldquo;blog&rdquo; to
+begin with; a single-page brochureware site is all that&rsquo;s necessary.</p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2015/03/01/the-age-of-smart-machines/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2015/02/07/devops-identity-crisis/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2015\/02\/07\/creating-high-performance-mysql-new-website\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

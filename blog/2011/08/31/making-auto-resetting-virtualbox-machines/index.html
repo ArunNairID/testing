@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Making auto-resetting VirtualBox machines &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Making auto-resetting VirtualBox machines" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2011/08/31/making-auto-resetting-virtualbox-machines/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2011/08/31/making-auto-resetting-virtualbox-machines/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Making auto-resetting VirtualBox machines</h1>
+  <span class="post-date">Wed, Aug 31, 2011 in
+		
+		<a href="/categories/desktop" class="btn btn-primary">Desktop</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f08%2f31%2fmaking-auto-resetting-virtualbox-machines%2f&text=Making%20auto-resetting%20VirtualBox%20machines:https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f08%2f31%2fmaking-auto-resetting-virtualbox-machines%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f08%2f31%2fmaking-auto-resetting-virtualbox-machines%2f&title=Making%20auto-resetting%20VirtualBox%20machines&summary=Making%20auto-resetting%20VirtualBox%20machines&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f08%2f31%2fmaking-auto-resetting-virtualbox-machines%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f08%2f31%2fmaking-auto-resetting-virtualbox-machines%2f&t=Making%20auto-resetting%20VirtualBox%20machines" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2011%2f08%2f31%2fmaking-auto-resetting-virtualbox-machines%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>I don&rsquo;t know if I&rsquo;ve said this before, but I absolutely love VirtualBox. It makes it so easy to run Windows in the cases where I have to for a client&rsquo;s silly Windows-only VPN software or something like that. Windows runs better inside VirtualBox than it does on bare hardware.</p>
+
+<p>One of the tricks I use constantly is to set up a bunch of VirtualBox instances with a common (shared) base disk image. You can do this by creating a machine, installing your operating system on it, then throwing away the machine and keeping the resulting disk image. You can then keep this image registered inside VirtualBox, but detached from any actual machines. Then set it immutable so it never changes again:</p>
+
+<pre>VBoxManage modifyhd HardDisks/Windows_XP.vdi --type immutable</pre>
+
+<p>Substitute the name of your actual disk image file. Now you have a freshly installed Windows image on that file, which can serve as the base for lots and lots of machines. I have one set up with Service Pack 3, all the usual annoyances disabled, etc etc.</p>
+
+<p>Now here comes the magic: you can create special-purpose machines that always revert to the fresh image when you boot them up. Let&rsquo;s say I want an image with an annoying VPN installed. I will create a new machine, call it Windows_XP_VPN, and select the Windows_XP.vdi file as its disk image. After selecting this disk image, I juts go through all the rest of the settings, finish the wizard, and I have my machine. I boot it up, make some changes, and when I shut it down, all the changes it&rsquo;s made are stored in a <em>differencing</em> disk image file. It doesn&rsquo;t touch the base image file; any modifications are made to a copy-on-write image file.</p>
+
+<p>The special characteristic of this differencing image file is that it resets on boot. If I shut down the machine and look at the image files, I&rsquo;ll see one that&rsquo;s oh, maybe a couple hundred megabytes. I can have lots of these images sharing the same base image file that usually ends up being multiple gigabytes, so sharing the base image file is a great way to save on disk space. But what happens when I restart this machine, is that the differencing file gets emptied first. If I boot up, save a file on the desktop, and restart, the file is gone. I&rsquo;m back to the fresh image.</p>
+
+<p>So this isn&rsquo;t the full solution, actually, because the nasty VPN software I installed isn&rsquo;t there after restart. I want it to persist. How can I do this? It&rsquo;s actually pretty simple. I&rsquo;ll just set the differencing image not to reset at boot:</p>
+
+<pre>VBoxManage modifyhd Machines/Windows_XP_VPN/Snapshots/[image file name] --autoreset false</pre>
+
+<p>Now this machine will store its state across reboots. However, I actually <em>like</em> Windows machines to reset at boot. If I don&rsquo;t have them doing that, they eventually fill up with garbage. I want a clean image, with the VPN installed, and every time I start the machine I want that minty-fresh just-installed nasty VPN feeling. How can I do this? It turns out this is also not hard. Instead of turning off autoreset on the image, I just take a snapshot after shutting down. Only the <em>most recent state</em> (which is stored in a differencing image file) will be configured as auto-reset. Snapshots are stored in a snapshot image file that doesn&rsquo;t get reset. Whatever changes I made before I took a snapshot, are persisted across reboots.</p>
+
+<p>To illustrate this, let&rsquo;s say I start a fresh machine from my base disk image. Then I install VPN on that, and shut down. If I reboot now, I lose my VPN. But if I take a snapshot, and call it &ldquo;VPN installed&rdquo; or something like that, when I restart my VPN is still there. Now I&rsquo;ll make a folder and put it on the desktop, and reboot again. Presto &ndash; the folder is gone, but the VPN is still there.</p>
+
+<p>It&rsquo;s magic, and it&rsquo;s the nicest thing ever, especially for Windows. No worries about viruses, no problems installing some junk spyware that some customer thinks is a good screen-sharing tool, whatever. I can trash the machine, shut it down, and when I reboot it, it&rsquo;s spiffy clean.</p>
+
+<p>And this brings me back to my original point: <em>I love VirtualBox</em>.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2011/09/01/want-to-hack-maatkit-and-aspersa-were-hiring/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2011/08/28/a-review-of-introduction-to-search-with-sphinx-by-andrew-aksyonoff/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2011\/08\/31\/making-auto-resetting-virtualbox-machines\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

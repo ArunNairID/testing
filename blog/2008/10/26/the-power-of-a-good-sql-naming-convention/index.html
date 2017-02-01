@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      The power of a good SQL naming convention &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="The power of a good SQL naming convention" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2008/10/26/the-power-of-a-good-sql-naming-convention/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2008/10/26/the-power-of-a-good-sql-naming-convention/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">The power of a good SQL naming convention</h1>
+  <span class="post-date">Sun, Oct 26, 2008 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f26%2fthe-power-of-a-good-sql-naming-convention%2f&text=The%20power%20of%20a%20good%20SQL%20naming%20convention:https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f26%2fthe-power-of-a-good-sql-naming-convention%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f26%2fthe-power-of-a-good-sql-naming-convention%2f&title=The%20power%20of%20a%20good%20SQL%20naming%20convention&summary=The%20power%20of%20a%20good%20SQL%20naming%20convention&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f26%2fthe-power-of-a-good-sql-naming-convention%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f26%2fthe-power-of-a-good-sql-naming-convention%2f&t=The%20power%20of%20a%20good%20SQL%20naming%20convention" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2008%2f10%2f26%2fthe-power-of-a-good-sql-naming-convention%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>At my previous employer, one of the early decisions that had huge payoffs later was the SQL naming conventions. A good naming convention is more than just a nicety. It lets you write programs that don&rsquo;t need to be told about the relationships among tables and columns.</p>
+
+<p>There are many ways to do this, I think. But in practice, I think I&rsquo;ve seen only a few customer systems that have a completely consistent, logical naming convention. And there are levels of convenience; some systems have a couple extra rules that make a big difference.</p>
+
+<p>In this post I&rsquo;ll explain the components of my ideal naming conventions.</p>
+
+<p></p>
+
+<ul>
+<li>Consistent letter case. I prefer all lowercase for readability and type-ability. Regardless, you need the same case for both table and column names, unless your chosen programming language is case-insensitive (and if it is, you should be flogged for using it).</li>
+<li>This isn&rsquo;t mandatory, but word separators (underscores) are pretty nice. If you run things together, you can&rsquo;t tell the difference between &ldquo;API rate sheet&rdquo; and &ldquo;a pirate sheet.&rdquo; Yeah, that&rsquo;s a real example.</li>
+<li>If a table has a single-column primary key, such as an auto-increment column, then that column is named the same thing as the table. For example, the <code>user</code> table&rsquo;s primary key is called <code>user</code>. Naming it <code>id</code> or <code>user_id</code> or anything else may be logical and consistent too, but in my experience it leads to a lot more code.</li>
+<li>If a column expresses a relationship among tables, name it the same as the related table. For example, a table of blog posts should have a column called <code>user</code> which is a foreign key to the <code>user</code> table.</li>
+<li>Singular. Both table and column names are singular. Plurals add a ton of complexity, and defeat the niceness of naming columns and tables the same thing. Fooling around with conversions between plural and singular (goose/geese, moose/moose, cow/cattle) is a waste of synapses and code.</li>
+</ul>
+
+<h3 id="sakila-s-convention">Sakila&rsquo;s convention</h3>
+
+<p>That&rsquo;s not a lot of rules, is it? Let&rsquo;s see how the <a href="http://dev.mysql.com/doc/sakila/en/sakila.html">Sakila sample database</a> would fare if these rules were applied to it. Two of the core tables are <code>actor</code> and <code>film</code>, with the &ldquo;acted in&rdquo; relationship expressed in the <code>film_actor</code> table. The tables look like this (simplified):</p>
+
+<pre>CREATE TABLE actor (
+  actor_id smallint unsigned NOT NULL auto_increment,
+  first_name varchar(45) NOT NULL,
+  last_name varchar(45) NOT NULL,
+  PRIMARY KEY  (actor_id)
+);
+
+CREATE TABLE film (
+  film_id smallint unsigned NOT NULL auto_increment,
+  title varchar(255) NOT NULL,
+  description text,
+  ... other columns ...
+  PRIMARY KEY(film_id)
+);
+
+CREATE TABLE film_actor (
+  actor_id smallint unsigned NOT NULL,
+  film_id smallint unsigned NOT NULL,
+  PRIMARY KEY  (actor_id,film_id)
+);
+</pre>
+
+<h3 id="what-s-right-about-this">What&rsquo;s right about this</h3>
+
+<p>This is already a pretty nice convention. For example, tables are singular, and the columns that have the same meaning have the same name everywhere. This means you can write</p>
+
+<pre>select actor.first_name
+from actor
+   inner join film_actor using(actor_id)
+   inner join film using(film_id);</pre>
+
+<p>The ability to use the <code>USING</code> keyword in a join is one way to test whether your naming convention makes sense. If you had gone with the &ldquo;every primary key is named <code>id</code>, and foreign keys are named <code>[table]_id</code>&rdquo; convention that&rsquo;s pretty common, you&rsquo;d have to write</p>
+
+<pre>from actor
+   inner join film_actor on <strong>actor.id = film_actor.actor_id</strong>
+   inner join film on <strong>film.id = film_actor.film_id</strong>;</pre>
+
+<p>This is not nearly as elegant. So Sakila&rsquo;s naming convention is pretty nice already.</p>
+
+<h3 id="what-i-d-change-about-sakila">What I&rsquo;d change about Sakila</h3>
+
+<p>If I had designed Sakila, I&rsquo;d have done this:</p>
+
+<pre>CREATE TABLE actor (
+  <strong>actor</strong> smallint unsigned NOT NULL auto_increment,
+  first_name varchar(45) NOT NULL,
+  last_name varchar(45) NOT NULL,
+  PRIMARY KEY  (actor)
+);
+
+CREATE TABLE film (
+  <strong>film</strong> smallint unsigned NOT NULL auto_increment,
+  title varchar(255) NOT NULL,
+  description text,
+  ... other columns ...
+  PRIMARY KEY(film)
+);
+
+CREATE TABLE <strong>cast</strong> (
+  <strong>actor</strong> smallint unsigned NOT NULL,
+  <strong>film</strong> smallint unsigned NOT NULL,
+  PRIMARY KEY  (actor, film)
+);
+</pre>
+
+<p>It&rsquo;s not a dramatic change in this case, and it doesn&rsquo;t really simplify the example queries a lot, but consider what happens when you write an <acronym title="Object-relational mapping">ORM</acronym> on top of this simplified naming convention.</p>
+
+<p>As an example, suppose your database has accounts that belong to clients, each of which is managed by a single employee. Look at the following code snippet:</p>
+
+<pre>$acc = new Account($account_no);
+$email = new Email();
+$email->to($acc->client->employee->email);
+$email->body("Account $acc for client $acc->client is expired");
+$email->send();
+</pre>
+
+<p>If the table and column names match, such an ORM is really easy to build. If they don&rsquo;t, there&rsquo;s more code to write.</p>
+
+<p>It&rsquo;s hard to estimate the reduction in lines of code, tests, and mistakes, but I think it&rsquo;s pretty significant; some five-line programs I&rsquo;ve written might have needed thousands of lines of code without the naming conventions, and I&rsquo;m sure a lot of code would have needed supporting meta-data tables to define the mappings between different types of data.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>Here are a couple of concrete ideas. With the conventions I&rsquo;ve shown, it&rsquo;s easy to write a simple recursive program that can examine your entire database for data consistency, based only on naming conventions. And you can easily write a program to dump an account and all its related data (client, employee, and so on) for such purposes as migrating a client to a new shard or <a href="/blog/2008/08/19/how-to-unit-test-code-that-interacts-with-a-database/">creating a dataset for a test suite</a>.</p>
+
+<p>There are many good ways to do this, and your favorite method probably has lots to recommend it. But after having worked with lots of such systems myself (including one company who mandated that column names had to be globally unique, which was horrible), I still haven&rsquo;t seen anything better than the simple conventions I&rsquo;ve described above. It&rsquo;s kind of a reductionistic &ldquo;let&rsquo;s make this absolutely as simple as possible&rdquo; philosophy, and it really pays off.</p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2008/10/30/i-unsubscribed-from-the-planet-mysql-feed/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2008/10/22/how-to-swap-caps-lock-and-esc-keys-in-ubuntu/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2008\/10\/26\/the-power-of-a-good-sql-naming-convention\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

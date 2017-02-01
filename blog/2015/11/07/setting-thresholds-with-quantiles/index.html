@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Setting Thresholds With Quantiles &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Setting Thresholds With Quantiles" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com//media/2015/11/quantiles.png" />
+  <meta name="og:description" content="A simple visualization reveals lots of details about the shape of data." />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2015/11/07/setting-thresholds-with-quantiles/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2015/11/07/setting-thresholds-with-quantiles/">
+  
+  <meta name="description" value="A simple visualization reveals lots of details about the shape of data.">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Setting Thresholds With Quantiles</h1>
+  <span class="post-date">Sat, Nov 7, 2015 in
+		
+		<a href="/categories/math" class="btn btn-primary">Math</a>
+		
+		<a href="/categories/monitoring" class="btn btn-primary">Monitoring</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f07%2fsetting-thresholds-with-quantiles%2f&text=Setting%20Thresholds%20With%20Quantiles:https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f07%2fsetting-thresholds-with-quantiles%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f07%2fsetting-thresholds-with-quantiles%2f&title=Setting%20Thresholds%20With%20Quantiles&summary=Setting%20Thresholds%20With%20Quantiles&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f07%2fsetting-thresholds-with-quantiles%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f07%2fsetting-thresholds-with-quantiles%2f&t=Setting%20Thresholds%20With%20Quantiles" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f11%2f07%2fsetting-thresholds-with-quantiles%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>I was talking with someone the other day about a visualization I remembered
+seeing some years ago, that could help set a reasonable value for a threshold on
+a metric. As I&rsquo;ve
+<a href="https://www.vividcortex.com/blog/2013/04/10/2-reasons-why-threshold-based-monitoring-is-hopelessly-broken/">written</a>,
+thresholds are basically a broken way to monitor systems, but if you&rsquo;re going to
+use them, I think there are simple things you can do to avoid making threshold
+values <em>completely</em> arbitrary.</p>
+
+<p>I couldn&rsquo;t find the place I&rsquo;d seen the visualization (if you know prior art for
+the below, please comment!) so I decided to just blog about it. Suppose you
+start off with a time series:</p>
+
+<p><img src="/media/2015/11/time-series.png" alt="time series" /></p>
+
+<p></p>
+
+<p>The idea is that you might want to alert on this metric breaking some threshold,
+but what&rsquo;s the right value? There are lots of ways you could do it: a multiple
+of the average, some quantile, some number of standard deviations from the mean,
+etc, etc. For example, you could say &ldquo;I want to alert if the metric exceeds its
+usual 99.9th percentile.&rdquo; But isn&rsquo;t 99.9 an arbitrary number, too? What makes it
+so special? Is there <em>any</em> way to pick a number that isn&rsquo;t just pulled out of a
+hat?</p>
+
+<p>I need to preface all of this with a disclaimer. Everyone&rsquo;s systems are
+different, static thresholds are silly, quantiles are known to the state of
+California to cause cancer, and so on. What I&rsquo;m about to show you is only
+<em>slightly</em> less arbitrary. Don&rsquo;t confuse it for a rule that actually has a
+strong reason why it&rsquo;s better than the alternatives.</p>
+
+<p>The idea is to look at the <em>shape</em> of your data and use that to decide where you
+feel is the right threshold. The &ldquo;shape&rdquo; is the distribution of the data&ndash;how
+its values are typically spread.</p>
+
+<p>One of the best ways to do that is to plot the quantiles. In the following plot,
+the quantiles go from left to right. At the far left is the 0th percentile, and
+at the far right is the 100th percentile. Another way to say that is the left is
+the minimum value and the right is the maximum value.</p>
+
+<p><img src="/media/2015/11/quantiles.png" alt="quantiles" /></p>
+
+<p>I&rsquo;ve made no effort to polish this chart; you&rsquo;ll notice that I generated the
+quantiles by taking a vector of 1000 numbers and dividing it by 1000, for
+example.</p>
+
+<p>Now, as you look at this chart, you can see that near the far right, it suddenly
+jumps&ndash;it has an elbow. Let&rsquo;s zoom in on the last 10% of the chart, i.e. the 90th
+percentile and above:</p>
+
+<p><img src="/media/2015/11/95-percent.png" alt="95th percentile" /></p>
+
+<p>There&rsquo;s nothing magical about this elbow. There&rsquo;s nothing magical about the last
+10 percent of values. It just so happens that those last few are
+disproportionately larger than the rest. In simple terms, it means that the
+system&rsquo;s model, or perhaps the parameters for its model, apparently changed.
+And if you&rsquo;re going to pick a place to alert on a threshold, maybe a point where
+the behavior diverges rapidly is as good as any and better than some.</p>
+
+<p>In other words, you could put your threshold just at the point where the
+quantile plot gets steeper, which is about the value 1600 in this dataset.</p>
+
+<p>Not all data behaves this way. Some metrics will have a nice line all the way up
+and to the right, with no elbow. Some will jump sooner. Some will have a big
+ledge, even several ledges. You&rsquo;ll get all kinds of different shapes and sizes
+of data. The point is to at least <em>know</em> what shapes and sizes your own data
+has.</p>
+
+<p>Visualizations like this have a lot of explanatory power and can show you
+potentially surprising things very easily. That&rsquo;s why this kind of
+visualization, rather than just the standard boring time series plot, is not a
+bad thing to know how to do. It&rsquo;s not revolutionary, things like this are used
+in all sorts of ways and by lots of people. <a href="https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot">QQ
+plots</a>, for example, are a
+related technique.</p>
+
+<p>So I&rsquo;m probably repeating myself too much, but again this is nothing special,
+but it&rsquo;s something anyway. With this approach, there still may not be a strong
+justification for choosing a number as a threshold, but at least there&rsquo;s a
+reason and method, and it&rsquo;s better than cargo cult, a random number generator,
+or copy-and-paste.</p>
+
+<p>Here&rsquo;s the R code.</p>
+
+<pre><code>perf &lt;- read.csv(&quot;/path/to/perf.csv&quot;, sep=&quot;&quot;)
+plot(perf$tput)
+plot(c(1:1000), quantile(perf$tput, probs=c(1:1000)/1000))
+plot(c(900:1000), quantile(perf$tput, probs=c(900:1000)/1000))
+</code></pre>
+
+<p>Related: someone on Twitter pointed me to <a href="http://apmblog.dynatrace.com/2012/11/14/why-averages-suck-and-percentiles-are-great/">this blog post from Dynatrace</a>.</p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2015/11/10/what-its-like/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2015/10/23/pgconfsv-postgresql-conference/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2015\/11\/07\/setting-thresholds-with-quantiles\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

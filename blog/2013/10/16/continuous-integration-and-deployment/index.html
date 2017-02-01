@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Continuous integration and deployment &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Continuous integration and deployment" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2013/10/16/continuous-integration-and-deployment/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2013/10/16/continuous-integration-and-deployment/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Continuous integration and deployment</h1>
+  <span class="post-date">Wed, Oct 16, 2013 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/operations" class="btn btn-primary">Operations</a>
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f10%2f16%2fcontinuous-integration-and-deployment%2f&text=Continuous%20integration%20and%20deployment:https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f10%2f16%2fcontinuous-integration-and-deployment%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f10%2f16%2fcontinuous-integration-and-deployment%2f&title=Continuous%20integration%20and%20deployment&summary=Continuous%20integration%20and%20deployment&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f10%2f16%2fcontinuous-integration-and-deployment%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f10%2f16%2fcontinuous-integration-and-deployment%2f&t=Continuous%20integration%20and%20deployment" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f10%2f16%2fcontinuous-integration-and-deployment%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>I&rsquo;ve been talking to some smart people about deployment. First a little background. One of my colleagues was working on a project that ultimately didn&rsquo;t bear fruit. It was a system for continuous delivery, and involved reacting to <code>git push</code> by building and shipping to production. But it felt as if the problem shouldn&rsquo;t be separated from provisioning, and from setting up a development environment, and so these things got folded in, and the effort became a boil-the-ocean project that had to be set aside.</p>
+
+<p>During this process I came to appreciate my colleague&rsquo;s point of view on topics such as how software should be deployed and how it should be designed to run in its environment. A lot of this is encapsulated in <a href="http://12factor.net/">The Twelve Factors</a>. In fact, I actually created and deployed to a Heroku app, and experienced firsthand why people love Heroku.</p>
+
+<p>At Velocity this week, we&rsquo;re talking a lot about resilience, operations, and so on. Introducing change is often one of the things that exposes failure modes in our products, and this fragility is probably more likely to show up during deployments than almost any other time. But there&rsquo;s not a lot of discussion at Velocity about deployment &ndash; that vital part of the engineering process where we take code from development and mutate our production environment to include it.</p>
+
+<p>I started asking some people about this, because I need to resume the deployment effort at my own company. A few people gave me pointers to prior art to look at, but some other people told me it&rsquo;s not a solved problem for them either. I&rsquo;ll include some of that information in this post.</p>
+
+<p>But first I want to write my current thoughts about this subject, to get it on record and to stimulate more conversation. Later I&rsquo;ll follow up after I&rsquo;ve learned more.</p>
+
+<p>It&rsquo;s a little difficult for me to organize my thoughts coherently, so I&rsquo;ll just drop a list on you:</p>
+
+<ul>
+<li>I want continuous deployment because if it&rsquo;s not a part of the culture at the company, we&rsquo;ll engineer ourselves into a corner away from it and it&rsquo;ll get more and more difficult to ship code rapidly later. Tools are vital; rules can&rsquo;t overcome the natural reluctance (or just lack of incentive) to push code to production. I also want continuous deployment for a few reasons that might be obvious to readers. First, small, incremental changes are a lot less risky. Second, it is a positive feedback cycle. Third, code that&rsquo;s written but not serving customers is inventory that I&rsquo;ve paid for but not benefited from (and neither are customers). The cost of this inventory is very real; this is a philosophy expressed well in Eli Goldratt&rsquo;s book <em>The Goal</em>.</li>
+<li>Code should be deployed when it&rsquo;s merged to master/HEAD and all tests passed. It&rsquo;s a good question whether it should be deployed completely automatically, or whether it&rsquo;s good to let people batch together some changes. I favor the latter. We might not want to deploy every typo fixed. We don&rsquo;t want the batches to accumulate, though, or deployment gets really scary and risky. Visibility into whose changes, and what they are, is important for this scenario. Approval by all involved is also important.</li>
+<li>I don&rsquo;t want to build all of this infrastructure myself. I want to use external providers as much as possible. I prefer to buy or rent rather than build, because I won&rsquo;t do the job as well, and it&rsquo;s not my core business. I don&rsquo;t want to engage in &ldquo;undifferentiated heavy lifting,&rdquo; to quote someone smart at Netflix.</li>
+<li>However, there&rsquo;s a tension here. External providers must be a convenience, not in the critical path. If one or more external providers is down, that can&rsquo;t be a hard block on a deployment. The last thing I want is to have downtime I can&rsquo;t fix because someone else has downtime too. As an example, I want to continue to use Github and CircleCI, but I don&rsquo;t want to make them SPOFs. But if I have an alternate, less-used deployment route, that&rsquo;s also a problem; there should only be one deployment system, or the fallback will fail when I need it. I think the solution is to make Github and CircleCI trigger deployment, but only as one possible source of triggers.</li>
+<li>Deploying binaries with restarts is very different from source code deployments, and there are other types of deployments that need to be considered as well. Deployment to stateless resources (a web server) is a lot simpler and less risky than deploying to something that is stateful, or affects something stateful such as a database server. There&rsquo;s also the matter of migrations. From my experience with lots of large companies, migrations are simplistic and I&rsquo;ve never seen them scale beyond toy applications. But taking them out-of-band means the system is not completely self-documenting, and may not be runnable unless some change or other requirement is satisfied, which can only be performed and verified by a human. These are concerns I don&rsquo;t know how to resolve.</li>
+<li>Although it&rsquo;s tempting to put manifests (Procfile) and include provisioning (and even scaling) in the deployment process, I think it&rsquo;s better to put a strong barrier between those. Otherwise we&rsquo;ll end up with a hairball that can&rsquo;t be dealt with separately. System provisioning and configuration to prepare an environment to be deployed into is not part of deployment. Similarly, there needs to be some thought about a service directory to register and mutate the state of the overall system, such as taking apps in and out of proxies and load balancers before, during, and after deployments. That might need to be part of deployment, or the provisioning, or both.</li>
+<li>Most of the services I&rsquo;ve seen for deployment want to imagine that the world is all on Heroku, where a deployment is a <code>git push</code>. Unfortunately, as nice as that is, it isn&rsquo;t going to work. The other thing many of them offer is &ldquo;we&rsquo;ll run your Capistrano jobs&rdquo; &ndash; but that&rsquo;s also not workable, because allowing external hands to poke into our systems is not an option. Agent-based deployment is preferable. I have good experience with this, even with self-upgrading agents. There are some companies (Distelli) that do something reasonable here.</li>
+</ul>
+
+<p>Thoughts from other people I talked to include:</p>
+
+<blockquote>
+<p>We think about this basically all the time at [company]. The difficulty is that organizations build their own because there&rsquo;s a likely corollary to Conway&rsquo;s Law here: deployment and development infrastructure are context sensitive, so therefore organization sensitive.</p>
+</blockquote>
+
+<p>And Jez Humble offered this:</p>
+
+<blockquote>
+<p>I wrote a <a href="http://www.amazon.com/dp/0321601912" target="_blank">book</a> on the topic, plus I <a href="http://continuousdelivery.com/" target="_blank">blog</a> and <a href="http://continuousdelivery.com/talks/" target="_blank">speak</a> about it a bunch.</p>
+
+<p>You also want to check out Michael Nygard&rsquo;s <a href="http://www.amazon.com/dp/0978739213/" target="_blank">Release It!</a> and his <a href="http://www.youtube.com/watch?v=Luskg9ES9qI" target="_blank">stuff</a>, which is extremely awesome</p>
+
+<p>There are some <a href="http://continuousdelivery.com/2013/05/videos-from-the-continuous-delivery-track-at-qcon-sf-2012/" target="_blank">talks</a> from the continuous delivery tracks at various conferences (including from <a href="http://www.youtube.com/watch?v=JR-ccCTmMKY" target="_blank">Etsy</a>)</p>
+
+<p>I&rsquo;m running a conference which talks about continuous delivery, lean UX, devops and related stuff: <a href="http://flowcon.org/flowcon-sanfran-2013/schedule/index.jsp" target="_blank"><a href="http://flowcon.org/flowcon-sanfran-2013/schedule/index.jsp">http://flowcon.org/flowcon-sanfran-2013/schedule/index.jsp</a></a></blockquote></p>
+</blockquote>
+
+<p>I look forward to your thoughts and links to further study. Thanks!</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2013/10/21/is-soliciting-a-review-commercial-or-transactional/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2013/10/13/more-notebooks-and-journals/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2013\/10\/16\/continuous-integration-and-deployment\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

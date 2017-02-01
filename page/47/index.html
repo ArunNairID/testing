@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+	<meta name="generator" content="Hugo 0.17" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Baron Schwartz&#39;s Blog &middot; Stay Curious!
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/10/11/how-to-delete-duplicate-rows-with-sql/">How to delete duplicate rows with SQL</a></h1>
+        <span class="post-date">Wed, Oct 11, 2006</span>
+        The comments on my article how to find duplicate rows with SQL made me realize I was simplifying things too much. In particular, I really glossed over the &ldquo;how to delete duplicate rows&rdquo; section, which I should have explained in more detail. I hope this article will remedy the omissions.
+Update: I&rsquo;ve now written another article on deleting duplicates when you have no primary key.
+What&rsquo;s wrong with what I wrote?
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/10/11/how-to-delete-duplicate-rows-with-sql/"> &raquo; Continue Reading (about 1100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/10/11/donate/">Support</a></h1>
+        <span class="post-date">Wed, Oct 11, 2006</span>
+        I spend many hundreds of hours writing tools and articles. If you want to say thanks, why not send me something from my Amazon.com wishlist?
+You can also send money to my PayPal account if you wish. It&rsquo;s baron at [thisdomain].com.
+Thanks!
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/10/11/donate/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/10/09/how-to-find-duplicate-rows-with-sql/">How to find duplicate rows with SQL</a></h1>
+        <span class="post-date">Mon, Oct 9, 2006</span>
+        This article shows how to find duplicated rows in a database table. This is a very common beginner question. The basic technique is straightforward. I&rsquo;ll also show some variations, such as how to find &ldquo;duplicates in two columns&rdquo; (a recent question on the #mysql IRC channel).
+How to find duplicated rows The first step is to define what exactly makes a row a duplicate of another row. Most of the time this is easy: they have the same value in some column.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/10/09/how-to-find-duplicate-rows-with-sql/"> &raquo; Continue Reading (about 2000 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/10/05/five-great-perl-programming-techniques-to-make-your-life-fun-again/">Five great Perl programming techniques to make your life fun again</a></h1>
+        <span class="post-date">Thu, Oct 5, 2006</span>
+        If you&rsquo;re a programmer, you know the difference between a beginner and a master is the ability to write succinct code that does a great deal with very little work. If you can do this, you can easily raise your productivity and the quality of your work by an order of magnitude. Much more importantly, you can have a lot more fun writing code. Read on to learn how.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/10/05/five-great-perl-programming-techniques-to-make-your-life-fun-again/"> &raquo; Continue Reading (about 3800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/10/01/duplicate-index-checker-version-19-released/">Duplicate index checker version 1.9 released</a></h1>
+        <span class="post-date">Sun, Oct 1, 2006</span>
+        I&rsquo;ve made more improvements to the duplicate index checker. I addressed a MySQL bug Roland Bouman mentioned to me, added more tests to the suite, and made changes so it considers more types of indexes now (HASH, BTREE, SPATIAL). I made no changes to the foreign key checking.
+The bug Roland mentioned is a problem with SHOW CREATE TABLE that causes MySQL to show an index as type HASH when it&rsquo;s really a BTREE.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/10/01/duplicate-index-checker-version-19-released/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/09/28/innotop-version-1152-released/">Innotop version 1.152 released</a></h1>
+        <span class="post-date">Thu, Sep 28, 2006</span>
+        Version 0.1.152 of innotop is a small maintenance and bug-fix release. I found some more ways to make it deal with garbage input without crashing. Of course, that means it&rsquo;s harder to find errors because it doesn&rsquo;t complain and let me know they exist, but that&rsquo;s what you are for :-)
+I&rsquo;m also making a sort of homepage for it. I just don&rsquo;t have much time to put into these things right now, so a &ldquo;real&rdquo; homepage may be a long time off, I don&rsquo;t know.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/09/28/innotop-version-1152-released/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/09/26/an-introduction-to-innodb-error-handling/">An introduction to InnoDB error handling</a></h1>
+        <span class="post-date">Tue, Sep 26, 2006</span>
+        Do you know the fine details of MySQL&rsquo;s transactional error handling with the InnoDB storage engine? If you&rsquo;re writing transactional SQL, you need to be prepared to handle errors appropriately, and to do that, you need to know how MySQL handles them. This article introduces you to the topic.
+How InnoDB differs from other engines When a MySQL query has an error in a non-transactional storage engine, such as MyISAM, the results are anybody&rsquo;s guess.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/09/26/an-introduction-to-innodb-error-handling/"> &raquo; Continue Reading (about 900 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/09/21/im-going-to-the-upcoming-mysql-camp/">I&#39;m going to the upcoming MySQL Camp</a></h1>
+        <span class="post-date">Thu, Sep 21, 2006</span>
+        I&rsquo;ve bought plane tickets to the upcoming MySQL Camp in November. This is looking like a very fun time, with lots of community members, MySQL employees, and Google developers attending. It&rsquo;s an &ldquo;un-conference,&rdquo; which means there is no set schedule, and it&rsquo;s up to us to make out of the event whatever we wish it to be. If you&rsquo;ve been reading my articles or using my tools, is there anything you&rsquo;d like me to present on?
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/09/21/im-going-to-the-upcoming-mysql-camp/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/09/19/show-column-types-a-hidden-mysql-treat/">SHOW COLUMN TYPES: A hidden MySQL treat?</a></h1>
+        <span class="post-date">Tue, Sep 19, 2006</span>
+        I was poking around in the MySQL source code, namely in sql/sql_yacc.yy, and found a hidden treat: there&rsquo;s a SHOW COLUMN TYPES command. It&rsquo;s fun to read source code!
+The command is undocumented, but does work. It returns just two rows, which give information about TINYINT and TINYINT UNSIGNED. And it has been in the source for a long time, certainly since version 4.1.21. There&rsquo;s even a status counter for it in the SHOW STATUS command: Com_show_column_types.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/09/19/show-column-types-a-hidden-mysql-treat/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/09/17/duplicate-index-checker-version-18-released/">Duplicate index checker version 1.8 released</a></h1>
+        <span class="post-date">Sun, Sep 17, 2006</span>
+        What was a 5-minute script has become a bigger project. I&rsquo;ve made more improvements to the duplicate index checker. Soon it will require product activation and have security vulnerabilities every week. Seriously: this is the third iteration, and three strikes and you automate, so I automated. I have a test suite now (your contributions welcome), and I addressed two shortcomings readers pointed out in comments on the original article. You now get better foreign key checking, and FULLTEXT indexes are ignored.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/09/17/duplicate-index-checker-version-18-released/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/09/12/type-conversion-semantics-of-mysqls-between-operator/">Type conversion semantics of MySQL&#39;s BETWEEN operator</a></h1>
+        <span class="post-date">Tue, Sep 12, 2006</span>
+        I got bitten by an implicit type conversion with MySQL recently. This article is about avoiding implicit type conversions, and the weird places you might find them.
+Introduction Here&rsquo;s the setup: I was trying to select every day in the current month. Have you read my article about how stringifying dates is faster than comparing them as dates? At the time I wrote this query, I was experimenting with such things after seeing my co-workers do it a lot, for example, taking the left ten characters of a timestamp column to get the date part of it.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/09/12/type-conversion-semantics-of-mysqls-between-operator/"> &raquo; Continue Reading (about 800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/09/07/duplicate-index-checker-improved/">Duplicate index checker improved</a></h1>
+        <span class="post-date">Thu, Sep 7, 2006</span>
+        I&rsquo;ve just improved the MySQL duplicate index checker I whipped together a few days ago. As I guessed, my hasty coding left some things to be desired. I&rsquo;ve fixed some bugs, added support for finding duplicate foreign keys, and switched to a command-line parsing library that comes standard with Perl, so it&rsquo;s more convenient to run without needing to fetch modules from CPAN.
+You can download it from the original article.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/09/07/duplicate-index-checker-improved/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/09/05/version-01149-of-innotop-released/">Version 0.1.149 of innotop released</a></h1>
+        <span class="post-date">Tue, Sep 5, 2006</span>
+        Version 0.1.149 of the innotop MySQL and InnoDB monitor is a major upgrade. As of this version I&rsquo;m declaring innotop &ldquo;stable,&rdquo; meaning I&rsquo;ve put some work into making it deal with unexpected input. It should be very resistant to any sort of crash now.
+I originally made it intolerant of unexpected input, because the output of SHOW INNODB STATUS varies so much and was never designed for parsability. Making it die when it couldn&rsquo;t parse something let me know there was a problem, but it caused many of you pain when you couldn&rsquo;t keep it running reliably.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/09/05/version-01149-of-innotop-released/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/09/04/a-review-of-the-glom-graphical-database-front-end/">A review of the Glom graphical database front-end</a></h1>
+        <span class="post-date">Mon, Sep 4, 2006</span>
+        Glom is an interesting graphical database front-end I&rsquo;ve been meaning to try out for some time. Someone asked about graphical database front-ends on the #mysql IRC channel recently, and that prompted me to install Glom and learn how to use it. My overall impressions? It lands squarely in the middle of its target audience&rsquo;s needs, but still has a quirk here and there. With a bit of polish it will be a fine product, and it&rsquo;s already a winner over Microsoft Access and Filemaker, two similar programs with which you might be familiar.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/09/04/a-review-of-the-glom-graphical-database-front-end/"> &raquo; Continue Reading (about 5100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/08/30/why-you-should-take-microformats-seriously/">Why you should take microformats seriously</a></h1>
+        <span class="post-date">Wed, Aug 30, 2006</span>
+        Microformats are getting some attention from the group of people who are clueful about the semantic web, but some people are not yet convinced they&rsquo;re useful. While microformats aren&rsquo;t as robust and complex as some more fully-featured technologies, some apparent limitations are actually possible to overcome, but with different methods than might be expected. In this article I&rsquo;ll address some common concerns about microformats, and explain how they are either solvable or already solved.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/08/30/why-you-should-take-microformats-seriously/"> &raquo; Continue Reading (about 2500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/">How to find duplicate and redundant indexes in MySQL</a></h1>
+        <span class="post-date">Mon, Aug 28, 2006</span>
+        Peter Zaitsev over at the excellent MySQL Performance Blog recently wrote an article on duplicated and redundant indexes &ndash; any indexes which cover exactly the same columns as another index, or cover a leftmost prefix of another index. While there are subtleties, such as FULLTEXT indexes not being the same as non-FULLTEXT, for the most part this is sufficient criteria to raise possible duplicates to a DBA&rsquo;s attention. I opened my big mouth in the comments and said I could write a quick Perl script to discover possible offenders in just a few lines of code.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/"> &raquo; Continue Reading (about 1000 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/08/27/if-you-only-learn-one-thing-about-database-transactions-it-should-be-this/">If you only learn one thing about database transactions, it should be this</a></h1>
+        <span class="post-date">Sun, Aug 27, 2006</span>
+        I&rsquo;ve been writing a lot of articles about locks, deadlocks, and transactions recently, and it occurs to me I&rsquo;ve neglected to mention the single most important thing to know. If you only learn one thing about transactions in database systems, you should learn this, and learn it thoroughly &ndash; burn it into your brain permanently, if possible.
+The single most important thing you can do is keep your transactions as small as possible.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/08/27/if-you-only-learn-one-thing-about-database-transactions-it-should-be-this/"> &raquo; Continue Reading (about 800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/08/22/mysqls-error-1025-explained/">MySQL&#39;s ERROR 1025 explained</a></h1>
+        <span class="post-date">Tue, Aug 22, 2006</span>
+        MySQL issues a cryptic error message, &ldquo;Error on rename,&rdquo; when you try to alter a table in such a way that it would break a foreign key constraint:
+create table test1(a int not null primary key)engine=innodb; create table test2(a int not null, foreign key(a) references test1 (a)) engine=innodb; alter table test2 modify a smallint not null; ERROR 1025 (HY000): Error on rename of './test/#sql-2fa8_1' to './test/test2' (errno: 150) This happens because ALTER TABLE really works by making a copy of the table, then renaming to move the old table out of the way and move the new table into its place.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/08/22/mysqls-error-1025-explained/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/08/19/version-01146-of-innotop-released/">Version 0.1.146 of innotop released</a></h1>
+        <span class="post-date">Sat, Aug 19, 2006</span>
+        I&rsquo;ve released version 0.1.146 of the innotop MySQL and InnoDB monitor.
+I re-arranged some information to be more compact and readable in this version, but there isn&rsquo;t really much new functionality. This is mostly a bug-fix release to prevent crashes when innotop encounters unexpected information, or doesn&rsquo;t find some information it expects to exist. It&rsquo;s still very much beta software, so it may die unexpectedly. See this article about what information I need to debug and fix crashes.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/08/19/version-01146-of-innotop-released/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/08/18/role-based-access-control-in-sql-part-2/">Role-based access control in SQL, part 2</a></h1>
+        <span class="post-date">Fri, Aug 18, 2006</span>
+        This is my second article on how to build a role-based access control system in SQL. In the first article I gave a high-level overview of access control systems in general, especially in the web-application context, and talked about how some Access Control Lists (ACLs) are implemented. I introduced the problems I designed my system to solve, and gave a roadmap for where this series of articles will end. I finished that article with a sketch of some basics to provide row-level read, write, and delete access control.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/08/18/role-based-access-control-in-sql-part-2/"> &raquo; Continue Reading (about 4700 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/page/46/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/page/48/">Older</a>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

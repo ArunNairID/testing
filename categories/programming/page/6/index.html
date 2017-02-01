@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Programming &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Programming" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/categories/programming/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/categories/programming/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/01/08/aspnet-profile-schema/">ASP.NET&#39;s Profile DB schema</a></h1>
+        <span class="post-date">Sun, Jan 8, 2006</span>
+        ASP.NET has built-in functionality to store profile information about a user. The DB table schema has several design trade-offs that make it somewhat inflexible for certain uses.
+ASP.NET will write a custom class, given the properties you want, such as name and birthdate. It will also take care of hooking the plumbing up in the database (there is a little script to create the profile tables in the database). It then stores and retrieves the data on subsequent requests.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/01/08/aspnet-profile-schema/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/01/06/easy-solutions/">Don&#39;t change a constant variable</a></h1>
+        <span class="post-date">Fri, Jan 6, 2006</span>
+        A company for whom I have done some coding advertises their years of service on their website. Every year after the New Year, someone notices the dates are out of whack, sends around an email and it has to be fixed. It&rsquo;s not quite hard-coded, if that&rsquo;s what you&rsquo;re thinking. It&rsquo;s just that the wrong thing is hard-coded in the website&rsquo;s configuration file, Config.asp:
+Const YearsOfService = 31 I&rsquo;ve seen someone update that variable literally every year I&rsquo;ve been involved with the company in question.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/01/06/easy-solutions/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2006/01/05/credit-card-expiration-dates/">Credit card expiration dates should conform to standards</a></h1>
+        <span class="post-date">Thu, Jan 5, 2006</span>
+        My credit card says it expires &ldquo;06/07&#8243;. What is that? Is it June 2007, or July 2006? You may think I&rsquo;m being silly, but it confuses me. I&rsquo;m not as smart as some people, but if it confuses me, it&rsquo;s gonna confuse some others too.
+I recently placed an order online and got the expiration date wrong. It wouldn&rsquo;t have been all that bad if the entry form had mimicked exactly what&rsquo;s on the front of my card, but the online form had a 4-digit year pulldown, followed by a two-digit space for the month &ndash; exactly the opposite order from my card.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2006/01/05/credit-card-expiration-dates/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/12/15/more-ways-to-use-udfs-instead-of-openxml/">More alternatives to openxml</a></h1>
+        <span class="post-date">Thu, Dec 15, 2005</span>
+        Following up on my earlier post, here are some alternate usage scenarios for the UDF I wrote to avoid openxml in SQL Server 2000.
+The most obvious variation is to create different versions to return various data types, such as INTEGER or DATETIME or whatnot. I started to do this, but then realized it&rsquo;s silly. If I duplicate the code for every datatype, what have I accomplished besides duplicating code? The input is VARCHAR, so it&rsquo;s getting implicitly converted at some point no matter what.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/12/15/more-ways-to-use-udfs-instead-of-openxml/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/12/10/tell-me-why-not-what/">How to write good comments: say why, not what</a></h1>
+        <span class="post-date">Sat, Dec 10, 2005</span>
+        I have written before about badly commented code, but I&rsquo;ve recently encountered two examples of code that warns someone of something bad, then never tells them what it is. This is a great reason to write comments that say why, not what &ndash; my first rule of thumb when commenting code.
+Example: SQL stored procedure The first example of a bad comment is in a SQL stored procedure, where a table is updated from a view:
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/12/10/tell-me-why-not-what/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/12/01/windows-xps-built-in-unzipping-functionality-is-not-trustworthy/">Windows XP&#39;s built-in unzipping functionality is not trustworthy</a></h1>
+        <span class="post-date">Thu, Dec 1, 2005</span>
+        Window&rsquo;s XP&rsquo;s integrated ZIP functionality (built into Windows Explorer) is not trustworthy. You should not rely on it to correctly unzip or show the contents of archives. The problem is related to special characters in filenames. If a filename has one of the forbidden characters, Windows XP simply doesn&rsquo;t extract or show the files. A recent example is the 9rules media kit, which 9rules sent me when I was accepted to the network.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/12/01/windows-xps-built-in-unzipping-functionality-is-not-trustworthy/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/29/the-four-tools/">The four essential tools for software engineers</a></h1>
+        <span class="post-date">Tue, Nov 29, 2005</span>
+        I rarely blog on other people&rsquo;s content, but I can&rsquo;t agree more strongly with this list of essential tools for software engineering:
+ There are an endless pile of tools engineers are fond of using in their development process, but there are only four that they really need:
+ Editor Compiler Version control Bug tracking   The first two tools are for the individual, and the second two are team tools, at least in most cases.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/29/the-four-tools/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/17/maximizing-filesystem-portability/">How to make file names cross-platform</a></h1>
+        <span class="post-date">Thu, Nov 17, 2005</span>
+        Using a filesystem, such as an external hard drive, across mutiple platforms can sometimes cause annoying behaviors. For example, filenames may be changed to all uppercase or all lowercase, which may cause problems on a system with case-sensitive filenames or vice versa. Here are my suggestions for minimizing conflicts.
+Use only letters and numbers, underscores, and dashes Avoid using characters that any system treats as special characters, not just your own.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/17/maximizing-filesystem-portability/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/04/vbscript-regular-expression-gotchas/">How to avoid VBScript regular expression gotchas</a></h1>
+        <span class="post-date">Fri, Nov 4, 2005</span>
+        VBScript regular expressions are slightly troublesome, though they certainly help turn VBScript into less of a joke when it comes to text processing. The syntax lacks some of the niceties of Perl or .NET regexes, but is complete enough to be very useful. This article shows you how to avoid potentially serious problems, and explains an undocumented feature.
+Undocumented and incorrect behavior  The documentation is incomplete. The RegExp object has an undocumented property, Multiline, which affects pattern matching using the .
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/04/vbscript-regular-expression-gotchas/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/11/02/microsofts-sp_grep-system-stored-procedure-improved/">Microsoft&#39;s sp_grep system stored procedure improved</a></h1>
+        <span class="post-date">Wed, Nov 2, 2005</span>
+        Here is a quick patch to Microsoft&rsquo;s sp_grep system stored procedure, for SQL Server 2000. The changes will enable searching job steps, and return the correct object type for functions. The MS-supplied stored procedure isn&rsquo;t that well-written (doesn&rsquo;t even use ANSI joins), but this patch doesn&rsquo;t correct any style or other issues.
+34a32,36 &gt; insert into #tset &gt; select distinct '', j.name, 'JB' from msdb..sysjobs as j(nolock) &gt; inner join msdb.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/11/02/microsofts-sp_grep-system-stored-procedure-improved/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/21/quotes-around-xml-attribute-values/">How to quote and encode XML attribute values</a></h1>
+        <span class="post-date">Fri, Oct 21, 2005</span>
+        Attribute values in XML are usually double-quoted, but single-quotes can be used as well, according to the relevant part of the XML Spec. Here is the production:
+[10] AttValue ::= '"' ([^&lt;&"] | Reference)* '"' | "'" ([^&lt;&'] | Reference)* "'" In plain English: an attribute consists of
+ a double or single quote any number of the following:  any character but &lt;, &amp; or &ldquo; OR an entity reference  the same character that was used to begin the attribute (double or single quote)  What&rsquo;s most interesting about this to me is that a &lt; is forbidden inside attribute values, but a &gt; is not.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/21/quotes-around-xml-attribute-values/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/14/how-to-create-a-vb6-console-program/">How to  create a VB6 console program</a></h1>
+        <span class="post-date">Fri, Oct 14, 2005</span>
+        Visual Basic 6 programs can be run as console programs, if configured correctly. There are four basic requirements to create a useful console program in VB6:
+ Remove all forms and dialogs Provide access to standard input, output, and error streams Provide access to the command-line arguments Re-link the program for the Windows Console subsystem  Remove forms and dialogs By default, a VB6 project has &ldquo;forms&rdquo; or &ldquo;windows,&rdquo; which can contain application code.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/14/how-to-create-a-vb6-console-program/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/10/12/visual-sourcesafe-automation-interface/">How to use the Visual SourceSafe automation interface</a></h1>
+        <span class="post-date">Wed, Oct 12, 2005</span>
+        Microsoft Visual SourceSafe provides an automation interface that can be used from within VBScript, VB6 and other languages. This article lists the options for automating SourceSafe, provides links to documentation, and discusses some bugs that are impossible to work around.
+Documentation I am in the unenviable position of needing to write a VBScript program to interact with SourceSafe. Unfortunately the documentation is hard to find and not at all clear or user-friendly.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/10/12/visual-sourcesafe-automation-interface/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/09/28/a-comment-on-comments/">A comment on comments</a></h1>
+        <span class="post-date">Wed, Sep 28, 2005</span>
+        Comments are one of the most abused programming techniques. I know I&rsquo;m not the first to say this, but it bears repeating. There are hundreds of ways to misuse comments, and very few ways to use them correctly. In this article I&rsquo;ll pick on just one way to misuse them: fustian pontificating.
+Albert Einstein said something like &ldquo;things should be made as simple as possible, but no simpler&rdquo; (it&rsquo;s unclear what he actually said, so I&rsquo;m paraphrasing).
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/09/28/a-comment-on-comments/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/09/28/bitwise-arithmetic/">Tips and tricks for bitwise arithmetic</a></h1>
+        <span class="post-date">Wed, Sep 28, 2005</span>
+        Bitwise arithmetic can be very useful, and not just for C and graphics programmers, but for all types of programming tasks. Those who use it frequently enough become fluent. Here I present a few tips. As I think of more, I will add them here.
+Signed versus unsigned Remember numbers can be signed or unsigned. Know the difference, and know the arithmetic for both. For example, when checking to see if a certain bit is set:
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/09/28/bitwise-arithmetic/"> &raquo; Continue Reading (about 800 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/09/27/less-is-more/">Less is more</a></h1>
+        <span class="post-date">Tue, Sep 27, 2005</span>
+        Simpler is often better. The ability to decide quickly between two equivalent solutions is what sets expert programmers apart. It has been demonstrated over and over again that a) there is more than a tenfold difference in productivity between programmers, and b) there is absolutely zero correlation between speed and quality in programming. Choosing the best solution to a problem is an acquired skill that takes time and experience, but it takes something more as well: a certain mental attitude.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/09/27/less-is-more/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2005/09/22/interactive-directory-merging/">Interactive directory merging</a></h1>
+        <span class="post-date">Thu, Sep 22, 2005</span>
+        Here&rsquo;s an &lsquo;interactive&rsquo; directory merging tool that doesn&rsquo;t require GUI libraries, printer subsystems, and so forth. It is useful when you want to do things the easy way, at a terminal, without taking your hands off your keyboard. And it works on systems where you don&rsquo;t have access to install things yourself, such as a shared webhosting server.
+#!/bin/bash echo "#!/bin/bash"  /tmp/mergedir diff --brief --recursive $1 $2 | awk '/differ/ {print "
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2005/09/22/interactive-directory-merging/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/categories/programming/page/5/">Newer</a>
+  
+  
+    <span class="pagination-item older">Older</span>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

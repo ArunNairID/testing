@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How to deliberately cause a deadlock in MySQL &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How to deliberately cause a deadlock in MySQL" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2006/08/08/how-to-deliberately-cause-a-deadlock-in-mysql/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2006/08/08/how-to-deliberately-cause-a-deadlock-in-mysql/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to deliberately cause a deadlock in MySQL</h1>
+  <span class="post-date">Tue, Aug 8, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f08%2fhow-to-deliberately-cause-a-deadlock-in-mysql%2f&text=How%20to%20deliberately%20cause%20a%20deadlock%20in%20MySQL:https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f08%2fhow-to-deliberately-cause-a-deadlock-in-mysql%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f08%2fhow-to-deliberately-cause-a-deadlock-in-mysql%2f&title=How%20to%20deliberately%20cause%20a%20deadlock%20in%20MySQL&summary=How%20to%20deliberately%20cause%20a%20deadlock%20in%20MySQL&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f08%2fhow-to-deliberately-cause-a-deadlock-in-mysql%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f08%2fhow-to-deliberately-cause-a-deadlock-in-mysql%2f&t=How%20to%20deliberately%20cause%20a%20deadlock%20in%20MySQL" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f08%2f08%2fhow-to-deliberately-cause-a-deadlock-in-mysql%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>Why would you ever want to deliberately cause a deadlock? Sometimes a very large deadlock in MySQL will fill the output of <code>SHOW ENGINE INNODB STATUS</code> until it truncates, so you can&rsquo;t see information about transactions, log and I/O, buffers, and so forth. I know only two solutions to this problem: 1) restart MySQL and 2) cause a small deadlock so the <code>LAST DETECTED DEADLOCK</code> section shrinks to an acceptable size. In this article I&rsquo;ll show you how to cause a small deadlock, and how to use innotop to do it more easily.</p>
+
+<h3 id="how-to-cause-a-small-deadlock">How to cause a small deadlock</h3>
+
+<p>Since the only purpose of causing a deadlock is to shrink the InnoDB monitor&rsquo;s text, the deadlock you&rsquo;re going to create needs to be small and low-impact. In other words, you don&rsquo;t want it to involve many resources, and you don&rsquo;t want it to involve resources anyone else is using. The solution I use is to create a new table just for this purpose, and only put as much data in it as needed. In fact, you only need a one-column, one-row table, but for reasons I&rsquo;ll get to later, it&rsquo;s easier to do two rows.</p>
+
+<p>First, choose an unused table name. I&rsquo;ll use <code>test.innodb_deadlock_maker</code>. Here are the statements you need to execute:</p>
+
+<pre>create table test.innodb_deadlock_maker(a int primary key) engine=innodb;
+insert into test.innodb_deadlock_maker(a) values(0), (1);</pre>
+
+<p>Now the table and its data are set up. Next, execute the following on two different connections:</p>
+
+<pre>-- connection 0
+set transaction isolation level serializable;
+start transaction;
+select * from test.innodb_deadlock_maker where a = 0;
+update test.innodb_deadlock_maker set a = 0 where a &lt;&gt; 0;
+
+-- connection 1
+set transaction isolation level serializable;
+start transaction;
+select * from test.innodb_deadlock_maker where a = 1;
+update test.innodb_deadlock_maker set a = 1 where a &lt;&gt; 1;</pre>
+
+<p><em>Voila</em>, you have a deadlock. Notice how connection 0 and connection 1 run the same statements, except they use a different value in their <code>WHERE</code> and <code>SET</code> clauses. This makes it easy to write a program to run these statements, and just pass in a value each connection should use.</p>
+
+<h3 id="the-easy-way-use-innotop">The easy way: use innotop</h3>
+
+<p>I wrote a feature in innotop to do exactly what I just explained above. In fact, innotop will detect when the InnoDB&rsquo;s monitor text is truncated, and suggest you &ldquo;clear deadlocks&rdquo; to solve it. &ldquo;Clearing deadlocks&rdquo; may not be the best term, because it just means &ldquo;cause a small one.&rdquo; Regardless, it&rsquo;s very easy to do.</p>
+
+<p>Just start innotop and enter InnoDB Deadlock mode with the &ldquo;D&rdquo; key, then press the &ldquo;w&rdquo; key to &ldquo;wipe&rdquo; the big deadlock out of InnoDB&rsquo;s memory. You&rsquo;ll see innotop fork off two child processes to create two connections to the database and run the above statements. In a matter of seconds, you&rsquo;ll have your InnoDB monitor text back.</p>
+
+<p>You might want to save the current deadlock information for further study before you do this. Just use the &ldquo;u&rdquo; key to dump the entire InnoDB monitor content to a file.</p>
+
+<p>If you need to use a different table for the deadlock, you can edit the configuration value <code>dl_table</code>, either online with the &lsquo;$&rsquo; key, or by editing innotop&rsquo;s configuration file directly.</p>
+
+<h3 id="a-fun-distraction-deadlock-golf">A fun distraction: deadlock golf</h3>
+
+<p>Programmers sometimes play &ldquo;golf&rdquo; in their language, by seeing how few strokes they need to solve some problem. How small can you make your deadlock? It&rsquo;s not hard to cause a deadlock on a single-row table in just three statements, assuming <code>AutoCommit</code> is 0. Starting with the same table structure as above, but with no rows in the table:</p>
+
+<pre>-- Connection 0
+insert into test.innodb_deadlock_maker values(1);
+
+-- Connection 1
+select * from test.innodb_deadlock_maker for update;
+
+-- Connection 0
+insert into test.innodb_deadlock_maker values(0);</pre>
+
+<p>This trick works because of the same principle I explained in a <a href="/blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/">previous article on deadlocks</a>. The statements are asymmetrical, so it&rsquo;s not the method I use for innotop, but I think it&rsquo;s a minimal deadlock. I can&rsquo;t think of a way to prove it formally, but I don&rsquo;t think you can do it in less than three statements.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>In this article I&rsquo;ve explained how you can create a small, low-impact deadlock that doesn&rsquo;t tie up important resources, for the purpose of freeing up other important resources (namely, status and debugging information). I showed you how innotop &ndash; a program that cares a lot about that status information &ndash; has a built-in function to do this for you easily. And I showed you what I think is the minimal possible deadlock.</p>
+
+<p>If this article is useful to you, <a href="/index.xml">subscribe</a> to receive updates free and conveniently.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2006/08/10/version-01132-of-innotop-released/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2006/08/07/how-to-write-multi-table-cross-database-deletes-with-aliases-in-mysql/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2006\/08\/08\/how-to-deliberately-cause-a-deadlock-in-mysql\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

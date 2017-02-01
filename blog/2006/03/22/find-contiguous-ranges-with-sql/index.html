@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How to find contiguous ranges with SQL &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How to find contiguous ranges with SQL" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2006/03/22/find-contiguous-ranges-with-sql/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2006/03/22/find-contiguous-ranges-with-sql/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to find contiguous ranges with SQL</h1>
+  <span class="post-date">Wed, Mar 22, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f03%2f22%2ffind-contiguous-ranges-with-sql%2f&text=How%20to%20find%20contiguous%20ranges%20with%20SQL:https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f03%2f22%2ffind-contiguous-ranges-with-sql%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f03%2f22%2ffind-contiguous-ranges-with-sql%2f&title=How%20to%20find%20contiguous%20ranges%20with%20SQL&summary=How%20to%20find%20contiguous%20ranges%20with%20SQL&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f03%2f22%2ffind-contiguous-ranges-with-sql%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f03%2f22%2ffind-contiguous-ranges-with-sql%2f&t=How%20to%20find%20contiguous%20ranges%20with%20SQL" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2006%2f03%2f22%2ffind-contiguous-ranges-with-sql%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  
+
+<p>In an earlier article I discussed how to <a href="/blog/2005/12/06/find-missing-numbers-in-a-sequence-with-sql/">find missing members in a sequence with SQL</a>. In this article I&rsquo;ll do the reverse: demonstrate how to find the start and end point of each contiguous range.</p>
+
+<h3 id="motivation">Motivation</h3>
+
+<p>Someone posted a comment on the article linked above, asking how to do this. At least, that&rsquo;s what I think the question was; I might be misinterpreting it. I considered replying in the comments on that article, but decided it should go in its own article instead.</p>
+
+<p>I&rsquo;ll use the same sample data as in the earlier article: a sequence of integers from 1 to 20, with the numbers 5, 11, 12, 13, and 14 missing. I&rsquo;ll also delete the value 7, so 6 is a range of length 1. The desired answer is</p>
+
+<table class="borders collapsed">
+  <tr>
+    <th>
+      start
+    </th>
+    
+    <th>
+      end
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      1
+    </td>
+    
+    <td>
+      4
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      6
+    </td>
+    
+    <td>
+      6
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      8
+    </td>
+    
+    <td>
+      10
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      15
+    </td>
+    
+    <td>
+      20
+    </td>
+  </tr>
+</table>
+
+<h3 id="the-solution">The solution</h3>
+
+<p>This isn&rsquo;t as easy as I thought it would be at first. I stared at it for a while, then it came to me: I want to find the start and end of each contiguous range, so I need to define &ldquo;start&rdquo; and &ldquo;end.&rdquo; The start of a range is defined by the absence of the preceding number. I initially thought &ldquo;has a next but no previous,&rdquo; but that&rsquo;s incorrect because a single number is a valid range; if I require the start to have a &ldquo;next,&rdquo; that eliminates 6 (I initially wrote the whole thing wrong, then thought about single-number ranges and re-wrote everything). So the definition of &ldquo;start&rdquo; is a number that has no &ldquo;previous.&rdquo;</p>
+
+<p>The end of a range is almost the reverse: it has no &ldquo;next&rdquo; but might have a &ldquo;previous.&rdquo; Additionally, it should be the smallest such number that&rsquo;s greater than or equal to the start. The &ldquo;or equal to&rdquo; is again necessary to include ranges that are just one number.</p>
+
+<p>Each of these queries is fairly simple by itself, using <a href="/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion joins</a>. Here&rsquo;s one that will find the start of every range:</p>
+
+<pre>select l.id
+from sequence as l
+    left outer join sequence as r on r.id = l.id - 1
+where r.id is null;</pre>
+
+<table class="borders collapsed">
+  <tr>
+    <th>
+      id
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      6
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      8
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      15
+    </td>
+  </tr>
+</table>
+
+<p>I&rsquo;m referring to the left-hand table as &ldquo;l&rdquo; and the right-hand table as &ldquo;r.&rdquo; Here&rsquo;s a query that will find the end of every range. It&rsquo;s almost the same:</p>
+
+<pre>select l.id
+from sequence as l
+    left outer join sequence as r on r.id = l.id + 1
+where r.id is null;</pre>
+
+<table class="borders collapsed">
+  <tr>
+    <th>
+      id
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      4
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      6
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      10
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      20
+    </td>
+  </tr>
+</table>
+
+<p>Bringing the two together, and meeting the &ldquo;smallest value greater than or equal to&rdquo; requirement, is a more complex query. Here I solve it with a correlated subquery:</p>
+
+<pre>select l.id as start,
+    (
+        select min(a.id) as id
+        from sequence as a
+            left outer join sequence as b on a.id = b.id - 1
+        where b.id is null
+            and a.id &gt;= l.id
+    ) as end
+from sequence as l
+    left outer join sequence as r on r.id = l.id - 1
+where r.id is null;</pre>
+
+<p>I&rsquo;ve re-aliased the subquery&rsquo;s tables as &ldquo;a&rdquo; and &ldquo;b&rdquo; to avoid confusion with &ldquo;r&rdquo; and &ldquo;l.&rdquo;</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2006/03/26/temporary-table-subtleties-in-mysql/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2006/03/20/thoughts-on-reiserfs/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2006\/03\/22\/find-contiguous-ranges-with-sql\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

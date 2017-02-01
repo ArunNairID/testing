@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      How scalable is your database? &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="How scalable is your database?" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2013/02/24/how-scalable-is-your-database/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2013/02/24/how-scalable-is-your-database/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How scalable is your database?</h1>
+  <span class="post-date">Sun, Feb 24, 2013 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/performance" class="btn btn-primary">Performance</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f02%2f24%2fhow-scalable-is-your-database%2f&text=How%20scalable%20is%20your%20database%3f:https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f02%2f24%2fhow-scalable-is-your-database%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f02%2f24%2fhow-scalable-is-your-database%2f&title=How%20scalable%20is%20your%20database%3f&summary=How%20scalable%20is%20your%20database%3f&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f02%2f24%2fhow-scalable-is-your-database%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f02%2f24%2fhow-scalable-is-your-database%2f&t=How%20scalable%20is%20your%20database%3f" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2013%2f02%2f24%2fhow-scalable-is-your-database%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>Most of the time, when people say &ldquo;scalability&rdquo; they mean any of dozens of things. Most of the time, when I say it I mean <a href="http://www.perfdynamics.com/Manifesto/USLscalability.html">exactly one precisely defined thing</a>. However, I don&rsquo;t claim that&rsquo;s the only correct use of &ldquo;scalability.&rdquo; There is another, in particular, that I think is very important to understand: the inherent limitations of the system. This second one doesn&rsquo;t have a single mathematical definition, but it&rsquo;s vital nonetheless.</p>
+
+<p>I&rsquo;ll frame the discussion by asking this: how scalable is your database?</p>
+
+<p>Using the two definitions I like to use the most, I answer the question in this way.</p>
+
+<ol>
+<li>Scalability in terms of the Universal Scalability Law is the degree to which you can add more workers (or units of hardware) and get equal returns in terms of system throughput.</li>
+<li>Scalability in terms of inherent limitations is how big you can actually make the system.</li>
+</ol>
+
+<p>These are very different things. For example, the Universal Scalability Law doesn&rsquo;t say anything about the amount of data your database stores. But I think we all know that a MySQL server can only hold just so much data. True, it&rsquo;s a lot of data &ndash; there are lots of multi-terabyte MySQL servers out there. But if you need to put, say, 20 petabytes of data into MySQL, <em>you just can&rsquo;t do it</em>.</p>
+
+<p>Similarly, if you need to write 40 million values per second into your MySQL server, <em>you just can&rsquo;t do it.</em> Nor can you support 10 million concurrent client connections. These things are <em>impossible</em> with MySQL.</p>
+
+<p>I hear some people saying &ldquo;of course you can! You shard it, dummy!&rdquo;</p>
+
+<p>Ah. But do you then have <strong>a</strong> database, or do you have <strong>many</strong>? You have many, of course. If you build your own sharding layer on top of lots of MySQL instances, one could argue that you then have a single very large database. But it isn&rsquo;t a &ldquo;MySQL database&rdquo; anymore. MySQL has been relegated to a component of this sharded DBMS. As a supporting crew member, MySQL can play a role in a 20PB database, but MySQL <em><a href="http://dictionary.reference.com/browse/per+se">per se</a></em> can&rsquo;t do it.</p>
+
+<p>When you&rsquo;re designing a system of any kind, it&rsquo;s smart to keep in mind that a lot of technologies have practical limits that can&rsquo;t be exceeded. They may grow with time and Moore&rsquo;s Law, but they represent a cap you can&rsquo;t get around without doing something differently.</p>
+
+<p>If you&rsquo;re interested, I wrote an <a href="https://www.vividcortex.com/resources/universal-scalability-law/">ebook about the Universal Scalability
+Law</a>.</p>
+
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2013/03/04/seeing-things-from-the-users-point-of-view/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2013/02/18/updated-spam-controls/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2013\/02\/24\/how-scalable-is-your-database\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

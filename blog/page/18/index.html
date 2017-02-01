@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      Blogs &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="Blogs" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com/" />
+  <meta name="og:description" content="" />
+  <meta name="og:url" content="https://www.xaprb.com/blog/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="posts">
+	
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/02/07/timing-queries-in-the-21st-century/">Timing queries in the 21st century</a></h1>
+        <span class="post-date">Mon, Feb 7, 2011</span>
+        What is wrong with the following?
+mysql&gt; select 'hello world'; +-------------+ | hello world | +-------------+ | hello world | +-------------+ 1 row in set (0.00 sec)  Centisecond resolution for query times belongs to the last century. I want at least millisecond resolution &ndash; microsecond is better. Fortunately, this is as simple as changing a printf format specifier in the mysql client program.
+Edit: I thought that maybe I could fix this by changing the printf format specifier with sed, but it looks like I was wrong:
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/02/07/timing-queries-in-the-21st-century/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/02/05/new-aspersa-io-analysis-tool-diskstats/">New Aspersa I/O analysis tool, diskstats</a></h1>
+        <span class="post-date">Sat, Feb 5, 2011</span>
+        I&rsquo;ve just committed some changes to diskstats, an I/O analysis tool in Aspersa that&rsquo;s actually been in the Subversion repository for a long time, but in a barely usable fashion and with no documentation. Now it&rsquo;s usable and documented.
+It is basically a reimplementation of iostat in awk. Why on earth would I reinvent that wheel? Because I spend a lot of time gathering and analyzing raw data from /proc/diskstats, which is vital to really understanding what the storage subsystem is doing.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/02/05/new-aspersa-io-analysis-tool-diskstats/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/02/03/mysql-and-postgresql-cross-links/">MySQL and PostgreSQL cross-links</a></h1>
+        <span class="post-date">Thu, Feb 3, 2011</span>
+        A couple of extremely informative recent blog posts have gone to either Planet MySQL or Planet PostgreSQL, but not both, and I think everyone on both aggregators who cares about database internals should be interested in them. Here they are:
+ Robert Haas: MySQL vs. PostgreSQL, Part 2: VACUUM vs. Purge  Ewen Fortune: How InnoDB handles REDO logging  Happy cross-pollination.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/02/03/mysql-and-postgresql-cross-links/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/02/02/keeping-docs-and-program-options-in-sync/">Keeping docs and program options in sync</a></h1>
+        <span class="post-date">Wed, Feb 2, 2011</span>
+        One of my pet peeves is when documentation is wrong. Another pet peeve is keeping documentation right. Crack open a source tarball for many programs and you&rsquo;ll see a chunk of text that gets printed out when you use the &#8211;help option, and elsewhere in the program&rsquo;s source code you&rsquo;ll see the definitions of the command-line options. Maintaining a program like this is miserable. Using it is bad, too. I can name a lot of programs that say one thing and do another.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/02/02/keeping-docs-and-program-options-in-sync/"> &raquo; Continue Reading (about 400 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/29/how-innodb-performs-a-checkpoint/">How InnoDB performs a checkpoint</a></h1>
+        <span class="post-date">Sat, Jan 29, 2011</span>
+        InnoDB&rsquo;s checkpoint algorithm is not well documented. It is too complex to explain in even a long blog post, because to understand checkpoints, you need to understand a lot of other things that InnoDB does. I hope that explaining how InnoDB does checkpoints in high-level terms, with simplifications, will be helpful. A lot of the simplifications are because I do not want to explain the complexities of how the simple rules can be tweaked for optimization purposes, while not violating the ACID guarantees they enforce.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/29/how-innodb-performs-a-checkpoint/"> &raquo; Continue Reading (about 1600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/29/my-sessions-at-the-oreilly-mysql-conference-2011/">My sessions at the O&#39;Reilly MySQL Conference 2011</a></h1>
+        <span class="post-date">Sat, Jan 29, 2011</span>
+        I&rsquo;ll be presenting several sessions at the O&rsquo;Reilly MySQL Conference &amp; Expo 2011, which is April 11-14 in Santa Clara, California. I recommend this conference to anyone interested in open-source databases including MySQL, PostgreSQL, CouchDB, MongoDB, and others. There is very good coverage of a diverse list of open-source databases.
+My sessions are as follows:
+ Building on Strengths, Learning from Differences: a keynote address on the open-source database ecosystem, how we got here, and what we can do to make the most of the future.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/29/my-sessions-at-the-oreilly-mysql-conference-2011/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/22/version-1-1-8-of-better-cacti-templates-released/">Version 1.1.8 of Better Cacti Templates released</a></h1>
+        <span class="post-date">Sat, Jan 22, 2011</span>
+        I&rsquo;ve released version 1.1.8 of the Better Cacti Templates project. This release includes a bunch of bug fixes and several important new graphs. There are graphs for the new response-time statistics exposed in Percona Server, and a new set of graphs for MongoDB.
+ VividCortex is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what your servers are doing in production and I consider it far superior to Cacti.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/22/version-1-1-8-of-better-cacti-templates-released/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/19/controlling-maatkit-from-ruby/">Controlling Maatkit from Ruby</a></h1>
+        <span class="post-date">Wed, Jan 19, 2011</span>
+        There is a Ruby interface to Maatkit that looks like a handy idiomatic way to script Maatkit tools.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/19/controlling-maatkit-from-ruby/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/15/sleep-while-you-can-because-it-wont-last-long/">Sleep while you can, because it won&#39;t last long</a></h1>
+        <span class="post-date">Sat, Jan 15, 2011</span>
+        I read a recent blog post about the coming extinction of MySQL bloggers with concern. The post plotted the blogging activity of Planet MySQL bloggers and fit a polynomial curve to it:
+Blogging Activity  The curve isn&rsquo;t extended out, but it&rsquo;s a polynomial, and we know what happens: it&rsquo;s going to intersect the X-axis. I didn&rsquo;t do the math, but if you want to, you can predict, to the day, when blogging as we know it will cease.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/15/sleep-while-you-can-because-it-wont-last-long/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/13/one-day-percona-live-conference-in-san-francisco/">One-day Percona Live conference in San Francisco</a></h1>
+        <span class="post-date">Thu, Jan 13, 2011</span>
+        I wish I could be at this: Percona Live San Francisco. It is on February 16th. Cost is minimal, and content is maximal. The topic is on what&rsquo;s new in MySQL these days beyond 5.1: the new 5.5 release, HandlerSocket, MariaDB, and of course Percona Server.
+This is a follow-up to the enormously successful Percona Performance Conference in 2009.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/13/one-day-percona-live-conference-in-san-francisco/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/12/new-ruby-conference-ruby-on-ales-2011/">New Ruby Conference: Ruby on Ales 2011</a></h1>
+        <span class="post-date">Wed, Jan 12, 2011</span>
+        This looks like fun: Ruby on Ales. It&rsquo;s March 24-25, 2011 in Bend Oregon (USA), and the tag line is Ruby, snow, and beer. Does it get any better than this?
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/12/new-ruby-conference-ruby-on-ales-2011/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/11/new-in-mk-query-digest-variance-to-mean-ratio/">New in mk-query-digest: variance-to-mean ratio</a></h1>
+        <span class="post-date">Tue, Jan 11, 2011</span>
+        This isn&rsquo;t actually new &ndash; it has been out for a few releases. The mk-query-digest tool from Maatkit now outputs information about each class of queries&rsquo; variance-to-mean ratio. The new output goes in a couple of places, including perhaps most usefully the &ldquo;profile&rdquo; report. Here&rsquo;s an example from a real MySQL system:
+# Profile # Rank Query ID Response time Calls R/Call Apdx V/M Item # ==== ================== ================ ===== ====== ==== ===== ======= # 1 0xBFCF8E3F293F6466 11256.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/11/new-in-mk-query-digest-variance-to-mean-ratio/"> &raquo; Continue Reading (about 700 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2011/01/02/finding-things-within-some-distance-in-sql/">Finding things within some distance in SQL</a></h1>
+        <span class="post-date">Sun, Jan 2, 2011</span>
+        One of the query optimization scenarios I&rsquo;ve seen a lot over the years is finding something within some distance from a point. For example, finding people within some distance of yourself, apartments in a radius from a postal code, and so on.
+These queries usually use the great-circle formula. That might be because Google finds lots of pages claiming that this is the right way to do a radius search. &ldquo;The earth is not flat!
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2011/01/02/finding-things-within-some-distance-in-sql/"> &raquo; Continue Reading (about 500 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/12/26/a-review-of-couchdb-the-definitive-guide-by-anderson-lenhardt-and-slater/">A review of CouchDB, the Definitive Guide by Anderson, Lenhardt, and Slater</a></h1>
+        <span class="post-date">Sun, Dec 26, 2010</span>
+        CouchDB, the Definitive Guide. By J. Chris Anderson, Jan Lehnardt, and Noah Slater, O&rsquo;Reilly 2010. About 260 pages.
+This is a good introduction to CouchDB. I would like more information about server internals from a book titled &ldquo;definitive guide.&rdquo; But it orients the reader well and shows CouchDB&rsquo;s strengths and use cases clearly. The writing is straightforward and well organized. I think it does a great job at helping the reader see the possibilities and the elegance inherent to the data model and conventions built into CouchDB.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/12/26/a-review-of-couchdb-the-definitive-guide-by-anderson-lenhardt-and-slater/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/12/21/thank-you-oracle-and-others-for-mysql-5-5/">Thank-you Oracle and others for MySQL 5.5</a></h1>
+        <span class="post-date">Tue, Dec 21, 2010</span>
+        I just wanted to express my appreciation for the 5.5 release. I know a lot of great engineers, documentation writers, testers, packagers, product managers, and even non-technical people must have done far more work on this release than we can see externally to Oracle, and many of those people might not be named anywhere. I know who some of you are, but surely not all of you. And, thanks to those who began this effort years ago at MySQL and then at Sun, who may not be involved anymore.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/12/21/thank-you-oracle-and-others-for-mysql-5-5/"> &raquo; Continue Reading (about 100 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/12/19/schedule-for-mysql-and-beyond-conference-is-live/">Schedule for MySQL-and-beyond conference is live</a></h1>
+        <span class="post-date">Sun, Dec 19, 2010</span>
+        O&rsquo;Reilly&rsquo;s 2011 edition of the MySQL conference has an expanded agenda, with good representation from Postgres, CouchDB, MongoDB, and others. Take a look at the full schedule listing, which is being filled out as talks are approved and the speakers verify that they&rsquo;ll give the session.
+I am certainly looking forward to this year&rsquo;s event. A tremendous amount of progress has landed in GA versions of open-source databases this year. To name just a couple, there&rsquo;s a new version of Postgres (9.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/12/19/schedule-for-mysql-and-beyond-conference-is-live/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/12/17/whats-new-in-mk-query-digest-explain-sparklines/">What&#39;s new in mk-query-digest: EXPLAIN sparklines</a></h1>
+        <span class="post-date">Fri, Dec 17, 2010</span>
+        This month&rsquo;s Maatkit release has some nice new features and improvements to mk-query-digest. There is one that deserves its own blog post: EXPLAIN sparklines.
+A &ldquo;sparkline&rdquo; is a simple type of chart that conveys important information without the details. We added a kind of ASCII sparkline to mk-query-digest to convey important information about the query&rsquo;s EXPLAIN plan so you can see if the query is &ldquo;bad&rdquo; or not. It is kind of a cryptic geek code that you will need some help decoding.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/12/17/whats-new-in-mk-query-digest-explain-sparklines/"> &raquo; Continue Reading (about 600 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/12/14/a-review-of-mongodb-the-definitive-guide-by-chodorow-and-dirolf/">A review of MongoDB, the Definitive Guide by Chodorow and Dirolf</a></h1>
+        <span class="post-date">Tue, Dec 14, 2010</span>
+        MongoDB, the Definitive Guide  MongoDB, the Definitive Guide, by Kristina Chodorow and Michael Dirolf, 2010. About 200 pages. (Here&rsquo;s a link to the publisher&rsquo;s site.)
+This is a good introduction to MongoDB, mostly from the application developer&rsquo;s point of view. After reading through this, I felt that I understood the concepts well, although I am not a MongoDB expert, so I can&rsquo;t pretend to be a fact-checker. The topics are clearly and logically presented for the most part; there is a small amount of repetition in one of the appendixes, but I don&rsquo;t mind that.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/12/14/a-review-of-mongodb-the-definitive-guide-by-chodorow-and-dirolf/"> &raquo; Continue Reading (about 300 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/12/06/awesome-postgresmysql-cross-pollination/">Awesome Postgres/MySQL cross-pollination</a></h1>
+        <span class="post-date">Mon, Dec 6, 2010</span>
+        There have been a few great blog posts recently from MySQL bloggers about Postgres, and vice versa, with good comments and follow-on from the real experts in both systems. I think this is wonderful. Learning how other databases solve hard problems is highly educational, especially because ACID databases face some of the hardest problems in computing. Making MySQL better is good for PostgreSQL. The reverse is just as true. And we should also be learning from SQLite, and CouchDB, and others who have overcome tough technical hurdles, built successful companies, created thriving and enthusiastic communities, or whatever their success has been.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/12/06/awesome-postgresmysql-cross-pollination/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+      <div class="post">
+        <h1 class="post-title"><a href="https://www.xaprb.com/blog/2010/11/11/two-examples-of-sphinx-search-at-work/">Two examples of Sphinx search at work</a></h1>
+        <span class="post-date">Thu, Nov 11, 2010</span>
+        Sphinx is an amazing piece of software. Andrew Aksyonoff is an amazing guy, too. But aside from Andrew&rsquo;s many talents, and Sphinx&rsquo;s awesomeness, I wanted to list two related examples of how Sphinx makes the world a better place. Both examples are implemented as open-source software from Ivinco, a company founded by a group of people I used to work with.
+The first is the Sphinx WordPress search plugin. I have repeatedly considered using it on my own blog, but I&rsquo;m running on Pair&rsquo;s shared hosting, so I don&rsquo;t think I should do that.
+		  <p style="text-align:right"><a href="https://www.xaprb.com/blog/2010/11/11/two-examples-of-sphinx-search-at-work/"> &raquo; Continue Reading (about 200 words)</a></p>
+      </div>
+  
+</div>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/page/17/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/page/19/">Older</a>
+  
+</div>
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> </title>
+    <link>https://www.xaprb.com/categories/guest-posts/index.xml</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>Copyright (c) 2016</rights>
+    <updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
+
+    
+        <item>
+          <title>Early-Warning Is an Unknown Unknown</title>
+          <link>https://www.xaprb.com/blog/2013/10/08/early-warning-is-an-unknown-unknown/</link>
+          <pubDate>Tue, 08 Oct 2013 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2013/10/08/early-warning-is-an-unknown-unknown/</guid>
+          <description>
+
+&lt;p&gt;&lt;em&gt;This post originally appeared on &lt;a href=&#34;http://radar.oreilly.com/2013/10/early-warning-is-an-unknown-unknown.html&#34;&gt;O&amp;rsquo;Reilly Radar&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In 2002, US Secretary of State Donald Rumsfeld &lt;a href=&#34;http://www.youtube.com/watch?v=GiPe1OiKQuk&#34;&gt;told a reporter&lt;/a&gt; that not only don’t we know everything important, but sometimes we don’t even know what knowledge we lack:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;There are known knowns; there are things we know we know. We also know there are known unknowns; that is to say we know there are some things we do not know. But there are also unknown unknowns – the ones we don’t know we don’t know.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;One of the purposes of monitoring is to build early-warning systems to alert of problems before they become serious. But how can we recognize a failure in its early stages? It’s a thorny question.&lt;/p&gt;
+
+&lt;p&gt;As hard as it seems, it’s even harder than you think it is. To illustrate, we can ask a seemingly simple related question: can we reliably recognize problems after they’ve become serious, perhaps to the point of causing downtime? Even this is hard. That’s because no matter how many failures you’ve seen in systems, you can pretty much guarantee that someday in the future you’ll be surprised by an issue you never could have imagined until you saw it.&lt;/p&gt;
+
+&lt;p&gt;Not to get all Rumsfeld on you, but we’re talking about unknown unknowns.&lt;/p&gt;
+
+&lt;h3 id=&#34;early-detection&#34;&gt;Early Detection&lt;/h3&gt;
+
+&lt;p&gt;I have been pondering this issue–being proactive instead of reactive–for years. When I worked at Percona I surveyed hundreds of cases of customer downtime, poring through notes and email threads, examining all the data I had and trying to determine what caused the downtime and how to prevent it. The result was two white papers (&lt;a href=&#34;http://www.percona.com/about-us/mysql-white-paper/causes-of-downtime-in-production-mysql-servers&#34;&gt;downtime&lt;/a&gt;, &lt;a href=&#34;http://www.percona.com/about-us/mysql-white-paper/preventing-mysql-emergencies&#34;&gt;how to prevent it&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;How could someone have detected all of those problems in the making? There’s a huge variety of problems, and to answer this question it might be useful to categorize system failures. Here’s a quick list, which might not be exhaustive, but it’ll serve the purpose:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dead&lt;/strong&gt;. The system isn’t alive (the process or server isn’t running, for example).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unreachable&lt;/strong&gt;. The system may be alive somewhere, but you can’t connect to it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unresponsive&lt;/strong&gt;. You can connect to the system, but it doesn’t respond to your requests.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aborting&lt;/strong&gt;. You can ask the system to do work, and it starts but can’t finish.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Slow&lt;/strong&gt;. You can ask the system to do work, but it doesn’t happen fast enough to matter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wrong&lt;/strong&gt;. The system responds but does something wrong, e.g. due to unexpected state.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now try to think of how you’d detect these things early. It’s hard, because the system in question (an app or database server, perhaps) is likely dependent on many other systems and resources, as well as data and system load. Some resources have hard limits–disk space, for example, isn’t elastic. There’s usually no slowdown: the server works until the last byte is filled up, and then abruptly starts failing, perhaps even getting stuck on a blocked system call.&lt;/p&gt;
+
+&lt;p&gt;External resources are even worse because they’re dependent on things happening outside. DNS is a great example; think of any software you’ve written. How will it react if a name lookup fails? We can mention lots of types of resources that can fail or get used up: port range, filehandle limits, memory limits, CPU cycles, and so on. What if the resource you’re relying on is dependent on another resource? And what about errors, such as replication getting behind or stopping, disk or memory corruption, and so on? How can you detect these?&lt;/p&gt;
+
+&lt;p&gt;Resources with unclear limits or burstable capacity can be even harder to understand. Just what is the maximum capacity of your DNS server, anyway? At what point will traffic exceed its ability to respond promptly and consistently? If you don’t know this, how can you predict a failure in advance and give early warning?&lt;/p&gt;
+
+&lt;h3 id=&#34;the-state-of-the-monitoring-union&#34;&gt;The State of the Monitoring Union&lt;/h3&gt;
+
+&lt;p&gt;I don’t think this is a tractable problem with current monitoring systems and practices. Let’s take Nagios as an example: it’s reasonably good at detecting whether services are reachable and alive, but beyond that, it has no system-specific smarts. The sysadmin is expected to use plugins to map domain state into Nagios’s OK, WARN, CRIT, and UNKNOWN. Thus, Nagios’s answer is to pass the buck to the operations staff. We love to hate Nagios right now, but Sensu App doesn’t do anything fundamentally different in this regard, either.&lt;/p&gt;
+
+&lt;p&gt;Alive-or-dead checks don’t provide early warnings. Nagios plugins often try to do that with thresholds. Some things are reasonably amenable to thresholds. With enough care, for example, one can often set thresholds on disk fullness at appropriate levels to provide an early warning of a disk filling up. As I discovered at Percona, full disks are a major cause of downtime, so this might be sensible to do (though I think it’s still a blunt instrument). But most systems, and the resources they rely on, are far too complex to yield to a threshold-based approach. There are several reasons for this:&lt;/p&gt;
+
+&lt;p&gt;Most systems are dynamic with respect to resource consumption, and thresholds are wrong instantly, for every system, for every moment of the day. Baselining and similar techniques improve things, but don’t solve this problem completely. Resource consumption doesn’t indicate whether something is wrong–the resources are there to be used, after all. Most of the time all you’ll get are false alarms. There are way too many resources, used in far too many different ways, to put thresholds on them all.&lt;/p&gt;
+
+&lt;p&gt;In the end, the system administrator is on the horns of a dilemma: should I monitor for every possible failure mode I can imagine? Or just the ones I’ve seen before? What about the ones I can’t imagine and haven’t seen yet? And if I monitor as completely as I think I can, will I get too many false positives? If you haven’t been down this path before, I can give you a spoiler alert: here be false-positive dragons.&lt;/p&gt;
+
+&lt;h3 id=&#34;systematic-organizing-principles&#34;&gt;Systematic Organizing Principles&lt;/h3&gt;
+
+&lt;p&gt;I think one of the things that’s missing in the current crop of monitoring tools is a systematic approach to problem detection and resolution. We badly need organizing principles to guide us, or we’ll be flailing around in a Rube Goldberg machine without being able to see which wires are connected to which switches.&lt;/p&gt;
+
+&lt;p&gt;That’s why I think &lt;strong&gt;workload&lt;/strong&gt; should be regarded as of primary importance. We have servers to do work for us. We don’t measure a systems’ success by how busy the CPUs and disks are, or how low the cache hit ratio is. We measure success by how much work the system can do for us, and how consistently. In other words, we want to know the speed and quality of getting-work-done.&lt;/p&gt;
+
+&lt;p&gt;The second guiding principle I propose is to &lt;strong&gt;measure and analyze what you care about&lt;/strong&gt;. If you agree that the rate and quality of task completion is the most important thing to measure in systems, then I suggest that you should be measuring at least throughput and response time of those tasks, and analyzing those for degradation that can provide early warnings of interruptions of service. On the other hand, I suggest being very skeptical of measuring and alerting on things that are not directly related to work-getting-done. For more on this topic, see Alois Reitbauer’s related blog post, &lt;a href=&#34;http://programming.oreilly.com/2013/09/building-an-alerting-system-that-really-works.html&#34;&gt;Building an Alerting System That Really Works&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A third principle I suggest is that, due to the size and complexity of modern systems, you should &lt;strong&gt;never alert about something that can’t be fixed&lt;/strong&gt;. The buzzword for this is “actionable alerts.” The cognitive load of unfixable alarms will make operations staff send alerts directly to /dev/null. It’s a pretty short path from there to the monitoring system becoming shelfware.&lt;/p&gt;
+
+&lt;p&gt;“Actionable” is worth exploring more. As an example, MySQL replication is always delayed by some amount; the question is how much. When a master’s load increases too much, the replica can’t keep up. You need to solve this problem–and there are many ways to do s –but in the most basic sense, you can’t do anything about a replica that’s behind. What would you do, anyway? Kill the server? Skip replicating a bunch of events? These just take a lagged system and turn it into a broken or dead one. An alert on delayed replication is not actionable because once the replica is behind, all you can do is wait and let it catch up, and that specific incident can’t be fixed. Instead of sending an alert, this is the type of information that should be exposed in a non-intrusive way (such as a graph) for a DBA to address in the normal course of events.&lt;/p&gt;
+
+&lt;p&gt;Similarly, if you alert on high CPU utilization, my experience is you’ll probably drive yourself nuts. You might think “I’ll find out if a rogue process runs,” but you’ll really find out when backups run instead. You’ll get a hundred “Oh, it’s because it’s doing work we’ve asked it to do” incidents for every “That’s not supposed to be happening!” event.&lt;/p&gt;
+
+&lt;h3 id=&#34;comprehensive-alerting&#34;&gt;Comprehensive Alerting&lt;/h3&gt;
+
+&lt;p&gt;Should you try to set up early-warning systems for everything that could possibly go wrong? Even if you were able to do that (and I’ve argued that you can’t), I’d say no. My experience is that attempting complete coverage of all possible failure scenarios leads to false-alarm madness. And much like company policies that are written to forbid behavior that’s obviously unacceptable, I think we should focus our efforts on things that are likely to provide some ROI.&lt;/p&gt;
+
+&lt;p&gt;So I suggest that instead of trying to predict and guard against all possible failure modes, most people should learn from past mistakes, assess the risks (risk = probability * severity), and guard against the most common and serious ones. Disks getting full, for example, is a no-brainer. High CPU load and replication delay are not.&lt;/p&gt;
+
+&lt;p&gt;I’ll be speaking about this topic as part of a &lt;a href=&#34;http://velocityconf.com/velocityny2013/public/schedule/detail/31361/&#34;&gt;broader presentation at Velocity New York&lt;/a&gt; on October 14th. I intend to cover much more material–this is just a small part of it. But I’d be interested to hear your thoughts on this and related topics. It’ll help make my presentation better!&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>A Whole New World of MySQL with Baron Schwartz</title>
+          <link>https://www.xaprb.com/blog/2012/02/01/interview-with-nocoug/</link>
+          <pubDate>Wed, 01 Feb 2012 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2012/02/01/interview-with-nocoug/</guid>
+          <description>&lt;p&gt;In February of 2012 Iggy Fernandez interviewed me for the &lt;a href=&#34;http://www.nocoug.org/&#34;&gt;NOCOUG
+Journal&lt;/a&gt;. A PDF of the result is
+&lt;a href=&#34;https://www.xaprb.com/media/2012/02/NoCOUG_Journal_201202.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>5 subtle ways you&#39;re using MySQL as a queue, and why it&#39;ll bite you</title>
+          <link>https://www.xaprb.com/blog/2011/09/15/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/</link>
+          <pubDate>Thu, 15 Sep 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/09/15/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/</guid>
+          <description>&lt;p&gt;&lt;em&gt;This post originally appeared on &lt;a href=&#34;https://blog.engineyard.com/2011/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/&#34;&gt;the Engine Yard blog&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I work for Percona, a MySQL consulting company. To augment my memory, I keep a quick-reference text file with notes on interesting issues that customers ask us to solve. One of the categories of frequent problems is attempts to build a job queue in MySQL. I have so many URLs under this bullet point that I stopped keeping track anymore. Customers have endless problems with job queues in their databases. By &amp;ldquo;job queue&amp;rdquo; I simply mean some list of things they&amp;rsquo;ve inserted, which usually need to be processed and marked as completed. I&amp;rsquo;ve seen scores &amp;ndash; maybe hundreds &amp;ndash; of cases like this.&lt;/p&gt;
+
+&lt;p&gt;Many people realize the difficulties in building a good job queue or batch processing system, and try not to create one inside MySQL. Although the job queue is a great design pattern from the developer&amp;rsquo;s point of view, they know it&amp;rsquo;s often hard to implement well in a relational database. However, experience shows me that job queues sneak up in unexpected ways, even if you&amp;rsquo;re a seasoned developer.&lt;/p&gt;
+
+&lt;p&gt;Here are some of the most common ways I&amp;rsquo;ve seen the job-queue design pattern creep into an application&amp;rsquo;s database. Are you using MySQL for any of the following?&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Storing a list of messages to send:&lt;/strong&gt; whether it&amp;rsquo;s emails, SMS messages, or friend requests, if you&amp;rsquo;re storing a list of messages in a table and then looking through the list for messages that need to be sent, you&amp;rsquo;ve created a job queue.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Moderation, token claims, or approval:&lt;/strong&gt; do you have a list of pending articles, comments, posts, email validations, or users? If so, you have a job queue.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Order processing:&lt;/strong&gt; If your order-processing system looks for newly submitted orders, processes them, and updates their status, it&amp;rsquo;s a job queue.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Updating a remote service:&lt;/strong&gt; does your ad-management software compute bid changes for ads, and then store them for some other process to communicate with the advertising service? That&amp;rsquo;s a job queue.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Incremental refresh or synchronization:&lt;/strong&gt; if you store a list of items that has changed and needs some background processing, such as files to sync for your new file-sharing service, well, by now you know what that is.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;As you can see, queues are sly; they slip into your design without you realizing it. Frankly, many of them aren&amp;rsquo;t really a problem in reality. But the potential is always there, and I&amp;rsquo;ve observed that it&amp;rsquo;s hard to predict which things will become problems. This is usually because it depends on behavior that you don&amp;rsquo;t know in advance, such as which parts of your application will get the most load, or what your users will promote to their friends.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s dive a little bit into why job queues can cause trouble, and then I&amp;rsquo;ll show you some ways to help reduce the chance it&amp;rsquo;ll happen to you. The problem is usually very simple: performance. As time passes, the job queue table starts to either perform poorly, or cause other things to perform badly through collateral damage. There are three primary reasons for this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Polling&lt;/strong&gt;. Many of the job queue systems I see have one or more worker processes checking for something to do. This starts to become a problem pretty quickly in a heavily loaded application, for reasons I&amp;rsquo;m about to explain.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Locking&lt;/strong&gt;. The specific implementation of the polling often looks like this: run a SELECT FOR UPDATE to see if there are items to process; if so, UPDATE them in some way to mark them as in-process; then process them and mark them as complete. There are variations on this, not necessarily involving SELECT FOR UPDATE, but often something with similar effects. The problem with SELECT FOR UPDATE is that it usually creates a single synchronization point for all of the worker processes, and you see a lot of processes waiting for the locks to be released with COMMIT. Bad implementations of this (not committing until the workers have processed the items, for example) are really horrible, but even &amp;ldquo;good&amp;rdquo; implementations can cause serious pile-ups.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data growth&lt;/strong&gt;. I can&amp;rsquo;t tell you how many times I&amp;rsquo;ve seen email list management applications that have a single huge emails table. New emails go into the table with a &amp;ldquo;new&amp;rdquo; status, and then they get updated to mark them as sent. As time passes, these email tables can grow into millions or even billions of rows. Even though there might only be hundreds to thousands of new messages to send, that big bloated table makes all the queries really, really slow. If you combine this with polling and/or locking and lots of load on the server, you have a recipe for epic disaster.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The solutions to these problems are actually rather simple: 1) avoid polling; 2) avoid locking; and 3) avoid storing your queue in the same table as other data. Implementing these solutions can take a bit of creativity, however.&lt;/p&gt;
+
+&lt;p&gt;First, let&amp;rsquo;s look at how to avoid polling. I wish that MySQL had listen/notify functionality, the way that PostgreSQL and Microsoft SQL Server do (just to mention two). Alas, MySQL doesn&amp;rsquo;t, but you can simulate it. Here are three ideas: use GET_LOCK() and RELEASE_LOCK(), or write a plugin to communicate through Spread, or make the consumers run a SLEEP(100000) query, and then kill these queries to &amp;ldquo;signal&amp;rdquo; to the worker that there&amp;rsquo;s something to do. These can work quite well, although it&amp;rsquo;d be nice to have a more straightforward solution.&lt;/p&gt;
+
+&lt;p&gt;Locking is actually quite easy to avoid. Instead of SELECT FOR UPDATE followed by UPDATE, just UPDATE with a LIMIT, and then see if any rows were affected. The client protocol tells you that; there&amp;rsquo;s no need for another query to the database to check. Make sure autocommit is enabled for this UPDATE, so that you don&amp;rsquo;t hold the resultant locks open for longer than the duration of the statement. If you don&amp;rsquo;t have autocommit enabled, the application must follow up with a COMMIT to release any locks, and that is really no different from SELECT FOR UPDATE. (The rest of the work can be done with autocommit disabled; you need to enable it for only this statement.) While I&amp;rsquo;m wishing for things, I wish that SELECT FOR UPDATE had never been invented. I haven&amp;rsquo;t seen a case yet where it can&amp;rsquo;t be done a better way, nor have I seen a case where it has failed to cause problems&lt;/p&gt;
+
+&lt;p&gt;Finally, it&amp;rsquo;s also really easy to avoid the one-big-table syndrome. Just create a separate table for new emails, and when you&amp;rsquo;re done processing them, INSERT them into long-term storage and then DELETE them from the queue table. The table of new emails will typically stay very small and operations on it will be fast. And if you do the INSERT before the DELETE, and use INSERT IGNORE or REPLACE, you don&amp;rsquo;t even need to worry about using a transaction across the two tables, in case your app crashes between. That further reduces locking and other overhead. If you fail to execute the DELETE, you can just have a regular cleanup task retry and purge the orphaned row. (Hmm, sounds like another job queue, no?) You can do much the same thing for any type of queue. For example, articles or comments that are pending approval can go into a separate table. This is really required on a large scale, although you shouldn&amp;rsquo;t worry that your Wordpress blog doesn&amp;rsquo;t do things this way (unless you&amp;rsquo;ve been hired to rewrite CNN.com using Wordpress as a backend).&lt;/p&gt;
+
+&lt;p&gt;Finally, and I&amp;rsquo;ve saved perhaps the most obvious solution for last, don&amp;rsquo;t use the database at all! Use a real queueing system, such as Resque, ActiveMQ, RabbitMQ, or Gearman. Be careful, however, that you don&amp;rsquo;t enable persistence to a database and choose to use MySQL for that. Depending on the queue system, that can just reintroduce the problem in a generic way that&amp;rsquo;s even less optimal. Some queue systems use all of the database worst practices I enumerated above.&lt;/p&gt;
+
+&lt;p&gt;I hope this article has given you some insight into the variety of ways that job queues inside of MySQL can sneak up on you and bite you in the tendermost parts. And I hope you can learn to recognize and avoid this design pattern yourself, or at least implement it in a way that won&amp;rsquo;t hurt you. It really is such a common problem that it&amp;rsquo;s become one of the classic questions I see. Now, I&amp;rsquo;m off to check my list of pending consulting requests and see what I should work on next.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Making Migrations Faster and Safer</title>
+          <link>https://www.xaprb.com/blog/2011/05/23/making-migrations-faster-and-safer/</link>
+          <pubDate>Mon, 23 May 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/05/23/making-migrations-faster-and-safer/</guid>
+          <description>&lt;p&gt;&lt;em&gt;This post originally appeared on &lt;a href=&#34;https://blog.engineyard.com/2011/making-migrations-faster-and-safer/&#34;&gt;the Engine Yard blog&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Are your migrations the execute-and-pray variety? If so, you are probably not (yet!) running a large application. Even small applications can benefit from a more careful migration process. It&amp;rsquo;s important to establish the process now, before things get big, because it will be much more difficult later. In my study of emergency issues, the single most valuable preventive measure I identified was change control. Migrations involve change, and the more disciplined and careful you are, the less opportunity for problems, and the more safeguards you can build in to help recover quickly if a problem ever does occur.&lt;/p&gt;
+
+&lt;p&gt;The single best way to prevent bad changes from happening in production is to execute them in a non-production environment and observe the system. As you might know, ALTER TABLE is generally a blocking operation in MySQL. It can be very hard to predict how long it will take, and the growing sense of panic you&amp;rsquo;ll feel as you watch your entire application pile up is no fun, especially because you don&amp;rsquo;t know if it&amp;rsquo;s about to complete or if you&amp;rsquo;re only 30 seconds into a 3-hour ALTER.&lt;/p&gt;
+
+&lt;p&gt;A non-production (staging) environment with a recent copy of your production data is your friend. The part I see a lot of folks stumble over is getting a realistic copy of the data. If you run the migration against a toy dataset, you won&amp;rsquo;t understand how long it&amp;rsquo;s really going to take in production.&lt;/p&gt;
+
+&lt;p&gt;To get started, you can restore your latest backup onto the staging server. Use mysqldump or Percona XtraBackup to create a backup if you don&amp;rsquo;t have one. If you&amp;rsquo;re an Engine Yard customer, their clone feature which allows creating a staging environment from a production snapshot works for this as well.&lt;/p&gt;
+
+&lt;p&gt;When you run the migration, capture the output and review the timings carefully. Write a little script to help. Here&amp;rsquo;s an example that I use sometimes for my clients. Save the output as migrated.txt, and run this Perl one-liner:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;perl -ne &#39;/(\S+): migrated \((.*)s\)/ &amp;amp;&amp;amp; print &amp;quot;$2 $1\n&amp;quot;&#39; migrated.txt | sort -rn -k1,1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The output will be execution times and migration names, sorted longest-first. That makes it easy to see which operations might take a long time in production.&lt;/p&gt;
+
+&lt;p&gt;The next step is to review the SQL that your migration generates, looking for ALTER and CREATE INDEX statements you can combine. In case you aren&amp;rsquo;t familiar with it, MySQL&amp;rsquo;s ALTER statement generally works by creating a copy of the table in the background, modifying it, and then copying all the rows into it and swapping the tables. A CREATE INDEX statement is really an ALTER statement in MySQL. So if you ALTER a table, and then add an index with CREATE INDEX, you&amp;rsquo;re making MySQL do all that work twice.&lt;/p&gt;
+
+&lt;p&gt;The problem is, Rails&amp;rsquo; migration methods often generate multiple alterations to a table behind the scenes. Here&amp;rsquo;s an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def self.up
+      add_column :comments, :name, :string
+      add_column :comments, :user_id, :integer, :null =&amp;gt; false
+      add_index :comments, :user_id
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This code ends up running three separate ALTER statements: one for each added column, and one for the new index. In cases such as this, you might have to execute direct SQL instead. Here&amp;rsquo;s another code snippet that does essentially the same thing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def self.up
+      execute &amp;quot;ALTER TABLE comments add name varchar(255), add user_id int NOT NULL, add index `index_comments_on_user_id` (`user_id`);&amp;quot;
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sometimes you might not notice repeated ALTER statements in the Ruby code, so you should review the migration&amp;rsquo;s generated SQL in staging. Look for any ALTER and CREATE INDEX statements that reference the same table, and merge them. This can save a lot of work for the database, and reduce the amount of time that the migration locks the table.&lt;/p&gt;
+
+&lt;p&gt;Do you have tips or suggestions of your own to add to mine? Post them in the comments, I look forward to your feedback!&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>3 Common Rails &#43; MySQL Mistakes</title>
+          <link>https://www.xaprb.com/blog/2011/02/14/3-common-rails-mysql-mistakes/</link>
+          <pubDate>Mon, 14 Feb 2011 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2011/02/14/3-common-rails-mysql-mistakes/</guid>
+          <description>
+
+&lt;p&gt;&lt;em&gt;This post originally appeared on &lt;a href=&#34;https://blog.engineyard.com/2011/3-common-rails-mysql-mistakes&#34;&gt;the Engine Yard blog&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Rails makes database interaction so simple that it&amp;rsquo;s easy to forget that the database isn&amp;rsquo;t always happy with what Rails does to it. Here are three leading mistakes that hurt many Rails applications:&lt;/p&gt;
+
+&lt;h3 id=&#34;1-using-in-subqueries&#34;&gt;1. Using IN() subqueries&lt;/h3&gt;
+
+&lt;p&gt;MySQL supports a few different types of subqueries. Unfortunately, one of them is a performance disaster. Even more unfortunately, that particular type is the most natural and intuitive way to write a few common query patterns. We&amp;rsquo;re referring to IN() and NOT IN() subqueries. Note that IN(list,of,values) is just fine &amp;ndash; the problem is IN(SELECT&amp;hellip;) queries, and its evil twin the NOT IN(SELECT&amp;hellip;) subquery. These should be written as JOIN and LEFT OUTER JOIN, respectively, to avoid serious performance problems when the tables grow.&lt;/p&gt;
+
+&lt;h3 id=&#34;2-using-select-for-update&#34;&gt;2. Using SELECT FOR UPDATE&lt;/h3&gt;
+
+&lt;p&gt;Another common problem is locking some rows to &amp;ldquo;claim&amp;rdquo; them so nobody else works on the same rows. A common pattern where this is used is a queue. Anything that has a list of work to do, and tries to reserve some rows by doing a SELECT FOR UPDATE, ends up introducing a serialization point that forces all work to happen in single file, instead of letting lots of work happen concurrently. The solution is to use a unique identifier per consuming process, and go ahead and UPDATE non-claimed rows to have the process&amp;rsquo;s identifier as a claim token. The UPDATE will return a number of rows modified, and if that is greater than zero, you&amp;rsquo;ve claimed some rows and can then SELECT them and process them. Be sure to either run in auto-commit mode or commit immediately after the UPDATE, so you don&amp;rsquo;t end up holding locks on the updated rows and causing the same problem!&lt;/p&gt;
+
+&lt;h3 id=&#34;3-using-mysql-to-store-session-data&#34;&gt;3. Using MySQL to store session data&lt;/h3&gt;
+
+&lt;p&gt;It&amp;rsquo;s so easy to use MySQL to store session data, but unfortunately it often ends up being one of the most expensive things the application does in the database. We&amp;rsquo;ve seen many cases where the session table accounts for the majority of the work in the database. With all that session-handling, the database can become unresponsive for the truly important work it should be doing (e.g. whatever makes money for your application). If you&amp;rsquo;re using the database for sessions, consider Memcached instead. It&amp;rsquo;s blazing fast because it doesn&amp;rsquo;t worry about persisting your data transactionally.&lt;/p&gt;
+</description>
+        </item>
+    
+        <item>
+          <title>Open Tools for MySQL Administrators</title>
+          <link>https://www.xaprb.com/blog/2006/10/19/mysql-tools/</link>
+          <pubDate>Thu, 19 Oct 2006 00:00:00 UTC</pubDate>
+          <author></author>
+          <guid>https://www.xaprb.com/blog/2006/10/19/mysql-tools/</guid>
+          <description>&lt;p&gt;&lt;em&gt;This post originally appeared on &lt;a href=&#34;http://archive.oreilly.com/pub/a/mysql/2006/10/19/mysql-tools.html&#34;&gt;O&amp;rsquo;Reilly&amp;rsquo;s blog&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.mysql.com/&#34;&gt;MySQL&lt;/a&gt; provides some tools to monitor and troubleshoot a MySQL server, but they don&#39;t always suit a MySQL developer or administrator&#39;s common needs, or may not work in some scenarios, such as remote or over-the-web monitoring. Fortunately, the MySQL community has created a variety of free tools to fill the gaps. On the other hand, many of these are hard to find via web searches. In fact, web searches can be frustrating because they uncover abandoned or special-purpose, not ready-to-use projects. You could spend hours trying to find tools for monitoring and troubleshooting your MySQL servers. What&#39;s a tool-seeker to do?&lt;/p&gt;
+
+&lt;p&gt;Relax! I&#39;ve already done the work, so you won&#39;t have to. I&#39;ll point you to the tools I&#39;ve actually found useful. At the end of this article I&#39;ll also list those I didn&#39;t find helpful.&lt;/p&gt;
+
+&lt;p&gt;This article is about tools to discover and monitor the state of your server, so I won&#39;t discuss programs for writing queries, designing tables, and the like. I&#39;m also going to focus exclusively on free and open source software.&lt;/p&gt;
+
+&lt;h3&gt;Tools to Monitor Queries and Transactions&lt;/h3&gt;
+
+&lt;p&gt;The classic tool for monitoring queries is &lt;a href=&#34;http://jeremy.zawodny.com/mysql/mytop/&#34;&gt;Jeremy Zawodny&#39;s mytop&lt;/a&gt;. It is a Perl program that runs in a terminal and displays information about all connections in a tabular layout, similar to the Unix &lt;code&gt;top&lt;/code&gt; program&#39;s process display. Columns include the connection ID, the connection&#39;s status, and the text of the current query. From this display you can select a query to &lt;code&gt;EXPLAIN&lt;/code&gt;, kill a query, and a few other tasks. A header at the top of the display gives information about the server, such as version, uptime, and some statistics like the number of queries per second. The program also has some other functions, but I never found myself using them much.&lt;/p&gt;
+
+&lt;p&gt;There are mytop packages for various GNU/Linux distributions, such as Gentoo and Fedora Core, or you can install one from Jeremy&#39;s website. It is very small and has minimal dependencies. On the downside, it hasn&#39;t been maintained actively for a while and doesn&#39;t work correctly with MySQL 5.x.&lt;/p&gt;
+
+&lt;p&gt;A similar tool is &lt;a href=&#34;http://mtop.sourceforge.net/&#34;&gt;mtop&lt;/a&gt;. It has a tabular process display much like mytop, and although it lacks some features and adds others, the two programs are very similar. It is also a Perl script and there are installation packages for some operating systems, or you can download it from SourceForge. Unfortunately, it is not actively maintained and does not work correctly on newer versions of MySQL.&lt;/p&gt;
+
+&lt;p&gt;Some programmers have also created scripts to output MySQL&#39;s process list for easy consumption by other scripts. An example is this &lt;a href=&#34;http://forge.mysql.com/snippets/view.php?id=38&#34;&gt;SHOW FULL PROCESSLIST&lt;/a&gt; script, available from the always-useful &lt;a href=&#34;http://forge.mysql.com/&#34;&gt;MySQL Forge&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My own contribution is &lt;a href=&#34;https://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/&#34;&gt;innotop&lt;/a&gt;, a MySQL and InnoDB monitor. As MySQL has become increasingly popular, InnoDB has become the most widely used transactional MySQL storage engine. InnoDB has many differences from other MySQL storage engines, so it requires different monitoring methods. It exposes internal status by dumping a potentially huge amount of semi-formatted text in response to the &lt;code&gt;SHOW INNODB STATUS&lt;/code&gt; command. There&#39;s a lot of raw data in this text, but it&#39;s unusable for real-time monitoring, so I wrote innotop to format and display it conveniently. It is the main monitoring tool at my current employer.&lt;/p&gt;
+
+&lt;p&gt;Innotop is much more capable than the other tools I&#39;ve mentioned, and can replace them completely. It has a list of processes and status information, and offers the standard functions to kill and explain queries. It also offers many features that are not in any other tool, including being able to list current transactions, lock waits, deadlock information, foreign key errors, I/O and log statistics, InnoDB row operation and semaphore statistics, and information on the InnoDB buffer pool, memory usage, insert buffer, and adaptive hash index. It also displays more standard MySQL information than mytop and its clones, such as compact, tabular displays of current and past status information snapshots. It is very configurable and has interactive help.&lt;/p&gt;
+
+&lt;p&gt;Installation is simple, because innotop is a ready-to-run Perl script, but there are no installation packages yet, so you must download it from my website.&lt;/p&gt;
+
+&lt;p&gt;There are also some web-based tools. There are two web-based mytop clones, &lt;a href=&#34;http://sourceforge.net/projects/phpmytop/&#34;&gt;phpMyTop&lt;/a&gt; and &lt;a href=&#34;http://sourceforge.net/projects/ajaxmytop/&#34;&gt;ajaxMyTop&lt;/a&gt;. These are useful when you don&#39;t have shell access and can&#39;t connect remotely to your database server, but can connect from a web server. ajaxMyTop is more recent and seems to be more actively developed. It also feels more like a traditional GUI program, because thanks to Ajax, the entire page does not constantly refresh itself.&lt;/p&gt;
+
+&lt;p&gt;Another web-based tool is the popular &lt;a href=&#34;http://www.phpmyadmin.net/home_page/&#34;&gt;phpMyAdmin&lt;/a&gt; package. phpMyAdmin is a Swiss Army Knife, with features to design tables, run queries, manage users and more. Its focus isn&#39;t on monitoring queries and processes, but it has some of the features I&#39;ve mentioned earlier, such as showing a process list.&lt;/p&gt;
+
+&lt;p&gt;Finally, if you need to monitor what&#39;s happening inside a MySQL server and don&#39;t care to--or can&#39;t--use a third-party tool, MySQL&#39;s own &lt;code&gt;mysqladmin&lt;/code&gt; command-line program works. For example, to watch incremental changes to the query cache, run the command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysqladmin extended -r -i 10 | grep Qcache
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Of course, innotop can do that for you too, only better. Take a look at its &#34;V&#34; mode. Still, this can be handy when you don&#39;t have any way to run innotop.&lt;/p&gt;
+
+&lt;h3&gt;Tools to Monitor a MySQL Server&lt;/h3&gt;
+
+&lt;p&gt;Sometimes, rather than monitoring the queries running in a MySQL server, you need to analyze other aspects of the system&#39;s performance. You could use standard command-line utilities to monitor the resources used by the MySQL process on GNU/Linux, or you could run &lt;a href=&#34;http://datacharmer.org/&#34;&gt;Giuseppe Maxia&#39;s&lt;/a&gt; helpful script to &lt;a href=&#34;http://www.perlmonks.org/?node_id=559540&#34;&gt;measure MySQL resource consumption&lt;/a&gt;. This tool recursively examines the processes associated with the MySQL server&#39;s process ID, and prints a report on what it finds. For more information, read &lt;a href=&#34;http://www.oreillynet.com/databases/blog/2006/07/measuring_resources_for_a_mysq_1.html&#34;&gt;Giuseppe&#39;s own article on the O&#39;Reilly Databases blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The MySQL Forge website is an excellent place to discover tips, tricks, scripts, and code snippets for daily MySQL administration and programming tasks. For example, there&#39;s an entry to help you measure replication speed, a &#34;poor man&#39;s query profiler&#34; to capture queries as they fly by on the network interface, and much more.&lt;/p&gt;
+
+&lt;p&gt;Another excellent resource is &lt;a href=&#34;http://hackmysql.com/mysqlreport&#34;&gt;mysqlreport&lt;/a&gt;, a well-designed program that turns MySQL status information into knowledge. It prints out a report of relevant variables, sensibly arranged for an experienced MySQL user. I find this tool indispensable when I have to troubleshoot a server without knowing anything about it in advance. For example, if someone asks me to help reduce load on a MySQL server that&#39;s running at 100 percent CPU, the first thing I do is to run mysqlreport. I can get more information by glancing at its output than I could in 10 minutes of talking to the customer. It immediately tells me where to focus my efforts. If I see a high key read ratio and a high percentage of index scans, I can immediately look for large indexes and a key buffer that&#39;s too small. That intuition could take many minutes to develop just by examining &lt;code&gt;SHOW STATUS&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The mysqlreport website has full information on how to install and use the program, but better yet, there are excellent tutorials on how to interpret its output, with real examples. Some of these go into detail on MySQL internals, and I recommend them to any MySQL developer.&lt;/p&gt;
+
+&lt;p&gt;Another common task is setting up automated systems to monitor your server and let you know if it&#39;s alive. You could write your own monitor, or you could just plug in a ready-made one. According to a &lt;a href=&#34;http://dev.mysql.com/tech-resources/quickpolls/monitoring-software.html&#34;&gt;MySQL poll&lt;/a&gt;, &lt;a href=&#34;http://www.nagios.org/&#34;&gt;Nagios&lt;/a&gt; is the most popular tool for doing this. There&#39;s also a &lt;a href=&#34;http://search.cpan.org/~clemensg/Watchdog-0.10/bin/mysql.monitor&#34;&gt;Watchdog mysql monitor plugin&lt;/a&gt; for &lt;a href=&#34;http://www.kernel.org/software/mon/&#34;&gt;mon&lt;/a&gt;, the Linux scheduling and alert management tool. We currently use a home-grown system at my employer, but we&#39;re looking at using Nagios soon.&lt;/p&gt;
+
+&lt;h3&gt;Tools I Didn&#39;t Find Useful&lt;/h3&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://www.quicomm.com/mysql_monitor_descript.htm&#34;&gt;Quicomm MySQL Monitor&lt;/a&gt; is a web-based administration tool similar to phpMyAdmin, not a monitor in the same sense as mytop or innotop. It offers relatively few features compared to phpMyAdmin.&lt;/p&gt;
+
+&lt;p&gt;Another web-based tool is &lt;a href=&#34;http://www.fillon.org/mysysop/&#34;&gt;MySysop&lt;/a&gt;, which is billed as a &#34;MySQL system optimizer&#34;, though it certainly doesn&#39;t do anything on its own to optimize a MySQL system. It offers recommendations I would not trust without doing enough investigation to arrive at the same conclusions. By the time I could install and run this system, I&#39;d have long since run mysqlreport.&lt;/p&gt;
+
+&lt;p&gt;Finally, I&#39;ve never understood how to even use the &lt;a href=&#34;http://goog-mmaim.sourceforge.net/&#34;&gt;Google mMaim (MySQL Monitoring And Investigation Module)&lt;/a&gt;. It is part of Google&#39;s open source code contributions, and Google probably uses it internally to monitor its servers. However, it&#39;s not obvious to the rest of the world how to do this, as evidenced by the mailing list. The mailing list also reveals that Google released the code simply for the sake of releasing it. While I appreciate the gesture, I can&#39;t find any use for the code.&lt;/p&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;If you&#39;re trying to find tools for your own work, I recommend innotop and mysqlreport, and a healthy dose of command-line competence. I used to rely on mytop for my routine monitoring, but now I use innotop, because it shows much more information, including all-important details about transactions. When I need to analyze a server to discover what&#39;s wrong with it, it&#39;s impossible to match mysqlreport&#39;s instant snapshot of server health and activity. When I need to know about MySQL&#39;s resource consumption and performance, I augment standard command-line utilities with scripts, such as Giuseppe Maxia&#39;s.&lt;/p&gt;
+
+&lt;p&gt;There are certainly other tools, but the ones mentioned here are free and open source, have nearly every feature you can find in other tools, and do a lot you can&#39;t find elsewhere at all.&lt;/p&gt;
+
+&lt;h3&gt;Related Links&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/&#34;&gt;innotop&lt;/a&gt;, the most powerful MySQL and InnoDB monitor&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#34;http://hackmysql.com/mysqlreport&#34;&gt;mysqlreport&lt;/a&gt;, a tool to make easy-to-ready MySQL status reports&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#34;http://forge.mysql.com/&#34;&gt;MySQL Forge&lt;/a&gt;, a place where the MySQL community shares code snippets with one another&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#34;http://jeremy.zawodny.com/mysql/mytop/&#34;&gt;mytop&lt;/a&gt;, the classic tool for monitoring MySQL queries and processes&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+    
+
+  </channel>
+</rss>

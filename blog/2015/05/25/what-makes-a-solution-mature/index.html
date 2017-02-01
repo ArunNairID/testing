@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>
+    
+      What Makes A Database Mature? &middot; Baron Schwartz&#39;s Blog
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <meta name="og:title" content="What Makes A Database Mature?" />
+  <meta name="og:type" content="article" />
+  <meta name="og:image" content="https://www.xaprb.com//media/2015/05/bristlecone.jpg" />
+  <meta name="og:description" content="Read this before you ask me to buy your database." />
+  <meta name="og:url" content="https://www.xaprb.com/blog/2015/05/25/what-makes-a-solution-mature/" />
+  <meta name="og:site_name" content="Baron Schwartz&#39;s Blog" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@xaprb" />
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+
+  
+  <link rel="canonical" href="https://www.xaprb.com/blog/2015/05/25/what-makes-a-solution-mature/">
+  
+  <meta name="description" value="Read this before you ask me to buy your database.">
+  
+
+  <script type="text/javascript" src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Baron Schwartz&#39;s Blog &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About Baron Schwartz</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/12/18/secure-your-accounts-and-devices/">Staying Secure Online</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2013/07/10/ultimate-notebook-and-journal-face-off/">The Ultimate Notebook</a>
+    
+        <a class="sidebar-nav-item" href="/blog/2015/03/07/ultimate-pen-marker-face-off/">The Ultimate Pen</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2016 Baron Schwartz.
+	  <br><a href="/index.xml">RSS Feed</a>, <a href="/about/">Contact</a>.<br>
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>,
+	  <a href="https://www.netlify.com/">Netlify</a>,
+	  <a href="https://forestry.io/">Forestry</a>,
+	  <a href="https://github.com/xaprb/xaprb-src/">GitHub</a>,
+	  <a href="https://disqus.com">Disqus</a>,
+	  <a href="https://swiftype.com/">Swiftype</a>.
+	</p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Baron Schwartz&#39;s Blog</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">What Makes A Database Mature?</h1>
+  <span class="post-date">Mon, May 25, 2015 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<span class="share-buttons">
+	<a href="https://twitter.com/intent/tweet?source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f05%2f25%2fwhat-makes-a-solution-mature%2f&text=What%20Makes%20A%20Database%20Mature%3f:https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f05%2f25%2fwhat-makes-a-solution-mature%2f" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-lg"></i></a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f05%2f25%2fwhat-makes-a-solution-mature%2f&title=What%20Makes%20A%20Database%20Mature%3f&summary=What%20Makes%20A%20Database%20Mature%3f&source=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f05%2f25%2fwhat-makes-a-solution-mature%2f" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-lg"></i></a>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f05%2f25%2fwhat-makes-a-solution-mature%2f&t=What%20Makes%20A%20Database%20Mature%3f" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+	<a href="https://plus.google.com/share?url=https%3a%2f%2fwww.xaprb.com%2fblog%2f2015%2f05%2f25%2fwhat-makes-a-solution-mature%2f" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-lg"></i></a>
+</span>
+
+  </span>
+  <p>Many database vendors would like me to take a look at their products and
+consider adopting them for all sorts of purposes. Often they&rsquo;re pitching
+something quite new and unproven as a replacement for mature, boring technology
+I&rsquo;m using happily.</p>
+
+<p>I would consider a new and unproven technology, and I often have. As I&rsquo;ve
+written previously, though, <a href="/blog/2014/06/08/time-series-database-requirements/">a real evaluation takes a lot of
+effort</a>, and that
+makes most evaluations non-starters.</p>
+
+<p>Perhaps the most important thing I&rsquo;m considering is whether the product is
+mature. There are different levels of maturity, naturally, but I want to
+understand whether it&rsquo;s mature enough for me to take a look at it. And in that
+spirit, it&rsquo;s worth understanding what makes a database mature.</p>
+
+<p><img src="/media/2015/05/bristlecone.jpg" alt="Bristlecone" /></p>
+
+<p></p>
+
+<p>For my purposes, maturity really means <em>demonstrated capability and quality with
+a lot of thought given to all the little things</em>.
+The database needs to demonstrate the ability to solve specific problems well and
+with high quality. Sometimes this comes from customers, sometimes from a large
+user community (who may not be customers).</p>
+
+<p>Here are some things I&rsquo;ll consider when thinking about a database, in no
+particular order.</p>
+
+<ul>
+<li><strong>What problem do I have?</strong> It&rsquo;s easy to fixate on a technology and start
+thinking about how awesome it is. Some databases are just easy to fall in love
+with, to be frank. Riak is in this category. I get really excited about the
+features and capabilities, the elegance. I start thinking of all the things I
+could do with Riak. But now I&rsquo;m putting the cart before the horse. I need to
+think about my problems first.</li>
+<li><strong>Query flexibility.</strong> Does it offer sophisticated execution models to handle
+the nuances of real-world queries? If not, I&rsquo;ll likely run into queries that
+run much more slowly than they should, or that have to be pulled into
+application code. MySQL has lots of examples of this. Queries such as <code>ORDER
+BY</code> with a <code>LIMIT</code> clause, which are super-common for web workloads, did way
+more work than they needed to in older versions of MySQL. (It&rsquo;s better now,
+but the scars remain in my mind).</li>
+<li><strong>Query flexibility.</strong> The downside of a sophisticated execution engine with
+smart plans is they can go very wrong. One of the things people like about
+NoSQL is the direct, explicit nature of queries, where an optimizer can&rsquo;t be
+too clever for its own good and cause a catastrophe. A database needs to make
+up its mind: if it&rsquo;s simple and direct, OK. If it&rsquo;s going to be smart, the bar
+is very high. A lot of NoSQL databases that offer some kind of &ldquo;map-reduce&rdquo;
+query capability fall into the middle ground here: key-value works great, but
+the map-reduce capability is far from optimal.</li>
+<li><strong>Data protection.</strong> Everything fails, even things you never think about. Does
+it automatically check for and guard against bit rot, bad memory, partial page
+writes, and the like? What happens if data gets corrupted? How does it behave?</li>
+<li><strong>Backups.</strong> How do you back up your data? Can you do it online, without
+interrupting the running database? Does it require proprietary tools? If you
+can do it with standard Unix tools, there&rsquo;s infinitely more flexibility. Can
+you do partial/selective backups? Differential backups since the last backup?</li>
+<li><strong>Restores.</strong> How do you restore data? Can you do it online, without taking
+the database down? Can you restore data in ways you didn&rsquo;t plan for when
+taking the backup? For example, if you took a full backup, can you efficiently
+restore just a specific portion of the data?</li>
+<li><strong>Replication.</strong> What is the model&mdash;synchronous, async, partial, blend?
+Statement-based, change-based, log-based, or something else? How flexible is
+it? Can you do things like apply intensive jobs (schema changes, big
+migrations) to a replica and then trade master-and-replica? Can you filter and
+delay and fidget with replication all different ways? Can you write to
+replicas? Can you chain replication? Replication flexibility is an absolutely
+killer feature. Operating a database at scale is very hard with inflexible
+replication. Can you do multi-source replication? If replication breaks, what
+happens? How do you recover it? Do you have to rebuild replicas from scratch?
+Lack of replication flexibility and operability is still one of the major pain
+points in PostgreSQL today. Of course, MySQL&rsquo;s replication provides a lot of
+that flexibility, but historically it didn&rsquo;t work reliably, and gave users a
+huge foot-gun. I&rsquo;m not saying either is best, just that replication is hard
+but necessary.</li>
+<li><strong>Write stalls.</strong> Almost every new database I&rsquo;ve seen in my career, and a lot
+of old ones, has had some kind of write stalls. Databases are very hard to
+create, and typically it takes 5-10 years to fix these problems if they aren&rsquo;t
+precluded from the start (which they rarely are). If you don&rsquo;t talk about
+write stalls in your database in great detail, I&rsquo;m probably going to assume
+you are sweeping them under the rug or haven&rsquo;t gone looking for them. If you
+show me you&rsquo;ve gone looking for them and either show that they&rsquo;re contained or
+that you&rsquo;ve solved them, that&rsquo;s better.</li>
+<li><strong>Independent evaluations.</strong> If you&rsquo;re a solution in the MySQL space, for
+example, you&rsquo;re not really serious about selling until you&rsquo;ve hired Percona to
+do evaluations and write up the results. In other database communities, I&rsquo;d
+look for some similar kind of objective benchmarking and evaluations.</li>
+<li><strong>Operational documentation.</strong> How good is your documentation? How complete?
+When I was at Percona and we released XtraBackup, it was clearly a
+game-changer, except that there was no documentation for a long time, and this
+hurt adoption badly. Only a few people could understand how it worked. There
+were only a few people inside of Percona who knew how to set it up and operate
+it, for that matter. This is a serious problem for potential adopters. The
+docs need to explain important topics like daily operations, what the database
+is good at, what weak points it has, and how to accomplish a lot of common
+tasks with it. Riak&rsquo;s documentation is fantastic in this regard. So is MySQL&rsquo;s
+and PostgreSQL&rsquo;s.</li>
+<li><strong>Conceptual documentation.</strong> How does it work, really? One database that I
+think has been hurt a little bit by not really explaining how-it-works is
+NuoDB, which used an analogy of a flock of birds all working together. It&rsquo;s a
+great analogy, but it needs to be used only to set up a frame of reference for
+a deep-dive, rather than as a pat answer.  (Perhaps somewhat unfairly, I&rsquo;m
+writing this offline, and not looking to see if NuoDB has solved this issue I
+remember from years ago.) Another example was TokuDB&rsquo;s Fractal Tree indexes.
+For a long time it was difficult to understand exactly what fractal tree
+indexes really did. I can understand why, and I&rsquo;ve been guilty of the same
+thing, but I wasn&rsquo;t selling a database. People really want to feel sure they
+understand how it works before they&rsquo;ll entrust it with their data, or even
+give it a deep look. Engineers, in particular, will need to be convinced that
+the database is architected to achieve its claimed benefits.</li>
+<li><strong>High availability.</strong> Some databases are built for HA, and those need to have
+a really clear story around how they achieve it. Walk by the booth of most new
+database vendors at a conference and ask them how their automatically HA
+solution works, and they&rsquo;ll tell you it&rsquo;s elegantly architected for zero
+downtime and seamless replacement of failed nodes and so on. But as we know,
+these are really hard problems. Ask them about their competition, and they&rsquo;ll
+say &ldquo;sure, they claim the same stuff, but our code actually works in failure
+scenarios, and theirs doesn&rsquo;t.&rdquo; They can&rsquo;t all be right.</li>
+<li><strong>Monitoring.</strong> What does the database tell me about itself? What can I
+observe externally? Most new or emerging databases are basically black boxes.
+This makes them very hard to operate in real production scenarios. Most
+people building databases don&rsquo;t seem to know what a good set of
+monitoring capabilities even looks like. MemSQL is a notable exception, as is
+Datastax Enterprise. As an aside, the astonishing variety of opensource databases
+that are not monitorable in a useful way is why I founded VividCortex.</li>
+<li><strong>Tooling.</strong> It can take a long time for a database&rsquo;s toolbox to become robust
+and sophisticated enough to really support most of the day-to-day development
+and operational duties. Good tools for supporting the trickier emergency
+scenarios often take much longer. (Witness the situation with MySQL HA tools
+after 20 years, for example.) Similarly, established databases often offer
+rich suites of tools for integrating with popular IDEs like Visual Studio,
+spreadsheets and BI tools, migration tools, bulk import and export, and the like.</li>
+<li><strong>Client libraries.</strong> Connecting to a database from your language of choice,
+using idiomatic code in that language, is a big deal. When we adopted Kafka at
+VividCortex, it was tough for us because the client libraries at the time
+were basically only mature for Java users. Fortunately, Shopify had
+open-sourced their Kafka libraries for Go, but unfortunately they weren&rsquo;t
+mature yet.</li>
+<li><strong>Third-party offerings.</strong> Sometimes people seem to think that third-party
+providers are exclusively the realm of open-source databases, where third
+parties are on equal footing with the parent company, but I don&rsquo;t think this
+is true. Both Microsoft and Oracle have enormous surrounding ecosystems of
+companies providing alternatives for practically everything you could wish,
+except for making source code changes to the database itself. If I have only
+one vendor to help me with consulting, support, and other professional
+services, it&rsquo;s a dubious proposition. Especially if it&rsquo;s a small team that
+might not have the resources to help me when I need it most.</li>
+</ul>
+
+<p>The most important thing when considering a database, though, is success
+stories. The world is different from a few decades ago, when the good databases
+were all proprietary and nobody knew how they did their magic, so proofs of
+concept were a key sales tactic. Now, most new databases are opensource and the
+users either understand how they work, or rest easy in the knowledge that they
+can find out if they want. And most are adopted at a ratio of hundreds of
+non-paying users for each paying customer.  Those non-paying users are a
+challenge for a company in many ways, but at least they&rsquo;re vouching for the
+solution.</p>
+
+<p>Success stories and a community of users go together. If I can choose from a
+magical database that claims to solve all kinds of problems perfectly, versus
+one that has broad adoption and lots of discussions I can Google, I&rsquo;m not going
+to take a hard look at the former. I want to read online about use cases,
+scaling challenges met and solved, sharp edges, scripts, tweaks, tips and
+tricks. I want a lot of Stack Exchange discussions and blog posts. I want to see
+people using the database for workloads that look similar to mine, as well as
+different workloads, and I want to hear what&rsquo;s good and bad about it.
+(Honest marketing helps a lot with this, by the way. If the company&rsquo;s own claims
+match bloggers&rsquo; claims, a smaller corpus online is more credible as a
+result.)</p>
+
+<p><img src="/media/2015/05/roots.jpg" alt="Roots" /></p>
+
+<p>These kinds of dynamics help explain why most of the fast-growing emerging
+databases are opensource.  Opensource has an automatic advantage because of free
+users vouching for the product.  Why would I ever consider a proof-of-concept to
+do a sales team a favor, at great cost and effort to myself, when I could use an
+alternative database that&rsquo;s opensource and has an active community discussing
+the database? In this environment, the proof of concept selling model is
+basically obsolete for the mass market. It may still work for specialized
+applications where you&rsquo;ll sell a smaller number of very pricey deals, but it
+doesn&rsquo;t work in the market of which I&rsquo;m a part.</p>
+
+<p>In fact, I&rsquo;ve never responded positively to an invitation to set up a PoC for a
+vendor (or even to provide data for them to do it). It&rsquo;s automatically above my
+threshold of effort. I know that no matter what, it&rsquo;s going to involve a huge
+amount of time and effort from me or my teams.</p>
+
+<p>There&rsquo;s another edge-case&mdash;databases that are built in-house at a specific
+company and then are kicked out of the nest, so to speak. This is how Cassandra
+got started, and Kafka too. But the difference between a database that works
+internally for a company (no matter how well it works for them) and one that&rsquo;s
+ready for mass adoption is <em>huge</em>, and you can see that easily in both of those
+examples. I suspect few people have that experience to point to, but probably a
+lot of readers have released some nifty code sample as open-source and seen how
+different it is to create an internal-use library, as opposed to one that&rsquo;ll be
+adopted by thousands or more people.</p>
+
+<p>Remarkably few people at database companies seem to understand the
+things I&rsquo;ve written about above. The ones who do&mdash;and I&rsquo;ve named some of
+them&mdash;might have great success as a result. The companies who aren&rsquo;t run by
+people who have actually operated databases in their target markets recently,
+will probably have a much harder time of it.</p>
+
+<p>I don&rsquo;t make much time to coach companies on how they should approach me. It&rsquo;s
+not my problem, and I feel no guilt saying no without explanation. (One of my
+favorite phrases is &ldquo;no is a complete sentence.&rdquo;) But enough companies have
+asked me, and I have enough friends at these companies, that I thought it would
+be helpful to write this up. Hopefully this serves its intended purpose and
+doesn&rsquo;t hurt any feelings. Please use the comments to let me know if I can
+improve this post.</p>
+
+<p><a href="https://www.flickr.com/photos/yenchao/9187247776/">Bristlecone pine by
+yenchao</a>, <a href="https://www.flickr.com/photos/39877441@N05/4672973273/">roots by
+mclcbooks</a></p>
+  <hr>
+  <p><em>I'm Baron Schwartz, the founder and CEO of <a href="https://vividcortex.com/">VividCortex</a>. I am the author of High
+  Performance MySQL and lots of open-source software for performance analysis, monitoring, and system administration.
+  I contribute to various database communities such as Oracle, PostgreSQL, Redis and MongoDB. <a href="/about/">More about me.</a></em></p>
+
+<div class="pagination">
+  
+    <a class="pagination-item newer" href="/blog/2015/06/05/maximize-productivity-in-three-easy-steps/">Newer</a>
+  
+  
+    <a class="pagination-item older" href="/blog/2015/05/22/percona-mongodb-mysql-history-repeat/">Older</a>
+  
+</div>
+
+
+  
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+									var disqus_config = function () {
+										this.page.url = 'https:\/\/www.xaprb.com\/blog\/2015\/05\/25\/what-makes-a-solution-mature\/';
+									};
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','Dq2t2TnFxXxWs_y9hi1k');
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101883-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>
+
